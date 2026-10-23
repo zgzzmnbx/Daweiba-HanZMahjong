@@ -77,6 +77,8 @@ export type AnonymousVoteResult = Readonly<{
 }>;
 export type PublicProposal = Readonly<{
   proposalId: ProposalId; applicantId: PlayerId; source: CandidateSource;
+  /** Server time of the public reveal; legacy snapshots may omit it. */
+  revealedAt?: UtcMs;
   snapshot: PublicSentence; reviewerCount: number; threshold: number;
   /** Only aggregate progress before settlement; never choices, identities, or ranges. */
   submittedBallotCount: number;
@@ -113,7 +115,7 @@ export type PublicHistoryEntry = Readonly<{
   /** Frozen proposal rule; omitted only in legacy snapshots, restored from the containing round. */
   rulesVersion?: RulesVersion;
   proposalId: ProposalId; applicantId: PlayerId; source: CandidateSource;
-  snapshot: PublicSentence;
+  snapshot: PublicSentence; revealedAt?: UtcMs;
   outcome: 'APPROVED' | 'REJECTED' | 'WITHDRAWN';
   result: AnonymousVoteResult | null;
 }>;

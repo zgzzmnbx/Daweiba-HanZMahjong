@@ -1,0 +1,41 @@
+import {useLayoutEffect,useRef} from 'react';
+import {createPortal} from 'react-dom';
+import {HU_FLIGHT_MS,HU_INTRO_MS,HU_SHOW_MS,HU_STEP_MS,type HuPresentation} from './hu-presentation';
+import './hu-showcase.css';
+
+/** Presentation only: no command, vote, or authority clock is delayed by the spectacle. */
+export function HuShowcase({presentation,onClose}:{presentation:HuPresentation;onClose:()=>void}){
+ const root=useRef<HTMLDialogElement>(null),close=useRef(onClose);close.current=onClose;
+ useLayoutEffect(()=>{
+  const el=root.current;if(!el)return;if(!el.open)el.showModal();delete el.dataset.ready;
+  const started=performance.now()-presentation.age;
+  for(const [i,unit] of [...el.querySelectorAll<HTMLElement>('.hu-slam-unit')].entries()){
+   const rect=unit.querySelector('b')!.getBoundingClientRect(),origin=presentation.origins[presentation.sourceKeys[i]];
+   unit.style.setProperty('--from-x',`${origin?origin.x-rect.left-rect.width/2:0}px`);
+   unit.style.setProperty('--from-y',`${origin?origin.y-rect.top-rect.height/2:120}px`);
+   unit.style.setProperty('--from-scale',String(origin?Math.max(.25,origin.width/rect.width):.5));
+   unit.style.setProperty('--delay',`${HU_INTRO_MS+i*HU_STEP_MS-(performance.now()-started)}ms`);
+   unit.style.setProperty('--impact-delay',`${HU_INTRO_MS+i*HU_STEP_MS+HU_FLIGHT_MS*.72-(performance.now()-started)}ms`);
+  }
+  el.style.setProperty('--final-impact-delay',`${HU_INTRO_MS+13*HU_STEP_MS+HU_FLIGHT_MS*.72-presentation.age}ms`);
+  el.dataset.ready='true';
+  const timer=setTimeout(()=>close.current(),Math.max(0,HU_SHOW_MS-presentation.age));
+  const resize=()=>close.current(),key=(e:KeyboardEvent)=>{if(e.key==='Escape')close.current();};
+  window.addEventListener('resize',resize);window.addEventListener('keydown',key);
+  return()=>{clearTimeout(timer);window.removeEventListener('resize',resize);window.removeEventListener('keydown',key);};
+ },[presentation]);
+ const p=presentation.proposal,commas=new Set(p.snapshot.sentence.commaAfterTileIds);
+ const sentence=p.snapshot.sentence.orderedTileIds.map(id=>(p.snapshot.tiles.find(t=>t.tileId===id)?.char??'')+(commas.has(id)?'，':'')).join('');
+ return createPortal(<dialog ref={root} onCancel={e=>{e.preventDefault();onClose();}} className="hu-showcase" aria-label={`${presentation.nickname} 胡牌亮相`} data-proposal-id={p.proposalId}>
+  <div className="hu-burst-lines" aria-hidden="true"/>
+  <header className="hu-show-heading"><span className="hu-seal" aria-hidden="true">胡</span><div><small>{presentation.nickname} · 亮牌请评</small><h2>这句，听好了。</h2></div></header>
+  <p className="sr-only" role="status">{presentation.nickname} 申请胡牌：{sentence}。请大家评审。</p>
+  <div className="hu-slam-rack" aria-hidden="true">{p.snapshot.sentence.orderedTileIds.map((id,i)=><span className="hu-slam-unit" key={id} data-slam-index={i}>
+   <b>{p.snapshot.tiles.find(t=>t.tileId===id)?.char}</b>
+   {commas.has(id)&&<i className="hu-slam-comma">，</i>}
+   <svg className="hu-impact-spark" viewBox="0 0 120 120"><path d="M60 0 67 38 92 15 80 46 120 52 83 65 106 95 72 81 65 120 53 83 21 104 37 72 0 65 38 53 14 22 47 38Z"/><path className="spark-core" d="m60 28 7 24 25 8-24 7-8 25-7-24-25-8 24-7Z"/></svg>
+   <span className="hu-impact-ring"/>
+  </span>)}</div>
+  <footer><span>十四个字，亮出我的意思。</span><button className="hu-skip" onClick={onClose}>收起亮相 · 看评审</button></footer>
+ </dialog>,document.body);
+}

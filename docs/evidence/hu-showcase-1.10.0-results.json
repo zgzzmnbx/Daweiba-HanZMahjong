@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T05:43:06.341Z",
+  "applicationVersion": "1.10.0",
+  "scope": "local production build, real HTTP/Socket/SQLite, independent browsers",
+  "checks": [
+    {
+      "name": "confirmation previews all 14 tiles; cancel sends no HU",
+      "status": "PASS"
+    },
+    {
+      "name": "3 actual clients receive one identical timed reveal; desktop/mobile/reduced motion",
+      "status": "PASS",
+      "spreadMs": 20,
+      "tiles": 14
+    },
+    {
+      "name": "skip immediately permits voting during another player’s animation",
+      "status": "PASS"
+    },
+    {
+      "name": "settlement and page restoration do not replay old HU",
+      "status": "PASS"
+    },
+    {
+      "name": "borrowed 13+1 sentence confirms only at final submission and reveals to all",
+      "status": "PASS"
+    },
+    {
+      "name": "AI instant approval/rejection still displays the full 14-tile entrance once",
+      "status": "PASS",
+      "passed": false
+    }
+  ],
+  "errors": []
+}
