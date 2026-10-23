@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-23T07:53:42.286Z",
+  "status": "PASS",
+  "configurationVersion": "1.0.0",
+  "sourceSha256": "511a5d5fa926c5a34dfef2fcf0f1df6b01d735593dffb218aa37867377e8360b",
+  "sourceTileCount": 144,
+  "sourceCharCount": 142,
+  "duplicateCopies": {
+    "像": 2,
+    "个": 2
+  },
+  "before": {
+    "revision": 0,
+    "defaultSetId": "classic",
+    "sets": [
+      {
+        "id": "classic",
+        "name": "经典字库",
+        "revision": 1,
+        "version": "managed-r1",
+        "totals": {
+          "2": 120,
+          "3": 144,
+          "4": 168,
+          "5": 192,
+          "6": 216
+        },
+        "charCount": 84
+      }
+    ]
+  },
+  "after": {
+    "revision": 4,
+    "defaultSetId": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e",
+    "sets": [
+      {
+        "id": "classic",
+        "name": "动态牌组",
+        "revision": 2,
+        "version": "managed-r2",
+        "totals": {
+          "2": 120,
+          "3": 144,
+          "4": 168,
+          "5": 192,
+          "6": 216
+        },
+        "charCount": 84
+      },
+      {
+        "id": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e",
+        "name": "默认麻将套组（基于文字失明）",
+        "revision": 1,
+        "version": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1",
+        "totals": {
+          "2": 144,
+          "3": 144,
+          "4": 144,
+          "5": 144,
+          "6": 144
+        },
+        "charCount": 142
+      }
+    ]
+  },
+  "oldEntriesPreserved": true,
+  "noGameCodeChange": true,
+  "maintenance": "Existing DeckSets CAS/validation/history/audit domain methods; SQLite live catalog update, no service restart; default switched last"
+}

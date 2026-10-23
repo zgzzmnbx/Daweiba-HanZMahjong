@@ -1,5 +1,5 @@
 {
-  "rulesVersion": "1.2.0",
+  "rulesVersion": "1.3.0",
   "deckVersion": "daily-v1",
   "playerCounts": [
     2,
@@ -17,7 +17,7 @@
   "turnMs": 60000,
   "responseMs": 8000,
   "composeMs": 45000,
-  "voteMs": 45000,
+  "voteMs": 60000,
   "postHuDiscardMs": 30000,
   "disconnectGraceMs": 15000,
   "botActionDelayMs": 800,

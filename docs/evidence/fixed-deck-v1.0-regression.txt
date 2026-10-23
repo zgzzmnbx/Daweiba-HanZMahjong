@@ -1,0 +1,24 @@
+✔ 2–6 seat named sets freeze exact ID/name/version/configuration and all physical tile ownership (9.023125ms)
+✔ next START uses same-set latest revision/name and archives prior frozen metadata before changing them (1.898ms)
+✔ named binding cannot switch set even with valid metadata, and committed START action cannot redraw after a later revision (1.484875ms)
+✔ codec rejects inconsistent frozen set identity/name/version rather than silently relabeling current tiles (1.486667ms)
+✔ public named catalog contains only immutable metadata, protected editing requires admin and same Origin (101.577458ms)
+✔ cloning is independent, catalog CAS protected, and actionId retries return their exact durable original response after edits/restart (66.63925ms)
+✔ clone, save and default changes fully roll back catalog/revisions/receipts/audit and stale concurrent operations cannot both commit (62.914916ms)
+✔ set names, IDs and revisions are validated; 50-set cap includes classic and prevents duplicate trimmed names (422.437834ms)
+✔ named save CAS/rename and 500-entry body remain isolated from other sets and preserve historical full revisions (62.997458ms)
+✔ legacy deck endpoint edits only the current default; switching default never overwrites classic or sibling histories (72.667958ms)
+✔ room creation binds selected/default set atomically; bad IDs and failed commit leave no orphan binding or identity (75.673416ms)
+✔ changing global default affects future rooms only, including old-client create retries and existing rooms first/next START (110.448916ms)
+✔ bound group latest revision/name applies only at START; active wall, old archive and persistent room binding survive edits/default/restart (90.946459ms)
+✔ failed START retries with latest bound revision, while committed START retries cannot redeal after later edits (71.491333ms)
+✔ legacy SQLite migration preserves every old revision/current wall/rule and binds old rooms to classic once (14.334916ms)
+✔ a broken legacy revision aborts the entire migration without partial catalog or room relabeling; repair retries safely (9.786583ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1511.888041

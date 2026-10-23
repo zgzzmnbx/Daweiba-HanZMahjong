@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-23T23:02:49.730Z",
+  "applicationVersion": "1.12.0",
+  "scope": "public HTTPS/WSS, own private test rooms",
+  "checks": [
+    {
+      "name": "HU confirmation cancellation sends no proposal",
+      "status": "PASS"
+    },
+    {
+      "name": "3 real clients see one 60-second proposal with 14 cards and frozen named reviewers",
+      "status": "PASS"
+    },
+    {
+      "name": "rejecting a selected phrase broadcasts exact author/range and two egg trajectories to all clients",
+      "status": "PASS"
+    },
+    {
+      "name": "active review reload restores marks/choices without replaying eggs or entrance",
+      "status": "PASS"
+    },
+    {
+      "name": "80% dialog, internal scroll and reachable action buttons at desktop/portrait/landscape sizes",
+      "status": "PASS"
+    },
+    {
+      "name": "last vote preserves its targeted egg and named ballot in the animated rejected result",
+      "status": "PASS"
+    },
+    {
+      "name": "approval has its own animated verdict; reloading settlement does not replay it",
+      "status": "PASS"
+    },
+    {
+      "name": "borrowed 13+1 HU shares the same review dialog after final sentence confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "instant AI review renders its named vote and final verdict without waiting one minute",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

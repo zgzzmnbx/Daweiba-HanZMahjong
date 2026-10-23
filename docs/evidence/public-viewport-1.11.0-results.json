@@ -1,0 +1,1330 @@
+{
+  "at": "2026-10-23T22:47:42.331Z",
+  "scope": "public production lobby with real updates and create dialog; no rooms created",
+  "checks": [
+    {
+      "label": "updates-1440x900",
+      "w": 1440,
+      "h": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1440,
+        "h": 900
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900,
+        "bottom": 900,
+        "right": 1440
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 430,
+          "y": 12,
+          "w": 580,
+          "h": 876,
+          "bottom": 888,
+          "right": 1010
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-1440x900",
+      "w": 1440,
+      "h": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1440,
+        "h": 900
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900,
+        "bottom": 900,
+        "right": 1440
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-1440x900",
+      "w": 1440,
+      "h": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1440,
+        "h": 900
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900,
+        "bottom": 900,
+        "right": 1440
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-1440x900",
+      "w": 1440,
+      "h": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1440,
+        "h": 900
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900,
+        "bottom": 900,
+        "right": 1440
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 500,
+          "y": 184.375,
+          "w": 440,
+          "h": 531.25,
+          "bottom": 715.625,
+          "right": 940
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-1440x900",
+      "w": 1440,
+      "h": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1440,
+        "h": 900
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900,
+        "bottom": 900,
+        "right": 1440
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 250,
+          "y": 352.25,
+          "w": 940,
+          "h": 195.5,
+          "bottom": 547.75,
+          "right": 1190
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-1280x720",
+      "w": 1280,
+      "h": 720,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1280,
+        "h": 720
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "bottom": 720,
+        "right": 1280
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 350,
+          "y": 12,
+          "w": 580,
+          "h": 696,
+          "bottom": 708,
+          "right": 930
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-1280x720",
+      "w": 1280,
+      "h": 720,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1280,
+        "h": 720
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "bottom": 720,
+        "right": 1280
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-1280x720",
+      "w": 1280,
+      "h": 720,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1280,
+        "h": 720
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "bottom": 720,
+        "right": 1280
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-1280x720",
+      "w": 1280,
+      "h": 720,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1280,
+        "h": 720
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "bottom": 720,
+        "right": 1280
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 420,
+          "y": 94.375,
+          "w": 440,
+          "h": 531.25,
+          "bottom": 625.625,
+          "right": 860
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-1280x720",
+      "w": 1280,
+      "h": 720,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1280,
+        "h": 720
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "bottom": 720,
+        "right": 1280
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 170,
+          "y": 262.25,
+          "w": 940,
+          "h": 195.5,
+          "bottom": 457.75,
+          "right": 1110
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-1024x600",
+      "w": 1024,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1024,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 600,
+        "bottom": 600,
+        "right": 1024
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 222,
+          "y": 12,
+          "w": 580,
+          "h": 576,
+          "bottom": 588,
+          "right": 802
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-1024x600",
+      "w": 1024,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1024,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 600,
+        "bottom": 600,
+        "right": 1024
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-1024x600",
+      "w": 1024,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1024,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 600,
+        "bottom": 600,
+        "right": 1024
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-1024x600",
+      "w": 1024,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1024,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 600,
+        "bottom": 600,
+        "right": 1024
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 292,
+          "y": 34.375,
+          "w": 440,
+          "h": 531.25,
+          "bottom": 565.625,
+          "right": 732
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-1024x600",
+      "w": 1024,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 1024,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 600,
+        "bottom": 600,
+        "right": 1024
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 42,
+          "y": 202.25,
+          "w": 940,
+          "h": 195.5,
+          "bottom": 397.75,
+          "right": 982
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-800x600",
+      "w": 800,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 800,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 600,
+        "bottom": 600,
+        "right": 800
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 110,
+          "y": 12,
+          "w": 580,
+          "h": 576,
+          "bottom": 588,
+          "right": 690
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-800x600",
+      "w": 800,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 800,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 600,
+        "bottom": 600,
+        "right": 800
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-800x600",
+      "w": 800,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 800,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 600,
+        "bottom": 600,
+        "right": 800
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-800x600",
+      "w": 800,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 800,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 600,
+        "bottom": 600,
+        "right": 800
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 180,
+          "y": 34.375,
+          "w": 440,
+          "h": 531.25,
+          "bottom": 565.625,
+          "right": 620
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-800x600",
+      "w": 800,
+      "h": 600,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 800,
+        "h": 600
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 600,
+        "bottom": 600,
+        "right": 800
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 202.25,
+          "w": 776,
+          "h": 195.5,
+          "bottom": 397.75,
+          "right": 788
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-390x844",
+      "w": 390,
+      "h": 844,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 390,
+        "h": 844
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "bottom": 844,
+        "right": 390
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 12,
+          "w": 366,
+          "h": 820,
+          "bottom": 832,
+          "right": 378
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-390x844",
+      "w": 390,
+      "h": 844,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 390,
+        "h": 844
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "bottom": 844,
+        "right": 390
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-390x844",
+      "w": 390,
+      "h": 844,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 390,
+        "h": 844
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "bottom": 844,
+        "right": 390
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-390x844",
+      "w": 390,
+      "h": 844,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 390,
+        "h": 844
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "bottom": 844,
+        "right": 390
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 152.984375,
+          "w": 366,
+          "h": 538.03125,
+          "bottom": 691.015625,
+          "right": 378
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-390x844",
+      "w": 390,
+      "h": 844,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 390,
+        "h": 844
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "bottom": 844,
+        "right": 390
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 334.75,
+          "w": 366,
+          "h": 174.5,
+          "bottom": 509.25,
+          "right": 378
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-320x568",
+      "w": 320,
+      "h": 568,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 568
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 568,
+        "bottom": 568,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 12,
+          "w": 296,
+          "h": 544,
+          "bottom": 556,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-320x568",
+      "w": 320,
+      "h": 568,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 568
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 568,
+        "bottom": 568,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-320x568",
+      "w": 320,
+      "h": 568,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 568
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 568,
+        "bottom": 568,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-320x568",
+      "w": 320,
+      "h": 568,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 568
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 568,
+        "bottom": 568,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 14.984375,
+          "w": 296,
+          "h": 538.03125,
+          "bottom": 553.015625,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-320x568",
+      "w": 320,
+      "h": 568,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 568
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 568,
+        "bottom": 568,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 196.75,
+          "w": 296,
+          "h": 174.5,
+          "bottom": 371.25,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-844x390",
+      "w": 844,
+      "h": 390,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 844,
+        "h": 390
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 390,
+        "bottom": 390,
+        "right": 844
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 132,
+          "y": 12,
+          "w": 580,
+          "h": 366,
+          "bottom": 378,
+          "right": 712
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-844x390",
+      "w": 844,
+      "h": 390,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 844,
+        "h": 390
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 390,
+        "bottom": 390,
+        "right": 844
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-844x390",
+      "w": 844,
+      "h": 390,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 844,
+        "h": 390
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 390,
+        "bottom": 390,
+        "right": 844
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-844x390",
+      "w": 844,
+      "h": 390,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 844,
+        "h": 390
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 390,
+        "bottom": 390,
+        "right": 844
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 202,
+          "y": 12,
+          "w": 440,
+          "h": 366,
+          "bottom": 378,
+          "right": 642
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-844x390",
+      "w": 844,
+      "h": 390,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 844,
+        "h": 390
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 390,
+        "bottom": 390,
+        "right": 844
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 97.25,
+          "w": 820,
+          "h": 195.5,
+          "bottom": 292.75,
+          "right": 832
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-667x375",
+      "w": 667,
+      "h": 375,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 667,
+        "h": 375
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 667,
+        "h": 375,
+        "bottom": 375,
+        "right": 667
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 43.5,
+          "y": 12,
+          "w": 580,
+          "h": 351,
+          "bottom": 363,
+          "right": 623.5
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-667x375",
+      "w": 667,
+      "h": 375,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 667,
+        "h": 375
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 667,
+        "h": 375,
+        "bottom": 375,
+        "right": 667
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-667x375",
+      "w": 667,
+      "h": 375,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 667,
+        "h": 375
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 667,
+        "h": 375,
+        "bottom": 375,
+        "right": 667
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-667x375",
+      "w": 667,
+      "h": 375,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 667,
+        "h": 375
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 667,
+        "h": 375,
+        "bottom": 375,
+        "right": 667
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 113.5,
+          "y": 12,
+          "w": 440,
+          "h": 351,
+          "bottom": 363,
+          "right": 553.5
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-667x375",
+      "w": 667,
+      "h": 375,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 667,
+        "h": 375
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 667,
+        "h": 375,
+        "bottom": 375,
+        "right": 667
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 100.25,
+          "w": 643,
+          "h": 174.5,
+          "bottom": 274.75,
+          "right": 655
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "updates-320x480",
+      "w": 320,
+      "h": 480,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 480
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 480,
+        "bottom": 480,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 12,
+          "w": 296,
+          "h": 456,
+          "bottom": 468,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-320x480",
+      "w": 320,
+      "h": 480,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 480
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 480,
+        "bottom": 480,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "hall-wheel-320x480",
+      "w": 320,
+      "h": 480,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 480
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 480,
+        "bottom": 480,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "create-dialog-320x480",
+      "w": 320,
+      "h": 480,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 480
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 480,
+        "bottom": 480,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 12,
+          "w": 296,
+          "h": 456,
+          "bottom": 468,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    },
+    {
+      "label": "admin-dialog-320x480",
+      "w": 320,
+      "h": 480,
+      "scrollX": 0,
+      "scrollY": 0,
+      "body": {
+        "w": 320,
+        "h": 480
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 480,
+        "bottom": 480,
+        "right": 320
+      },
+      "stage": null,
+      "dialogs": [
+        {
+          "x": 12,
+          "y": 152.75,
+          "w": 296,
+          "h": 174.5,
+          "bottom": 327.25,
+          "right": 308
+        }
+      ],
+      "actions": [],
+      "canvas": null,
+      "rack": null
+    }
+  ],
+  "errors": []
+}

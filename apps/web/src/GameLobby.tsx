@@ -1,3 +1,4 @@
+import {releaseNotes} from './release-notes';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import type {LobbyTable} from '../../../packages/contracts/lobby';
 import './lobby-game.css';
@@ -12,9 +13,11 @@ export function GameLobby({panel,tableNumber,tables,error,busy,status,onOpen,onT
  const dialog=useRef<HTMLDialogElement>(null),helpDialog=useRef<HTMLDialogElement>(null);const [help,setHelp]=useState(false);
  useEffect(()=>{const d=dialog.current;if(!d)return;if(panel&&!d.open){d.showModal();d.querySelector('input')?.focus();}else if(!panel&&d.open)d.close();},[panel]);
  useEffect(()=>{const d=helpDialog.current;if(help&&!d?.open)d?.showModal();else if(!help&&d?.open)d.close();},[help]);
+ const [updates,setUpdates]=useState(false),updatesDialog=useRef<HTMLDialogElement>(null);
+ useEffect(()=>{const d=updatesDialog.current;if(updates&&!d?.open)d?.showModal();else if(!updates&&d?.open)d.close();},[updates]);
  const empty=tables?.find(t=>t.status==='EMPTY');
  return <div className="game-lobby game-hall">
-  <header className="topbar"><div className="wordmark"><span className="hall-logo-tile" aria-hidden="true">字</span><div>字间 <small>文字麻将</small></div></div><nav aria-label="大厅工具"><button className="hall-tool" onClick={()=>onOpen('join')} aria-label="加入 / 找回房间"><HallIcon kind="entry"/><span>房间</span></button><button className="hall-tool" onClick={()=>setHelp(true)} aria-label="玩法帮助"><HallIcon kind="help"/><span>玩法</span></button>{onAdmin&&<button className="hall-tool" onClick={onAdmin} aria-label={adminActive?'管理员模式':'管理员入口'}><span aria-hidden="true">♜</span><span>管理</span></button>}</nav></header>
+  <header className="topbar"><div className="wordmark"><span className="hall-logo-tile" aria-hidden="true">字</span><div>字间 <small>文字麻将</small></div></div><nav aria-label="大厅工具"><button className="hall-tool" onClick={()=>setUpdates(true)} aria-label="更新日志"><span aria-hidden="true">▤</span><span>更新</span></button><button className="hall-tool" onClick={()=>onOpen('join')} aria-label="加入 / 找回房间"><HallIcon kind="entry"/><span>房间</span></button><button className="hall-tool" onClick={()=>setHelp(true)} aria-label="玩法帮助"><HallIcon kind="help"/><span>玩法</span></button>{onAdmin&&<button className="hall-tool" onClick={onAdmin} aria-label={adminActive?'管理员模式':'管理员入口'}><span aria-hidden="true">♜</span><span>管理</span></button>}</nav></header>
   <main className="hall-content">
    <div className="hall-heading"><div className="hall-title-plaque"><h1>游戏大厅</h1><span className={'hall-live '+(error?'unavailable':'')}><i/>{error?'连接中断':tables?'公共牌桌':'连接中'}</span></div><button className="primary hall-create" disabled={!empty||!!error||busy} onClick={()=>empty&&onTable(empty)}><HallIcon kind="plus"/>{tables&&!empty?'已满桌':'创建房间'}</button></div>
    <section className="hall-tables" aria-label="六张公共牌桌" aria-busy={!tables}>
@@ -32,6 +35,7 @@ export function GameLobby({panel,tableNumber,tables,error,busy,status,onOpen,onT
    <div className="hall-dialog-heading"><div><span className="eyebrow">{panel==='create'?`${String(tableNumber).padStart(2,'0')} 号公共桌`:'回到牌桌'}</span><h2 id="hall-dialog-title">{panel==='create'?'创建公共房间':'加入 / 找回房间'}</h2></div><button className="hall-tool" aria-label="关闭房间窗口" disabled={busy} onClick={onClose}><HallIcon kind="close"/></button></div>
    {children}
   </dialog>
+  <dialog ref={updatesDialog} className="hall-dialog hall-updates" aria-labelledby="updates-title" onCancel={()=>setUpdates(false)} onClose={()=>setUpdates(false)}><div className="hall-dialog-heading"><div><span className="eyebrow">每一局，都更顺手</span><h2 id="updates-title">更新日志</h2></div><button className="hall-tool" aria-label="关闭更新日志" onClick={()=>setUpdates(false)}>×</button></div><div className="release-list">{releaseNotes.map((r,i)=><article key={r.version}><div className="release-meta"><b>v{r.version}</b><time dateTime={r.date}>{r.date}</time>{i===0&&<span>当前版本</span>}</div><h3>{r.title}</h3><ul>{r.features.map(f=><li key={f}>{f}</li>)}</ul></article>)}</div></dialog>
   <dialog ref={helpDialog} className="hall-dialog hall-help" aria-labelledby="hall-help-title" onCancel={e=>{e.preventDefault();setHelp(false);}}><div className="hall-dialog-heading"><h2 id="hall-help-title">字间玩法</h2><button className="hall-tool" aria-label="关闭玩法帮助" onClick={()=>setHelp(false)}><HallIcon kind="close"/></button></div><div className="help-hand" aria-hidden="true"><span>字</span><span>里</span><span>行</span><span>间</span></div><p>用十四个字和最多三个逗号，排一句让同桌点头的话。</p><ul><li>摸一个字，出一个字；只能吃上家的牌。</li><li>空位可设为 AI。和 AI 也能胡牌；每位 AI 评审有 70% 概率赞成。</li><li>点击空桌创建房间，点击有人的桌入座。</li><li>六张公共桌共享，人数含 AI，状态每 2 秒同步。</li><li>掉线后可回原桌，或用私密恢复码找回座位。</li></ul><button className="primary" onClick={()=>setHelp(false)}>去选一桌</button></dialog>
  </div>;
 }

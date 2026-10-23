@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-23T07:58:05.076Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.10.0",
+  "status": "PASS",
+  "scope": "Real HTTPS/WSS: 2–6 seats default fixed 144-tile set, 6-seat dynamic 216-tile set; real deal, conservation, restore and own test-room cleanup; no browser UI claim",
+  "catalog": {
+    "revision": 4,
+    "defaultSetId": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e",
+    "sets": [
+      {
+        "id": "classic",
+        "name": "动态牌组",
+        "revision": 2,
+        "version": "managed-r2",
+        "totals": {
+          "2": 120,
+          "3": 144,
+          "4": 168,
+          "5": 192,
+          "6": 216
+        },
+        "charCount": 84
+      },
+      {
+        "id": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e",
+        "name": "默认麻将套组（基于文字失明）",
+        "revision": 1,
+        "version": "set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1",
+        "totals": {
+          "2": 144,
+          "3": 144,
+          "4": 144,
+          "5": 144,
+          "6": 144
+        },
+        "charCount": 142
+      }
+    ]
+  },
+  "checks": [
+    "public catalog exposes names, counts, revisions and default, without entries or private game data",
+    "omitted selection uses default 2 seats, 144 tiles: room bound to set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "omitted selection uses default 3 seats, 144 tiles: room bound to set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "omitted selection uses default 4 seats, 144 tiles: room bound to set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "omitted selection uses default 5 seats, 144 tiles: room bound to set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "omitted selection uses default 6 seats, 144 tiles: room bound to set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "explicit selection 6 seats, 216 tiles: room bound to classic, started with revision 2",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "catalog unchanged by public verification"
+  ]
+}

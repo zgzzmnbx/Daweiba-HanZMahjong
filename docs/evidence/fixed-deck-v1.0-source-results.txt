@@ -1,0 +1,5 @@
+PASS 2 seats: 144 physical tiles, 142 unique characters, exact duplicate counts, wall 117, ownership invariant
+PASS 3 seats: 144 physical tiles, 142 unique characters, exact duplicate counts, wall 104, ownership invariant
+PASS 4 seats: 144 physical tiles, 142 unique characters, exact duplicate counts, wall 91, ownership invariant
+PASS 5 seats: 144 physical tiles, 142 unique characters, exact duplicate counts, wall 78, ownership invariant
+PASS 6 seats: 144 physical tiles, 142 unique characters, exact duplicate counts, wall 65, ownership invariant

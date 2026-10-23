@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -29,12 +29,12 @@ export type RulesDefaults = Readonly<{
   maxCommas: 3; maxEatPerRound: 3;
   eatSource: 'previous_seat_latest_discard';
   eatImmediateDiscardRestriction: 'same_physical_tile';
-  turnMs: 60000; responseMs: 8000; composeMs: 45000; voteMs: 45000;
+  turnMs: 60000; responseMs: 8000; composeMs: 45000; voteMs: 45000 | 60000;
   postHuDiscardMs: 30000; disconnectGraceMs: 15000; botActionDelayMs: 800;
   recoveryMinActionMs: 10000; allOfflineRetentionMs: 86400000;
   reviewerPolicy: 'freeze_other_online_humans_at_vote_start' | 'freeze_other_online_humans_and_designated_bots_at_vote_start';
   approvalPolicy: 'strict_majority'; botMayEat: false; botMayDeclareHu: false;
-  /** Disconnected human BOT control never votes. Designated AI may vote only under 1.2.0. */
+  /** Disconnected human BOT control never votes. Designated AI may vote under 1.2.0 and later. */
   designatedBotMayVote?: boolean; aiApprovalProbability?: 0.7;
   botMayVote: false; maxObjectionRanges: 3; rejectButtonLabel: '写的什么玩意';
   deckSizeByPlayers: Readonly<{'2':120; '3':144; '4':168; '5':192; '6':216}>;
@@ -75,13 +75,16 @@ export type AnonymousVoteResult = Readonly<{
   /** Canonical union of selected character positions, merged into ranges. No author IDs. */
   mergedObjectionRanges: readonly ObjectionRange[];
 }>;
+/** Rules 1.3+: frozen reviewer names and authoritative live votes. Legacy rounds omit this. */
+export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;isBotSeat:boolean;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
 export type PublicProposal = Readonly<{
   proposalId: ProposalId; applicantId: PlayerId; source: CandidateSource;
   /** Server time of the public reveal; legacy snapshots may omit it. */
   revealedAt?: UtcMs;
   snapshot: PublicSentence; reviewerCount: number; threshold: number;
-  /** Only aggregate progress before settlement; never choices, identities, or ranges. */
+  /** Legacy rounds only expose aggregate progress; 1.3 includes named reviewers below. */
   submittedBallotCount: number;
+  reviewers?: readonly PublicReviewVote[];
 }>;
 export type PublicPhase = PhaseHeader & (
   | Readonly<{ kind: 'LOBBY' }>
@@ -118,6 +121,7 @@ export type PublicHistoryEntry = Readonly<{
   snapshot: PublicSentence; revealedAt?: UtcMs;
   outcome: 'APPROVED' | 'REJECTED' | 'WITHDRAWN';
   result: AnonymousVoteResult | null;
+  reviewers?: readonly PublicReviewVote[];
 }>;
 export type PublicRoomSnapshot = Readonly<{
   visibility: 'PUBLIC'; roomId: RoomId; roundId: RoundId | null;
