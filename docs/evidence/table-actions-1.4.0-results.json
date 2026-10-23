@@ -1,0 +1,21 @@
+{
+  "version": "1.4.0",
+  "release": "1.4.0-20261023-112341",
+  "at": "2026-10-23T11:25:50.594239+08:00",
+  "status": "PASS",
+  "automatedTests": 113,
+  "build": "PASS",
+  "checks": [
+    "CUA three physical half-width commas: 15.859/31.719px",
+    "CUA 3D comma insert and DOM return to right tray",
+    "CUA 3D and DOM center-drop confirmation; cancel preserves order",
+    "Real local browser DISCARD 有 succeeds; AI response shows enlarged 右 with player name",
+    "Public browser 1.4.0 shows AI 4 new 能 and table-side actions",
+    "Public HTTP/WSS draft exact restore: public-draft-1.4.0-results.json"
+  ],
+  "limitations": [
+    "No new physical phone/cellular/screenreader checks",
+    "Historical full multiplayer browser matrix not rerun",
+    "Fixture screenshot only demonstrates all three response buttons; actual AI practice intentionally has no HU"
+  ]
+}

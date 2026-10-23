@@ -1,0 +1,43 @@
+{
+  "rulesVersion": "1.2.0",
+  "deckVersion": "daily-v1",
+  "playerCounts": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "handSize": 13,
+  "winningTileCount": 14,
+  "maxCommas": 3,
+  "maxEatPerRound": 3,
+  "eatSource": "previous_seat_latest_discard",
+  "eatImmediateDiscardRestriction": "same_physical_tile",
+  "turnMs": 60000,
+  "responseMs": 8000,
+  "composeMs": 45000,
+  "voteMs": 45000,
+  "postHuDiscardMs": 30000,
+  "disconnectGraceMs": 15000,
+  "botActionDelayMs": 800,
+  "recoveryMinActionMs": 10000,
+  "allOfflineRetentionMs": 86400000,
+  "reviewerPolicy": "freeze_other_online_humans_and_designated_bots_at_vote_start",
+  "approvalPolicy": "strict_majority",
+  "botMayEat": false,
+  "botMayDeclareHu": false,
+  "botMayVote": false,
+  "maxObjectionRanges": 3,
+  "rejectButtonLabel": "写的什么玩意",
+  "deckSizeByPlayers": {
+    "2": 120,
+    "3": 144,
+    "4": 168,
+    "5": 192,
+    "6": 216
+  },
+  "allowDesignatedBots": true,
+  "designatedBotMayVote": true,
+  "aiApprovalProbability": 0.7
+}

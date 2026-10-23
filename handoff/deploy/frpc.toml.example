@@ -1,0 +1,24 @@
+# Mac client. Replace paths, domain and token; never commit the actual token.
+serverAddr = "relay.example.com"
+serverPort = 7000
+loginFailExit = false
+
+auth.method = "token"
+auth.token = "REPLACE_WITH_THE_SAME_PRIVATE_RANDOM_FRP_TOKEN"
+auth.additionalScopes = ["HeartBeats", "NewWorkConns"]
+
+transport.protocol = "tcp"
+transport.tls.enable = true
+transport.tls.trustedCaFile = "/ABS/PATH/word-mahjong-tls/frp-ca.crt"
+transport.tls.serverName = "relay.example.com"
+
+log.to = "console"
+log.level = "info"
+log.disablePrintColor = true
+
+[[proxies]]
+name = "word-mahjong-web"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 3000
+remotePort = 7300

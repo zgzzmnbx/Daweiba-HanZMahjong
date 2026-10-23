@@ -1,0 +1,107 @@
+# 最新公网部署 · 1.8.0
+
+## 1.9.0 套组发布（当前）
+
+195项自动测试（新增16项套组测试）、TypeScript与生产构建通过。真实本地浏览器完成复制、编辑、设默认、实际4人170张发牌、关闭测试房、原组隔离及401重登草稿保留；公网真实HTTP/WSS完成默认/指定组开房、开局、身份恢复和自有测试房关闭，ready=true，真实浏览器确认v1.9.0及管理/玩家选组界面。
+
+发布 `1.9.0-20261023-131518`；一致性备份 `pre-release-20261023-131519.sqlite` 成功。端口、证书与隧道不变；正式服未创建测试套组或修改配比。
+
+详情见 `docs/DECK-SETS-1.9.0-【codex】.md`、`docs/evidence/decksets-1.9.0-browser.json`、`docs/evidence/public-decksets-1.9.0-results.json`。
+
+
+发布 `1.8.0-20261023-125951`；一致性备份 `pre-release-20261023-125952.sqlite` 成功，公网ready=true。端口、证书、隧道和服务器规则未变。公网验收只创建自身私房并关闭，不修改用户房间或字库。
+
+179项自动测试（新增9项动作/调度测试）、TypeScript与生产build通过。真实本地浏览器捕获3D出牌/摸牌、DOM出牌/吃牌/借胡/14字胡牌，起止矩形与截图已归档，刷新后飞牌数为0。公网2/4/6人各视角真实HTTP/WSS快照通过同一动作planner，另测借胡、AI瞬结及草稿恢复；公网浏览器显示v1.8.0。
+
+证据与范围见 `docs/MOTION-1.8.0-【codex】.md`、`docs/evidence/motion-1.8.0-browser.json`、`docs/evidence/public-motion-1.8.0-results.json`。
+
+动画不阻塞操作与服务器期限；刷新、断线/身份恢复、换局、暂停、关房、滚动/缩放会取消旧飞牌并对齐当前状态；减少动态效果设置直接落牌。对手摸牌仅牌背，不读取暗牌或推测牌墙内容。本次没有新增物理手机GPU、蜂窝或读屏证据，公网仍依赖Mac在线唤醒。
+
+# 历史公网部署 · 1.7.0
+
+发布 `1.7.0-20261023-124000`；一致性备份 `pre-release-20261023-124001.sqlite` 成功，公网ready=true。端口、证书、隧道不变。公网验收只操作自建测试房，并保存一次与原内容相同的字库修订managed-r1，84字及各人数配比未变。
+
+170项自动测试（新增29项）、TypeScript与生产build通过。真实本地浏览器完成字库增改删保存/重载、大厅姓名、逐座踢人和解散；公网HTTPS/WSS完成独立管理登录、同内容字库修订及并发拒绝、活动玩家踢出转AI、旧身份/恢复码拒绝、房间关闭广播、实际两分钟无人AI房解散及退出会话。公网浏览器显示v1.7.0、玩家姓名/踢出和真实字库。
+
+详见 `docs/ADMIN-1.7.0-【codex】.md`、`docs/evidence/public-admin-1.7.0-results.json` 和 `docs/evidence/automated-1.7.0-tests.txt`。
+
+含管理状态及自定义字库的存档应使用兼容1.7的修复构建，不直接降级1.6继续写库。服务仍依赖Mac在线唤醒；本次未新增实体手机GPU、蜂窝、读屏或字库多人平衡证据。
+
+# 历史公网部署 · 1.6.0
+
+发布 `1.6.0-20261023-120332`；一致性备份 `pre-release-20261023-120333.sqlite` 成功，公网ready=true，浏览器显示v1.6.0。端口、证书、隧道不变。
+
+141项自动测试与生产build通过，覆盖2–6座引擎、概率边界、事务回滚、重启、幂等、旧规则归档。公网HTTPS/WSS通过2/4/6座自胡、2座借胡、混合桌等真人票、恢复不重抽及草稿恢复。真实本地浏览器确认胡牌入口与AI否决票数；摸/吃/胡顺序由开发夹具截图验证。
+
+含规则1.2的存档不能直接回退给1.5及更旧应用；须使用兼容1.2的修复构建，或明确接受发布后进度丢失再恢复旧备份。服务依赖Mac在线唤醒；实体手机GPU、蜂窝、读屏及字库平衡保留现场验证边界。
+
+# 历史公网部署 · 1.5.0
+
+发布 `1.5.0-20261023-114040`。2026-10-23 11:40发布，发布前一致性备份pre-release-20261023-114041.sqlite通过。ready=true，public-draft-1.5.0-results保存恢复通过；new-tile-1.5.0-public截图显示已联机、新摸牌和加宽逗号。端口、隧道、规则不变，仍依赖Mac在线唤醒。详细范围见DIRECT-PLAY-1.5.0-【codex】。
+
+# 历史公网部署 · 1.4.0
+
+2026-10-23 11:23发布 `1.4.0-20261023-112341`，一致性备份pre-release-20261023-112342.sqlite通过。113项测试及build通过；ready=true；public-draft-1.4.0-results验证真实WSS保存/恢复。公网浏览器截图table-actions-1.4.0-public.png显示最新弃牌与桌边动作。端口、隧道、游戏规则不变，服务继续依赖Mac在线唤醒。前一1.3.0兼容构建可作为回退候选，操作前备份现库。
+
+# 历史公网部署 · 1.3.0
+
+2026-10-23 10:57发布 `1.3.0-20261023-105741`，发布前一致性备份 `pre-release-20261023-105742.sqlite` 验证成功。112项测试/build通过；HTTPS ready=true；真实HTTP/WSS牌序与三个逗号保存、恢复、结束/关闭通过，见 `evidence/public-draft-1.3.0-results.json`。公网浏览器已显示1.3.0新HUD与独立逗号，见 `evidence/game-table-1.3.0-public.png`。仅更新本游戏release，端口、隧道和规则不变。可回切兼容1.2.0构建；继续保留当前库并先备份。
+
+# 历史公网部署 · 1.2.0
+
+2026-10-23 10:10，发布`1.2.0-20261023-101314`；ready=true，公共六桌的并发抢桌/独立入座/PLAYING/FINISHED/关闭释放实测通过，见`evidence/public-lobby-1.2-results.json`。新增SQLite lobby_tables；旧私房不自动公开。发布前已一致性备份；端口、证书、隧道和游戏规则未变化。以下1.1.0记录为历史。
+
+# 公网部署记录 · 1.1.0
+
+2026-10-23，用户明确授权通过火山云技能分配端口并交付可玩链接。
+
+**游戏入口：https://118.196.107.182:1240**
+
+## 实际部署
+
+| 位置 | 端口 / 服务 | 核验 |
+|---|---|---|
+| 云公网 | 1240/TCP 独立 Caddy HTTPS | 可信 Let's Encrypt IP 证书；真实游戏HTTP/WSS通过 |
+| 云公网 | 1241/TCP 独立 FRPS0.71 | 专属认证、CA与IP校验、强制TLS；Mac已注册 |
+| 云回环 | 127.0.0.1:1242 FRP后端 | 仅回环监听，转发Mac3000，ready=true |
+| 云回环 | 127.0.0.1:2021 Caddy管理 | 仅回环监听，不向公网开放管理接口 |
+| Mac | 127.0.0.1:3000 Node24.19 | 页面、HTTP、Socket.IO与SQLite；专属LaunchAgent |
+
+以上端口无相应UDP监听。2026-10-23 08:39分配前已检查TCP/UDP、IPv4/IPv6监听、FRP端口范围、Caddy/其他代理、systemd及停用保留配置，无冲突。09:22复查服务active/enabled、回环ready与证书有效期。没有读取或修改云安全组，以实际协议访问证明1240/1241可达，不推断其他端口已开放。
+
+Mac生产安装在 `~/Library/Application Support/WordMahjong/`：`releases/`为独立构建和锁定生产依赖，`config/game.env`为私密运行配置，`data/mahjong.sqlite`为唯一生产库，`backups/`保存一致性备份。当前release见源码项目 `runtime/deployment.json`。源码路径不变，未来build不直接覆盖线上代码。
+
+应用LaunchAgent `com.daweiba.word-mahjong.game`；隧道LaunchAgent `com.daweiba.word-mahjong.frpc`，均RunAtLoad/KeepAlive。云端仅新增 `word-mahjong-caddy.service`、`word-mahjong-frps.service` 和专属配置/用户，不修改其他业务服务。
+
+## 真实验收证据
+
+1.1.0已于2026-10-23发布：房主指定/移除空位AI；大厅和牌桌左下角显示构建版本。旧1.0房保留原规则，新建房使用1.1规则。最终release为 `1.1.0-20261023-094939`，记录在runtime/deployment.json；094705完成全流程公网验收，末次仅钳定UI估算时钟，防止新快照首帧多显示1秒，不更改服务端期限。最终97项自动测试全部通过，生产依赖npm audit为0漏洞。
+
+- `docs/evidence/public-ai-results.json`：1.1.0公网2–6座各以1真人+AI实际开局、循环摸打、结算移除/重补/再开局；练习局拒绝申胡且不计分；2真人+2AI冻结1名真人评审并正确结算，非房主操作被拒。
+- `docs/evidence/public-network-results.json`：1.1.0发布后再次验证，公网2/3/4/5/6独立认证客户端通过开房、入座、准备、发牌、摸打、排句、申胡、投票、结算；3人1票不提前通过；对手暗牌不泄露、重复动作不重复计分、恢复码接管后旧会话403。TLS验证始终开启。
+- `docs/evidence/public-operations-results.json`：1.0.0阶段实测同一套生产部署设施，10秒断线回来、15秒缓冲后的AI一次弃牌与恢复、全离线16秒冻结、真实生产进程重启保留手牌/草稿、专用Caddy强制reload使两条WSS断开后重连、在线VACUUM INTO与独立沙盒恢复逐表一致。
+- `astra-public-review-results.json`、`astra-ai-public-results.json`：Astra独立公网真实浏览器10+5项通过，含390/430触摸、换设备撤旧控、匿名圈词、WebGL恢复、AI混合桌和左下角版本。
+- 本地真实浏览器2–6人和最终Astra复核另见 `docs/VERIFICATION.md`；不把Node网络客户端测试冒称手机浏览器操作。
+- `astra-final-display-results.json`：最终094939发布后4项定向通过，计时样本60/8/60秒，390手机和1440桌面版本底行无覆盖。
+- `release-1.1-restore-results.json`：最终release加载生产一致快照到独立沙盒，33房、32结果通过；规则版本、指定AI、练习标识、手牌、草稿、牌墙、结算保持一致，不覆盖生产库。
+- 测试没有手机蜂窝网络、Mac合盖常开、物理中档手机GPU或真实读屏软件环境，这些现场项单独保留，不标PASS。
+
+测试脚本 `scripts/verify-public.mjs` 只创建自身验收房。`scripts/verify-operations.mjs` 会重启本游戏与专用网关，须在维护窗口显式提供经核验的云端执行工具路径；备份恢复目标是独立沙盒，不覆盖生产库。
+
+## 部署过程修复
+
+1. 首次LaunchAgent直接从Downloads读取env，进程采样停在文件open且无监听。生产文件按标准应用安装方式复制至Application Support后启动正常；未更改系统隐私权限。
+2. 实际重启出现launchd的bootout异步移除与bootstrap竞态。控制脚本加入最多6秒有界重试后，真实重启及恢复验收通过。
+3. 一次运维脚本收尾误用旧房主关闭房间，服务正确拒绝NOT_ACTOR；测试改为按权威hostId选择当前房主，完整演练再跑通过。未放宽服务权限。
+
+## 证书、边界与回滚
+
+游戏使用同IP已有Let's Encrypt证书的独立副本；2026-10-23核验有效期至2026-10-26 07:18:20 UTC。现有每8小时续期timer active/enabled，专用 `90-word-mahjong` deploy hook 只复制证书并重载游戏Caddy，已手动验证；未声称已进行一次新签发。
+
+外部HTTP请求1242/2021均超时；本机TCP探测曾显示握手成功，可能受网络代理影响。因此分别记录监听地址和应用协议证据，不用单一TCP握手判断管理接口暴露。
+
+原配置备份：云 `/root/codex-backups/word-mahjong-20261023`。应用回退保留数据库并切换兼容旧release；schema相同也必须核对规则语义，含指定AI的1.1.0库不能直接回退给1.0.0；完整停用只停止本游戏两项云服务、移走游戏续期钩子、停止Mac两个专属Agent，保留数据待确认。详见 `ops/README.md`。
+
+火山云主机权威说明、README、AGENTS、CHANGELOG已更新v0.1.29；Obsidian仅同步受控管理区并回读验证，未启动Obsidian做界面验收。
+
+公网服务依赖当前Mac登录、联网且保持唤醒；关机、退出用户或睡眠会使入口不可玩，云端返回503，已提交存档仍在本机。约局时接电并保持唤醒；不能承诺任意合盖后持续在线。

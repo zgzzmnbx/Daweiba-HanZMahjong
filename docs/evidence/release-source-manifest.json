@@ -1,0 +1,157 @@
+{
+  "at": "2026-10-23T01:51:51.369574+00:00",
+  "applicationVersion": "1.1.0",
+  "release": "1.1.0-20261023-094939",
+  "upstreamCommit": "6830301df3061cdd25350cf56807473e5505b311",
+  "scope": "Final source and matching deployed build; original ui-source-manifest.json remains the 0.1.0 milestone record",
+  "files": [
+    {
+      "path": ".node-version",
+      "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+    },
+    {
+      "path": "apps/server/main.ts",
+      "sha256": "c9a5d3fc4c819067fceee5f0182b76da87d264b8e4a8726a74a4c9832bec0ba2"
+    },
+    {
+      "path": "apps/server/server.ts",
+      "sha256": "5361b0bec08ca12f8bb349d103572a7d743d18ef8bd93950dd326d666e929019"
+    },
+    {
+      "path": "apps/server/store.ts",
+      "sha256": "6a6a210b0000d86282d83109a30d130d355d91ae3340cd4a84c4676254218293"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "edf6a2204be566f99db93dc21cfd771067e85cba9855a957df6c328cad9f8201"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "d209f991c1693e836950be13bcbd8f5c9266e50e5d1a15ace5fccc66e104a646"
+    },
+    {
+      "path": "apps/web/src/GameTable.tsx",
+      "sha256": "6d7eb3d8281674b26ecc0d40156e0907c10cd62a6acf5ab9b0792ee6008b03ce"
+    },
+    {
+      "path": "apps/web/src/OnlineApp.tsx",
+      "sha256": "be28b3c2f803806717b2c4b4dc08ad59bc8536969bcbf5222f9e0146b2ee46f2"
+    },
+    {
+      "path": "apps/web/src/fixture.ts",
+      "sha256": "9a475413b6c7d178173f1f1b590d773fc131bfa7f61cfe68665cd52641305e8f"
+    },
+    {
+      "path": "apps/web/src/game-client.ts",
+      "sha256": "a53f77e7c6165b2647dac63cc24f047588c8a03d0554c92ac019d93ead1d6cea"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "8390395b4057364dc82b64e063049866b2e0766d0dd2f03831d461bf435cdf34"
+    },
+    {
+      "path": "apps/web/src/style.css",
+      "sha256": "e8d6f7dee9e7c037d46aa6141fb8e2a7cb4c9e9fd1737bc1a5feb9c0967005f0"
+    },
+    {
+      "path": "apps/web/src/table-ui/SentenceRackController.ts",
+      "sha256": "07b540dd08a106245e3decce4033f708beac0dccacbd56437232f5ac65e24fe1"
+    },
+    {
+      "path": "apps/web/src/table3d/adapter.ts",
+      "sha256": "b304f07d54a626c6694670345a79015e576f5788a136357740dc94468c73fa3e"
+    },
+    {
+      "path": "apps/web/src/table3d/main-view.ts",
+      "sha256": "4300904b36dd22ffa3df6fc732bd6b360798076435ed61fefd1d8be4d5634244"
+    },
+    {
+      "path": "apps/web/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "dist/server/main.mjs",
+      "sha256": "77d9d6a257028c45e5718020b469073ee6b90e84e75ebed181f8ac30c675bec0"
+    },
+    {
+      "path": "dist/server/main.mjs.map",
+      "sha256": "9017466230645f605e73669fa8833d628dc6557dd9d4154862b898c33c8bb750"
+    },
+    {
+      "path": "dist/web/assets/index-DC6viaec.css",
+      "sha256": "92beb309cc547abc778a657b92f2bfbea1ff6b8fb4cdfd9771871bbcf918d2bb"
+    },
+    {
+      "path": "dist/web/assets/index-DFzw6f8H.js",
+      "sha256": "f4f42a9c7ae76858ea39f01153d02e38d82852b6a11fb005db12ae1012ac9c6b"
+    },
+    {
+      "path": "dist/web/index.html",
+      "sha256": "4cda8474b7e72aa6c4eea118924f142e3bd7195116c4c34f6b42582910fa41c4"
+    },
+    {
+      "path": "ops/README.md",
+      "sha256": "6fcf9ef108092804ddec19b7e3ee2308fe1f015925255fefef995f780a9de4bd"
+    },
+    {
+      "path": "ops/install-release.py",
+      "sha256": "c9f6ce1bc3f72a4a8b8a1b2edbf5c583311087e9369947518adee2928a69f75a"
+    },
+    {
+      "path": "ops/macos-service.py",
+      "sha256": "fd4e24f020af8b01b1f1caf5b642d7815f9dd3c0b98488acc01e4a8c08334d7d"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "87333dfb307b99e3c2141ac2b74ab773d3ebae5a19d8daba4698b1c6bc2f61b6"
+    },
+    {
+      "path": "package.json",
+      "sha256": "efe5df6e8b5977d339799219cdbf991319f9536fa84b3ce6221fc5062c4f8bbe"
+    },
+    {
+      "path": "packages/contracts/rules.defaults.json",
+      "sha256": "22fa83a658cdcecf0690db2d1dc37882ed162ae0ebd8f08f542c909c295565e4"
+    },
+    {
+      "path": "packages/contracts/table-view.ts",
+      "sha256": "f23b4cc05487d6eb8af611fb88998e476d34fc90097105913f263c19cd5c1f0b"
+    },
+    {
+      "path": "packages/contracts/types.ts",
+      "sha256": "4f8a9edd469f5af5cd88a7be87699c5512256ebf1bb2d67d8b93bdc7197d1ffa"
+    },
+    {
+      "path": "packages/engine/index.ts",
+      "sha256": "5e8cf5e1910ee8d1ae4d9c4569291b806dfe52e5222cf5bce7f02bb3e2db7dd4"
+    },
+    {
+      "path": "tests/engine/designated-ai.test.ts",
+      "sha256": "2ad142b3743c4a421dd38a5e1581ac6f8656c2d8c392d54727b54e8666433590"
+    },
+    {
+      "path": "tests/engine/helpers.ts",
+      "sha256": "f1dcbae41abe5e44bcff768a8dd7f5abd3fbc154238be5d0d0e429e70339b221"
+    },
+    {
+      "path": "tests/engine/rules.test.ts",
+      "sha256": "383925cb52ebe96e593ec7435aaa8ae9d0ce2f4979e14116111609b2cbfebced"
+    },
+    {
+      "path": "tests/server/server.test.ts",
+      "sha256": "0c426699ec931390419dafde666a841a0e6c57a273dd28ffd7544afcd8016c86"
+    },
+    {
+      "path": "tests/ui/model.test.ts",
+      "sha256": "8845831e9b19bee9acb21be7577de017299027d822bfc25217039741d4294941"
+    },
+    {
+      "path": "tests/ui/network.test.ts",
+      "sha256": "9079b202b8fd39481c75ec440dcef56f67d1a72759dc6386c94c0baf83d32575"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "735ca787336c58c924ffb955a2b0992e633bda523d3e7ca0f79bc76608dfb864"
+    }
+  ]
+}

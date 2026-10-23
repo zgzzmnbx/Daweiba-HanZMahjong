@@ -1,0 +1,15 @@
+node_modules/
+dist/
+Codex-Temp/
+.playwright-cli/
+*.log
+runtime/
+.DS_Store
+output/
+__pycache__/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

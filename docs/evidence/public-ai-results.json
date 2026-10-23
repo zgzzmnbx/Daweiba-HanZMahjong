@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-23T01:48:29.737Z",
+  "origin": "https://118.196.107.182:1240",
+  "scope": "Real public HTTPS/WSS commands for user-requested AI seat assignment, rule 1.1.0",
+  "results": [
+    {
+      "players": 2,
+      "humans": 1,
+      "assignedAI": 1,
+      "practiceMode": true,
+      "emptySeatAddRemove": true,
+      "readyAndStart": true,
+      "aiDelayedDiscardObserved": 2,
+      "midRoundRemovalRejected": true,
+      "noAIReview": true,
+      "noScoreTermination": true,
+      "finishedRemoveRefillNextRound": true,
+      "status": "PASS"
+    },
+    {
+      "players": 3,
+      "humans": 1,
+      "assignedAI": 2,
+      "practiceMode": true,
+      "emptySeatAddRemove": true,
+      "readyAndStart": true,
+      "aiDelayedDiscardObserved": 4,
+      "midRoundRemovalRejected": true,
+      "noAIReview": true,
+      "noScoreTermination": true,
+      "finishedRemoveRefillNextRound": true,
+      "status": "PASS"
+    },
+    {
+      "players": 4,
+      "humans": 1,
+      "assignedAI": 3,
+      "practiceMode": true,
+      "emptySeatAddRemove": true,
+      "readyAndStart": true,
+      "aiDelayedDiscardObserved": 3,
+      "midRoundRemovalRejected": true,
+      "noAIReview": true,
+      "noScoreTermination": true,
+      "finishedRemoveRefillNextRound": true,
+      "status": "PASS"
+    },
+    {
+      "players": 5,
+      "humans": 1,
+      "assignedAI": 4,
+      "practiceMode": true,
+      "emptySeatAddRemove": true,
+      "readyAndStart": true,
+      "aiDelayedDiscardObserved": 6,
+      "midRoundRemovalRejected": true,
+      "noAIReview": true,
+      "noScoreTermination": true,
+      "finishedRemoveRefillNextRound": true,
+      "status": "PASS"
+    },
+    {
+      "players": 6,
+      "humans": 1,
+      "assignedAI": 5,
+      "practiceMode": true,
+      "emptySeatAddRemove": true,
+      "readyAndStart": true,
+      "aiDelayedDiscardObserved": 10,
+      "midRoundRemovalRejected": true,
+      "noAIReview": true,
+      "noScoreTermination": true,
+      "finishedRemoveRefillNextRound": true,
+      "status": "PASS"
+    },
+    {
+      "players": 4,
+      "humans": 2,
+      "assignedAI": 2,
+      "hostOnlyAssignment": true,
+      "practiceMode": false,
+      "reviewerCount": 1,
+      "threshold": 1,
+      "aiNoVotes": true,
+      "humanWin": true,
+      "status": "PASS"
+    }
+  ]
+}

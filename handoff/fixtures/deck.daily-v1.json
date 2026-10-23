@@ -1,0 +1,941 @@
+{
+  "schemaVersion": 1,
+  "deckVersion": "daily-v1",
+  "rulesVersion": "1.0.0",
+  "status": "EXPERIMENTAL_UNPLAYTESTED",
+  "balanceClaim": "固定可运行实验起点；未实测胜率、局长或平衡性。无万能牌。",
+  "tileIdRecipe": "daily-v1:N{playerCount}:{entryIndex:03d}:{copyIndex:02d}，entryIndex与copyIndex均从0起",
+  "deckSizeByPlayers": {
+    "2": 120,
+    "3": 144,
+    "4": 168,
+    "5": 192,
+    "6": 216
+  },
+  "entries": [
+    {
+      "char": "的",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "一",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "了",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "是",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "我",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "你",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "他",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "她",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "们",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "在",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "有",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "和",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "也",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "就",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "都",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "不",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "着",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "把",
+      "connectionWeight": 5,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "char": "被",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "给",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "向",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "从",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "到",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "与",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "而",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "但",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "或",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "因",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "所",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "以",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "为",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "这",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "那",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "哪",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "谁",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "什",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "么",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "怎",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "可",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "会",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "能",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "要",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "想",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "去",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "来",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "回",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "上",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "下",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "里",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "外",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "前",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "后",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "左",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "右",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "中",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "天",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "地",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "山",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "水",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "风",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "雨",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "日",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "月",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "星",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "云",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "花",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "草",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "树",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "木",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "人",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "心",
+      "connectionWeight": 3,
+      "copiesByPlayers": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3
+      }
+    },
+    {
+      "char": "手",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "6": 2
+      }
+    },
+    {
+      "char": "眼",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "口",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "家",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "门",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "路",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "河",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "海",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "城",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "光",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "夜",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "梦",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    },
+    {
+      "char": "看",
+      "connectionWeight": 1,
+      "copiesByPlayers": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      }
+    }
+  ]
+}

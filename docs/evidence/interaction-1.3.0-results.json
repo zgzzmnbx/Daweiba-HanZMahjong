@@ -1,0 +1,80 @@
+{
+  "applicationVersion": "1.3.0",
+  "at": "2026-10-23T11:00:02.407170+08:00",
+  "scope": "CUA desktop pointer/key, development fixture plus real local HTTP/Socket rooms; final production build dialogs and public browser observation",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "3D pointer drag first tile 今 to position 7",
+      "status": "PASS"
+    },
+    {
+      "name": "3D comma independent half-width projected target",
+      "status": "PASS",
+      "measurements": {
+        "commaWidth": 16.203125,
+        "hanWidth": 32.46875
+      }
+    },
+    {
+      "name": "DOM uses same reordered physical tiles; drag 今 with comma 7 to 3",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent DOM comma drag anchor 3 to 5 and Delete returns to tray",
+      "status": "PASS"
+    },
+    {
+      "name": "DOM comma exact half-width",
+      "status": "PASS",
+      "measurements": {
+        "commaWidth": 32.6875,
+        "hanWidth": 65.375
+      }
+    },
+    {
+      "name": "Lobby six tables and controls visible at 1280x720; help opens, Escape dismisses",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard reorder, pointer drag, Escape does not revert previously committed order",
+      "status": "PASS"
+    },
+    {
+      "name": "3D to DOM and back retains the same draft",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x720 final real-game action bar fits first viewport (bottom 685.59, content 692)",
+      "status": "PASS"
+    },
+    {
+      "name": "Real local room: assign AI, start, move comma with tile, reload preserves exact order and comma",
+      "status": "PASS"
+    },
+    {
+      "name": "Final built app: HTML END_UNSCORED and CLOSE_ROOM confirmations complete with authoritative states",
+      "status": "PASS"
+    },
+    {
+      "name": "Public browser displays six tables then automatically restores existing 4-seat practice room, version 1.3.0",
+      "status": "PASS"
+    },
+    {
+      "name": "Public HTTP/WSS exact draft and comma restore: separate public-draft-1.3.0-results.json",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "No new physical phone, cellular or screenreader validation",
+    "Browser native drag captures completion, no midpoint screenshot; animation design also reviewed in source",
+    "390/430 widths verified by pure layout tests this increment; previous browser matrices not rerun",
+    "Old dev tab native confirm blocked CUA; final build replaced with HTML dialog and passed in independent local room"
+  ],
+  "release": "1.3.0-20261023-105741",
+  "automatedTests": {
+    "passed": 112,
+    "failed": 0
+  },
+  "build": "PASS"
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-23T01:46:31.961Z",
+  "browser": "156.0.8078.47",
+  "scope": "Production build + actual local sockets/SQLite; server clock held at zero to isolate grace pause; no envelope injection",
+  "checks": [
+    {
+      "name": "real applicant socket disconnect pauses review; reviewer context loss and rebuild retain phase, epoch, server version and disabled votes",
+      "status": "PASS"
+    },
+    {
+      "name": "applicant reconnect resumes same frozen review and normal votes finish; recovered canvas remains mounted",
+      "status": "PASS"
+    }
+  ]
+}

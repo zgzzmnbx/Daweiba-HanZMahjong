@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-23T05:12:38.632023+00:00",
+  "applicationVersion": "1.9.0",
+  "origin": "http://127.0.0.1:3231",
+  "status": "PASS",
+  "method": "Real in-app browser via cua_repl, isolated SQLite and authenticated admin APIs",
+  "checks": [
+    "Created 山水测试套组 by cloning 经典字库; independent revision 0",
+    "Edited 山 for 4 players from 1 to 3, saved revision 1; 4-player total 170",
+    "Set new group as default; create dialog automatically selected it and displayed 170 tiles",
+    "Created actual public table in isolated DB, assigned 3 AI seats, READY/START_ROUND; rendered wall count 117 after dealing 53",
+    "Original classic group remained 168 tiles, 山 count 1",
+    "Own 2525548CCF practice room ended and closed through UI",
+    "Another browser tab logged admin out while first had unsaved name; save required re-login and preserved exact 山水保留草稿 text",
+    "Unsaved editor disabled switching/default/create; close asked to discard, continue preserved editing",
+    "Reload discard restored saved name; selection switched correctly between groups"
+  ],
+  "screenshots": [
+    "decksets-1.9.0-admin-local.png",
+    "decksets-1.9.0-create-local.png"
+  ],
+  "limitations": [
+    "Desktop 1280x720 only; not physical mobile, cellular or screen reader evidence",
+    "Test group exists only in isolated local DB; production catalog will not be mutated for browser testing"
+  ],
+  "publicReadOnlyVerification": {
+    "origin": "https://118.196.107.182:1240",
+    "applicationVersion": "1.9.0",
+    "checks": [
+      "Admin catalog shows classic default, revision 1, 84 chars, original quantities",
+      "Create dialog defaults to classic, displays 4-player 168 tiles",
+      "Hall displays v1.9.0"
+    ],
+    "screenshots": [
+      "decksets-1.9.0-admin-public.png",
+      "decksets-1.9.0-create-public.png"
+    ]
+  }
+}

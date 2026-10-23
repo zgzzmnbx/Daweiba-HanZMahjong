@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T03:41:16.506Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.5.0",
+  "status": "PASS",
+  "scope": "Real HTTP/WSS and SQLite draft persistence, not browser animation evidence",
+  "checks": [
+    "14 physical tiles reordered with three distinct comma anchors and persisted over real WSS",
+    "same-session identity restore preserves exact tile order and comma anchors, advances control epoch",
+    "private AI practice test ended without scoring and closed normally"
+  ]
+}

@@ -1,0 +1,53 @@
+WORD MAHJONG HANDOFF 1.1.0 — MATERIAL / CONTRACT VERIFICATION
+Date: 2026-10-21 UTC; game rules remain 1.0.0.
+This log is not a game, browser, GPU, network or deployment acceptance report.
+
+[GAME_FIXTURES]
+Command: python3 checks/validate-fixtures.py
+PASS deck: 84 single characters; totals 120/144/168/192/216; IDs unique; experimental only
+PASS votes: 21 frozen-electorate/strict-majority examples
+PASS sentences: 14 sentence + 15 objection + 2 draft + 1 union examples
+PASS scenarios: 91 GIVEN/WHEN/THEN specifications; U1–U6 and all 2–6 seat cycles indexed
+HANDOFF FIXTURES CONSISTENT — no game server, UI, network, persistence, or play-balance tests were run.
+
+[UI_FIXTURES]
+Command: python3 checks/validate-table-ui.py
+PASS_FIXTURE_SCHEMA_AND_DISPLAY_MODELS: 972 assertions; fixture schema / seat / comma / mobile geometry / ranges / stamps / projection examples / pool budgets only
+NOT_RUN: actual TableViewAdapter or React/Three implementation; real screenshots; browser input; frame rate; GPU cleanup; multiplayer game; Mac/cloud deployment
+
+[VALIDATOR_REGRESSIONS]
+Command: python3 -B checks/validate-table-ui-regressions.py
+PASS_TABLE_UI_VALIDATOR_REGRESSIONS: baseline 972 assertions; 2 valid public-reveal controls; 9 invalid mutations rejected for the intended reason.
+Scope: fixture validator only; no TableViewAdapter, renderer, browser or multiplayer execution.
+
+[UPSTREAM_INTEGRITY]
+Command: python3 references/englishmahjong/verify-snapshot.py
+PASS EnglishMahjong snapshot: 41 original source files + 1 reference image; bytes, SHA-256 and Git blob hashes match.
+Scope: source integrity only; no game implementation, build, rendering or multiplayer verification.
+
+[TYPES_AND_HELPERS]
+Command: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node checks/validate-table-contract.mjs /tmp/word-mahjong-tsc-5.9.3-audit/package/bin/tsc
+PASS_TABLE_CONTRACT_HELPERS: TypeScript 5.9.3 strict compilation of both contracts; 131 assertions against compiled exports.
+Scope: pure helpers only; no TableViewAdapter implementation, rendering, browser or multiplayer verification.
+
+[VISUAL_REFERENCE]
+PASS_STATIC_REFERENCE: four SVG/PNG references rendered and visually reviewed; 1440x1000 (three), 390x844 (one). Fourteen main character tiles; complete rejection button; mobile 44x58 tiles and 28px glyphs.
+See ui-reference/VERIFICATION.md for rendering and font checks, reproducible commands and limitations.
+NOT_RUN: browser interaction, actual Three.js implementation, adapter, GPU performance, multiplayer game, Mac/cloud deployment.
+
+[PRESERVED_V1.0_BASELINE]
+PASS byte-for-byte comparison of 17 prior files: docs/01,02,04; contracts/types.ts and rules.defaults.json; checks/validate-fixtures.py; the four original fixtures; the seven original deploy files.
+Only handoff/UI material changed; original game specification remains version 1.0.0.
+
+[HTML_SCRIPT_SYNTAX]
+PASS node --check on the one inline JavaScript block extracted from ui-reference/reference.html; exit 0.
+No real browser interaction was run.
+
+[ESNEXT_STRICT_TYPECHECK]
+PASS TypeScript 5.9.3 --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler contracts/types.ts contracts/table-view.ts; exit 0.
+
+[PACKAGE_FORMATS_AND_LINKS]
+Command: python3 checks/check-package.py
+PASS package formats and links: {"json": 10, "svg": 4, "toml": 2, "plist": 2, "python": 6, "markdown_links": 70}
+PASS template port chain: cloud 7000 + loopback 7300 -> Mac 3000; TLS placeholders present
+Scope: file syntax/link checks only; no actual Mac, frp, Caddy or game deployment was run.

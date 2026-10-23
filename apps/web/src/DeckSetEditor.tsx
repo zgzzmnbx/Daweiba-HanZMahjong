@@ -1,0 +1,34 @@
+import {useEffect,useRef,useState} from 'react';
+import type {DeckSetCatalog,DeckSetSnapshot} from '../../../packages/contracts/deck';
+import {adminApi,deckError,deckTotals,playerCounts,type DeckEntry} from './admin-client';
+
+export function DeckSetEditor({onDirty,onBusy,onError,onClear}:{onClear:()=>void;onDirty:(v:boolean)=>void;onBusy:(v:boolean)=>void;onError:(e:unknown)=>void}){
+ const [catalogReady,setCatalogReady]=useState(false);
+ const [catalog,setCatalog]=useState<DeckSetCatalog|null>(null),[deck,setDeck]=useState<DeckSetSnapshot|null>(null),[entries,setEntries]=useState<readonly DeckEntry[]>([]),[name,setName]=useState(''),[newName,setNewName]=useState(''),[filter,setFilter]=useState(''),[newChar,setNewChar]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState('');
+ const alive=useRef(true),request=useRef<AbortController|null>(null),creating=useRef<{key:string;actionId:string}|null>(null);
+ const dirty=!!deck&&(name!==deck.name||JSON.stringify(entries)!==JSON.stringify(deck.entries));
+ useEffect(()=>{onDirty(dirty);},[dirty]);
+ const accept=(value:DeckSetSnapshot)=>{setDeck(value);setName(value.name);setEntries(structuredClone(value.entries));setFilter('');};
+ const run=async(work:(signal:AbortSignal)=>Promise<void>)=>{if(request.current)return;const controller=new AbortController();request.current=controller;setBusy(true);onBusy(true);setMessage('');onClear();try{await work(controller.signal);}catch(e){if(!controller.signal.aborted)onError(e);}finally{if(request.current===controller){request.current=null;if(alive.current){setBusy(false);onBusy(false);}}}};
+ const refresh=async(signal:AbortSignal)=>{const value:DeckSetCatalog=await adminApi('/deck-sets',undefined,signal);if(alive.current){setCatalog(value);setCatalogReady(true);}return value;};
+ const refreshAfterSave=async(signal:AbortSignal)=>{try{await refresh(signal);return true;}catch(e){if(!signal.aborted){setCatalogReady(false);setMessage('操作已保存，但套组列表刷新失败，请点“刷新套组”。');onError(e);}return false;}};
+ const load=(id?:string)=>run(async signal=>{const list=await refresh(signal);const value=await adminApi(`/deck-sets/${id??list.defaultSetId}`,undefined,signal);if(alive.current)accept(value);});
+ useEffect(()=>{alive.current=true;void load();return()=>{alive.current=false;request.current?.abort();request.current=null;};},[]);
+ const totals=deckTotals(entries),validation=deckError(entries)||(!name.trim()?'请填写套组名称。':'');
+ const update=(i:number,value:Partial<DeckEntry>)=>setEntries(rows=>rows.map((r,index)=>index===i?{...r,...value}:r));
+ return <section className="admin-deck"><p>每个房间使用创建时选定的套组。编辑将在该房间下一局发牌时生效，当前局不变。</p>
+ {catalog&&deck?<>
+  <div className="deck-set-picker"><label>当前麻将套组<select aria-label="当前麻将套组" value={deck.id} disabled={busy||dirty} onChange={e=>void load(e.target.value)}>{!catalog.sets.some(s=>s.id===deck.id)&&<option value={deck.id}>{deck.name}</option>}{catalog.sets.map(s=><option key={s.id} value={s.id}>{s.id===deck.id?deck.name:s.name}{s.id===catalog.defaultSetId?' · 默认':''}</option>)}</select></label><button disabled={busy||dirty||!catalogReady||deck.id===catalog.defaultSetId} onClick={()=>void run(async signal=>{const list=await adminApi('/deck-sets/default',{expectedCatalogRevision:catalog.revision,setId:deck.id},signal);setCatalog(list);setMessage(`“${deck.name}”已设为默认，新建房间会默认选中它。`);})}>{deck.id===catalog.defaultSetId?'默认套组':'设为默认套组'}</button><button disabled={busy||dirty} onClick={()=>void load(deck.id)}>刷新套组</button></div>
+  <div className="deck-set-create"><label>新套组名称<input value={newName} maxLength={30} disabled={busy} placeholder="例如：山水诗词" onChange={e=>setNewName(e.target.value)}/></label><button disabled={busy||dirty||!catalogReady||!newName.trim()||catalog.sets.length>=50} onClick={()=>void run(async signal=>{const key=JSON.stringify([newName.trim(),deck.id,catalog.revision]);if(creating.current?.key!==key)creating.current={key,actionId:crypto.randomUUID()};const value=await adminApi('/deck-sets',{actionId:creating.current.actionId,name:newName.trim(),sourceSetId:deck.id,expectedCatalogRevision:catalog.revision},signal);accept(value);setNewName('');creating.current=null;if(await refreshAfterSave(signal))setMessage('套组已新建，已复制原套组的全部字牌，可继续编辑。');})}>复制当前 · 新建套组</button><small>复制已保存的字库，再按需增删汉字。最多 50 组。</small></div>
+  {dirty&&<p className="admin-message">有未保存修改，请保存或放弃后再切换套组。</p>}
+  <label className="deck-set-name">套组名称<input value={name} maxLength={30} disabled={busy} onChange={e=>setName(e.target.value)}/></label>
+  <div className="admin-deck-meta"><span>{entries.length} 字 · 修订 {deck.revision}</span><span>{dirty?'有未保存修改':'已保存'}</span></div>
+  <div className="admin-totals">{playerCounts.map(n=><span key={n}>{n} 人桌 <b>{totals[n]}</b> 张</span>)}</div>
+  <div className="admin-toolbar"><label>查找汉字<input value={filter} onChange={e=>setFilter(e.target.value)} placeholder="输入要找的字"/></label><div className="admin-add"><label>新增汉字<input value={newChar} onChange={e=>setNewChar(e.target.value)} maxLength={2}/></label><button disabled={busy||!/^\p{Unified_Ideograph}$/u.test(newChar)||entries.some(e=>e.char===newChar)||entries.length>=500} onClick={()=>{setEntries([...entries,{char:newChar,copiesByPlayers:{'2':1,'3':1,'4':1,'5':1,'6':1}}]);setFilter(newChar);setNewChar('');}}>添加</button></div></div>
+  <div className="admin-grid-scroll"><table className="admin-deck-table"><thead><tr><th>汉字</th>{playerCounts.map(n=><th key={n}>{n} 人</th>)}<th>操作</th></tr></thead><tbody>{entries.map((e,i)=>!filter||e.char.includes(filter)?<tr key={i}><td><input aria-label={`第 ${i+1} 行汉字`} value={e.char} maxLength={2} disabled={busy} onChange={ev=>update(i,{char:ev.target.value})}/></td>{playerCounts.map(n=><td key={n}><input type="number" inputMode="numeric" min={0} max={20} step={1} aria-label={`${e.char}，${n} 人桌张数`} value={e.copiesByPlayers[n]} disabled={busy} onChange={ev=>update(i,{copiesByPlayers:{...e.copiesByPlayers,[n]:Number(ev.target.value)}})}/></td>)}<td><button disabled={busy} aria-label={`删除字库中的 ${e.char}`} onClick={()=>setEntries(entries.filter((_,index)=>i!==index))}>删除</button></td></tr>:null)}</tbody></table></div>
+  {validation&&<p className="admin-error" role="alert">{validation}</p>}
+  <footer className="admin-save"><button disabled={busy} onClick={()=>void load(deck.id)}>放弃修改 · 重新载入</button><button className="primary" disabled={busy||!dirty||!!validation} onClick={()=>void run(async signal=>{const saved=await adminApi(`/deck-sets/${deck.id}`,{expectedRevision:deck.revision,name:name.trim(),entries},signal);accept(saved);if(await refreshAfterSave(signal))setMessage('套组已保存，使用它的房间下一局生效。');})}>{busy?'处理中…':'保存套组'}</button></footer>
+ </>:<button disabled={busy} onClick={()=>void load()}>{busy?'载入套组中…':'重新载入套组'}</button>}
+ {message&&<p className="admin-message" role="status">{message}</p>}
+ </section>;
+}

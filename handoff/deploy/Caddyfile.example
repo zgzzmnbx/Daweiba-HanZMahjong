@@ -1,0 +1,14 @@
+# Add only this site block to the existing reviewed Caddy configuration.
+# Configure DNS for the real public domain before requesting a public certificate.
+mahjong.example.com {
+    encode zstd gzip
+
+    # Covers the web app, API, and /socket.io/ on the same origin.
+    # WebSocket Upgrade is handled by reverse_proxy without manual header copying.
+    reverse_proxy 127.0.0.1:7300
+
+    header {
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "same-origin"
+    }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "hanz-mahjong",
+  "version": "1.9.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/build-server.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:ui": "tsx --test tests/ui/*.test.ts",
+    "dev:server": "tsx watch apps/server/main.ts",
+    "start": "node dist/server/main.mjs",
+    "test:engine": "tsx --test tests/engine/*.test.ts",
+    "test:server": "tsx --test tests/server/*.test.ts",
+    "test": "tsx --test tests/engine/*.test.ts tests/server/*.test.ts tests/ui/*.test.ts",
+    "db:backup": "node scripts/db-backup.mjs",
+    "db:restore": "node scripts/db-restore.mjs"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "socket.io": "4.8.1",
+    "socket.io-client": "4.8.1",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.10.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/three": "0.185.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "esbuild": "0.25.11",
+    "playwright": "1.56.1",
+    "tsx": "4.20.6",
+    "typescript": "5.7.3",
+    "vite": "6.4.5"
+  },
+  "engines": {
+    "node": ">=24.19.0 <25"
+  }
+}

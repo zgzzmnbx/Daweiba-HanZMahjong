@@ -1,0 +1,2406 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "1.0.0",
+  "executionStatus": "HANDOFF_SPEC_NOT_GAME_TEST_RESULTS",
+  "runnerContract": "将given构造为独立权威服务状态，when经真实命令/时间/网络驱动，then与expected均须检查；不能只比本文字符串。",
+  "cases": [
+    {
+      "id": "S02-seat-cycle",
+      "ruleRefs": [
+        "U1",
+        "U3",
+        "R-003"
+      ],
+      "tags": [
+        "seat-cycle",
+        "eat",
+        "2-6-players"
+      ],
+      "given": {
+        "playerCount": 2,
+        "discarderSeats": [
+          0,
+          1
+        ],
+        "allOnline": true,
+        "eatCounts": 0
+      },
+      "when": "逐个测试每一弃牌者，分别由各个其他座位请求EAT",
+      "then": "仅next(discarder)成功；末座回0；渲染旋转不改变判定",
+      "expected": {
+        "nextSeatByDiscarder": [
+          1,
+          0
+        ],
+        "previousSeatBySeat": [
+          1,
+          0
+        ],
+        "nonNextError": "EAT_NOT_NEXT_SEAT"
+      }
+    },
+    {
+      "id": "S03-seat-cycle",
+      "ruleRefs": [
+        "U1",
+        "U3",
+        "R-003"
+      ],
+      "tags": [
+        "seat-cycle",
+        "eat",
+        "2-6-players"
+      ],
+      "given": {
+        "playerCount": 3,
+        "discarderSeats": [
+          0,
+          1,
+          2
+        ],
+        "allOnline": true,
+        "eatCounts": 0
+      },
+      "when": "逐个测试每一弃牌者，分别由各个其他座位请求EAT",
+      "then": "仅next(discarder)成功；末座回0；渲染旋转不改变判定",
+      "expected": {
+        "nextSeatByDiscarder": [
+          1,
+          2,
+          0
+        ],
+        "previousSeatBySeat": [
+          2,
+          0,
+          1
+        ],
+        "nonNextError": "EAT_NOT_NEXT_SEAT"
+      }
+    },
+    {
+      "id": "S04-seat-cycle",
+      "ruleRefs": [
+        "U1",
+        "U3",
+        "R-003"
+      ],
+      "tags": [
+        "seat-cycle",
+        "eat",
+        "2-6-players"
+      ],
+      "given": {
+        "playerCount": 4,
+        "discarderSeats": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "allOnline": true,
+        "eatCounts": 0
+      },
+      "when": "逐个测试每一弃牌者，分别由各个其他座位请求EAT",
+      "then": "仅next(discarder)成功；末座回0；渲染旋转不改变判定",
+      "expected": {
+        "nextSeatByDiscarder": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "previousSeatBySeat": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "nonNextError": "EAT_NOT_NEXT_SEAT"
+      }
+    },
+    {
+      "id": "S05-seat-cycle",
+      "ruleRefs": [
+        "U1",
+        "U3",
+        "R-003"
+      ],
+      "tags": [
+        "seat-cycle",
+        "eat",
+        "2-6-players"
+      ],
+      "given": {
+        "playerCount": 5,
+        "discarderSeats": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "allOnline": true,
+        "eatCounts": 0
+      },
+      "when": "逐个测试每一弃牌者，分别由各个其他座位请求EAT",
+      "then": "仅next(discarder)成功；末座回0；渲染旋转不改变判定",
+      "expected": {
+        "nextSeatByDiscarder": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "previousSeatBySeat": [
+          4,
+          0,
+          1,
+          2,
+          3
+        ],
+        "nonNextError": "EAT_NOT_NEXT_SEAT"
+      }
+    },
+    {
+      "id": "S06-seat-cycle",
+      "ruleRefs": [
+        "U1",
+        "U3",
+        "R-003"
+      ],
+      "tags": [
+        "seat-cycle",
+        "eat",
+        "2-6-players"
+      ],
+      "given": {
+        "playerCount": 6,
+        "discarderSeats": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "allOnline": true,
+        "eatCounts": 0
+      },
+      "when": "逐个测试每一弃牌者，分别由各个其他座位请求EAT",
+      "then": "仅next(discarder)成功；末座回0；渲染旋转不改变判定",
+      "expected": {
+        "nextSeatByDiscarder": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "previousSeatBySeat": [
+          5,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "nonNextError": "EAT_NOT_NEXT_SEAT"
+      }
+    },
+    {
+      "id": "S10-start-all-ready",
+      "ruleRefs": [
+        "R-001",
+        "R-004"
+      ],
+      "tags": [
+        "start",
+        "deal"
+      ],
+      "given": {
+        "playerCounts": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "allSeatsHuman": true,
+        "allReady": true
+      },
+      "when": "房主开始新局",
+      "then": "庄家14其余13，固定座次与版本，余牌精确",
+      "expected": {
+        "dealtByPlayers": {
+          "2": 27,
+          "3": 40,
+          "4": 53,
+          "5": 66,
+          "6": 79
+        },
+        "wallByPlayers": {
+          "2": 93,
+          "3": 104,
+          "4": 115,
+          "5": 126,
+          "6": 137
+        },
+        "phase": "TURN_ACTION"
+      }
+    },
+    {
+      "id": "S11-no-bot-fill",
+      "ruleRefs": [
+        "R-001"
+      ],
+      "tags": [
+        "start",
+        "bot"
+      ],
+      "given": {
+        "capacity": 4,
+        "humanSeats": 3,
+        "emptySeats": 1
+      },
+      "when": "尝试由AI填空位开局",
+      "then": "拒绝且不发牌",
+      "expected": {
+        "error": "NOT_ALL_READY",
+        "dealt": 0
+      }
+    },
+    {
+      "id": "S12-freeze-seats",
+      "ruleRefs": [
+        "R-002"
+      ],
+      "tags": [
+        "identity",
+        "seat"
+      ],
+      "given": {
+        "roundStarted": true
+      },
+      "when": "新真人试图入座，或房主试图中途改人数换座",
+      "then": "显示本局进行中，座次容量版本不变",
+      "expected": {
+        "error": "ROUND_IN_PROGRESS",
+        "seatMutationCount": 0
+      }
+    },
+    {
+      "id": "S13-normal-auto-draw",
+      "ruleRefs": [
+        "R-020",
+        "R-021"
+      ],
+      "tags": [
+        "turn",
+        "draw"
+      ],
+      "given": {
+        "phaseBefore": "DISCARD_RESPONSE",
+        "nextHandCount": 13,
+        "wallRemaining": 5,
+        "noClaims": true
+      },
+      "when": "响应结束开始普通回合",
+      "then": "服务端恰好摸1张、14张且60秒行动",
+      "expected": {
+        "phase": "TURN_ACTION",
+        "handCount": 14,
+        "wallRemaining": 4,
+        "turnMs": 60000,
+        "drawCount": 1
+      }
+    },
+    {
+      "id": "S14-no-extra-draw",
+      "ruleRefs": [
+        "R-004",
+        "R-020",
+        "R-025"
+      ],
+      "tags": [
+        "turn",
+        "eat",
+        "draw"
+      ],
+      "given": {
+        "turnSources": [
+          "DEALER_FIRST",
+          "EAT"
+        ],
+        "handCount": 14
+      },
+      "when": "进入对应行动阶段",
+      "then": "不额外摸第15张",
+      "expected": {
+        "handCount": 14,
+        "drawCount": 0
+      }
+    },
+    {
+      "id": "S15-response-gates-next-draw",
+      "ruleRefs": [
+        "R-021"
+      ],
+      "tags": [
+        "response",
+        "draw"
+      ],
+      "given": {
+        "responseWindowOpen": true,
+        "responseMs": 8000
+      },
+      "when": "下一家试图摸牌或先出牌",
+      "then": "响应结束前不能摸牌或行动",
+      "expected": {
+        "earlyDrawCount": 0,
+        "illegalDiscardCount": 0
+      }
+    },
+    {
+      "id": "S16-concurrent-responses",
+      "ruleRefs": [
+        "R-022",
+        "R-023",
+        "I-03"
+      ],
+      "tags": [
+        "concurrency",
+        "phase-gate"
+      ],
+      "given": {
+        "phaseId": "phase-r1",
+        "stateVersion": 100,
+        "responses": [
+          {
+            "playerId": "p1",
+            "expectedStateVersion": 100,
+            "intent": "HU"
+          },
+          {
+            "playerId": "p2",
+            "expectedStateVersion": 100,
+            "intent": "HU"
+          }
+        ]
+      },
+      "when": "同窗两个玩家的响应依次进入队列，首个使全局版本递增",
+      "then": "第二个不能仅因版本落后拒绝；二人都记录，按座次排队",
+      "expected": {
+        "recordedResponseCount": 2,
+        "staleVersionRejectionCount": 0
+      }
+    },
+    {
+      "id": "S17-hu-priority-seat-order",
+      "ruleRefs": [
+        "R-023",
+        "R-024"
+      ],
+      "tags": [
+        "response",
+        "hu-priority"
+      ],
+      "given": {
+        "playerCount": 6,
+        "discarderSeat": 4,
+        "intents": {
+          "5": "HU",
+          "0": "EAT",
+          "2": "HU",
+          "3": "HU"
+        }
+      },
+      "when": "冻结合法申请；先过滤不合法EAT，再按座次处理HU",
+      "then": "HU顺序5、2、3；不能按到包先后",
+      "expected": {
+        "huQueueSeats": [
+          5,
+          2,
+          3
+        ],
+        "invalidEatSeat": 0,
+        "registeredEaterSeat": null
+      }
+    },
+    {
+      "id": "S18-eat-after-hu-fail",
+      "ruleRefs": [
+        "R-024",
+        "R-025"
+      ],
+      "tags": [
+        "response",
+        "eat"
+      ],
+      "given": {
+        "playerCount": 4,
+        "discarderSeat": 0,
+        "registeredEaterSeat": 1,
+        "huQueueSeats": [
+          2,
+          3
+        ],
+        "allHuFailed": true,
+        "eaterHandCount": 13
+      },
+      "when": "处理完失败HU队列",
+      "then": "执行原登记EAT，转移同一弃牌一次，不再摸牌",
+      "expected": {
+        "actorSeat": 1,
+        "handCount": 14,
+        "eatCountDelta": 1,
+        "tileTransferCount": 1,
+        "drawCount": 0
+      }
+    },
+    {
+      "id": "S19-no-late-claim",
+      "ruleRefs": [
+        "R-022",
+        "R-024"
+      ],
+      "tags": [
+        "response",
+        "hidden-information"
+      ],
+      "given": {
+        "responseFrozen": true,
+        "candidateRevealed": true
+      },
+      "when": "此前PASS者现在补报HU或EAT",
+      "then": "拒绝且不重开窗口",
+      "expected": {
+        "error": "PHASE_CLOSED",
+        "newClaimCount": 0
+      }
+    },
+    {
+      "id": "S20-intent-once",
+      "ruleRefs": [
+        "R-022",
+        "R-024"
+      ],
+      "tags": [
+        "response",
+        "idempotency"
+      ],
+      "given": {
+        "recordedIntent": "HU",
+        "candidateFailed": true
+      },
+      "when": "同一人改报EAT或PASS",
+      "then": "不得变更最终意向",
+      "expected": {
+        "newIntentAccepted": false
+      }
+    },
+    {
+      "id": "S21-eat-tile-protection",
+      "ruleRefs": [
+        "U1",
+        "R-025"
+      ],
+      "tags": [
+        "eat",
+        "physical-tile"
+      ],
+      "given": {
+        "handContains": [
+          {
+            "tileId": "a",
+            "char": "的"
+          },
+          {
+            "tileId": "b",
+            "char": "的"
+          }
+        ],
+        "justEatenTileId": "a"
+      },
+      "when": "先打a，再在独立复位场景打b",
+      "then": "a拒绝，b合法；按实体ID而非汉字",
+      "expected": {
+        "aError": "EAT_TILE_PROTECTED",
+        "bAccepted": true
+      }
+    },
+    {
+      "id": "S22-eat-limit",
+      "ruleRefs": [
+        "R-022",
+        "R-025"
+      ],
+      "tags": [
+        "eat",
+        "limit"
+      ],
+      "given": {
+        "eatCount": 3,
+        "isNextSeat": true
+      },
+      "when": "登记第4次EAT",
+      "then": "拒绝且吃次数与牌权不变",
+      "expected": {
+        "error": "EAT_LIMIT",
+        "eatCount": 3
+      }
+    },
+    {
+      "id": "S23-idempotent-eat",
+      "ruleRefs": [
+        "I-01",
+        "I-03"
+      ],
+      "tags": [
+        "eat",
+        "idempotency"
+      ],
+      "given": {
+        "acceptedActionId": "eat-a",
+        "handCountAfterFirst": 14
+      },
+      "when": "相同身份相同actionId相同内容重试3次",
+      "then": "返回同一回执，不重复转移或加次数",
+      "expected": {
+        "transferCount": 1,
+        "eatCountDelta": 1,
+        "handCount": 14
+      }
+    },
+    {
+      "id": "S24-wall-empty-still-respond",
+      "ruleRefs": [
+        "R-027"
+      ],
+      "tags": [
+        "wall",
+        "hu",
+        "eat"
+      ],
+      "given": {
+        "wallRemaining": 0,
+        "latestDiscardAvailable": true,
+        "registeredEat": true
+      },
+      "when": "结束响应并执行合法EAT，再弃牌、处理其响应",
+      "then": "空牌山不提前流局；下一普通摸牌才流局",
+      "expected": {
+        "eatAllowed": true,
+        "drawOnEmpty": 0,
+        "finishReasonAtNextNormalDraw": "DRAW"
+      }
+    },
+    {
+      "id": "S25-human-timeout",
+      "ruleRefs": [
+        "R-026",
+        "R-041"
+      ],
+      "tags": [
+        "timeout",
+        "human",
+        "bot"
+      ],
+      "given": {
+        "presence": "HUMAN",
+        "handCount": 14,
+        "elapsedMs": 60000
+      },
+      "when": "行动超时",
+      "then": "仅代出1张、显示本次超时代出、仍为真人",
+      "expected": {
+        "presence": "HUMAN",
+        "discardCount": 1,
+        "handCount": 13,
+        "autoHuCount": 0
+      }
+    },
+    {
+      "id": "S26-manual-fourteen-and-commas",
+      "ruleRefs": [
+        "U2",
+        "R-012",
+        "R-014",
+        "R-030"
+      ],
+      "tags": [
+        "sentence",
+        "comma"
+      ],
+      "given": {
+        "handCount": 14,
+        "sentenceFixtureIds": [
+          "sentence-valid-0-commas",
+          "sentence-valid-1-commas",
+          "sentence-valid-2-commas",
+          "sentence-valid-3-commas"
+        ]
+      },
+      "when": "逐个提交合法排列，含口语或荒诞语义",
+      "then": "只做形式校验，不词典判胜、不自动生成句子",
+      "expected": {
+        "formalAccepted": true,
+        "semanticApiCalls": 0,
+        "phase": "HU_VOTE"
+      }
+    },
+    {
+      "id": "S27-invalid-sentence-no-transition",
+      "ruleRefs": [
+        "R-010",
+        "R-012",
+        "R-030"
+      ],
+      "tags": [
+        "sentence",
+        "ownership"
+      ],
+      "given": {
+        "sentenceFixtureIds": [
+          "sentence-thirteen",
+          "sentence-repeat-physical-id",
+          "sentence-foreign-tile",
+          "sentence-last-anchor",
+          "sentence-four-commas"
+        ]
+      },
+      "when": "逐个提交非法句子",
+      "then": "按夹具错误拒绝，牌权和行动阶段不变",
+      "expected": {
+        "phaseTransitionCount": 0,
+        "ownershipMutationCount": 0
+      }
+    },
+    {
+      "id": "S28-comma-reorder-accessibility",
+      "ruleRefs": [
+        "U2",
+        "R-013"
+      ],
+      "tags": [
+        "comma",
+        "keyboard",
+        "touch"
+      ],
+      "given": {
+        "commaAnchorTileId": "t03",
+        "draftFixtureIds": [
+          "comma-follows-left-tile",
+          "comma-anchor-removed"
+        ]
+      },
+      "when": "鼠标、触摸、键盘各执行重排、移除锚点和退回逗号",
+      "then": "逗号跟随左字；末尾或移出后退托盘，三种输入结果一致",
+      "expected": {
+        "equivalentInputMethods": [
+          "mouse",
+          "touch",
+          "keyboard"
+        ],
+        "freeTextAllowed": false
+      }
+    },
+    {
+      "id": "S29-discard-hu-reservation",
+      "ruleRefs": [
+        "R-031",
+        "I-01"
+      ],
+      "tags": [
+        "hu",
+        "ownership",
+        "compose"
+      ],
+      "given": {
+        "handCount": 13,
+        "borrowedTileOwner": "DISCARD",
+        "intent": "HU"
+      },
+      "when": "排到本人进入45秒排句并提交",
+      "then": "候选14字只是引用；弃牌在原记录预留，不复制或提前入手",
+      "expected": {
+        "phase": "HU_VOTE",
+        "handCount": 13,
+        "borrowedTileOwner": "DISCARD",
+        "composeMs": 45000
+      }
+    },
+    {
+      "id": "S30-compose-timeout",
+      "ruleRefs": [
+        "R-031",
+        "R-024"
+      ],
+      "tags": [
+        "compose",
+        "timeout"
+      ],
+      "given": {
+        "phase": "HU_COMPOSE",
+        "composeElapsedMs": 45000,
+        "laterHuCandidates": 1
+      },
+      "when": "未提交句子达到截止",
+      "then": "撤回并继续下一候选，仍13张，不执行语义否决",
+      "expected": {
+        "outcome": "WITHDRAWN",
+        "handCount": 13,
+        "continueHuQueue": true
+      }
+    },
+    {
+      "id": "S31-full-online-thresholds",
+      "ruleRefs": [
+        "U3",
+        "R-032",
+        "R-033"
+      ],
+      "tags": [
+        "vote",
+        "2-6-players"
+      ],
+      "given": {
+        "allOnlineHuman": true,
+        "playerCounts": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "when": "对每个人数进入正式投票",
+      "then": "严格过半，三人局必须两位对手全部赞成",
+      "expected": {
+        "reviewerCounts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "thresholds": [
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "S32-no-reviewer-own",
+      "ruleRefs": [
+        "R-032"
+      ],
+      "tags": [
+        "vote",
+        "bot"
+      ],
+      "given": {
+        "source": "SELF",
+        "otherOnlineHumanCount": 0,
+        "remainingTurnMs": 17000
+      },
+      "when": "提交自有14字申胡",
+      "then": "不启动投票，保留原行动时间",
+      "expected": {
+        "error": "NO_HUMAN_REVIEWER",
+        "remainingTurnMs": 17000,
+        "phase": "TURN_ACTION"
+      }
+    },
+    {
+      "id": "S33-no-reviewer-discard",
+      "ruleRefs": [
+        "R-032"
+      ],
+      "tags": [
+        "vote",
+        "hu"
+      ],
+      "given": {
+        "source": "DISCARD",
+        "otherOnlineHumanCount": 0,
+        "laterHuCandidates": 1
+      },
+      "when": "轮到借弃牌候选进入投票",
+      "then": "撤回该候选并继续原响应队列",
+      "expected": {
+        "outcome": "WITHDRAWN",
+        "continueHuQueue": true,
+        "handCount": 13
+      }
+    },
+    {
+      "id": "S34-concurrent-votes",
+      "ruleRefs": [
+        "R-034",
+        "I-03"
+      ],
+      "tags": [
+        "concurrency",
+        "phase-gate",
+        "vote"
+      ],
+      "given": {
+        "phaseId": "vote-phase-a",
+        "proposalId": "proposal-a",
+        "stateVersion": 20,
+        "reviewerIds": [
+          "p1",
+          "p2"
+        ],
+        "bothExpectedStateVersion": 20
+      },
+      "when": "两位评审独立提交，第二个到时版本已21",
+      "then": "第二票仍按提案/阶段/资格接收，统一结算",
+      "expected": {
+        "recordedBallotCount": 2,
+        "staleVersionRejectionCount": 0
+      }
+    },
+    {
+      "id": "S35-vote-freeze-disconnect",
+      "ruleRefs": [
+        "R-034",
+        "R-035",
+        "R-044"
+      ],
+      "tags": [
+        "vote",
+        "disconnect"
+      ],
+      "given": {
+        "frozenReviewerIds": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "threshold": 2,
+        "approveCount": 1
+      },
+      "when": "p2、p3掉线直到投票截止",
+      "then": "不冻结评审，不缩分母；缺票为未投，失败",
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "approveCount": 1,
+        "rejectCount": 0,
+        "abstainCount": 2,
+        "passed": false
+      }
+    },
+    {
+      "id": "S36-reviewer-return",
+      "ruleRefs": [
+        "U6",
+        "R-035"
+      ],
+      "tags": [
+        "vote",
+        "recovery"
+      ],
+      "given": {
+        "frozenReviewerIds": [
+          "p1",
+          "p2"
+        ],
+        "p2DisconnectedAfterStart": true,
+        "deadlineNotReached": true
+      },
+      "when": "p2验证原身份恢复后提交投票",
+      "then": "用新epoch接受一次，仍属于冻结集合",
+      "expected": {
+        "accepted": true,
+        "reviewerCount": 2,
+        "ballotCountForP2": 1
+      }
+    },
+    {
+      "id": "S37-reviewer-late-join",
+      "ruleRefs": [
+        "R-035"
+      ],
+      "tags": [
+        "vote",
+        "recovery"
+      ],
+      "given": {
+        "frozenReviewerIds": [
+          "p1"
+        ],
+        "p2OfflineAtVoteStart": true
+      },
+      "when": "p2恢复身份后试图投票",
+      "then": "不能加入既有评审",
+      "expected": {
+        "error": "NOT_REVIEWER",
+        "reviewerCount": 1
+      }
+    },
+    {
+      "id": "S38-vote-hidden-progress",
+      "ruleRefs": [
+        "R-034",
+        "R-037",
+        "I-04"
+      ],
+      "tags": [
+        "vote",
+        "hidden-information"
+      ],
+      "given": {
+        "frozenReviewerCount": 3,
+        "votesSubmitted": 2
+      },
+      "when": "抓取所有公共快照和投票期间广播",
+      "then": "只能看到已投2/3，不能识别谁投、何立场、选区",
+      "expected": {
+        "submittedBallotCount": 2,
+        "publicBallotArrays": false,
+        "publicReviewerIds": false,
+        "publicObjectionRangesBeforeSettlement": false
+      }
+    },
+    {
+      "id": "S39-reject-ranges",
+      "ruleRefs": [
+        "U4",
+        "R-036",
+        "R-037"
+      ],
+      "tags": [
+        "vote",
+        "objection",
+        "comma"
+      ],
+      "given": {
+        "rejectLabel": "写的什么玩意",
+        "objectionFixtureFile": "sentence-cases.json"
+      },
+      "when": "依次测试0—3段、跨逗号、重字位置、相邻区间、越界重叠和赞成带选区",
+      "then": "按夹具接受或拒绝；索引是0based半开，不按字符串查找",
+      "expected": {
+        "buttonLabel": "写的什么玩意",
+        "indexConvention": "ZERO_BASED_HALF_OPEN",
+        "commaConsumesIndex": false
+      }
+    },
+    {
+      "id": "S40-anonymous-union",
+      "ruleRefs": [
+        "R-037"
+      ],
+      "tags": [
+        "vote",
+        "objection",
+        "privacy"
+      ],
+      "given": {
+        "mergeFixtureId": "anonymous-union"
+      },
+      "when": "投票统一结算并读取公共历史、网络消息与公开导出",
+      "then": "展示匿名总票和合并选区，不包含评审与立场映射",
+      "expected": {
+        "mergedRanges": [
+          {
+            "start": 0,
+            "endExclusive": 5
+          },
+          {
+            "start": 7,
+            "endExclusive": 8
+          }
+        ],
+        "voterChoiceMappingExposed": false
+      }
+    },
+    {
+      "id": "S41-self-hu-rejected",
+      "ruleRefs": [
+        "R-038"
+      ],
+      "tags": [
+        "hu",
+        "repeat"
+      ],
+      "given": {
+        "source": "SELF",
+        "votePassed": false,
+        "handCount": 14
+      },
+      "when": "申请人再次申胡或合法弃牌",
+      "then": "本次14张机会只能弃牌，不能重复申胡，亮句留历史",
+      "expected": {
+        "mustDiscard": true,
+        "repeatHuError": "HU_RETRY_FORBIDDEN",
+        "historyPreserved": true,
+        "postHuDiscardMs": 30000
+      }
+    },
+    {
+      "id": "S42-discard-hu-rejected",
+      "ruleRefs": [
+        "R-038",
+        "R-024"
+      ],
+      "tags": [
+        "hu",
+        "queue"
+      ],
+      "given": {
+        "source": "DISCARD",
+        "votePassed": false,
+        "handCount": 13,
+        "registeredEaterSeat": 1
+      },
+      "when": "结算失败候选",
+      "then": "保持13张，继续HU队列后原EAT；不惩罚计分",
+      "expected": {
+        "handCount": 13,
+        "scoreDelta": 0,
+        "continueOriginalResponse": true
+      }
+    },
+    {
+      "id": "S43-win-once",
+      "ruleRefs": [
+        "R-039",
+        "R-050",
+        "I-03"
+      ],
+      "tags": [
+        "settlement",
+        "idempotency"
+      ],
+      "given": {
+        "votePassed": true,
+        "source": "DISCARD",
+        "laterHuCandidates": 2
+      },
+      "when": "结算任务重试、客户端重复请求并模拟持久化成功后进程崩溃",
+      "then": "只固定一次赢家、只加一次胜局、取消后续候选；牌可仍留弃牌记录",
+      "expected": {
+        "phase": "ROUND_FINISHED",
+        "winIncrement": 1,
+        "settlementRows": 1,
+        "remainingHuCandidates": 0
+      }
+    },
+    {
+      "id": "S44-disconnect-grace",
+      "ruleRefs": [
+        "U5",
+        "R-040"
+      ],
+      "tags": [
+        "disconnect",
+        "bot"
+      ],
+      "given": {
+        "serverConfirmedDisconnectedAtMs": 0,
+        "handPreserved": true
+      },
+      "when": "分别在14999ms和15000ms处理连接状态",
+      "then": "缓冲前不AI行动；超时才BOT，保留身份座位牌",
+      "expected": {
+        "beforeGracePresence": "DISCONNECTED_GRACE",
+        "afterGracePresence": "BOT",
+        "graceMs": 15000
+      }
+    },
+    {
+      "id": "S45-grace-beats-turn-timeout",
+      "ruleRefs": [
+        "R-041"
+      ],
+      "tags": [
+        "disconnect",
+        "timeout",
+        "race"
+      ],
+      "given": {
+        "turnDeadlineAtMs": 1000,
+        "disconnectedAtMs": 0,
+        "graceEndsAtMs": 15000
+      },
+      "when": "旧60秒任务在1000ms触发",
+      "then": "不得抢先代出，等掉线缓冲结束再AI",
+      "expected": {
+        "discardCountBefore15000": 0,
+        "earliestBotDelayAfterGraceMs": 800
+      }
+    },
+    {
+      "id": "S46-offturn-grace-no-table-freeze",
+      "ruleRefs": [
+        "R-041"
+      ],
+      "tags": [
+        "disconnect",
+        "turn"
+      ],
+      "given": {
+        "disconnectedPlayerIsActor": false,
+        "otherHumanIsActor": true
+      },
+      "when": "非当前行动者掉线",
+      "then": "其他人的阶段正常进行，不因其15秒缓冲暂停",
+      "expected": {
+        "pauseKind": "RUNNING",
+        "otherTurnCanAdvance": true
+      }
+    },
+    {
+      "id": "S47-bot-policy-restriction",
+      "ruleRefs": [
+        "U5",
+        "R-042",
+        "I-05"
+      ],
+      "tags": [
+        "bot",
+        "privacy"
+      ],
+      "given": {
+        "presence": "BOT",
+        "ownHandCount": 14,
+        "couldFormValidSentence": true
+      },
+      "when": "触发AI策略并捕获输入与输出",
+      "then": "只在800ms后合法弃牌；不吃不胡不投票不用外部模型，不读他人暗牌或未来山牌",
+      "expected": {
+        "botMayEat": false,
+        "botMayDeclareHu": false,
+        "botMayVote": false,
+        "externalModelCalls": 0,
+        "otherHandsInPolicyInput": false,
+        "futureWallInPolicyInput": false
+      }
+    },
+    {
+      "id": "S48-applicant-grace-return",
+      "ruleRefs": [
+        "R-043"
+      ],
+      "tags": [
+        "hu",
+        "disconnect",
+        "recovery"
+      ],
+      "given": {
+        "phases": [
+          "HU_COMPOSE",
+          "HU_VOTE"
+        ],
+        "applicantDisconnected": true,
+        "remainingStageMs": 1000
+      },
+      "when": "在掉线后第10秒恢复原身份",
+      "then": "阶段结算让出缓冲，恢复后继续且仍可操作至少10秒",
+      "expected": {
+        "prematureSettlementCount": 0,
+        "candidateWithdrawn": false,
+        "minRemainingActionMs": 10000
+      }
+    },
+    {
+      "id": "S49-applicant-grace-expires",
+      "ruleRefs": [
+        "R-043"
+      ],
+      "tags": [
+        "hu",
+        "disconnect",
+        "bot"
+      ],
+      "given": {
+        "phase": "HU_VOTE",
+        "approveCountMeetsThreshold": true,
+        "applicantDisconnected": true
+      },
+      "when": "申请人15秒未恢复",
+      "then": "候选撤回、原投票作废，不允许AI继承胜利",
+      "expected": {
+        "outcome": "WITHDRAWN",
+        "winIncrement": 0,
+        "botWinner": false
+      }
+    },
+    {
+      "id": "S50-recovery-wins-race",
+      "ruleRefs": [
+        "U6",
+        "R-006",
+        "R-045"
+      ],
+      "tags": [
+        "recovery",
+        "epoch",
+        "race"
+      ],
+      "given": {
+        "oldControlEpoch": 3,
+        "queuedBotActionEpoch": 3
+      },
+      "when": "恢复事务先于AI动作提交",
+      "then": "epoch增为4，撤销旧任务；旧AI和旧页面均不能改牌",
+      "expected": {
+        "newControlEpoch": 4,
+        "oldBotAccepted": false,
+        "oldClientError": "STALE_CONTROL_EPOCH",
+        "duplicateDrawCount": 0
+      }
+    },
+    {
+      "id": "S51-bot-wins-race",
+      "ruleRefs": [
+        "R-045",
+        "R-046"
+      ],
+      "tags": [
+        "recovery",
+        "epoch",
+        "race"
+      ],
+      "given": {
+        "oldControlEpoch": 3,
+        "botDiscardCommitted": true,
+        "actorTurnFinished": true
+      },
+      "when": "随后恢复原身份",
+      "then": "已合法弃牌保留，不能回滚或额外摸牌，等待正常轮到",
+      "expected": {
+        "discardRolledBack": false,
+        "extraDrawCount": 0,
+        "newControlEpoch": 4,
+        "waitForNextTurn": true
+      }
+    },
+    {
+      "id": "S52-refresh-identity",
+      "ruleRefs": [
+        "U6",
+        "R-005",
+        "R-046"
+      ],
+      "tags": [
+        "recovery",
+        "refresh",
+        "private-draft"
+      ],
+      "given": {
+        "sameBrowserValidSession": true,
+        "handCount": 14,
+        "draftHasCommas": true
+      },
+      "when": "页面刷新后恢复",
+      "then": "同playerId/seat/手牌/排句；收完整快照与权威期限，不额外摸牌",
+      "expected": {
+        "samePlayerId": true,
+        "sameSeat": true,
+        "draftRestored": true,
+        "extraDrawCount": 0,
+        "minRemainingActionMs": 10000
+      }
+    },
+    {
+      "id": "S53-cross-device-secret",
+      "ruleRefs": [
+        "U6",
+        "R-005"
+      ],
+      "tags": [
+        "recovery",
+        "credentials"
+      ],
+      "given": {
+        "newDevice": true,
+        "knowsNicknameAndRoomCode": true,
+        "hasRecoveryCode": false
+      },
+      "when": "只用昵称房间码冒认；随后用正确私密恢复码恢复",
+      "then": "冒认拒绝，正确凭据恢复同座位；公共状态和日志无明码/哈希",
+      "expected": {
+        "nicknameProofAccepted": false,
+        "validRecoveryCodeAccepted": true,
+        "sameSeat": true,
+        "publicRecoveryCodeExposed": false,
+        "publicRecoveryHashExposed": false
+      }
+    },
+    {
+      "id": "S54-recovery-code-rotation",
+      "ruleRefs": [
+        "R-005",
+        "R-006"
+      ],
+      "tags": [
+        "recovery",
+        "credentials",
+        "epoch"
+      ],
+      "given": {
+        "oldRecoveryCodeValid": true,
+        "currentSessionAuthorized": true
+      },
+      "when": "重新生成码后分别使用旧码和新码恢复",
+      "then": "旧码失效，新码成功；旧控制会话撤销",
+      "expected": {
+        "oldCodeAccepted": false,
+        "newCodeAccepted": true,
+        "activeControlSessionCount": 1
+      }
+    },
+    {
+      "id": "S55-all-offline-pause",
+      "ruleRefs": [
+        "R-047"
+      ],
+      "tags": [
+        "pause",
+        "disconnect",
+        "bot"
+      ],
+      "given": {
+        "remainingPhaseMs": 23000,
+        "allHumansLoseConnections": true
+      },
+      "when": "无人恢复直到20秒后，再由原席位恢复",
+      "then": "业务时间冻结、AI不互打，离线15秒仍走，恢复后其他席位可BOT",
+      "expected": {
+        "pauseKindBeforeRestore": "PAUSED_ALL_OFFLINE",
+        "drawsWhileAllOffline": 0,
+        "discardsWhileAllOffline": 0,
+        "retainedRemainingPhaseMs": 23000
+      }
+    },
+    {
+      "id": "S56-all-offline-expiry",
+      "ruleRefs": [
+        "R-047",
+        "R-048",
+        "R-050"
+      ],
+      "tags": [
+        "pause",
+        "retention"
+      ],
+      "given": {
+        "allOfflineForMs": 86400000
+      },
+      "when": "恢复原身份或清理任务执行",
+      "then": "过期结束，不续局不加胜局，保留结束记录",
+      "expected": {
+        "finishReason": "EXPIRED",
+        "winIncrement": 0,
+        "resumeRound": false
+      }
+    },
+    {
+      "id": "S57-restart-recovery",
+      "ruleRefs": [
+        "R-048"
+      ],
+      "tags": [
+        "restart",
+        "epoch",
+        "timer"
+      ],
+      "given": {
+        "persistedPhase": "HU_VOTE",
+        "persistedFrozenReviewers": [
+          "p1",
+          "p2"
+        ],
+        "remainingMs": 1000,
+        "oldProcessTimersExist": true
+      },
+      "when": "服务重启后首位原席位恢复",
+      "then": "先PAUSED_RECOVERY，废弃旧任务连接；重建期限至少10秒，其余席位新15秒缓冲，冻结集合不变",
+      "expected": {
+        "initialPauseKind": "PAUSED_RECOVERY",
+        "minRemainingActionMs": 10000,
+        "otherSeatGraceMs": 15000,
+        "frozenReviewerIds": [
+          "p1",
+          "p2"
+        ],
+        "oldProcessTimerAccepted": false
+      }
+    },
+    {
+      "id": "S58-restart-receipt",
+      "ruleRefs": [
+        "I-03",
+        "R-039"
+      ],
+      "tags": [
+        "restart",
+        "idempotency"
+      ],
+      "given": {
+        "discardActionCommittedBeforeRestart": true,
+        "clientSawAck": false
+      },
+      "when": "重启后重新恢复身份并用同actionId重试",
+      "then": "已提交回执持久保留，不能重复弃牌或结算",
+      "expected": {
+        "discardApplicationCount": 1,
+        "settlementIncrementAtMost": 1
+      }
+    },
+    {
+      "id": "S59-hidden-projections",
+      "ruleRefs": [
+        "I-04",
+        "R-010",
+        "R-014"
+      ],
+      "tags": [
+        "privacy",
+        "hidden-information"
+      ],
+      "given": {
+        "twoAuthenticatedPlayers": true,
+        "onePublicSubscriber": true
+      },
+      "when": "比较各快照与广播，并检查申胡前后",
+      "then": "本人独有暗牌草稿；公共只在正式亮牌后看到冻结句，永无未来牌山或凭据",
+      "expected": {
+        "otherHandExposed": false,
+        "otherDraftExposed": false,
+        "futureWallExposed": false,
+        "sessionSecretExposed": false,
+        "composeDraftExposed": false
+      }
+    },
+    {
+      "id": "S60-multiroom-isolation",
+      "ruleRefs": [
+        "I-02",
+        "I-04"
+      ],
+      "tags": [
+        "multiroom",
+        "concurrency"
+      ],
+      "given": {
+        "rooms": [
+          "A",
+          "B"
+        ],
+        "samePhaseLabel": true,
+        "differentPhaseIds": true
+      },
+      "when": "A玩家向B提交带A的actionId/phaseId/epoch，再令A与B同时行动",
+      "then": "跨房间拒绝，A阻塞不阻塞B，各自牌权计时回执隔离",
+      "expected": {
+        "crossRoomAccepted": false,
+        "roomBProgressIndependent": true,
+        "crossRoomPrivateLeak": false
+      }
+    },
+    {
+      "id": "S61-action-id-content-conflict",
+      "ruleRefs": [
+        "I-03"
+      ],
+      "tags": [
+        "idempotency",
+        "command"
+      ],
+      "given": {
+        "acceptedActionId": "a1",
+        "acceptedPayloadTileId": "t01"
+      },
+      "when": "相同身份用a1改为弃t02",
+      "then": "返回ID复用错误，不执行第二动作",
+      "expected": {
+        "error": "ACTION_ID_REUSED",
+        "secondMutationCount": 0
+      }
+    },
+    {
+      "id": "S62-old-phase-replay",
+      "ruleRefs": [
+        "I-02"
+      ],
+      "tags": [
+        "phase-gate",
+        "command"
+      ],
+      "given": {
+        "currentPhaseId": "vote-b",
+        "submittedPhaseId": "vote-a",
+        "expectedStateVersionMatches": true
+      },
+      "when": "重放上一提案票或上一窗口响应",
+      "then": "即使版本相同仍以阶段不符拒绝",
+      "expected": {
+        "error": "STALE_PHASE",
+        "mutationCount": 0
+      }
+    },
+    {
+      "id": "S63-one-vote-per-reviewer",
+      "ruleRefs": [
+        "R-034",
+        "I-03"
+      ],
+      "tags": [
+        "vote",
+        "idempotency"
+      ],
+      "given": {
+        "firstBallot": "APPROVE",
+        "sameReviewer": true
+      },
+      "when": "同actionId重试后，再用新actionId改投REJECT",
+      "then": "重试回原回执；新动作不能改票",
+      "expected": {
+        "ballotCount": 1,
+        "changedVoteAccepted": false,
+        "errorOnNewAction": "ALREADY_VOTED"
+      }
+    },
+    {
+      "id": "S64-deadline-boundary",
+      "ruleRefs": [
+        "I-02"
+      ],
+      "tags": [
+        "timeout",
+        "concurrency"
+      ],
+      "given": {
+        "serverDeadlineAtMs": 45000,
+        "queueReceivedAtMs": [
+          44999,
+          45000
+        ]
+      },
+      "when": "分别在独立复位的投票阶段提交合法票",
+      "then": "截止前接收；恰等于截止时拒绝，客户端时钟无裁决权",
+      "expected": {
+        "acceptedByCase": [
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "id": "S65-next-dealer-and-ready",
+      "ruleRefs": [
+        "R-004",
+        "R-051"
+      ],
+      "tags": [
+        "round",
+        "next-round",
+        "2-6-players"
+      ],
+      "given": {
+        "previousDealerSeats": "all",
+        "playerCounts": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "winnerMayDiffer": true,
+        "oneSeatBot": true
+      },
+      "when": "结束后尝试下一局，再等待全部真人重连并准备",
+      "then": "庄家按next轮转，不能BOT自动准备或连开",
+      "expected": {
+        "dealerPolicy": "NEXT_SEAT",
+        "botAutoReady": false,
+        "requiresAllHumanReady": true
+      }
+    },
+    {
+      "id": "S66-host-transfer",
+      "ruleRefs": [
+        "R-007"
+      ],
+      "tags": [
+        "host",
+        "disconnect"
+      ],
+      "given": {
+        "playerCount": 5,
+        "hostSeat": 3,
+        "onlineHumanSeats": [
+          0,
+          2
+        ],
+        "hostGraceElapsed": true
+      },
+      "when": "处理房主移交",
+      "then": "沿递增座次最近在线真人0接任，不改座位牌权",
+      "expected": {
+        "newHostSeat": 0,
+        "seatChanged": false,
+        "ownershipChanged": false
+      }
+    },
+    {
+      "id": "S67-close-running",
+      "ruleRefs": [
+        "R-052"
+      ],
+      "tags": [
+        "close",
+        "host"
+      ],
+      "given": {
+        "phase": "TURN_ACTION",
+        "onlineHumanCount": 3,
+        "actorIsHost": true
+      },
+      "when": "房主点击本局结束后关闭；尝试直接CLOSE_ROOM",
+      "then": "设置closeAfterRound；不能立即清桌，不产生解散投票",
+      "expected": {
+        "closeAfterRound": true,
+        "immediateCloseAccepted": false,
+        "dissolutionProposalCreated": false
+      }
+    },
+    {
+      "id": "S68-end-unscored-race",
+      "ruleRefs": [
+        "R-052"
+      ],
+      "tags": [
+        "close",
+        "concurrency",
+        "recovery"
+      ],
+      "given": {
+        "onlineHumanCountAtPrompt": 1,
+        "secondHumanRestoresBeforeExecution": true
+      },
+      "when": "唯一真人点击END_UNSCORED，但第二人恢复先提交",
+      "then": "执行时重查为2人，拒绝终止",
+      "expected": {
+        "roundTerminated": false,
+        "winIncrement": 0
+      }
+    },
+    {
+      "id": "S69-end-unscored-single",
+      "ruleRefs": [
+        "R-052"
+      ],
+      "tags": [
+        "close"
+      ],
+      "given": {
+        "onlineHumanCountAtExecution": 1,
+        "phase": "TURN_ACTION"
+      },
+      "when": "该真人点击结束本局（不计分）",
+      "then": "终止本局并保留历史，不加分",
+      "expected": {
+        "finishReason": "TERMINATED",
+        "winIncrement": 0,
+        "historyPreserved": true
+      }
+    },
+    {
+      "id": "S70-leave-not-delete",
+      "ruleRefs": [
+        "R-002",
+        "R-052"
+      ],
+      "tags": [
+        "identity",
+        "disconnect"
+      ],
+      "given": {
+        "roundStarted": true,
+        "seatOccupied": true
+      },
+      "when": "玩家关闭页面或点击离开",
+      "then": "按断线缓冲/AI处理，不删除席位，不让新人补位",
+      "expected": {
+        "seatDeleted": false,
+        "replacementAllowed": false
+      }
+    },
+    {
+      "id": "S71-lobby-finish-close",
+      "ruleRefs": [
+        "R-052"
+      ],
+      "tags": [
+        "close",
+        "host"
+      ],
+      "given": {
+        "phases": [
+          "LOBBY",
+          "ROUND_FINISHED"
+        ],
+        "actorIsHost": true
+      },
+      "when": "点击关闭房间",
+      "then": "可以关闭并保留已结束局记录；非房主不能替代执行",
+      "expected": {
+        "phase": "ROOM_CLOSED",
+        "historyPreserved": true,
+        "nonHostCanClose": false
+      }
+    },
+    {
+      "id": "S72-pause-withdrawal-pending",
+      "ruleRefs": [
+        "R-043",
+        "R-047"
+      ],
+      "tags": [
+        "pause",
+        "hu",
+        "disconnect"
+      ],
+      "given": {
+        "phase": "HU_VOTE",
+        "applicantDisconnected": true,
+        "allHumansDisconnected": true
+      },
+      "when": "15秒到期并在20秒恢复另一个原席位",
+      "then": "全离线时只标待办不推进，恢复后先撤回申请再推进原队列",
+      "expected": {
+        "businessTransitionsWhilePaused": 0,
+        "withdrawBeforeContinuation": true,
+        "botWinIncrement": 0
+      }
+    },
+    {
+      "id": "S73-own-withdraw-discard",
+      "ruleRefs": [
+        "R-038",
+        "R-043"
+      ],
+      "tags": [
+        "hu",
+        "disconnect",
+        "timeout"
+      ],
+      "given": {
+        "source": "SELF",
+        "applicantGraceExpired": true,
+        "handCount": 14
+      },
+      "when": "申请人缓冲到期撤回自有牌候选",
+      "then": "返回强制弃牌阶段给30秒，不允许AI继承胡牌或重申同机会",
+      "expected": {
+        "phase": "TURN_ACTION",
+        "mustDiscard": true,
+        "postHuDiscardMs": 30000,
+        "handCount": 14,
+        "winIncrement": 0
+      }
+    },
+    {
+      "id": "S74-http-seat-race",
+      "ruleRefs": [
+        "R-001",
+        "R-002",
+        "R-005"
+      ],
+      "tags": [
+        "http",
+        "identity",
+        "concurrency"
+      ],
+      "given": {
+        "phase": "LOBBY",
+        "capacity": 4,
+        "requestedSeat": 2,
+        "joiners": 2
+      },
+      "when": "两个首次入座HTTP请求并发指定同一空座",
+      "then": "事务只允许一人占seat2，另一个SEAT_OCCUPIED；成功者收到私密恢复码及HttpOnly cookie",
+      "expected": {
+        "occupiedSeat2Count": 1,
+        "loserError": "SEAT_OCCUPIED",
+        "sessionTokenInJson": false
+      }
+    },
+    {
+      "id": "S75-cookie-restore-boundary",
+      "ruleRefs": [
+        "R-005",
+        "R-006"
+      ],
+      "tags": [
+        "http",
+        "recovery",
+        "credentials"
+      ],
+      "given": {
+        "sameBrowserHttpOnlyCookie": true,
+        "restoreProof": {
+          "kind": "SESSION"
+        }
+      },
+      "when": "同浏览器刷新并调用restore，检查JS、JSON与Socket负载",
+      "then": "服务端读取cookie并续接同座；响应安全快照，Set-Cookie作为传输副作用，JS无sessionToken",
+      "expected": {
+        "restoredSameSeat": true,
+        "sessionTokenInJson": false,
+        "sessionTokenInLocalStorage": false,
+        "sessionTokenInSocket": false,
+        "setCookieHttpOnly": true
+      }
+    },
+    {
+      "id": "S76-server-time-calibration",
+      "ruleRefs": [
+        "I-02"
+      ],
+      "tags": [
+        "timeout",
+        "clock",
+        "socket"
+      ],
+      "given": {
+        "clientClockOffsetMs": 3600000,
+        "resyncContainsServerNow": true
+      },
+      "when": "客户端显示倒计时并在真实服务截止两侧发命令",
+      "then": "按serverNow校准展示，服务端receivedAt决定接受，不依赖客户端系统时钟",
+      "expected": {
+        "clientClockDecidesAcceptance": false,
+        "serverNowRequired": true
+      }
+    },
+    {
+      "id": "S77-draft-independent-version",
+      "ruleRefs": [
+        "R-011",
+        "R-013"
+      ],
+      "tags": [
+        "draft",
+        "concurrency",
+        "phase-gate"
+      ],
+      "given": {
+        "oldPhaseId": "response-a",
+        "currentPhaseId": "vote-b",
+        "publicVersionAdvanced": true,
+        "handUnchanged": true,
+        "expectedDraftVersion": 5,
+        "currentDraftVersion": 5
+      },
+      "when": "等待别人时用旧公共观测版本和phaseId提交本人新排句",
+      "then": "只校验本人draftVersion/epoch/round/牌集合，不因公共阶段变化拒绝，不推进全桌版本",
+      "expected": {
+        "accepted": true,
+        "newDraftVersion": 6,
+        "publicStateVersionDelta": 0
+      }
+    },
+    {
+      "id": "S78-grace-timer-cross-phase",
+      "ruleRefs": [
+        "R-040",
+        "R-042"
+      ],
+      "tags": [
+        "timer",
+        "disconnect",
+        "phase-gate"
+      ],
+      "given": {
+        "graceStartedInPhase": "turn-a",
+        "currentPhase": "response-b",
+        "samePlayerEpoch": true,
+        "graceEndsAtMs": 15000
+      },
+      "when": "原GRACE_END在15000ms执行",
+      "then": "虽业务phase已变化仍按原player/epoch/graceEndsAt把离线席位转BOT",
+      "expected": {
+        "presence": "BOT",
+        "rejectedOnlyForPhaseChange": false
+      }
+    },
+    {
+      "id": "S79-retention-original-expiry",
+      "ruleRefs": [
+        "R-047",
+        "R-048"
+      ],
+      "tags": [
+        "timer",
+        "restart",
+        "retention"
+      ],
+      "given": {
+        "originalExpiresAtMs": 86400000,
+        "restartAtMs": 86000000,
+        "phaseIdChangedOnRestart": true,
+        "stillNoHumanOnline": true
+      },
+      "when": "到原86400000ms执行到期任务",
+      "then": "按原expiry及暂停条件过期，不因新phase丢任务，不重新保留24小时",
+      "expected": {
+        "finishReason": "EXPIRED",
+        "expiresAtMs": 86400000,
+        "retentionExtendedByRestart": false
+      }
+    },
+    {
+      "id": "S80-queued-hu-remaining-grace",
+      "ruleRefs": [
+        "R-024",
+        "R-040",
+        "R-043"
+      ],
+      "tags": [
+        "hu",
+        "disconnect",
+        "timer"
+      ],
+      "given": {
+        "queuedApplicantPresence": "DISCONNECTED_GRACE",
+        "originalGraceEndsAtMs": 15000,
+        "candidateDequeuedAtMs": 13000
+      },
+      "when": "该HU候选轮到出队，直至15000ms仍未恢复",
+      "then": "最多等原剩余2000ms，不新给15秒，随后撤回继续队列",
+      "expected": {
+        "maxAdditionalWaitMs": 2000,
+        "graceEndsAtMs": 15000,
+        "outcome": "WITHDRAWN"
+      }
+    },
+    {
+      "id": "S81-reserved-eat-bot-invalid",
+      "ruleRefs": [
+        "R-024",
+        "R-042"
+      ],
+      "tags": [
+        "eat",
+        "bot",
+        "concurrency"
+      ],
+      "given": {
+        "reservedEaterWasHumanAtRegistration": true,
+        "reservedEaterPresenceAtExecution": "BOT",
+        "earlierHuCandidatesFailed": true
+      },
+      "when": "准备兑现保留EAT",
+      "then": "重验资格后作废EAT，AI不得继承吃；正常从next(discarder)摸牌",
+      "expected": {
+        "eatExecuted": false,
+        "eatCountDelta": 0,
+        "continueWithNormalDraw": true
+      }
+    },
+    {
+      "id": "S82-queued-hu-bot-invalid",
+      "ruleRefs": [
+        "R-024",
+        "R-042"
+      ],
+      "tags": [
+        "hu",
+        "bot",
+        "concurrency"
+      ],
+      "given": {
+        "queuedHuRegisteredByHuman": true,
+        "presenceAtDequeue": "BOT",
+        "laterCandidates": 1
+      },
+      "when": "准备开始该候选的排句/评审",
+      "then": "跳过该候选，AI无法借先前登记获胜，继续后续队列",
+      "expected": {
+        "candidateStarted": false,
+        "winIncrement": 0,
+        "continueHuQueue": true
+      }
+    },
+    {
+      "id": "S83-persistence-codec-roundtrip",
+      "ruleRefs": [
+        "I-01",
+        "I-03",
+        "R-048"
+      ],
+      "tags": [
+        "codec",
+        "restart",
+        "persistence"
+      ],
+      "given": {
+        "aggregateContains": [
+          "tilesMap",
+          "ownershipMap",
+          "playersMap",
+          "intentsMap",
+          "ballotsMap",
+          "receiptsMap",
+          "settlementSet",
+          "rngState",
+          "wallOrder",
+          "pendingJobs"
+        ]
+      },
+      "when": "对真实聚合encode→JSON.stringify→JSON.parse→decode并重启",
+      "then": "Map/Set使用显式数组codec且内容完整，重启不重复摸牌或计分",
+      "expected": {
+        "codecVersion": 1,
+        "allEntriesPreserved": true,
+        "ownershipConserved": true,
+        "duplicateDrawCount": 0,
+        "duplicateScoreCount": 0
+      }
+    },
+    {
+      "id": "S84-private-stale-event",
+      "ruleRefs": [
+        "R-006",
+        "R-046",
+        "I-04"
+      ],
+      "tags": [
+        "socket",
+        "recovery",
+        "epoch"
+      ],
+      "given": {
+        "currentControlEpoch": 4,
+        "currentDraftVersion": 8,
+        "latePrivateSnapshotEpoch": 3,
+        "latePrivateDraftVersion": 6
+      },
+      "when": "恢复新设备后迟到旧连接私密快照和旧草稿确认",
+      "then": "按epoch及版本丢弃，不能把旧手牌或排列盖回新状态",
+      "expected": {
+        "stalePrivateSnapshotApplied": false,
+        "currentControlEpoch": 4,
+        "currentDraftVersion": 8
+      }
+    },
+    {
+      "id": "S85-draft-stale-rebase",
+      "ruleRefs": [
+        "R-011"
+      ],
+      "tags": [
+        "draft",
+        "concurrency"
+      ],
+      "given": {
+        "expectedDraftVersion": 5,
+        "currentDraftVersionAfterDraw": 6,
+        "newTileAppended": true
+      },
+      "when": "旧手牌的SAVE_DRAFT迟到",
+      "then": "返回STALE_DRAFT_VERSION与当前快照；客户端重合并保留剩余牌顺序，新牌仍只追加一次",
+      "expected": {
+        "error": "STALE_DRAFT_VERSION",
+        "newTileCopiesInDraft": 1,
+        "handOwnershipMutationCount": 0
+      }
+    },
+    {
+      "id": "S86-other-returns-first",
+      "ruleRefs": [
+        "R-043",
+        "R-047",
+        "R-049"
+      ],
+      "tags": [
+        "pause",
+        "hu",
+        "recovery"
+      ],
+      "given": {
+        "pause": "PAUSED_ALL_OFFLINE",
+        "phase": "HU_VOTE",
+        "applicantGraceEndsAtMs": 15000,
+        "otherHumanRestoresAtMs": 9000,
+        "applicantStillDisconnected": true
+      },
+      "when": "非申请人先恢复",
+      "then": "不能直接RUNNING或结算；保持申请人剩余6000ms缓冲，截止才撤回",
+      "expected": {
+        "suspension": "PAUSED_CLAIMANT_GRACE",
+        "graceEndsAtMs": 15000,
+        "prematureSettlementCount": 0
+      }
+    },
+    {
+      "id": "S87-restart-other-returns-first",
+      "ruleRefs": [
+        "R-043",
+        "R-048",
+        "R-049"
+      ],
+      "tags": [
+        "restart",
+        "hu",
+        "recovery",
+        "timer"
+      ],
+      "given": {
+        "persistedPhase": "HU_COMPOSE",
+        "firstRestorerIsApplicant": false,
+        "applicantNotRestored": true,
+        "newGraceAlreadyAssigned": true,
+        "applicantGraceEndsAtMs": 30000,
+        "nowMs": 25000
+      },
+      "when": "再次恢复另一个非申请人连接",
+      "then": "保留既有截止30000，不重开15秒；保持PAUSED_CLAIMANT_GRACE，申请人回来才续排句",
+      "expected": {
+        "suspension": "PAUSED_CLAIMANT_GRACE",
+        "graceEndsAtMs": 30000,
+        "remainingGraceMs": 5000,
+        "graceRestarted": false
+      }
+    },
+    {
+      "id": "S88-idle-seat-release",
+      "ruleRefs": [
+        "R-001",
+        "R-040"
+      ],
+      "tags": [
+        "lobby",
+        "identity",
+        "disconnect"
+      ],
+      "given": {
+        "phases": [
+          "LOBBY",
+          "ROUND_FINISHED"
+        ],
+        "playerSeat": 2,
+        "disconnectedForMs": 15000,
+        "historicalWins": 4
+      },
+      "when": "离线15秒处理任务，然后原身份回来选空seat1",
+      "then": "没有进行中局所以不BOT；释放原座清准备，恢复保留playerId与4胜，不能冒领已占座",
+      "expected": {
+        "botActivated": false,
+        "oldSeatReleased": true,
+        "ready": false,
+        "samePlayerIdAfterReseat": true,
+        "wins": 4,
+        "occupiedSeatClaimAccepted": false
+      }
+    },
+    {
+      "id": "S89-capacity-and-no-reseat",
+      "ruleRefs": [
+        "R-001",
+        "R-002"
+      ],
+      "tags": [
+        "lobby",
+        "seat",
+        "2-6-players"
+      ],
+      "given": {
+        "capacity": 4,
+        "alreadySeated": true,
+        "requestedChanges": [
+          "capacity6",
+          "moveSeat"
+        ]
+      },
+      "when": "同房间修改人数或已入座者主动换座",
+      "then": "均不支持；要换人数新建房间，首次或释放后可选空座",
+      "expected": {
+        "capacityAfter": 4,
+        "activeSeatChanged": false,
+        "capacityMutationAccepted": false
+      }
+    },
+    {
+      "id": "S90-finished-win-retention",
+      "ruleRefs": [
+        "R-039",
+        "R-050"
+      ],
+      "tags": [
+        "settlement",
+        "retention",
+        "timer"
+      ],
+      "given": {
+        "phase": "ROUND_FINISHED",
+        "reason": "WIN",
+        "winsAlreadyIncremented": 1,
+        "allOfflineForMs": 86400000
+      },
+      "when": "保留期或旧业务任务到期清理",
+      "then": "只关闭房间保留WIN和原胜局，不能改EXPIRED、不扣已记分",
+      "expected": {
+        "roundReason": "WIN",
+        "winIncrementTotal": 1,
+        "mayCloseRoom": true,
+        "reasonRewrittenToExpired": false
+      }
+    },
+    {
+      "id": "S91-lobby-grace-null-round",
+      "ruleRefs": [
+        "R-040"
+      ],
+      "tags": [
+        "timer",
+        "lobby",
+        "identity"
+      ],
+      "given": {
+        "roundId": null,
+        "phase": "LOBBY",
+        "playerDisconnectedAtMs": 0,
+        "graceEndsAtMs": 15000
+      },
+      "when": "携带roundId=null的GRACE_END在15000ms执行",
+      "then": "合法释放离线座位清准备，不因没有roundId丢任务，不启用BOT",
+      "expected": {
+        "seatReleased": true,
+        "ready": false,
+        "botActivated": false,
+        "nullRoundIdTimerAllowed": true
+      }
+    },
+    {
+      "id": "S92-finished-refill-next-start",
+      "ruleRefs": [
+        "R-001",
+        "R-040",
+        "R-051"
+      ],
+      "tags": [
+        "round",
+        "identity",
+        "start"
+      ],
+      "given": {
+        "phase": "ROUND_FINISHED",
+        "vacantSeat": 2,
+        "historicalWinsPreserved": true
+      },
+      "when": "恢复旧身份或新真人通过join指定空座，再全部真人READY、房主START_ROUND",
+      "then": "结算页允许补座与准备，原子开始新局并清临时候选/草稿/旧任务，历史胜局保留且不能换已占座",
+      "expected": {
+        "joinAccepted": true,
+        "phaseAfterStart": "TURN_ACTION",
+        "newRoundId": true,
+        "oldCandidateDraftCleared": true,
+        "oldTimersInvalidated": true,
+        "historyPreserved": true
+      }
+    },
+    {
+      "id": "S93-eat-grace-cancel-immediate",
+      "ruleRefs": [
+        "R-024",
+        "R-040"
+      ],
+      "tags": [
+        "eat",
+        "disconnect",
+        "timer"
+      ],
+      "given": {
+        "reservedEaterPresence": "DISCONNECTED_GRACE",
+        "remainingGraceMs": 12000,
+        "eatReadyToExecute": true
+      },
+      "when": "此前HU全部失败后准备兑现EAT",
+      "then": "即刻取消EAT，不等待剩余缓冲，转next(discarder)普通摸牌；不同于排队HU可等原缓冲",
+      "expected": {
+        "eatExecuted": false,
+        "extraWaitMs": 0,
+        "continueWithNormalDraw": true
+      }
+    },
+    {
+      "id": "S94-compose-manual-withdraw",
+      "ruleRefs": [
+        "R-031",
+        "R-024"
+      ],
+      "tags": [
+        "compose",
+        "hu",
+        "command"
+      ],
+      "given": {
+        "source": "DISCARD",
+        "actorIsCandidate": true,
+        "phasesTested": [
+          "HU_COMPOSE",
+          "HU_VOTE"
+        ],
+        "handCount": 13
+      },
+      "when": "分别复位提交WITHDRAW_DISCARD_HU，HU_COMPOSE成功后重试相同actionId",
+      "then": "仅当前HU_COMPOSE本人可撤回一次并续原队列；VOTE不能撤回改句，不扣分不补响应",
+      "expected": {
+        "acceptedByPhase": [
+          true,
+          false
+        ],
+        "continuationCountAfterRetry": 1,
+        "handCount": 13,
+        "scoreDelta": 0,
+        "newResponseWindowOpened": false
+      }
+    },
+    {
+      "id": "S95-candidate-draft-private-restore",
+      "ruleRefs": [
+        "R-011",
+        "R-013",
+        "R-031",
+        "R-046"
+      ],
+      "tags": [
+        "draft",
+        "compose",
+        "recovery",
+        "privacy"
+      ],
+      "given": {
+        "phase": "HU_COMPOSE",
+        "ownHandCount": 13,
+        "candidateTileCount": 14,
+        "normalDraftVersion": 5,
+        "candidateDraftVersion": 1
+      },
+      "when": "保存独立14字候选草稿含3逗号，刷新恢复，再正式提交或撤回",
+      "then": "按当前source/phase/epoch和候选版本保存，普通13张草稿不变；恢复含候选排列，公共不泄露；候选离开后清理且拒绝迟到保存",
+      "expected": {
+        "candidateDraftVersionAfterSave": 2,
+        "normalDraftVersionAfterSave": 5,
+        "ownHandCount": 13,
+        "candidateDraftRestored": true,
+        "candidateDraftExposedBeforeSubmit": false,
+        "candidateDraftClearedAfterExit": true,
+        "lateSaveAccepted": false
+      }
+    }
+  ]
+}

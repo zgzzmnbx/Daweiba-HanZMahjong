@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "1.0.0",
+  "cases": [
+    {
+      "id": "vote-2p-a0",
+      "playerCount": 2,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1"
+      ],
+      "frozenReviewerIds": [
+        "p1"
+      ],
+      "approveCount": 0,
+      "rejectCount": 1,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 1,
+        "threshold": 1,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-2p-a1",
+      "playerCount": 2,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1"
+      ],
+      "frozenReviewerIds": [
+        "p1"
+      ],
+      "approveCount": 1,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 1,
+        "threshold": 1,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-3p-a0",
+      "playerCount": 3,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2"
+      ],
+      "approveCount": 0,
+      "rejectCount": 2,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 2,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-3p-a1",
+      "playerCount": 3,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2"
+      ],
+      "approveCount": 1,
+      "rejectCount": 1,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 2,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-3p-a2",
+      "playerCount": 3,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2"
+      ],
+      "approveCount": 2,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 2,
+        "threshold": 2,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-4p-a0",
+      "playerCount": 4,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "approveCount": 0,
+      "rejectCount": 3,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-4p-a1",
+      "playerCount": 4,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "approveCount": 1,
+      "rejectCount": 2,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-4p-a2",
+      "playerCount": 4,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "approveCount": 2,
+      "rejectCount": 1,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-4p-a3",
+      "playerCount": 4,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "approveCount": 3,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-5p-a0",
+      "playerCount": 5,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "approveCount": 0,
+      "rejectCount": 4,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 4,
+        "threshold": 3,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-5p-a2",
+      "playerCount": 5,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "approveCount": 2,
+      "rejectCount": 2,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 4,
+        "threshold": 3,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-5p-a3",
+      "playerCount": 5,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "approveCount": 3,
+      "rejectCount": 1,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 4,
+        "threshold": 3,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-5p-a4",
+      "playerCount": 5,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "approveCount": 4,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 4,
+        "threshold": 3,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-6p-a0",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "approveCount": 0,
+      "rejectCount": 5,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 5,
+        "threshold": 3,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-6p-a2",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "approveCount": 2,
+      "rejectCount": 3,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 5,
+        "threshold": 3,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-6p-a3",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "approveCount": 3,
+      "rejectCount": 2,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 5,
+        "threshold": 3,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-6p-a5",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "approveCount": 5,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 5,
+        "threshold": 3,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-no-reviewer",
+      "playerCount": 2,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0"
+      ],
+      "frozenReviewerIds": [],
+      "approveCount": 0,
+      "rejectCount": 0,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 0,
+        "threshold": null,
+        "canStart": false,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-frozen-disconnect",
+      "playerCount": 4,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "disconnectedAfterFreeze": [
+        "p2",
+        "p3"
+      ],
+      "approveCount": 1,
+      "rejectCount": 0,
+      "abstainCount": 2,
+      "expected": {
+        "reviewerCount": 3,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    },
+    {
+      "id": "vote-abstain-not-reject",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "approveCount": 3,
+      "rejectCount": 0,
+      "abstainCount": 2,
+      "expected": {
+        "reviewerCount": 5,
+        "threshold": 3,
+        "canStart": true,
+        "passed": true
+      }
+    },
+    {
+      "id": "vote-bots-excluded",
+      "playerCount": 6,
+      "applicantId": "p0",
+      "onlineHumanIds": [
+        "p0",
+        "p1",
+        "p2"
+      ],
+      "botIds": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "frozenReviewerIds": [
+        "p1",
+        "p2"
+      ],
+      "approveCount": 1,
+      "rejectCount": 1,
+      "abstainCount": 0,
+      "expected": {
+        "reviewerCount": 2,
+        "threshold": 2,
+        "canStart": true,
+        "passed": false
+      }
+    }
+  ]
+}

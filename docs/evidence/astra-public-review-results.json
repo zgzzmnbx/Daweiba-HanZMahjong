@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-23T01:48:02.179Z",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "156.0.8078.47",
+  "scope": "Astra independent review; one actual public room, isolated authenticated browsers, no server injection",
+  "checks": [
+    {
+      "check": "public real deal retains one WebGL canvas on all three clients",
+      "status": "PASS",
+      "data": {
+        "capacity": 3,
+        "nonzeroViewerVerified": true
+      }
+    },
+    {
+      "check": "projected own tile reorder saved through actual private draft command",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "200% equivalent CSS viewport has no horizontal overflow and all 14 accessible tiles",
+      "status": "PASS",
+      "data": {
+        "inner": 720,
+        "scroll": 720,
+        "tiles": [
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.9375
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.9375
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.9375
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.9375
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.9375
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          },
+          {
+            "font": 28,
+            "width": 43.921875
+          }
+        ]
+      }
+    },
+    {
+      "check": "three-player frozen review requires 2/2 and transition does not lose WebGL",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "public mobile recovery preserves frozen reviewer and revokes old private view",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "mid-vote public snapshot exposes aggregate count only, not ballot or objection identity",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "one reject in 3-player review fails, retains applicant 14 tiles, shows anonymous merged range",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "public WebGL loss/rebuild retains real phase and identity",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "production diagnostics absent; 390px no overflow; no browser errors",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "check": "review room ended through normal unscored command",
+      "status": "PASS",
+      "data": {}
+    }
+  ],
+  "screenshots": [
+    "astra-public-desktop-action.png",
+    "astra-public-200pct-layout.png",
+    "astra-public-control-revoked.png",
+    "astra-public-mobile-objection.png",
+    "astra-public-mobile-anonymous-result.png"
+  ]
+}

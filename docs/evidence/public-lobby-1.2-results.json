@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T02:10:30.875Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.2.0",
+  "status": "PASS",
+  "scope": "Actual HTTPS/WSS, only a free public table used, two isolated session cookies",
+  "checks": [
+    "two anonymous clients compete for one fixed table: one success, one TABLE_OCCUPIED",
+    "independent guest discovers public room and joins; anonymous lobby shows 2/2 without private data",
+    "started game is publicly PLAYING",
+    "finished game is publicly FINISHED",
+    "normal close releases the same public table immediately"
+  ]
+}

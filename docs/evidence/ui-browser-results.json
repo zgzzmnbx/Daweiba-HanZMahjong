@@ -1,0 +1,1049 @@
+{
+  "date": "2026-10-23T00:56:51.960Z",
+  "browser": "151.0.7922.174",
+  "platform": "darwin",
+  "checks": [
+    {
+      "name": "2 seats, all 14 projected hit bounds on-screen",
+      "status": "PASS",
+      "data": [
+        {
+          "x": 384.34375,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        },
+        {
+          "x": 432.4375,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 480.515625,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 528.609375,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 576.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 624.78125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 672.875,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 720.953125,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 768.8125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 816.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 864.546875,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 912.421875,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 960.296875,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 1008.15625,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        }
+      ]
+    },
+    {
+      "name": "3 seats, all 14 projected hit bounds on-screen",
+      "status": "PASS",
+      "data": [
+        {
+          "x": 384.34375,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        },
+        {
+          "x": 432.4375,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 480.515625,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 528.609375,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 576.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 624.78125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 672.875,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 720.953125,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 768.8125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 816.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 864.546875,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 912.421875,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 960.296875,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 1008.15625,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        }
+      ]
+    },
+    {
+      "name": "4 seats, all 14 projected hit bounds on-screen",
+      "status": "PASS",
+      "data": [
+        {
+          "x": 384.34375,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        },
+        {
+          "x": 432.4375,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 480.515625,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 528.609375,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 576.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 624.78125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 672.875,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 720.953125,
+          "y": 635.703125,
+          "w": 46.15625,
+          "h": 67.984375
+        },
+        {
+          "x": 768.8125,
+          "y": 635.703125,
+          "w": 46.375,
+          "h": 67.984375
+        },
+        {
+          "x": 816.6875,
+          "y": 635.703125,
+          "w": 46.59375,
+          "h": 67.984375
+        },
+        {
+          "x": 864.546875,
+          "y": 635.703125,
+          "w": 46.8125,
+          "h": 67.984375
+        },
+        {
+          "x": 912.421875,
+          "y": 635.703125,
+          "w": 47.03125,
+          "h": 67.984375
+        },
+        {
+          "x": 960.296875,
+          "y": 635.703125,
+          "w": 47.25,
+          "h": 67.984375
+        },
+        {
+          "x": 1008.15625,
+          "y": 635.703125,
+          "w": 47.46875,
+          "h": 67.984375
+        }
+      ]
+    },
+    {
+      "name": "5 seats, all 14 projected hit bounds on-screen",
+      "status": "PASS",
+      "data": [
+        {
+          "x": 415.84375,
+          "y": 620.890625,
+          "w": 42.90625,
+          "h": 61.6875
+        },
+        {
+          "x": 459.421875,
+          "y": 620.890625,
+          "w": 42.71875,
+          "h": 61.6875
+        },
+        {
+          "x": 503,
+          "y": 620.890625,
+          "w": 42.546875,
+          "h": 61.6875
+        },
+        {
+          "x": 546.5625,
+          "y": 620.890625,
+          "w": 42.359375,
+          "h": 61.6875
+        },
+        {
+          "x": 590.140625,
+          "y": 620.890625,
+          "w": 42.1875,
+          "h": 61.6875
+        },
+        {
+          "x": 633.71875,
+          "y": 620.890625,
+          "w": 42,
+          "h": 61.6875
+        },
+        {
+          "x": 677.296875,
+          "y": 620.890625,
+          "w": 41.828125,
+          "h": 61.6875
+        },
+        {
+          "x": 720.859375,
+          "y": 620.890625,
+          "w": 41.828125,
+          "h": 61.6875
+        },
+        {
+          "x": 764.25,
+          "y": 620.890625,
+          "w": 42,
+          "h": 61.6875
+        },
+        {
+          "x": 807.65625,
+          "y": 620.890625,
+          "w": 42.1875,
+          "h": 61.6875
+        },
+        {
+          "x": 851.046875,
+          "y": 620.890625,
+          "w": 42.359375,
+          "h": 61.6875
+        },
+        {
+          "x": 894.4375,
+          "y": 620.890625,
+          "w": 42.546875,
+          "h": 61.6875
+        },
+        {
+          "x": 937.828125,
+          "y": 620.890625,
+          "w": 42.71875,
+          "h": 61.6875
+        },
+        {
+          "x": 981.21875,
+          "y": 620.890625,
+          "w": 42.90625,
+          "h": 61.6875
+        }
+      ]
+    },
+    {
+      "name": "6 seats, all 14 projected hit bounds on-screen",
+      "status": "PASS",
+      "data": [
+        {
+          "x": 415.84375,
+          "y": 620.890625,
+          "w": 42.90625,
+          "h": 61.6875
+        },
+        {
+          "x": 459.421875,
+          "y": 620.890625,
+          "w": 42.71875,
+          "h": 61.6875
+        },
+        {
+          "x": 503,
+          "y": 620.890625,
+          "w": 42.546875,
+          "h": 61.6875
+        },
+        {
+          "x": 546.5625,
+          "y": 620.890625,
+          "w": 42.359375,
+          "h": 61.6875
+        },
+        {
+          "x": 590.140625,
+          "y": 620.890625,
+          "w": 42.1875,
+          "h": 61.6875
+        },
+        {
+          "x": 633.71875,
+          "y": 620.890625,
+          "w": 42,
+          "h": 61.6875
+        },
+        {
+          "x": 677.296875,
+          "y": 620.890625,
+          "w": 41.828125,
+          "h": 61.6875
+        },
+        {
+          "x": 720.859375,
+          "y": 620.890625,
+          "w": 41.828125,
+          "h": 61.6875
+        },
+        {
+          "x": 764.25,
+          "y": 620.890625,
+          "w": 42,
+          "h": 61.6875
+        },
+        {
+          "x": 807.65625,
+          "y": 620.890625,
+          "w": 42.1875,
+          "h": 61.6875
+        },
+        {
+          "x": 851.046875,
+          "y": 620.890625,
+          "w": 42.359375,
+          "h": 61.6875
+        },
+        {
+          "x": 894.4375,
+          "y": 620.890625,
+          "w": 42.546875,
+          "h": 61.6875
+        },
+        {
+          "x": 937.828125,
+          "y": 620.890625,
+          "w": 42.71875,
+          "h": 61.6875
+        },
+        {
+          "x": 981.21875,
+          "y": 620.890625,
+          "w": 42.90625,
+          "h": 61.6875
+        }
+      ]
+    },
+    {
+      "name": "3D / DOM share one draft and one input layer",
+      "status": "PASS"
+    },
+    {
+      "name": "Space/Arrow/Escape cancels keyboard reordering",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard reorder commits by physical tile",
+      "status": "PASS"
+    },
+    {
+      "name": "three comma alternatives incl row-crossing seventh anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate glyph has unique physical identities",
+      "status": "PASS",
+      "data": [
+        "demo-t4",
+        "demo-t13"
+      ]
+    },
+    {
+      "name": "manual fallback / restore retains draft",
+      "status": "PASS"
+    },
+    {
+      "name": "actual WEBGL_lose_context and recovery",
+      "status": "PASS"
+    },
+    {
+      "name": "20 fallback/rebuild cycles stable renderer GPU counts",
+      "status": "PASS",
+      "data": [
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        },
+        {
+          "renders": 2,
+          "capacity": 155,
+          "fontRebuilds": 1,
+          "memory": {
+            "geometries": 13,
+            "textures": 2
+          },
+          "calls": 341,
+          "dpr": 1
+        }
+      ]
+    },
+    {
+      "name": "dynamic view capacity > 218 without hidden IDs",
+      "status": "PASS",
+      "data": {
+        "renders": 2,
+        "capacity": 296,
+        "fontRebuilds": 1,
+        "memory": {
+          "geometries": 13,
+          "textures": 15
+        },
+        "calls": 465,
+        "dpr": 1
+      }
+    },
+    {
+      "name": "390px 7+7, three commas, no horizontal overflow",
+      "status": "PASS",
+      "data": {
+        "width": 390,
+        "scroll": 390,
+        "tiles": [
+          {
+            "x": 17,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 69,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 121,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 173,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 225,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 277,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 329,
+            "y": 500.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 17,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 69,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 121,
+            "y": 564.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 173,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 225,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 277,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          },
+          {
+            "x": 329,
+            "y": 567.578125,
+            "width": 44,
+            "height": 58,
+            "font": "29px"
+          }
+        ]
+      }
+    },
+    {
+      "name": "390px frozen review range excludes commas",
+      "status": "PASS",
+      "data": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 2,
+            "endExclusive": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "430px 7+7, three commas, no horizontal overflow",
+      "status": "PASS",
+      "data": {
+        "width": 430,
+        "scroll": 430,
+        "tiles": [
+          {
+            "x": 20,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 77,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 134,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 191,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 248,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 305,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 362,
+            "y": 527.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 20,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 77,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 134,
+            "y": 595.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 191,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 248,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 305,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          },
+          {
+            "x": 362,
+            "y": 598.234375,
+            "width": 48,
+            "height": 62,
+            "font": "31px"
+          }
+        ]
+      }
+    },
+    {
+      "name": "430px frozen review range excludes commas",
+      "status": "PASS",
+      "data": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 2,
+            "endExclusive": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual touch cross-row drag retains physical glyph",
+      "status": "PASS"
+    },
+    {
+      "name": "WebGL unavailable at startup remains operable",
+      "status": "PASS"
+    },
+    {
+      "name": "measured desktop render sample (not hardware qualification)",
+      "status": "PASS",
+      "data": {
+        "method": "120 requestAnimationFrame frames forcing renderer.render, first five excluded, 216 anonymous wall + all visible fixture hands",
+        "p50ms": 16.69999885559082,
+        "p95ms": 17.19999885559082,
+        "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+        "renders": 3,
+        "capacity": 296,
+        "fontRebuilds": 1,
+        "memory": {
+          "geometries": 13,
+          "textures": 15
+        },
+        "calls": 623,
+        "dpr": 1
+      }
+    },
+    {
+      "name": "no browser page errors",
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "table-2-desktop.png",
+    "table-3-desktop.png",
+    "table-4-desktop.png",
+    "table-5-desktop.png",
+    "table-6-desktop.png",
+    "three-commas-desktop.png",
+    "context-loss-fallback.png",
+    "capacity-216-wall-plus-visible.png",
+    "mobile-390-three-commas.png",
+    "mobile-390-vote.png",
+    "mobile-430-three-commas.png",
+    "mobile-430-vote.png"
+  ],
+  "performanceSample": {
+    "method": "120 requestAnimationFrame frames forcing renderer.render, first five excluded, 216 anonymous wall + all visible fixture hands",
+    "p50ms": 16.69999885559082,
+    "p95ms": 17.19999885559082,
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+    "renders": 3,
+    "capacity": 296,
+    "fontRebuilds": 1,
+    "memory": {
+      "geometries": 13,
+      "textures": 15
+    },
+    "calls": 623,
+    "dpr": 1
+  },
+  "performance": {
+    "scope": "headless Chrome on current Mac, not physical phone qualification",
+    "dpr": 1,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "renderer": {
+      "renders": 3,
+      "capacity": 296,
+      "fontRebuilds": 1,
+      "memory": {
+        "geometries": 13,
+        "textures": 15
+      },
+      "calls": 623,
+      "dpr": 1
+    }
+  }
+}

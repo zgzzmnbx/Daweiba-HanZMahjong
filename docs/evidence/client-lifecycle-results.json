@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-23T01:46:25.581Z",
+  "browser": "156.0.8078.47",
+  "checks": [
+    {
+      "name": "disconnect restore response delayed, leave and create new room, delayed Set-Cookie cannot override new identity; real snapshot + READY succeed",
+      "status": "PASS"
+    },
+    {
+      "name": "initial automatic restore delayed while user creates new room; obsolete HTTP aborted and new room HTTP/Socket identity remains valid",
+      "status": "PASS"
+    }
+  ]
+}

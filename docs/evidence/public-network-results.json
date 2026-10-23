@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-23T01:48:13.584Z",
+  "origin": "https://118.196.107.182:1240",
+  "scope": "Real public HTTP and independent authenticated Socket.IO clients; not browser/UI or physical phone acceptance",
+  "node": "v24.19.0",
+  "tlsCertificateValidation": true,
+  "results": [
+    {
+      "players": 2,
+      "transport": "HTTPS + secure WebSocket",
+      "initialWall": 93,
+      "play": "ready/start/discard/pass/auto-draw/draft/self-hu/unanimous-vote",
+      "privacy": true,
+      "idempotentVote": true,
+      "recoveryCodeTakeover": true,
+      "oldSessionRejected": true,
+      "closed": true,
+      "status": "PASS"
+    },
+    {
+      "players": 3,
+      "transport": "HTTPS + secure WebSocket",
+      "initialWall": 104,
+      "play": "ready/start/discard/pass/auto-draw/draft/self-hu/unanimous-vote",
+      "privacy": true,
+      "idempotentVote": true,
+      "recoveryCodeTakeover": true,
+      "oldSessionRejected": true,
+      "closed": true,
+      "status": "PASS"
+    },
+    {
+      "players": 4,
+      "transport": "HTTPS + secure WebSocket",
+      "initialWall": 115,
+      "play": "ready/start/discard/pass/auto-draw/draft/self-hu/unanimous-vote",
+      "privacy": true,
+      "idempotentVote": true,
+      "recoveryCodeTakeover": true,
+      "oldSessionRejected": true,
+      "closed": true,
+      "status": "PASS"
+    },
+    {
+      "players": 5,
+      "transport": "HTTPS + secure WebSocket",
+      "initialWall": 126,
+      "play": "ready/start/discard/pass/auto-draw/draft/self-hu/unanimous-vote",
+      "privacy": true,
+      "idempotentVote": true,
+      "recoveryCodeTakeover": true,
+      "oldSessionRejected": true,
+      "closed": true,
+      "status": "PASS"
+    },
+    {
+      "players": 6,
+      "transport": "HTTPS + secure WebSocket",
+      "initialWall": 137,
+      "play": "ready/start/discard/pass/auto-draw/draft/self-hu/unanimous-vote",
+      "privacy": true,
+      "idempotentVote": true,
+      "recoveryCodeTakeover": true,
+      "oldSessionRejected": true,
+      "closed": true,
+      "status": "PASS"
+    }
+  ]
+}

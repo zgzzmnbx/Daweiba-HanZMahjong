@@ -1,0 +1,3537 @@
+{
+  "schemaVersion": 1,
+  "purpose": "UI adoption fixture data, not executed game/browser tests",
+  "upstreamCommit": "6830301df3061cdd25350cf56807473e5505b311",
+  "seatCases": [
+    {
+      "id": "seat-2-viewer-0",
+      "count": 2,
+      "mySeat": 0,
+      "expectedRelativeByLogicalSeat": [
+        0,
+        1
+      ],
+      "expectedNextSeat": 1,
+      "expectedPreviousSeat": 1,
+      "expectedRelationsByLogicalSeat": [
+        "SELF",
+        "NEXT_AND_PREVIOUS"
+      ]
+    },
+    {
+      "id": "seat-2-viewer-1",
+      "count": 2,
+      "mySeat": 1,
+      "expectedRelativeByLogicalSeat": [
+        1,
+        0
+      ],
+      "expectedNextSeat": 0,
+      "expectedPreviousSeat": 0,
+      "expectedRelationsByLogicalSeat": [
+        "NEXT_AND_PREVIOUS",
+        "SELF"
+      ]
+    },
+    {
+      "id": "seat-3-viewer-0",
+      "count": 3,
+      "mySeat": 0,
+      "expectedRelativeByLogicalSeat": [
+        0,
+        1,
+        2
+      ],
+      "expectedNextSeat": 1,
+      "expectedPreviousSeat": 2,
+      "expectedRelationsByLogicalSeat": [
+        "SELF",
+        "NEXT",
+        "PREVIOUS"
+      ]
+    },
+    {
+      "id": "seat-3-viewer-1",
+      "count": 3,
+      "mySeat": 1,
+      "expectedRelativeByLogicalSeat": [
+        2,
+        0,
+        1
+      ],
+      "expectedNextSeat": 2,
+      "expectedPreviousSeat": 0,
+      "expectedRelationsByLogicalSeat": [
+        "PREVIOUS",
+        "SELF",
+        "NEXT"
+      ]
+    },
+    {
+      "id": "seat-3-viewer-2",
+      "count": 3,
+      "mySeat": 2,
+      "expectedRelativeByLogicalSeat": [
+        1,
+        2,
+        0
+      ],
+      "expectedNextSeat": 0,
+      "expectedPreviousSeat": 1,
+      "expectedRelationsByLogicalSeat": [
+        "NEXT",
+        "PREVIOUS",
+        "SELF"
+      ]
+    },
+    {
+      "id": "seat-4-viewer-0",
+      "count": 4,
+      "mySeat": 0,
+      "expectedRelativeByLogicalSeat": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "expectedNextSeat": 1,
+      "expectedPreviousSeat": 3,
+      "expectedRelationsByLogicalSeat": [
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "PREVIOUS"
+      ]
+    },
+    {
+      "id": "seat-4-viewer-1",
+      "count": 4,
+      "mySeat": 1,
+      "expectedRelativeByLogicalSeat": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "expectedNextSeat": 2,
+      "expectedPreviousSeat": 0,
+      "expectedRelationsByLogicalSeat": [
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-4-viewer-2",
+      "count": 4,
+      "mySeat": 2,
+      "expectedRelativeByLogicalSeat": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "expectedNextSeat": 3,
+      "expectedPreviousSeat": 1,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT"
+      ]
+    },
+    {
+      "id": "seat-4-viewer-3",
+      "count": 4,
+      "mySeat": 3,
+      "expectedRelativeByLogicalSeat": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "expectedNextSeat": 0,
+      "expectedPreviousSeat": 2,
+      "expectedRelationsByLogicalSeat": [
+        "NEXT",
+        "OTHER",
+        "PREVIOUS",
+        "SELF"
+      ]
+    },
+    {
+      "id": "seat-5-viewer-0",
+      "count": 5,
+      "mySeat": 0,
+      "expectedRelativeByLogicalSeat": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "expectedNextSeat": 1,
+      "expectedPreviousSeat": 4,
+      "expectedRelationsByLogicalSeat": [
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "OTHER",
+        "PREVIOUS"
+      ]
+    },
+    {
+      "id": "seat-5-viewer-1",
+      "count": 5,
+      "mySeat": 1,
+      "expectedRelativeByLogicalSeat": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "expectedNextSeat": 2,
+      "expectedPreviousSeat": 0,
+      "expectedRelationsByLogicalSeat": [
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-5-viewer-2",
+      "count": 5,
+      "mySeat": 2,
+      "expectedRelativeByLogicalSeat": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "expectedNextSeat": 3,
+      "expectedPreviousSeat": 1,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-5-viewer-3",
+      "count": 5,
+      "mySeat": 3,
+      "expectedRelativeByLogicalSeat": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "expectedNextSeat": 4,
+      "expectedPreviousSeat": 2,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT"
+      ]
+    },
+    {
+      "id": "seat-5-viewer-4",
+      "count": 5,
+      "mySeat": 4,
+      "expectedRelativeByLogicalSeat": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      "expectedNextSeat": 0,
+      "expectedPreviousSeat": 3,
+      "expectedRelationsByLogicalSeat": [
+        "NEXT",
+        "OTHER",
+        "OTHER",
+        "PREVIOUS",
+        "SELF"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-0",
+      "count": 6,
+      "mySeat": 0,
+      "expectedRelativeByLogicalSeat": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expectedNextSeat": 1,
+      "expectedPreviousSeat": 5,
+      "expectedRelationsByLogicalSeat": [
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "OTHER",
+        "OTHER",
+        "PREVIOUS"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-1",
+      "count": 6,
+      "mySeat": 1,
+      "expectedRelativeByLogicalSeat": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "expectedNextSeat": 2,
+      "expectedPreviousSeat": 0,
+      "expectedRelationsByLogicalSeat": [
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "OTHER",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-2",
+      "count": 6,
+      "mySeat": 2,
+      "expectedRelativeByLogicalSeat": [
+        4,
+        5,
+        0,
+        1,
+        2,
+        3
+      ],
+      "expectedNextSeat": 3,
+      "expectedPreviousSeat": 1,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-3",
+      "count": 6,
+      "mySeat": 3,
+      "expectedRelativeByLogicalSeat": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ],
+      "expectedNextSeat": 4,
+      "expectedPreviousSeat": 2,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT",
+        "OTHER"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-4",
+      "count": 6,
+      "mySeat": 4,
+      "expectedRelativeByLogicalSeat": [
+        2,
+        3,
+        4,
+        5,
+        0,
+        1
+      ],
+      "expectedNextSeat": 5,
+      "expectedPreviousSeat": 3,
+      "expectedRelationsByLogicalSeat": [
+        "OTHER",
+        "OTHER",
+        "OTHER",
+        "PREVIOUS",
+        "SELF",
+        "NEXT"
+      ]
+    },
+    {
+      "id": "seat-6-viewer-5",
+      "count": 6,
+      "mySeat": 5,
+      "expectedRelativeByLogicalSeat": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "expectedNextSeat": 0,
+      "expectedPreviousSeat": 4,
+      "expectedRelationsByLogicalSeat": [
+        "NEXT",
+        "OTHER",
+        "OTHER",
+        "OTHER",
+        "PREVIOUS",
+        "SELF"
+      ]
+    }
+  ],
+  "visibleTiles": [
+    {
+      "tileId": "t00",
+      "char": "我"
+    },
+    {
+      "tileId": "t01",
+      "char": "想"
+    },
+    {
+      "tileId": "t02",
+      "char": "把"
+    },
+    {
+      "tileId": "t03",
+      "char": "月"
+    },
+    {
+      "tileId": "t04",
+      "char": "亮"
+    },
+    {
+      "tileId": "t05",
+      "char": "装"
+    },
+    {
+      "tileId": "t06",
+      "char": "进"
+    },
+    {
+      "tileId": "t07",
+      "char": "你"
+    },
+    {
+      "tileId": "t08",
+      "char": "的"
+    },
+    {
+      "tileId": "t09",
+      "char": "口"
+    },
+    {
+      "tileId": "t10",
+      "char": "袋"
+    },
+    {
+      "tileId": "t11",
+      "char": "里"
+    },
+    {
+      "tileId": "t12",
+      "char": "带"
+    },
+    {
+      "tileId": "t13",
+      "char": "我"
+    }
+  ],
+  "draftCases": [
+    {
+      "id": "draw-appends-same-character-distinct-id",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12"
+      ],
+      "commaAfterTileIds": [
+        "t02"
+      ],
+      "expectedOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t02"
+      ]
+    },
+    {
+      "id": "discard-removes-left-anchor",
+      "handTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "commaAfterTileIds": [
+        "t00",
+        "t04"
+      ],
+      "expectedOrderedTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t04"
+      ]
+    },
+    {
+      "id": "reorder-anchor-follows-left",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t00",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "commaAfterTileIds": [
+        "t00"
+      ],
+      "expectedOrderedTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t00",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t00"
+      ]
+    },
+    {
+      "id": "left-anchor-becomes-last",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13",
+        "t00"
+      ],
+      "commaAfterTileIds": [
+        "t00",
+        "t06"
+      ],
+      "expectedOrderedTileIds": [
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13",
+        "t00"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t06"
+      ]
+    },
+    {
+      "id": "three-commas-with-row-break",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "expectedOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ]
+    },
+    {
+      "id": "stale-duplicate-local-id-pruned",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t03",
+        "unknown",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "commaAfterTileIds": [
+        "t03"
+      ],
+      "expectedOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t03"
+      ]
+    },
+    {
+      "id": "last-tile-comma-returned",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "orderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "commaAfterTileIds": [
+        "t13"
+      ],
+      "expectedOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": []
+    },
+    {
+      "id": "empty-local-draft-rebuilt",
+      "handTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12"
+      ],
+      "orderedTileIds": [],
+      "commaAfterTileIds": [],
+      "expectedOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12"
+      ],
+      "expectedCommaAfterTileIds": []
+    }
+  ],
+  "mobileLayoutCases": [
+    {
+      "id": "mobile-390-13",
+      "viewportWidth": 390,
+      "tileCount": 13,
+      "columns": 7,
+      "tileWidth": 44,
+      "tileHeight": 58,
+      "gap": 8,
+      "padding": 17,
+      "commaOverlayAddsWidth": 0,
+      "minimumAlternativeTarget": 44,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "cells": [
+        {
+          "tileId": "t00",
+          "row": 0,
+          "column": 0
+        },
+        {
+          "tileId": "t01",
+          "row": 0,
+          "column": 1
+        },
+        {
+          "tileId": "t02",
+          "row": 0,
+          "column": 2
+        },
+        {
+          "tileId": "t03",
+          "row": 0,
+          "column": 3
+        },
+        {
+          "tileId": "t04",
+          "row": 0,
+          "column": 4
+        },
+        {
+          "tileId": "t05",
+          "row": 0,
+          "column": 5
+        },
+        {
+          "tileId": "t06",
+          "row": 0,
+          "column": 6
+        },
+        {
+          "tileId": "t07",
+          "row": 1,
+          "column": 0
+        },
+        {
+          "tileId": "t08",
+          "row": 1,
+          "column": 1
+        },
+        {
+          "tileId": "t09",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "tileId": "t10",
+          "row": 1,
+          "column": 3
+        },
+        {
+          "tileId": "t11",
+          "row": 1,
+          "column": 4
+        },
+        {
+          "tileId": "t12",
+          "row": 1,
+          "column": 5
+        }
+      ],
+      "expectedRowCounts": [
+        7,
+        6
+      ]
+    },
+    {
+      "id": "mobile-390-14",
+      "viewportWidth": 390,
+      "tileCount": 14,
+      "columns": 7,
+      "tileWidth": 44,
+      "tileHeight": 58,
+      "gap": 8,
+      "padding": 17,
+      "commaOverlayAddsWidth": 0,
+      "minimumAlternativeTarget": 44,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "cells": [
+        {
+          "tileId": "t00",
+          "row": 0,
+          "column": 0
+        },
+        {
+          "tileId": "t01",
+          "row": 0,
+          "column": 1
+        },
+        {
+          "tileId": "t02",
+          "row": 0,
+          "column": 2
+        },
+        {
+          "tileId": "t03",
+          "row": 0,
+          "column": 3
+        },
+        {
+          "tileId": "t04",
+          "row": 0,
+          "column": 4
+        },
+        {
+          "tileId": "t05",
+          "row": 0,
+          "column": 5
+        },
+        {
+          "tileId": "t06",
+          "row": 0,
+          "column": 6
+        },
+        {
+          "tileId": "t07",
+          "row": 1,
+          "column": 0
+        },
+        {
+          "tileId": "t08",
+          "row": 1,
+          "column": 1
+        },
+        {
+          "tileId": "t09",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "tileId": "t10",
+          "row": 1,
+          "column": 3
+        },
+        {
+          "tileId": "t11",
+          "row": 1,
+          "column": 4
+        },
+        {
+          "tileId": "t12",
+          "row": 1,
+          "column": 5
+        },
+        {
+          "tileId": "t13",
+          "row": 1,
+          "column": 6
+        }
+      ],
+      "expectedRowCounts": [
+        7,
+        7
+      ]
+    },
+    {
+      "id": "mobile-430-13",
+      "viewportWidth": 430,
+      "tileCount": 13,
+      "columns": 7,
+      "tileWidth": 48,
+      "tileHeight": 62,
+      "gap": 9,
+      "padding": 20,
+      "commaOverlayAddsWidth": 0,
+      "minimumAlternativeTarget": 44,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "cells": [
+        {
+          "tileId": "t00",
+          "row": 0,
+          "column": 0
+        },
+        {
+          "tileId": "t01",
+          "row": 0,
+          "column": 1
+        },
+        {
+          "tileId": "t02",
+          "row": 0,
+          "column": 2
+        },
+        {
+          "tileId": "t03",
+          "row": 0,
+          "column": 3
+        },
+        {
+          "tileId": "t04",
+          "row": 0,
+          "column": 4
+        },
+        {
+          "tileId": "t05",
+          "row": 0,
+          "column": 5
+        },
+        {
+          "tileId": "t06",
+          "row": 0,
+          "column": 6
+        },
+        {
+          "tileId": "t07",
+          "row": 1,
+          "column": 0
+        },
+        {
+          "tileId": "t08",
+          "row": 1,
+          "column": 1
+        },
+        {
+          "tileId": "t09",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "tileId": "t10",
+          "row": 1,
+          "column": 3
+        },
+        {
+          "tileId": "t11",
+          "row": 1,
+          "column": 4
+        },
+        {
+          "tileId": "t12",
+          "row": 1,
+          "column": 5
+        }
+      ],
+      "expectedRowCounts": [
+        7,
+        6
+      ]
+    },
+    {
+      "id": "mobile-430-14",
+      "viewportWidth": 430,
+      "tileCount": 14,
+      "columns": 7,
+      "tileWidth": 48,
+      "tileHeight": 62,
+      "gap": 9,
+      "padding": 20,
+      "commaOverlayAddsWidth": 0,
+      "minimumAlternativeTarget": 44,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "cells": [
+        {
+          "tileId": "t00",
+          "row": 0,
+          "column": 0
+        },
+        {
+          "tileId": "t01",
+          "row": 0,
+          "column": 1
+        },
+        {
+          "tileId": "t02",
+          "row": 0,
+          "column": 2
+        },
+        {
+          "tileId": "t03",
+          "row": 0,
+          "column": 3
+        },
+        {
+          "tileId": "t04",
+          "row": 0,
+          "column": 4
+        },
+        {
+          "tileId": "t05",
+          "row": 0,
+          "column": 5
+        },
+        {
+          "tileId": "t06",
+          "row": 0,
+          "column": 6
+        },
+        {
+          "tileId": "t07",
+          "row": 1,
+          "column": 0
+        },
+        {
+          "tileId": "t08",
+          "row": 1,
+          "column": 1
+        },
+        {
+          "tileId": "t09",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "tileId": "t10",
+          "row": 1,
+          "column": 3
+        },
+        {
+          "tileId": "t11",
+          "row": 1,
+          "column": 4
+        },
+        {
+          "tileId": "t12",
+          "row": 1,
+          "column": 5
+        },
+        {
+          "tileId": "t13",
+          "row": 1,
+          "column": 6
+        }
+      ],
+      "expectedRowCounts": [
+        7,
+        7
+      ]
+    }
+  ],
+  "objectionCases": [
+    {
+      "id": "none",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [],
+      "expectedValid": true
+    },
+    {
+      "id": "cross-comma",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 2,
+          "endExclusive": 8
+        }
+      ],
+      "expectedValid": true
+    },
+    {
+      "id": "three-ranges",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 0,
+          "endExclusive": 1
+        },
+        {
+          "start": 3,
+          "endExclusive": 5
+        },
+        {
+          "start": 12,
+          "endExclusive": 14
+        }
+      ],
+      "expectedValid": true
+    },
+    {
+      "id": "four-ranges",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 0,
+          "endExclusive": 1
+        },
+        {
+          "start": 2,
+          "endExclusive": 3
+        },
+        {
+          "start": 4,
+          "endExclusive": 5
+        },
+        {
+          "start": 6,
+          "endExclusive": 7
+        }
+      ],
+      "expectedValid": false
+    },
+    {
+      "id": "overlap",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 1,
+          "endExclusive": 4
+        },
+        {
+          "start": 3,
+          "endExclusive": 5
+        }
+      ],
+      "expectedValid": false
+    },
+    {
+      "id": "empty-range",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 3,
+          "endExclusive": 3
+        }
+      ],
+      "expectedValid": false
+    },
+    {
+      "id": "out-of-bounds",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 13,
+          "endExclusive": 15
+        }
+      ],
+      "expectedValid": false
+    },
+    {
+      "id": "repeated-character-second-occurrence",
+      "proposalId": "proposal-fixed",
+      "characterCount": 14,
+      "commaAfterTileIds": [
+        "t02",
+        "t06",
+        "t10"
+      ],
+      "ranges": [
+        {
+          "start": 13,
+          "endExclusive": 14
+        }
+      ],
+      "expectedValid": true
+    }
+  ],
+  "animationCases": [
+    {
+      "id": "same-view-cleanup-only",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": true
+    },
+    {
+      "id": "reject-stale-roomId",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-other",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-roundId",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "next-round",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-phaseId",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "next-phase",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-publicRevision",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 21,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-controlEpoch",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 5,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-draftVersion",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 9,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-candidateDraftVersion",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": 1,
+        "renderRevision": 30
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    },
+    {
+      "id": "reject-stale-renderRevision",
+      "captured": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 30
+      },
+      "current": {
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "phaseId": "phase-1",
+        "publicRevision": 20,
+        "controlEpoch": 4,
+        "draftVersion": 8,
+        "candidateDraftVersion": null,
+        "renderRevision": 31
+      },
+      "expectedMayCompleteCosmeticCleanup": false
+    }
+  ],
+  "projectionCases": [
+    {
+      "id": "own14-six-player-last-seat",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "phase-1",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "ownedHandCount": 14,
+        "rackTileCount": 14,
+        "wallCount": 137,
+        "opponentBackCounts": [
+          13,
+          13,
+          13,
+          13,
+          13
+        ],
+        "commaUsed": 3,
+        "nextSeat": 0,
+        "previousSeat": 4
+      }
+    },
+    {
+      "id": "public-arrives-before-private",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 21,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "phase-1",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "WAIT_FOR_COHERENT_RESYNC",
+        "reason": "VERSION_MISMATCH"
+      }
+    },
+    {
+      "id": "private-viewer-not-member",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "phase-1",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "outsider",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "WAIT_FOR_COHERENT_RESYNC",
+        "reason": "UNKNOWN_VIEWER"
+      }
+    },
+    {
+      "id": "private-seat-mismatch",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "phase-1",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 4,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "WAIT_FOR_COHERENT_RESYNC",
+        "reason": "SEAT_MISMATCH"
+      }
+    },
+    {
+      "id": "private-borrowed-reference-not-owned",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "compose-1",
+          "deadline": {
+            "endsAt": 45000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "HU_COMPOSE",
+          "applicantId": "p5",
+          "source": {
+            "kind": "DISCARD",
+            "playerId": "p5",
+            "discardId": "discard-borrowed",
+            "responseWindowId": "window-1",
+            "borrowedTileId": "t13"
+          }
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [
+          {
+            "discardId": "discard-borrowed",
+            "playerId": "p4",
+            "tile": {
+              "tileId": "t13",
+              "char": "我"
+            },
+            "status": "RESERVED"
+          }
+        ],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12"
+          ],
+          "commaAfterTileIds": []
+        },
+        "draftVersion": 8,
+        "candidateDraft": {
+          "phaseId": "compose-1",
+          "source": {
+            "kind": "DISCARD",
+            "playerId": "p5",
+            "discardId": "discard-borrowed",
+            "responseWindowId": "window-1",
+            "borrowedTileId": "t13"
+          },
+          "candidateDraftVersion": 1,
+          "sentence": {
+            "orderedTileIds": [
+              "t00",
+              "t01",
+              "t02",
+              "t03",
+              "t04",
+              "t05",
+              "t06",
+              "t07",
+              "t08",
+              "t09",
+              "t10",
+              "t11",
+              "t12",
+              "t13"
+            ],
+            "commaAfterTileIds": [
+              "t02",
+              "t06",
+              "t10"
+            ]
+          }
+        },
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "ownedHandCount": 13,
+        "rackTileCount": 14,
+        "borrowedReferenceCount": 1,
+        "publicDiscardOwnershipUnchanged": true,
+        "commaUsed": 3,
+        "commaAvailable": 0
+      }
+    },
+    {
+      "id": "all-offline-retains-turn-phase",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "BOT",
+            "connected": false,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "phase-1",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": 23000
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "PAUSED_ALL_OFFLINE",
+          "expiresAt": 86400000
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "phase": "TURN_ACTION",
+        "suspension": "PAUSED_ALL_OFFLINE",
+        "businessTimerMoves": false
+      }
+    },
+    {
+      "id": "restart-new-phase-epoch",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "recovery-new",
+          "deadline": {
+            "endsAt": 60000,
+            "remainingMsWhenPaused": null
+          },
+          "kind": "TURN_ACTION",
+          "actorId": "p5",
+          "mustDiscard": false,
+          "isEatTurn": false
+        },
+        "suspension": {
+          "kind": "PAUSED_RECOVERY",
+          "expiresAt": 86400000
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 5,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "phase": "TURN_ACTION",
+        "suspension": "PAUSED_RECOVERY",
+        "oldAnimationAccepted": false
+      }
+    },
+    {
+      "id": "win-result-renders-only-server-result",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": "round-ui",
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": 0,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 13,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p5",
+            "seat": 5,
+            "nickname": "朋友5",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": true,
+            "handCount": 14,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 137,
+        "phase": {
+          "phaseId": "finished-win",
+          "deadline": null,
+          "kind": "ROUND_FINISHED",
+          "reason": "WIN",
+          "winnerId": "p5"
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": 5,
+        "basedOnStateVersion": 20,
+        "hand": [
+          {
+            "tileId": "t00",
+            "char": "我"
+          },
+          {
+            "tileId": "t01",
+            "char": "想"
+          },
+          {
+            "tileId": "t02",
+            "char": "把"
+          },
+          {
+            "tileId": "t03",
+            "char": "月"
+          },
+          {
+            "tileId": "t04",
+            "char": "亮"
+          },
+          {
+            "tileId": "t05",
+            "char": "装"
+          },
+          {
+            "tileId": "t06",
+            "char": "进"
+          },
+          {
+            "tileId": "t07",
+            "char": "你"
+          },
+          {
+            "tileId": "t08",
+            "char": "的"
+          },
+          {
+            "tileId": "t09",
+            "char": "口"
+          },
+          {
+            "tileId": "t10",
+            "char": "袋"
+          },
+          {
+            "tileId": "t11",
+            "char": "里"
+          },
+          {
+            "tileId": "t12",
+            "char": "带"
+          },
+          {
+            "tileId": "t13",
+            "char": "我"
+          }
+        ],
+        "draft": {
+          "orderedTileIds": [
+            "t00",
+            "t01",
+            "t02",
+            "t03",
+            "t04",
+            "t05",
+            "t06",
+            "t07",
+            "t08",
+            "t09",
+            "t10",
+            "t11",
+            "t12",
+            "t13"
+          ],
+          "commaAfterTileIds": [
+            "t02",
+            "t06",
+            "t10"
+          ]
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "phase": "ROUND_FINISHED",
+        "winnerId": "p5",
+        "clientScoreMutationCount": 0
+      }
+    },
+    {
+      "id": "released-idle-seat-is-unseated",
+      "public": {
+        "visibility": "PUBLIC",
+        "roomId": "room-ui",
+        "roundId": null,
+        "stateVersion": 20,
+        "rulesVersion": "1.0.0",
+        "deckVersion": "daily-v1",
+        "capacity": 6,
+        "closeAfterRound": false,
+        "hostId": "p0",
+        "dealerSeat": null,
+        "players": [
+          {
+            "playerId": "p0",
+            "seat": 0,
+            "nickname": "朋友0",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": false,
+            "handCount": 0,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p1",
+            "seat": 1,
+            "nickname": "朋友1",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": false,
+            "handCount": 0,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p2",
+            "seat": 2,
+            "nickname": "朋友2",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": false,
+            "handCount": 0,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p3",
+            "seat": 3,
+            "nickname": "朋友3",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": false,
+            "handCount": 0,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          },
+          {
+            "playerId": "p4",
+            "seat": 4,
+            "nickname": "朋友4",
+            "presence": "HUMAN",
+            "connected": true,
+            "ready": false,
+            "handCount": 0,
+            "eatCount": 0,
+            "wins": 0,
+            "graceEndsAt": null
+          }
+        ],
+        "wallRemaining": 0,
+        "phase": {
+          "phaseId": "lobby-unseated",
+          "deadline": null,
+          "kind": "LOBBY"
+        },
+        "suspension": {
+          "kind": "RUNNING"
+        },
+        "discards": [],
+        "history": []
+      },
+      "self": {
+        "visibility": "PRIVATE_PLAYER",
+        "playerId": "p5",
+        "controlEpoch": 4,
+        "seat": null,
+        "basedOnStateVersion": 20,
+        "hand": [],
+        "draft": {
+          "orderedTileIds": [],
+          "commaAfterTileIds": []
+        },
+        "draftVersion": 8,
+        "candidateDraft": null,
+        "forbiddenImmediateDiscardTileId": null,
+        "ownResponse": null,
+        "ownBallot": null,
+        "isFrozenReviewer": false
+      },
+      "expected": {
+        "kind": "READY",
+        "ownedHandCount": 0,
+        "rackTileCount": 0,
+        "seatSelectionVisible": true
+      }
+    }
+  ],
+  "renderModeCases": [
+    {
+      "id": "context-loss-while-running",
+      "gamePhase": "TURN_ACTION",
+      "suspension": "RUNNING",
+      "event": "CONTEXT_LOST",
+      "expectedMode": "DOM_FALLBACK",
+      "expectedServerCommandCount": 0,
+      "expectedRackInteractive": true,
+      "expectedMayRetry3D": true
+    },
+    {
+      "id": "context-loss-all-offline",
+      "gamePhase": "HU_VOTE",
+      "suspension": "PAUSED_ALL_OFFLINE",
+      "event": "CONTEXT_LOST",
+      "expectedMode": "DOM_FALLBACK",
+      "expectedServerCommandCount": 0,
+      "expectedRackInteractive": false,
+      "expectedMayRetry3D": true
+    },
+    {
+      "id": "manual-retry-after-restore",
+      "gamePhase": "TURN_ACTION",
+      "suspension": "RUNNING",
+      "event": "MANUAL_RETRY_3D",
+      "expectedMode": "THREE_D",
+      "expectedServerCommandCount": 0,
+      "expectedRackInteractive": true,
+      "expectedMayRetry3D": true
+    }
+  ],
+  "tilePoolBudgets": [
+    {
+      "playerCount": 2,
+      "deckTileCount": 120,
+      "maxPhysicalTileViews": 120,
+      "dragGhostAllowance": 1,
+      "borrowedReferenceOverlayAllowance": 1,
+      "minimumTotalCapacity": 122,
+      "overflowPolicy": "GROW_OR_FAIL_VISIBLE_NEVER_SLICE"
+    },
+    {
+      "playerCount": 3,
+      "deckTileCount": 144,
+      "maxPhysicalTileViews": 144,
+      "dragGhostAllowance": 1,
+      "borrowedReferenceOverlayAllowance": 1,
+      "minimumTotalCapacity": 146,
+      "overflowPolicy": "GROW_OR_FAIL_VISIBLE_NEVER_SLICE"
+    },
+    {
+      "playerCount": 4,
+      "deckTileCount": 168,
+      "maxPhysicalTileViews": 168,
+      "dragGhostAllowance": 1,
+      "borrowedReferenceOverlayAllowance": 1,
+      "minimumTotalCapacity": 170,
+      "overflowPolicy": "GROW_OR_FAIL_VISIBLE_NEVER_SLICE"
+    },
+    {
+      "playerCount": 5,
+      "deckTileCount": 192,
+      "maxPhysicalTileViews": 192,
+      "dragGhostAllowance": 1,
+      "borrowedReferenceOverlayAllowance": 1,
+      "minimumTotalCapacity": 194,
+      "overflowPolicy": "GROW_OR_FAIL_VISIBLE_NEVER_SLICE"
+    },
+    {
+      "playerCount": 6,
+      "deckTileCount": 216,
+      "maxPhysicalTileViews": 216,
+      "dragGhostAllowance": 1,
+      "borrowedReferenceOverlayAllowance": 1,
+      "minimumTotalCapacity": 218,
+      "overflowPolicy": "GROW_OR_FAIL_VISIBLE_NEVER_SLICE"
+    }
+  ],
+  "notRun": [
+    "REAL_3D_SCREENSHOTS",
+    "BROWSER_INTERACTION",
+    "FRAME_RATE",
+    "GPU_RESOURCE_CLEANUP",
+    "MULTIPLAYER_GAME",
+    "MAC_CLOUD_DEPLOYMENT"
+  ]
+}

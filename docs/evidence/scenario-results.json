@@ -1,0 +1,1055 @@
+{
+  "applicationVersion": "1.1.0",
+  "legacyRulesVersion": "1.0.0",
+  "newRulesVersion": "1.1.0",
+  "automatedTests": 97,
+  "scope": "91 original case invariants have actual implementation assertions; levels are explicit, not 91 separate browser or public-network sessions",
+  "cases": [
+    {
+      "id": "S02-seat-cycle",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S02-seat-cycle"
+        }
+      ]
+    },
+    {
+      "id": "S03-seat-cycle",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S03-seat-cycle"
+        }
+      ]
+    },
+    {
+      "id": "S04-seat-cycle",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S04-seat-cycle"
+        }
+      ]
+    },
+    {
+      "id": "S05-seat-cycle",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S05-seat-cycle"
+        }
+      ]
+    },
+    {
+      "id": "S06-seat-cycle",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S06-seat-cycle"
+        }
+      ]
+    },
+    {
+      "id": "S10-start-all-ready",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S10-start-all-ready"
+        }
+      ]
+    },
+    {
+      "id": "S11-no-bot-fill",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S11-no-bot-fill"
+        }
+      ],
+      "compatibility": "1.0.0 only; user-authorized 1.1.0 designated-AI replaces no-fill restriction"
+    },
+    {
+      "id": "S12-freeze-seats",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S12-freeze-seats / S89-capacity-and-no-reseat"
+        }
+      ]
+    },
+    {
+      "id": "S13-normal-auto-draw",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S13-normal-auto-draw / S14-no-extra-draw / S15-response-gates-next-draw"
+        }
+      ]
+    },
+    {
+      "id": "S14-no-extra-draw",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S13-normal-auto-draw / S14-no-extra-draw / S15-response-gates-next-draw"
+        }
+      ]
+    },
+    {
+      "id": "S15-response-gates-next-draw",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S13-normal-auto-draw / S14-no-extra-draw / S15-response-gates-next-draw"
+        }
+      ]
+    },
+    {
+      "id": "S16-concurrent-responses",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S16-concurrent-responses"
+        }
+      ]
+    },
+    {
+      "id": "S17-hu-priority-seat-order",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S17-hu-priority-seat-order"
+        }
+      ]
+    },
+    {
+      "id": "S18-eat-after-hu-fail",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S18-eat-after-hu-fail / S42-discard-hu-rejected"
+        }
+      ]
+    },
+    {
+      "id": "S19-no-late-claim",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S19-no-late-claim / S20-intent-once"
+        }
+      ]
+    },
+    {
+      "id": "S20-intent-once",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S19-no-late-claim / S20-intent-once"
+        }
+      ]
+    },
+    {
+      "id": "S21-eat-tile-protection",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S21-eat-tile-protection / S23-idempotent-eat"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S21 duplicate glyph remains legal while just-eaten physical tile is protected"
+        }
+      ]
+    },
+    {
+      "id": "S22-eat-limit",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S22-eat-limit"
+        }
+      ]
+    },
+    {
+      "id": "S23-idempotent-eat",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S21-eat-tile-protection / S23-idempotent-eat"
+        }
+      ]
+    },
+    {
+      "id": "S24-wall-empty-still-respond",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S24-wall-empty-still-respond"
+        }
+      ]
+    },
+    {
+      "id": "S25-human-timeout",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S25-human-timeout"
+        }
+      ]
+    },
+    {
+      "id": "S26-manual-fourteen-and-commas",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S26-manual-fourteen-and-commas / S27-invalid-sentence-no-transition"
+        }
+      ]
+    },
+    {
+      "id": "S27-invalid-sentence-no-transition",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S26-manual-fourteen-and-commas / S27-invalid-sentence-no-transition"
+        }
+      ]
+    },
+    {
+      "id": "S28-comma-reorder-accessibility",
+      "status": "PASS",
+      "level": "real-browser-keyboard-pointer-touch + actual-controller",
+      "evidence": [
+        {
+          "path": "docs/evidence/ui-browser-results.json",
+          "test": "actual keyboard, touch, comma inputs"
+        },
+        {
+          "path": "tests/ui/model.test.ts",
+          "test": "comma/physical-ID/controller assertions"
+        }
+      ]
+    },
+    {
+      "id": "S29-discard-hu-reservation",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S29-discard-hu-reservation / S95-candidate-draft-private-restore"
+        }
+      ]
+    },
+    {
+      "id": "S30-compose-timeout",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S30-compose-timeout / S94-compose-manual-withdraw"
+        }
+      ]
+    },
+    {
+      "id": "S31-full-online-thresholds",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S31-full-online-thresholds / S34-concurrent-votes"
+        }
+      ]
+    },
+    {
+      "id": "S32-no-reviewer-own",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S32-no-reviewer-own"
+        }
+      ]
+    },
+    {
+      "id": "S33-no-reviewer-discard",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S33-no-reviewer-discard"
+        }
+      ]
+    },
+    {
+      "id": "S34-concurrent-votes",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S31-full-online-thresholds / S34-concurrent-votes"
+        }
+      ]
+    },
+    {
+      "id": "S35-vote-freeze-disconnect",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S35-vote-freeze-disconnect"
+        }
+      ]
+    },
+    {
+      "id": "S36-reviewer-return",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S36-reviewer-return / S37-reviewer-late-join"
+        }
+      ]
+    },
+    {
+      "id": "S37-reviewer-late-join",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S36-reviewer-return / S37-reviewer-late-join"
+        }
+      ]
+    },
+    {
+      "id": "S38-vote-hidden-progress",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S38-vote-hidden-progress / S59-hidden-projections"
+        }
+      ]
+    },
+    {
+      "id": "S39-reject-ranges",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S39-reject-ranges / S40-anonymous-union"
+        }
+      ]
+    },
+    {
+      "id": "S40-anonymous-union",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S39-reject-ranges / S40-anonymous-union"
+        }
+      ]
+    },
+    {
+      "id": "S41-self-hu-rejected",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S41-self-hu-rejected"
+        }
+      ]
+    },
+    {
+      "id": "S42-discard-hu-rejected",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S18-eat-after-hu-fail / S42-discard-hu-rejected"
+        }
+      ]
+    },
+    {
+      "id": "S43-win-once",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S43-win-once"
+        },
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S43 settlement commit then restart and duplicate vote does not count a second win"
+        }
+      ]
+    },
+    {
+      "id": "S44-disconnect-grace",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S44-disconnect-grace / S45-grace-beats-turn-timeout / S47-bot-policy-restriction"
+        }
+      ]
+    },
+    {
+      "id": "S45-grace-beats-turn-timeout",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S44-disconnect-grace / S45-grace-beats-turn-timeout / S47-bot-policy-restriction"
+        }
+      ]
+    },
+    {
+      "id": "S46-offturn-grace-no-table-freeze",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S46-offturn-grace-no-table-freeze"
+        }
+      ]
+    },
+    {
+      "id": "S47-bot-policy-restriction",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S44-disconnect-grace / S45-grace-beats-turn-timeout / S47-bot-policy-restriction"
+        }
+      ]
+    },
+    {
+      "id": "S48-applicant-grace-return",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S48-applicant-grace-return"
+        }
+      ]
+    },
+    {
+      "id": "S49-applicant-grace-expires",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S49-applicant-grace-expires / S73-own-withdraw-discard"
+        }
+      ]
+    },
+    {
+      "id": "S50-recovery-wins-race",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S50-recovery-wins-race / S51-bot-wins-race"
+        }
+      ]
+    },
+    {
+      "id": "S51-bot-wins-race",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S50-recovery-wins-race / S51-bot-wins-race"
+        }
+      ]
+    },
+    {
+      "id": "S52-refresh-identity",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S52-refresh-identity / S77-draft-independent-version / S85-draft-stale-rebase"
+        }
+      ]
+    },
+    {
+      "id": "S53-cross-device-secret",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S53-cross-device-secret / S54-recovery-code-rotation / session revocation and strict origin"
+        }
+      ]
+    },
+    {
+      "id": "S54-recovery-code-rotation",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S53-cross-device-secret / S54-recovery-code-rotation / session revocation and strict origin"
+        }
+      ]
+    },
+    {
+      "id": "S55-all-offline-pause",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S55-all-offline-pause / S56-all-offline-expiry / S72-pause-withdrawal-pending"
+        }
+      ]
+    },
+    {
+      "id": "S56-all-offline-expiry",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S55-all-offline-pause / S56-all-offline-expiry / S72-pause-withdrawal-pending"
+        }
+      ]
+    },
+    {
+      "id": "S57-restart-recovery",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S57-restart-recovery / S79-retention-original-expiry / S87-restart-other-returns-first"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S57 restart HU_VOTE retains frozen reviewers and ballots; non-applicant first return waits original claimant grace"
+        }
+      ]
+    },
+    {
+      "id": "S58-restart-receipt",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S58-restart-receipt / S83-persistence-codec-roundtrip"
+        },
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S58 SQLite transaction rollback, durable action receipt and process reconstruction"
+        }
+      ]
+    },
+    {
+      "id": "S59-hidden-projections",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S38-vote-hidden-progress / S59-hidden-projections"
+        }
+      ]
+    },
+    {
+      "id": "S60-multiroom-isolation",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S60-multiroom-isolation / S61-action-id-content-conflict / S62-old-phase-replay / S63-one-vote-per-reviewer"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S60 authenticated room actor cannot mutate another room with borrowed metadata"
+        }
+      ]
+    },
+    {
+      "id": "S61-action-id-content-conflict",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S60-multiroom-isolation / S61-action-id-content-conflict / S62-old-phase-replay / S63-one-vote-per-reviewer"
+        }
+      ]
+    },
+    {
+      "id": "S62-old-phase-replay",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S60-multiroom-isolation / S61-action-id-content-conflict / S62-old-phase-replay / S63-one-vote-per-reviewer"
+        }
+      ]
+    },
+    {
+      "id": "S63-one-vote-per-reviewer",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S60-multiroom-isolation / S61-action-id-content-conflict / S62-old-phase-replay / S63-one-vote-per-reviewer"
+        }
+      ]
+    },
+    {
+      "id": "S64-deadline-boundary",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S64-deadline-boundary"
+        }
+      ]
+    },
+    {
+      "id": "S65-next-dealer-and-ready",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S65-next-dealer-and-ready / S92-finished-refill-next-start"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S65 every prior dealer seat rotates once for all capacities"
+        }
+      ]
+    },
+    {
+      "id": "S66-host-transfer",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S66-host-transfer"
+        }
+      ]
+    },
+    {
+      "id": "S67-close-running",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close"
+        }
+      ]
+    },
+    {
+      "id": "S68-end-unscored-race",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close"
+        }
+      ]
+    },
+    {
+      "id": "S69-end-unscored-single",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close"
+        }
+      ]
+    },
+    {
+      "id": "S70-leave-not-delete",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close"
+        }
+      ]
+    },
+    {
+      "id": "S71-lobby-finish-close",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close"
+        }
+      ]
+    },
+    {
+      "id": "S72-pause-withdrawal-pending",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S55-all-offline-pause / S56-all-offline-expiry / S72-pause-withdrawal-pending"
+        }
+      ]
+    },
+    {
+      "id": "S73-own-withdraw-discard",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S49-applicant-grace-expires / S73-own-withdraw-discard"
+        }
+      ]
+    },
+    {
+      "id": "S74-http-seat-race",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S74-http-seat-race / S75-cookie-restore-boundary / S76-server-time-calibration"
+        }
+      ]
+    },
+    {
+      "id": "S75-cookie-restore-boundary",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S74-http-seat-race / S75-cookie-restore-boundary / S76-server-time-calibration"
+        }
+      ]
+    },
+    {
+      "id": "S76-server-time-calibration",
+      "status": "PASS",
+      "level": "real-http-socket-sqlite + engine",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S76 server deadline is independent of a client clock offset"
+        },
+        {
+          "path": "tests/server/server.test.ts",
+          "test": "S74-http-seat-race / S75-cookie-restore-boundary / S76-server-time-calibration"
+        }
+      ]
+    },
+    {
+      "id": "S77-draft-independent-version",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S52-refresh-identity / S77-draft-independent-version / S85-draft-stale-rebase"
+        }
+      ]
+    },
+    {
+      "id": "S78-grace-timer-cross-phase",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S78-grace-timer-cross-phase"
+        }
+      ]
+    },
+    {
+      "id": "S79-retention-original-expiry",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S57-restart-recovery / S79-retention-original-expiry / S87-restart-other-returns-first"
+        }
+      ]
+    },
+    {
+      "id": "S80-queued-hu-remaining-grace",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S80-queued-hu-remaining-grace / S82-queued-hu-bot-invalid"
+        }
+      ]
+    },
+    {
+      "id": "S81-reserved-eat-bot-invalid",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S81-reserved-eat-bot-invalid / S93-eat-grace-cancel-immediate"
+        }
+      ]
+    },
+    {
+      "id": "S82-queued-hu-bot-invalid",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S80-queued-hu-remaining-grace / S82-queued-hu-bot-invalid"
+        }
+      ]
+    },
+    {
+      "id": "S83-persistence-codec-roundtrip",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S58-restart-receipt / S83-persistence-codec-roundtrip"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S83 non-empty settlement set, archived round, response intents, frozen ballots and pending jobs round-trip together"
+        }
+      ]
+    },
+    {
+      "id": "S84-private-stale-event",
+      "status": "PASS",
+      "level": "actual-client/adapter/controller + engine",
+      "evidence": [
+        {
+          "path": "tests/ui/network.test.ts",
+          "test": "S84-private-stale-event drops old epoch, state, mismatched version and private draft"
+        },
+        {
+          "path": "tests/ui/network.test.ts",
+          "test": "S84 stale candidate draft version cannot replace a newer private candidate at unchanged public version"
+        }
+      ]
+    },
+    {
+      "id": "S85-draft-stale-rebase",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S52-refresh-identity / S77-draft-independent-version / S85-draft-stale-rebase"
+        }
+      ]
+    },
+    {
+      "id": "S86-other-returns-first",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S86-other-returns-first"
+        }
+      ]
+    },
+    {
+      "id": "S87-restart-other-returns-first",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S57-restart-recovery / S79-retention-original-expiry / S87-restart-other-returns-first"
+        }
+      ]
+    },
+    {
+      "id": "S88-idle-seat-release",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S88-idle-seat-release / S90-finished-win-retention / S91-lobby-grace-null-round"
+        }
+      ]
+    },
+    {
+      "id": "S89-capacity-and-no-reseat",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S12-freeze-seats / S89-capacity-and-no-reseat"
+        }
+      ]
+    },
+    {
+      "id": "S90-finished-win-retention",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S88-idle-seat-release / S90-finished-win-retention / S91-lobby-grace-null-round"
+        }
+      ]
+    },
+    {
+      "id": "S91-lobby-grace-null-round",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S88-idle-seat-release / S90-finished-win-retention / S91-lobby-grace-null-round"
+        }
+      ]
+    },
+    {
+      "id": "S92-finished-refill-next-start",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S65-next-dealer-and-ready / S92-finished-refill-next-start"
+        },
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S92 finished seat release, replacement human and original identity rejoin preserve results"
+        }
+      ]
+    },
+    {
+      "id": "S93-eat-grace-cancel-immediate",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S81-reserved-eat-bot-invalid / S93-eat-grace-cancel-immediate"
+        }
+      ]
+    },
+    {
+      "id": "S94-compose-manual-withdraw",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S30-compose-timeout / S94-compose-manual-withdraw"
+        }
+      ]
+    },
+    {
+      "id": "S95-candidate-draft-private-restore",
+      "status": "PASS",
+      "level": "implemented-engine-command",
+      "evidence": [
+        {
+          "path": "tests/engine/rules.test.ts",
+          "test": "S29-discard-hu-reservation / S95-candidate-draft-private-restore"
+        }
+      ]
+    }
+  ]
+}

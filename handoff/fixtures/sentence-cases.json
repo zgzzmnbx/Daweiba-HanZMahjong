@@ -1,0 +1,1077 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "1.0.0",
+  "registry": [
+    {
+      "tileId": "t00",
+      "char": "今"
+    },
+    {
+      "tileId": "t01",
+      "char": "天"
+    },
+    {
+      "tileId": "t02",
+      "char": "我"
+    },
+    {
+      "tileId": "t03",
+      "char": "和"
+    },
+    {
+      "tileId": "t04",
+      "char": "你"
+    },
+    {
+      "tileId": "t05",
+      "char": "一"
+    },
+    {
+      "tileId": "t06",
+      "char": "起"
+    },
+    {
+      "tileId": "t07",
+      "char": "去"
+    },
+    {
+      "tileId": "t08",
+      "char": "河"
+    },
+    {
+      "tileId": "t09",
+      "char": "边"
+    },
+    {
+      "tileId": "t10",
+      "char": "看"
+    },
+    {
+      "tileId": "t11",
+      "char": "星"
+    },
+    {
+      "tileId": "t12",
+      "char": "星"
+    },
+    {
+      "tileId": "t13",
+      "char": "吧"
+    }
+  ],
+  "cases": [
+    {
+      "id": "sentence-valid-0-commas",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "sentence-valid-1-commas",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03"
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "sentence-valid-2-commas",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03",
+          "t07"
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "sentence-valid-3-commas",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03",
+          "t07",
+          "t10"
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "sentence-thirteen",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_SENTENCE"
+      }
+    },
+    {
+      "id": "sentence-fifteen",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13",
+          "t14"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_SENTENCE"
+      }
+    },
+    {
+      "id": "sentence-repeat-physical-id",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t12"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_SENTENCE"
+      }
+    },
+    {
+      "id": "sentence-foreign-tile",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "foreign"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_SENTENCE"
+      }
+    },
+    {
+      "id": "sentence-four-commas",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t01",
+          "t03",
+          "t05",
+          "t07"
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_COMMAS"
+      }
+    },
+    {
+      "id": "sentence-duplicate-anchor",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03",
+          "t03"
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_COMMAS"
+      }
+    },
+    {
+      "id": "sentence-last-anchor",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t13"
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_COMMAS"
+      }
+    },
+    {
+      "id": "sentence-foreign-anchor",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "foreign"
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_COMMAS"
+      }
+    },
+    {
+      "id": "sentence-repeated-character-distinct-ids",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t12",
+          "t11",
+          "t13"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "sentence-free-text-field",
+      "allowedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "sentence": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_SENTENCE"
+      },
+      "extraPayload": {
+        "freeText": "啊"
+      }
+    }
+  ],
+  "objectionCases": [
+    {
+      "id": "reject-empty",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": []
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-full",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 0,
+            "endExclusive": 14
+          }
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-three",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 0,
+            "endExclusive": 2
+          },
+          {
+            "start": 4,
+            "endExclusive": 6
+          },
+          {
+            "start": 11,
+            "endExclusive": 13
+          }
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-cross-comma",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 2,
+            "endExclusive": 5
+          }
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-adjacent",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 2,
+            "endExclusive": 4
+          },
+          {
+            "start": 4,
+            "endExclusive": 5
+          }
+        ]
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-overlap",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 2,
+            "endExclusive": 5
+          },
+          {
+            "start": 4,
+            "endExclusive": 6
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "reject-zero-length",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 3,
+            "endExclusive": 3
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "reject-negative",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": -1,
+            "endExclusive": 1
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "reject-overflow",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 13,
+            "endExclusive": 15
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "reject-fraction",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 1.5,
+            "endExclusive": 3
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "reject-four",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": [
+          {
+            "start": 0,
+            "endExclusive": 1
+          },
+          {
+            "start": 2,
+            "endExclusive": 3
+          },
+          {
+            "start": 4,
+            "endExclusive": 5
+          },
+          {
+            "start": 6,
+            "endExclusive": 7
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "approve-with-ranges",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "APPROVE",
+        "objectionRanges": [
+          {
+            "start": 0,
+            "endExclusive": 1
+          }
+        ]
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "approve-empty-range-field",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "APPROVE",
+        "objectionRanges": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "INVALID_OBJECTIONS"
+      }
+    },
+    {
+      "id": "approve-no-range-field",
+      "proposalId": "proposal-a",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "APPROVE"
+      },
+      "expected": {
+        "valid": true,
+        "code": null
+      }
+    },
+    {
+      "id": "reject-stale-proposal",
+      "proposalId": "proposal-old",
+      "activeProposalId": "proposal-a",
+      "ballot": {
+        "choice": "REJECT",
+        "objectionRanges": []
+      },
+      "expected": {
+        "valid": false,
+        "code": "STALE_PHASE"
+      }
+    }
+  ],
+  "draftCases": [
+    {
+      "id": "comma-follows-left-tile",
+      "before": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03",
+          "t12"
+        ]
+      },
+      "afterOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13",
+        "t03"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t12"
+      ]
+    },
+    {
+      "id": "comma-anchor-removed",
+      "before": {
+        "orderedTileIds": [
+          "t00",
+          "t01",
+          "t02",
+          "t03",
+          "t04",
+          "t05",
+          "t06",
+          "t07",
+          "t08",
+          "t09",
+          "t10",
+          "t11",
+          "t12",
+          "t13"
+        ],
+        "commaAfterTileIds": [
+          "t03",
+          "t07"
+        ]
+      },
+      "afterOrderedTileIds": [
+        "t00",
+        "t01",
+        "t02",
+        "t04",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t09",
+        "t10",
+        "t11",
+        "t12",
+        "t13"
+      ],
+      "expectedCommaAfterTileIds": [
+        "t07"
+      ]
+    }
+  ],
+  "mergeCases": [
+    {
+      "id": "anonymous-union",
+      "rangesFromBallots": [
+        [
+          {
+            "start": 0,
+            "endExclusive": 3
+          }
+        ],
+        [
+          {
+            "start": 2,
+            "endExclusive": 5
+          },
+          {
+            "start": 7,
+            "endExclusive": 8
+          }
+        ]
+      ],
+      "expectedMerged": [
+        {
+          "start": 0,
+          "endExclusive": 5
+        },
+        {
+          "start": 7,
+          "endExclusive": 8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T05:15:35.028Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.9.0",
+  "status": "PASS",
+  "scope": "Real HTTP/WSS selected/default room creation and restore; administration writes tested only in isolated local DB",
+  "catalog": {
+    "revision": 0,
+    "defaultSetId": "classic",
+    "sets": [
+      {
+        "id": "classic",
+        "name": "经典字库",
+        "revision": 1,
+        "version": "managed-r1",
+        "totals": {
+          "2": 120,
+          "3": 144,
+          "4": 168,
+          "5": 192,
+          "6": 216
+        },
+        "charCount": 84
+      }
+    ]
+  },
+  "checks": [
+    "public catalog exposes names, counts, revisions and default, without entries or private game data",
+    "omitted selection uses default: room bound to classic, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "explicit selection: room bound to classic, started with revision 1",
+    "identity restore preserved selected set and frozen deck; own practice room closed without scoring",
+    "catalog unchanged by public verification"
+  ]
+}

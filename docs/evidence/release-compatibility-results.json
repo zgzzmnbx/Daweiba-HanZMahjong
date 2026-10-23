@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-23T01:28:54.460Z",
+  "scope": "Selected immutable release loads a fresh consistent production backup on an isolated port/database; production data remains untouched",
+  "version": "1.0.0",
+  "release": "/Users/sm/Library/Application Support/WordMahjong/releases/1.0.0-20261023-091613",
+  "status": "PASS",
+  "roomsChecked": 10,
+  "resultsChecked": 7,
+  "invariants": [
+    "hands",
+    "drafts",
+    "wall order",
+    "cursor",
+    "wins",
+    "archives",
+    "settlement keys",
+    "persisted results"
+  ],
+  "limitation": "Confirms only the earlier 1.0.0 to 1.0.0 same-rule release backup compatibility before AI rooms existed; does not establish 1.1.0 to 1.0.0 downgrade safety"
+}

@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "1.1.0",
+  "rulesVersion": "1.0.0",
+  "generatedAtUtc": "2026-10-21T07:09:58.982596+00:00",
+  "upstreamCommit": "6830301df3061cdd25350cf56807473e5505b311",
+  "fileCountExcludingManifest": 108,
+  "selfExcluded": "MANIFEST.json",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 3481,
+      "sha256": "2fb8c6c4df9dc0271f7d7047ce87d3e40245c7559882d8a62dceccffa0e84e3f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1608,
+      "sha256": "b26e6a99f39dd40ff58480134776105cec5654a721782173bbe8383b4bd4c467"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6667,
+      "sha256": "73a4b3f4e4e1f51ad1e1205766ad7bde11555d20be5281308ef9f740f4d9a61d"
+    },
+    {
+      "path": "checks/RESULTS.txt",
+      "bytes": 3582,
+      "sha256": "e0351d91a616d528a40c2195d9618e735ef1b7b0a0ffcc1c9e36bfd4e7676281"
+    },
+    {
+      "path": "checks/check-package.py",
+      "bytes": 2954,
+      "sha256": "558ccfb4dac9ce980c09ffbdedebce9e7d467959fe8ed9acc4fed559f14c6de7"
+    },
+    {
+      "path": "checks/validate-fixtures.py",
+      "bytes": 9803,
+      "sha256": "6797b456b0055e587199e42adce15a2624ac47762416a3411e0722d12459757e"
+    },
+    {
+      "path": "checks/validate-table-contract.mjs",
+      "bytes": 3818,
+      "sha256": "2f37dae05de2d6b6d96635ccc5344df1ceefd8bac3739e295b9eb63839acd54c"
+    },
+    {
+      "path": "checks/validate-table-ui-regressions.py",
+      "bytes": 4915,
+      "sha256": "e97d359bb3c29a8a6156b5103708fbdfdf14e79f959304ed25da0c2e6248ffab"
+    },
+    {
+      "path": "checks/validate-table-ui.py",
+      "bytes": 24213,
+      "sha256": "90d37294fbddb37617da132786c84876932b89cdfc198f2d1065726ef1d17fbb"
+    },
+    {
+      "path": "contracts/README.md",
+      "bytes": 15388,
+      "sha256": "c58d3008856bf214fa5472ae76f99d7ed5273946da9613255d8e035b274999aa"
+    },
+    {
+      "path": "contracts/rules.defaults.json",
+      "bytes": 834,
+      "sha256": "71cf349854b13a716ef97cbda75a1dc7969961e277eef2a6e3f13062d152e741"
+    },
+    {
+      "path": "contracts/table-view.ts",
+      "bytes": 10712,
+      "sha256": "f23b4cc05487d6eb8af611fb88998e476d34fc90097105913f263c19cd5c1f0b"
+    },
+    {
+      "path": "contracts/types.ts",
+      "bytes": 15982,
+      "sha256": "690d13f3e38e5ced2686235270ef0a4a74311c483bbc7296e93ed8c3700cf1c9"
+    },
+    {
+      "path": "deploy/.env.example",
+      "bytes": 875,
+      "sha256": "a3f09e2704e1351d357db2bb981aa395efd53581e5889dc91b7047d81b41094d"
+    },
+    {
+      "path": "deploy/Caddyfile.example",
+      "bytes": 484,
+      "sha256": "0833b9043e158edcc8e0204e683ac41158ec92bbde85e7cc83758e0c88937961"
+    },
+    {
+      "path": "deploy/README.md",
+      "bytes": 4609,
+      "sha256": "a17688d001281418429a57f3e8d2891c4aaf6cfe0b3c940cec6d2b4530ecbdc6"
+    },
+    {
+      "path": "deploy/frpc.launchd.plist.example",
+      "bytes": 860,
+      "sha256": "c8b5c7f0968f8e3c1fc9527ac65dfd20965039827823764c00da9e903f93b2ab"
+    },
+    {
+      "path": "deploy/frpc.toml.example",
+      "bytes": 641,
+      "sha256": "3724075b0402e51ca8a594b0a7cbd2d66479b004424308451ffe69a2d0305408"
+    },
+    {
+      "path": "deploy/frps.toml.example",
+      "bytes": 756,
+      "sha256": "04b5a75cb08dbfc8bf0cf5c2d135e6070fafa22df087f3445b6cf32d2ecf9c00"
+    },
+    {
+      "path": "deploy/launchd.plist.example",
+      "bytes": 938,
+      "sha256": "6f45b3010ebe50e74e5030b7036264d65be4eaad29c32e501603e5150a04921d"
+    },
+    {
+      "path": "docs/01-RULES.md",
+      "bytes": 16265,
+      "sha256": "f8d3c3b2b66312834a80d46ef9a8e49b9a3eaa382c12bf8eac377e0f61146b6f"
+    },
+    {
+      "path": "docs/02-STATE-MACHINE.md",
+      "bytes": 11041,
+      "sha256": "e6adee91d5fda0d1a32d6b0b2b02da7979b10e31fb91ac57d6f49d795a729aec"
+    },
+    {
+      "path": "docs/03-UI-SPEC.md",
+      "bytes": 25763,
+      "sha256": "9e6cf8e4d012c2f209be401daf1d06990b357ebafd5ace8c7d90f0250d426f00"
+    },
+    {
+      "path": "docs/04-ACCEPTANCE.md",
+      "bytes": 40321,
+      "sha256": "296ff02fea1d6d95360e7a1c8653d554287776af952e7b2c432c1b188020ad58"
+    },
+    {
+      "path": "docs/05-ARCHITECTURE-DEPLOYMENT.md",
+      "bytes": 20531,
+      "sha256": "564d21b7817ff486927c3f44849fad8dcc8eeceeb9e5f70510492d99445acc2f"
+    },
+    {
+      "path": "docs/06-EXECUTION-PLAN.md",
+      "bytes": 7761,
+      "sha256": "10cecc5ddf3072024243b61e38227b4ab0e2e8fdcac98d0ce9eb03c1bec20b3d"
+    },
+    {
+      "path": "docs/07-HANDOFF-PROTOCOL.md",
+      "bytes": 4159,
+      "sha256": "327b3d8e3e5ee3e240bbbea898a771c58146cc3b686f4a1358f83a83cd7fe59f"
+    },
+    {
+      "path": "docs/08-DECISIONS.md",
+      "bytes": 5350,
+      "sha256": "7ddb48023fd4267322dbd605c1c0af41fe92beadab66b50ae024f0222b03c7ce"
+    },
+    {
+      "path": "docs/09-SOURCES.md",
+      "bytes": 7532,
+      "sha256": "d211cfa35f028fbbf08bd9947d7b6b3a06aa23d98728cb5b8cb08c11feaae80c"
+    },
+    {
+      "path": "docs/10-PACKAGE-QA.md",
+      "bytes": 6670,
+      "sha256": "250acac90743aedb678744169982fcea43fea2a8dff26f17358dd9ef741f1789"
+    },
+    {
+      "path": "docs/11-ENGLISH-TABLE-ADOPTION.md",
+      "bytes": 22106,
+      "sha256": "1d9dcd18be6394f3a6662b2145849f603500b94975dcfdacaea1e0906e6d20a5"
+    },
+    {
+      "path": "docs/12-UI-ACCEPTANCE.md",
+      "bytes": 15348,
+      "sha256": "8eeeb041248930c10600799ab38b3f136045c4114cc67ab7c167d4f9f51f6e6e"
+    },
+    {
+      "path": "docs/13-V1.0-UPGRADE.md",
+      "bytes": 3160,
+      "sha256": "da877d6f4b00d1a6bd4e1a828641c7c29831d1d4b6918d410fee555bec78dc3b"
+    },
+    {
+      "path": "fixtures/deck.daily-v1.json",
+      "bytes": 15327,
+      "sha256": "7ab7d375e10fd4355bc810f5dcc9a94053e9226f6dc704175ed865034622eafa"
+    },
+    {
+      "path": "fixtures/scenario-cases.json",
+      "bytes": 57858,
+      "sha256": "d7ddc2d3c95f8cc903e9347e53e113f55dc07ad576036673b30c16fe3a15b4a7"
+    },
+    {
+      "path": "fixtures/sentence-cases.json",
+      "bytes": 19074,
+      "sha256": "defa4d8fd4d4b49d965c58bc8b1d74d508dc5cd8239807895fd266eb18ff927b"
+    },
+    {
+      "path": "fixtures/table-view-cases.json",
+      "bytes": 76027,
+      "sha256": "249030bb4c458c2be463d4ba9b6b025b975c4c47b39245877d7d80d8c989dd9e"
+    },
+    {
+      "path": "fixtures/vote-cases.json",
+      "bytes": 10043,
+      "sha256": "9394b8074fed08045bdbeae89d03002075a1a6267f96c01791a47c958f4f3c4e"
+    },
+    {
+      "path": "prompts/01-ASTRA-START.md",
+      "bytes": 4426,
+      "sha256": "b9773e04d39f1eaaa6887131c63595fb0845aa0a7ba404299956da1275c361fc"
+    },
+    {
+      "path": "prompts/02-SOL-IMPLEMENT.md",
+      "bytes": 4133,
+      "sha256": "ecca54e1227c6a8d7f5ae7d4e98a875f468aefd059df4698f02e54a57f8783f8"
+    },
+    {
+      "path": "prompts/03-ASTRA-REVIEW.md",
+      "bytes": 2427,
+      "sha256": "b647da3fef3e57fc645ec796fccf09e36e0a066f9dc974b5e5679389ac3b1182"
+    },
+    {
+      "path": "references/englishmahjong/LICENSE-EnglishMahjong.txt",
+      "bytes": 1062,
+      "sha256": "8df1ef32e0201db0e3535460ce6460edeadff3e7ccfe945980227d55bf060fe2"
+    },
+    {
+      "path": "references/englishmahjong/README.md",
+      "bytes": 5033,
+      "sha256": "dffed2b581e991378654e3d55ce73307d3c378364a33cc493b0ace2a56d68808"
+    },
+    {
+      "path": "references/englishmahjong/licenses/Autotable-COPYING.txt",
+      "bytes": 1212,
+      "sha256": "2ba229557afaba14adb5ebf11ed8666311420fdd1215c76fec1a1b3fd8606e6b"
+    },
+    {
+      "path": "references/englishmahjong/original-game.jpg",
+      "bytes": 352617,
+      "sha256": "e9d690db693243b5949c64bbc0a28c72f29f7d717331dd6b17e4030d824393df"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/LICENSE",
+      "bytes": 1062,
+      "sha256": "8df1ef32e0201db0e3535460ce6460edeadff3e7ccfe945980227d55bf060fe2"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/README.md",
+      "bytes": 4495,
+      "sha256": "eee761a8b196fd18e37049e31fd992f197fa1c8202e7a941db89a49a417f2561"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/fonts/OFL.txt",
+      "bytes": 4385,
+      "sha256": "2d8ae1e634466e8b50109d5d56d0accd5550afc8ae28bdd4aa6bb16c115d1d33"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/fonts/README.md",
+      "bytes": 670,
+      "sha256": "65cb72359fe7562a6b02188344a8e9df57dc9e55e769f6cfa1218c98b8f20aa1"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/package-lock.json",
+      "bytes": 113310,
+      "sha256": "f1facda852a8fc9db4b4eed361da668e7fe6b2cd453dde10ea6b9bf0eb50e75a"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/package.json",
+      "bytes": 630,
+      "sha256": "9651005dc27150f33a2079b126ba5bdae4f96ba6c34e72dc5458a0b8d7dc2a22"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/public/draco/README.md",
+      "bytes": 1357,
+      "sha256": "a3f42eb94001d0a716e3906452eb0b75d2c1d5acced686f6f4d683211a0e77e7"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/api.ts",
+      "bytes": 15009,
+      "sha256": "1e3bf540cebd1c796f5bdef2989434172184fc02658284f6085633e9614424ec"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/components/Hand.tsx",
+      "bytes": 20357,
+      "sha256": "2ef5490ef3363a22ef49fd1c25dd7d377497137d2f57dc38b9ec0f54a204848f"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/components/Tile.tsx",
+      "bytes": 3827,
+      "sha256": "4e3421fb4125570384ee1e3accf12caaababd56a69fcfc9c40838d7d91f05248"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/scene/TableScene.tsx",
+      "bytes": 2517,
+      "sha256": "0895912958644b2cf73a35fc01ee66b0a70357b5a2969acf322ffb667eb6d12f"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/scene/scene.css",
+      "bytes": 12732,
+      "sha256": "7cbc275783f2c7a3fcd11cbdc085747dd906ef5328f3f78d9ecb60f01ea106ff"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/styles.css",
+      "bytes": 61481,
+      "sha256": "176dba10e7518914d3435815803bb16c9a3574e044f42eb3a472baa768905f16"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/Table3D.tsx",
+      "bytes": 86973,
+      "sha256": "1f4b37428b50adbeefc62c5a4c5a83aab0031c5efb6e4e5d2d5e51384c885954"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/asset-loader.ts",
+      "bytes": 5879,
+      "sha256": "147512dfa533588d3feeaa45afef91ef012b88ac5e90193275b4982b9763e93c"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/atlas.ts",
+      "bytes": 4003,
+      "sha256": "efb2b964be1c1a14c19133a20105742fc71b0bc5b19746f87ea017ab5287e912"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/board-model.ts",
+      "bytes": 2896,
+      "sha256": "9c36328d826f221b50f05697b882a70b7784e588fecbf66e33de20e6874b2caa"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/center-board.ts",
+      "bytes": 8966,
+      "sha256": "fbabb0e98a6f089bf6323bb635b55541209b82de18d0d804f3a8eff393488797"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/character-loader.ts",
+      "bytes": 4767,
+      "sha256": "8ede47ee9b7a5809f39103fb88fc88b85fcbfa86b1e98c5370634f91f11237d4"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/characters.ts",
+      "bytes": 11281,
+      "sha256": "dd19ad599119586822b421999aabbbbbe96ec81275080d8b3b3a9706a394c4da"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/confirm.ts",
+      "bytes": 880,
+      "sha256": "ccb24e7804701aeb25f44fff18b15e4dfdaf63c03b1fb8c2b498a337cd912b77"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/deal.ts",
+      "bytes": 5428,
+      "sha256": "e45338a014f2799761548c5b3804505fa07ba185d5ccc688e116c4bb3c0e318d"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/discard.ts",
+      "bytes": 1269,
+      "sha256": "b319db54a1dedda61fa58cb1949055c7632f7759a7203f3c44d5e2d866283d06"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/layout.ts",
+      "bytes": 7719,
+      "sha256": "ebead79989119ee87e837e9eb78871adf759a19c18025abd6657b68dd3f97e01"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/loose-reconcile.ts",
+      "bytes": 20326,
+      "sha256": "18b14d435be8a3b7d7da2fada2a149a68b6903f7add07fe033d59515dec03306"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/main-view.ts",
+      "bytes": 13463,
+      "sha256": "f540e66294b1e0f5a29f91c97e8c24fdab82395c9ab47aa730bb7d19018d9987"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/mouse-ui.ts",
+      "bytes": 10736,
+      "sha256": "3ef6005f104e62b03eaabcd052c4fef285bdd3e8827a98ef2ce6996a54cb0b34"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/movement.ts",
+      "bytes": 6018,
+      "sha256": "3006c30d5fa5c6fa60b9e3a5c337b5f19f202e4976b2faa00c1ec7d175b104c2"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/nameplate.ts",
+      "bytes": 2096,
+      "sha256": "7bdcc5df115a27d27c53a5e54dc0cd74126ccd14cdd3d13f8af482ba5659505b"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/object-view.ts",
+      "bytes": 9018,
+      "sha256": "c7474345e7f9564cfed25284f86564cbb56aacf0a2e1724a12ff5080a2484b5b"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/persist.ts",
+      "bytes": 4616,
+      "sha256": "d7df3569ecf2c5586f40da2f2584773d682f0aed2b4097f8d1d8a407a32fa6c3"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/placement.ts",
+      "bytes": 12282,
+      "sha256": "3a08e26945d05c8eccde322bc098af97a83431b32361ac8202cb0ec0d16aa0fd"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/replay.ts",
+      "bytes": 10742,
+      "sha256": "332f971b4d464cd2611a5227d7003ba0438ef59ad4f123a3ba948452366f3452"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/setup-slots.ts",
+      "bytes": 16155,
+      "sha256": "58288d3c55935486246dcbdfeed6744a8877898e09d88865abd4ed1f96312677"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/slot.ts",
+      "bytes": 7565,
+      "sha256": "20cbdc5b4ed8c0fccf6d0c04ea4fb128a554a36da4434b1f38a2946ca82c2f8b"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/table-view.ts",
+      "bytes": 54117,
+      "sha256": "ef562906d6e17741f00a838107b05d9d5c3dfd198049772ae7ff640283029834"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/thing-assign.ts",
+      "bytes": 5124,
+      "sha256": "404b30e2f393b0b61694c9fdd3a57525bda8984990f65d5b3a6c18fcd7f4ab22"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/thing-group.ts",
+      "bytes": 11649,
+      "sha256": "fc4a420efdbfdc9c19681c0c7035d98f87f206546384d4ba584742700858e509"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/thing.ts",
+      "bytes": 2612,
+      "sha256": "faac47335034cb5d0701a7bb3ee2a0901bdc8326ee18289e2542166cc2d09213"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/types.ts",
+      "bytes": 1339,
+      "sha256": "648988584d09a863827da2f143b77138024e8ba388b9af21db46fed82fef8fd2"
+    },
+    {
+      "path": "references/englishmahjong/source-snapshot/src/table3d/utils.ts",
+      "bytes": 2876,
+      "sha256": "9781733e8ff15cc3e386e986e9df489fd235c0f7bcb77f70fd9276fa21993071"
+    },
+    {
+      "path": "references/englishmahjong/upstream.lock.json",
+      "bytes": 14716,
+      "sha256": "c7e621e09253afafe4a916392d53823b1f8e38f3aa4cf13e27142e1ed1470974"
+    },
+    {
+      "path": "references/englishmahjong/verify-snapshot.py",
+      "bytes": 1475,
+      "sha256": "22a9e18ddb4c35b8a402e7ab58924d6b20ef17cf7aaea6fc92435a635885885f"
+    },
+    {
+      "path": "templates/DECISIONS.md",
+      "bytes": 797,
+      "sha256": "4f6bef10cb781dc081eaad07203df561aa47f5cf49e80462a532d0bba7bc3add"
+    },
+    {
+      "path": "templates/HANDOFF.md",
+      "bytes": 957,
+      "sha256": "998e9652417ef658a1b3e97c6c1fd6169d8ee41dace230e149e880d24ffcbe28"
+    },
+    {
+      "path": "templates/TASKBOARD.md",
+      "bytes": 1393,
+      "sha256": "026d2bcaed4a137a666fafa36d151568157172f7e66054e50a7f5fafa710856f"
+    },
+    {
+      "path": "templates/UI-ADOPTION.md",
+      "bytes": 1348,
+      "sha256": "52985036d4db99aa5da79a2baebf49b0853106e7aeafbdefb260ea1881f021fe"
+    },
+    {
+      "path": "templates/VERIFICATION.md",
+      "bytes": 806,
+      "sha256": "e2a430043306a9dd8fb6e23352bdb1af2021efe6e61263f79a5ed26c66805d1c"
+    },
+    {
+      "path": "ui-reference/FONT-LICENSE.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "ui-reference/README.md",
+      "bytes": 4655,
+      "sha256": "ef2b6403758ce46b963c8c503672954495ce81c8559a704a73a649c25e3d7b53"
+    },
+    {
+      "path": "ui-reference/VERIFICATION.md",
+      "bytes": 4357,
+      "sha256": "c576631d7784c2524921f4900381385cc187416f2aa5b420449b4d164d24fa39"
+    },
+    {
+      "path": "ui-reference/build-reference.py",
+      "bytes": 20229,
+      "sha256": "a6aa018557148b9472becf33018873404c9a62605bfebc7566d664df87638091"
+    },
+    {
+      "path": "ui-reference/design-tokens.json",
+      "bytes": 4403,
+      "sha256": "7d5931e653c15ded5b6a3d451327c5487dd2157478d3da086ad46cde55cf4e18"
+    },
+    {
+      "path": "ui-reference/desktop-4p.png",
+      "bytes": 268018,
+      "sha256": "76947fcd5aef453c5f2b4d94dc6335e0270cb0cd2cce13bbd63a0751653cf3f3"
+    },
+    {
+      "path": "ui-reference/desktop-4p.svg",
+      "bytes": 177901,
+      "sha256": "96f5345e0c07908581c425672494322a2c55df8649ed68b574645a756fa24db9"
+    },
+    {
+      "path": "ui-reference/desktop-6p.png",
+      "bytes": 297540,
+      "sha256": "b1f5b0b12cded316e4980bce7e39ecfb826ae7a1aafb351a49cfb600fbdb3951"
+    },
+    {
+      "path": "ui-reference/desktop-6p.svg",
+      "bytes": 186951,
+      "sha256": "ff654b671c4c0e11c40a97e6cd6965311fd5683db14363ece17261556f086c34"
+    },
+    {
+      "path": "ui-reference/mobile-390.png",
+      "bytes": 135340,
+      "sha256": "62ca01d29e5c44866a742094e6d1215262f7e60cfcdfb5550a8844a7c16ba0fe"
+    },
+    {
+      "path": "ui-reference/mobile-390.svg",
+      "bytes": 181222,
+      "sha256": "095c5d65a46b77e4298e9aa80a3fc732ce9fe94d15a7f8232c02a469de787a02"
+    },
+    {
+      "path": "ui-reference/reference.html",
+      "bytes": 859167,
+      "sha256": "037b1fb35b9f13e9d34617f4cf9a602411522446378fdcc626024f0a1b7db19d"
+    },
+    {
+      "path": "ui-reference/ui-cjk-subset.woff",
+      "bytes": 107244,
+      "sha256": "2930b5a30ef4d749761dba01b95a7efcf6985bcd7b329d4c5c8719ec415d99fc"
+    },
+    {
+      "path": "ui-reference/vote-objection.png",
+      "bytes": 177296,
+      "sha256": "5c127206fb9febe0aef0e3c839e4d5f9963e74ccb26eb5e70b21f707ab289d94"
+    },
+    {
+      "path": "ui-reference/vote-objection.svg",
+      "bytes": 163968,
+      "sha256": "656c6714f818539e1fd7c3d51ed893df9c9eef9901abb48875bdb495be58e044"
+    }
+  ]
+}

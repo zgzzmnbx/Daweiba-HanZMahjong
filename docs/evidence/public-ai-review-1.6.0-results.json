@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-23T04:04:03.104Z",
+  "origin": "https://118.196.107.182:1240",
+  "rulesVersion": "1.2.0",
+  "scope": "Real HTTP/WSS, own private rooms only; probability boundary/distribution tested separately in engine tests",
+  "status": "PASS",
+  "results": [
+    {
+      "n": 2,
+      "humans": 1,
+      "kind": "SELF",
+      "reviewers": 1,
+      "approve": 0,
+      "reject": 1,
+      "passed": false,
+      "noPracticeScore": true,
+      "retryAndRestoreStable": true
+    },
+    {
+      "n": 4,
+      "humans": 1,
+      "kind": "SELF",
+      "reviewers": 3,
+      "approve": 3,
+      "reject": 0,
+      "passed": true,
+      "noPracticeScore": true,
+      "retryAndRestoreStable": true
+    },
+    {
+      "n": 6,
+      "humans": 1,
+      "kind": "SELF",
+      "reviewers": 5,
+      "approve": 2,
+      "reject": 3,
+      "passed": false,
+      "noPracticeScore": true,
+      "retryAndRestoreStable": true
+    },
+    {
+      "n": 2,
+      "humans": 1,
+      "kind": "DISCARD",
+      "passed": true,
+      "ownedHandStayed13": true
+    },
+    {
+      "n": 4,
+      "humans": 2,
+      "kind": "SELF",
+      "waitedForHuman": true,
+      "reviewers": 3,
+      "AIAlreadyVoted": 2,
+      "approve": 2,
+      "reject": 1,
+      "passed": true
+    }
+  ]
+}

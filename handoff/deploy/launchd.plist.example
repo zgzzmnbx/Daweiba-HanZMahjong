@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.daweiba.wordmahjong.game</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/ABS/PATH/TO/node</string>
+    <string>--env-file=/Users/MAC_USER/word-mahjong/shared/config/.env.production</string>
+    <string>/Users/MAC_USER/word-mahjong/current/apps/server/dist/index.js</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/MAC_USER/word-mahjong/current</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>StandardOutPath</key>
+  <string>/Users/MAC_USER/word-mahjong/shared/logs/game.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/MAC_USER/word-mahjong/shared/logs/game.stderr.log</string>
+</dict>
+</plist>

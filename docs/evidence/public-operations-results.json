@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-23T01:21:15.966Z",
+  "origin": "https://118.196.107.182:1240",
+  "scope": "Live production process, real public WSS and dedicated cloud Caddy; restore rehearsal uses a separate sandbox database",
+  "results": [
+    {
+      "check": "10 second transport disconnect returns during grace without draw",
+      "status": "PASS"
+    },
+    {
+      "check": "grace expiry permits one delayed AI discard; SESSION restore preserves its committed move",
+      "status": "PASS"
+    },
+    {
+      "check": "all offline freezes wall/discards beyond grace; original identities restore",
+      "status": "PASS"
+    },
+    {
+      "check": "real LaunchAgent process restart + SQLite reload + SESSION identity restore retains hands/drafts",
+      "status": "PASS"
+    },
+    {
+      "check": "dedicated Caddy forced reload interrupts then reconnects both real WSS clients",
+      "status": "PASS"
+    },
+    {
+      "check": "live VACUUM INTO backup + integrity check + sandbox restore retains every snapshot/session/result/event",
+      "status": "PASS"
+    }
+  ]
+}

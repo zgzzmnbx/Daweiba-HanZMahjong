@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-23T01:46:21.818Z",
+  "browser": "156.0.8078.47",
+  "scope": "real production browser build + real Socket.IO/SQLite, injected server clock; no test HTTP route",
+  "checks": [
+    {
+      "name": "HU priority uses seat order despite reversed arrival; 13+1 candidate remains private and borrowed tile reserved",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "candidate draft saves independently from 13-tile hand draft",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "real WebGL loss during live vote preserves phase, identity and network; retry rebuilds current view",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "anonymous vote union across comma displayed after rejection; reserved EAT moves physical tile once, no draw and protected tile disabled",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "self-HU rejection forces 30-second discard; deadline produces explicit one-turn timeout notice while HUMAN",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "live disconnect observes 14999ms grace, BOT at 15000ms, exactly one legal discard after 800ms",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "new device restores after committed BOT discard, preserves action and does not draw extra tile",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "all browsers offline: actual server pause + local WebGL loss/retry do not advance phase, wall or epoch; reconnect resync retains committed BOT action",
+      "status": "PASS",
+      "data": {}
+    }
+  ],
+  "screenshot": "real-advanced-recovery.png"
+}

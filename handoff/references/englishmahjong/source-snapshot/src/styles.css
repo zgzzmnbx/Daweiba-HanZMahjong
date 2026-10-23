@@ -1,0 +1,2823 @@
+/* 英语麻将 —— 平板/桌面横屏优先。牌面全用 CSS 画，不引图片资源。 */
+
+:root {
+  --felt: #1d6b4f;
+  --felt-dark: #175a42;
+  --ink: #1a1a1a;
+  --vowel: #c62828;
+  --paper: #fbf7ee;
+  --gold: #d4a24c;
+  --line: rgba(0, 0, 0, 0.12);
+
+  /* 层级。一处定死，免得各写各的——结算页遮罩以前压根没设 z-index（＝0），
+     于是牌河的金圈牌(1)、顺序角标(2)、日志面板(5) 全都浮在它上面。 */
+  --z-tile: 1;        /* 牌面上的角标、金圈 */
+  --z-badge: 2;       /* 点选顺序的序号 */
+  --z-seat: 3;        /* 席位卡（形象/名字/亮词）——浮在倾斜的桌沿之上 */
+  --z-log: 5;         /* 左上角操作记录 */
+  --z-celebrate: 50;  /* 胡牌特效 */
+  --z-overlay: 100;   /* 结算页——必须盖住上面所有东西 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: var(--felt);
+  color: #eee;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 牌 ---------- */
+
+/* .tile 可能是 <button>（可点）也可能是 <div>（纯展示）。
+   不可点的牌绝不能用 <button disabled> —— disabled 按钮会吞掉点击，
+   外层容器（比如「点一下拆开」的暗词）就再也收不到事件了。 */
+.tile {
+  position: relative;
+  width: 50px;
+  height: 68px;
+  border: none;
+  margin: 0;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #fffdf7, #efe9dc);
+  /* 立体感三件套：顶部内侧高光（受光面）、底部厚边（牌的侧面）、投影（离桌感） */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.06),
+    0 4px 0 #c9c1ae,
+    0 5px 2px rgba(0, 0, 0, 0.2),
+    0 7px 10px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.tile-small {
+  width: 34px;
+  height: 47px;
+  border-radius: 5px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 0 #c9c1ae,
+    0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tile-letter {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+.tile-small .tile-letter {
+  font-size: 20px;
+}
+
+.tile-vowel .tile-letter {
+  color: var(--vowel);
+}
+
+/* 右上角的字母表序号：纯教学标注（帮学生记字母表位置），**不是分值**。
+   分值来自牌的张数（稀有度）—— 见 RULES.md §7.1。
+   放右上而不是底部：底部还有张数标注，两个挤一排看不清（测试bug.md） */
+.tile-ordinal {
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  font-size: 10px;
+  color: #9a9384;
+}
+.tile-small .tile-ordinal {
+  font-size: 8px;
+  right: 3px;
+  top: 2px;
+}
+
+.tile-wild {
+  position: absolute;
+  bottom: 3px;
+  font-size: 9px;
+  color: #9a9384;
+}
+
+.tile-clickable {
+  cursor: pointer;
+}
+.tile-clickable:hover {
+  transform: translateY(-4px);
+}
+
+.tile-selected {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 0 var(--gold), 0 0 0 3px var(--gold), 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tile-dimmed {
+  opacity: 0.45;
+}
+
+/* ---------- 词 ---------- */
+
+.word {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+  padding: 4px 6px 2px;
+  display: inline-block;
+}
+.word-clickable {
+  cursor: pointer;
+}
+.word-clickable:hover {
+  background: rgba(212, 162, 76, 0.3);
+}
+.word-tiles {
+  display: flex;
+  gap: 2px;
+}
+.word-label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+/* ---------- 布局 ---------- */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 16px 20px;
+}
+
+header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+header b {
+  color: var(--gold);
+  font-size: 15px;
+}
+.brand {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.budget {
+  margin-left: auto;
+}
+.tag-hint {
+  background: var(--gold);
+  color: #3a2a08;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+/* 文案沿用顶栏其他项的「灰标签 + 金色值」格式（词库 初中、难度 普通），
+   扫一眼就知道它管什么；加个边框把「这是可点的」和纯展示项区分开 */
+.case-toggle {
+  margin-left: 4px;
+  padding: 2px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.case-toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.account-badge {
+  margin-left: 4px;
+  font-size: 13px;
+}
+
+/* ---------- 账号弹窗 ---------- */
+
+.sheet-account {
+  max-width: 380px;
+}
+/* 只能注册时（3D 牌局中，T6.6）标签栏换成一行标题 */
+.account-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.account-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.account-tab {
+  flex: 1;
+  padding: 9px;
+  font-size: 15px;
+  color: #9fc3b0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.account-tab.on {
+  color: #3a2a08;
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+.account-note {
+  font-size: 12.5px;
+  color: #9fc3b0;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: #cfe6da;
+  margin-bottom: 12px;
+}
+.account-hint {
+  color: #7f9c8d;
+  font-size: 11px;
+}
+.account-field input {
+  padding: 9px 11px;
+  font-size: 14px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #1a1a1a;
+}
+.account-error {
+  color: #ffb4a2;
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+.account-loggedin {
+  font-size: 16px;
+  margin: 4px 0 8px;
+}
+.account-loggedin b {
+  color: var(--gold);
+}
+.account-close {
+  display: block;
+  margin: 14px auto 0;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #9fc3b0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.account-close:hover {
+  color: #fff;
+}
+.account-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ---------- 我的词单弹窗 ---------- */
+
+/* 两个类名叠加：.sheet 的 max-width 写在后面，单个类名压不过它。
+   弹窗挂在设置卡里面，要把设置卡的居中对齐改回左对齐 */
+.sheet.sheet-wordlists {
+  max-width: 520px;
+  text-align: left;
+}
+.wl-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wl-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 7px;
+  font-size: 15px;
+}
+.wl-name {
+  color: #fff;
+}
+.wl-meta {
+  flex: 1;
+  color: #cfe6da;
+}
+.wl-confirm {
+  display: flex;
+  gap: 12px;
+}
+.wl-danger {
+  color: #ffb4a2;
+}
+.wl-upload-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.wl-result {
+  margin: 0 0 12px;
+  padding: 11px 13px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 7px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #eaf4ee;
+}
+.wl-warn {
+  color: var(--gold);
+}
+.wl-rejected {
+  padding-left: 14px;
+}
+.btn-save {
+  display: block;
+  width: 100%;
+  margin: 4px 0 14px;
+  background: rgba(212, 162, 76, 0.16);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 700;
+}
+.btn-save:hover:not(:disabled) {
+  background: rgba(212, 162, 76, 0.28);
+}
+
+/* 手牌区小写模式。字母是渲染时 toUpperCase 上去的（数据层一直是小写），
+   这里用 text-transform 覆盖回来——比给每个组件透传一个 prop 干净得多，
+   而且天然只作用于 .hand 内部，牌河和对手区不受影响。 */
+.hand-lower .hand .tile-letter,
+.hand-lower .hand .tile-wild,
+.hand-lower .hand .word-label,
+.hand-lower .hand .checker-word,
+.hand-lower .hand .wild-letter {
+  text-transform: lowercase;
+}
+
+/* ---------- 牌桌 ---------- */
+
+/* 牌桌整体（舞台、透视、桌面、桌上三家的牌、席位卡和牌河的容器外观）都在
+   scene/scene.css——`.opponent*` / `.river*` 这些 class 现在只有场景层在用。
+   这里只留下**和场景无关的文字/内容排版**（字号、词条换行），
+   容器的位置和外观、以及舞台底色下的配色一律归场景层，
+   免得两个文件为同一块地方各写一套。 */
+
+.opponent-won {
+  opacity: 0.75;
+}
+.opponent-name {
+  font-size: 12px;
+}
+/* 发牌：牌背从上方落位。每张牌的 animation-delay 由 scene/Seat.tsx 按
+   「第几家 × 第几张」算好，三家依次、家内逐张，跟着发牌音效的节奏走。
+   **backwards 不能少**：带延迟的动画在开始前必须先保持初始状态，
+   否则牌会先原地显示、轮到自己时才猛地跳一下。
+   挂载点见 scene.css 的 .seat-hand.dealing .seat-back-slot。 */
+@keyframes deal-drop {
+  from {
+    transform: translateY(-26px) rotate(-6deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+.opponent-words {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.trophy {
+  margin-left: 6px;
+  color: var(--gold);
+}
+.count {
+  font-size: 11px;
+  color: #9fc3b0;
+  margin-left: 4px;
+}
+
+/* 牌河的框（位置/底色/内阴影）在 scene.css：它是躺在桌面平面里的一块区域，
+   尺寸由桌面倒推，平面时代那套 flex 伸缩＋固定 min/max 宽已经没有意义了。 */
+.river-label {
+  font-size: 11px;
+  color: #9fc3b0;
+  margin-bottom: 6px;
+}
+.river-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.river-live {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gold);
+}
+
+/* ---------- 手牌 ---------- */
+
+.hand {
+  background: rgba(0, 0, 0, 0.24);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.my-melds {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hand-zone-label {
+  font-size: 12px;
+  color: #9fc3b0;
+  margin-bottom: 6px;
+}
+.hint-text {
+  color: #6f9a84;
+  margin-left: 6px;
+}
+.hand-words,
+.hand-tiles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 46px;
+  align-items: flex-end;
+}
+.hand-tiles {
+  gap: 5px;
+  min-height: 70px;
+}
+.empty {
+  color: #6f9a84;
+  font-size: 12px;
+}
+
+/* ---------- 校验条 ---------- */
+
+.checker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.3);
+}
+.checker-ok {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.14);
+}
+.checker-bad {
+  border-color: #a33;
+  background: rgba(180, 50, 50, 0.12);
+}
+.checker-tiles {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.plus {
+  margin: 0 3px;
+  color: var(--gold);
+}
+.checker-result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.checker-word {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #a5d6a7;
+}
+.checker-meta {
+  font-size: 11px;
+  color: #9fc3b0;
+}
+.checker-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+/* 一组字母的多个变位词，让玩家自己挑 */
+.anagrams {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.anagram {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
+  color: #ddd;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.anagram-picked {
+  border-color: var(--gold);
+  background: rgba(212, 162, 76, 0.25);
+  color: #fff;
+}
+.tier-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-left: 4px;
+}
+
+/* ---------- 决策条 / 提示 ---------- */
+
+.prompt,
+.hints,
+.replay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.prompt {
+  background: rgba(212, 162, 76, 0.16);
+  border: 1px solid var(--gold);
+}
+.win-call {
+  color: var(--gold);
+  font-size: 16px;
+}
+.replay {
+  background: rgba(0, 0, 0, 0.3);
+  color: #9fc3b0;
+}
+.hints {
+  background: rgba(255, 255, 255, 0.07);
+}
+.hints-label {
+  color: var(--gold);
+}
+.hints-note {
+  margin-left: auto;
+  font-size: 11px;
+  color: #7fa894;
+}
+
+/* ---------- 按钮 ---------- */
+
+.btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 7px;
+  padding: 9px 18px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.btn-primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #3a2a08;
+  font-weight: 700;
+}
+.btn-warn {
+  background: #b5502f;
+  border-color: #b5502f;
+}
+.btn-ghost {
+  background: transparent;
+}
+.btn-hint {
+  background: rgba(212, 162, 76, 0.2);
+  border-color: var(--gold);
+  letter-spacing: 1px;
+}
+.btn-big {
+  padding: 12px 40px;
+  font-size: 16px;
+}
+
+/* ---------- 首页（门面） ---------- */
+
+.landing {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 18px 20px 24px;
+  text-align: center;
+}
+
+/* 右上角的身份条。做成低对比的文字 chip，不是第四个按钮——它是页面「机框」的
+   一部分（和牌局顶栏同一个位置），不该和中间的行动区抢注意力。
+   用 flex 行而不是绝对定位：绝对定位在窄屏上会压到 hero 上。 */
+.landing-top {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+.id-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  background: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 13px;
+  color: #9fc3b0;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.id-chip:hover {
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.08);
+}
+/* 已登录的信号就这一个金点，不用「👤」那种图标 */
+.id-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.hero-tiles {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+/* 三张牌微微扇开，像随手码在桌上 */
+.hero-tiles .tile:nth-child(1) { transform: rotate(-7deg) translateY(3px); }
+.hero-tiles .tile:nth-child(3) { transform: rotate(7deg) translateY(3px); }
+.landing h1 {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: 10px;
+}
+.landing .tagline {
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 40px 0 36px;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 26px 20px;
+  text-align: center;
+}
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.feature-icon-green { background: linear-gradient(135deg, #2eaf6e, #1d8a52); }
+.feature-icon-blue { background: linear-gradient(135deg, #4a8de0, #2f66b8); }
+.feature-icon-gold { background: linear-gradient(135deg, #ddb05e, #b8863b); }
+.feature-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.feature-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #cfe3d8;
+}
+
+/* 首页与设置页共用的大号主按钮 */
+.btn-cta {
+  padding: 15px 64px;
+  font-size: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+/* 主动作 + 次级文字链，竖排居中，共用页面那条中轴 */
+.landing-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 次级动作的通用样式：没有描边、没有底色，绝不会被误读成第二个按钮 */
+.text-link {
+  border: 0;
+  background: none;
+  padding: 4px 2px;
+  font: inherit;
+  font-size: 14px;
+  color: #a8cbb8;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.text-link:hover {
+  color: var(--gold);
+  border-bottom-color: rgba(212, 162, 76, 0.55);
+}
+
+/* 老玩家的复习卡。左侧一道金边＝账本条目/书签，和上面三张玻璃质感的
+   .feature-card 明确区分：那三张讲「这游戏是什么」，这张讲「你是谁」。 */
+.resume-card {
+  /* 宽度贴着内容走，而不是定死一个框。定死的话，牌摆不满时右边空一截，
+     看着像「明明放得下却没放」；贴着内容就没有这种错觉了（测试bug.md）。
+     封顶 560px：再宽牌就换行，一行超过四个词也读不动了。 */
+  width: fit-content;
+  max-width: 560px;
+  margin: 36px auto 0;
+  /* 窄屏把左右内边距收一点：390px 手机上按原来的 22/20，内容区只差 7px 就能并排
+     放下两个四字母的词，硬生生挤成一词一行。clamp 顶宽时仍是原值，不用媒体查询。 */
+  padding: 18px clamp(13px, 4vw, 22px) 18px clamp(13px, 4vw, 20px);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.resume-stat {
+  margin: 0;
+  font-size: 13.5px;
+  color: #cfe3d8;
+}
+.resume-stat b {
+  color: var(--gold);
+  font-size: 15px;
+  margin: 0 2px;
+}
+.resume-words {
+  display: flex;
+  flex-wrap: wrap;
+  /* 词间距明显大于词内 3px，一眼看得出这是几个词而不是一串字母 */
+  gap: 12px 22px;
+  /* 小牌自带 4px 的立体投影，底下留出空间免得被下一行压住 */
+  padding-bottom: 4px;
+}
+.resume-word {
+  display: inline-flex;
+  gap: 3px;
+}
+.resume-go {
+  padding-left: 0;
+}
+
+.rules-card {
+  margin: 48px 0 0;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 26px 30px;
+  text-align: left;
+}
+.rules-card h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+.rules-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rule;
+}
+.rules-list li {
+  counter-increment: rule;
+  margin: 12px 0;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #d8e8df;
+}
+.rules-list li::before {
+  content: "0" counter(rule);
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.rules-list li b {
+  color: var(--gold);
+  margin-right: 8px;
+}
+
+.landing-footer {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.footer-link {
+  color: #9fc3b0;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+.footer-dot {
+  color: #5c7c6c;
+}
+
+
+/* ---------- 详细规则页 ---------- */
+
+.rules-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+.rule-section {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.rule-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.rule-head .feature-icon {
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+}
+.rule-head h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.rule-sub {
+  margin: 14px 0;
+}
+.rule-sub h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--gold);
+}
+.rule-sub p,
+.rule-sub ol {
+  margin: 6px 0;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #d8e8df;
+}
+.rule-sub ol {
+  padding-left: 22px;
+}
+.rule-sub b,
+.rule-card b {
+  color: #fff;
+}
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.rule-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.rule-card h3 {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  color: #8fd3ff;
+}
+.rule-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #d8e8df;
+}
+.feature-icon-orange { background: linear-gradient(135deg, #e0894a, #b85e2f); }
+.feature-icon-gray { background: linear-gradient(135deg, #8a9a94, #5f6e68); }
+.rules-page-bottom {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* ---------- 游戏设置页 ---------- */
+
+.setup-page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+.setup-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.setup-top h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 4px;
+}
+.setup-card {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  padding: 26px 26px 30px;
+  text-align: center;
+}
+.setup-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+.setup-group-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.setup-group-hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #9fc3b0;
+}
+
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.seg-btn {
+  flex: 1 1 auto;
+  min-width: 64px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #eaf4ee;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+  cursor: pointer;
+}
+.seg-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.seg-on {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #3a2a08;
+  font-weight: 700;
+}
+.seg-on:hover {
+  background: var(--gold);
+}
+/* 设置页「＋ 上传词单」：虚线框，和选项区分开 */
+.seg-add {
+  background: transparent;
+  border-style: dashed;
+  color: #9fc3b0;
+}
+/* 文字链接样式的按钮（「管理我的词单」「删除」） */
+.link-btn {
+  padding: 0;
+  font: inherit;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.link-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 14px 0;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.switch-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.switch-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.switch-hint {
+  font-size: 12px;
+  color: #9fc3b0;
+}
+.switch-row input {
+  display: none;
+}
+.switch-knob {
+  flex: none;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  transition: background 0.15s ease;
+}
+.switch-knob::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.15s ease;
+}
+.switch-row input:checked + .switch-knob {
+  background: var(--gold);
+}
+.switch-row input:checked + .switch-knob::after {
+  left: 22px;
+}
+.setup-card .btn-cta {
+  margin-top: 10px;
+}
+
+/* ---------- 结算 ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);   /* 盖住日志面板、牌河金圈、胡牌特效 */
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+}
+.sheet {
+  background: #23543f;
+  border-radius: 14px;
+  padding: 26px 30px;
+  max-width: 820px;
+  width: 100%;
+  /* 内容比视口高时，仅靠 .overlay 的 align-items:center 会把顶部切掉**而且滚不上去**
+     （flex 居中的经典陷阱：溢出往两端跑，scrollTop 到 0 也够不着上半截）。
+     margin:auto 优先于 align-items，有空间时照样居中，没空间时老实从顶部排，
+     配合 .overlay 的 overflow:auto 就能完整滚到。
+     排行榜 20 行首次撞上，但结算页词多时、矮屏上的账号弹窗也有同样的问题。 */
+  margin: auto;
+}
+.rank-note {
+  margin: -4px 0 10px;
+  font-size: 12px;
+  color: #9fc3b0;
+}
+.sheet h2 {
+  margin: 0 0 18px;
+}
+.tag {
+  font-size: 12px;
+  background: #b5502f;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.scores {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.scores td {
+  padding: 8px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
+}
+.me-row {
+  background: rgba(212, 162, 76, 0.12);
+}
+.medal {
+  width: 34px;
+  font-size: 18px;
+}
+.who {
+  width: 60px;
+  font-weight: 700;
+}
+.pts {
+  width: 60px;
+  color: var(--gold);
+  font-size: 17px;
+  font-weight: 700;
+}
+.total {
+  width: 90px;
+  text-align: right;
+  color: #9fc3b0;
+  font-size: 12px;
+}
+.chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin: 2px 3px 2px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.chip-bad {
+  background: rgba(197, 80, 60, 0.4);
+  color: #ffd7ce;
+}
+
+.profile {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+.profile-box {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.profile-ok {
+  border-left: 3px solid #4caf50;
+}
+.profile-bad {
+  border-left: 3px solid #c5503c;
+}
+.profile-title {
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.missed-lead {
+  font-size: 12px;
+  color: #9fc3b0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.leftover {
+  display: flex;
+  gap: 3px;
+}
+/* 弹窗底部的动作行（排行榜、单词本、结算页共用）。
+   margin-top 必须有：上面的内容各式各样（表格、词框、文字），指望每个调用方
+   自己留出下边距是靠不住的——排行榜的榜单最后一行就曾经直接贴在「关闭」上。
+   相邻兄弟的 margin 会合并，所以调用方自己再留边距也不会叠成双份。 */
+.sheet-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.error {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #b5502f;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* 把牌全组进暗词、散牌区却空了——必须拆一个词才能打牌 */
+.stuck {
+  padding: 14px;
+  border-radius: 8px;
+  background: rgba(181, 80, 47, 0.25);
+  border: 1px dashed #c5503c;
+  color: #ffd7ce;
+  font-size: 13px;
+}
+
+/* ---------- 刚摸到的牌（醒目标出，否则摸完一眼找不到新牌） ---------- */
+
+.drawn-slot {
+  position: relative;
+  display: inline-block;
+  margin-left: 14px;
+}
+.drawn-tag {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #3a2a08;
+  background: var(--gold);
+  border-radius: 8px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  z-index: var(--z-tile);
+}
+.drawn-slot .tile {
+  box-shadow: 0 2px 0 var(--gold), 0 0 0 2px var(--gold), 0 0 14px rgba(212, 162, 76, 0.8);
+  animation: drawn-pulse 1.2s ease-in-out infinite;
+}
+@keyframes drawn-pulse {
+  50% { box-shadow: 0 2px 0 var(--gold), 0 0 0 2px var(--gold), 0 0 4px rgba(212, 162, 76, 0.4); }
+}
+
+/* ---------- 词库内 +10 / 缩写 徽标 ---------- */
+
+.tier-badge {
+  margin-left: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #3a2a08;
+  background: var(--gold);
+  border-radius: 7px;
+  padding: 1px 5px;
+}
+.abbr-badge {
+  margin-left: 5px;
+  font-size: 10px;
+  color: #ffd7ce;
+  background: rgba(197, 80, 60, 0.55);
+  border-radius: 7px;
+  padding: 1px 5px;
+}
+
+/* ---------- 缩写全称输入 ---------- */
+
+.expansion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #ffd7ce;
+}
+.expansion-input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--gold);
+  background: #fffdf7;
+  color: var(--ink);
+  font-size: 13px;
+  min-width: 200px;
+}
+
+/* ---------- 操作记录（滚动日志，最近几条一直可见） ---------- */
+
+.log-panel {
+  position: fixed;
+  top: 46px;
+  left: 12px;
+  z-index: var(--z-log);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 300px;
+  pointer-events: none;
+}
+.log-line {
+  font-size: 11px;
+  color: #cfe6da;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  padding: 2px 8px;
+  opacity: 0.6;
+}
+.log-latest {
+  opacity: 1;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.65);
+  border-left: 2px solid var(--gold);
+}
+
+.win-word {
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: #a5d6a7;
+}
+
+/* ---------- 牌面左下角：这个字母全副牌里有几张（稀有度） ---------- */
+
+.tile-count {
+  position: absolute;
+  left: 4px;
+  bottom: 2px;
+  font-size: 10px;
+  color: #b9b1a1;
+}
+.tile-small .tile-count {
+  font-size: 8px;
+  left: 3px;
+}
+
+/* 点选顺序 = 拼词顺序，牌角标出第几位 */
+.tile-order {
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  z-index: var(--z-badge);
+  min-width: 17px;
+  height: 17px;
+  line-height: 17px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #3a2a08;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+/* 白搭：还没声明字母时是灰底星号，声明后显示那个字母 */
+.tile-wild-card {
+  background: linear-gradient(180deg, #f3ecdc, #e2d9c4);
+}
+
+/* ---------- 白搭字母选择器 ---------- */
+
+.wild-picker {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(212, 162, 76, 0.16);
+  border: 1px solid var(--gold);
+  font-size: 13px;
+}
+.wild-picker b {
+  color: var(--gold);
+}
+.wild-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+.wild-letter {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.wild-letter:hover {
+  background: var(--gold);
+  color: #3a2a08;
+}
+
+/* ---------- 校验条：显示玩家拼的那个词 ---------- */
+
+.checker-word {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ok-mark {
+  color: #a5d6a7;
+  font-size: 20px;
+}
+.bad-mark {
+  color: #ff9e8e;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+/* 吃/胡时，那张外来的牌插在词的第几位 */
+.extra-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #9fc3b0;
+}
+.extra-select {
+  padding: 4px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--gold);
+  background: #fffdf7;
+  font-size: 13px;
+}
+
+.win-hint {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffe6b8;
+}
+.wild-note {
+  margin-left: 5px;
+  font-size: 10px;
+  color: #3a2a08;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 6px;
+  padding: 1px 4px;
+}
+
+/* ---------- 胡牌特效 ---------- */
+
+.celebrate {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: var(--z-celebrate);
+  animation: celebrate-fade 2.2s ease-out forwards;
+}
+.celebrate-card {
+  text-align: center;
+  padding: 30px 60px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 60px rgba(212, 162, 76, 0.6);
+  animation: celebrate-pop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.celebrate-icon {
+  font-size: 60px;
+}
+.celebrate-who {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-top: 6px;
+}
+.celebrate-order {
+  font-size: 13px;
+  color: #cfe6da;
+  margin-top: 6px;
+}
+@keyframes celebrate-pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes celebrate-fade {
+  0%, 75% { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+/* 提示性的警告文字（还不能胡 / 白搭不能打） */
+.checker-meta.warn {
+  color: #ffc9bd;
+}
+
+/* ---------- 观战条（你已胡牌，血战到底还没打完）---------- */
+
+.spectating {
+  background: rgba(212, 162, 76, 0.12);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.spectating-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.spectating-badge {
+  background: var(--gold);
+  color: #3a2a08;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 3px 12px;
+  font-size: 13px;
+  animation: watch-pulse 2s ease-in-out infinite;
+}
+@keyframes watch-pulse {
+  50% { opacity: 0.55; }
+}
+.spectating-note {
+  margin-left: auto;
+  font-size: 12px;
+  color: #cfe6da;
+}
+/* 「提前结算」在最右边。说明和按钮都是 margin-left:auto，空白两边平分——说明落在中间 */
+.spectating-skip {
+  margin-left: auto;
+  padding: 7px 18px;
+  font-size: 14px;
+}
+.spectating-hand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- 落牌动效 ---------- */
+
+.river-slot {
+  display: inline-block;
+  position: relative;
+}
+
+/* 牌河里最新的一张：从手牌方向（下方）飞进来、放大落定，并持续戴着金圈，
+   让「哪张是刚打出的」一眼可辨。之前只有 0.28s 的轻微位移，牌又小又暗，
+   用户反馈「动效几乎没有」。 */
+.river-newest {
+  animation: tile-throw 0.42s cubic-bezier(0.16, 1.1, 0.3, 1);
+}
+.river-newest .tile {
+  box-shadow:
+    0 2px 0 #c9c1ae,
+    0 0 0 2px var(--gold),
+    0 0 16px rgba(212, 162, 76, 0.9);
+  z-index: var(--z-tile);
+}
+/* 落地那一下的金色涟漪 */
+.river-newest::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+  animation: tile-ripple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes tile-throw {
+  0% {
+    transform: translateY(180px) scale(1.6) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-6px) scale(1.12) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+@keyframes tile-ripple {
+  from {
+    opacity: 0.9;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+/* 只剩一家 → 血战到底已收场，没什么可观战的了 */
+.spectating-over {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.spectating-over .spectating-badge {
+  background: rgba(255, 255, 255, 0.85);
+  animation: none;
+}
+
+/* ---- 我的档案（跨场累积的正/错题集） ---- */
+.profile-stats {
+  margin: 4px 0 12px;
+  color: #666;
+}
+.chip-count {
+  margin-left: 3px;
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+.profile-legend {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ---- 单词本：一行一词的列表（标签流太挤），带释义/朗读 ---- */
+
+/* 两个分区左右并排（竖着摆一页看不了几个词），各自滚动。
+   只作用于单词本——结算页的 .profile 还是竖排的战报样式 */
+.sheet-wordbook {
+  max-width: 1100px;
+}
+.sheet-wordbook .profile {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+.word-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 56vh;
+  overflow-y: auto;
+  text-align: left;
+}
+.word-row {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+.word-row-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.word-row-word {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+}
+.word-row-bad .word-row-word {
+  color: #ffb3a7;
+}
+.word-row-phonetic {
+  color: #9fbfae;
+  font-size: 13px;
+}
+.word-row-badges {
+  color: #c8b87a;
+  font-size: 12px;
+}
+.word-row-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+.btn-mini {
+  padding: 3px 9px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.word-row-def {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d9e4dc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ---------- 排行榜 ---------- */
+
+.sheet-leaderboard {
+  max-width: 560px;
+  width: 100%;
+}
+/* 三个榜的高度不一样，固定个下限，切换时弹窗不会跳来跳去 */
+.lb-body {
+  min-height: 210px;
+  margin-top: 16px;
+}
+.lb-note {
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #cfe3d8;
+}
+.lb-caption {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  color: #9fc3b0;
+}
+
+/* 百分位条 */
+.lb-pct {
+  margin-bottom: 18px;
+}
+.lb-pct-head {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.lb-pct-head b {
+  color: var(--gold);
+  font-size: 17px;
+}
+.lb-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+.lb-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ddb05e, var(--gold));
+}
+
+/* 榜单表格。窄屏也别横向溢出——名字列自己截断 */
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.lb-table td {
+  padding: 9px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.lb-rank {
+  width: 2.4em;
+  text-align: center;
+  color: #9fc3b0;
+}
+.lb-name {
+  max-width: 0;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lb-val {
+  text-align: right;
+  white-space: nowrap;
+}
+.lb-sub {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #9fc3b0;
+}
+/* 「我」那一行高亮——靠服务端算好的 isMe，不靠下发 id */
+.lb-me {
+  background: rgba(212, 162, 76, 0.12);
+}
+.lb-you {
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #3a2a08;
+  font-size: 11px;
+  font-weight: 700;
+}
+/* 匿名玩家的注册钩子 */
+.lb-bind {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  color: #cfe3d8;
+}
+
+/* 首页复习卡上的百分位行 */
+.resume-standing {
+  margin: 0;
+  font-size: 13px;
+  color: #cfe3d8;
+}
+.resume-standing b {
+  color: var(--gold);
+  font-size: 15px;
+}
+.resume-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+/* 结算页的名次行 */
+/* 下边距不能是 0：已绑定账号的人没有「保存成绩」按钮，这一行会直接贴在
+   「单词本 / 再开一场」上（实测间距 0px）。20px 跟上面 .profile 的节奏一致。
+   上边距写 4px 就够——它会和 .profile 的 20px 合并，实际仍是 20px。 */
+.standing-line {
+  margin: 4px 0 20px;
+  font-size: 13px;
+  color: #cfe3d8;
+}
+.standing-line b {
+  color: var(--gold);
+  font-size: 15px;
+}
+.standing-line .text-link {
+  margin-left: 10px;
+}
+
+
+/* ---------- 3D 牌桌页（开发中，与 2.5D 并存） ---------- */
+
+/* 首页底栏的 3D 入口是个 button，得先把浏览器默认的按钮外观抹掉，
+   才能和旁边的 <a class="footer-link"> 长得一样 */
+button.footer-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* P16 暖色暗室：画布是透明清屏（main-view.ts 的 alpha），画布内外透出的是同一张渐变，
+   窗口不是 1.5 的比例时两侧留边也没有接缝 */
+.table3d-page {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 45%, #4a3423 0%, #2a1c12 55%, #120b07 100%);
+  background-size: cover;
+}
+/* P17 暗角：盖在画布上、压在所有覆盖层下面（不设 z-index，靠 DOM 顺序）。
+   pointer-events: none 是命根子：拖动、框选、右键打牌全从它身上穿过去 */
+.table3d-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.45) 100%);
+}
+/* 画面比例固定 1.5（见 main-view.ts 的 RATIO），窗口不是这个比例就居中留黑边 */
+.table3d-stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 尺寸由 MainView.updateViewport 写死在 style 上，这里不要设 width/height。
+   canvas 用 block 免得行内元素底部留白导致每帧 resize 抖动 */
+/* T3.3 框选的选框。position: fixed，坐标由 Table3D 每帧按画布位置算好直接写 */
+.table3d-selection {
+  position: fixed;
+  visibility: hidden;
+  pointer-events: none;
+  border: 1px solid #ffff99;
+  background: rgba(255, 255, 153, 0.12);
+  z-index: 5;
+}
+/* T4.2 左下角统一操作区：校验条 + 组暗词 / 亮词 / 取消 + 「过」。
+   放在左下角，不压自己手牌那一排（桌面中间下方） */
+.table3d-actions {
+  position: absolute;
+  left: 24px;
+  bottom: 56px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  z-index: 6;
+}
+.table3d-act-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.table3d-act-btn {
+  padding: 6px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #6c9a82;
+  background: rgba(20, 60, 40, 0.92);
+  color: #e8f3ec;
+  cursor: pointer;
+}
+.table3d-act-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+/* 亮词第二步：不可撤回，醒目一点 */
+.table3d-act-btn.confirm {
+  border-color: #ffb26b;
+  color: #ffd2a6;
+}
+/* T3.4 最小的「过」按钮。正式界面是 T6.1 / T6.3 */
+.table3d-pass {
+  padding: 6px 28px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ffff99;
+  background: rgba(20, 60, 40, 0.92);
+  color: #ffff99;
+  cursor: pointer;
+}
+.table3d-act-note {
+  color: #9fc3b0;
+  font-size: 12px;
+}
+.table3d-expansion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(10, 30, 20, 0.88);
+  color: #e8f3ec;
+  font-size: 13px;
+}
+.table3d-expansion input {
+  width: 180px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #6c9a82;
+  background: #0d241a;
+  color: #e8f3ec;
+}
+/* T4.3 单击暗词后组旁的 [拆开]。left/top 由 Table3D 每帧按投影位置写（锚点在组最右那张上方） */
+/* T6.5：锁住时操作区整个不出。display:flex 会盖过 hidden 属性，要显式写 */
+.table3d-actions[hidden] {
+  display: none;
+}
+
+/* T5.1：回放气泡（「亮 WINDOW」「吃 Z」「胡」），同 Mahjong 项目的 say-ui：弹入 0.2s、停 1.2s、淡出 0.3s。
+   left/top 是气泡的中心点，由 mainLoop 按投影算好并夹在窗口里；translate 只负责居中，动画走 scale，互不覆盖 */
+.table3d-say {
+  position: fixed;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  padding: 6px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 10px;
+  border: 1px solid #f5c542;
+  background: rgba(20, 20, 20, 0.88);
+  color: #ffe08a;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 8;
+  animation: table3d-say-in 0.2s ease-out both;
+}
+.table3d-say.out {
+  animation: table3d-say-out 0.3s ease-in both;
+}
+@keyframes table3d-say-in {
+  from { opacity: 0; scale: 0.6; }
+  to { opacity: 1; scale: 1; }
+}
+@keyframes table3d-say-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* P22 悬停别家亮词 / 摊开的暗词时的释义浮层。样式照效果图 mock-A；
+   不叫 .overlay（T6.6 快捷键靠它判断弹窗）；不接点击，跟着光标走 */
+.table3d-hovercard {
+  position: fixed;
+  visibility: hidden;
+  z-index: 12;
+  /* 按内容定宽、封顶 340px。不写 max-content 的话，靠右边缘时 fixed 元素会被挤窄去塞剩下的空间，
+     量出来的宽度「刚好放得下」，翻边判断就失灵了 */
+  width: max-content;
+  max-width: 340px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(18, 24, 20, 0.94);
+  color: #e8f2ec;
+  font-size: 13px;
+  line-height: 1.45;
+  pointer-events: none;
+}
+.table3d-hovercard h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffe08a;
+}
+.table3d-hovercard .sec {
+  margin: 0 0 3px;
+  font-size: 11px;
+  color: #9fb8ab;
+}
+.table3d-hovercard .row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  align-items: baseline;
+  padding: 2px 0;
+}
+.table3d-hovercard .w {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.table3d-hovercard .d {
+  color: #d6e4dc;
+}
+
+/* P4 桌沿名牌：贴在各家那一侧木框顶面中点，只在正交显示。样式照效果图 mock-B。
+   不叫 .overlay（T6.6 快捷键靠它判断弹窗）；不接点击 */
+.table3d-nameplate {
+  position: fixed;
+  visibility: hidden;
+  padding: 1px 8px;
+  border: 1px solid #b08850;
+  border-radius: 4px;
+  background: #e9dcc0;
+  color: #4a2f14;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+/* T6.5：已胡各家座位旁的「第 N 胡」，每帧按投影定位 */
+.table3d-win-mark {
+  position: fixed;
+  visibility: hidden;
+  transform: translate(-50%, -100%);
+  padding: 2px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #f5c542;
+  background: rgba(60, 40, 0, 0.88);
+  color: #ffe08a;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 6;
+}
+
+.table3d-ungroup {
+  position: fixed;
+  visibility: hidden;
+  transform: translate(-50%, -100%);
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #4fd1ff;
+  background: rgba(10, 30, 40, 0.92);
+  color: #bdeeff;
+  cursor: pointer;
+  z-index: 7;
+}
+
+/* T4.4 白搭的字母选择器。双击弹出的那个贴在牌上方（left/top 由 Table3D 每帧写）；
+   校验条里的就地选择器用 .table3d-wild-inline，按钮样式两处共用 */
+.table3d-wild-picker {
+  position: fixed;
+  visibility: hidden;
+  transform: translate(-50%, calc(-100% - 6px));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 250px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #6c9a82;
+  background: rgba(10, 30, 20, 0.94);
+  z-index: 8;
+}
+.table3d-wild-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 340px;
+}
+/* P13：校验失败后的「重试」，和校验条里的小按钮同一套 */
+.table3d-check-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.table3d-retry-btn {
+  padding: 1px 10px;
+  border-radius: 5px;
+  border: 1px solid #6c9a82;
+  background: #f3efe4;
+  color: #2b2b2b;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.table3d-retry-btn:hover {
+  border-color: var(--gold);
+}
+.table3d-wild-letter {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid #6c9a82;
+  background: #f3efe4;
+  color: #2b2b2b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.table3d-wild-letter:hover {
+  background: #fff8d6;
+}
+
+/* T6.1 吃牌面板：输入框 + [亮词] [取消] + 状态行。放在左下角操作区里 */
+.table3d-chi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(10, 30, 20, 0.9);
+}
+.table3d-chi-input {
+  width: 150px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #6c9a82;
+  background: #0d241a;
+  color: #e8f3ec;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+/* 占位提示是一句中文说明，比输入的单词小一号 */
+.table3d-chi-input::placeholder {
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.table3d-chi-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  min-height: 18px;
+  font-size: 14px;
+}
+
+/* T6.3 结算面板：盖住整个画面的 DOM 覆盖层 */
+.table3d-settle {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 20;
+}
+.table3d-settle-sheet {
+  width: min(720px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: #13251c;
+  border: 1px solid #3f6a55;
+  color: #e8f3ec;
+}
+.table3d-settle-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.table3d-settle-tag {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #6b5a1f;
+  color: #ffe9a8;
+  font-size: 13px;
+}
+.table3d-settle-note {
+  margin: 4px 0 10px;
+  color: #9fc3b0;
+  font-size: 13px;
+}
+.table3d-settle-rows {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.table3d-settle-rows td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(159, 195, 176, 0.18);
+  vertical-align: middle;
+}
+.table3d-settle-rows tr.me td {
+  background: rgba(255, 255, 153, 0.08);
+}
+.table3d-settle-rows .rank,
+.table3d-settle-rows .who,
+.table3d-settle-rows .pts,
+.table3d-settle-rows .total {
+  white-space: nowrap;
+}
+.table3d-settle-rows .trophy {
+  margin-left: 6px;
+  color: #ffe9a8;
+}
+.table3d-settle .empty {
+  color: #7fa08f;
+}
+.table3d-chip {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: #f3efe4;
+  color: #2b2b2b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.table3d-chip.bad {
+  background: #f6d9d4;
+  color: #7a2418;
+}
+.table3d-settle-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+.table3d-settle-profile .box {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.table3d-settle-profile .box-title {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.table3d-settle-profile .missed-lead {
+  margin-bottom: 6px;
+  color: #c9dccf;
+  font-size: 13px;
+}
+.table3d-mini-tile {
+  display: inline-block;
+  min-width: 18px;
+  margin: 0 2px;
+  padding: 0 3px;
+  border-radius: 3px;
+  background: #f3efe4;
+  color: #2b2b2b;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.table3d-settle-final ol {
+  margin: 6px 0 0;
+  padding-left: 22px;
+}
+.table3d-settle-final li.me {
+  color: #ffff99;
+}
+.table3d-settle-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* T6.6 加了 [单词本]，和 [返回] / [下一局] 并排，别贴在一起 */
+  margin-top: 16px;
+}
+.table3d-act-btn.primary {
+  border-color: #ffff99;
+  color: #ffff99;
+}
+
+/* T6.2 提示列表：自己回合的 [提示] 面板、提示模式的吃牌候选共用 */
+.table3d-hint-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.table3d-hints {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 8px;
+  background: rgba(10, 30, 20, 0.9);
+}
+.table3d-hint-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #e8f3ec;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+.table3d-hint-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.table3d-hint-item.picked {
+  border-color: #ffd27a;
+  background: rgba(255, 210, 122, 0.12);
+}
+.table3d-hint-item .word {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.table3d-hint-item .tag {
+  /* 背景、边框、内边距都写死：页面上还有一条全局的 .tag（2.5D 的标签样式），不写死会被它染成红底 */
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #9fc3b0;
+  font-size: 12px;
+  font-weight: normal;
+}
+/* 注明：已组成暗词（中性的告知，灰绿色） */
+.table3d-hint-item .tag.info {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(159, 195, 176, 0.16);
+  color: #b7d3c3;
+}
+/* 注明：要先拆开暗词（需要玩家先做点什么，偏红） */
+.table3d-hint-item .tag.warn {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(255, 143, 128, 0.16);
+  color: #ffb4a8;
+}
+
+/* T4.1 校验条。位置由外层 .table3d-actions 决定 */
+.table3d-check {
+  max-width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(10, 30, 20, 0.88);
+  color: #e8f3ec;
+  font-size: 14px;
+}
+.table3d-check-word {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.table3d-check-ok {
+  color: #7ee29b;
+  font-weight: 600;
+}
+.table3d-check-bad {
+  color: #ff8f8f;
+  font-weight: 600;
+}
+.table3d-check-meta {
+  color: #9fc3b0;
+  font-size: 13px;
+}
+.table3d-canvas canvas {
+  display: block;
+}
+.table3d-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  /* P17 胶囊底：任何背景上都看得清 */
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 220, 170, 0.14);
+  border-radius: 999px;
+  background: rgba(20, 12, 8, 0.62);
+  color: #e9dcc6;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.table3d-back {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f2ec;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+/* 3D 页拉牌局失败时的提示条。与 .table3d-hint 不同，它要接收点击（「重试」） */
+.table3d-error {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 180, 160, 0.5);
+  border-radius: 8px;
+  background: rgba(40, 10, 10, 0.75);
+  color: #ffd9cf;
+  font-size: 13px;
+}
+
+/* T4.2 操作成功的告知（「已组成暗词 …」）。位置同报错条，颜色中性，别让人以为出错了 */
+.table3d-info {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border: 1px solid rgba(200, 225, 210, 0.35);
+  border-radius: 8px;
+  background: rgba(15, 35, 25, 0.8);
+  color: #e8f3ec;
+  font-size: 13px;
+}
+
+.table3d-retry {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.table3d-retry:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.table3d-back:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* T2.3a：右上角玩法配置条。图标常驻，悬停 / 聚焦才展开面板——不用 JS 状态，
+   node 环境的单测测不了 hover，交给浏览器实测。视觉与 .table3d-back 同一套 */
+.table3d-config {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  /* 压在回放气泡（z-index 8）之上，结算面板（20）之下 */
+  z-index: 9;
+}
+.table3d-config-icon {
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f2ec;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: default;
+}
+.table3d-config:hover .table3d-config-icon,
+.table3d-config:focus-within .table3d-config-icon {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.table3d-config-panel {
+  display: none;
+  min-width: 132px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #e8f2ec;
+  font-size: 13px;
+}
+.table3d-config:hover .table3d-config-panel,
+.table3d-config:focus-within .table3d-config-panel {
+  display: block;
+}
+.table3d-config-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 2px 0;
+}
+.table3d-config-label {
+  color: #9fb8ab;
+}
+
+/* T2.3b：右上角偏好面板（⚙），和 ⓘ 并排。ⓘ 悬停展开（只读），这个点击展开（可改） */
+.table3d-prefs {
+  position: absolute;
+  top: 16px;
+  right: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  z-index: 9;
+  /* 面板展开后这一列按面板宽度撑开，按钮左边那块空白会盖住 📜 / 👤。容器本身不接点击，只让子元素接 */
+  pointer-events: none;
+}
+.table3d-prefs > * {
+  pointer-events: auto;
+}
+.table3d-prefs-btn {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f2ec;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.table3d-prefs-btn:hover,
+.table3d-prefs-btn[aria-expanded="true"] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.table3d-prefs-panel {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #e8f2ec;
+  font-size: 13px;
+}
+.table3d-prefs-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.table3d-prefs-label {
+  color: #9fb8ab;
+}
+.table3d-prefs-seg {
+  display: flex;
+  gap: 4px;
+}
+.table3d-prefs-opt {
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: transparent;
+  color: #e8f2ec;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.table3d-prefs-opt.on {
+  border-color: var(--gold);
+  background: rgba(255, 210, 74, 0.16);
+  color: var(--gold);
+}
+.table3d-prefs-note {
+  margin: 4px 0 0;
+  max-width: 180px;
+  color: #8fb8a4;
+  font-size: 11px;
+  line-height: 1.4;
+}
+/* 说明贴着它上面那一行；下一项开关和它拉开距离，读得出说明归哪一行（P1） */
+.table3d-prefs-note + .table3d-prefs-row {
+  margin-top: 12px;
+}
+
+/* 右上角 ⚙ 左边的一排：从右往左是 👤、📜。👤 已登录时显示名字、宽度不定，
+   所以 📜 不能写死 right，放进这个 flex 排里跟着走（P18） */
+.table3d-toprow {
+  position: absolute;
+  top: 16px;
+  right: 108px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 9;
+}
+/* 观战横幅（「提前结算」）：手牌上方居中，照效果图 spectate-3d.png */
+.table3d-spectate {
+  position: absolute;
+  left: 50%;
+  bottom: 134px;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 10px 8px 18px;
+  border: 1px solid rgba(212, 162, 76, 0.55);
+  border-radius: 12px;
+  background: rgba(15, 25, 20, 0.82);
+  color: #f0e6cf;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.table3d-spectate-skip {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #2a1a05;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.table3d-spectate-skip:hover {
+  filter: brightness(1.08);
+}
+/* 自建词单的进度小条：和同排按钮一样的高度（padding / 字号 / 行高 / 边框都照 .table3d-account），
+   金色细边表示「这是本局的目标」；只显示，不能点 */
+.table3d-listbar {
+  padding: 6px 12px;
+  border: 1px solid rgba(212, 162, 76, 0.7);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f2ec;
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+/* T6.6：右上角的账号入口，和 ⚙ ⓘ 同一排、同一套样式。已登录显示名字（过长截断） */
+.table3d-account {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f2ec;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.table3d-account:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* T6.6：结算面板里的学习档案入口 */
+.table3d-standing {
+  margin: 10px 0 0;
+  color: #cfe3d8;
+  font-size: 13px;
+}
+.table3d-text-link {
+  margin-left: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--gold);
+  font: inherit;
+  cursor: pointer;
+}
+.table3d-settle-save {
+  margin-top: 10px;
+}
+
+/* P18 本局词条：📜 按钮沿用 .table3d-prefs-btn，下拉面板取值照效果图（mock-bg.cjs 的 .mock-log） */
+.table3d-wordlog {
+  position: relative;
+}
+.table3d-wordlog-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  /* 宽度按内容：亮词最长 14 个字母，190px 装不下时往左长，封顶 320px */
+  width: max-content;
+  min-width: 190px;
+  max-width: 320px;
+  box-sizing: border-box;
+  padding: 10px 12px 8px;
+  border: 1px solid rgba(255, 220, 170, 0.14);
+  border-radius: 10px;
+  background: rgba(20, 12, 8, 0.92);
+  color: #e9dcc6;
+  font: 12px/1.5 -apple-system, "PingFang SC", sans-serif;
+}
+.table3d-wordlog-panel h4 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #b9a488;
+  letter-spacing: 0.08em;
+}
+/* 最大高度不超过画布高度的一半：画布最高就是视口高（比例 1.5 居中） */
+.table3d-wordlog-list {
+  max-height: calc(50vh - 60px);
+  overflow-y: auto;
+}
+.table3d-wordlog-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 2px 0;
+}
+.table3d-wordlog-row.old {
+  opacity: 0.55;
+}
+.table3d-wordlog-row .who {
+  flex: none;
+  width: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #b9a488;
+}
+.table3d-wordlog-row .act {
+  flex: none;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+}
+.table3d-wordlog-row .act.chi {
+  color: #8fd3ff;
+}
+.table3d-wordlog-row .act.reveal {
+  color: #f0c36a;
+}
+.table3d-wordlog-row .w {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: #fff4e0;
+  white-space: nowrap;
+}
+.table3d-wordlog-empty {
+  color: #b9a488;
+}

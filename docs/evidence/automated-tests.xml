@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="AI 1.1 2 seats: one human practice with 1 designated AI is playable and never votes or scores" time="0.021560" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="AI 1.1 3 seats: one human practice with 2 designated AI is playable and never votes or scores" time="0.011538" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="AI 1.1 4 seats: one human practice with 3 designated AI is playable and never votes or scores" time="0.009604" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="AI 1.1 5 seats: one human practice with 4 designated AI is playable and never votes or scores" time="0.004166" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="AI 1.1 6 seats: one human practice with 5 designated AI is playable and never votes or scores" time="0.009426" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="AI controls restricted to host, idle phase, empty slot and new rule version" time="0.001537" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="practice cannot submit self-HU without human reviewers; mixed games freeze only human reviewers" time="0.003517" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="finished AI removal and reassignment preserves original physical tiles until atomic next deal" time="0.001894" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="designated AI remain AI through all-offline pause and restart; host transfer considers only humans" time="0.003027" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="legacy 1.0 rooms continue full-human requirements even after restart under 1.1 server" time="0.000348" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/designated-ai.test.ts"/>
+	<testcase name="S02-seat-cycle" time="0.008870" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S03-seat-cycle" time="0.006544" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S04-seat-cycle" time="0.008283" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S05-seat-cycle" time="0.013545" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S06-seat-cycle" time="0.026312" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S10-start-all-ready" time="0.000944" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S11-no-bot-fill" time="0.000150" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S12-freeze-seats / S89-capacity-and-no-reseat" time="0.000430" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S13-normal-auto-draw / S14-no-extra-draw / S15-response-gates-next-draw" time="0.000789" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S16-concurrent-responses" time="0.000949" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S17-hu-priority-seat-order" time="0.001266" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S18-eat-after-hu-fail / S42-discard-hu-rejected" time="0.001863" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S19-no-late-claim / S20-intent-once" time="0.000637" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S21-eat-tile-protection / S23-idempotent-eat" time="0.000692" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S22-eat-limit" time="0.000329" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S24-wall-empty-still-respond" time="0.000700" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S25-human-timeout" time="0.011929" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S26-manual-fourteen-and-commas / S27-invalid-sentence-no-transition" time="0.002248" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S29-discard-hu-reservation / S95-candidate-draft-private-restore" time="0.002015" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S30-compose-timeout / S94-compose-manual-withdraw" time="0.003103" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S31-full-online-thresholds / S34-concurrent-votes" time="0.006401" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S32-no-reviewer-own" time="0.001186" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S33-no-reviewer-discard" time="0.000477" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S35-vote-freeze-disconnect" time="0.000490" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S36-reviewer-return / S37-reviewer-late-join" time="0.000819" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S38-vote-hidden-progress / S59-hidden-projections" time="0.000932" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S39-reject-ranges / S40-anonymous-union" time="0.000565" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S41-self-hu-rejected" time="0.001587" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S43-win-once" time="0.000774" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S44-disconnect-grace / S45-grace-beats-turn-timeout / S47-bot-policy-restriction" time="0.000842" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S46-offturn-grace-no-table-freeze" time="0.000310" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S48-applicant-grace-return" time="0.001780" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S49-applicant-grace-expires / S73-own-withdraw-discard" time="0.000570" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S50-recovery-wins-race / S51-bot-wins-race" time="0.001532" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S52-refresh-identity / S77-draft-independent-version / S85-draft-stale-rebase" time="0.001164" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S55-all-offline-pause / S56-all-offline-expiry / S72-pause-withdrawal-pending" time="0.001364" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S57-restart-recovery / S79-retention-original-expiry / S87-restart-other-returns-first" time="0.002913" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S58-restart-receipt / S83-persistence-codec-roundtrip" time="0.004057" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S60-multiroom-isolation / S61-action-id-content-conflict / S62-old-phase-replay / S63-one-vote-per-reviewer" time="0.002901" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S64-deadline-boundary" time="0.001279" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S65-next-dealer-and-ready / S92-finished-refill-next-start" time="0.011796" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S66-host-transfer" time="0.000542" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S67-close-running / S68-end-unscored-race / S69-end-unscored-single / S70-leave-not-delete / S71-lobby-finish-close" time="0.000663" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S78-grace-timer-cross-phase" time="0.000469" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S80-queued-hu-remaining-grace / S82-queued-hu-bot-invalid" time="0.002027" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S81-reserved-eat-bot-invalid / S93-eat-grace-cancel-immediate" time="0.003763" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S86-other-returns-first" time="0.002090" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S88-idle-seat-release / S90-finished-win-retention / S91-lobby-grace-null-round" time="0.001292" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S92 finished seat release, replacement human and original identity rejoin preserve results" time="0.005016" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="closed retention creates no timer spin; rejoining idle room clears suspension; terminal result retained" time="0.001114" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="applicant return after grace without timer execution still withdraws; expiry cleared after paused withdrawal" time="0.000926" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="restart preserves overdue applicant withdrawal before assigning first recovery grace" time="0.000431" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="codec rejects malformed deadlines, duplicate seats and illegal tile registry" time="0.001646" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S21 duplicate glyph remains legal while just-eaten physical tile is protected" time="0.001530" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S60 authenticated room actor cannot mutate another room with borrowed metadata" time="0.001419" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S76 server deadline is independent of a client clock offset" time="0.000424" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S65 every prior dealer seat rotates once for all capacities" time="0.020705" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S57 restart HU_VOTE retains frozen reviewers and ballots; non-applicant first return waits original claimant grace" time="0.001056" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S83 non-empty settlement set, archived round, response intents, frozen ballots and pending jobs round-trip together" time="0.001923" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/engine/rules.test.ts"/>
+	<testcase name="S74-http-seat-race / S75-cookie-restore-boundary / S76-server-time-calibration" time="0.112088" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="S53-cross-device-secret / S54-recovery-code-rotation / session revocation and strict origin" time="0.100083" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="S58 SQLite transaction rollback, durable action receipt and process reconstruction" time="0.104449" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="real Socket.IO 2 independent cookie players complete two rounds" time="0.105950" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="real Socket.IO 3 independent cookie players complete two rounds" time="0.152247" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="real Socket.IO 4 independent cookie players complete two rounds" time="0.196756" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="real Socket.IO 5 independent cookie players complete two rounds" time="0.246199" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="real Socket.IO 6 independent cookie players complete two rounds" time="0.286766" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="HTTP restore same action is idempotent with response lost and old SESSION cookie" time="0.034093" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="close-after-round terminal record and rollback retain one SQLite result" time="0.160442" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="S43 settlement commit then restart and duplicate vote does not count a second win" time="0.116551" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="two real rooms serialize independently and reject cross-room command metadata" time="0.123855" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="bad JSON, oversized bodies, capacities, forged credentials and repeated recovery are rejected" time="0.095207" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/server/server.test.ts"/>
+	<testcase name="actual adapter maps all 20 capacity/viewer pairs; no fixed-four assumption" time="0.002590" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="coherent version and ownership checks precede projection; unseated viewer allowed" time="0.000383" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="duplicate Han glyph remains separate physical tile; comma follows and prunes last anchor" time="0.000594" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="three comma bound, repeated gap toggle, last forbidden, keyboard cancel restores" time="0.001017" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="draw reconciliation keeps surviving order; stale selected physical tile cancels" time="0.001084" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="candidate keeps 13 owned tiles and one reference with its own draft version" time="0.002072" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="frozen objection indexes merge across punctuation; approve omits all ranges" time="0.008255" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="one command entry adds metadata, connection and control gate mutations; retries retain actionId" time="0.001934" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="candidate edits survive same candidate version, authoritative revision replaces and phase clears pending" time="0.001737" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="revocation clears local secret draft and stops pending retry" time="0.000670" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/model.test.ts"/>
+	<testcase name="S84-private-stale-event drops old epoch, state, mismatched version and private draft" time="0.001349" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/network.test.ts"/>
+	<testcase name="ordinary draft survives unrelated phase, recovery epoch and authoritative new hand" time="0.000962" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/network.test.ts"/>
+	<testcase name="S84 stale candidate draft version cannot replace a newer private candidate at unchanged public version" time="0.000269" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/network.test.ts"/>
+	<testcase name="pending OnlineClient restore is aborted and cannot reopen after close or replacing the room" time="0.003002" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/network.test.ts"/>
+	<testcase name="READY explicit stale version obtains latest snapshot and retries same intent with new action; unknown result is not replayed" time="0.000913" classname="test" file="/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/tests/ui/network.test.ts"/>
+	<!-- tests 97 -->
+	<!-- suites 0 -->
+	<!-- pass 97 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 2284.010209 -->
+</testsuites>

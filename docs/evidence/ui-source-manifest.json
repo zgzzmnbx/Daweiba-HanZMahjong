@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-23T08:57:40.371491",
+  "applicationVersion": "0.1.0",
+  "upstreamCommit": "6830301df3061cdd25350cf56807473e5505b311",
+  "projectCommit": null,
+  "files": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "0402bff680789310259bb8c061272d96ddebc3bee0dc1d914d63bd2ebaa17986"
+    },
+    {
+      "path": "apps/web/src/fixture.ts",
+      "sha256": "9a475413b6c7d178173f1f1b590d773fc131bfa7f61cfe68665cd52641305e8f"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "8390395b4057364dc82b64e063049866b2e0766d0dd2f03831d461bf435cdf34"
+    },
+    {
+      "path": "apps/web/src/style.css",
+      "sha256": "73e0cdd52e689c2e1470c36054c4364c085c07bb555e0a351847c0e4c8eb53e2"
+    },
+    {
+      "path": "apps/web/src/table-ui/SentenceRackController.ts",
+      "sha256": "cd5dbb3bc560fdd6ca8263e36e59bf743591056964aa7bd163ba62ad6f62fbbe"
+    },
+    {
+      "path": "apps/web/src/table3d/adapter.ts",
+      "sha256": "b304f07d54a626c6694670345a79015e576f5788a136357740dc94468c73fa3e"
+    },
+    {
+      "path": "apps/web/src/table3d/main-view.ts",
+      "sha256": "4300904b36dd22ffa3df6fc732bd6b360798076435ed61fefd1d8be4d5634244"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "016fada1e4648ba22706fdc851e4d3fc76c6205a89ad3703bcde4cc1b1791286"
+    },
+    {
+      "path": "package.json",
+      "sha256": "560fa59d8ac2e5d5d671489e2170bf43d51df8df5b5119468da9c78d26baeac4"
+    },
+    {
+      "path": "packages/contracts/rules.defaults.json",
+      "sha256": "71cf349854b13a716ef97cbda75a1dc7969961e277eef2a6e3f13062d152e741"
+    },
+    {
+      "path": "packages/contracts/table-view.ts",
+      "sha256": "f23b4cc05487d6eb8af611fb88998e476d34fc90097105913f263c19cd5c1f0b"
+    },
+    {
+      "path": "packages/contracts/types.ts",
+      "sha256": "690d13f3e38e5ced2686235270ef0a4a74311c483bbc7296e93ed8c3700cf1c9"
+    },
+    {
+      "path": "scripts/verify-ui.mjs",
+      "sha256": "d3b45ec536a823f48e76e6f88ef8c62ddc75377706ba8f7104b843e8c0374485"
+    },
+    {
+      "path": "tests/ui/model.test.ts",
+      "sha256": "8845831e9b19bee9acb21be7577de017299027d822bfc25217039741d4294941"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "623eea6bc283b460eda70886c20ef93f5e8f3400fdc2aef7d67f8483052ac847"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "28a0d72b58f239d81ed839d98913ef4989c3ec2da8042281a64ddcbd02a02bf0"
+    }
+  ]
+}

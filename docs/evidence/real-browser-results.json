@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-23T01:47:21.231Z",
+  "browser": "156.0.8078.47",
+  "scope": "production static build + actual HTTP/Socket.IO + independent browser contexts",
+  "checks": [
+    {
+      "name": "2 independent browsers create / select seats / ready / deal / discard / pass / self-HU / vote / settle",
+      "status": "PASS",
+      "data": {
+        "capacity": 2,
+        "uniqueSessions": 2,
+        "discards": 1,
+        "wins": 1,
+        "viewport": "1440x1000"
+      }
+    },
+    {
+      "name": "2 refresh + separate device recovery revokes old browser and clears private tiles",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "2 production build excludes dev route and renderer diagnostics",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "3 independent browsers create / select seats / ready / deal / discard / pass / self-HU / vote / settle",
+      "status": "PASS",
+      "data": {
+        "capacity": 3,
+        "uniqueSessions": 3,
+        "discards": 1,
+        "wins": 1,
+        "viewport": "1440x1000"
+      }
+    },
+    {
+      "name": "3 refresh + separate device recovery revokes old browser and clears private tiles",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "3 production build excludes dev route and renderer diagnostics",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "4 independent browsers create / select seats / ready / deal / discard / pass / self-HU / vote / settle",
+      "status": "PASS",
+      "data": {
+        "capacity": 4,
+        "uniqueSessions": 4,
+        "discards": 1,
+        "wins": 1,
+        "viewport": "1440x1000"
+      }
+    },
+    {
+      "name": "4 refresh + separate device recovery revokes old browser and clears private tiles",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "4 production build excludes dev route and renderer diagnostics",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "5 independent browsers create / select seats / ready / deal / discard / pass / self-HU / vote / settle",
+      "status": "PASS",
+      "data": {
+        "capacity": 5,
+        "uniqueSessions": 5,
+        "discards": 1,
+        "wins": 1,
+        "viewport": "390x844 touch"
+      }
+    },
+    {
+      "name": "5 refresh + separate device recovery revokes old browser and clears private tiles",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "5 production build excludes dev route and renderer diagnostics",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "6 independent browsers create / select seats / ready / deal / discard / pass / self-HU / vote / settle",
+      "status": "PASS",
+      "data": {
+        "capacity": 6,
+        "uniqueSessions": 6,
+        "discards": 1,
+        "wins": 1,
+        "viewport": "1440x1000"
+      }
+    },
+    {
+      "name": "6 refresh + separate device recovery revokes old browser and clears private tiles",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "6 production build excludes dev route and renderer diagnostics",
+      "status": "PASS",
+      "data": {}
+    },
+    {
+      "name": "no browser page errors",
+      "status": "PASS",
+      "data": {}
+    }
+  ],
+  "screenshots": [
+    "real-2-players.png",
+    "real-3-players.png",
+    "real-4-players.png",
+    "real-5-players.png",
+    "real-6-players.png"
+  ]
+}

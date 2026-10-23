@@ -1,0 +1,22 @@
+# Template for a DEDICATED word-mahjong frps instance. Do not overwrite shared frps.
+# Replace placeholders and verify with the installed frps version before use.
+bindAddr = "0.0.0.0"
+bindPort = 7000
+proxyBindAddr = "127.0.0.1"
+allowPorts = [{ single = 7300 }]
+maxPortsPerClient = 1
+detailedErrorsToClient = false
+
+auth.method = "token"
+auth.token = "REPLACE_WITH_PRIVATE_RANDOM_FRP_TOKEN"
+auth.additionalScopes = ["HeartBeats", "NewWorkConns"]
+
+transport.tls.force = true
+transport.tls.certFile = "/ABS/PATH/word-mahjong-tls/frps-server.crt"
+transport.tls.keyFile = "/ABS/PATH/word-mahjong-tls/frps-server.key"
+
+log.to = "console"
+log.level = "info"
+log.disablePrintColor = true
+
+# No dashboard, SSH forwarding, HTTP vhost port or UDP listener is needed.

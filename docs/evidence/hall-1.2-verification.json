@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-23T02:12:26.096401+00:00",
+  "applicationVersion": "1.2.0",
+  "release": "1.2.0-20261023-101314",
+  "automated": {
+    "verifiedBy": "Sol",
+    "command": "npm test; tsc --noEmit",
+    "tests": 107,
+    "passed": 107,
+    "newLobbyTests": 10
+  },
+  "browser": {
+    "tool": "Codex in-app browser",
+    "origin": "http://127.0.0.1:3115",
+    "independentHost": "Node HTTP/Socket.IO session, separate cookie",
+    "checks": [
+      "six server-authoritative public tables visible",
+      "independent host creates table 3, browser receives 1/4 without reload",
+      "click table 3 opens occupied-seat selector and joins as second real human",
+      "leaving shows shared 2/4 count",
+      "click own table restores same original identity without recovery code"
+    ],
+    "status": "PASS"
+  },
+  "public": {
+    "origin": "https://118.196.107.182:1240",
+    "screenshot": "hall-1.2-desktop.png",
+    "checks": [
+      "final production lobby has six public tables",
+      "application footer v1.2.0 visible",
+      "HTTPS/WSS competition and full public room lifecycle: see public-lobby-1.2-results.json"
+    ],
+    "status": "PASS",
+    "flowVerifiedRelease": "1.2.0-20261023-101014",
+    "finalChange": "101314 changes only full-table helper text; same server, build and ready verified"
+  },
+  "limitations": [
+    "new 1.2 mobile CSS uses two columns; no new physical phone or touch viewport run in this change",
+    "existing 1.1 hardware/accessibility limitations remain"
+  ]
+}

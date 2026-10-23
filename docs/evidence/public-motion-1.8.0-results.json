@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-23T05:00:33.203Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.8.0",
+  "status": "PASS",
+  "scope": "Real HTTP/WSS snapshots passed through production motion planner; own private rooms only. Not browser visual evidence.",
+  "results": [
+    {
+      "n": 2,
+      "views": 2,
+      "kinds": [
+        "DISCARD",
+        "EAT",
+        "DRAW",
+        "HU"
+      ],
+      "publicHuTiles": 14,
+      "opponentDrawFaceHidden": true,
+      "repeatRestoreSuppressed": true
+    },
+    {
+      "n": 4,
+      "views": 4,
+      "kinds": [
+        "DISCARD",
+        "EAT",
+        "DRAW",
+        "HU"
+      ],
+      "publicHuTiles": 14,
+      "opponentDrawFaceHidden": true,
+      "repeatRestoreSuppressed": true
+    },
+    {
+      "n": 6,
+      "views": 6,
+      "kinds": [
+        "DISCARD",
+        "EAT",
+        "DRAW",
+        "HU"
+      ],
+      "publicHuTiles": 14,
+      "opponentDrawFaceHidden": true,
+      "repeatRestoreSuppressed": true
+    },
+    {
+      "n": 2,
+      "kind": "BORROW",
+      "source": "actual discard",
+      "ownedHand": 13
+    },
+    {
+      "n": 2,
+      "kind": "AI_INSTANT_HU",
+      "publicHuTiles": 14,
+      "passed": false
+    }
+  ]
+}

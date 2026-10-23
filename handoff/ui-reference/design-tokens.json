@@ -1,0 +1,121 @@
+{
+  "version": "1.1.0",
+  "name": "字间 · 文字麻将",
+  "referenceOnly": true,
+  "source": {
+    "repository": "https://github.com/Bruce-pac/EnglishMahjong-web",
+    "commit": "6830301df3061cdd25350cf56807473e5505b311",
+    "renderer": "src/table3d",
+    "adoptionSpec": "../docs/11-ENGLISH-TABLE-ADOPTION.md"
+  },
+  "color": {
+    "canvas": "#19110C",
+    "roomHighlight": "#3D2A1B",
+    "roomShadow": "#110D09",
+    "surface": "#0E251D",
+    "tableFelt": "#1B654D",
+    "tableFeltHighlight": "#256E50",
+    "tableFeltShadow": "#175A43",
+    "wood": "#80512D",
+    "woodHighlight": "#94633C",
+    "woodShadow": "#35200F",
+    "tile": "#F4EBD4",
+    "tileHighlight": "#FFF9E7",
+    "tileShadow": "#D9D4C4",
+    "tileEdge": "#C7BD91",
+    "tileBack": "#D0AF48",
+    "tileBackHighlight": "#F3D36B",
+    "tileInk": "#39372F",
+    "ink": "#F4EBD4",
+    "inkMuted": "#B6AD93",
+    "primary": "#D5BC74",
+    "primaryInk": "#302615",
+    "selection": "#FFD24A",
+    "newTile": "#4FD1FF",
+    "objection": "#EC9B80",
+    "objectionSurface": "#3F2C23",
+    "online": "#8FAF83",
+    "grace": "#4FD1FF",
+    "bot": "#C9B27A"
+  },
+  "font": {
+    "ui": "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif",
+    "tileDesktopTargetPx": 38,
+    "tileMinimumPx": 28,
+    "tileMobilePx": 28,
+    "bodyPx": 16,
+    "mobileBodyMinPx": 14,
+    "metadataMinPx": 12,
+    "referenceSubsetOnly": true,
+    "productionAtlasWaitForFont": true
+  },
+  "radius": {"tile": 7, "button": 12, "panel": 25, "pill": 999},
+  "spacing": {"unit": 4, "desktopPage": 28},
+  "interaction": {
+    "minimumTargetPx": 44,
+    "primaryButtonHeightPx": 52,
+    "tileDragThresholdPx": 6,
+    "singleController": "SentenceRackController",
+    "meshHasIndependentInput": false,
+    "cameraLockedDuringDrag": true,
+    "staleProjectionDisablesPicking": true
+  },
+  "viewModes": {
+    "DESKTOP_TABLE": {"own3DVisible": true, "domRackVisible": false, "projectedDomInput": true},
+    "DESKTOP_COMPOSE": {"own3DVisible": false, "domRackVisible": true, "projectedDomInput": false},
+    "MOBILE_PORTRAIT": {"own3DVisible": false, "domRackVisible": true, "projectedDomInput": false},
+    "WEBGL_FALLBACK": {"own3DVisible": false, "domRackVisible": true, "projectedDomInput": false}
+  },
+  "mobileRack": [
+    {"viewport": 390, "columns": 7, "rows": 2, "tileWidth": 44, "tileHeight": 58, "gap": 8, "padding": 17, "commaAddsWidth": 0, "minAlternativeTarget": 44},
+    {"viewport": 430, "columns": 7, "rows": 2, "tileWidth": 48, "tileHeight": 62, "gap": 9, "padding": 20, "commaAddsWidth": 0, "minAlternativeTarget": 44}
+  ],
+  "upstreamGeometry": {
+    "worldSize": 222,
+    "tileWidth": 6,
+    "tileHeight": 9,
+    "tileDepth": 4,
+    "ownHandScale": 1.21875,
+    "canvasAspectRatio": 1.5,
+    "perspectiveFovDegrees": 30,
+    "perspectiveCameraPosition": [0, -319.68, 233.1],
+    "perspectiveCameraRotationXAtLookDownZero": "Math.PI * 0.3"
+  },
+  "layoutInitialValues": {
+    "status": "IMPLEMENTATION_TUNING_REQUIRED",
+    "relativeSeat": "(seatIndex - mySeat + playerCount) % playerCount",
+    "worldOrigin": [111, 111, 0],
+    "normalizationScale": 90,
+    "tupleMeaning": ["normalizedX", "normalizedY", "rotationZDegrees"],
+    "seatTemplates": {
+      "2": [[0,-0.92,0],[0,0.92,180]],
+      "3": [[0,-0.92,0],[0.80,0.58,126],[-0.80,0.58,234]],
+      "4": [[0,-0.92,0],[0.92,0,90],[0,0.92,180],[-0.92,0,270]],
+      "5": [[0,-0.92,0],[0.90,-0.36,68],[0.64,0.84,143],[-0.64,0.84,217],[-0.90,-0.36,292]],
+      "6": [[0,-0.92,0],[0.88,-0.48,61],[0.88,0.48,119],[0,0.92,180],[-0.88,0.48,241],[-0.88,-0.48,299]]
+    },
+    "fiveSixOpponentBackScale": 0.70,
+    "fiveSixCameraDistanceScaleRange": [1.08,1.12],
+    "desktopOwnTileTargetPx": [64,86]
+  },
+  "renderBudget": {
+    "status": "TARGET_NOT_MEASURED",
+    "desktopFpsTarget": 60,
+    "mobileMinimumFpsTarget": 30,
+    "desktopDprCap": 2,
+    "mobileDprCap": 1.5,
+    "physicalTileCapacity": 216,
+    "minimumExtraReferenceAndGhostCapacity": 2,
+    "minimumTotalViewCapacity": 218,
+    "idleOnDemandRendering": true,
+    "preserveTextSizeWhenDegrading": true
+  },
+  "motionMs": {"draw": 180, "discard": 160, "reveal": 220, "reducedMotionMax": 80},
+  "breakpointsPx": {"mobile": 600, "tablet": 1024, "desktopReference": 1440},
+  "referenceDimensions": {
+    "desktop-4p": [1440,1000],
+    "desktop-6p": [1440,1000],
+    "vote-objection": [1440,1000],
+    "mobile-390": [390,844]
+  }
+}

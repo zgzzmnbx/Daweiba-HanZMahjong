@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T01:43:25.551Z",
+  "origin": "http://127.0.0.1:3113",
+  "browser": "156.0.8078.47",
+  "version": "1.1.0",
+  "scope": "Actual production build, HTTP and Socket.IO, isolated six-seat room; no injected engine state",
+  "checks": [
+    {
+      "check": "430px host assigns all five empty seats; removes and reassigns AI using actual commands; version footer never overlaps content",
+      "status": "PASS"
+    },
+    {
+      "check": "one-human practice deals real hand, preserves WebGL and explicit practice notice, hides mid-round seat edits and HU",
+      "status": "PASS"
+    },
+    {
+      "check": "finished AI seat can be removed for real friend; nonhost cannot edit; two humans plus four AI review normally and score only real win",
+      "status": "PASS"
+    },
+    {
+      "check": "closing this test room and leaving destroys canvas without returning late state",
+      "status": "PASS"
+    },
+    {
+      "check": "no browser errors",
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "astra-ai-local-home-version.png",
+    "astra-ai-local-six-seat-controls.png",
+    "astra-ai-local-practice-table.png",
+    "astra-ai-local-desktop-result.png"
+  ]
+}

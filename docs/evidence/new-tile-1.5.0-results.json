@@ -1,0 +1,25 @@
+{
+  "version": "1.5.0",
+  "release": "1.5.0-20261023-114040",
+  "at": "2026-10-23T11:43:14.070373+08:00",
+  "status": "PASS",
+  "tests": {
+    "passed": 115,
+    "failed": 0
+  },
+  "build": "PASS",
+  "checks": [
+    "Real local click DISCARD 眼: no confirmation, 14 to 13",
+    "Real local center drag DISCARD 一: no confirmation, 14 to 13",
+    "New DRAW 而 and EAT 家 at position 14 with gold highlight",
+    "Protected EAT 家 cannot be immediately discarded",
+    "DOM new DRAW 那 highlighted; comma drag inserts at ratio 0.700024",
+    "Desktop reserve click boxes 44 by 58",
+    "Public browser version 1.5.0 connected and highlights 新摸 人 at right",
+    "Public WSS exact draft restore PASS"
+  ],
+  "limitations": [
+    "No new physical mobile, cellular or screenreader checks",
+    "Historical full browser matrix not rerun"
+  ]
+}

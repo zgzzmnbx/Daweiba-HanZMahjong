@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T04:44:25.871Z",
+  "origin": "https://118.196.107.182:1240",
+  "applicationVersion": "1.7.0",
+  "status": "PASS",
+  "scope": "Real HTTP/WebSocket; own private rooms only. One global deck revision saved with identical tile contents. No user room kicked or dissolved.",
+  "results": [
+    "Server authenticated independent HttpOnly administrator session; unauthenticated room access rejected",
+    "Saved identical deck contents as a new revision; concurrent stale edit rejected; tile quantities unchanged",
+    "Live human kicked, AI replaced the seat, old session/recovery rejected; other player retained a live game",
+    "Administrator dissolved active private room with authoritative closed broadcast",
+    "Real two-minute AI-only timeout closed its private room, not merely hidden it from lobby",
+    "Lobby exposes only seat, nickname and AI marker per seated player",
+    "Logout revokes admin session"
+  ]
+}

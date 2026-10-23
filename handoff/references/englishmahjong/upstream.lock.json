@@ -1,0 +1,355 @@
+{
+  "format_version": 1,
+  "handoff_version": "1.1.0",
+  "retrieved_on": "2026-10-21",
+  "repository": "https://github.com/Bruce-pac/EnglishMahjong-web",
+  "commit": "6830301df3061cdd25350cf56807473e5505b311",
+  "commit_date_utc": "2026-10-01T08:12:27Z",
+  "tree": "e54a284a576d27f3bea92771926cfb0a9a8e6eea",
+  "default_branch_at_retrieval": "main",
+  "snapshot_kind": "selected_unmodified_source_files_not_a_buildable_fork",
+  "code_license": "MIT",
+  "license_file": "LICENSE-EnglishMahjong.txt",
+  "license_blob_sha1": "1f3839d51ac16815a9821b03904210d9a19f8aa3",
+  "upstream_code_ancestry": [
+    {
+      "repository": "https://github.com/pwmarcz/autotable",
+      "evidence": "Source comments explicitly describe borrowed renderer/slot/interaction structure. Exact historical source commit not asserted.",
+      "license_ref_commit": "8b81d92aa37997dcfbcc6724d3bd3f694f9cc53a",
+      "license_file": "licenses/Autotable-COPYING.txt",
+      "code_license": "MIT; excludes images and sounds"
+    }
+  ],
+  "files": [
+    {
+      "upstream_path": "LICENSE",
+      "local_path": "source-snapshot/LICENSE",
+      "bytes": 1062,
+      "sha256": "8df1ef32e0201db0e3535460ce6460edeadff3e7ccfe945980227d55bf060fe2",
+      "git_blob_sha1": "1f3839d51ac16815a9821b03904210d9a19f8aa3"
+    },
+    {
+      "upstream_path": "README.md",
+      "local_path": "source-snapshot/README.md",
+      "bytes": 4495,
+      "sha256": "eee761a8b196fd18e37049e31fd992f197fa1c8202e7a941db89a49a417f2561",
+      "git_blob_sha1": "19fd3169884e08d5e22cd496cc3322497d1bb504"
+    },
+    {
+      "upstream_path": "package.json",
+      "local_path": "source-snapshot/package.json",
+      "bytes": 630,
+      "sha256": "9651005dc27150f33a2079b126ba5bdae4f96ba6c34e72dc5458a0b8d7dc2a22",
+      "git_blob_sha1": "d12d80f8b25321a344d0e65698f5c830f8befcc4"
+    },
+    {
+      "upstream_path": "package-lock.json",
+      "local_path": "source-snapshot/package-lock.json",
+      "bytes": 113310,
+      "sha256": "f1facda852a8fc9db4b4eed361da668e7fe6b2cd453dde10ea6b9bf0eb50e75a",
+      "git_blob_sha1": "dc74b8a2fd25c64933bf1136da515781615b51e4"
+    },
+    {
+      "upstream_path": "src/styles.css",
+      "local_path": "source-snapshot/src/styles.css",
+      "bytes": 61481,
+      "sha256": "176dba10e7518914d3435815803bb16c9a3574e044f42eb3a472baa768905f16",
+      "git_blob_sha1": "056660fb771f2b4cd1fc2970c24c7cf2e45ad2a2"
+    },
+    {
+      "upstream_path": "src/api.ts",
+      "local_path": "source-snapshot/src/api.ts",
+      "bytes": 15009,
+      "sha256": "1e3bf540cebd1c796f5bdef2989434172184fc02658284f6085633e9614424ec",
+      "git_blob_sha1": "16b19c39598a7633393dbe2758edb14dbf38234c"
+    },
+    {
+      "upstream_path": "src/components/Hand.tsx",
+      "local_path": "source-snapshot/src/components/Hand.tsx",
+      "bytes": 20357,
+      "sha256": "2ef5490ef3363a22ef49fd1c25dd7d377497137d2f57dc38b9ec0f54a204848f",
+      "git_blob_sha1": "29b5f2f3f56ea5b3decc7e84bf52d86c5e8d35ac"
+    },
+    {
+      "upstream_path": "src/components/Tile.tsx",
+      "local_path": "source-snapshot/src/components/Tile.tsx",
+      "bytes": 3827,
+      "sha256": "4e3421fb4125570384ee1e3accf12caaababd56a69fcfc9c40838d7d91f05248",
+      "git_blob_sha1": "e9ca9c448d6a8a7a94a7be14c0f69ae9febd2b23"
+    },
+    {
+      "upstream_path": "src/scene/TableScene.tsx",
+      "local_path": "source-snapshot/src/scene/TableScene.tsx",
+      "bytes": 2517,
+      "sha256": "0895912958644b2cf73a35fc01ee66b0a70357b5a2969acf322ffb667eb6d12f",
+      "git_blob_sha1": "bf9f395f698f69db4d8f1d73cb46cef917241169"
+    },
+    {
+      "upstream_path": "src/scene/scene.css",
+      "local_path": "source-snapshot/src/scene/scene.css",
+      "bytes": 12732,
+      "sha256": "7cbc275783f2c7a3fcd11cbdc085747dd906ef5328f3f78d9ecb60f01ea106ff",
+      "git_blob_sha1": "e3ef3f2cb88823cad47f52a63d88314b20e4b756"
+    },
+    {
+      "upstream_path": "fonts/README.md",
+      "local_path": "source-snapshot/fonts/README.md",
+      "bytes": 670,
+      "sha256": "65cb72359fe7562a6b02188344a8e9df57dc9e55e769f6cfa1218c98b8f20aa1",
+      "git_blob_sha1": "392fd815789846dda235f9a47a4df8281d0ec36c"
+    },
+    {
+      "upstream_path": "fonts/OFL.txt",
+      "local_path": "source-snapshot/fonts/OFL.txt",
+      "bytes": 4385,
+      "sha256": "2d8ae1e634466e8b50109d5d56d0accd5550afc8ae28bdd4aa6bb16c115d1d33",
+      "git_blob_sha1": "2e7b00e8409a909a3e9e4f00f77f71b9d0dd6fb0"
+    },
+    {
+      "upstream_path": "public/draco/README.md",
+      "local_path": "source-snapshot/public/draco/README.md",
+      "bytes": 1357,
+      "sha256": "a3f42eb94001d0a716e3906452eb0b75d2c1d5acced686f6f4d683211a0e77e7",
+      "git_blob_sha1": "5177ef55674aede51367512df5644c8141d94b3e"
+    },
+    {
+      "upstream_path": "src/table3d/Table3D.tsx",
+      "local_path": "source-snapshot/src/table3d/Table3D.tsx",
+      "bytes": 86973,
+      "sha256": "1f4b37428b50adbeefc62c5a4c5a83aab0031c5efb6e4e5d2d5e51384c885954",
+      "git_blob_sha1": "de1148a92ea4c8f8252a2cd0116400102fda3f2a"
+    },
+    {
+      "upstream_path": "src/table3d/main-view.ts",
+      "local_path": "source-snapshot/src/table3d/main-view.ts",
+      "bytes": 13463,
+      "sha256": "f540e66294b1e0f5a29f91c97e8c24fdab82395c9ab47aa730bb7d19018d9987",
+      "git_blob_sha1": "e0afc68716492c031ac877dab235979e431e4e61"
+    },
+    {
+      "upstream_path": "src/table3d/object-view.ts",
+      "local_path": "source-snapshot/src/table3d/object-view.ts",
+      "bytes": 9018,
+      "sha256": "c7474345e7f9564cfed25284f86564cbb56aacf0a2e1724a12ff5080a2484b5b",
+      "git_blob_sha1": "d6b386e8c458f53459efbe535646c9685903cb0c"
+    },
+    {
+      "upstream_path": "src/table3d/thing-group.ts",
+      "local_path": "source-snapshot/src/table3d/thing-group.ts",
+      "bytes": 11649,
+      "sha256": "fc4a420efdbfdc9c19681c0c7035d98f87f206546384d4ba584742700858e509",
+      "git_blob_sha1": "812ceb13d67fee7ef7d560aac3952bc1bbfc87d9"
+    },
+    {
+      "upstream_path": "src/table3d/thing.ts",
+      "local_path": "source-snapshot/src/table3d/thing.ts",
+      "bytes": 2612,
+      "sha256": "faac47335034cb5d0701a7bb3ee2a0901bdc8326ee18289e2542166cc2d09213",
+      "git_blob_sha1": "941a2bd716bef922e3e8916fe4726525f71486d3"
+    },
+    {
+      "upstream_path": "src/table3d/thing-assign.ts",
+      "local_path": "source-snapshot/src/table3d/thing-assign.ts",
+      "bytes": 5124,
+      "sha256": "404b30e2f393b0b61694c9fdd3a57525bda8984990f65d5b3a6c18fcd7f4ab22",
+      "git_blob_sha1": "304e6b327df62fc2a2f527a14e76a5968458ae2d"
+    },
+    {
+      "upstream_path": "src/table3d/slot.ts",
+      "local_path": "source-snapshot/src/table3d/slot.ts",
+      "bytes": 7565,
+      "sha256": "20cbdc5b4ed8c0fccf6d0c04ea4fb128a554a36da4434b1f38a2946ca82c2f8b",
+      "git_blob_sha1": "ced2c747f03ce95360f4ddd5a86d30ed5f3d42ab"
+    },
+    {
+      "upstream_path": "src/table3d/setup-slots.ts",
+      "local_path": "source-snapshot/src/table3d/setup-slots.ts",
+      "bytes": 16155,
+      "sha256": "58288d3c55935486246dcbdfeed6744a8877898e09d88865abd4ed1f96312677",
+      "git_blob_sha1": "318f741d851ec091321de6c1c9a0b8a2fade1abf"
+    },
+    {
+      "upstream_path": "src/table3d/layout.ts",
+      "local_path": "source-snapshot/src/table3d/layout.ts",
+      "bytes": 7719,
+      "sha256": "ebead79989119ee87e837e9eb78871adf759a19c18025abd6657b68dd3f97e01",
+      "git_blob_sha1": "86cec7b2bc65ead117c85a3bdea662cfa4728d09"
+    },
+    {
+      "upstream_path": "src/table3d/types.ts",
+      "local_path": "source-snapshot/src/table3d/types.ts",
+      "bytes": 1339,
+      "sha256": "648988584d09a863827da2f143b77138024e8ba388b9af21db46fed82fef8fd2",
+      "git_blob_sha1": "746403b22bf9ea7d8ab1c6d5c4dad1cdd560a44a"
+    },
+    {
+      "upstream_path": "src/table3d/utils.ts",
+      "local_path": "source-snapshot/src/table3d/utils.ts",
+      "bytes": 2876,
+      "sha256": "9781733e8ff15cc3e386e986e9df489fd235c0f7bcb77f70fd9276fa21993071",
+      "git_blob_sha1": "4aa76c64bf2e00123e06ec9009f85ab0885f9080"
+    },
+    {
+      "upstream_path": "src/table3d/mouse-ui.ts",
+      "local_path": "source-snapshot/src/table3d/mouse-ui.ts",
+      "bytes": 10736,
+      "sha256": "3ef6005f104e62b03eaabcd052c4fef285bdd3e8827a98ef2ce6996a54cb0b34",
+      "git_blob_sha1": "9186aa65198d681970accb8f755ba451d1896c18"
+    },
+    {
+      "upstream_path": "src/table3d/movement.ts",
+      "local_path": "source-snapshot/src/table3d/movement.ts",
+      "bytes": 6018,
+      "sha256": "3006c30d5fa5c6fa60b9e3a5c337b5f19f202e4976b2faa00c1ec7d175b104c2",
+      "git_blob_sha1": "fabf43da98af88593a56821caac870421d1645c4"
+    },
+    {
+      "upstream_path": "src/table3d/placement.ts",
+      "local_path": "source-snapshot/src/table3d/placement.ts",
+      "bytes": 12282,
+      "sha256": "3a08e26945d05c8eccde322bc098af97a83431b32361ac8202cb0ec0d16aa0fd",
+      "git_blob_sha1": "25daad93867854104476e169b61d7cd001606244"
+    },
+    {
+      "upstream_path": "src/table3d/table-view.ts",
+      "local_path": "source-snapshot/src/table3d/table-view.ts",
+      "bytes": 54117,
+      "sha256": "ef562906d6e17741f00a838107b05d9d5c3dfd198049772ae7ff640283029834",
+      "git_blob_sha1": "59598e716480e20479d2931b433b598b0e14445a"
+    },
+    {
+      "upstream_path": "src/table3d/loose-reconcile.ts",
+      "local_path": "source-snapshot/src/table3d/loose-reconcile.ts",
+      "bytes": 20326,
+      "sha256": "18b14d435be8a3b7d7da2fada2a149a68b6903f7add07fe033d59515dec03306",
+      "git_blob_sha1": "b7b08ef437da6d3689d33635b5582888c63cfcd8"
+    },
+    {
+      "upstream_path": "src/table3d/asset-loader.ts",
+      "local_path": "source-snapshot/src/table3d/asset-loader.ts",
+      "bytes": 5879,
+      "sha256": "147512dfa533588d3feeaa45afef91ef012b88ac5e90193275b4982b9763e93c",
+      "git_blob_sha1": "e2f35a2bdbdef60e248843d8c83cfb7a6a5823b4"
+    },
+    {
+      "upstream_path": "src/table3d/atlas.ts",
+      "local_path": "source-snapshot/src/table3d/atlas.ts",
+      "bytes": 4003,
+      "sha256": "efb2b964be1c1a14c19133a20105742fc71b0bc5b19746f87ea017ab5287e912",
+      "git_blob_sha1": "c593eaf07ce00869e90cccc58e302fce0e20fdc3"
+    },
+    {
+      "upstream_path": "src/table3d/center-board.ts",
+      "local_path": "source-snapshot/src/table3d/center-board.ts",
+      "bytes": 8966,
+      "sha256": "fbabb0e98a6f089bf6323bb635b55541209b82de18d0d804f3a8eff393488797",
+      "git_blob_sha1": "c19b227e2b62c61a1e0f687336c829d3ff299d86"
+    },
+    {
+      "upstream_path": "src/table3d/board-model.ts",
+      "local_path": "source-snapshot/src/table3d/board-model.ts",
+      "bytes": 2896,
+      "sha256": "9c36328d826f221b50f05697b882a70b7784e588fecbf66e33de20e6874b2caa",
+      "git_blob_sha1": "988d1c4484cbe39d4dc31f26d823039346a0fb39"
+    },
+    {
+      "upstream_path": "src/table3d/nameplate.ts",
+      "local_path": "source-snapshot/src/table3d/nameplate.ts",
+      "bytes": 2096,
+      "sha256": "7bdcc5df115a27d27c53a5e54dc0cd74126ccd14cdd3d13f8af482ba5659505b",
+      "git_blob_sha1": "97c38a131ddb85cd8f2d58fcc4fac8acb041c147"
+    },
+    {
+      "upstream_path": "src/table3d/replay.ts",
+      "local_path": "source-snapshot/src/table3d/replay.ts",
+      "bytes": 10742,
+      "sha256": "332f971b4d464cd2611a5227d7003ba0438ef59ad4f123a3ba948452366f3452",
+      "git_blob_sha1": "f08500daae405b4bc8d9fce479887b90d129c5be"
+    },
+    {
+      "upstream_path": "src/table3d/deal.ts",
+      "local_path": "source-snapshot/src/table3d/deal.ts",
+      "bytes": 5428,
+      "sha256": "e45338a014f2799761548c5b3804505fa07ba185d5ccc688e116c4bb3c0e318d",
+      "git_blob_sha1": "5e7364e067146778b26c9a1ed33d2051e5d52d1c"
+    },
+    {
+      "upstream_path": "src/table3d/persist.ts",
+      "local_path": "source-snapshot/src/table3d/persist.ts",
+      "bytes": 4616,
+      "sha256": "d7df3569ecf2c5586f40da2f2584773d682f0aed2b4097f8d1d8a407a32fa6c3",
+      "git_blob_sha1": "bd6e584b3b0325d9aafe685fd2e015525fccf0b8"
+    },
+    {
+      "upstream_path": "src/table3d/discard.ts",
+      "local_path": "source-snapshot/src/table3d/discard.ts",
+      "bytes": 1269,
+      "sha256": "b319db54a1dedda61fa58cb1949055c7632f7759a7203f3c44d5e2d866283d06",
+      "git_blob_sha1": "c309ec5596e180a67add57fa01973bd83878a8b9"
+    },
+    {
+      "upstream_path": "src/table3d/confirm.ts",
+      "local_path": "source-snapshot/src/table3d/confirm.ts",
+      "bytes": 880,
+      "sha256": "ccb24e7804701aeb25f44fff18b15e4dfdaf63c03b1fb8c2b498a337cd912b77",
+      "git_blob_sha1": "0d685b6a1068c0d83197fbd2d2476c860afda4ba"
+    },
+    {
+      "upstream_path": "src/table3d/character-loader.ts",
+      "local_path": "source-snapshot/src/table3d/character-loader.ts",
+      "bytes": 4767,
+      "sha256": "8ede47ee9b7a5809f39103fb88fc88b85fcbfa86b1e98c5370634f91f11237d4",
+      "git_blob_sha1": "91e070bff5efbc448a0678cffbf35ab6bf2e9290"
+    },
+    {
+      "upstream_path": "src/table3d/characters.ts",
+      "local_path": "source-snapshot/src/table3d/characters.ts",
+      "bytes": 11281,
+      "sha256": "dd19ad599119586822b421999aabbbbbe96ec81275080d8b3b3a9706a394c4da",
+      "git_blob_sha1": "9ef73dad864dfd63327f9c1cd57cde878e841f06"
+    }
+  ],
+  "reference_images": [
+    {
+      "upstream_path": "docs/game.jpg",
+      "local_path": "original-game.jpg",
+      "bytes": 352617,
+      "sha256": "e9d690db693243b5949c64bbc0a28c72f29f7d717331dd6b17e4030d824393df",
+      "git_blob_sha1": "6a73b48ea55578996bb780cbff6a5d8f337a8b83",
+      "usage": "Author screenshot for visual comparison only; not a production character/texture asset."
+    }
+  ],
+  "excluded_assets": [
+    {
+      "path": "img/models.glb",
+      "bytes": 6800,
+      "reason": "No independent asset provenance or art/make_model.py in public tree; replace with procedural 6x9x4 rounded tile geometry."
+    },
+    {
+      "path": "img/tiles.png",
+      "reason": "English/wildcard faces are incompatible with arbitrary Chinese tiles; replace with a local CJK atlas."
+    },
+    {
+      "path": "img/characters.glb",
+      "reason": "Three fixed character meshes; no independent source provenance/build script in public tree. Use own seat avatars/placeholders."
+    },
+    {
+      "path": "public/draco/draco_decoder.wasm",
+      "reason": "Not needed without original character GLB; Draco Apache-2.0 separately if later reintroduced."
+    },
+    {
+      "path": "public/draco/draco_wasm_wrapper.js",
+      "reason": "Not needed without original character GLB."
+    },
+    {
+      "path": "fonts/Segment7Standard.otf",
+      "reason": "Optional digital font, OFL 1.1; no binary included. Default local system/noto numeric font."
+    }
+  ],
+  "not_performed": [
+    "upstream installation/build/tests",
+    "live site gameplay",
+    "word-mahjong renderer implementation",
+    "multiplayer/end-to-end/deployment validation"
+  ]
+}
