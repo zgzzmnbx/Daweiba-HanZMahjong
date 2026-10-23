@@ -1,125 +1,159 @@
+<div align="center">
+
 # 字间 · 文字麻将
 
-![字间项目介绍图](docs/assets/字间-项目介绍图-v1.9.0-【codex】.png)
+**把麻将里的牌，变成一句完整的人话。**
 
-> 项目介绍示意图；真实运行截图和验收记录见 `docs/evidence/`。
+一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-源代码：[zgzzmnbx/Daweiba-HanZMahjong](https://github.com/zgzzmnbx/Daweiba-HanZMahjong)。
+[![应用版本](https://img.shields.io/badge/version-1.10.0-2f855a)](package.json)
+[![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
+[![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
+[![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
 
-应用 **1.10.0**，新房规则 **1.2.0**，旧局规则 **1.1.0 / 1.0.0**，交接包 **V1.1.0**，字库 **managed-r1（保持daily-v1实验配比）**。运行平台macOS，Node **24.19.0**，内置SQLite **3.53.3**。
+[开始游戏](https://118.196.107.182:1240) · [快速启动](#快速启动) · [游戏规则](docs/01-RULES.md) · [更新日志](CHANGELOG.md)
 
-可玩入口：[https://118.196.107.182:1240](https://118.196.107.182:1240)。Mac运行游戏、存档与Socket.IO；火山云Caddy/FRP承担HTTPS入口。当前线上发布、恢复演练及最新release以 `docs/PUBLIC-DEPLOYMENT.md`、`docs/evidence/public-*-results.json` 和最终Astra复核记录为准，网络探针不算游戏验收。
+</div>
 
-## 已实现
+![字间文字麻将项目介绍](docs/assets/字间-项目介绍图-v1.9.0-【codex】.png)
 
-应用1.10.0：自摸胡与借字排好后提交，先弹出“你确认你觉得这是一句完整的人话吗？”并预览14字；取消不提交。确认后全桌从申请人实际牌位逐字飞入、放大砸落，配金色卡通火花、落地回弹与轻震，桌面14字一排，手机7+7。亮相约3.7秒，可提前收起继续评审；没有把申请亮相当作胡牌通过。
+> 上图为项目介绍示意图，制作于 v1.9.0；实际运行截图与验收证据见 [docs/evidence](docs/evidence/)。在线入口依赖运行游戏的 Mac 保持在线。
 
-200项自动测试（新增5项）、TypeScript与生产构建通过。本地及公网三个独立Chrome身份完成确认/取消、自胡、借字胡、提前收起投票、结算刷新不重播和AI即时评审；1440桌面、390/430手机尺寸与减少动态效果已验。三端首次显示时间差：本地20ms，公网0ms（本次环境实测，不承诺跨地域固定延迟）。无浏览器异常。 发布 `1.10.0-20261023-134321`，发布前一致性备份 `pre-release-20261023-134322.sqlite` 通过；公网 `/readyz` 返回true。只操作自建私有验收房，测试结束关闭；原房间、套组和云端端口配置不变。规则仍1.2.0。 详见 `docs/HU-SHOWCASE-1.10.0-【codex】.md`。
+## 游戏亮点
 
-应用1.9.0已发布：管理员可复制新建命名麻将套组、编辑名称/汉字/2–6人配比并设默认；玩家开房选择套组，初始默认选中全局默认。房间绑定创建时的套组，下一局读取其最新修订，当前局配置与归档名称保持冻结。原字库完整迁移为“经典字库”，正式服84字、managed-r1及120/144/168/192/216配比保持不变。
+- **真实 3D 牌桌**：深棕环境、木边绿绒桌面、厚实奶白字牌，支持 2–6 人围坐与手机布局。
+- **把字排成句**：拖动整理手牌，使用最多 3 个逗号，将 14 张字牌组成完整句子。
+- **一起决定能不能胡**：支持自摸胡与借字胡；真人可以投票并标记有异议的文字区间。
+- **随时开桌**：六张共享公共桌，也可创建邀请房；空位可由房主安排 AI，单人可练习。
+- **有动作，也有亮相**：摸、打、吃、借字均有飞牌轨迹；提交胡牌后，全桌同步观看逐字亮相。
+- **断线还能接着玩**：保存手牌排列、房间与结算，支持刷新恢复、恢复码换设备和服务重启恢复。
+- **自己的麻将套组**：管理员可复制、命名和编辑字库、调整不同人数配比，并设置默认套组。
 
-195项自动测试（新增16项套组测试）、TypeScript与生产构建通过。真实本地浏览器完成复制、编辑、设默认、实际4人170张发牌、关闭测试房、原组隔离及401重登草稿保留；公网真实HTTP/WSS完成默认/指定组开房、开局、身份恢复和自有测试房关闭，ready=true，真实浏览器确认v1.9.0及管理/玩家选组界面。 详情见 `docs/DECK-SETS-1.9.0-【codex】.md`、`docs/evidence/decksets-1.9.0-browser.json`、`docs/evidence/public-decksets-1.9.0-results.json`。
+## 怎么玩
 
-应用1.8.0已发布，增加真实快照驱动的摸、打、吃、借胡与公开胡牌飞行轨迹。摸牌从可见匿名牌墙末端飞入手牌右侧；本人出牌从当前实体牌槽飞向对应弃牌位，对手从其座位手牌槽飞出；吃/借字从对应弃牌位到本人牌列。胡牌14字依次飞到桌面7+7公开句区，AI即时评审也显示。桌面3D投影与DOM整理手牌共享效果；不改变规则1.2.0、命令或计时。
+1. 选择公共桌或创建邀请房，设置 2–6 个座位；邀请朋友，或让 AI 补齐空位。
+2. 真人全部准备后开局。庄家拿 14 张字牌，其余玩家各拿 13 张。
+3. 轮到自己时摸字、整理、出牌；可以吃上家的弃牌，每局最多吃 3 次。
+4. 将 14 张字牌全部排成一句话，可加入 0–3 个逗号。自摸或借字排好后，确认提交胡牌申请。
+5. 由冻结的评审名单投票，严格过半同意即通过。普通局累计胜局，单真人练习局不累计。
 
-179项自动测试（新增9项动作/调度测试）、TypeScript与生产build通过。真实本地浏览器捕获3D出牌/摸牌、DOM出牌/吃牌/借胡/14字胡牌，起止矩形与截图已归档，刷新后飞牌数为0。公网2/4/6人各视角真实HTTP/WSS快照通过同一动作planner，另测借胡、AI瞬结及草稿恢复；公网浏览器显示v1.8.0。 证据与范围见 `docs/MOTION-1.8.0-【codex】.md`、`docs/evidence/motion-1.8.0-browser.json`、`docs/evidence/public-motion-1.8.0-results.json`。
+指定 AI 使用简单摸打策略，不主动吃牌或申胡，也不调用外部大模型。规则 1.2.0 中，每位指定 AI 对胡牌申请独立以 70% 概率赞成；AI 不判断句子语义。完整的响应时限、座次、评审与旧局兼容规则见 [规则说明](docs/01-RULES.md)。
 
-应用1.7.0已发布，规则继续1.2.0。右上角管理入口使用用户指定密码，独立管理员会话不替换玩家身份。大厅显示逐座昵称与AI标记，管理员可直接踢人；候场/结算释放座位，活动局由新AI接手原牌，旧会话与恢复码失效。管理员可解散公共或邀请房；有指定AI且无在线真人连续120秒自动正式关闭，重连取消。字库可查看、查找、增删改汉字及2–6人配比，保存从下一局生效，当前牌墙不变。
+## 快速启动
 
-170项自动测试（新增29项）、TypeScript与生产build通过。真实本地浏览器完成字库增改删保存/重载、大厅姓名、逐座踢人和解散；公网HTTPS/WSS完成独立管理登录、同内容字库修订及并发拒绝、活动玩家踢出转AI、旧身份/恢复码拒绝、房间关闭广播、实际两分钟无人AI房解散及退出会话。公网浏览器显示v1.7.0、玩家姓名/踢出和真实字库。 详见 `docs/ADMIN-1.7.0-【codex】.md`、`docs/evidence/public-admin-1.7.0-results.json` 和 `docs/evidence/automated-1.7.0-tests.txt`。
+### 环境要求
 
-应用1.6.0已发布，规则1.2.0：与指定AI对局可自摸胡、借字胡；每个AI独立70%概率赞成，严格过半通过。随机票持久化，恢复与重复命令不重抽；单真人练习局可胡结束但不累计胜局，真人掉线BOT不代投。旧1.1活动局保持原规则，下一局归档后升级；1.0保持旧规则。“过”改为“摸”，位于“吃”左侧，副文案“自己摸一张”。
+- Node.js **≥24.19.0 且 <25**，以及 npm；当前生产运行于 macOS。
+- 支持 WebGL 的浏览器；需要中文系统字体来绘制字牌。
+- SQLite 使用 Node.js 内置模块，无需单独安装数据库服务。
 
-141项自动测试与生产build通过，覆盖2–6座引擎、概率边界、事务回滚、重启、幂等、旧规则归档。公网HTTPS/WSS通过2/4/6座自胡、2座借胡、混合桌等真人票、恢复不重抽及草稿恢复。真实本地浏览器确认胡牌入口与AI否决票数；摸/吃/胡顺序由开发夹具截图验证。 详情见 `docs/AI-REVIEW-1.6.0-【codex】.md`。
-
-1.5.0已发布：按最新要求取消出牌二次确认，点打/拖到中央直接提交；新摸/新吃牌自动追加右端并金色高亮，整理后高亮跟随实体牌，刷新保留已有排列。逗号加宽至字牌70%，桌右备用牌桌面点击区域至少44×58、手机36×58。115项测试与真实摸/吃/直接出牌通过；见 `docs/DIRECT-PLAY-1.5.0-【codex】.md`。
-
-1.4.0已发布：逗号变为桌右侧三张半宽半透明牌，使用后原位留空；打/吃/胡/过集中于桌面。手牌可拖到中央确认出牌，对手最新弃牌放大显示并署名；响应期金框强调，之后明确标“上张弃牌”。主界面移除箭头和保存横条，自动保存继续工作，辅助操作在工具中。113项测试通过；真实本地出牌/AI响应及公网显示、草稿恢复通过。见 `docs/TABLE-ACTIONS-1.4.0-【codex】.md`。
-
-1.3.0已发布：大厅选桌与牌桌HUD采用游戏控件，说明收进帮助；手牌拿起浮层、插入让位和落牌动效；逗号改为独立透明半宽牌。普通/候选草稿及0—3逗号语义不变。112项自动测试、真实浏览器拖动/独立逗号/刷新恢复及公网草稿保存恢复通过。证据见 `docs/INTERACTION-1.3.0-【codex】.md`。
-
-1.2.0新增六张固定公共桌大厅：所有玩家共享桌位和占用状态（每2秒同步）；点击空桌创建2–6人房间，点击已有房间直接选座。同浏览器点击自己的桌可恢复身份。创建弹窗明确公共房间可由其他玩家入座，原邀请与恢复码入口仍保留。
-
-真实Three.js木边绿绒牌桌、奶白厚字牌，2—6逻辑座次；庄家14张、其余13张，只吃上家、本局最多3次、禁立即弃回同一实体牌；14字全用、0—3逗号，借牌候选与本人手牌草稿分别保存。
-
-8秒响应、HU按座次排队、45秒排句与冻结真人评审、匿名反对选区、30秒强制弃牌；15秒掉线缓冲、800毫秒简单AI、全离线暂停24小时、进程重启、同浏览器与恢复码跨设备原位恢复。房间串行事务、actionId持久幂等、controlEpoch撤旧控制、SQLite一致快照及备份恢复均已实现。
-
-用户追加的指定AI空位已纳入1.1.0：房主在候场/结算设置或移除AI。当时练习局不胡牌、混合桌仅真人评审；新规则1.2.0已按上述最新要求覆盖。原1.0房间保留原语义。左下角应用版本从package.json构建读取。
-
-## 运行
+### 本地运行
 
 ```bash
-# 需要Node24.19.0及npm，安装精确锁定依赖
+git clone https://github.com/zgzzmnbx/Daweiba-HanZMahjong.git
+cd Daweiba-HanZMahjong
 npm ci
 npm run build
+mkdir -p Codex-Temp
 
-# 本地HTTP：独立测试存档，静态页面/HTTP/Socket同进程
-NODE_ENV=development PORT=3000 PUBLIC_ORIGIN=http://127.0.0.1:3000 DB_PATH="$PWD/Codex-Temp/local-game.sqlite" npm start
+NODE_ENV=development \
+PORT=3000 \
+PUBLIC_ORIGIN=http://127.0.0.1:3000 \
+DB_PATH="$PWD/Codex-Temp/local-game.sqlite" \
+npm start
 ```
 
-生产必须设置`NODE_ENV=production`、精确HTTPS `PUBLIC_ORIGIN`及绝对`DB_PATH`。进程只监听`127.0.0.1`，`/healthz`存活、`/readyz`检查SQLite。生产会话Cookie专名`hanz_mahjong_session_v1`，Secure/HttpOnly/SameSite=Lax；HTTP写入和Socket握手严格核对Origin，只信任回环代理。
+在浏览器打开 **http://127.0.0.1:3000**。静态页面、HTTP API 和 Socket.IO 由同一进程提供，以上命令使用独立本地存档。
 
-开发UI：`npm run dev`；另在终端以`PORT=3001 PUBLIC_ORIGIN=http://127.0.0.1:5173 DB_PATH="$PWD/Codex-Temp/dev.sqlite" npm run dev:server`启动服务。`/dev/baseline`仅开发编译可用，正式静态服务404，生产无renderer/命令调试出口。
+### 开发模式
+
+在两个终端分别运行：
 
 ```bash
-npm test                              # 引擎、真实HTTP/Socket/SQLite、UI/客户端模型
+# 终端一：前端，默认 http://127.0.0.1:5173
+npm run dev
+```
+
+```bash
+# 终端二：服务端
+mkdir -p Codex-Temp
+PORT=3001 \
+PUBLIC_ORIGIN=http://127.0.0.1:5173 \
+DB_PATH="$PWD/Codex-Temp/dev.sqlite" \
+npm run dev:server
+```
+
+`/dev/baseline` 仅在开发编译中提供，用于界面夹具检查；真实联机验收使用实际房间与独立玩家身份。
+
+## 技术栈与目录
+
+**React + TypeScript + Three.js + Vite** 构建界面，**Express + Socket.IO + SQLite** 提供实时联机和持久化。
+
+```text
+apps/
+  web/                 React 界面、3D 牌桌与排句交互
+  server/              HTTP、会话、Socket.IO、定时器与存储
+packages/
+  engine/              独立规则引擎，可注入时钟与随机种子
+  contracts/           前后端共享协议和默认规则
+scripts/               构建、浏览器验收、备份与恢复脚本
+tests/                 引擎、服务端与客户端模型测试
+ops/                   macOS 后台服务与发布工具
+docs/                  规则、采用记录、运维、交接及验收证据
+handoff/               原始交接包、固定上游源码与许可
+```
+
+服务器维护权威牌局，房间命令串行事务执行；`actionId` 保证重试幂等，`controlEpoch` 撤销旧设备控制。其他玩家的手牌、私密草稿和恢复凭据不广播。应用版本与规则版本独立，已开始牌局冻结规则和本局字库。
+
+## 测试与验证
+
+```bash
+npm test
+npm run build
+
+# 浏览器验收需已安装 Chrome，使用独立端口、临时库与 Cookie 上下文
 node --import tsx scripts/verify-real-browser.mjs
 node --import tsx scripts/verify-advanced-browser.mjs
 node --import tsx scripts/verify-client-lifecycle.mjs
-npm audit
 ```
 
-浏览器脚本使用独立端口/临时库、隔离Cookie上下文和已安装Chrome，不碰生产库。原91项逐项依据见 `docs/ACCEPTANCE-RESULTS.md`；JUnit与实际浏览器证据在`docs/evidence/`。测试层级明确区分纯引擎、真实网络、浏览器与现场硬件，不将fixture.expected作为实现结果。
+v1.10.0 的已归档验收记录包含 **200 项自动测试**、TypeScript 检查及生产构建，以及本地/公网三个独立浏览器身份的确认、取消、自胡、借字胡、投票、结算刷新与 AI 即时评审。桌面 1440、手机模拟宽度 390/430 和减少动态效果已有记录，详见 [最新功能验收](docs/HU-SHOWCASE-1.10.0-【codex】.md) 与 [验证记录](docs/VERIFICATION.md)。
 
-## 部署与数据
+实体手机 GPU、蜂窝网络、真实读屏及字库多人实玩平衡仍待现场验证；浏览器模拟不替代这些结果。
 
-后台应用安装在`~/Library/Application Support/WordMahjong/`，源码继续留在当前项目。生产DB为该目录`data/mahjong.sqlite`；发布目录不可变，单个LaunchAgent写库。Downloads目录受macOS后台访问限制，不能直接拿源码目录作为常驻程序目录。操作入口见`ops/README.md`及`docs/OPERATIONS.md`。
+## 部署与存档
+
+当前部署结构为 **浏览器 → 火山云 Caddy / FRP HTTPS 入口 → Mac 游戏服务与 SQLite**。服务仅监听回环地址；`/healthz` 检查存活，`/readyz` 检查 SQLite 就绪。
+
+生产环境设置 `NODE_ENV=production`、精确的 HTTPS `PUBLIC_ORIGIN` 与绝对路径 `DB_PATH`。macOS 常驻应用安装在 `~/Library/Application Support/WordMahjong/`，采用独立发布目录和单个 LaunchAgent，活跃数据库不放在同步盘。操作步骤见 [运维手册](docs/OPERATIONS.md)、[后台服务说明](ops/README.md) 和 [公网部署记录](docs/PUBLIC-DEPLOYMENT.md)。
 
 ```bash
 DB_PATH=/absolute/path/mahjong.sqlite npm run db:backup -- /absolute/path/backup.sqlite
-# 先停止唯一服务，恢复脚本会保存旧主库/WAL/SHM
-DB_PATH=/absolute/path/mahjong.sqlite CONFIRM_SERVICE_STOPPED=yes npm run db:restore -- /absolute/path/backup.sqlite
+
+# 恢复前停止唯一写库服务；脚本会保留旧主库及 WAL / SHM
+DB_PATH=/absolute/path/mahjong.sqlite CONFIRM_SERVICE_STOPPED=yes \
+npm run db:restore -- /absolute/path/backup.sqlite
 ```
 
-`runtime/`含受限部署配置，禁止打包或读取凭据；活跃DB、Cookie、恢复码、日志和备份不提交Git。
+`runtime/` 是本机私有部署目录。配置凭据、数据库、Cookie、恢复码、运行日志和备份不提交仓库。含命名套组的存档应使用兼容 v1.9 及以上数据结构的构建恢复，不能直接交给旧版继续写库。
 
-## 目录与当前协作
+## 文档导航
 
-- `handoff/`：只读原交接、原规则、固定上游与许可。
-- `apps/web/`：React/Three界面、唯一排句控制器、HTTP/Socket adapter。
-- `apps/server/`：身份、队列、定时器、SQLite与生产静态服务。
-- `packages/engine/`：可控时钟/seed纯引擎；`packages/contracts/`共享协议。
-- `tests/`、`scripts/`：规则、服务、浏览器及运维验证。
-- `docs/`：1.1规则覆盖、采用、验收、交接和证据；`Codex-Temp/`临时产物。
+| 文档 | 内容 |
+| --- | --- |
+| [游戏规则](docs/01-RULES.md) | 当前权威规则、AI 评审、字库与旧局兼容 |
+| [3D 牌桌采用](docs/UI-ADOPTION.md) | 上游源文件映射、视觉实现与素材边界 |
+| [变更记录](CHANGELOG.md) | 各版本功能与发布摘要 |
+| [历史变更](CHANGELOG-历史归档.md) | 早期阶段归档 |
+| [验收结果](docs/ACCEPTANCE-RESULTS.md) | 验收项目与证据层级 |
+| [验证记录](docs/VERIFICATION.md) | 实际执行结果与现场验证边界 |
+| [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
+| [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-M1基线Git提交`855305a`，实现归档提交`4131398`。Sol已完成引擎、服务、真实接线及新增AI；Astra最终软件与公网复核已通过，1.1.0阶段release为`1.1.0-20261023-094939`。具体状态见`docs/HANDOFF.md`、`docs/TASKBOARD.md`。实体手机GPU帧率、蜂窝实机及真实读屏仍需现场验证；桌面Chrome及390/430触摸模拟不冒称这些项目通过。字库未做多人实玩平衡验证。
+当前应用 **1.10.0**，新房规则 **1.2.0**，交接包 **V1.1.0**。最近游戏发布为 `1.10.0-20261023-134321`；实现与该阶段软件验收已收口，任务板保留现场验证项。README 展示修订为 **1.1.0（2026-10-23）**，本次仅更新仓库文档。
 
-历史1.2.0公共大厅发布：`1.2.0-20261023-101314`。107项自动测试通过（新增10项固定桌服务测试）；真实浏览器共享人数/直接入座/原身份恢复及公网抢桌、开始、结算、关桌释放通过。记录见`docs/LOBBY-1.2.0.md`。
+## 来源与许可
 
-历史1.3.0发布为 `1.3.0-20261023-105741`：Astra完成牌桌交互和HUD，主代理完成大厅、游戏内确认弹窗、集成验收与发布。当前协作已收口；TASKBOARD只保留本阶段摘要与现场验证项。新版1280×720真实浏览器首屏检查通过，390/430布局为纯计算测试，本次未重跑物理手机或旧版完整浏览器矩阵。
+3D 牌桌渲染移植自 [Bruce-pac/EnglishMahjong-web](https://github.com/Bruce-pac/EnglishMahjong-web)，固定提交 `6830301df3061cdd25350cf56807473e5505b311`，并保留其涉及的 Autotable 来源与 MIT 许可文本。当前字牌使用程序几何和本地系统字体生成。
 
-历史发布 `1.4.0-20261023-112341`，当前协作收口；此阶段由主代理完成增量并发布。手机实机/蜂窝/读屏边界仍保留。
-
-历史发布 `1.5.0-20261023-114040`；该阶段实现与公网验收已收口。
-
-发布 `1.6.0-20261023-120332`；一致性备份 `pre-release-20261023-120333.sqlite` 成功，公网ready=true，浏览器显示v1.6.0。端口、证书、隧道不变。 Sol完成引擎/服务测试/权威规则，主代理完成界面、集成和发布，当前协作收口。TASKBOARD旧DONE已归档。
-
-含规则1.2的存档不能直接回退给1.5及更旧应用；须使用兼容1.2的修复构建，或明确接受发布后进度丢失再恢复旧备份。服务依赖Mac在线唤醒；实体手机GPU、蜂窝、读屏及字库平衡保留现场验证边界。
-
-当前发布与协作收口：发布 `1.7.0-20261023-124000`；一致性备份 `pre-release-20261023-124001.sqlite` 成功，公网ready=true。端口、证书、隧道不变。公网验收只操作自建测试房，并保存一次与原内容相同的字库修订managed-r1，84字及各人数配比未变。 Sol完成后端、权威规则与新增测试；主代理完成管理UI、部署脚本、真实浏览器和公网验收。README/AGENTS/CHANGELOG/HANDOFF/VERIFICATION已更新，TASKBOARD旧DONE已归档。
-
-含管理状态及自定义字库的存档应使用兼容1.7的修复构建，不直接降级1.6继续写库。服务仍依赖Mac在线唤醒；本次未新增实体手机GPU、蜂窝、读屏或字库多人平衡证据。
-
-最新发布与协作收口：发布 `1.8.0-20261023-125951`；一致性备份 `pre-release-20261023-125952.sqlite` 成功，公网ready=true。端口、证书、隧道和服务器规则未变。公网验收只创建自身私房并关闭，不修改用户房间或字库。 Astra完成飞牌表现及9项回归，主代理完成真实浏览器、网络脚本和发布。旧DONE已归档，当前无已知待修实现项。
-
-动画不阻塞操作与服务器期限；刷新、断线/身份恢复、换局、暂停、关房、滚动/缩放会取消旧飞牌并对齐当前状态；减少动态效果设置直接落牌。对手摸牌仅牌背，不读取暗牌或推测牌墙内容。本次没有新增物理手机GPU、蜂窝或读屏证据，公网仍依赖Mac在线唤醒。
-
-当前发布 `1.9.0-20261023-131518`，root/Sol/Astra协作已收口；TASKBOARD已归档1.8旧DONE，只保留本阶段完成摘要与现场验证项。命名套组存档须用兼容1.9的构建恢复，不向旧版本降级继续写库。
-
-## 2026-10-23 项目发布与登记
-
-当前源码快照同步至上述GitHub仓库，保留本地开发历史；部署配置、数据库与凭据未上传。新增项目介绍示意图及生成记录，Obsidian项目笔记“【项目】-261021-字间文字麻将”与唯一总台账已同步。应用仍1.9.0，本次为文档与展示v1.0.0，不需重部署游戏。
-
-## 最新交付 · 1.10.0
-
-发布 `1.10.0-20261023-134321`，发布前一致性备份 `pre-release-20261023-134322.sqlite` 通过；公网 `/readyz` 返回true。只操作自建私有验收房，测试结束关闭；原房间、套组和云端端口配置不变。规则仍1.2.0。 README/AGENTS/CHANGELOG/HANDOFF/DECISIONS/VERIFICATION及TASKBOARD已更新；旧阶段DONE归入版本历史。当前实现已收口，实体手机验证仍保留。
+第三方许可与具体使用范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 及 [licenses](licenses/)。这些许可对应第三方采用部分；本仓库未另行声明整个项目的开源许可证。
