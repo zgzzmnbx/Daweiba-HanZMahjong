@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.23.0-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.23.1-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.23.1 · 移除顶部旧提示条 · 2026-10-24
+
+移除牌桌顶部的旧牌局提示容器及固定占位，不再出现被截断文字和内部滚动条。行动、断线与暂停仍由现有计时提示显示；AI说明保留在帮助/开局面板，评审结果保留在评审弹窗和记录，画面回退原因移到画面设置。胡牌亮相时序和权威游戏状态不变。
+
+生产构建及本地9项真实浏览器检查通过，覆盖五种窗口实际摸打、桌面几何稳定、主动托管切换、服务器超时与真实断网重连。自建房间已无计分关闭。规则1.5.1不变；手机为Chromium141视口模拟。已发布原公网入口，公网8项真实浏览器检查通过。release `1.23.1-20261024-235540`、冻结源码 `99549d7`、一致性备份 `pre-release-20261024-235541.sqlite`；ready=true，HTML/JS/CSS/核心字体与冻结构建一致。证据见 `docs/evidence/public-notice-strip-1.23.1-results.json` 和 `public-notice-strip-1.23.1-release.json`。首轮测试的断线触发房主转移，清理脚本误用原房主，测试房已通过管理员接口无计分解散；脚本改按当前hostId清理后，全流程复验通过。源码与证据随本版同步GitHub。
 
 ## v1.23.0 · 功能归顶，宽窄自如 · 2026-10-24
 
@@ -300,7 +306,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.0**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.23.1**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 

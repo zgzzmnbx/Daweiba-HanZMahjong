@@ -1,0 +1,472 @@
+{
+  "at": "2026-10-24T15:58:53.765Z",
+  "version": "1.23.1",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "no top strip, real draw/discard keeps table stable at 1280x720",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 784.5,
+            "max": 784.5
+          },
+          "height": {
+            "min": 523,
+            "max": 523
+          },
+          "x": {
+            "min": 247.75,
+            "max": 247.75
+          },
+          "y": {
+            "min": 107,
+            "max": 107
+          },
+          "stage": {
+            "min": 523,
+            "max": 523
+          },
+          "stageY": {
+            "min": 107,
+            "max": 107
+          }
+        },
+        {
+          "width": {
+            "min": 784.5,
+            "max": 784.5
+          },
+          "height": {
+            "min": 523,
+            "max": 523
+          },
+          "x": {
+            "min": 247.75,
+            "max": 247.75
+          },
+          "y": {
+            "min": 107,
+            "max": 107
+          },
+          "stage": {
+            "min": 523,
+            "max": 523
+          },
+          "stageY": {
+            "min": 107,
+            "max": 107
+          }
+        }
+      ],
+      "frames": [
+        104,
+        104
+      ],
+      "pendingFrames": [
+        12,
+        20
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "no top strip, real draw/discard keeps table stable at 1024x600",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 604.5,
+            "max": 604.5
+          },
+          "height": {
+            "min": 403,
+            "max": 403
+          },
+          "x": {
+            "min": 209.75,
+            "max": 209.75
+          },
+          "y": {
+            "min": 107,
+            "max": 107
+          },
+          "stage": {
+            "min": 403,
+            "max": 403
+          },
+          "stageY": {
+            "min": 107,
+            "max": 107
+          }
+        },
+        {
+          "width": {
+            "min": 604.5,
+            "max": 604.5
+          },
+          "height": {
+            "min": 403,
+            "max": 403
+          },
+          "x": {
+            "min": 209.75,
+            "max": 209.75
+          },
+          "y": {
+            "min": 107,
+            "max": 107
+          },
+          "stage": {
+            "min": 403,
+            "max": 403
+          },
+          "stageY": {
+            "min": 107,
+            "max": 107
+          }
+        }
+      ],
+      "frames": [
+        65,
+        65
+      ],
+      "pendingFrames": [
+        4,
+        10
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "no top strip, real draw/discard keeps table stable at 390x844",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 370,
+            "max": 370
+          },
+          "height": {
+            "min": 246.65625,
+            "max": 246.65625
+          },
+          "x": {
+            "min": 10,
+            "max": 10
+          },
+          "y": {
+            "min": 247.171875,
+            "max": 247.171875
+          },
+          "stage": {
+            "min": 330.65625,
+            "max": 330.65625
+          },
+          "stageY": {
+            "min": 167.171875,
+            "max": 167.171875
+          }
+        },
+        {
+          "width": {
+            "min": 370,
+            "max": 370
+          },
+          "height": {
+            "min": 246.65625,
+            "max": 246.65625
+          },
+          "x": {
+            "min": 10,
+            "max": 10
+          },
+          "y": {
+            "min": 247.171875,
+            "max": 247.171875
+          },
+          "stage": {
+            "min": 330.65625,
+            "max": 330.65625
+          },
+          "stageY": {
+            "min": 167.171875,
+            "max": 167.171875
+          }
+        }
+      ],
+      "frames": [
+        97,
+        97
+      ],
+      "pendingFrames": [
+        9,
+        52
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "no top strip, real draw/discard keeps table stable at 320x480",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 241.5,
+            "max": 241.5
+          },
+          "height": {
+            "min": 161,
+            "max": 161
+          },
+          "x": {
+            "min": 39.25,
+            "max": 39.25
+          },
+          "y": {
+            "min": 132,
+            "max": 132
+          },
+          "stage": {
+            "min": 237,
+            "max": 237
+          },
+          "stageY": {
+            "min": 56,
+            "max": 56
+          }
+        },
+        {
+          "width": {
+            "min": 241.5,
+            "max": 241.5
+          },
+          "height": {
+            "min": 161,
+            "max": 161
+          },
+          "x": {
+            "min": 39.25,
+            "max": 39.25
+          },
+          "y": {
+            "min": 132,
+            "max": 132
+          },
+          "stage": {
+            "min": 237,
+            "max": 237
+          },
+          "stageY": {
+            "min": 56,
+            "max": 56
+          }
+        }
+      ],
+      "frames": [
+        71,
+        71
+      ],
+      "pendingFrames": [
+        18,
+        14
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "no top strip, real draw/discard keeps table stable at 667x375",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 245.75,
+            "max": 245.75
+          },
+          "y": {
+            "min": 77,
+            "max": 77
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 77,
+            "max": 77
+          }
+        },
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 245.75,
+            "max": 245.75
+          },
+          "y": {
+            "min": 77,
+            "max": 77
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 77,
+            "max": 77
+          }
+        }
+      ],
+      "frames": [
+        54,
+        54
+      ],
+      "pendingFrames": [
+        9,
+        8
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "autoplay toggle works without top strip or geometry shifts",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 245.75,
+            "max": 245.75
+          },
+          "y": {
+            "min": 77,
+            "max": 77
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 77,
+            "max": 77
+          }
+        },
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 245.75,
+            "max": 245.75
+          },
+          "y": {
+            "min": 77,
+            "max": 77
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 77,
+            "max": 77
+          }
+        }
+      ],
+      "frames": [
+        39,
+        38
+      ],
+      "pendingFrames": [
+        13,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "network loss and reconnect remain visible in existing turn HUD",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closed without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "scope": "real private room, two clients; mobile Chromium viewport simulation"
+}

@@ -131,3 +131,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.22.3滚动条统一game-scrollbars.css；标准scrollbar-color/width非auto会覆盖Chromium的WebKit部件，兼容分支需同时复位。Playwright截图验收必须ignoreDefaultArgs移除--hide-scrollbars，否则会把隐藏滚动条误判为样式通过；保留原生拖动/键盘/触摸与高对比回退。
 
 - 1.23.0顶部功能顺序与手机五入口由用户明确指定；宽屏标点/音乐/闲聊/涂鸦/帮助/记录/管理/设置/菜单，≤699px只保留前四项和菜单。设置子面板复用原处理器；音乐控制独立但播放器Hook不得随面板关闭卸载。验收须检查顺序、等宽等高、实际点击与所有菜单功能可达。
+
+- 断线验收可能触发房主转移；测试房清理须重新读取public.hostId选择当前房主，不能始终使用最早创建者。公网测试身份保留在Codex-Temp直至清理成功，不提交仓库。
