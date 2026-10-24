@@ -1,9 +1,9 @@
-.portrait-comma-close{display:none}
-/* One menu, one action rail, and the hand: portrait chrome never takes over the felt. */
+.portrait-comma-close,.portrait-punctuation-trigger{display:none}
+/* Frequent tools stay in the header; secondary utilities share the menu. */
 @media(max-width:699px) and (orientation:portrait){
  #root .game-shell{position:relative}
  #root .game-shell .topbar{height:48px;gap:8px;border-bottom-color:#a88c5033}
- #root .game-shell .topbar .portrait-secondary,#root .game-shell .topbar .chat-dock{display:none}
+ #root .game-shell .topbar .portrait-secondary{display:none}
  #root .game-shell .topbar .wordmark{display:block;font-size:23px;flex:none}
  #root .game-shell .topbar .room-meta{margin-left:auto;display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:7px;min-width:0}
  #root .game-shell .topbar .room-code{font-size:10px;letter-spacing:0}
@@ -25,4 +25,15 @@
  #root .game-shell .turn-hud{width:100%;height:34px;background:linear-gradient(90deg,#1a2a21aa,#172b22ee);border-color:#b89f5e35}
  #root .game-shell .rack-area.expanded{padding-bottom:2px}
  #root .game-shell .chat-panel{top:51px;max-height:calc(100% - 58px)}
+}
+
+@media(max-width:699px) and (orientation:portrait){
+ #root .game-shell .topbar{padding:0 10px;gap:6px}
+ #root .game-shell .topbar .room-meta{flex:1;flex-direction:column;align-items:flex-end;gap:0;line-height:1.3;margin-left:0;overflow:hidden}
+ #root .game-shell .topbar .room-code{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px}
+ #root .game-shell .topbar .chat-dock{display:flex;flex:none}
+ #root .game-shell .topbar .portrait-punctuation-trigger{display:flex}
+ #root .game-shell .topbar .portrait-punctuation-trigger,#root .game-shell .topbar .chat-toggle{--hud-size:44px;position:relative}
+ #root .game-shell .portrait-punctuation-trigger>svg{width:22px;height:22px;flex:none}
+ #root .game-shell .portrait-punctuation-trigger[aria-expanded=true]{background:#4b5834;border-color:#e7c878;color:#ffe9ac}
 }

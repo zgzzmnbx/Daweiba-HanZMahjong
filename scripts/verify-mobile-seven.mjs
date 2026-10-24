@@ -10,7 +10,7 @@ async function seven(page){
  const tiles=await page.locator('.sentence-rack .tile').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{x:r.x,y:r.y,w:r.width,h:r.height,hit:!!hit&&e.contains(hit)};}));assert.equal(tiles.length,14);
  const top=Math.min(...tiles.map(t=>t.y)),rows=tiles.map(t=>Math.round((t.y-top)/(t.h+8)));assert.deepEqual([0,1].map(row=>rows.filter(r=>r===row).length),[7,7]);
  for(const t of tiles){assert(t.hit,'tile blocked or clipped '+JSON.stringify(t));assert(t.x>=0&&t.x+t.w<=await page.evaluate(()=>innerWidth)+1);}
- const box=await page.locator('.rack-area').evaluate(e=>({h:e.clientHeight,sh:e.scrollHeight}));assert(box.sh<=box.h+1,'rack needs scrolling '+JSON.stringify({box,tiles,children:await page.locator('.sentence-rack').evaluate(e=>[...e.children].map(c=>({cl:c.className,rect:c.getBoundingClientRect().toJSON(),transform:getComputedStyle(c).transform,style:c.getAttribute('style')})))}));return tiles;
+ const box=await page.locator('.rack-area').evaluate(e=>({top:e.getBoundingClientRect().top,bottom:e.getBoundingClientRect().bottom,overflow:getComputedStyle(e).overflowY,scroll:e.scrollTop}));assert.equal(box.overflow,'visible');assert.equal(box.scroll,0);for(const t of tiles)assert(t.y>=box.top-4&&t.y+t.h<=box.bottom+1,'tile outside rack '+JSON.stringify({t,box}));return tiles;
 }
 async function menu(p,label){const b=p.page.getByRole('button',{name:label,exact:true});if(!await b.isVisible())await p.page.getByRole('button',{name:'游戏菜单',exact:true}).click();await b.click();}
 async function screenshot(p,name){await p.page.screenshot({path:`docs/evidence/${prefix}-${name}.png`});}

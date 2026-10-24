@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T08:20:03.813Z",
+  "version": "1.21.2",
+  "origin": "https://118.196.107.182:1240",
+  "sourceCommit": "fb15844e2a5cd3055c4dc8438366d82d6046ebc6",
+  "release": "/Users/sm/Library/Application Support/WordMahjong/releases/1.21.2-20261024-161938",
+  "backup": "pre-release-20261024-161939.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "htmlMatches": true,
+  "assets": [
+    {
+      "path": "/assets/index-DRZ17eQs.js",
+      "bytes": 907877,
+      "sha256": "a536d8ede58b8adc7a78bc144de5a2f72cfc2ee51138aea7740e9059e05303d4"
+    },
+    {
+      "path": "/assets/index-CDBjEn0X.css",
+      "bytes": 138875,
+      "sha256": "f1f50e5430f411c2be908455b3a20106f428b77fae9ddd322fbe43ee09c2dc34"
+    }
+  ]
+}
