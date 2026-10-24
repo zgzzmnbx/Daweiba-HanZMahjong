@@ -1,3 +1,5 @@
+import {useGameSfx} from './audio/use-game-sfx';
+import {SoundControls} from './audio/SoundControls';
 import {SpectatorDoodle} from './SpectatorDoodle';
 import {useGameSpeech} from './speech-client';
 import {useEffect,useLayoutEffect,useRef,useState} from 'react';
@@ -25,8 +27,10 @@ export function SpectatorTable({roomId,administrator=false,onLeave,onAdmin}:{roo
  useLayoutEffect(()=>{if(view)renderer.current?.replace(view,false,null);},[snapshot,!!view,fallback]);
  const p=snapshot?.public,now=snapshot?snapshot.serverNow+Math.max(0,clock-received.current):0,seconds=p?.phase.deadline?Math.max(0,Math.ceil((p.phase.deadline.endsAt-now)/1000)):null;
  const speech=useGameSpeech(p??null,[roomId,p?.roundId,administrator].join('|'),!!p&&p.suspension.kind==='RUNNING'&&p.phase.kind!=='ROOM_CLOSED',snapshot?.serverNow??0,administrator);
+ const sfx=useGameSfx(p??null,[roomId,administrator].join('|'),!!p&&!error,snapshot?.serverNow??0,speech.playing);
  const proposal=p?.phase.kind==='HU_VOTE'?p.phase.proposal:p?.history.at(-1),last=p?.discards.at(-1);
  return <section className="spectator-shell" aria-label={administrator?'管理员观战':'观战牌桌'}><header className="topbar game-hud"><button onClick={onLeave} className="hud-tool">返回大厅</button><div className="wordmark">字间</div><strong>{administrator?'管理员观战':'观战'}</strong><span className="room-code">{roomId}</span>{onAdmin&&<button onClick={onAdmin} className="hud-tool" aria-label="管理员入口">管理</button>}</header>
+  <details className="spectator-audio"><summary>♫ 音效</summary><SoundControls sfx={sfx}/></details>
   {error?<div className="notice" role="alert">{error}</div>:!p?<div className="notice" role="status">正在进入观战…</div>:<>
    <div className="spectator-status"><strong>{phaseNames[p.phase.kind]}</strong><span>{p.suspension.kind==='RUNNING'?seconds!==null?`${seconds} 秒`:'': '牌局已暂停'} · 余 {p.wallRemaining} 张</span></div>
    <div className="table-stage spectator-stage"><div className="viewport"><div ref={host} className="canvas-host" aria-hidden="true"/>{!fallback&&<SpectatorDoodle renderer={renderer} board={snapshot?.doodle}/>}{view&&<SeatBadges seats={view.seats} labels={labels} fallback={fallback} now={now} anchors={()=>renderer.current?.motionAnchors()??{}}/>}{fallback&&<div className="spectator-fallback">{p.players.map(player=><span key={player.playerId}>{player.nickname} · {player.handCount} 张</span>)}</div>}{last&&<div className="spectator-discard"><small>最近弃牌</small><b>{last.tile.char}</b></div>}</div></div>

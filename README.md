@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.15.0-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.16.0-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -34,6 +34,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.16.0 · 落牌有声，胡牌有势
+
+已发布到[公网游戏](https://118.196.107.182:1240/)。开局、摸打吃、胡牌亮相、反对投票和结算加入九类程序合成音效；工具→声音可分别控制音效、语音并调节音量。首次点击后启用，朗读时自动压低音效，刷新重连不补播旧动作。
+
+280项自动测试、14项本地与12项公网音频/联机检查通过，已备份并保留既有房间和天书。声音波形和八路混合无削波；实体设备听感不以自动检测代替。[音效增量](docs/increments/GAME-SOUND-20261024-【codex】.md) · [九类音效试听](docs/evidence/sound-effects-1.16.0-preview.mp3)。
 
 ## v1.15.0 · 胡牌天书
 

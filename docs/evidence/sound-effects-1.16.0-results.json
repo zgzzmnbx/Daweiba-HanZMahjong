@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-24T01:18:52.533Z",
+  "scope": "local real Chromium/HTTP/Socket.IO/SQLite and AudioContext analyser, no mocked sound nodes",
+  "checks": [
+    {
+      "name": "initial room restore is silent and creates no unsolicited sound",
+      "status": "PASS"
+    },
+    {
+      "name": "real start command produces running AudioContext and nonzero output on both players",
+      "status": "PASS",
+      "a": {
+        "starts": 13,
+        "peak": 0.06757742166519165,
+        "states": [
+          "running"
+        ]
+      },
+      "b": {
+        "starts": 13,
+        "peak": 0.07282775640487671,
+        "states": [
+          "running"
+        ]
+      }
+    },
+    {
+      "name": "authoritative discard has real audible waveform on both clients",
+      "status": "PASS",
+      "a": {
+        "starts": 6,
+        "peak": 0.0463094562292099,
+        "states": [
+          "running"
+        ]
+      },
+      "b": {
+        "starts": 6,
+        "peak": 0.0463094562292099,
+        "states": [
+          "running"
+        ]
+      }
+    },
+    {
+      "name": "actual draw plays a distinct soft cue for both clients",
+      "status": "PASS"
+    },
+    {
+      "name": "muted player stays silent while peer hears new draw/discard events",
+      "status": "PASS"
+    },
+    {
+      "name": "mute survives reload; independent volume/preview works without enabling speech",
+      "status": "PASS"
+    },
+    {
+      "name": "zero volume drops cues instead of queuing them for later",
+      "status": "PASS"
+    },
+    {
+      "name": "confirmed HU starts drum/gong and fourteen actual impact voices on both players",
+      "status": "PASS"
+    },
+    {
+      "name": "published rejection and failed verdict play egg and descending result cues on both players",
+      "status": "PASS"
+    },
+    {
+      "name": "clock rerenders and real reload/identity restoration do not replay old rejection or HU",
+      "status": "PASS"
+    },
+    {
+      "name": "volume persists and real settings controls fit three phone/landscape viewports",
+      "status": "PASS"
+    },
+    {
+      "name": "room teardown closes AudioContexts; only own verification room closed without scoring",
+      "status": "PASS"
+    },
+    {
+      "name": "real speech playback ducks effect bus to 30% and restores it after speech stop (local audio fixture)",
+      "status": "PASS"
+    },
+    {
+      "name": "actual approving ballot and winning settlement generate victory fanfare on both clients",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-24T01:19:23.498720+00:00",
+  "source": "16d0058",
+  "release": "1.16.0-20261024-091909",
+  "ready": true,
+  "staticBytesMatch": true,
+  "assets": [
+    {
+      "asset": "/assets/index-B3s8Ctta.js",
+      "sha256": "65ff500bba8757b4f63833c2393e3ae2c396e6a1d111cefd23e7fed714376f4c",
+      "bytes": 892751
+    },
+    {
+      "asset": "/assets/index-BG9_IT8u.css",
+      "sha256": "ad7422342446937da56ae075d33678237dd7d92698b1cb96d886cdd4cf2a984b",
+      "bytes": 121315
+    }
+  ],
+  "automatedTests": 280,
+  "localAudioBrowserChecks": 14,
+  "backup": "pre-release-20261024-091910.sqlite"
+}
