@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-24T12:31:33.885Z",
+  "status": "PASS",
+  "target": "5F7F3EE455",
+  "scope": "exclusive offline maintenance through normal closeGame/Store.commit; no administrator session created",
+  "phaseBefore": "HU_VOTE",
+  "phaseAfter": "ROOM_CLOSED",
+  "wins": [
+    0,
+    0,
+    0
+  ],
+  "otherSnapshotsByteEqual": true,
+  "backup": "pre-test-cleanup-20261024-203132.sqlite",
+  "serviceStopped": true
+}

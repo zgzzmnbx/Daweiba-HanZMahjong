@@ -119,4 +119,4 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 
 - 1.21.3牌面统一自托管Hanz Tile Sans（Noto Sans SC 600静态子集），CSS与Canvas必须保持同字重。Canvas显式document.fonts.load触发可见字下载，loadingdone重建纹理，不能只等初始fonts.ready。来源/OFL/构建清单见docs/TILE-FONT.md；常用字包只覆盖核心，新增字由unicode-range子集加载。
 
-- 1.21.4普通摸打/响应阶段编号变化不能打断有效持牌；GameTable、控制器选中与Three.js预览共用上下文边界。手牌实体、草稿修订、身份/轮次/控制权、暂停、托管及胡牌边界继续取消；松手必须使用最新快照元数据，不能保留旧phaseId发命令。
+- 1.21.4普通摸打/响应阶段编号变化不能打断有效持牌；GameTable、控制器选中与Three.js预览共用上下文边界。手牌实体、草稿修订、身份/轮次/控制权、暂停、托管及胡牌边界继续取消；松手必须使用最新快照元数据，不能保留旧phaseId发命令。公网验收失败需先私有保存临时身份以便关闭自建房，凭据不入Git。

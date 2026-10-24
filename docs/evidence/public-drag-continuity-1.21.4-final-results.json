@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-24T12:29:17.947Z",
+  "status": "PASS",
+  "version": "1.21.4",
+  "browser": "141.0.7390.37",
+  "scope": "actual HTTPS/WSS, three independent players, real response deadlines, mouse + CDP touch; own rooms closed without score/book entries",
+  "checks": [
+    {
+      "name": "held tile survives real opponent discard without pointer movement 390",
+      "status": "PASS"
+    },
+    {
+      "name": "held tile survives response timeout and opponent draw 390",
+      "status": "PASS"
+    },
+    {
+      "name": "release saves one reorder with latest authoritative phase 390",
+      "status": "PASS"
+    },
+    {
+      "name": "own draw cancels stale pointer and never applies stale draft or discard 390",
+      "status": "PASS"
+    },
+    {
+      "name": "HU review cancels holding and rejected review leaves scores unchanged 390",
+      "status": "PASS"
+    },
+    {
+      "name": "held tile survives real opponent discard without pointer movement 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "held tile survives response timeout and opponent draw 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "release saves one reorder with latest authoritative phase 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "own draw cancels stale pointer and never applies stale draft or discard 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "HU review cancels holding and rejected review leaves scores unchanged 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "held tile survives real opponent discard without pointer movement 320",
+      "status": "PASS"
+    },
+    {
+      "name": "held tile survives response timeout and opponent draw 320",
+      "status": "PASS"
+    },
+    {
+      "name": "release saves one reorder with latest authoritative phase 320",
+      "status": "PASS"
+    },
+    {
+      "name": "own draw cancels stale pointer and never applies stale draft or discard 320",
+      "status": "PASS"
+    },
+    {
+      "name": "HU review cancels holding and rejected review leaves scores unchanged 320",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

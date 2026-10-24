@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-24T12:20:53.393460+00:00",
+  "status": "PASS",
+  "version": "1.21.4",
+  "source": "76782bc2aac6eeb1a52fcc5554bb7a7539afaa83",
+  "release": "1.21.4-20261024-201953",
+  "backup": "pre-release-20261024-201954.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "indexSha256": "74109b7af3308b98eacaf2bb43a81269391557ca0d5e5511ca81a2ef51f0cc55",
+  "assets": [
+    {
+      "path": "/fonts/hanz-tile-600-core-e79f9e3695.woff2",
+      "bytes": 122588,
+      "sha256": "e79f9e3695785b4687e2c5dbabc3cff994b17fa4f62a4e5898ae4d87f9714dfb"
+    },
+    {
+      "path": "/assets/index-Parg81WK.js",
+      "bytes": 908899,
+      "sha256": "3cc31f71c015f39b9a4cdaa5e0ee67c3cea4e679df6a8f1ae42073321000f63a"
+    },
+    {
+      "path": "/assets/index-BHcgnJDX.css",
+      "bytes": 162023,
+      "sha256": "567f6c665b13096b3e1943667e7f7b9a8b0ea191773614144e380d8ec8ba59dd"
+    }
+  ],
+  "postCleanup": {
+    "at": "2026-10-24T12:32:06.804448+00:00",
+    "ready": {
+      "ready": true
+    },
+    "ownFailedRoomClosed": true
+  }
+}
