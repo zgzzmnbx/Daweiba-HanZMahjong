@@ -165,6 +165,7 @@ export class MainView {
     const labels=this.last?.view.seats.map(s=>({seat:s.logicalSeat,...project(new T.Vector3(s.placement.x,s.placement.y,13))}))??[];
     this.projected(hits,labels);if(moving)this.render();
   });}
+  refresh(){this.render();}
   diagnostics(){return{...this.stats,memory:{...this.renderer.info.memory},calls:this.renderer.info.render.calls,dpr:this.renderer.getPixelRatio()};}
   dispose(){if(this.disposed)return;this.disposed=true;this.reduced.removeEventListener('change',this.onMotion);cancelAnimationFrame(this.frame);this.observer.disconnect();document.fonts.removeEventListener('loadingdone',this.onFonts);this.renderer.domElement.removeEventListener('webglcontextlost',this.onLost);this.clearTiles();this.clearFaces();const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();this.scene.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();this.body.dispose();this.face.dispose();this.ivory.dispose();this.back.dispose();this.shadow.dispose();this.centerTexture.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

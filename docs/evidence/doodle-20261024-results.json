@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-24T00:24:45.393Z",
+  "scope": "real Chrome/HTTP/Socket.IO/SQLite, separate identities, local controlled clock",
+  "checks": [
+    {
+      "name": "stroke streams to a second actual player before pointer release, isolated from other rooms",
+      "status": "PASS"
+    },
+    {
+      "name": "same authoritative ink on both browsers without advancing game state",
+      "status": "PASS"
+    },
+    {
+      "name": "permitted observers receive public ink without author credentials",
+      "status": "PASS"
+    },
+    {
+      "name": "different colors/thickness and undo only removes the requesting player ink",
+      "status": "PASS"
+    },
+    {
+      "name": "normal mode lets real tile clicks through",
+      "status": "PASS"
+    },
+    {
+      "name": "local visibility toggle never erases shared ink; reload restores persisted board",
+      "status": "PASS"
+    },
+    {
+      "name": "real spectator renders tabletop ink with no drawing controls",
+      "status": "PASS"
+    },
+    {
+      "name": "palette fits and remains clickable without page scrolling",
+      "status": "PASS",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "palette fits and remains clickable without page scrolling",
+      "status": "PASS",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "palette fits and remains clickable without page scrolling",
+      "status": "PASS",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "palette fits and remains clickable without page scrolling",
+      "status": "PASS",
+      "width": 390,
+      "height": 360
+    },
+    {
+      "name": "real emulated touch pointer draws and syncs on a phone viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape and actual disconnect exit paint mode; reconnect resynchronizes",
+      "status": "PASS"
+    },
+    {
+      "name": "clear mine retains other player drawing",
+      "status": "PASS"
+    },
+    {
+      "name": "review modal takes priority over drawing on both players",
+      "status": "PASS"
+    },
+    {
+      "name": "real table camera/ink picking works at seat capacity",
+      "status": "PASS",
+      "capacity": 3
+    },
+    {
+      "name": "real table camera/ink picking works at seat capacity",
+      "status": "PASS",
+      "capacity": 4
+    },
+    {
+      "name": "real table camera/ink picking works at seat capacity",
+      "status": "PASS",
+      "capacity": 5
+    },
+    {
+      "name": "real table camera/ink picking works at seat capacity",
+      "status": "PASS",
+      "capacity": 6
+    }
+  ],
+  "errors": []
+}

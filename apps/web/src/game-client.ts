@@ -1,3 +1,4 @@
+import {RoomDoodleClient} from './room-doodle-client';
 import {RoomChatClient} from './room-chat-client';
 import {io,type Socket} from 'socket.io-client';
 import type {ClientCommand,CommandResult,ResyncEnvelope,ServerSocketEvent} from '../../../packages/contracts/types';
@@ -8,12 +9,13 @@ export function acceptEnvelope(current:ResyncEnvelope|null,incoming:ResyncEnvelo
 export class OnlineClient implements GameTransport{
  socket:Socket|null=null;envelope:ResyncEnvelope|null=null;connected=false;controlled=true;closed=false;reconnectTimer:ReturnType<typeof setTimeout>|null=null;restoreAction:string|null=null;
  readonly chat=new RoomChatClient(()=>this.socket&&this.envelope&&this.connected&&this.controlled&&!this.closed?{socket:this.socket,roomId:this.envelope.public.roomId}:null);
+ readonly doodle=new RoomDoodleClient(()=>this.socket&&this.envelope&&this.connected&&this.controlled&&!this.closed?{socket:this.socket,roomId:this.envelope.public.roomId}:null);
  private generation=0;private restoreController:AbortController|null=null;private restoring:Promise<void>|null=null;
  constructor(readonly update:()=>void,readonly recovery:(code:string)=>void,readonly message:(text:string)=>void){}
  accept(e:ResyncEnvelope){if(!acceptEnvelope(this.envelope,e))return;this.envelope=e;this.update();}
  start(e:ResyncEnvelope){this.close();this.envelope=e;this.controlled=true;this.closed=false;this.open(this.generation);this.update();}
  private current(generation:number,socket?:Socket){return !this.closed&&this.controlled&&generation===this.generation&&(!socket||this.socket===socket);}
- private open(generation=this.generation){if(!this.current(generation))return;this.socket?.removeAllListeners();this.socket?.disconnect();const socket=io({transports:['websocket','polling'],reconnection:false});this.socket=socket;this.chat.listen(socket,()=>this.current(generation,socket));
+ private open(generation=this.generation){if(!this.current(generation))return;this.socket?.removeAllListeners();this.socket?.disconnect();const socket=io({transports:['websocket','polling'],reconnection:false});this.socket=socket;this.chat.listen(socket,()=>this.current(generation,socket));this.doodle.listen(socket,()=>this.current(generation,socket));
  socket.on('connect',()=>{if(!this.current(generation,socket))return;this.connected=false;this.update();});socket.on('message',(event:ServerSocketEvent)=>{if(!this.current(generation,socket))return;if(event.type==='RESYNC'){this.accept(event.payload);this.connected=true;this.update();}if(event.type==='CONTROL_REVOKED'){this.controlled=false;this.connected=false;this.restoreController?.abort();if(this.reconnectTimer)clearTimeout(this.reconnectTimer);this.reconnectTimer=null;this.restoreAction=null;if(this.envelope)this.envelope={...this.envelope,private:{...this.envelope.private,hand:[],draft:{orderedTileIds:[],commaAfterTileIds:[]},candidateDraft:null,ownBallot:null},legalActions:[]};this.message(event.reason==='ADMIN_KICKED'?'你已被管理员移出房间，原座位身份已失效。':'座位已在另一页面接管，此页面已撤销控制。');this.update();}if(event.type==='RECOVERY_CODE')this.recovery(event.delivery.recoveryCode);if(event.type==='ERROR')this.message(errorText[event.code]??event.code);});
  socket.on('disconnect',()=>{if(!this.current(generation,socket))return;this.connected=false;this.update();this.queueReconnect(generation);});socket.on('connect_error',()=>{if(!this.current(generation,socket))return;this.connected=false;this.update();this.queueReconnect(generation);});}
  private queueReconnect(generation=this.generation){if(!this.current(generation)||this.reconnectTimer)return;this.reconnectTimer=setTimeout(()=>{this.reconnectTimer=null;if(this.current(generation))void this.restore();},1500);}

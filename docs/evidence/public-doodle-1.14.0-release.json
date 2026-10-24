@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-24T00:34:06.952256+00:00",
+  "version": "1.14.0",
+  "release": "1.14.0-20261024-083259",
+  "backup": "pre-release-20261024-083300.sqlite",
+  "status": "PASS",
+  "ready": true,
+  "artifacts": [
+    {
+      "path": "index.html",
+      "sha256": "24d503f783046923d59242e9b0b532d2d858f08584eefb8473f6751b9fc3f9f5",
+      "matchesFrozenBuild": true
+    },
+    {
+      "path": "/assets/index-Cg_0iCX7.js",
+      "sha256": "df5361feacff94e425550b770c13fd23953d64ba8650a0b7682fa806327b1287",
+      "matchesFrozenBuild": true
+    },
+    {
+      "path": "/assets/index-mJyzh_2Q.css",
+      "sha256": "187c5e89c00cb41580efe5772270e534001c4f55678ccdbbe7bd6a94f190a488",
+      "matchesFrozenBuild": true
+    }
+  ],
+  "browserEvidence": "public-doodle-1.14.0-results.json"
+}
