@@ -1,5 +1,5 @@
 {
-  "rulesVersion": "1.4.0",
+  "rulesVersion": "1.4.1",
   "deckVersion": "daily-v1",
   "playerCounts": [
     2,
@@ -20,7 +20,7 @@
   "voteMs": 60000,
   "postHuDiscardMs": 120000,
   "disconnectGraceMs": 15000,
-  "botActionDelayMs": 5000,
+  "botActionDelayMs": 3000,
   "recoveryMinActionMs": 10000,
   "allOfflineRetentionMs": 86400000,
   "reviewerPolicy": "freeze_other_online_humans_and_designated_bots_at_vote_start",

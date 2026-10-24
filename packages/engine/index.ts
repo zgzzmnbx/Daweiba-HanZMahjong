@@ -36,7 +36,7 @@ function bump(g:Game){g.public.stateVersion=(g.public.stateVersion+1) as C.State
 function person(g:Game,pid:C.PlayerId){const p=g.public.players.find(p=>p.playerId===pid);need(p,'NOT_ROOM_MEMBER');return p;}
 function online(g:Game){return g.public.players.filter(p=>!p.isBotSeat&&p.connected&&p.presence==='HUMAN');}
 function automatic(p:C.PublicPlayer){return p.presence==='BOT'||(p.autoPlay===true&&p.presence==='HUMAN'&&p.connected);}
-function usesAiReview(g:Game){return ['1.2.0','1.3.0','1.4.0'].includes(g.public.rulesVersion);}
+function usesAiReview(g:Game){return ['1.2.0','1.3.0','1.4.0','1.4.1'].includes(g.public.rulesVersion);}
 function reviewersFor(g:Game,pid:C.PlayerId){return g.public.players.filter(p=>p.playerId!==pid&&((!p.isBotSeat&&!p.autoPlay&&p.connected&&p.presence==='HUMAN')||(usesAiReview(g)&&p.isBotSeat)));}
 function phase(g:Game,p:any,now:number,ms:number|null){if(p.kind==='ROOM_CLOSED'){g.aiAutoCloseAt=null;if(g.public.phase.kind==='ROUND_FINISHED')g.archive.push(structuredClone(g.public));g.public.suspension={kind:'RUNNING'};g.expiresAt=null;g.pausedRemaining=null;g.pendingWithdrawal=false;g.firstRecoveryPending=false;for(const pub of g.public.players)pub.graceEndsAt=null;}g.public.phase={...p,phaseId:id(g,'PhaseId'),deadline:ms===null?null:{endsAt:(now+ms) as C.UtcMs,remainingMsWhenPaused:null}};g.botDue=null;}
 function normalize(g:Game,pid:C.PlayerId){const p=g.players.get(pid)!;const ids=p.hand;const ordered=p.draft.orderedTileIds.filter(x=>ids.includes(x));ordered.push(...ids.filter(x=>!ordered.includes(x)));p.draft={orderedTileIds:ordered,commaAfterTileIds:p.draft.commaAfterTileIds.filter(x=>ordered.includes(x)&&ordered.at(-1)!==x) as unknown as C.AtMostThree<C.TileId>};p.draftVersion++;const pub=g.public.players.find(x=>x.playerId===pid);if(pub)pub.handCount=ids.length;}
@@ -52,8 +52,8 @@ function beginRound(g:Game,now:number,nextDeck:DeckSnapshot=g.roundDeck){
  validateDeck(nextDeck);const named=nextDeck as Partial<DeckSetSnapshot>;if(named.id&&g.public.deckSetId&&g.public.deckSetId!==named.id)throw new Error('IMMUTABLE_DECK_SET_BINDING');
  need(g.public.players.length===g.public.capacity&&g.public.players.every(p=>p.isBotSeat||(p.ready&&p.connected&&p.presence==='HUMAN'))&&online(g).length>=1&&!g.public.closeAfterRound,'NOT_ALL_READY');
  if(g.public.roundId)g.archive.push(structuredClone(g.public));
- // Only a new round upgrades an existing 1.1/1.2/1.3 room. Active rounds and all 1.0 rooms stay frozen.
- if(['1.1.0','1.2.0','1.3.0'].includes(g.public.rulesVersion))g.public.rulesVersion='1.4.0';
+ // Only a new round upgrades an existing 1.1–1.4 room. Active rounds and all 1.0 rooms stay frozen.
+ if(['1.1.0','1.2.0','1.3.0','1.4.0'].includes(g.public.rulesVersion))g.public.rulesVersion='1.4.1';
  g.roundDeck=structuredClone(nextDeck);g.public.deckVersion=nextDeck.version;if(named.id){g.public.deckSetId=named.id;g.public.deckSetName=named.name;}updatePractice(g,true);g.public.roundId=id(g,'RoundId');g.public.dealerSeat=(g.public.dealerSeat===null?Math.floor(random(g)*g.public.capacity):nextSeat(g.public.dealerSeat,g.public.capacity)) as C.SeatIndex;
  for(const p of g.players.values()){p.hand=[];p.draft={orderedTileIds:[],commaAfterTileIds:[]};p.candidateDraft=null;p.protected=null;delete p.manualTurnDeadline;}g.tiles.clear();g.wall=[];g.cursor=0;g.public.discards=[];g.public.history=[];g.response=null;g.review=null;g.pendingWithdrawal=false;g.lastAutoDiscard=null;g.public.lastAutomaticDiscard=null;g.expiresAt=null;g.public.suspension={kind:'RUNNING'};
  for(const [i,e] of g.roundDeck.entries.entries()){need(isHanChar(e.char),'ILLEGAL_TILE');for(let c=0;c<e.copiesByPlayers[String(g.public.capacity) as '2'];c++){const tileId=`${g.public.roundId}:${g.public.deckVersion}:N${g.public.capacity}:${String(i).padStart(3,'0')}:${String(c).padStart(2,'0')}` as C.TileId;g.tiles.set(tileId,{tileId,char:e.char});g.wall.push(tileId);}}
@@ -75,7 +75,7 @@ function continueResponse(g:Game,now:number){const r=g.response!;g.review=null;f
  const seat=nextSeat(person(g,r.discarderId).seat,g.public.capacity);g.response=null;ordinaryTurn(g,seat,now);
 }
 function beginVote(g:Game,pid:C.PlayerId,source:C.CandidateSource,sentence:C.Sentence,now:number){const reviewers=reviewersFor(g,pid).map(p=>p.playerId);need(reviewers.length,'NO_HUMAN_REVIEWER');const snapshot={sentence:structuredClone(sentence),tiles:sentence.orderedTileIds.map(t=>g.tiles.get(t)!)};phase(g,{kind:'HU_VOTE',proposal:{proposalId:id(g,'ProposalId'),applicantId:pid,source,snapshot,revealedAt:now,reviewerCount:reviewers.length,threshold:Math.floor(reviewers.length/2)+1,submittedBallotCount:0}},now,timingForRules(g.public.rulesVersion).voteMs);g.review={reviewers,ballots:new Map()};g.players.get(pid)!.candidateDraft=null;
- if(['1.3.0','1.4.0'].includes(g.public.rulesVersion)&&g.public.phase.kind==='HU_VOTE')g.public.phase.proposal.reviewers=reviewers.map(playerId=>{const p=person(g,playerId);return{playerId,nickname:p.nickname,isBotSeat:!!p.isBotSeat,choice:'PENDING',objectionRanges:[]};});
+ if(['1.3.0','1.4.0','1.4.1'].includes(g.public.rulesVersion)&&g.public.phase.kind==='HU_VOTE')g.public.phase.proposal.reviewers=reviewers.map(playerId=>{const p=person(g,playerId);return{playerId,nickname:p.nickname,isBotSeat:!!p.isBotSeat,choice:'PENDING',objectionRanges:[]};});
  // One draw per designated AI, in stable seat order, inside the same command transaction.
  // Persisted ballots and RNG state are the receipt; recovery never calls this function again.
  for(const reviewerId of reviewers){if(usesAiReview(g)&&person(g,reviewerId).isBotSeat)g.review.ballots.set(reviewerId,random(g)<(rules.aiApprovalProbability??0.7)?{choice:'APPROVE'}:{choice:'REJECT',objectionRanges:[]});}
@@ -83,7 +83,7 @@ function beginVote(g:Game,pid:C.PlayerId,source:C.CandidateSource,sentence:C.Sen
  syncPublicVotes(g);if(g.review.ballots.size===reviewers.length)settleVote(g,now);
 }
 function syncPublicVotes(g:Game,final=false){
- if(!['1.3.0','1.4.0'].includes(g.public.rulesVersion)||g.public.phase.kind!=='HU_VOTE'||!g.review)return;
+ if(!['1.3.0','1.4.0','1.4.1'].includes(g.public.rulesVersion)||g.public.phase.kind!=='HU_VOTE'||!g.review)return;
  const proposal=g.public.phase.proposal;
  proposal.reviewers=proposal.reviewers?.map(r=>{const b=g.review!.ballots.get(r.playerId);return {...r,choice:b?.choice??(final?'ABSTAIN':'PENDING'),objectionRanges:b?.choice==='REJECT'?structuredClone([...b.objectionRanges]):[]};});
 }
@@ -186,7 +186,7 @@ function pauseClaimant(g:Game,pid:C.PlayerId,now:number){freezeDeadline(g,now);g
 function scheduleBot(g:Game,now:number){const ph=g.public.phase;if(ph.kind!=='TURN_ACTION'||g.public.suspension.kind!=='RUNNING')return;const pub=person(g,ph.actorId);if(!automatic(pub))return;const p=g.players.get(ph.actorId)!;
  if(g.botDue?.phaseId===ph.phaseId&&g.botDue.playerId===ph.actorId){g.botDue.epoch=p.epoch;return;}
  if(pub.autoPlay&&p.manualTurnDeadline?.phaseId!==ph.phaseId)p.manualTurnDeadline={phaseId:ph.phaseId,endsAt:ph.deadline?.endsAt??now+timingForRules(g.public.rulesVersion).turnMs};
- const at=now+timingForRules(g.public.rulesVersion).botActionDelayMs;if(g.public.rulesVersion==='1.4.0'&&ph.deadline)ph.deadline.endsAt=at as C.UtcMs;
+ const at=now+timingForRules(g.public.rulesVersion).botActionDelayMs;if(['1.4.0','1.4.1'].includes(g.public.rulesVersion)&&ph.deadline)ph.deadline.endsAt=at as C.UtcMs;
  g.botDue={playerId:ph.actorId,epoch:p.epoch,phaseId:ph.phaseId,at};
 }
 function transferHost(g:Game,previousHostSeat?:number){const host=g.public.players.find(p=>p.playerId===g.public.hostId);if(host?.connected&&host.presence==='HUMAN')return;const from=previousHostSeat??host?.seat??0;const p=online(g).sort((a,b)=>((a.seat-from+g.public.capacity)%g.public.capacity)-((b.seat-from+g.public.capacity)%g.public.capacity))[0];if(p)g.public.hostId=p.playerId;}
@@ -222,7 +222,7 @@ export function refreshJobs(g:Game,now:number){updateAiDeadline(g,now);if(g.publ
 export function assertGame(g:Game){
  const integer=(v:unknown,min=0)=>Number.isSafeInteger(v)&&Number(v)>=min;
  for(const p of g.public.players)if(p.autoPlay!==undefined&&typeof p.autoPlay!=='boolean')throw new Error('INVALID_AUTOPLAY_STATE');for(const p of g.players.values())if(p.manualTurnDeadline&&(!integer(p.manualTurnDeadline.endsAt)||typeof p.manualTurnDeadline.phaseId!=='string'||(p.manualTurnDeadline.remainingMs!==undefined&&!integer(p.manualTurnDeadline.remainingMs))))throw new Error('INVALID_MANUAL_DEADLINE');
- if(![2,3,4,5,6].includes(g.public.capacity)||!integer(g.public.stateVersion)||!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0'].includes(g.public.rulesVersion)||typeof g.public.deckVersion!=='string'||!integer(g.cursor)||g.cursor>g.wall.length||!integer(g.rng)||!integer(g.serial))throw new Error('INVALID_AGGREGATE_HEADER');
+ if(![2,3,4,5,6].includes(g.public.capacity)||!integer(g.public.stateVersion)||!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0','1.4.1'].includes(g.public.rulesVersion)||typeof g.public.deckVersion!=='string'||!integer(g.cursor)||g.cursor>g.wall.length||!integer(g.rng)||!integer(g.serial))throw new Error('INVALID_AGGREGATE_HEADER');
  if(g.aiAutoCloseAt!==null&&!integer(g.aiAutoCloseAt))throw new Error('INVALID_AI_EMPTY_DEADLINE');validateDeck(g.roundDeck);if(g.roundDeck.version!==g.public.deckVersion)throw new Error('INVALID_FROZEN_DECK');const named=g.roundDeck as Partial<DeckSetSnapshot>;if(named.id&&(named.id!==g.public.deckSetId||named.name!==g.public.deckSetName))throw new Error('INVALID_DECK_SET_BINDING');
  if(g.public.allowSpectators!==undefined&&typeof g.public.allowSpectators!=='boolean')throw new Error('INVALID_SPECTATING_POLICY');
  const deadline=g.public.phase.deadline;if(deadline&&(!integer(deadline.endsAt)||(deadline.remainingMsWhenPaused!==null&&!integer(deadline.remainingMsWhenPaused))))throw new Error('INVALID_DEADLINE');
@@ -232,11 +232,11 @@ export function assertGame(g:Game){
  for(const [key,p]of g.players){if(!integer(p.epoch,1)||!integer(p.draftVersion)||(p.seat!==null&&g.public.players.find(pub=>pub.playerId===key)?.seat!==p.seat))throw new Error('INVALID_PLAYER_SECRET');if(p.candidateDraft){const ph=g.public.phase;if(ph.kind!=='HU_COMPOSE'||ph.applicantId!==key||p.candidateDraft.phaseId!==ph.phaseId||p.candidateDraft.source.kind!=='DISCARD'||!integer(p.candidateDraft.candidateDraftVersion,1))throw new Error('INVALID_CANDIDATE_DRAFT');validateDraft(p.candidateDraft.sentence,[...p.hand,p.candidateDraft.source.borrowedTileId],true);}}
  if(g.response&&(new Set(g.response.eligible).size!==g.response.eligible.length||[...g.response.intents].some(([pid,intent])=>!g.response!.eligible.includes(pid)||!['HU','EAT','PASS'].includes(intent))))throw new Error('INVALID_RESPONSE');
  if(g.review){if(usesAiReview(g)&&g.review.reviewers.some(pid=>g.public.players.find(p=>p.playerId===pid)?.isBotSeat&&!g.review!.ballots.has(pid)))throw new Error('MISSING_DESIGNATED_AI_BALLOT');if(g.public.phase.kind!=='HU_VOTE'||new Set(g.review.reviewers).size!==g.review.reviewers.length||g.review.reviewers.length!==g.public.phase.proposal.reviewerCount||g.review.ballots.size!==g.public.phase.proposal.submittedBallotCount)throw new Error('INVALID_REVIEW');for(const [pid,ballot]of g.review.ballots){if(!g.review.reviewers.includes(pid))throw new Error('INVALID_REVIEWER');validateBallot(ballot);}}
- if(g.review&&['1.3.0','1.4.0'].includes(g.public.rulesVersion)&&g.public.phase.kind==='HU_VOTE'){
+ if(g.review&&['1.3.0','1.4.0','1.4.1'].includes(g.public.rulesVersion)&&g.public.phase.kind==='HU_VOTE'){
   const list=g.public.phase.proposal.reviewers;
   if(!list||list.length!==g.review.reviewers.length||list.some((r,i)=>{const b=g.review!.ballots.get(r.playerId);return r.playerId!==g.review!.reviewers[i]||typeof r.nickname!=='string'||typeof r.isBotSeat!=='boolean'||r.choice!==(b?.choice??'PENDING')||JSON.stringify(r.objectionRanges)!==JSON.stringify(b?.choice==='REJECT'?b.objectionRanges:[]);}))throw new Error('INVALID_PUBLIC_REVIEW');
  }
- for(const view of [g.public,...g.archive])if(!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0'].includes(view.rulesVersion)||view.history.some(h=>h.rulesVersion!==undefined&&!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0'].includes(h.rulesVersion)))throw new Error('INVALID_HISTORY_RULES_VERSION');
+ for(const view of [g.public,...g.archive])if(!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0','1.4.1'].includes(view.rulesVersion)||view.history.some(h=>h.rulesVersion!==undefined&&!['1.0.0','1.1.0','1.2.0','1.3.0','1.4.0','1.4.1'].includes(h.rulesVersion)))throw new Error('INVALID_HISTORY_RULES_VERSION');
  const owned=new Set<string>();const add=(tile:string)=>{if(owned.has(tile)||!g.tiles.has(tile as C.TileId))throw new Error('TILE_OWNERSHIP_INVARIANT');owned.add(tile);};for(const t of g.wall.slice(g.cursor))add(t);for(const [pid,p]of g.players){for(const t of p.hand)add(t);if(p.seat!==null&&person(g,pid).handCount!==p.hand.length)throw new Error('HAND_COUNT_INVARIANT');validateDraft(p.draft,p.hand);}
  for(const d of g.public.discards)if(d.status!=='CLAIMED')add(d.tile.tileId);if(owned.size!==g.tiles.size)throw new Error('TILE_CONSERVATION_INVARIANT');if(active(g)){for(const pub of g.public.players){const ph=g.public.phase;const fourteen=(ph.kind==='TURN_ACTION'&&ph.actorId===pub.playerId)||(ph.kind==='HU_VOTE'&&ph.proposal.source.kind==='SELF'&&ph.proposal.applicantId===pub.playerId);if(pub.handCount!==(fourteen?14:13))throw new Error('PHASE_HAND_COUNT_INVARIANT');}}
 }

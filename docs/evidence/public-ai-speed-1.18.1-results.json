@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-24T03:21:39.131Z",
+  "origin": "https://118.196.107.182:1240",
+  "version": "1.18.1",
+  "scope": "real Chrome, HTTP/Socket.IO and server wall clock; simulated phone viewport",
+  "checks": [
+    {
+      "name": "draw subtitle visible and button reachable at 390",
+      "status": "PASS"
+    },
+    {
+      "name": "draw subtitle visible and button reachable at 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "draw action still receives exactly one tile from the authoritative wall",
+      "status": "PASS"
+    },
+    {
+      "name": "voluntary AI discards after three seconds on real server clock",
+      "status": "PASS",
+      "rules": "1.4.1",
+      "initialRemaining": 2922,
+      "due": 1792812091806,
+      "discardAt": 1792812091808,
+      "schedulerLagMs": 2
+    },
+    {
+      "name": "designated AI discards after three seconds on real server clock",
+      "status": "PASS",
+      "rules": "1.4.1",
+      "initialRemaining": 2685,
+      "due": 1792812098229,
+      "discardAt": 1792812098233,
+      "schedulerLagMs": 4
+    },
+    {
+      "name": "all private verification rooms ended without score and closed",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

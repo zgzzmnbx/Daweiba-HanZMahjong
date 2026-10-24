@@ -38,7 +38,7 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
   assert.equal((await actor.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).autoPlay,undefined);
   assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:true})).ok,true);
   let current=await actor.snapshot();assert.equal(current.private.controlEpoch,e.private.controlEpoch+1);
-  assert.equal(current.public.phase.deadline.endsAt,6000);
+  assert.equal(current.public.phase.deadline.endsAt,4000);
   assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.autoPlay,true);
   assert(!current.legalActions.includes('DISCARD'));assert.equal(current.public.suspension.kind,'RUNNING');
   f.setNow(2000);assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:false})).ok,true);
@@ -46,7 +46,7 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
   assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.autoPlay,false);
   f.setNow(6000);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
   f.setNow(7000);assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:true})).ok,true);
-  f.setNow(11999);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
-  f.setNow(12000);await f.server.tick();current=await actor.snapshot();assert.equal(current.public.discards.length,1);assert.equal(current.public.lastAutomaticDiscard.reason,'BOT');
+  f.setNow(9999);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
+  f.setNow(10000);await f.server.tick();current=await actor.snapshot();assert.equal(current.public.discards.length,1);assert.equal(current.public.lastAutomaticDiscard.reason,'BOT');
  }finally{await f.close();}
 });

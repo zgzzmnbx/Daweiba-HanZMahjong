@@ -38,7 +38,7 @@ try{
  pass('punctuation help supports hover, keyboard, click and exact wording; redundant rack labels removed');
  await (await gameTool(actor.page,'主动 AI 托管')).click();
  await wait(async()=> (await snapshot(actor)).public.players.find(p=>p.playerId===actor.id).autoPlay===true);
- let e=await snapshot(actor);assert.equal(e.public.phase.deadline.endsAt,clock+5000);assert.equal(e.public.players.find(p=>p.playerId===actor.id).presence,'HUMAN');
+ let e=await snapshot(actor);assert.equal(e.public.phase.deadline.endsAt,clock+3000);assert.equal(e.public.players.find(p=>p.playerId===actor.id).presence,'HUMAN');
  await actor.page.getByRole('status').filter({hasText:'AI 托管中'}).waitFor();assert.equal(await actor.page.locator('[data-tile-id]:enabled').count(),0);
  pass('tools enable authority-owned delegation, keep human online, disable manual card commands');
  await actor.page.reload();await actor.page.getByRole('status').filter({hasText:'AI 托管中'}).waitFor();
@@ -53,8 +53,8 @@ try{
   await actor.page.screenshot({path:`docs/evidence/${prefix}-${viewport.width}.png`});
  }pass('four screen sizes keep game and punctuation explanation within viewport');
  await (await gameTool(actor.page,'主动 AI 托管')).click();await wait(async()=> (await snapshot(actor)).public.players.find(p=>p.playerId===actor.id).autoPlay);
- clock+=4999;await server.tick();assert.equal((await snapshot(actor)).public.discards.length,0);
+ clock+=2999;await server.tick();assert.equal((await snapshot(actor)).public.discards.length,0);
  clock+=1;await server.tick();await wait(async()=> (await snapshot(actor)).public.discards.length===1);assert.equal((await snapshot(actor)).public.lastAutomaticDiscard.reason,'BOT');
- pass('real browser player is auto-discarded exactly at five seconds, never early');
+ pass('real browser player is auto-discarded exactly at three seconds, never early');
  assert.deepEqual(errors,[]);await writeFile(`docs/evidence/${prefix}-results.json`,JSON.stringify({at:new Date().toISOString(),status:'PASS',checks,errors},null,2)+'\n');
 }finally{await browser.close();await server?.close();await rm(dir,{recursive:true,force:true});}
