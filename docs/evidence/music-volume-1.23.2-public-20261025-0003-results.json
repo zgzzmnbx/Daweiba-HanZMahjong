@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-24T16:02:29.939Z",
+  "version": "1.23.2",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real normalized music through Web Audio: doubled default and maximum gain, unclipped samples, independent volume, foreground priority, mute and refresh; Chromium touch viewport simulation",
+  "checks": [
+    {
+      "name": "phone top music button opens standalone music immediately",
+      "status": "PASS"
+    },
+    {
+      "name": "six real default tracks play in sync at doubled initial gain",
+      "status": "PASS",
+      "audio": [
+        {
+          "exists": true,
+          "paused": false,
+          "time": 7.599639,
+          "ready": 4,
+          "track": "default-38b70bc226f07ca2",
+          "gain": 0.054989270865917206,
+          "state": "running",
+          "peak": 0.004932062700390816
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 7.582594,
+          "ready": 4,
+          "track": "default-38b70bc226f07ca2",
+          "gain": 0.04848453775048256,
+          "state": "running",
+          "peak": 0.005744342692196369
+        }
+      ]
+    },
+    {
+      "name": "default and maximum gain are doubled, personal volume stays independent and real output does not clip",
+      "status": "PASS",
+      "previousDefault": 0.0275,
+      "defaultGain": 0.054989270865917206,
+      "previousMaximum": 0.11,
+      "maximumGain": 0.21995708346366882,
+      "peak": 0.04315703734755516
+    },
+    {
+      "name": "independent sound settings contain no nested music player",
+      "status": "PASS"
+    },
+    {
+      "name": "real sound-effect preview silences music even at slider maximum",
+      "status": "PASS"
+    },
+    {
+      "name": "music smoothly returns after foreground effect",
+      "status": "PASS"
+    },
+    {
+      "name": "clicking 我要切歌 updates both clients through the room socket",
+      "status": "PASS",
+      "audio": [
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.082331,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.21992430090904236,
+          "state": "running",
+          "peak": 0.00010320964065613225
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.012905,
+          "ready": 3,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.054989270865917206,
+          "state": "running",
+          "peak": 0
+        }
+      ]
+    },
+    {
+      "name": "personal mute leaves peer playing and resumes at shared position",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh joins the ongoing song instead of restarting it",
+      "status": "PASS"
+    },
+    {
+      "name": "volume test room closes without starting or scoring a game",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

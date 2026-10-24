@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-24T15:58:47.800542+00:00",
+  "scope": "Full six normalized default MP3 tracks decoded at the new absolute maximum music gain; sample peaks, not subjective listening or physical-device certification",
+  "tracks": [
+    {
+      "track": "default-428a2ea52c5f6c1f",
+      "maximumGain": 0.32,
+      "peakDbFS": -18.8,
+      "clipped": false
+    },
+    {
+      "track": "default-f1b4ed07892587d2",
+      "maximumGain": 0.32,
+      "peakDbFS": -19.2,
+      "clipped": false
+    },
+    {
+      "track": "default-814a848460374140",
+      "maximumGain": 0.32,
+      "peakDbFS": -18.0,
+      "clipped": false
+    },
+    {
+      "track": "default-cdb3fc5af447730e",
+      "maximumGain": 0.32,
+      "peakDbFS": -17.1,
+      "clipped": false
+    },
+    {
+      "track": "default-38b70bc226f07ca2",
+      "maximumGain": 0.32,
+      "peakDbFS": -21.4,
+      "clipped": false
+    },
+    {
+      "track": "default-dd21babc179bab9e",
+      "maximumGain": 0.32,
+      "peakDbFS": -17.1,
+      "clipped": false
+    }
+  ]
+}
