@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-24T04:49:54.534060+00:00",
+  "status": "PASS",
+  "version": "1.20.0",
+  "source": "a1e8d34dc6f3c93fe6fbdc1cb72c08fba9f7389f",
+  "release": "1.20.0-20261024-124741",
+  "backup": "pre-release-20261024-124742.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "indexSha256": "8b91ce9edfb3c6d8f59eb5a133d84a0e3a09878ff26abf5750b9fae65f15f893",
+  "assets": [
+    {
+      "path": "/assets/index-BLHmI7Vr.js",
+      "bytes": 905551,
+      "sha256": "8e2f093011ae06cde4d23fe01562ac9372d8f0c1cc807ec94f65ec8a0e8d0cca"
+    },
+    {
+      "path": "/assets/index-Ce2x7pMq.css",
+      "bytes": 129815,
+      "sha256": "bac36c2a2a4a7acb286c35d481ca3aa611580d015352732666f1f03a43bddd29"
+    }
+  ],
+  "speech": {
+    "profile": "qwen3-flash-Cherry-zh-tile-word-v1",
+    "ready": 178,
+    "unmapped": []
+  }
+}

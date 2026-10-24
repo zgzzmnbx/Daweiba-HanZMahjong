@@ -24,3 +24,7 @@ node --import tsx scripts/generate-tile-speech.ts
 胡句路由只从请求房间当前已公开提案或本局历史取字序，不接受客户端任意text/voice；私房由本人或独立管理员鉴权，开放观战的房间允许公共句子朗读。Cookie、恢复码与他人手牌不进入音频接口。返回音频为no-store，私房音频不经公开静态路径暴露。
 
 游戏工具与评审弹窗可开关声音、手动重读。首次打开/恢复不重播旧胡句；新公开申请实时朗读，用户从未操作时浏览器可能要求点击朗读。语音失败不阻断投票、摸打或服务器计时；身份、局、连接或暂停变化清理旧播放与迟到请求。
+
+## 浏览器语音回归
+
+现有锁定Playwright1.56.1可配套Chromium141执行：先按标准Playwright安装配套浏览器到临时目录，设置`PLAYWRIGHT_BROWSERS_PATH`后运行`scripts/verify-discard-speech.mjs`或`verify-speech.mjs`。未设置时仍使用已安装Chrome。报告记录实际版本；本机Chrome156与旧版控制协议的异常不能当作配套浏览器通过证据。`EVIDENCE_PREFIX`必须唯一，进程退出0后才归档结果。

@@ -1,0 +1,250 @@
+{
+  "at": "2026-10-24T04:53:22.165Z",
+  "status": "PASS",
+  "browser": {
+    "version": "141.0.7390.37",
+    "channel": "chromium"
+  },
+  "scope": "actual HTTPS/WSS, real AI rule deadline, Chromium decoded Qwen buffer hashes and live output analyser; no mocked audio or public data changes",
+  "checks": [
+    {
+      "name": "clicking and keyboard-selecting a private hand tile are silent for everyone",
+      "status": "PASS"
+    },
+    {
+      "name": "button discard plays the same real cached two-character Qwen WAV once on three players and observer",
+      "status": "PASS",
+      "char": "着",
+      "audio": [
+        {
+          "words": [
+            "着"
+          ],
+          "starts": [
+            {
+              "duration": 0.807125,
+              "hash": 3580872244,
+              "at": 9546.30000114441
+            }
+          ],
+          "peak": 0.3703654408454895
+        },
+        {
+          "words": [
+            "着"
+          ],
+          "starts": [
+            {
+              "duration": 0.807125,
+              "hash": 3580872244,
+              "at": 7589.400001525879
+            }
+          ],
+          "peak": 0.3703654408454895
+        },
+        {
+          "words": [
+            "着"
+          ],
+          "starts": [
+            {
+              "duration": 0.807125,
+              "hash": 3580872244,
+              "at": 5709.300001144409
+            }
+          ],
+          "peak": 0.3703654408454895
+        },
+        {
+          "words": [
+            "着"
+          ],
+          "starts": [
+            {
+              "duration": 0.807125,
+              "hash": 3580872244,
+              "at": 2735.7000007629395
+            }
+          ],
+          "peak": 0.3703654408454895
+        }
+      ]
+    },
+    {
+      "name": "draft save, repeated spectator polls and subsequent snapshots never repeat the discarded word",
+      "status": "PASS"
+    },
+    {
+      "name": "actual touch pointer drag to table center speaks on all players and observer",
+      "status": "PASS",
+      "char": "酒",
+      "audio": [
+        {
+          "words": [
+            "酒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8803333333333333,
+              "hash": 3563330477,
+              "at": 14414.89999961853
+            }
+          ],
+          "peak": 0.4150063395500183
+        },
+        {
+          "words": [
+            "酒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8803333333333333,
+              "hash": 3563330477,
+              "at": 12499.400001525879
+            }
+          ],
+          "peak": 0.4150063395500183
+        },
+        {
+          "words": [
+            "酒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8803333333333333,
+              "hash": 3563330477,
+              "at": 10564.89999961853
+            }
+          ],
+          "peak": 0.4150063395500183
+        },
+        {
+          "words": [
+            "酒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8803333333333333,
+              "hash": 3563330477,
+              "at": 8115.400001525879
+            }
+          ],
+          "peak": 0.19806121289730072
+        }
+      ]
+    },
+    {
+      "name": "per-player voice mute is respected; re-enabling does not replay missed discards",
+      "status": "PASS"
+    },
+    {
+      "name": "player restoration and anonymous observer reload establish silent baselines",
+      "status": "PASS"
+    },
+    {
+      "name": "the first genuine discard after restoration is heard by the restored player and observer",
+      "status": "PASS"
+    },
+    {
+      "name": "muting cancels a real in-flight audio response instead of starting it late",
+      "status": "PASS"
+    },
+    {
+      "name": "designated AI authoritative discard is spoken once on both human players and observer",
+      "status": "PASS",
+      "char": "个",
+      "audio": [
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 0.852625,
+              "hash": 2812158039,
+              "at": 15448
+            }
+          ],
+          "peak": 0.42825958132743835
+        },
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 0.852625,
+              "hash": 2812158039,
+              "at": 13105.69999885559
+            }
+          ],
+          "peak": 0.42825958132743835
+        },
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 0.852625,
+              "hash": 2812158039,
+              "at": 11243.19999885559
+            }
+          ],
+          "peak": 0.17264772951602936
+        }
+      ]
+    },
+    {
+      "name": "voluntary AI-controlled human discard is heard on all clients after the control epoch changes",
+      "status": "PASS",
+      "char": "醒",
+      "audio": [
+        {
+          "words": [
+            "醒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8878333333333334,
+              "hash": 3738563635,
+              "at": 22593.59999847412
+            }
+          ],
+          "peak": 0.3056936264038086
+        },
+        {
+          "words": [
+            "醒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8878333333333334,
+              "hash": 3738563635,
+              "at": 20302.10000038147
+            }
+          ],
+          "peak": 0.3056936264038086
+        },
+        {
+          "words": [
+            "醒"
+          ],
+          "starts": [
+            {
+              "duration": 0.8878333333333334,
+              "hash": 3738563635,
+              "at": 17714.09999847412
+            }
+          ],
+          "peak": 0.2529928684234619
+        }
+      ]
+    },
+    {
+      "name": "all verification-owned rooms closed without scoring or book entries",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

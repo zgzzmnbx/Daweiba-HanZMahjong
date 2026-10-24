@@ -34,7 +34,7 @@ async function setup(capacity=3,humans=3){
  const r=await ps[0].context.request.post(base+'/api/rooms',{data:{actionId:randomUUID(),capacity,nickname:'报牌语音验收1'}});assert(r.ok());const room=(await r.json()).snapshot.public.roomId;
  for(let i=0;i<humans;i++){if(i)ps.push(await member(i===1?{width:390,height:844}:undefined));const p=ps[i];p.room=room;if(i)assert((await p.context.request.post(`${base}/api/rooms/${room}/join`,{data:{actionId:randomUUID(),roomId:room,requestedSeat:i,nickname:`报牌语音验收${i+1}`}})).ok());await p.page.bringToFront();await p.page.goto(`${base}/room/${room}`);await p.page.getByRole('button',{name:'准备好了',exact:true}).waitFor();p.id=(await snap(p)).private.playerId;}
  rooms.push(ps);
- for(const p of ps){await p.page.getByRole('button',{name:'准备好了',exact:true}).click();await p.page.getByRole('button',{name:'取消准备',exact:true}).waitFor();}
+ for(const p of ps){const ready=p.page.getByRole('button',{name:'准备好了',exact:true});if(!await ready.isEnabled()){const reconnect=p.page.getByRole('button',{name:'重新连接',exact:true});if(await reconnect.isVisible())await reconnect.click();}await ready.click();await p.page.getByRole('button',{name:'取消准备',exact:true}).waitFor();}
  await wait(async()=>await ps[0].page.locator('.room-setup-panel .seat-row').filter({hasText:'真人 · 已准备'}).count()===humans);
  for(let i=humans;i<capacity;i++){await ps[0].page.getByRole('button',{name:`将座位 ${i+1} 设为 AI`,exact:true}).click();await ps[0].page.getByRole('button',{name:`移除座位 ${i+1} 的 AI，留给朋友`,exact:true}).waitFor();}
  await ps[0].page.getByRole('button',{name:'开始牌局',exact:true}).click();await wait(async()=> (await snap(ps[0])).public.phase.kind==='TURN_ACTION');return ps;
