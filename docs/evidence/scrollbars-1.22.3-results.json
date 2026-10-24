@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-24T15:21:36.470Z",
+  "origin": "http://127.0.0.1:3174",
+  "browser": "141.0.7390.37",
+  "scope": "real native scrollbar colors, mouse thumb drag, wheel, keyboard, touch, menus and high contrast; no room mutations",
+  "checks": [
+    {
+      "name": "lobby uses copper thumb and dark wood track",
+      "status": "PASS",
+      "color": "auto",
+      "track": "rgb(36, 27, 20)",
+      "thumb": "linear-gradient(90deg, rgb(150, 112, 62), rgb(189, 150, 86))",
+      "thumbColor": "rgba(0, 0, 0, 0)",
+      "width": "9px"
+    },
+    {
+      "name": "mouse wheel scrolls the themed lobby",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard PageDown scrolls the focused table list",
+      "status": "PASS"
+    },
+    {
+      "name": "native copper scrollbar thumb remains draggable",
+      "status": "PASS",
+      "gutter": 9
+    },
+    {
+      "name": "menu dialog and update history inherit the same scrollbar palette",
+      "status": "PASS"
+    },
+    {
+      "name": "book scrollbar no longer has a separate hard-coded palette",
+      "status": "PASS"
+    },
+    {
+      "name": "short portrait retains native touch scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "high contrast mode defers scrollbar colors to the system",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

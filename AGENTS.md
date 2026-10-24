@@ -127,3 +127,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.22.1评审布局由hu-review.css统一管理；mobile-game不得再次强制名单单列/大按钮。不可仅隐藏滚动条：验收14牌、五人全句异议、结果及操作的真实几何边界。反对需先进入圈选再确认，未确认不得发送VOTE；常用验收脚本通过rejectReview走真实两步UI。
 
 - 1.22.2手机竖屏大厅为单列自然高度，滚动区域限定hall-tables；桌面插图保持宽高比，不能用固定三行网格压缩。姓名随桌展开，顶部入口固定；验收触摸滑到第六桌及六人名单。
+
+- 1.22.3滚动条统一game-scrollbars.css；标准scrollbar-color/width非auto会覆盖Chromium的WebKit部件，兼容分支需同时复位。Playwright截图验收必须ignoreDefaultArgs移除--hide-scrollbars，否则会把隐藏滚动条误判为样式通过；保留原生拖动/键盘/触摸与高对比回退。

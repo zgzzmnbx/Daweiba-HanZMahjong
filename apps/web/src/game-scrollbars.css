@@ -1,0 +1,17 @@
+/* Native scrolling keeps touch momentum, keyboard access and platform hit testing. */
+:root{--scroll-thumb:#bd9656;--scroll-thumb-hover:#e2bd77;--scroll-track:#241b14}
+*{scrollbar-width:thin;scrollbar-color:var(--scroll-thumb) var(--scroll-track)}
+/* Non-auto standard properties override WebKit parts in Chromium. Reset both here
+   (including older panel-level thin rules) so the native custom parts actually paint. */
+@supports selector(::-webkit-scrollbar){
+ @media(forced-colors:none){*{scrollbar-width:auto!important;scrollbar-color:auto!important}}
+}
+/* Firefox uses the standard palette above; WebKit/Blink use these native parts. */
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:var(--scroll-track);border-radius:8px;box-shadow:inset 0 0 0 1px #b18b4d20}
+::-webkit-scrollbar-thumb{min-height:32px;min-width:32px;border:2px solid var(--scroll-track);border-radius:8px;background:linear-gradient(90deg,#96703e,var(--scroll-thumb));background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:var(--scroll-thumb-hover);background-clip:padding-box}
+::-webkit-scrollbar-thumb:active{background:#edce92;background-clip:padding-box}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+::-webkit-scrollbar-corner{background:var(--scroll-track)}
+@media(forced-colors:active){*{scrollbar-color:auto}::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:Canvas}::-webkit-scrollbar-thumb{background:ButtonText;border-color:Canvas}}

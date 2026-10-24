@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.22.2-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.22.3-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.22.3 · 游戏风格滚动条 · 2026-10-24
+
+大厅、菜单、工具、聊天与天书统一深棕轨道、金铜色圆角滑块；WebKit/Blink使用9px原生滚动条部件，悬停与拖动提亮，移除默认箭头和白色角块。Firefox等使用标准双色细滚动条回退，高对比模式交回系统配色。保留原生滚动，不添加覆盖拖拽层。
+
+生产构建、本地8项浏览器检查通过：实际显示滚动条、鼠标拖动、滚轮、键盘PageDown、短屏触摸、菜单/更新日志/天书配色和高对比回退。Playwright验收移除默认hide-scrollbars参数，截图包含真实滑块。仅CSS与日志变更，不重复无关引擎测试；规则1.5.1不变。已发布原公网入口，8项相同只读检查全部通过。release `1.22.3-20261024-232222`、冻结源码 `abdfebc`、一致性备份 `pre-release-20261024-232223.sqlite`；ready=true，HTML/JS/CSS及核心字体与冻结构建一致。真实滚动条截图、结果和指纹见docs/evidence/*scrollbars-1.22.3-*；源码证据随本版同步GitHub。手机为Chromium141触摸视口模拟，实体Safari/Firefox尚未实测。
 
 ## v1.22.2 · 手机大厅一桌一行 · 2026-10-24
 
