@@ -19,3 +19,13 @@ dialog.hu-showcase.hu-review-dialog{position:fixed;inset:auto;top:calc(var(--app
 .hu-review-dialog .egg-stain{width:24px;height:19px;bottom:4px;right:1px;background:radial-gradient(ellipse at 52% 48%,#ffcb36 0 31%,#fff3bb 33% 36%,#fff8e9 38% 70%,transparent 72%);border-radius:38% 61% 45% 55%;transform:rotate(-16deg);box-shadow:2px 2px 0 #aa762f66}.egg-stain:before,.egg-stain:after{content:'';position:absolute;background:#fff5db;border-radius:50%;width:5px;height:4px;left:-5px;top:0}.egg-stain:after{left:auto;right:0;top:-6px;width:4px;height:6px}
 /* Short portrait still needs seven readable characters per row; only landscape uses fourteen. */
 @media(max-width:499px) and (max-height:599px){.hu-review-dialog .hu-slam-rack{grid-template-columns:repeat(7,minmax(0,1fr));gap:9px 4px}.hu-review-dialog .hu-slam-unit b{font-size:clamp(20px,6vw,28px)}}
+
+.review-audio-toggle{display:none}
+@media(max-width:699px) and (orientation:portrait){
+ .hu-review-heading .review-audio-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;flex:none;min-width:36px;min-height:40px;padding:3px 5px;border:1px solid #bda36b55;border-radius:8px;background:#d6c18c0d;color:#ddc68d;font-size:20px}
+ .hu-review-heading .review-audio-toggle small{font-size:9px}
+ .hu-review-dialog .hu-speech-controls:not(.expanded){display:none}
+ .hu-review-dialog .hu-speech-controls.expanded{padding:8px;margin:4px 0 10px;background:#d5c08a12;border:1px solid #baa36933;border-radius:9px}
+ .hu-review-heading h2{font-size:clamp(16px,4.6vw,24px);letter-spacing:0}
+ .hu-review-heading{gap:7px}
+}

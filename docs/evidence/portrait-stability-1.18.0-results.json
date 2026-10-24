@@ -1,0 +1,1842 @@
+{
+  "at": "2026-10-24T02:49:46.462Z",
+  "status": "PASS",
+  "scope": "real Chrome / HTTP / Socket.IO / isolated SQLite; fixed clock advanced only for timeout",
+  "checks": [
+    {
+      "name": "four real draw/discard cycles at 1440x900",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 943.5,
+            "max": 943.5
+          },
+          "height": {
+            "min": 629,
+            "max": 629
+          },
+          "x": {
+            "min": 248.25,
+            "max": 248.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 629,
+            "max": 629
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 943.5,
+            "max": 943.5
+          },
+          "height": {
+            "min": 629,
+            "max": 629
+          },
+          "x": {
+            "min": 248.25,
+            "max": 248.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 629,
+            "max": 629
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        111,
+        109
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 1280x720",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        92,
+        94
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 1024x600",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 493.5,
+            "max": 493.5
+          },
+          "height": {
+            "min": 329,
+            "max": 329
+          },
+          "x": {
+            "min": 265.25,
+            "max": 265.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 329,
+            "max": 329
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 493.5,
+            "max": 493.5
+          },
+          "height": {
+            "min": 329,
+            "max": 329
+          },
+          "x": {
+            "min": 265.25,
+            "max": 265.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 329,
+            "max": 329
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        117,
+        119
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 800x600",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 493.5,
+            "max": 493.5
+          },
+          "height": {
+            "min": 329,
+            "max": 329
+          },
+          "x": {
+            "min": 153.25,
+            "max": 153.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 329,
+            "max": 329
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 493.5,
+            "max": 493.5
+          },
+          "height": {
+            "min": 329,
+            "max": 329
+          },
+          "x": {
+            "min": 153.25,
+            "max": 153.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 329,
+            "max": 329
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        104,
+        104
+      ],
+      "pendingFrames": [
+        7,
+        6
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 390x844",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        81,
+        81
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 390x844",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        409,
+        409
+      ],
+      "pendingFrames": [
+        2,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 320x568",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 297,
+            "max": 297
+          },
+          "height": {
+            "min": 198,
+            "max": 198
+          },
+          "x": {
+            "min": 11.5,
+            "max": 11.5
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 274,
+            "max": 274
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 297,
+            "max": 297
+          },
+          "height": {
+            "min": 198,
+            "max": 198
+          },
+          "x": {
+            "min": 11.5,
+            "max": 11.5
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 274,
+            "max": 274
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        84,
+        84
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 320x568",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 297,
+            "max": 297
+          },
+          "height": {
+            "min": 198,
+            "max": 198
+          },
+          "x": {
+            "min": 11.5,
+            "max": 11.5
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 274,
+            "max": 274
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 297,
+            "max": 297
+          },
+          "height": {
+            "min": 198,
+            "max": 198
+          },
+          "x": {
+            "min": 11.5,
+            "max": 11.5
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 274,
+            "max": 274
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        393,
+        393
+      ],
+      "pendingFrames": [
+        6,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 844x390",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 339.5,
+            "max": 339.5
+          },
+          "y": {
+            "min": 98,
+            "max": 98
+          },
+          "stage": {
+            "min": 110,
+            "max": 110
+          },
+          "stageY": {
+            "min": 98,
+            "max": 98
+          }
+        },
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 339.5,
+            "max": 339.5
+          },
+          "y": {
+            "min": 98,
+            "max": 98
+          },
+          "stage": {
+            "min": 110,
+            "max": 110
+          },
+          "stageY": {
+            "min": 98,
+            "max": 98
+          }
+        }
+      ],
+      "frames": [
+        82,
+        82
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 667x375",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 142.5,
+            "max": 142.5
+          },
+          "height": {
+            "min": 95,
+            "max": 95
+          },
+          "x": {
+            "min": 262.25,
+            "max": 262.25
+          },
+          "y": {
+            "min": 98,
+            "max": 98
+          },
+          "stage": {
+            "min": 95,
+            "max": 95
+          },
+          "stageY": {
+            "min": 98,
+            "max": 98
+          }
+        },
+        {
+          "width": {
+            "min": 142.5,
+            "max": 142.5
+          },
+          "height": {
+            "min": 95,
+            "max": 95
+          },
+          "x": {
+            "min": 262.25,
+            "max": 262.25
+          },
+          "y": {
+            "min": 98,
+            "max": 98
+          },
+          "stage": {
+            "min": 95,
+            "max": 95
+          },
+          "stageY": {
+            "min": 98,
+            "max": 98
+          }
+        }
+      ],
+      "frames": [
+        85,
+        85
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 320x480",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 190.5,
+            "max": 190.5
+          },
+          "height": {
+            "min": 127,
+            "max": 127
+          },
+          "x": {
+            "min": 64.75,
+            "max": 64.75
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 203,
+            "max": 203
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 190.5,
+            "max": 190.5
+          },
+          "height": {
+            "min": 127,
+            "max": 127
+          },
+          "x": {
+            "min": 64.75,
+            "max": 64.75
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 203,
+            "max": 203
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        82,
+        82
+      ],
+      "pendingFrames": [
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 320x480",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 190.5,
+            "max": 190.5
+          },
+          "height": {
+            "min": 127,
+            "max": 127
+          },
+          "x": {
+            "min": 64.75,
+            "max": 64.75
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 203,
+            "max": 203
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 190.5,
+            "max": 190.5
+          },
+          "height": {
+            "min": 127,
+            "max": 127
+          },
+          "x": {
+            "min": 64.75,
+            "max": 64.75
+          },
+          "y": {
+            "min": 148,
+            "max": 148
+          },
+          "stage": {
+            "min": 203,
+            "max": 203
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        393,
+        393
+      ],
+      "pendingFrames": [
+        2,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "self HU, automatic DOM rack, review and rejected return",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        28,
+        28
+      ],
+      "pendingFrames": [
+        1,
+        1
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "HU_VOTE"
+        ],
+        [
+          "TURN_ACTION",
+          "HU_VOTE"
+        ]
+      ]
+    },
+    {
+      "name": "borrowed 13+1 composition and withdrawal keep the table frame",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        55,
+        55
+      ],
+      "pendingFrames": [
+        2,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE",
+          "HU_COMPOSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE",
+          "HU_COMPOSE"
+        ]
+      ]
+    },
+    {
+      "name": "autoplay notice appears and disappears without moving table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        9,
+        9
+      ],
+      "pendingFrames": [
+        1,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "authoritative timeout notice does not resize table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        33,
+        33
+      ],
+      "pendingFrames": [
+        3,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "3 real players complete a full turn around the table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        74,
+        74,
+        74
+      ],
+      "pendingFrames": [
+        3,
+        3,
+        3
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "4 real players complete a full turn around the table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        116,
+        115,
+        115,
+        114
+      ],
+      "pendingFrames": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "5 real players complete a full turn around the table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        },
+        {
+          "width": {
+            "min": 673.5,
+            "max": 673.5
+          },
+          "height": {
+            "min": 449,
+            "max": 449
+          },
+          "x": {
+            "min": 303.25,
+            "max": 303.25
+          },
+          "y": {
+            "min": 138,
+            "max": 138
+          },
+          "stage": {
+            "min": 449,
+            "max": 449
+          },
+          "stageY": {
+            "min": 138,
+            "max": 138
+          }
+        }
+      ],
+      "frames": [
+        193,
+        192,
+        192,
+        192,
+        192
+      ],
+      "pendingFrames": [
+        5,
+        5,
+        5,
+        5,
+        6
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "6 real players complete a full turn around the table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 260.3359375,
+            "max": 260.3359375
+          },
+          "stage": {
+            "min": 550,
+            "max": 550
+          },
+          "stageY": {
+            "min": 72,
+            "max": 72
+          }
+        }
+      ],
+      "frames": [
+        250,
+        250,
+        249,
+        249,
+        250,
+        250
+      ],
+      "pendingFrames": [
+        6,
+        6,
+        7,
+        6,
+        6,
+        6
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

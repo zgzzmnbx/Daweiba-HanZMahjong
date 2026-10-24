@@ -1,15 +1,18 @@
-import {useEffect,useLayoutEffect,useRef,useState,type CSSProperties,type RefObject} from 'react';
+import {useEffect,useImperativeHandle,useLayoutEffect,useRef,useState,type CSSProperties,type RefObject} from 'react';
 import {createPortal} from 'react-dom';
 import {CHAT_HISTORY_LIMIT,CHAT_MAX_LENGTH,type RoomChatMessage,type RoomChatTransport} from '../../../packages/contracts/chat';
 import {chatError} from './room-chat-client';
 import './room-chat.css';
 const merge=(first:RoomChatMessage[],next:RoomChatMessage[])=>[...new Map([...first,...next].map(m=>[m.id,m])).values()].slice(-CHAT_HISTORY_LIMIT);
 function ChatIcon(){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 14a4 4 0 0 1-4 4H9l-5 3v-5a5 5 0 0 1-2-4V8a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5v4a4 4 0 0 1-2 2Z"/><path d="M7 9h10M7 13h6"/></svg>;}
+export type ChatControls={open:()=>void};
 type Flying={message:RoomChatMessage;lane:number;ends:number};
-export function RoomChat({transport,dock,connected,controlled,quiet,closed,selfSeat,selfName}:{transport:RoomChatTransport;dock:RefObject<HTMLSpanElement>;connected:boolean;controlled:boolean;quiet:boolean;closed:boolean;selfSeat:number;selfName:string}){
+export function RoomChat({transport,dock,connected,controlled,quiet,closed,selfSeat,selfName,controls,onUnreadChange}:{controls?:React.Ref<ChatControls>;onUnreadChange?:(count:number)=>void;transport:RoomChatTransport;dock:RefObject<HTMLSpanElement>;connected:boolean;controlled:boolean;quiet:boolean;closed:boolean;selfSeat:number;selfName:string}){
  const [target,setTarget]=useState<HTMLElement|null>(null),[open,setOpen]=useState(false),[messages,setMessages]=useState<RoomChatMessage[]>([]),[unread,setUnread]=useState(0),[draft,setDraft]=useState(''),[sending,setSending]=useState(false),[error,setError]=useState(''),[reload,setReload]=useState(0),[loading,setLoading]=useState(true);
  const [muted,setMuted]=useState(()=>{try{return localStorage.getItem('hanz-chat-danmaku')==='off';}catch{return false;}}),[reduced,setReduced]=useState(false),[lanes,setLanes]=useState(2),[width,setWidth]=useState(800),[flying,setFlying]=useState<Flying[]>([]);
  const panel=useRef<HTMLElement>(null),input=useRef<HTMLTextAreaElement>(null),list=useRef<HTMLDivElement>(null),air=useRef<HTMLDivElement>(null),toggle=useRef<HTMLButtonElement>(null),pending=useRef<{text:string;id:string}|null>(null),seen=useRef(new Set<string>()),queue=useRef<RoomChatMessage[]>([]),alive=useRef(true),atBottom=useRef(true);
+ useImperativeHandle(controls,()=>({open:()=>setOpen(true)}),[]);
+ useEffect(()=>{onUnreadChange?.(unread);},[unread,onUnreadChange]);
  const openRef=useRef(open),quietRef=useRef(quiet);openRef.current=open;quietRef.current=quiet||muted||open||!connected||!controlled||closed;
  useLayoutEffect(()=>{setTarget(dock.current);},[dock]);
  useEffect(()=>{alive.current=true;return()=>{alive.current=false;};},[]);

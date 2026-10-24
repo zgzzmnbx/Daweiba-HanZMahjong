@@ -1,0 +1,181 @@
+{
+  "at": "2026-10-24T02:48:58.886Z",
+  "scope": "real Chrome, HTTP/Socket.IO and SQLite; only private verification rooms",
+  "checks": [
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 2,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central seat list assigns/removes/reassigns AI with authoritative updates",
+      "status": "PASS",
+      "capacity": 2
+    },
+    {
+      "name": "ready/start uses the same authoritative controller and removes the setup panel",
+      "status": "PASS",
+      "capacity": 2
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 3,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central seat list assigns/removes/reassigns AI with authoritative updates",
+      "status": "PASS",
+      "capacity": 3
+    },
+    {
+      "name": "ready/start uses the same authoritative controller and removes the setup panel",
+      "status": "PASS",
+      "capacity": 3
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 4,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central seat list assigns/removes/reassigns AI with authoritative updates",
+      "status": "PASS",
+      "capacity": 4
+    },
+    {
+      "name": "ready/start uses the same authoritative controller and removes the setup panel",
+      "status": "PASS",
+      "capacity": 4
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 5,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central seat list assigns/removes/reassigns AI with authoritative updates",
+      "status": "PASS",
+      "capacity": 5
+    },
+    {
+      "name": "ready/start uses the same authoritative controller and removes the setup panel",
+      "status": "PASS",
+      "capacity": 5
+    },
+    {
+      "name": "non-host sees the shared seats but has no AI controls or start authority",
+      "status": "PASS"
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central seat list assigns/removes/reassigns AI with authoritative updates",
+      "status": "PASS",
+      "capacity": 6
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "LOBBY",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "name": "ready/start uses the same authoritative controller and removes the setup panel",
+      "status": "PASS",
+      "capacity": 6
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "ROUND_FINISHED",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "ROUND_FINISHED",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "ROUND_FINISHED",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "central panel and fixed actions fit viewport",
+      "status": "PASS",
+      "capacity": 6,
+      "phase": "ROUND_FINISHED",
+      "width": 667,
+      "height": 375
+    }
+  ],
+  "errors": []
+}

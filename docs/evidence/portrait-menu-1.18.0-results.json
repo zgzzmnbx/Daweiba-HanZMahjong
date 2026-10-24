@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-24T02:49:03.334Z",
+  "scope": "real Chrome/HTTP/Socket.IO isolated SQLite",
+  "checks": [
+    {
+      "name": "portrait 390x844: one utility entry, no persistent comma/doodle/toolbar clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "portrait 360x740: one utility entry, no persistent comma/doodle/toolbar clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "portrait 320x568: one utility entry, no persistent comma/doodle/toolbar clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "portrait 320x480: one utility entry, no persistent comma/doodle/toolbar clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "portrait 430x932: one utility entry, no persistent comma/doodle/toolbar clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "help, history and full settings remain reachable through visible menu",
+      "status": "PASS"
+    },
+    {
+      "name": "menu opens actual chat and messages reach another browser",
+      "status": "PASS"
+    },
+    {
+      "name": "touch drag inserts a real comma, saves on server and folds the punctuation tray",
+      "status": "PASS"
+    },
+    {
+      "name": "drawing enters through menu, saves actual strokes and retains hide/show without persistent clutter",
+      "status": "PASS"
+    },
+    {
+      "name": "discard and draw stay directly reachable with utilities collapsed",
+      "status": "PASS"
+    },
+    {
+      "name": "review sound controls fold into one entry; real tile objection and vote remain direct in short portrait",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape and rotation close mobile menu; landscape controls restored",
+      "status": "PASS"
+    },
+    {
+      "name": "portrait lobby keeps book prominent and folds updates into menu",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

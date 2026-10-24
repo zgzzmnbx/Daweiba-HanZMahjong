@@ -1,0 +1,19 @@
+import {useEffect,useRef,useState} from 'react';
+import type {ReactNode} from 'react';
+import './portrait-menu.css';
+export type MenuAction={label:string;icon:MenuIconKind;run:()=>void;disabled?:boolean;badge?:number};
+type MenuIconKind='chat'|'brush'|'comma'|'history'|'settings'|'help'|'admin'|'exit'|'book'|'room'|'updates';
+const paths:Record<MenuIconKind,ReactNode>={
+ chat:<path d="M4 4h16v12H9l-5 4V4Zm4 4h8M8 12h5"/>,brush:<path d="m14 4 6 6M6 14 17 3l4 4L10 18M6 14l4 4c0 4-5 4-7 3 3-1 0-4 3-7Z"/>,comma:<path d="M14 7c-6-2-7 6-2 7 0 3-2 5-4 6M14 7c3 4 1 10-6 13"/>,history:<path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/>,settings:<><path d="m9 3-1 3-3 1v3l-2 2 2 2v3l3 1 1 3h6l1-3 3-1v-3l2-2-2-2V7l-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></>,help:<><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 3l-1 1v1m0 3v.1"/></>,admin:<path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3ZM9 12l2 2 4-4"/>,exit:<path d="M10 4H4v16h6m2-13 5 5-5 5m-4-5h13"/>,book:<path d="M12 6C8 3 3 4 3 4v15s5-1 9 2c4-3 9-2 9-2V4s-5-1-9 2Zm0 0v15"/>,room:<path d="M5 21V3h14v18M9 7h6m-6 4h6m-6 4h6m-4 6v-3h2v3"/>,updates:<><path d="M4 4h16v16H4zM8 8h8M8 12h5M8 16h8"/></>,
+};
+export function MenuIcon({kind}:{kind:MenuIconKind}){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[kind]}</svg>;}
+/** Mobile-only trigger; the native dialog traps focus and releases it before a selected action. */
+export function PortraitMenu({label,meta,actions,resetKey,badge=0,onOpen}:{label:string;meta?:ReactNode;actions:MenuAction[];resetKey?:string;badge?:number;onOpen?:()=>void}){
+ const [open,setOpen]=useState(false),dialog=useRef<HTMLDialogElement>(null),trigger=useRef<HTMLButtonElement>(null);
+ const close=()=>{dialog.current?.close();setOpen(false);};
+ useEffect(()=>{if(open&&!dialog.current?.open)dialog.current?.showModal();else if(!open&&dialog.current?.open)dialog.current.close();},[open]);
+ useEffect(()=>{close();},[resetKey]);
+ useEffect(()=>{const m=matchMedia('(max-width:699px) and (orientation:portrait)'),resize=()=>{if(!m.matches)close();};m.addEventListener('change',resize);return()=>m.removeEventListener('change',resize);},[]);
+ return <><button ref={trigger} className="hud-tool portrait-menu-trigger" aria-label={label} aria-haspopup="dialog" aria-expanded={open} onClick={()=>{onOpen?.();setOpen(true);}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h14"/></svg><small>菜单</small>{badge>0&&<i className="menu-unread" aria-label={`${badge} 条新消息`}/>}</button>
+ <dialog ref={dialog} className="portrait-menu-dialog" aria-label={label} onCancel={close} onClose={()=>setOpen(false)} onClick={e=>{if(e.target===e.currentTarget)close();}}><section><header><div><h2>{label}</h2>{meta&&<p>{meta}</p>}</div><button className="menu-close" aria-label="收起菜单" onClick={close}>×</button></header><nav className="portrait-menu-grid" aria-label="收纳的功能">{actions.map(a=><button key={a.label} aria-label={a.label} disabled={a.disabled} onClick={()=>{close();a.run();}}><MenuIcon kind={a.icon}/><span>{a.label}</span>{!!a.badge&&<i className="menu-item-count">{a.badge>9?'9+':a.badge}</i>}</button>)}</nav></section></dialog></>;
+}

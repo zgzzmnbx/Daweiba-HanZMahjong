@@ -11,7 +11,7 @@ await mkdir('Codex-Temp',{recursive:true});await mkdir('docs/evidence',{recursiv
 const dir=await mkdtemp(resolve('Codex-Temp/setup-browser-')),clock=Date.now();
 const server=local?createGameServer({now:()=>clock,automaticTimers:false,dbPath:join(dir,'game.sqlite'),publicOrigin:base,staticDir:resolve('dist/web')}):null;if(server)await server.listen(3139);
 const browser=await chromium.launch({channel:'chrome',headless:true}),contexts=[],checks=[],errors=[];
-const prefix=(local?'':'public-')+'room-setup-20261024';
+const prefix=process.env.EVIDENCE_PREFIX??(local?'':'public-')+'room-setup-20261024';
 const pass=(name,data={})=>{checks.push({name,status:'PASS',...data});console.log('PASS',name);};
 const wait=async(fn)=>{for(let i=0;i<120;i++){if(await fn())return;await new Promise(r=>setTimeout(r,50));}throw Error('state wait timed out');};
 async function member(name){const context=await browser.newContext({viewport:{width:1440,height:900},extraHTTPHeaders:{Origin:base}});contexts.push(context);const page=await context.newPage();page.setDefaultTimeout(10000);page.on('pageerror',e=>errors.push(e.message));return{context,page,name};}

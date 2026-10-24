@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-24T10:49:55.868788",
+  "version": "1.18.0",
+  "source": "f694eea",
+  "release": "1.18.0-20261024-104954",
+  "ready": {
+    "ready": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-OZZbnaob.js",
+      "sha256": "614a5467cdc47d10aeff1fe248a04f9c3616067f981417e1229231376ede8a43"
+    },
+    {
+      "path": "/assets/index-Ce2x7pMq.css",
+      "sha256": "bac36c2a2a4a7acb286c35d481ca3aa611580d015352732666f1f03a43bddd29"
+    }
+  ],
+  "automaticTests": 290,
+  "backup": "pre-release-20261024-104955.sqlite"
+}
