@@ -14,7 +14,7 @@ await mkdir('Codex-Temp',{recursive:true});const dir=await mkdtemp(resolve('Code
 let clock=Date.now();
 const server=local?createGameServer({adminPasswordHash:await hashAdminPassword('records-ui-test-password'),now:()=>clock,automaticTimers:false,speech:{directory:process.env.SPEECH_CACHE_DIR??join(dir,'audio'),apiKey:process.env.DASHSCOPE_API_KEY_FILE?(await readFile(process.env.DASHSCOPE_API_KEY_FILE,'utf8')).trim():undefined},dbPath:join(dir,'game.sqlite'),publicOrigin:base,staticDir:resolve('dist/web')}):null;if(server)await server.listen(3140);
 const browser=await chromium.launch({channel:'chrome',headless:true});const contexts=[],rooms=[],errors=[],checks=[];
-const applicationVersion=JSON.parse(await readFile('package.json','utf8')).version;const prefix=`${local?'':'public-'}speech-${applicationVersion}`;
+const applicationVersion=JSON.parse(await readFile('package.json','utf8')).version;const prefix=process.env.EVIDENCE_PREFIX??`${local?'':'public-'}speech-${applicationVersion}`;
 const pass=(name,data={})=>{checks.push({name,status:'PASS',...data});console.log('PASS',name);};
 const wait=async(fn)=>{for(let i=0;i<100;i++){const value=await fn();if(value)return value;await new Promise(r=>setTimeout(r,50));}throw Error('state wait timed out');};
 async function snapshot(p){const r=await p.context.request.get(`${base}/api/rooms/${p.room}/snapshot`);assert(r.ok());return r.json();}

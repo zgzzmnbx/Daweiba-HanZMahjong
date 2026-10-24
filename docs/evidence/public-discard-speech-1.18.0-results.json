@@ -1,0 +1,246 @@
+{
+  "at": "2026-10-24T02:57:15.827Z",
+  "status": "PASS",
+  "scope": "actual HTTPS/WSS, real AI five-second deadline, Chrome decoded Qwen buffer hashes and live output analyser; no mocked audio or public data changes",
+  "checks": [
+    {
+      "name": "clicking and keyboard-selecting a private hand tile are silent for everyone",
+      "status": "PASS"
+    },
+    {
+      "name": "button discard plays the same real Qwen WAV once on three players and observer",
+      "status": "PASS",
+      "char": "个",
+      "audio": [
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1528827233,
+              "at": 10442.79999923706
+            }
+          ],
+          "peak": 0.06653621047735214
+        },
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1528827233,
+              "at": 8880.89999961853
+            }
+          ],
+          "peak": 0.06653621047735214
+        },
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1528827233,
+              "at": 6876.60000038147
+            }
+          ],
+          "peak": 0.10150441527366638
+        },
+        {
+          "words": [
+            "个"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1528827233,
+              "at": 2720.1000003814697
+            }
+          ],
+          "peak": 0.003544562729075551
+        }
+      ]
+    },
+    {
+      "name": "draft save, repeated spectator polls and subsequent snapshots never repeat the discarded word",
+      "status": "PASS"
+    },
+    {
+      "name": "actual touch pointer drag to table center speaks on all players and observer",
+      "status": "PASS",
+      "char": "气",
+      "audio": [
+        {
+          "words": [
+            "气"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 3234355351,
+              "at": 14325.099998474121
+            }
+          ],
+          "peak": 0.30477213859558105
+        },
+        {
+          "words": [
+            "气"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 3234355351,
+              "at": 12718.89999961853
+            }
+          ],
+          "peak": 0.44012007117271423
+        },
+        {
+          "words": [
+            "气"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 3234355351,
+              "at": 10848.5
+            }
+          ],
+          "peak": 0.30477213859558105
+        },
+        {
+          "words": [
+            "气"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 3234355351,
+              "at": 6974.60000038147
+            }
+          ],
+          "peak": 0.04261530190706253
+        }
+      ]
+    },
+    {
+      "name": "per-player voice mute is respected; re-enabling does not replay missed discards",
+      "status": "PASS"
+    },
+    {
+      "name": "player restoration and anonymous observer reload establish silent baselines",
+      "status": "PASS"
+    },
+    {
+      "name": "the first genuine discard after restoration is heard by the restored player and observer",
+      "status": "PASS"
+    },
+    {
+      "name": "muting cancels a real in-flight audio response instead of starting it late",
+      "status": "PASS"
+    },
+    {
+      "name": "designated AI authoritative discard is spoken once on both human players and observer",
+      "status": "PASS",
+      "char": "比",
+      "audio": [
+        {
+          "words": [
+            "比"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1249689575,
+              "at": 16139.20000076294
+            }
+          ],
+          "peak": 0.2775551676750183
+        },
+        {
+          "words": [
+            "比"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1249689575,
+              "at": 14020.80000114441
+            }
+          ],
+          "peak": 0.2775551676750183
+        },
+        {
+          "words": [
+            "比"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 1249689575,
+              "at": 12242.70000076294
+            }
+          ],
+          "peak": 0.15870660543441772
+        }
+      ]
+    },
+    {
+      "name": "voluntary AI-controlled human discard is heard on all clients after the control epoch changes",
+      "status": "PASS",
+      "char": "吃",
+      "audio": [
+        {
+          "words": [
+            "吃"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 519927277,
+              "at": 24406.80000114441
+            }
+          ],
+          "peak": 0.24134397506713867
+        },
+        {
+          "words": [
+            "吃"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 519927277,
+              "at": 22291
+            }
+          ],
+          "peak": 0.24134397506713867
+        },
+        {
+          "words": [
+            "吃"
+          ],
+          "starts": [
+            {
+              "duration": 1.1,
+              "hash": 519927277,
+              "at": 19762.90000152588
+            }
+          ],
+          "peak": 0.018008945509791374
+        }
+      ]
+    },
+    {
+      "name": "all verification-owned rooms closed without scoring or book entries",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

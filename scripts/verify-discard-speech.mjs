@@ -13,7 +13,7 @@ const browser=await chromium.launch({channel:'chrome',headless:true,args:['--aut
 const pass=(name,data={})=>{checks.push({name,status:'PASS',...data});console.log('PASS',name);};
 const wait=async(fn)=>{for(let i=0;i<180;i++){if(await fn())return;await new Promise(r=>setTimeout(r,50));}throw Error('wait timed out');};
 async function member(viewport={width:1280,height:800}){
- const context=await browser.newContext({viewport,extraHTTPHeaders:{Origin:base}});contexts.push(context);
+ const context=await browser.newContext({viewport,hasTouch:true,extraHTTPHeaders:{Origin:base}});contexts.push(context);
  await context.addInitScript(()=>{
   localStorage.setItem('hanz-speech','on');localStorage.setItem('hanz-sfx-v1',JSON.stringify({enabled:false,volume:.55}));
   window.__voice={words:[],starts:[],tracks:[],peak:0};
@@ -33,8 +33,9 @@ async function setup(capacity=3,humans=3){
  const r=await ps[0].context.request.post(base+'/api/rooms',{data:{actionId:randomUUID(),capacity,nickname:'报牌语音验收1'}});assert(r.ok());const room=(await r.json()).snapshot.public.roomId;
  for(const [i,p]of ps.entries()){p.room=room;if(i)assert((await p.context.request.post(`${base}/api/rooms/${room}/join`,{data:{actionId:randomUUID(),roomId:room,requestedSeat:i,nickname:`报牌语音验收${i+1}`}})).ok());await p.page.goto(`${base}/room/${room}`);await p.page.getByRole('button',{name:'准备好了',exact:true}).waitFor();p.id=(await snap(p)).private.playerId;}
  rooms.push(ps);
- for(let i=humans;i<capacity;i++){await ps[0].page.getByRole('button',{name:`将座位 ${i+1} 设为 AI`,exact:true}).click();await ps[0].page.getByRole('button',{name:`移除座位 ${i+1} 的 AI，留给朋友`,exact:true}).waitFor();}
  for(const p of ps){await p.page.getByRole('button',{name:'准备好了',exact:true}).click();await p.page.getByRole('button',{name:'取消准备',exact:true}).waitFor();}
+ await wait(async()=>await ps[0].page.locator('.room-setup-panel .seat-row').filter({hasText:'真人 · 已准备'}).count()===humans);
+ for(let i=humans;i<capacity;i++){await ps[0].page.getByRole('button',{name:`将座位 ${i+1} 设为 AI`,exact:true}).click();await ps[0].page.getByRole('button',{name:`移除座位 ${i+1} 的 AI，留给朋友`,exact:true}).waitFor();}
  await ps[0].page.getByRole('button',{name:'开始牌局',exact:true}).click();await wait(async()=> (await snap(ps[0])).public.phase.kind==='TURN_ACTION');return ps;
 }
 async function observe(room){const p=await member({width:390,height:844});await p.page.goto(`${base}/watch/${room}`);await p.page.locator('.canvas-host canvas').waitFor();await p.page.keyboard.press('Shift');await p.page.waitForTimeout(100);assert.equal((await audio(p)).starts.length,0);return p;}
@@ -46,7 +47,7 @@ async function response(ps){
 }
 async function discard(ps,drag=false){
  const s=await snap(ps[0]),p=ps.find(p=>p.id===s.public.phase.actorId);assert(p);const tile=(await snap(p)).private.hand.find(t=>t.tileId!==(s.private?.forbiddenImmediateDiscardTileId));
- if(drag){await p.page.setViewportSize({width:390,height:844});await p.page.waitForTimeout(250);const r=await p.page.locator(`[data-tile-id="${tile.tileId}"]`).boundingBox(),z=await p.page.locator('.discard-drop-zone').boundingBox();await p.page.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.page.mouse.down();await p.page.mouse.move(z.x+z.width/2,z.y+z.height/2,{steps:12});await p.page.mouse.up();}
+ if(drag){await p.page.setViewportSize({width:390,height:844});await p.page.waitForTimeout(250);const r=await p.page.locator(`[data-tile-id="${tile.tileId}"]`).boundingBox(),z=await p.page.locator('.discard-drop-zone').boundingBox();const touch=await p.context.newCDPSession(p.page),from={x:r.x+r.width/2,y:r.y+r.height/2},to={x:z.x+z.width/2,y:z.y+z.height/2};await touch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[from]});for(let i=1;i<=12;i++)await touch.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:from.x+(to.x-from.x)*i/12,y:from.y+(to.y-from.y)*i/12}]});await touch.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await touch.detach();}
  else{await p.page.locator(`[data-tile-id="${tile.tileId}"]`).click();await p.page.getByRole('button',{name:'出这张',exact:true}).click();}
  await wait(async()=> (await snap(p)).public.discards.at(-1)?.tile.tileId===tile.tileId);return{p,tile};
 }
@@ -69,7 +70,7 @@ try{
  await actor.page.locator(`[data-tile-id="${tile.tileId}"]`).click();await actor.page.keyboard.press('Enter');await actor.page.waitForTimeout(250);for(const p of all){assert.deepEqual((await audio(p)).words,[]);assert.deepEqual((await audio(p)).starts,[]);}assert.equal((await snap(actor)).public.discards.length,0);pass('clicking and keyboard-selecting a private hand tile are silent for everyone');
  let event=await discard(ps);pass('button discard plays the same real Qwen WAV once on three players and observer',{char:event.tile.char,audio:await heard(all,event.tile.char)});await response(ps);await actor.page.waitForTimeout(1200);
  await reset(all);const editable=ps[0],id=(await snap(editable)).private.hand[0].tileId;await editable.page.locator(`[data-tile-id="${id}"]`).focus();await editable.page.keyboard.press('ArrowRight');await editable.page.waitForTimeout(750);for(const p of all)assert.equal((await audio(p)).starts.length,0);pass('draft save, repeated spectator polls and subsequent snapshots never repeat the discarded word');
- event=await discard(ps,true);pass('actual phone drag to table center speaks on all players and observer',{char:event.tile.char,audio:await heard(all,event.tile.char)});await response(ps);await actor.page.waitForTimeout(1200);
+ event=await discard(ps,true);pass('actual touch pointer drag to table center speaks on all players and observer',{char:event.tile.char,audio:await heard(all,event.tile.char)});await response(ps);await actor.page.waitForTimeout(1200);
  await mute(ps[2],true);await reset(all);event=await discard(ps);await heard([ps[0],ps[1],observer],event.tile.char);assert.equal((await audio(ps[2])).starts.length,0);assert.deepEqual((await audio(ps[2])).words,[]);await response(ps);await mute(ps[2],false);await ps[2].page.waitForTimeout(250);assert.equal((await audio(ps[2])).starts.length,0);pass('per-player voice mute is respected; re-enabling does not replay missed discards');
  await ps[1].page.reload();await ps[1].page.locator('.game-shell').waitFor();await observer.page.reload();await observer.page.locator('.canvas-host canvas').waitFor();await ps[1].page.keyboard.press('Shift');await observer.page.keyboard.press('Shift');await ps[0].page.waitForTimeout(1250);assert.equal((await audio(ps[1])).starts.length,0);assert.equal((await audio(observer)).starts.length,0);pass('player restoration and anonymous observer reload establish silent baselines');
  await reset(all);event=await discard(ps);await heard(all,event.tile.char);await response(ps);await actor.page.waitForTimeout(1200);pass('the first genuine discard after restoration is heard by the restored player and observer');

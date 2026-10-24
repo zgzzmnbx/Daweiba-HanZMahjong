@@ -1,0 +1,19 @@
+{
+  "base": "db2b9f3 (1.17.0)",
+  "unitTests": 290,
+  "files": {
+    "apps/web/src/speech-client.ts": "fa27bfca1b806b9705a8c83ac7242302d9cc856671d150678ff6b2269630a987",
+    "apps/web/src/discard-speech.ts": "8904f0573af0f1e3fd6a464f937fd62d2c1ea009a6cdf3b18e544433952202e3",
+    "apps/web/src/SpectatorTable.tsx": "19b82911ea56854e7eb88d3f8a786145bb47ed23617865de8ba5d50decfedfb9",
+    "tests/ui/discard-speech.test.ts": "e254c86f83d181f25b06c6ed5f3c2eb1970b577f9dd3483485431608d102991a",
+    "scripts/verify-discard-speech.mjs": "f56e870553a31b2984d70be91454ad902d25953022e87d14664962a7c9030e93"
+  },
+  "scope": "independent baseline for speech; GameTable candidate changes only hand-selection speech; shared portrait menu integration verified separately",
+  "touchEvidence": "discard-speech-20261024-touch-results.json",
+  "sfxRegression": "sound-effects-discard-20261024-results.json: fresh unique-output rerun, 14 actual checks, exit 0",
+  "release": "1.18.0-20261024-104954",
+  "jointSource": "f694eea",
+  "backup": "pre-release-20261024-104955.sqlite",
+  "publicChecks": 11,
+  "publicEvidence": "public-discard-speech-1.18.0-results.json"
+}

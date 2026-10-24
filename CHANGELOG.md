@@ -8,9 +8,9 @@
 
 聊天/涂鸦通过显式React控制接口复用原功能，没有模拟隐藏按钮点击。原浏览器恢复和隐私边界未改，语音专项并入同一版本：只有公开权威弃牌后全桌报字，点选手牌不念；按钮/拖放/AI/托管一致，去重、恢复静默和个人静音保留。
 
-已发布到原公网入口。冻结源码 `f694eea`，正式release `1.18.0-20261024-104954`，一致性备份 `pre-release-20261024-104955.sqlite`；公网ready=true且JS/CSS逐字节一致。290项自动测试通过；最终冻结构建本地13项菜单、26项候场、20项稳定性通过，公网对应13/26/15项全部通过。真实触摸插逗号、聊天联机、画笔落笔/显隐、圈词反对票与横竖屏切换均可操作，没有force点击；自建验收房均已无计分关闭。语音12项独立检查与7项真实Qwen回归通过，语音公网专项另行补录。
+已发布到原公网入口。冻结源码 `f694eea`，正式release `1.18.0-20261024-104954`，一致性备份 `pre-release-20261024-104955.sqlite`；公网ready=true且JS/CSS逐字节一致。290项自动测试通过；最终冻结构建本地13项菜单、26项候场、20项稳定性通过，公网对应13/26/15项全部通过。真实触摸插逗号、聊天联机、画笔落笔/显隐、圈词反对票与横竖屏切换均可操作，没有force点击；自建验收房均已无计分关闭。语音12项独立触摸检查、7项真实Qwen回归与14项音效回归通过；最终联合版本另通过11项公网报字检查，包括真实触摸弃牌、五秒AI出牌、多人及观战实际音频输出。
 
-证据：`public-portrait-1.18.0-release.json`、`public-portrait-menu-1.18.0-results.json`、`public-portrait-setup-1.18.0-results.json`、`public-portrait-stability-1.18.0-results.json`均位于docs/evidence。GitHub同步进行中。
+证据：`public-portrait-1.18.0-release.json`、`public-portrait-menu-1.18.0-results.json`、`public-portrait-setup-1.18.0-results.json`、`public-portrait-stability-1.18.0-results.json`均位于docs/evidence。源码及54项公网UI证据已同步GitHub `2e2b7e3`；最终语音证据、测试脚本与交接记录一并同步于后续收尾提交；无需重新部署。
 
 手机窗口与触摸为Chrome模拟，未替代实体手机实测。
 
