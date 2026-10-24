@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import type {PublicRoomSnapshot} from '../../../packages/contracts/types';
 import {discardSpeechEvents,type SpeechFrame} from './discard-speech';
-export type SpeechManifest={profile:string;voice:string;tileDurationMs:number;enabled:boolean;ready:string[];pending?:string[];failed?:string[]};
+export type SpeechManifest={profile:string;voice:string;tileDurationMs:number|null;words?:Record<string,string>;unmapped?:string[];enabled:boolean;ready:string[];pending?:string[];failed?:string[]};
 export const tileSpeechUrl=(profile:string,char:string)=>`/api/speech/tiles/${encodeURIComponent(profile)}/${encodeURIComponent(char)}`;
 type SpeechJob={char:string}|{url:string;post:true};
 export function useGameSpeech(room:PublicRoomSnapshot|null,session:string,active:boolean,serverNow:number,administrator=false){

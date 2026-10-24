@@ -1,0 +1,1077 @@
+{
+  "at": "2026-10-24T04:25:04.055Z",
+  "status": "PASS",
+  "scope": "178 real Qwen word WAV files served with provider credentials removed",
+  "profile": "qwen3-flash-Cherry-zh-tile-word-v1",
+  "total": 178,
+  "checks": [
+    {
+      "char": "一",
+      "word": "一心",
+      "durationMs": 530.7083333333334,
+      "sha256": "9455f7887ea3859e951c6df1e43c94f2d4eb20a71c3ed615133c658807bc6f27"
+    },
+    {
+      "char": "上",
+      "word": "上山",
+      "durationMs": 962.5,
+      "sha256": "db396b30a00f7049b4bb135adf4fa003a73dd309209098fe7d6b47440c09b185"
+    },
+    {
+      "char": "下",
+      "word": "下雨",
+      "durationMs": 1366.5,
+      "sha256": "0f7132ba0d25bfd55fa9482cf25bbb51ea2f161fd515b236e56b8fbb0229a0cb"
+    },
+    {
+      "char": "不",
+      "word": "不必",
+      "durationMs": 705.5833333333334,
+      "sha256": "9464f71a53733fce8ce8000bb798e095b7f1a35dc11cf4361ab14af4585ef4b3"
+    },
+    {
+      "char": "与",
+      "word": "与其",
+      "durationMs": 745.375,
+      "sha256": "cfb093bf73a9628de8ff78dc3ddf7001d2050dd1e1c2ff6ee658415e3223c3b7"
+    },
+    {
+      "char": "丑",
+      "word": "丑闻",
+      "durationMs": 977.25,
+      "sha256": "4c596f04635a8c091969992d4af7ec9728c32a655888b42f14af49f338738841"
+    },
+    {
+      "char": "东",
+      "word": "东方",
+      "durationMs": 629.375,
+      "sha256": "51b94e98ad1fc34f37bbdb58c67ced70e267553a1ae24e7cbc1bd02b265f7f2a"
+    },
+    {
+      "char": "个",
+      "word": "个人",
+      "durationMs": 852.625,
+      "sha256": "78d60f4f5937ea35bffef280fa608e0c4609912db6ef65213a13e3d548f36c20"
+    },
+    {
+      "char": "中",
+      "word": "中国",
+      "durationMs": 800.875,
+      "sha256": "b0a32b84e988c3805282ccce92763ab8877ade0c76f2326fabb3ccb97f582ee7"
+    },
+    {
+      "char": "为",
+      "word": "为了",
+      "durationMs": 726.7083333333334,
+      "sha256": "d653e32bb7329daaf483edce1678c43ad30cec7f215cf064b35d7c8e44b9bf18"
+    },
+    {
+      "char": "么",
+      "word": "么么",
+      "durationMs": 640.9166666666666,
+      "sha256": "467a75869540d96a4f0a3f2159dceed543113a9f91c3124364851a2ee430ca2c"
+    },
+    {
+      "char": "之",
+      "word": "之前",
+      "durationMs": 887.2916666666666,
+      "sha256": "e8c3a2fdaf02ded526bbb6bd8e31dc435db5b86fffedac6c024784335d343954"
+    },
+    {
+      "char": "乐",
+      "word": "乐园",
+      "durationMs": 825.9583333333334,
+      "sha256": "72240dd3269883e32df07dfcce989370e233570e6c30e8d5774246ce31724e44"
+    },
+    {
+      "char": "也",
+      "word": "也许",
+      "durationMs": 600.2916666666666,
+      "sha256": "a3a77921613fae4a4ec8b0f3fb11958c1302176069f01002a311697d8892d185"
+    },
+    {
+      "char": "乱",
+      "word": "乱世",
+      "durationMs": 736.4583333333334,
+      "sha256": "e66f4f9c415968772882c883d577a4035fef3538ca80072ed779957324a754de"
+    },
+    {
+      "char": "了",
+      "word": "了解",
+      "durationMs": 786.5833333333334,
+      "sha256": "52cab5f5cfb0f57a73b9d3c96ee66519565138acfa8735a6256e2c6caf4a5fcb"
+    },
+    {
+      "char": "云",
+      "word": "云朵",
+      "durationMs": 704.9583333333334,
+      "sha256": "13bb51d90a463528e6db8d7852562ffbd2a956eec671a3b57ed9c73f840a3695"
+    },
+    {
+      "char": "人",
+      "word": "人生",
+      "durationMs": 824.125,
+      "sha256": "5ddcc0e847a06554b41769b049d29614dd7658972057af5bb89306193295a526"
+    },
+    {
+      "char": "什",
+      "word": "什么",
+      "durationMs": 914.1666666666666,
+      "sha256": "2b42ff85713eff0335dcb96c4ceb74192605fb17b10835958400986511e15834"
+    },
+    {
+      "char": "从",
+      "word": "从前",
+      "durationMs": 961.625,
+      "sha256": "075221312a50139946b7268721540fc7abbbfadedaf18f36c3e1312ce8e1ed68"
+    },
+    {
+      "char": "他",
+      "word": "他们",
+      "durationMs": 790,
+      "sha256": "c26428dba70706316c64eaaf42dc6437950411beff49604f279d9bcfae2e8ad9"
+    },
+    {
+      "char": "以",
+      "word": "以后",
+      "durationMs": 590.4166666666666,
+      "sha256": "c638042a0491952f68d11ff02827613a62f46164e608da31d18e0bd41daae39a"
+    },
+    {
+      "char": "们",
+      "word": "们俩",
+      "durationMs": 800.3333333333334,
+      "sha256": "549f8bc5ad7d87dd8d19e97a5f1ade13db107419eac1700f32b23e39f3c2614c"
+    },
+    {
+      "char": "会",
+      "word": "会议",
+      "durationMs": 647.0416666666666,
+      "sha256": "57b26e3e6a86502840147646562a89a5eae73f785b9ec329a4e1393112f3a2d3"
+    },
+    {
+      "char": "但",
+      "word": "但是",
+      "durationMs": 792.6666666666666,
+      "sha256": "ac55e28995ea4e50fa47ca90f1f88b2f497c1d267e26e25b3b70e8f451379522"
+    },
+    {
+      "char": "你",
+      "word": "你好",
+      "durationMs": 831.875,
+      "sha256": "ef52d18fce45fd6992cbe8ec5d7a342b863b7b2e7f83502a2eda20591037afd4"
+    },
+    {
+      "char": "俄",
+      "word": "俄语",
+      "durationMs": 3134.375,
+      "sha256": "12c22fd8ca74df9b2a5e3854c84a68c233805e5e9fbf273ba8daf40a6c9b53a5"
+    },
+    {
+      "char": "做",
+      "word": "做饭",
+      "durationMs": 751.7083333333334,
+      "sha256": "ec487c380e37d7355bf1d30a88810dbf7f6774df42f89e0997aab2db1ac8ef75"
+    },
+    {
+      "char": "像",
+      "word": "像素",
+      "durationMs": 906.625,
+      "sha256": "9ad1d8daf833c68f66b5c5eafbac47484c0e9aed487d4548cc9cb4e634888ce2"
+    },
+    {
+      "char": "儿",
+      "word": "儿童",
+      "durationMs": 764.8333333333334,
+      "sha256": "b1088828474ab93c811945b61ef1579ec30ec2342d9b4a4007ed179351e0e339"
+    },
+    {
+      "char": "光",
+      "word": "光明",
+      "durationMs": 858.5416666666666,
+      "sha256": "9d45ee506ec9c7b852b7a471219690ad06c6c7667a4e655fa89d27e5e34e039d"
+    },
+    {
+      "char": "冷",
+      "word": "冷静",
+      "durationMs": 818.75,
+      "sha256": "84a85324a93fbec6b98569f5cf9f1675b74c11e9af9780a15eba50a5e86a5135"
+    },
+    {
+      "char": "几",
+      "word": "几何",
+      "durationMs": 934.6666666666666,
+      "sha256": "8425199c1cfa190c7569fd278639bfd4342b526fd6d8600b8adf57aa5fd76a76"
+    },
+    {
+      "char": "别",
+      "word": "别人",
+      "durationMs": 762.375,
+      "sha256": "c4efec8d63e8cdcf84ec0fb10c75e59e82e3418f002e3c2eed09c8d67acc4032"
+    },
+    {
+      "char": "到",
+      "word": "到达",
+      "durationMs": 718.0833333333334,
+      "sha256": "d2dd72c502636a524526cace9c9de9bfb40d7cb69ed05ff0b8fcb9712338d863"
+    },
+    {
+      "char": "前",
+      "word": "前方",
+      "durationMs": 782.9583333333334,
+      "sha256": "36f25f5f11342993390c3b7b893fed5a18d6ea4a3cc10b0be5f506449b71683f"
+    },
+    {
+      "char": "去",
+      "word": "去年",
+      "durationMs": 865.7083333333334,
+      "sha256": "a8a98d909430c048f05d3a146ffbd21641a89b10e6ada1cb4863fdf9016ccba7"
+    },
+    {
+      "char": "又",
+      "word": "又来",
+      "durationMs": 536.875,
+      "sha256": "b6d2ea19f1af26751fbe604cd838aef04c9401b5d0eecef15f7b5d3b47a24dff"
+    },
+    {
+      "char": "发",
+      "word": "发现",
+      "durationMs": 676.2916666666666,
+      "sha256": "e9a4a107cce79a486512e7931442163adddd2a2221a6b158a304bc52c76dbc5e"
+    },
+    {
+      "char": "口",
+      "word": "口袋",
+      "durationMs": 961.875,
+      "sha256": "32a2a066d5002104af80ba6841fef78d3f07276ef80c55b9a8ae2dc230382593"
+    },
+    {
+      "char": "只",
+      "word": "只有",
+      "durationMs": 631.875,
+      "sha256": "641b32ba10227f97e51d1392ae7a893466c404cdbfc3429c6eda5fa482b3c8c8"
+    },
+    {
+      "char": "可",
+      "word": "可以",
+      "durationMs": 560.7916666666666,
+      "sha256": "5c300ec94856484e6fbfebd86bbbe8a1e313425d331732aa8e472ef5c190ca22"
+    },
+    {
+      "char": "右",
+      "word": "右边",
+      "durationMs": 756.3333333333334,
+      "sha256": "e6c185c095ff348b620d37ebbe32ba497aec37eff8b8a20d3dd16a6cbc12e3fd"
+    },
+    {
+      "char": "吃",
+      "word": "吃饭",
+      "durationMs": 752.2916666666666,
+      "sha256": "ad331fe5eeab3e6f622413433054f635efe195967cf77bcceef13c2a44c25cc1"
+    },
+    {
+      "char": "后",
+      "word": "后来",
+      "durationMs": 751.0833333333334,
+      "sha256": "cc589255a7ba0f69e484937959bde552d8d99fb42bfc82e71508097080e93e53"
+    },
+    {
+      "char": "向",
+      "word": "向往",
+      "durationMs": 638.1666666666666,
+      "sha256": "4cf3557654a11c7df594ffcda1af5b2f5c0e699371b06fde1d2aa7ddcc7b6875"
+    },
+    {
+      "char": "吗",
+      "word": "吗啡",
+      "durationMs": 847.2083333333334,
+      "sha256": "5a304dc918706b5cb837c55a0696689bc81458ed8dcb7096a09a35114926d5ba"
+    },
+    {
+      "char": "吧",
+      "word": "吧台",
+      "durationMs": 766.7083333333334,
+      "sha256": "f2437aa93e4e7b066667f0c307f8d800ff9358fdd16c0ecc781ed00cb7a57f81"
+    },
+    {
+      "char": "听",
+      "word": "听见",
+      "durationMs": 819.1666666666666,
+      "sha256": "4378d284b79295d92068c7ea1a2a295517d126b5f2df00c933b5e3ecde015d02"
+    },
+    {
+      "char": "呆",
+      "word": "呆板",
+      "durationMs": 849.0833333333334,
+      "sha256": "5cba9386b868acf4ce799663621591425ddb09e1a75ded5a2ae15daafd04e4a3"
+    },
+    {
+      "char": "和",
+      "word": "和平",
+      "durationMs": 902.5833333333334,
+      "sha256": "7a6a8fed76f4799a01341393aeb3b557dd77dff607520b94264c0cd877a05054"
+    },
+    {
+      "char": "哪",
+      "word": "哪里",
+      "durationMs": 883.5833333333334,
+      "sha256": "b71f8668c2357e3b28a567abb06ca3116cbdd3f6dd416a95f3c773f1d355cd49"
+    },
+    {
+      "char": "哭",
+      "word": "哭泣",
+      "durationMs": 887.3333333333334,
+      "sha256": "ece1d9a8e07d94b37e78262f3c1abddfd14a21e6a4fa68295b63de0e2620b079"
+    },
+    {
+      "char": "啊",
+      "word": "啊呀",
+      "durationMs": 723.2916666666666,
+      "sha256": "b24242199898972dd3d2eca9e7c656e6233c7c44c872d3e2bf3ec877ecb9cfd4"
+    },
+    {
+      "char": "喜",
+      "word": "喜欢",
+      "durationMs": 798.375,
+      "sha256": "9f00e047ca6c7e6a3c40c71a04382734d5af5e9f7181d693358d246278a8f79b"
+    },
+    {
+      "char": "喝",
+      "word": "喝水",
+      "durationMs": 1079.0416666666667,
+      "sha256": "7b9eeb4a5b216b206b2140e71ab24d7026ff77769b17320e18411b210d8c68c2"
+    },
+    {
+      "char": "回",
+      "word": "回家",
+      "durationMs": 787.125,
+      "sha256": "463c6daa0a41526ee5d0f41e3f366e0104ad349c7ae7b2e2b11901661d2387ec"
+    },
+    {
+      "char": "因",
+      "word": "因为",
+      "durationMs": 719.125,
+      "sha256": "a2f6826934aa7f2d335a3db495dce92df3fa7a0a96ce55c8b1ab3ea754ac3afb"
+    },
+    {
+      "char": "在",
+      "word": "在意",
+      "durationMs": 828.9166666666666,
+      "sha256": "fe1697cfae074648d7389f8b7888575babed8a7ef3f4e3c1622109a8bf39ca84"
+    },
+    {
+      "char": "地",
+      "word": "地球",
+      "durationMs": 760.125,
+      "sha256": "cf8dbf19b55dd1581ba263bd039cbd3a83f2f070ebcbe1356b22d2e6296b1b11"
+    },
+    {
+      "char": "坏",
+      "word": "坏处",
+      "durationMs": 795.9583333333334,
+      "sha256": "4430eb8202347e8f274c0f70c7a99fa2e13a7f0582b53827b7588343703b7eee"
+    },
+    {
+      "char": "城",
+      "word": "城市",
+      "durationMs": 899.375,
+      "sha256": "941e3b935648f24c182d8eaa7daecbb20c0d36f6d354dceca2238596d894dabe"
+    },
+    {
+      "char": "夏",
+      "word": "夏天",
+      "durationMs": 928.7916666666666,
+      "sha256": "14314945179f3cb3b0b58905e52bfc7bdf01e08f954d056791cea53a2e882d76"
+    },
+    {
+      "char": "外",
+      "word": "外面",
+      "durationMs": 538.5416666666666,
+      "sha256": "61bf3d070ce03ff46318ce8cf14898b043d87ca572cd2a7e994c714aad9b4778"
+    },
+    {
+      "char": "多",
+      "word": "多云",
+      "durationMs": 656.625,
+      "sha256": "e4190c975d4e12cc77169c39c2c06ab606b933d84b93cd37e860f04256b71d2b"
+    },
+    {
+      "char": "夜",
+      "word": "夜晚",
+      "durationMs": 1006.25,
+      "sha256": "79eab3f3fde9ed207bced852fda1991ee84ac37e89e822a3d91510ab8e2b3020"
+    },
+    {
+      "char": "大",
+      "word": "大海",
+      "durationMs": 776.5416666666666,
+      "sha256": "60211c0139b9ad4d1991d2b4722407a0132bc51ec785abca37f6fffea2c26c40"
+    },
+    {
+      "char": "天",
+      "word": "天空",
+      "durationMs": 762.9583333333334,
+      "sha256": "8efdfc7f8f70d0a0f9704f2dd98b79ae94b1d93901a686416343b76145965ed9"
+    },
+    {
+      "char": "失",
+      "word": "失去",
+      "durationMs": 792.9166666666666,
+      "sha256": "248dfad14cee1bb7529896b1221f285befffe62b181ac1e4294c675aa2fafdeb"
+    },
+    {
+      "char": "她",
+      "word": "她们",
+      "durationMs": 669.25,
+      "sha256": "f39143ab2e4913ca793aaa27c73c5b49fae221c355d2c9d4ac5fbf207e53d7fd"
+    },
+    {
+      "char": "好",
+      "word": "好人",
+      "durationMs": 1047.2916666666667,
+      "sha256": "4cba6d5b33652e009fb5e0dc475148966d8a078012c750aaf0e6049df2e5a59c"
+    },
+    {
+      "char": "如",
+      "word": "如果",
+      "durationMs": 795.0416666666666,
+      "sha256": "e60ad3185a71331be4097519ce87c960ecffbfe5142fc91f8b51d741a660c36f"
+    },
+    {
+      "char": "子",
+      "word": "子女",
+      "durationMs": 1062.25,
+      "sha256": "9bbefe4731d7475e4fef7db518819bb50b0ebdac79468cc7cec11acc886491d9"
+    },
+    {
+      "char": "它",
+      "word": "它们",
+      "durationMs": 664.7083333333334,
+      "sha256": "2aae2ce46764cbad32f504ce313426533509560d9ecaa7722a28ca3c34a668ad"
+    },
+    {
+      "char": "完",
+      "word": "完成",
+      "durationMs": 847.125,
+      "sha256": "68d13678287fb73be6fc74c657157a66ff19ae4bbd8b38649f0f45d26b8244b5"
+    },
+    {
+      "char": "家",
+      "word": "家人",
+      "durationMs": 762.375,
+      "sha256": "f3ac47ffb7bf590a26c56fb3ae574ddbca988f86d821a56101e3073d46275b4e"
+    },
+    {
+      "char": "对",
+      "word": "对话",
+      "durationMs": 510.4166666666667,
+      "sha256": "2bd689088a04bfccb4078ba660b3aa00d7d01a06345c5c61f3b8f4406c6b61f7"
+    },
+    {
+      "char": "将",
+      "word": "将来",
+      "durationMs": 1176.4583333333333,
+      "sha256": "87c2e46eda1c05df86931cfa70289aa18907500b5a86ed1ca50787014f1b5032"
+    },
+    {
+      "char": "小",
+      "word": "小河",
+      "durationMs": 824.9166666666666,
+      "sha256": "d63fddc5389915b35c0357bcb0068be1b75723c45bbafc89f2c56f204e62c18f"
+    },
+    {
+      "char": "少",
+      "word": "少年",
+      "durationMs": 698.9583333333334,
+      "sha256": "b45a9ffcafefda41135401257506eab9e80b26291efde9dfacf6ad74935b2708"
+    },
+    {
+      "char": "就",
+      "word": "就业",
+      "durationMs": 921.125,
+      "sha256": "ce0f0a5f5a90d7e0c9ca004ce793575644e5f90337691fd5dff5130963e5adc6"
+    },
+    {
+      "char": "山",
+      "word": "山水",
+      "durationMs": 985.5,
+      "sha256": "d23f5901767455d0bbad1bb100ce773a07630507bc04430ac1877adea075e0fb"
+    },
+    {
+      "char": "左",
+      "word": "左边",
+      "durationMs": 673.7083333333334,
+      "sha256": "a15eb0978762c4142b3a536806c5ff59ee982b1552c608ec3f16c6d0dd974ce1"
+    },
+    {
+      "char": "影",
+      "word": "影子",
+      "durationMs": 780.5416666666666,
+      "sha256": "ee3aeecd832785deff6fcd6aeef9d05a3d332ea943e7726897ff1021bb12023a"
+    },
+    {
+      "char": "很",
+      "word": "很好",
+      "durationMs": 918.3333333333334,
+      "sha256": "0fbf0dd6ee9f29f2dd3b88fd163c7713b0377ae51c0cba7b41a8f696ea93e623"
+    },
+    {
+      "char": "得",
+      "word": "得到",
+      "durationMs": 644.4166666666666,
+      "sha256": "8c7ba5cd2d3d2f09a8466a3a353ef24b3ff1abe2c19569ca795ef7a18fb298b5"
+    },
+    {
+      "char": "心",
+      "word": "心情",
+      "durationMs": 780.0416666666666,
+      "sha256": "81a218ff4ff49bf584e3f031d38542f90af177839d7c1b4c21c5e0c54c000ae5"
+    },
+    {
+      "char": "快",
+      "word": "快乐",
+      "durationMs": 839.2916666666666,
+      "sha256": "9183a9b9e94db4df9afc5a2b1652d76a19bac0de943245aedfd160a7b27281b1"
+    },
+    {
+      "char": "怎",
+      "word": "怎么",
+      "durationMs": 888.7083333333334,
+      "sha256": "a015473a58755fe45598345b223c313647f41c657abdaafd1baf48af07c7b231"
+    },
+    {
+      "char": "恋",
+      "word": "恋爱",
+      "durationMs": 643.375,
+      "sha256": "cfac664c67f069029596a1ce49586c42e9cbdf8247469ea2019382495fb5bb9b"
+    },
+    {
+      "char": "想",
+      "word": "想念",
+      "durationMs": 845.25,
+      "sha256": "077dafd99aa7fcc31304b2c527f33bcff2d7f513f50d639bbe04082bd2aa0a50"
+    },
+    {
+      "char": "我",
+      "word": "我们",
+      "durationMs": 507.375,
+      "sha256": "c7bf19659216740fa0277e4e9d2614c4f1a4158a8ebec74ceb5b16d2ef6b7e6e"
+    },
+    {
+      "char": "或",
+      "word": "或者",
+      "durationMs": 1157.7083333333333,
+      "sha256": "26c71b0de8403a8c725e2c242de6ceb845c8bb23d16a0c85b126fccebd8d6c53"
+    },
+    {
+      "char": "所",
+      "word": "所以",
+      "durationMs": 806.0833333333334,
+      "sha256": "3467c900ef008b31db697add832fb5dd147dd53b25e5be08e4892e2e312cb3d8"
+    },
+    {
+      "char": "手",
+      "word": "手心",
+      "durationMs": 685.9583333333334,
+      "sha256": "acfdbef0cda5e483e1ed3bae4b194f6888555fcbc0e6633074ff7c3431004105"
+    },
+    {
+      "char": "把",
+      "word": "把手",
+      "durationMs": 484.2083333333333,
+      "sha256": "5bdd56b6054c5b293403413b78a23262b612a19dc13a3e2d75bc9b512e4ea536"
+    },
+    {
+      "char": "故",
+      "word": "故事",
+      "durationMs": 744.625,
+      "sha256": "ce7d93d0e08b249af87fb11bb9e9c554d8b27650d4816e21b19a71c19a26761b"
+    },
+    {
+      "char": "无",
+      "word": "无声",
+      "durationMs": 909.2916666666666,
+      "sha256": "38ad3e007c56ffcb8b3aafe5350a6e2d11c5d7da7d2b997be0404a20c75c0007"
+    },
+    {
+      "char": "日",
+      "word": "日出",
+      "durationMs": 863.3333333333334,
+      "sha256": "6e2704aece503302851a40ae58041229360d7882351306b71d59fbdaabb71981"
+    },
+    {
+      "char": "明",
+      "word": "明天",
+      "durationMs": 794.125,
+      "sha256": "5fb6b1ac2e3cd92550d42cab03b3b0d42653a607cb3fc246e717a9212f9fcdd3"
+    },
+    {
+      "char": "星",
+      "word": "星空",
+      "durationMs": 684.0416666666666,
+      "sha256": "fffcc278d10056771ec1b75c74ece56f7e7eb659f1f126331491548ef0e1cfc4"
+    },
+    {
+      "char": "春",
+      "word": "春天",
+      "durationMs": 917.1666666666666,
+      "sha256": "5c6bc54ec1f4c80b4355742b63c6a3d09baa1c963175c2e492ab51e7c3159230"
+    },
+    {
+      "char": "是",
+      "word": "是否",
+      "durationMs": 694.75,
+      "sha256": "25b6e8ea6cef40be8902b681b2800f09d38824e7d5e41855885f74f1c6db15c6"
+    },
+    {
+      "char": "月",
+      "word": "月亮",
+      "durationMs": 739.9166666666666,
+      "sha256": "b070f5d91c499827b424cd4c67ddad775d802df56c1b72e3b4f699307da777b7"
+    },
+    {
+      "char": "有",
+      "word": "有趣",
+      "durationMs": 950.7916666666666,
+      "sha256": "7675a0e71178c3139ba06047fcb2645bc20843e925f11c5e39dab96cd9c7fd40"
+    },
+    {
+      "char": "木",
+      "word": "木头",
+      "durationMs": 767.4583333333334,
+      "sha256": "ba2a3e12d74ff7d98e7276c9ebce952e64c53cefc44f33a12c7201be3aac8287"
+    },
+    {
+      "char": "杀",
+      "word": "杀菌",
+      "durationMs": 1047.25,
+      "sha256": "3f477270bd02912c65f9c0e646f432a23acd3fdcb9fbfebda8b22c42cdf3c299"
+    },
+    {
+      "char": "来",
+      "word": "来到",
+      "durationMs": 618.2083333333334,
+      "sha256": "cad51f9510cb088e992aafef7f896d415ccc3cd27510eb285418682fc3d92e60"
+    },
+    {
+      "char": "极",
+      "word": "极光",
+      "durationMs": 747.5416666666666,
+      "sha256": "623cd66c865620a518f69139e5c2d121289952838915bd0107eac6125d618aff"
+    },
+    {
+      "char": "树",
+      "word": "树叶",
+      "durationMs": 855.0416666666666,
+      "sha256": "bbb812d063d554d299ca482d1f04c5ad9ff967e717f0f24fcbdd95bb09e88ecc"
+    },
+    {
+      "char": "梦",
+      "word": "梦想",
+      "durationMs": 935.0416666666666,
+      "sha256": "15ac6859d52366e12fd4d07a44b0c1229f467ec86644bf4e5accbade35c7fb7a"
+    },
+    {
+      "char": "欢",
+      "word": "欢乐",
+      "durationMs": 687.8333333333334,
+      "sha256": "8c2418a6d1f08255a0cc8d755e85b4a73dac68352b91fe4980af433b1307cd9b"
+    },
+    {
+      "char": "死",
+      "word": "死亡",
+      "durationMs": 911.5,
+      "sha256": "f19ac314a753f8ef11ae7a846c7de90d98cd00f4c4af8fadf71863982b4a8bc1"
+    },
+    {
+      "char": "比",
+      "word": "比赛",
+      "durationMs": 988.2916666666666,
+      "sha256": "8f54cdc89ba6e377b79311a171454fe61bb8f9fea16f1e3701047d273b037e45"
+    },
+    {
+      "char": "气",
+      "word": "气球",
+      "durationMs": 929.0416666666666,
+      "sha256": "cb4952a3f44bd5b49018d81391e5ec81010b091117ca7089c8fe366d4d02edc5"
+    },
+    {
+      "char": "水",
+      "word": "水果",
+      "durationMs": 726.9583333333334,
+      "sha256": "db576cc09169b214c5c600442df4255c168e9f0dcf9cc311293d3724e020abab"
+    },
+    {
+      "char": "没",
+      "word": "没有",
+      "durationMs": 804.5,
+      "sha256": "a9543ff5ce7f26ea6596bd7fa44179b01a61ab593f4b688977c4406c986dd19a"
+    },
+    {
+      "char": "河",
+      "word": "河流",
+      "durationMs": 1083.4583333333333,
+      "sha256": "c969f04bf915cfd8b463662e1a7f0403bcc588e0b6af8e71b396c0faed1484f2"
+    },
+    {
+      "char": "活",
+      "word": "活动",
+      "durationMs": 935.25,
+      "sha256": "073dabe0f56b420dd47ae93690d94944b1499cf10c0a1ec08bcbbc6e9fdee87d"
+    },
+    {
+      "char": "海",
+      "word": "海洋",
+      "durationMs": 691.0416666666666,
+      "sha256": "605d6e58d8ba3d156602edd86db3bc18b5e7cd51ad5f0d742ca079e663763072"
+    },
+    {
+      "char": "火",
+      "word": "火焰",
+      "durationMs": 861.5833333333334,
+      "sha256": "e94d7b82238f60290ecd29f4d754a4785a11e0c3bfa7b5c317cac71b1da8d06a"
+    },
+    {
+      "char": "点",
+      "word": "点心",
+      "durationMs": 1046.9166666666667,
+      "sha256": "c2d26305342a6c148c05926969ca1914e5fa9f7a7dd07411e8efc04ea886b80c"
+    },
+    {
+      "char": "烟",
+      "word": "烟花",
+      "durationMs": 897.0416666666666,
+      "sha256": "b979399b369197edfcb5ffde057c45e39435491b29c22f21e453a2acbc02a9a1"
+    },
+    {
+      "char": "热",
+      "word": "热情",
+      "durationMs": 792.7916666666666,
+      "sha256": "e562ae5ab99115ea40f876bbd96025c234e784cfac27846c37ddf1826c048b3a"
+    },
+    {
+      "char": "爱",
+      "word": "爱情",
+      "durationMs": 1036.375,
+      "sha256": "cb6821ccb0f1605b411058ccfa0f1dac9fa0871ff238c3038f89603fb8364a10"
+    },
+    {
+      "char": "狂",
+      "word": "狂风",
+      "durationMs": 861.2916666666666,
+      "sha256": "89b995570263d763a307604aa63ee5da3dfba79b5be9d4d2c872c2b4f33a972a"
+    },
+    {
+      "char": "王",
+      "word": "王国",
+      "durationMs": 709.4583333333334,
+      "sha256": "967deebf49725f67477aa0591b0c1ed6bbcf5bdfff83aff37eb38cbb2133b10c"
+    },
+    {
+      "char": "瓜",
+      "word": "瓜子",
+      "durationMs": 924.8333333333334,
+      "sha256": "bf2c9970c2c13e88c624ab12287da824335671c8bb0448db9c215ca34a680169"
+    },
+    {
+      "char": "生",
+      "word": "生活",
+      "durationMs": 850.875,
+      "sha256": "d855f517fcb5b378c97495f1e06de57fb869131e94d91a3d9defd9e581da4ea7"
+    },
+    {
+      "char": "电",
+      "word": "电话",
+      "durationMs": 754.6666666666666,
+      "sha256": "77e2fa2ac9c51566c08d46c9f0e153d7bd06b22f13e9c41674663e2b6230eadf"
+    },
+    {
+      "char": "疯",
+      "word": "疯狂",
+      "durationMs": 915,
+      "sha256": "3442c6be4a390a32dff7f06f6d6eab12c1314627d2265313ea874623f65c5545"
+    },
+    {
+      "char": "痛",
+      "word": "痛苦",
+      "durationMs": 919.5833333333334,
+      "sha256": "f14326db3b83fb09359e85d7990ce94f75862fc97ea9747488289b2e623ef9ce"
+    },
+    {
+      "char": "白",
+      "word": "白云",
+      "durationMs": 745.3333333333334,
+      "sha256": "fa0ebdf4c8198dafef08f9bdcae6a5a643b2ae37bedaf5627e0412cf1cf92076"
+    },
+    {
+      "char": "的",
+      "word": "的确",
+      "durationMs": 566.9166666666666,
+      "sha256": "5084b864cfd6b5d78482e7274b46bb327ee2840b25b4c686648977c7d4c11d20"
+    },
+    {
+      "char": "看",
+      "word": "看见",
+      "durationMs": 933.5416666666666,
+      "sha256": "29a01b9b27b1d480e815ba03aed88bdcc1178feb08f1fd271d2e5a72da8fe1bc"
+    },
+    {
+      "char": "眼",
+      "word": "眼睛",
+      "durationMs": 1005.5416666666666,
+      "sha256": "2a1a563e95788d9e97d03abe86e2eee3c88378d979f416043f4295a8ee1d12fc"
+    },
+    {
+      "char": "着",
+      "word": "着急",
+      "durationMs": 807.125,
+      "sha256": "f273d3d7cc9515bea0ef76f91b9ebd51321572240cf241604c1a9a12db331305"
+    },
+    {
+      "char": "睡",
+      "word": "睡觉",
+      "durationMs": 923.75,
+      "sha256": "17ce9deef461aa1f3ecd1a4b4faa6795f6ba2cfe5df00bae24471914a8d49533"
+    },
+    {
+      "char": "神",
+      "word": "神奇",
+      "durationMs": 957.25,
+      "sha256": "d7aae8e5c0df7f9cef6640827aaa97fdc7602073fe50e0cd1f3b288828ae7e0f"
+    },
+    {
+      "char": "空",
+      "word": "空气",
+      "durationMs": 762.1666666666666,
+      "sha256": "c5e61624c4c7092dbabbde96e961fa419c501026c80e91d838c001af9216ca04"
+    },
+    {
+      "char": "笑",
+      "word": "笑声",
+      "durationMs": 887.0833333333334,
+      "sha256": "1590228ebde7b890608fc7443be94f49f88934041bddb3f25ae5577c0e3d6de8"
+    },
+    {
+      "char": "红",
+      "word": "红色",
+      "durationMs": 741.4583333333334,
+      "sha256": "bf3f7a2586f90685bae722bdd93d472ed1c47e296fab4b181f91f49b1fe7d4a7"
+    },
+    {
+      "char": "纯",
+      "word": "纯真",
+      "durationMs": 940,
+      "sha256": "10cf216cb9fd2baffa1a13db89b5e464b3fa89a1eb2c7f4a64d924666a66e640"
+    },
+    {
+      "char": "给",
+      "word": "给予",
+      "durationMs": 863.875,
+      "sha256": "c4b28c5a081d6a0428aaa1b5fa59cbd84552e238b2f9a65fd2a737bc6fe48d8d"
+    },
+    {
+      "char": "美",
+      "word": "美丽",
+      "durationMs": 965.6666666666666,
+      "sha256": "380e4cfb65344196f9e7109fecb84ed9a30530cb9e0b2ab87cae7527a88d23d3"
+    },
+    {
+      "char": "老",
+      "word": "老师",
+      "durationMs": 685.625,
+      "sha256": "2fffa2b042b504909dca23cdc669c373b6e7c4a062c7ab815437eb859ad39718"
+    },
+    {
+      "char": "而",
+      "word": "而且",
+      "durationMs": 780.75,
+      "sha256": "9e99aefb8ac7317757289f0bb680d328a0e9abba4e72555413533aba2378fcb9"
+    },
+    {
+      "char": "能",
+      "word": "能力",
+      "durationMs": 1040.8333333333333,
+      "sha256": "a51c9881cf70a5208c0247813e34d328f5c5310934db6ffc03d635dfca760e5b"
+    },
+    {
+      "char": "色",
+      "word": "色彩",
+      "durationMs": 624.75,
+      "sha256": "63795926217224336590e38dadecaed1c85bcc81888171ba1b5e88d8010baa11"
+    },
+    {
+      "char": "花",
+      "word": "花朵",
+      "durationMs": 652.7083333333334,
+      "sha256": "18c6774e1169ffb846f9df5347f44d1cafcde6101f5d718d4b8e976ebd9f1f9c"
+    },
+    {
+      "char": "草",
+      "word": "草原",
+      "durationMs": 881.9583333333334,
+      "sha256": "613e2aa52714d60396e74fed1b1d392875a7cfcc9b191bdc967232abff105379"
+    },
+    {
+      "char": "菜",
+      "word": "菜园",
+      "durationMs": 696.7083333333334,
+      "sha256": "adcdccfd9d83b3162bd1e204551d18f9f663b3d9060edb91811de10bd977a82f"
+    },
+    {
+      "char": "被",
+      "word": "被子",
+      "durationMs": 518.4583333333334,
+      "sha256": "6aed4f6a79320f4c2f6b01628fb62db3d9f2184a1d2525cf4f97452a3e459da1"
+    },
+    {
+      "char": "西",
+      "word": "西方",
+      "durationMs": 819.2916666666666,
+      "sha256": "4bc624ef0e58c469b2ca060e37005ac287718f0cfe731651b62dabe465764a2b"
+    },
+    {
+      "char": "要",
+      "word": "要求",
+      "durationMs": 1168.5,
+      "sha256": "1ad2e704acc40b707fade03ac2ad2d4e016f1b9ae0394576e00e951d68d86867"
+    },
+    {
+      "char": "语",
+      "word": "语言",
+      "durationMs": 649.625,
+      "sha256": "4148e285a0c1b3ce36d6005c4c51e92a943c849624cc7dbb396e4d351de93175"
+    },
+    {
+      "char": "说",
+      "word": "说话",
+      "durationMs": 683.4166666666666,
+      "sha256": "2f26bebca6d0a967a88ec71efccd02d89f777f0724f8078af222c27e3160db85"
+    },
+    {
+      "char": "谁",
+      "word": "谁家",
+      "durationMs": 989.9583333333334,
+      "sha256": "9f13ad782db1c94cfba2ea9a910f52fae016779ac9b6a94407350370a1086052"
+    },
+    {
+      "char": "跑",
+      "word": "跑步",
+      "durationMs": 1170.75,
+      "sha256": "1e763a130523526990fd912d26c53a51a4377ca07bb92fb0ab0c3babafe1d387"
+    },
+    {
+      "char": "路",
+      "word": "路口",
+      "durationMs": 812.8333333333334,
+      "sha256": "a3217e79c5a7eaa245275af605095bbfe2b79290471807004adea4d6e760ea11"
+    },
+    {
+      "char": "过",
+      "word": "过去",
+      "durationMs": 815.25,
+      "sha256": "527540dc61d2cb7fd7920362aa79c9f4c415674fc395381c857122a2940f8608"
+    },
+    {
+      "char": "这",
+      "word": "这里",
+      "durationMs": 1127.7083333333333,
+      "sha256": "f7c45686eadfeae3fbb97ca2cc09107d83545dc80f3a3f5b80a4c9969590f5e9"
+    },
+    {
+      "char": "迷",
+      "word": "迷路",
+      "durationMs": 762.2083333333334,
+      "sha256": "dcf7612e4f2fa49121269ca98613de6144584f68a9838484096258fa54567aab"
+    },
+    {
+      "char": "那",
+      "word": "那里",
+      "durationMs": 697.75,
+      "sha256": "4416eb67eaf130e078373c82de455fea05918d5740277ef104e2d87d82b1d3a7"
+    },
+    {
+      "char": "都",
+      "word": "都是",
+      "durationMs": 523.4166666666666,
+      "sha256": "0b3d5245193f44d4c20d18242dbb3f803d5218461158305841650545e22f08fb"
+    },
+    {
+      "char": "酒",
+      "word": "酒杯",
+      "durationMs": 880.3333333333334,
+      "sha256": "2f626fbdd6d00464ee6296429b445f57c2cec8c280102ff5069f05ea8b77b3a8"
+    },
+    {
+      "char": "醒",
+      "word": "醒来",
+      "durationMs": 887.8333333333334,
+      "sha256": "b9a402b831a171410ec2c29128ed6ed1007c1f73ad056b2c13492b1ab3bcecea"
+    },
+    {
+      "char": "里",
+      "word": "里面",
+      "durationMs": 720.4166666666666,
+      "sha256": "cb03c28124b9124dbf539795927571b03e8546a70659116d70f6d30acae13ac2"
+    },
+    {
+      "char": "野",
+      "word": "野外",
+      "durationMs": 615.5,
+      "sha256": "9480743f365a162f08f4b251523ae29b8f3405eccd096cb8d8564c9e21942ec7"
+    },
+    {
+      "char": "钱",
+      "word": "钱包",
+      "durationMs": 861.2916666666666,
+      "sha256": "ce505c3a848bb6e0ecf5d28c301cf6a6cec8daaf799c0ee03c72b87d14eee579"
+    },
+    {
+      "char": "门",
+      "word": "门口",
+      "durationMs": 796.8333333333334,
+      "sha256": "c88e565db1b495bfb553951626933ec2d3b2857919d88c68b82bd56cc2364c54"
+    },
+    {
+      "char": "雨",
+      "word": "雨水",
+      "durationMs": 725.4583333333334,
+      "sha256": "7f836b9fe40d2ec8c131432e5eb250542282dfe4860c84a2fb0fd3b1929814b2"
+    },
+    {
+      "char": "风",
+      "word": "风景",
+      "durationMs": 1113.8333333333333,
+      "sha256": "31b88c03fd74710aad2d2338b85bdc0bccceabc2e05713f2350e5dcdc05419eb"
+    },
+    {
+      "char": "飞",
+      "word": "飞机",
+      "durationMs": 853.0416666666666,
+      "sha256": "83f4aff18069a82087329881c4bddf16db6009c5330a9dc9e83755b260401b10"
+    },
+    {
+      "char": "饱",
+      "word": "饱满",
+      "durationMs": 964.4166666666666,
+      "sha256": "9b10f365dc4baf24a59659b17b7c8e980109271caa6dc1ddfde92611a142de59"
+    },
+    {
+      "char": "鬼",
+      "word": "鬼怪",
+      "durationMs": 725.9583333333334,
+      "sha256": "cebf04aa3eac2762d50cf74e46869cbd97306ccc83c24081bad5412c770cf113"
+    },
+    {
+      "char": "麻",
+      "word": "麻烦",
+      "durationMs": 680.1666666666666,
+      "sha256": "06c10e3e274ae045ee9b678619c5e870a96caa442b4585aef89e4c133fa5c9db"
+    },
+    {
+      "char": "黑",
+      "word": "黑夜",
+      "durationMs": 745.0833333333334,
+      "sha256": "cd1dfc54659c0b8e930710f9c37b7f1a87697e591d9c7bffadd2c71e8a8aa12f"
+    }
+  ]
+}

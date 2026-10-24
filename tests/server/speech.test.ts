@@ -4,10 +4,14 @@ import {mkdtemp,rm,readFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {randomUUID} from 'node:crypto';
+import {tileWord,TILE_WORDS} from '../../apps/server/tile-words';
 import {Speech,SPEECH_PROFILE} from '../../apps/server/speech';
 import {encodeWav,decodeWav,normalizeSpeech} from '../../apps/server/speech-audio';
+import {sentenceText} from '../../apps/server/speech-routes';
 import {createGameServer} from '../../apps/server/server';
 import {hashAdminPassword} from '../../apps/server/admin-auth';
+import fixedDeck from '../../【牌库】/默认麻将套组-配置-v1.0-【codex】.json';
+import {initialDeck} from '../../packages/engine/deck';
 import {room,ok,sentence,forceActor} from '../engine/helpers';
 function tone(seconds=.35,silence=.1){const out=new Int16Array(Math.round((seconds+silence*2)*24000));for(let i=0;i<seconds*24000;i++)out[Math.round(silence*24000)+i]=Math.round(Math.sin(i*2*Math.PI*220/24000)*10000);return encodeWav(out);}
 test('WAV placeholders are bounded by bytes; tile normalization makes correct fixed headers and consistent volume without shifting pitch',async()=>{const raw=tone();raw.writeUInt32LE(0x7fffffff,4);raw.writeUInt32LE(0x7fffffff,40);assert.equal(decodeWav(raw).length,13200);const result=await normalizeSpeech(raw,true),samples=decodeWav(result.wav);assert.equal(samples.length,26400);assert.equal(result.wav.readUInt32LE(40),52800);assert.equal(result.durationMs,1100);let peak=0;for(const n of samples)peak=Math.max(peak,Math.abs(n));assert(peak<24000&&peak>3000);const long=await normalizeSpeech(tone(1.5),true,process.env.FFMPEG_BINARY);assert(long.tempo>1);assert.equal(decodeWav(long.wav).length,26400);const hz=(data:Int16Array)=>{let crossings=0,first=-1,last=0;for(let i=1;i<data.length;i++)if(data[i-1]<0&&data[i]>=0){crossings++;if(first<0)first=i;last=i;}return(crossings-1)*24000/(last-first);};assert(Math.abs(hz(decodeWav(long.wav))-220)<3);assert.equal((await normalizeSpeech(tone(2),false)).tempo,1);await assert.rejects(()=>normalizeSpeech(encodeWav(new Int16Array(24000)),true),/SPEECH_SILENT_AUDIO/);});
@@ -20,16 +24,21 @@ test('HTTP speech only synthesizes authoritative revealed sentences; private roo
   const proposal=(fixture.public.phase as any).proposal,url=`/api/rooms/${g.public.roomId}/speech/hu/${proposal.proposalId}`;
   assert.equal((await request(url,{})).status,403);assert.equal((await request('/api/admin/speech/tiles',{characters:['我']})).status,401);
   assert.equal((await request(url.replace(proposal.proposalId,'forged'),{text:'arbitrary'},cookie)).status,404);assert.equal(texts.length,0);
-  const audio=await request(url,{text:'arbitrary'},cookie);assert.equal(audio.status,200);assert.equal(audio.headers.get('content-type'),'audio/wav');assert.equal(audio.headers.get('cache-control'),'no-store');assert(decodeWav(Buffer.from(await audio.arrayBuffer())).length>24000);assert.equal(texts[0].length,14);assert(!texts[0].includes('arbitrary'));
+  const audio=await request(url,{text:'arbitrary'},cookie);assert.equal(audio.status,200);assert.equal(audio.headers.get('content-type'),'audio/wav');assert.equal(audio.headers.get('cache-control'),'no-store');assert(decodeWav(Buffer.from(await audio.arrayBuffer())).length>24000);assert.equal(texts[0],sentenceText(proposal.snapshot));assert.equal(texts[0].length,14);assert(!texts[0].includes('arbitrary'));
   (g.public as any).allowSpectators=true;assert.equal((await request(url,{})).status,200);assert.equal(texts.length,1);
   const admin=await request('/api/admin/login',{password:'test-speech-password'}),adminCookie=admin.headers.get('set-cookie')!.split(';')[0];(g.public as any).allowSpectators=false;
   assert.equal((await request(url.replace('/api/rooms','/api/admin/rooms'),{},adminCookie)).status,200);
   const chars=server.store.deckSets.defaultDeck().entries.slice(0,2).map(e=>e.char);assert.equal((await request('/api/admin/speech/tiles',{characters:chars},adminCookie)).status,202);
   for(let i=0;i<100&&(await server.speech.manifest(chars)).ready.length<2;i++)await new Promise(r=>setTimeout(r,10));
   const manifest=await(await request('/api/speech/tiles')).json();assert(chars.every(c=>manifest.ready.includes(c)));assert(!('pending'in manifest));
-  const tile=await request(`/api/speech/tiles/${manifest.profile}/${encodeURIComponent(chars[0])}`);assert.equal(tile.status,200);assert(tile.headers.get('cache-control')?.includes('immutable'));assert.equal(decodeWav(Buffer.from(await tile.arrayBuffer())).length,26400);
+  const tile=await request(`/api/speech/tiles/${manifest.profile}/${encodeURIComponent(chars[0])}`);assert.equal(tile.status,200);assert(tile.headers.get('cache-control')?.includes('immutable'));assert(decodeWav(Buffer.from(await tile.arrayBuffer())).length>40000);assert.equal(manifest.words[chars[0]],tileWord(chars[0]));assert(texts.includes(tileWord(chars[0])!));const beforeReads=texts.length;await request(`/api/speech/tiles/${manifest.profile}/${encodeURIComponent(chars[0])}`);await request(`/api/speech/tiles/${manifest.profile}/无`);assert.equal(texts.length,beforeReads,'public tile GET must never call synthesis');
   assert.equal((await request(`/api/speech/tiles/${manifest.profile}/无`)).status,404);assert.equal((await request('/api/admin/speech/tiles',{characters:['😅']},adminCookie)).status,400);
  }finally{await server.close();await rm(dir,{recursive:true,force:true});}
 });
 
 test('missing optional voice credential file cannot prevent a healthy game server from starting',async()=>{const previous=process.env.DASHSCOPE_API_KEY_FILE,key=process.env.DASHSCOPE_API_KEY;delete process.env.DASHSCOPE_API_KEY;process.env.DASHSCOPE_API_KEY_FILE='/missing/optional-speech-key';const server=createGameServer({dbPath:':memory:',publicOrigin:'http://speech.test',automaticTimers:false});try{assert.equal(server.speech.enabled,false);await server.listen(0);const r=await fetch(`http://127.0.0.1:${(server.http.address() as any).port}/readyz`);assert.equal(r.status,200);}finally{await server.close();if(previous===undefined)delete process.env.DASHSCOPE_API_KEY_FILE;else process.env.DASHSCOPE_API_KEY_FILE=previous;if(key!==undefined)process.env.DASHSCOPE_API_KEY=key;}});
+
+test('fixed tile words are exactly two ideographs starting with the tile; unknown tiles cannot synthesize a single character',async()=>{
+ assert.equal(Object.keys(TILE_WORDS).length,178);for(const {char} of [...fixedDeck.entries,...initialDeck.entries])assert(tileWord(char),`missing word: ${char}`);for(const [char,word] of Object.entries(TILE_WORDS)){assert.match(word,/^\p{Unified_Ideograph}{2}$/u);assert.equal([...word][0],char);}
+ const dir=await mkdtemp(join(tmpdir(),'tile-word-')),texts:string[]=[];const speech=new Speech({directory:dir,synthesize:async text=>{texts.push(text);return tone(1.5);}});try{const file=await speech.ensure('天',true);await speech.ensure('天',true);assert.deepEqual(texts,['天空']);assert(decodeWav(await readFile(file)).length>36000,'natural word must not be squeezed into 1.1 seconds');await assert.rejects(()=>speech.ensure('龘',true),/SPEECH_WORD_MISSING/);assert.deepEqual(texts,['天空']);const offline=new Speech({directory:dir});assert.deepEqual(await offline.read('天',true),await readFile(file));await offline.close();}finally{await speech.close();await rm(dir,{recursive:true,force:true});}
+});
