@@ -1,5 +1,5 @@
-/* Shared action order: punctuation, music, chat, doodle, help, history, admin, settings, menu. */
-#root .game-shell .topbar .top-action{display:none}
+/* Shared action order: punctuation, music, chat, arrange, doodle, help, history, admin, settings, menu. */
+#root .game-shell .topbar .top-action,#root .game-shell .topbar .rack-compose-trigger{display:none}
 #root .game-shell .topbar .top-priority-1{display:flex}
 .responsive-menu-dialog .overflow-priority-1{display:none}
 #root .game-shell .responsive-menu-trigger{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:1px}
@@ -13,7 +13,7 @@
 .settings-grid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:12px 6px;min-height:98px;border:1px solid #a8885166;border-radius:12px;background:#cfaa6320;color:#f0dfb7}
 .settings-grid button svg{width:25px;height:25px}.settings-grid button small{font-size:10px;color:#c9b692}
 @media(min-width:700px){
- #root .game-shell .topbar .top-priority-2{display:flex}
+ #root .game-shell .topbar .top-priority-2,#root .game-shell .topbar .rack-compose-trigger{display:flex}
  .responsive-menu-dialog .overflow-priority-2{display:none}
 }
 @media(max-width:699px){

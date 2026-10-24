@@ -31,7 +31,7 @@ try{
   const geo=await a.page.locator('.topbar').evaluate(h=>({width:innerWidth,scroll:document.documentElement.scrollWidth,buttons:[...h.querySelectorAll('button')].filter(e=>e.getBoundingClientRect().width&&getComputedStyle(e).visibility!=='hidden').map(e=>{const r=e.getBoundingClientRect();return {label:e.getAttribute('aria-label'),x:r.x,y:r.y,w:r.width,h:r.height}})}));
   assert(geo.scroll<=v.width+1,JSON.stringify(geo));
   for(const b of geo.buttons){assert(b.x>=0&&b.x+b.w<=v.width+.5&&b.y>=0&&Math.abs(b.w-b.h)<1,JSON.stringify(geo));}
-  const direct=await a.page.locator('.top-action:visible').count();assert.equal(direct,v.width>=700?5:1);const actionOrder=geo.buttons.map(b=>b.label).filter(l=>l!=='离开牌桌');assert.deepEqual(actionOrder,v.width>=700?['标点牌','同桌音乐','同桌聊天','桌面涂鸦','牌桌帮助','牌局记录','管理员入口','游戏设置','游戏菜单']:['标点牌','同桌音乐','同桌聊天','桌面涂鸦','游戏菜单']);
+  const direct=await a.page.locator('.top-action:visible').count();assert.equal(direct,v.width>=700?5:1);const actionOrder=geo.buttons.map(b=>b.label).filter(l=>l!=='离开牌桌');assert.deepEqual(actionOrder,v.width>=700?['标点牌','同桌音乐','同桌聊天','展开整理牌架','桌面涂鸦','牌桌帮助','牌局记录','管理员入口','游戏设置','游戏菜单']:['标点牌','同桌音乐','同桌聊天','桌面涂鸦','游戏菜单']);
   assert.equal(await a.page.locator('.view-tools').count(),0);
   await a.page.screenshot({path:`docs/evidence/${prefix}-header-${v.width}.png`});
   for(const name of ['同桌音乐','牌局记录','声音设置','整理句子','画面设置','房间设置','牌桌帮助']){

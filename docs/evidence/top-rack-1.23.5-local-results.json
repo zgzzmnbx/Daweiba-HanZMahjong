@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-24T16:30:26.306Z",
+  "version": "1.23.5",
+  "origin": "http://127.0.0.1:3175",
+  "browser": "141.0.7390.37",
+  "scope": "real two-client room, responsive header hit targets, WebGL/DOM toggle, keyboard focus, original settings and phone regression; simulated mobile",
+  "checks": [
+    {
+      "name": "wide shortcut is visible but unavailable before there are character tiles",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 700",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 800",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 950",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 1920",
+      "status": "PASS"
+    },
+    {
+      "name": "same focused header button supports Space and Enter toggling",
+      "status": "PASS"
+    },
+    {
+      "name": "original settings toggle shares state with the new header shortcut",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 320",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 390",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 667",
+      "status": "PASS"
+    },
+    {
+      "name": "short wide layout retains its automatic rack and does not offer a false collapse",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closes without score or book changes",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

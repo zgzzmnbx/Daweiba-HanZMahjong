@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.23.4-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.23.5-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.23.5 · 顶栏直达整理牌架 · 2026-10-25
+
+宽屏顶栏在闲聊与涂鸦之间新增“整理”圆按钮，直接展开/收起整理牌架，标签与展开状态同步，支持Space/Enter连续切换并保留焦点。复用原设置中的切换处理器；手机五个顶栏入口和自动排句布局不变，短宽屏/二维回退等自动展开布局不提供无效收起操作，无手牌时禁用入口。规则1.5.1及游戏命令不变。
+
+生产构建与本地13项真实双客户端浏览器检查通过：700/800/950/1280/1920px按钮边界、圆形和命中、DOM与3D实际切换、状态版本不变、键盘焦点、原设置联动、320/390/667px手机回归及短宽屏；验收私房已无计分关闭。仅入口与显示层改动，不重复无关引擎测试。证据见docs/evidence/top-rack-1.23.5-local-*；已发布原公网入口，13项相同真实联机检查通过，验收私房已无计分关闭。release `1.23.5-20261025-003102`、冻结源码 `494cc40`、一致性备份 `pre-release-20261025-003103.sqlite`；ready=true，HTML/JS/CSS、苹方清单与三个核心字体共7个资源与冻结构建一致。公网结果、截图及指纹见docs/evidence/top-rack-1.23.5-public-*、public-top-rack-1.23.5-release.json。源码及证据随本版同步GitHub；手机为Chromium141触摸视口模拟，实体Safari尚未实测。
 
 ## v1.23.4 · 独立逗号与末尾句号 · 2026-10-25
 
@@ -324,7 +330,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.4**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.23.5**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 
