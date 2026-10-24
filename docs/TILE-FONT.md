@@ -1,4 +1,30 @@
-# 牌面字体 · 1.21.3
+# 界面与牌面字体 · 1.23.3
+
+当前全界面使用用户提供的苹方Web字体：regular 400、medium 500、semibold 600–900。CSS别名Hanz PingFang；原始字体内部名称.PingFang SC、各字重PostScript名称和字形轮廓保留。仅打牌按钮.game-action b保留原serif，按钮说明文字仍统一为苹方。
+
+来源：用户提供的`公文项目字体包-含苹方-【codex】.zip`，用于本内部测试项目。源包与三个WOFF2的SHA、字重、内部名称、输出分片SHA和Unicode范围见`apps/web/public/fonts/pingfang/manifest.json`。源ZIP不重复提交。
+
+三个字重各覆盖29,924码位；75个不重叠Unicode分片共15,561,036字节，每字重的947核心码位优先加载，三份合计398,668字节。其余字形按unicode-range同源下载，超出源字体覆盖范围使用系统回退。旧Noto文件及许可保留作历史来源，当前CSS/HTML不再引用。
+
+DOM由pingfang-ui.css统一，牌面600字重由tile-font.css统一；Canvas通过tile-font.ts的tileCanvasFont/uiCanvasFont请求可见字，字体加载后重建纹理。3D中央计数与标签也统一为苹方。
+
+## 重新生成
+
+使用Codex-Temp内Python虚拟环境，依赖fonttools 4.60.2、Brotli 1.1.0。核心列表冻结在scripts/pingfang-font-core.txt；修改前评估首屏体积。
+
+```sh
+python scripts/build-pingfang-fonts.py --zip /absolute/path/公文项目字体包-含苹方-【codex】.zip --root . --output .
+npm run build
+node --import tsx scripts/verify-pingfang-font.mjs
+```
+
+生成器保留原字体名字/轮廓，产出分片、CSS、manifest并更新HTML预加载。生产构建不依赖Python。验收可设置PLAYWRIGHT_BROWSERS_PATH使用配套Chromium；PUBLIC_ORIGIN指向公网后仅使用自建私房。
+
+## 验证
+
+构建及本地18项通过：实际CDP字体核对、延迟字体下载与Canvas重绘、罕见字龘、界面字体审计、打牌按钮例外、320/390/667/1280视口与真实两人聊天/摸打/评审。公网相同18项检查通过，HTML/JS/CSS、清单和75份字体共79个资源与冻结构建逐字节一致；证据见evidence/public-pingfang-1.23.3-*。实体手机/Safari未实测。
+
+## 历史：牌面字体 · 1.21.3
 
 采用Noto Sans SC半粗体600。修改后的静态字体名为Hanz Tile Sans；标题、头像与菜单保留原字体。DOM牌面由tile-font.css统一，3D由tile-font.ts提供Canvas字体串，并显式请求可见字；字体加载完成时重建缓存纹理，不阻塞玩家操作。
 

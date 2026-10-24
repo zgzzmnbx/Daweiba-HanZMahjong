@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-25',title:'音乐，更响一些',features:['背景音乐的默认音量与最大音量均提高至原来的2倍。','音量仍可单独调节；音效和报字、胡句朗读出现时，音乐继续自动让位。']},
+ {version:packageInfo.version,date:'2026-10-25',title:'字间，统一苹方',features:['大厅、菜单、聊天、评审以及桌面和手机麻将牌面统一使用苹方字体。','摸、打、吃、胡等打牌按钮的大字保留原样。','字体由游戏提供，按需加载，无需在设备上安装。']},
+ {version:'1.23.2',date:'2026-10-25',title:'音乐，更响一些',features:['背景音乐的默认音量与最大音量均提高至原来的2倍。','音量仍可单独调节；音效和报字、胡句朗读出现时，音乐继续自动让位。']},
  {version:'1.23.1',date:'2026-10-24',title:'牌桌上方，更干净',features:['移除顶部旧牌局提示条及其滚动区域，不再遮挡头像或占用牌桌空间。','当前行动与倒计时仍在牌桌下方显示。']},
  {version:'1.23.0',date:'2026-10-24',title:'功能归顶，宽窄自如',features:['记录、音乐、整理和各项设置统一移到顶部，不再占用牌桌下方。','原工具改为设置，内含声音、画面、托管、整理和房间控制。','手机顶部常驻标点、音乐、闲聊、涂鸦和菜单，其余功能收进菜单。']},
  {version:'1.22.3',date:'2026-10-24',title:'滚动条也入戏',features:['大厅、工具、聊天和天书的滚动条统一为深棕轨道、金铜色滑块。','保留触摸滑动、鼠标拖动和键盘滚动。']},

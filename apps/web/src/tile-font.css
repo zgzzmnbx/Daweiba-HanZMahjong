@@ -1,6 +1,6 @@
-@import url('./tile-font-faces.css');
-:root{--tile-font:"Hanz Tile Sans",sans-serif;--tile-font-weight:600}
-/* Typography only: keep UI labels in their original UI font and all tile geometry unchanged. */
+@import url('./pingfang-faces.css');
+:root{--tile-font:"Hanz PingFang",sans-serif;--tile-font-weight:600}
+/* Tile geometry remains unchanged; DOM and canvas both use the bundled PingFang semibold. */
 .sentence-rack>.tile,.sentence-rack>.comma-tile,.game-shell .table-comma-tray .reserve-comma,
 .latest-discard .latest-tile,.rack-drag-ghost,.rack-drag-ghost.comma-ghost,.ghost-comma,.flying-table-tile,
 .reveal-unit b,.reveal-unit i,.hu-showcase .hu-slam-unit b,.hu-showcase .hu-slam-comma,

@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.23.2-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.23.3-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.23.3 · 全界面统一苹方 · 2026-10-25
+
+使用用户提供的字体包，统一大厅、标题、头像、菜单、设置、聊天、评审、天书、DOM手牌、飞牌和3D字牌/桌面计数。常规400、中黑500、中粗600–900按原界面字重匹配；仅“摸、打、吃、胡”等打牌按钮的大字保留原serif样式。所有字体同源加载，无需系统安装；Canvas显式请求字形，下载完成后重绘。
+
+75个Unicode分片共15,561,036字节，三个首屏核心合计398,668字节；其余字形按需下载。保留源字体名字/轮廓，来源及SHA见fonts/pingfang/manifest.json。规则1.5.1不变，承接1.23.2音乐音量翻倍。生产构建及本地18项真实浏览器检查通过：CDP核对实际苹方字形、延迟加载后3D重绘、罕见字分片、四种窗口、按钮例外、聊天、真实摸打和胡牌评审；测试房已无计分关闭。手机为Chromium141触摸视口模拟。已发布原公网入口，18项相同真实浏览器检查通过，验收私房已无计分关闭。release `1.23.3-20261025-001405`、冻结源码 `aec74c8`、一致性备份 `pre-release-20261025-001407.sqlite`；ready=true，HTML/JS/CSS、字体清单与75份苹方字体共79个资源逐字节一致。公网结果、截图和发布指纹见docs/evidence/public-pingfang-1.23.3-*。源码及证据随本版同步GitHub；实体Safari尚未实测。
 
 ## v1.23.2 · 音乐音量翻倍 · 2026-10-25
 
@@ -205,7 +211,7 @@
 ### 环境要求
 
 - Node.js **≥24.19.0 且 <25**，以及 npm；当前生产运行于 macOS。
-- 支持 WebGL 的浏览器；需要中文系统字体来绘制字牌。
+- 支持 WebGL 的浏览器；界面和字牌使用游戏提供的苹方字体。
 - SQLite 使用 Node.js 内置模块，无需单独安装数据库服务。
 - 使用语音及运行完整音频测试时需 FFmpeg；服务可用 `FFMPEG_BINARY` 指定位置。
 
@@ -312,7 +318,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.2**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.23.3**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 
@@ -322,6 +328,6 @@ npm run db:restore -- /absolute/path/backup.sqlite
 
 ## 来源与许可
 
-3D 牌桌渲染移植自 [Bruce-pac/EnglishMahjong-web](https://github.com/Bruce-pac/EnglishMahjong-web)，固定提交 `6830301df3061cdd25350cf56807473e5505b311`，并保留其涉及的 Autotable 来源与 MIT 许可文本。当前字牌使用程序几何和本地系统字体生成。
+3D 牌桌渲染移植自 [Bruce-pac/EnglishMahjong-web](https://github.com/Bruce-pac/EnglishMahjong-web)，固定提交 `6830301df3061cdd25350cf56807473e5505b311`，并保留其涉及的 Autotable 来源与 MIT 许可文本。当前字牌使用程序几何和游戏自托管苹方字体生成。
 
 第三方许可与具体使用范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 及 [licenses](licenses/)。这些许可对应第三方采用部分；本仓库未另行声明整个项目的开源许可证。

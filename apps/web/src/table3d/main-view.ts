@@ -4,7 +4,7 @@
  * Replaces English game protocol, fixed seats/pool, models, picking and postprocessing. */
 import {rackPhaseKey} from '../table-ui/rack-interaction';
 import * as T from 'three';
-import {tileCanvasFont,ensureTileGlyph} from '../tile-font';
+import {tileCanvasFont,ensureTileGlyph,uiCanvasFont,ensureUiGlyphs} from '../tile-font';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import type {Draft} from '../../../../packages/contracts/types';
 import {COMMA_WIDTH_RATIO,rackLayout} from '../table-ui/rack-layout';
@@ -124,7 +124,7 @@ export class MainView {
     }
     this.layoutOwn();this.setMotionHidden(this.motionHidden);
     this.stats.capacity=this.tiles.children.length+this.ownTiles.children.length;
-    const ctx=this.centerCanvas.getContext('2d')!;ctx.fillStyle='#17251f';ctx.fillRect(0,0,512,256);ctx.fillStyle='#d6bd7e';ctx.textAlign='center';ctx.font='30px sans-serif';ctx.fillText('字 间 · 文字麻将',256,60);ctx.font='bold 76px sans-serif';ctx.fillText(String(view.wall.count),256,153);ctx.font='25px sans-serif';ctx.fillText('余牌  /  '+n+' 人桌',256,213);this.centerTexture.needsUpdate=true;
+    const ctx=this.centerCanvas.getContext('2d')!;ctx.fillStyle='#17251f';ctx.fillRect(0,0,512,256);ctx.fillStyle='#d6bd7e';ctx.textAlign='center';ensureUiGlyphs('字 间 · 文字麻将余牌 / 人桌0123456789');ensureUiGlyphs('0123456789',600);ctx.font=uiCanvasFont(30);ctx.fillText('字 间 · 文字麻将',256,60);ctx.font=uiCanvasFont(76,600);ctx.fillText(String(view.wall.count),256,153);ctx.font=uiCanvasFont(25);ctx.fillText('余牌  /  '+n+' 人桌',256,213);this.centerTexture.needsUpdate=true;
     this.render();
   }
   private clearOwn(){for(const n of this.own.values())n.mesh.traverse(o=>{if(o instanceof T.Mesh){for(const m of Array.isArray(o.material)?o.material:[o.material])m.dispose();}});this.own.clear();this.ownTiles.clear();}

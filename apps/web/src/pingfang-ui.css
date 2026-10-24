@@ -1,0 +1,5 @@
+/* Final typography layer: every UI surface uses the supplied PingFang font.
+   The large play-action glyphs retain their existing serif style by request. */
+:root{--ui-font:"Hanz PingFang","PingFang SC",sans-serif}
+body,body *,body *::before,body *::after{font-family:var(--ui-font)!important}
+body .game-action b{font-family:serif!important}

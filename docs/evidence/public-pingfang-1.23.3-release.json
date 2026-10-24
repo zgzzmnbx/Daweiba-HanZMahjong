@@ -1,0 +1,406 @@
+{
+  "version": "1.23.3",
+  "source": "aec74c8",
+  "release": "1.23.3-20261025-001405",
+  "backup": "pre-release-20261025-001407.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "files": [
+    {
+      "path": "/",
+      "bytes": 819,
+      "sha256": "0ac588a473f803d515949fc974e855e7be553b8d58fa87c51936ca478a00b703"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+      "bytes": 133264,
+      "sha256": "1ff5c1cb3ab56a3b7c07a97986056803e9db77376947547a87015f5e2c48715b"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+      "bytes": 133124,
+      "sha256": "98bd29647780ce5c285eb29361384aab369ccfdadfb2e59502d29d396534eedf"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+      "bytes": 132280,
+      "sha256": "8c7d6eeaac98121a908be440ba1b9fcc0ee717bca52493b67232e2afdd4a8d66"
+    },
+    {
+      "path": "/assets/index-BBMox9m8.js",
+      "bytes": 924171,
+      "sha256": "3219b57bff7f4de474ab8a4f554f6d3be487aea73e50fb8d5b9cb9d81ed533b6"
+    },
+    {
+      "path": "/assets/index-DMDGW3gW.css",
+      "bytes": 217347,
+      "sha256": "9a7e23c9f8f5a7abeba42bb45deeb5e92d090d34e610249c0fd87088e1063a69"
+    },
+    {
+      "path": "/fonts/pingfang/manifest.json",
+      "bytes": 73424,
+      "sha256": "760af7c2570d4449dbafedaa77425c93baecae44570e632e2fe5cf7432995157"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u000-da543d1ab3.woff2",
+      "bytes": 24940,
+      "sha256": "da543d1ab321f4eb38a78eaadc7b25e9a7f668607d7f09e678db7bac5af6dbe0"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u001-ad0400a305.woff2",
+      "bytes": 1296,
+      "sha256": "ad0400a305c6f9453b0b1a9a72a506c15d770729e71ecdc87505f5ca9610ffe4"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u002-7b536766ca.woff2",
+      "bytes": 63232,
+      "sha256": "7b536766cab6c0dd7bac3e7a28f86ce4cd0ec2bcf5f71b0d229982f16d8d7608"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u003-7961885cd5.woff2",
+      "bytes": 589868,
+      "sha256": "7961885cd59d959a81edf202cd46aeac018658761eb86ec2642dccdd17611dd1"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u004-6fdd3d5a8c.woff2",
+      "bytes": 766044,
+      "sha256": "6fdd3d5a8c5a7d12056da690fa8356f4245fb615d253c21d958d1a5f54e271fa"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u005-8f9f32ba9d.woff2",
+      "bytes": 606124,
+      "sha256": "8f9f32ba9dfe34627492dcbd53cbdf42cbfb25e4c8a8bb07d2c070a63dadc063"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u006-d878956a6a.woff2",
+      "bytes": 671004,
+      "sha256": "d878956a6a37de1bf71370d11c1ece95825137f4953da32abea865b68cb31886"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u007-bbf8bdf975.woff2",
+      "bytes": 739532,
+      "sha256": "bbf8bdf975b3f5e44acc41e7ec8719def1eedef68eee39ecae66e6467c890ac6"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u008-261945b486.woff2",
+      "bytes": 699888,
+      "sha256": "261945b4864af44113b9f7fdda8ea087ad8e6d87fe8013ddbd58635179075ebe"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u009-ea3989b858.woff2",
+      "bytes": 791884,
+      "sha256": "ea3989b85874b60a3de58c26e7a25e8cf14f8c5ca55be52e8f0784520e1ecb10"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u00f-b82bd1f95f.woff2",
+      "bytes": 30548,
+      "sha256": "b82bd1f95f7c242523f84a7e9a6ab7736abd18782c76498180767b5943251660"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u01f-707d5e4429.woff2",
+      "bytes": 12372,
+      "sha256": "707d5e44298b4b56ef08b7ba878dc1f2ab10c01d50daf2415a8cb505f7e7c810"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u020-987f561dac.woff2",
+      "bytes": 5240,
+      "sha256": "987f561dacc0daa922bb56d0016b1ebd914e42974303205618b1168ecac16086"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u021-4e6cd014f9.woff2",
+      "bytes": 6428,
+      "sha256": "4e6cd014f980cc495a6844e0ed607cda5897c4cea1becc90ebfbbbc52e7b133d"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u022-fe07ad3824.woff2",
+      "bytes": 4560,
+      "sha256": "fe07ad38248c991263f2623e1a212d02b204e141becdb802be735aa5748afb6c"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u023-c3f9c44430.woff2",
+      "bytes": 8492,
+      "sha256": "c3f9c44430b19e0e32a939bbbb5aed3d6aadebdfaf4cccd40fb550804ddac04e"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u024-97b5981b00.woff2",
+      "bytes": 4852,
+      "sha256": "97b5981b0057e0af91e5e3097b13ccfe7d5d746c0637cdc0b488c9fb6f552280"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u025-8e875411ab.woff2",
+      "bytes": 8096,
+      "sha256": "8e875411ab0a916347dd438fe03bf706a8f0c8f20e34cc0193e41b98e8aad36a"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u026-059eeb3c23.woff2",
+      "bytes": 6812,
+      "sha256": "059eeb3c236c048e8f398867ff2d68c8b8afaeef2d7d5a7673b34e6d4395d6db"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u027-70d6a86f1b.woff2",
+      "bytes": 6164,
+      "sha256": "70d6a86f1b5cba34e1471f45d88842691184dfc34b49a9972291a0f88de9d393"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u028-a80edab3f2.woff2",
+      "bytes": 9728,
+      "sha256": "a80edab3f2f208c045215fec8f2a07e8fd87d5b73fa32aa516a19de277a9ddf8"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u029-494de1cee1.woff2",
+      "bytes": 6268,
+      "sha256": "494de1cee15e3a5e11c693965405be7d565bec0d02c0ff33eb5f5be69290bf30"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u02a-6834a70f2b.woff2",
+      "bytes": 3952,
+      "sha256": "6834a70f2b004be220bbe326d34cda7e74b52f893283d0565e547a688a2e5763"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-u02f-2e6cf83cc2.woff2",
+      "bytes": 2016,
+      "sha256": "2e6cf83cc23ac9703541334ed6ca3425c906767e812b0eaccc91721e3525ebca"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u000-72a972f868.woff2",
+      "bytes": 24424,
+      "sha256": "72a972f868a612ff749cd2e63a512300f77723b00df0ebf6492ead45f08ded3e"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u001-85f50a0860.woff2",
+      "bytes": 1288,
+      "sha256": "85f50a086087a417de8ee27d14b2cd569ad33a2e9d34a40e15c17d3974bb8e47"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u002-7b9e2a2e62.woff2",
+      "bytes": 62716,
+      "sha256": "7b9e2a2e621624ccdd22568035d7bd77d1bfcfddac80f5568a2359823a343663"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u003-4d674c4ebf.woff2",
+      "bytes": 589588,
+      "sha256": "4d674c4ebf2a04e7b13907c203e47f27defd96cba9ad10601108dae86f357de1"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u004-01e418f527.woff2",
+      "bytes": 771996,
+      "sha256": "01e418f52731ef913dc4d63f193c0b4bf771dcbdf307dcc149720ae9ec18528f"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u005-ec162a4ce6.woff2",
+      "bytes": 605528,
+      "sha256": "ec162a4ce67bf0e9ace87691253c45c0d1773f815eaf7a001339f18e8bb9d3fe"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u006-af397f9879.woff2",
+      "bytes": 668836,
+      "sha256": "af397f9879633dc2a3d23b51152aad09b505a8655a74a1f493a615f36f4be318"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u007-9cea9dd365.woff2",
+      "bytes": 739084,
+      "sha256": "9cea9dd3652ec2aa66d0d17b65e4844a06d1f2f96f4f02645b23840dd4bbb7c5"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u008-054f99c4b8.woff2",
+      "bytes": 701972,
+      "sha256": "054f99c4b88fafa773d11767827b3ebc4eebbcafb80a205f33ed59db046f4b81"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u009-c3b115b2a8.woff2",
+      "bytes": 799748,
+      "sha256": "c3b115b2a8ceddacf7ee05db44058720f1a5c7bead89fc1eadcdef4a462e11dc"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u00f-9f4bfad9a2.woff2",
+      "bytes": 30492,
+      "sha256": "9f4bfad9a29778f00d09fa47c347076500e596834b136c5190d66922d6d4ec9d"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u01f-b4add1a7fc.woff2",
+      "bytes": 12384,
+      "sha256": "b4add1a7fcd532e1c36117694862034ef9818d9903c4a56eb07d0b9a3e1455d9"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u020-db96497564.woff2",
+      "bytes": 5364,
+      "sha256": "db96497564e05f66dce95ea7b94910ef0135f932d61e0788c6778271f3758383"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u021-0e666b2723.woff2",
+      "bytes": 6412,
+      "sha256": "0e666b2723cd8223078a47ac5340f264cf2e8c35a08688c90641d085d894586f"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u022-99483c6a21.woff2",
+      "bytes": 4552,
+      "sha256": "99483c6a214de5fd98683807bf76486b44ff12cee4be9f2bb6e6435d7632a7aa"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u023-fd72d5fd36.woff2",
+      "bytes": 8488,
+      "sha256": "fd72d5fd369f43538d1f8ab8aa68cafc9cb9cb804adeb167fdcff633f3c8b169"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u024-4de5fdcab9.woff2",
+      "bytes": 4792,
+      "sha256": "4de5fdcab9f90e51c870089dbe855fa301c26e5b3b45ed83b51d61e33683f7c9"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u025-f96fc4e93e.woff2",
+      "bytes": 8056,
+      "sha256": "f96fc4e93e47b27db9520d0ac46bad8cca6702df47c4fc27a5a2cd1f6dbe982a"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u026-7968826026.woff2",
+      "bytes": 6768,
+      "sha256": "79688260268ffc99b4e7adde2429fa52afa940513f17df02aaac5871b5d279c8"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u027-3fcaa28506.woff2",
+      "bytes": 6204,
+      "sha256": "3fcaa285067c4ee480f76a3cfd6c0147df39bf3010861653aa1dd10103a99b87"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u028-188f1de740.woff2",
+      "bytes": 9744,
+      "sha256": "188f1de740d219c91a5152ced68a17686407395226d52f0c9a93b170b44f2bb9"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u029-85c042bcd0.woff2",
+      "bytes": 6280,
+      "sha256": "85c042bcd0ea3594c501f121b91d01e18febc75b422f2053b969a35ee6f3a08c"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u02a-716dd9fc81.woff2",
+      "bytes": 3948,
+      "sha256": "716dd9fc810dab5f2ab0f57c1919430adb0422f3950b3142e58b0115b654ee0b"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-u02f-33ab5e462e.woff2",
+      "bytes": 2032,
+      "sha256": "33ab5e462e90bfff471ef99a927aef5dd61055c36fe5fea9910de7aebded6e73"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u000-93b401bf40.woff2",
+      "bytes": 23436,
+      "sha256": "93b401bf40d9c4a1374047eb5df87cc42f0f8e7100dc194883a3072879d726dc"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u001-aceeee8760.woff2",
+      "bytes": 1280,
+      "sha256": "aceeee8760a51552fb95361108a9791ffce500370786c63c89025c597f2a01ef"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u002-ed2a39024c.woff2",
+      "bytes": 62392,
+      "sha256": "ed2a39024cf168d0c76a821e7b4641d9a863ae8557d41ac11f039544a9e77c03"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u003-623969d220.woff2",
+      "bytes": 583224,
+      "sha256": "623969d220069890a295a65f9c3c2cbff0c93cffe62d1e8a57711410f57bbab0"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u004-453e8ec017.woff2",
+      "bytes": 763052,
+      "sha256": "453e8ec01781bf880ea4ccb4a631d132ebf61b17a88c56f74cb03ede77d7618c"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u005-ab9cd77997.woff2",
+      "bytes": 599596,
+      "sha256": "ab9cd7799786de59f84947de581731ad0dbc9d46f8e034910f84ad44051391f7"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u006-7fac34e9d0.woff2",
+      "bytes": 658956,
+      "sha256": "7fac34e9d0122d6e466b4eee5e89374d7dfefb80dc4d45174fa8fd046eef3536"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u007-96ce0c0222.woff2",
+      "bytes": 726616,
+      "sha256": "96ce0c0222f4eea413ecf4df9029333b8436850cf6d999c935b8a799824f8b0d"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u008-cc1e4d72e4.woff2",
+      "bytes": 692500,
+      "sha256": "cc1e4d72e4dcdfc09166488f393da20639fcbc702cd6497c9e7511af3d77e58f"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u009-4826fc1e2f.woff2",
+      "bytes": 786720,
+      "sha256": "4826fc1e2f67cf6ebd23a285c8d955f6e1c12e319248454080ce57a726f992d4"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u00f-503b868303.woff2",
+      "bytes": 30232,
+      "sha256": "503b868303c243fc5d9f5cb31b9ef44c78cca212b577d8215002cbd312893f43"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u01f-5fb9ff8f9c.woff2",
+      "bytes": 12372,
+      "sha256": "5fb9ff8f9c34bb4122fb8895f5336f685bb7b4c5c9d57c2cf1efa9616c2b9edb"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u020-9669637207.woff2",
+      "bytes": 5296,
+      "sha256": "9669637207821f771468dfa9edb1b57f567a6bf511c86631f1b5a8635bffd38d"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u021-b6d8f771dd.woff2",
+      "bytes": 6436,
+      "sha256": "b6d8f771dd5b37b11b11089e68b3fb02aa9b1d429c0f0ef8ac117d7837565174"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u022-09a3ac6539.woff2",
+      "bytes": 4500,
+      "sha256": "09a3ac6539282ef6377e3aa790fb876ded73dd4c127a83a6ff78452e8ac17f19"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u023-eb5cfbc712.woff2",
+      "bytes": 8348,
+      "sha256": "eb5cfbc71202db3daacc49260e78b94839ab1fafff6fb9ff68e63e5dcfc6710f"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u024-2ff80bcc13.woff2",
+      "bytes": 4772,
+      "sha256": "2ff80bcc13a398d7fe5029bd101808e3bc2244cb31c51935511ab63544d8ec4e"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u025-f569e6ca19.woff2",
+      "bytes": 7964,
+      "sha256": "f569e6ca19fd7d034abc57e6331a3348791d39f4d2961d27317dba88ac3a888f"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u026-64d465d81e.woff2",
+      "bytes": 6736,
+      "sha256": "64d465d81e9bf304a6d82752e66c641474d45bc79351aba5a011213844839af5"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u027-032f1a7801.woff2",
+      "bytes": 6176,
+      "sha256": "032f1a780124db48f160d0cb4177a2d062f063a587c8317606027663c1144dc6"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u028-dc57a4ca8e.woff2",
+      "bytes": 9688,
+      "sha256": "dc57a4ca8e818cb867395293f779fc6173239ab0c736266023a257bf5106fb93"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u029-c09d652e85.woff2",
+      "bytes": 6172,
+      "sha256": "c09d652e854d529c926fe26d2657799389b855b6dd6828fc56de2a48ab4f6ff5"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u02a-4275622c6d.woff2",
+      "bytes": 3888,
+      "sha256": "4275622c6d849b5c693a87c885b61cf7abdd38452da25bd2be97626d6f11f1f2"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-u02f-d54a649653.woff2",
+      "bytes": 1980,
+      "sha256": "d54a649653ea3e86620f1207470164d2df2df57f4328e11b1522be8ef7baf4fb"
+    }
+  ]
+}

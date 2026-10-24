@@ -16,7 +16,11 @@ No original GLB, character models, image atlas, audio, Draco binary, or bundled 
 
 React / React DOM: MIT. Three.js: MIT (including RoundedBoxGeometry from the same installed release). Vite: MIT. Their license notices remain distributed with installed packages. No upstream account, dictionary, backend API, English game rules, or AI code is used.
 
-## Noto Sans SC / Hanz Tile Sans
+## PingFang (current user-supplied font)
+
+The user supplied `公文项目字体包-含苹方-【codex】.zip` for this internal test project. The regular, medium and semibold PingFang SC WOFF2 faces are subset without changing outlines or internal font names. Source and generated-file hashes are retained in `apps/web/public/fonts/pingfang/manifest.json`; runtime CSS uses the alias Hanz PingFang. No open-source license is asserted for these user-provided fonts.
+
+## Noto Sans SC / Hanz Tile Sans (retained historical assets)
 
 Noto Sans SC from the official [Google Fonts repository](https://github.com/google/fonts/tree/a85815a42757630ce188fdad368c2dfc444d4773/ofl/notosanssc), pinned commit `a85815a42757630ce188fdad368c2dfc444d4773`. Copyright 2014–2021 Adobe, Reserved Font Name “Source”. Licensed under SIL Open Font License 1.1; full license and copyright are distributed in `apps/web/public/fonts/OFL-NotoSansSC.txt`.
 
