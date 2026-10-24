@@ -10,7 +10,7 @@
 
 正式 release `1.17.0-20261024-093254`，源码 `c2e31fe`，发布前一致性备份 `pre-release-20261024-093255.sqlite`。公网ready=true，JS/CSS与冻结构建逐字节一致；原端口、数据和规则保留。286项自动测试、20项本地/15项公网连续摸打稳定性、17项本地/14项公网计时检查通过。最后补丁仅调整短竖屏评审七字换行，补丁后重新构建、286测试与17项计时/四窗口评审复验；公网在最终构建上完成全部检查。自建测试房均无计分关闭，没有新增天书记录。
 
-证据：`docs/evidence/public-turn-hud-1.17.0-release.json`、`public-turn-hud-1.17.0-results.json`、`public-table-timer-1.17.0-results.json`。GitHub同步进行中。
+证据：`docs/evidence/public-turn-hud-1.17.0-release.json`、`public-turn-hud-1.17.0-results.json`、`public-table-timer-1.17.0-results.json`。源码和验收证据已同步GitHub `5033c14`，远端文件树与本地交付一致。
 
 手机为Chrome窗口模拟，未冒充实体设备。
 
