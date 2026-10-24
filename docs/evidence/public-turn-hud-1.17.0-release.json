@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-24T09:32:55.973388",
+  "version": "1.17.0",
+  "source": "c2e31fe",
+  "release": "1.17.0-20261024-093254",
+  "backup": "pre-release-20261024-093255.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-B-FWQa8N.js",
+      "sha256": "c4fd931cf391d28bdb9b742ac1b0ca8438a24bee3675573d7901d37db0d862a5"
+    },
+    {
+      "path": "/assets/index-DSWSCFGX.css",
+      "sha256": "939b23fc2b7edac03af0b0c3fe2e90faf240efcb65823beaabe121284635e3bb"
+    }
+  ],
+  "automaticTests": 286
+}

@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-24T01:33:40.368Z",
+  "scope": "public real Chrome/Socket.IO/HTTP, own private room closed without scoring",
+  "checks": [
+    {
+      "name": "real acting/waiting roles get distinct prompts, former top timer removed",
+      "status": "PASS"
+    },
+    {
+      "name": "HUD fits lower table edge without obscuring actions/hand at 1280x720",
+      "status": "PASS",
+      "x": 780,
+      "y": 592,
+      "right": 1136,
+      "bottom": 628,
+      "w": 1280,
+      "h": 720,
+      "sw": 1280,
+      "sh": 720
+    },
+    {
+      "name": "HUD fits lower table edge without obscuring actions/hand at 390x844",
+      "status": "PASS",
+      "x": 52,
+      "y": 573,
+      "right": 382,
+      "bottom": 609,
+      "w": 390,
+      "h": 844,
+      "sw": 390,
+      "sh": 844
+    },
+    {
+      "name": "HUD fits lower table edge without obscuring actions/hand at 320x480",
+      "status": "PASS",
+      "x": 8,
+      "y": 247.3125,
+      "right": 312,
+      "bottom": 277.3125,
+      "w": 320,
+      "h": 480,
+      "sw": 320,
+      "sh": 480
+    },
+    {
+      "name": "HUD fits lower table edge without obscuring actions/hand at 667x375",
+      "status": "PASS",
+      "x": 329,
+      "y": 197,
+      "right": 659,
+      "bottom": 227,
+      "w": 667,
+      "h": 375,
+      "sw": 667,
+      "sh": 375
+    },
+    {
+      "name": "discarder waits while the next player sees eat/draw choice",
+      "status": "PASS"
+    },
+    {
+      "name": "borrowed composition prompts applicant and other player correctly",
+      "status": "PASS"
+    },
+    {
+      "name": "review has one compact bottom timer with role-specific instruction",
+      "status": "PASS"
+    },
+    {
+      "name": "review timer and actionable vote fit 80% modal at 1280x720",
+      "status": "PASS"
+    },
+    {
+      "name": "review timer and actionable vote fit 80% modal at 390x844",
+      "status": "PASS"
+    },
+    {
+      "name": "review timer and actionable vote fit 80% modal at 320x480",
+      "status": "PASS"
+    },
+    {
+      "name": "review timer and actionable vote fit 80% modal at 667x375",
+      "status": "PASS"
+    },
+    {
+      "name": "settled review never displays the next turn countdown",
+      "status": "PASS"
+    },
+    {
+      "name": "real network loss suspends urgency and reconnect restores authoritative prompt",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.16.0-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.17.0-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -34,6 +34,14 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.17.0 · 轮到谁，该做什么，一眼就懂
+
+倒计时移到牌桌下沿偏右；左侧显示当前行动提示，右侧为秒数和由绿转金、转红的剩余进度条。评审弹窗与观战使用同一组件；暂停、掉线、已投票和结算有独立状态，不遮住手牌。规则仍为1.4.0，期限由服务器决定。
+
+正式 release `1.17.0-20261024-093254`，源码 `c2e31fe`，发布前一致性备份 `pre-release-20261024-093255.sqlite`。公网ready=true，JS/CSS与冻结构建逐字节一致；原端口、数据和规则保留。286项自动测试、20项本地/15项公网连续摸打稳定性、17项本地/14项公网计时检查通过。最后补丁仅调整短竖屏评审七字换行，补丁后重新构建、286测试与17项计时/四窗口评审复验；公网在最终构建上完成全部检查。自建测试房均无计分关闭，没有新增天书记录。
+
+证据：`docs/evidence/public-turn-hud-1.17.0-release.json`、`public-turn-hud-1.17.0-results.json`、`public-table-timer-1.17.0-results.json`。GitHub同步进行中。
 
 ## v1.16.0 · 落牌有声，胡牌有势
 
