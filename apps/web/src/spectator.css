@@ -9,4 +9,4 @@
 .hall-watch{width:100%;min-height:30px;font-size:11px;margin-top:3px}.spectating-choice{display:flex!important;align-items:center;gap:8px}.spectating-choice input{width:auto;min-height:22px}
 @media(max-width:699px){#root .spectator-shell .viewport{width:min(calc(100cqw - 24px),150cqh)}.spectator-shell .game-hud{gap:6px;padding:5px 8px}.spectator-shell .wordmark{font-size:20px}.spectator-shell .room-code{font-size:10px}.spectator-status{padding:4px 10px;font-size:11px}}
 .spectator-shell .game-hud{min-height:50px;max-height:50px;align-items:center}
-.spectator-shell .game-hud>.hud-tool{flex:none;min-width:54px;width:auto;min-height:34px;height:auto;padding:4px 8px;font-size:12px;white-space:nowrap}
+#root .spectator-shell .game-hud>.hud-tool{border-radius:999px;flex:none;min-width:54px;width:auto;min-height:34px;height:auto;padding:4px 8px;font-size:12px;white-space:nowrap}

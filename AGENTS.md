@@ -108,3 +108,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.20.0出牌播放以牌面字开头的固定二字词，预生成持久缓存；公共GET不得调用TTS。修改词表必须更换tile profile以保护immutable缓存；胡句继续用原整句key。未知字显示待配词，不能单字回退或出牌临时组词。
 
 - 语音浏览器验收可设置PLAYWRIGHT_BROWSERS_PATH，使用锁定Playwright配套Chromium；本机Chrome升级后若跨版本控制异常，先用配套浏览器对照，不以放宽超时或模拟响应掩盖失败。记录实际浏览器版本，临时下载放Codex-Temp。
+
+- 1.20.1圆形工具必须固定等宽等高、flex:none；横向图文工具用像素大圆角形成胶囊，不能在非方形按钮上保留50%圆角。响应式只改统一尺寸或明确切换形状，SVG不得收缩；检查实际尺寸、顶栏容纳与点击命中。

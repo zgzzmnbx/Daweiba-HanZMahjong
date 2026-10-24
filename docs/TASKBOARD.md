@@ -1,11 +1,11 @@
 # 当前任务板
 
-## 1.20.0 · 出牌二字词
+## 1.20.1 · 按钮形状稳定
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| WORD120 | 178字固定二字词、自然语速、只读缓存播放 | DONE | 178音频全覆盖；无凭据HTTP校验；301自动测试 |
-| VERIFY120 | 三人/观战/AI/拖放、胡句整读与发布 | DONE | 本地12+7、公网11；178公网音频、ready及构建指纹一致 |
-| ENV | 实体手机触控与主观听感 | NOT_RUN_ENV_REQUIRED | Chrome模拟与音频分析不代替实体设备 |
+| SHAPE1201 | 修复圆形/胶囊工具按钮挤压变形 | DONE | 301测试、构建、5种视口21项实际浏览器验证 |
+| RELEASE1201 | 备份发布、公网核验与GitHub同步 | DONE | 本地21项、公网21项；release142312/备份142313；构建指纹一致，GitHub随收尾同步 |
+| ENV | 实体手机触控与Safari实测 | NOT_RUN_ENV_REQUIRED | Chromium视口模拟不代替实体设备 |
 
-无根TASKS.md；1.19.1及更旧完成项已归档CHANGELOG/HANDOFF。沿用1240入口，runtime和真实数据不提交。
+无根TASKS.md；1.20.0及更旧完成项已归档CHANGELOG/HANDOFF。沿用1240入口，runtime和真实数据不提交。
