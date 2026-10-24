@@ -50,3 +50,18 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
   f.setNow(10000);await f.server.tick();current=await actor.snapshot();assert.equal(current.public.discards.length,1);assert.equal(current.public.lastAutomaticDiscard.reason,'BOT');
  }finally{await f.close();}
 });
+
+test('listening commits atomically over real sockets, persists publicly, and admits non-previous-seat HU',async()=>{
+ const f=await fixture(3);try{
+  const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),next=f.clients[(actor.seat+1)%3];
+  f.server.store.failNextCommit=true;assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).error,'PERSISTENCE_UNAVAILABLE');assert(!(await actor.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).listening);assert(!f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.listening);
+  assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).ok,true);for(const c of f.clients)assert.equal((await c.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).listening,true);assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.listening,true);
+  assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);for(const c of f.clients.filter(c=>c!==actor)){const e=await c.snapshot();assert.equal((await c.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);}
+  assert.equal((await next.send({kind:'DISCARD',tileId:(await next.snapshot()).private.hand[0].tileId})).ok,true);const e=await actor.snapshot();assert.equal((await actor.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'HU'})).ok,true);for(const c of f.clients.filter(c=>c!==actor&&c!==next))assert.equal((await c.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);
+  const candidate=await actor.snapshot();assert.equal(candidate.public.phase.kind,'HU_COMPOSE');assert.equal(candidate.public.phase.applicantId,actor.id);assert.equal(candidate.private.hand.length,13);assert.equal(candidate.private.candidateDraft.sentence.orderedTileIds.length,14);
+ }finally{await f.close();}
+});
+
+test('real socket rejects forged non-previous-seat HU and late listening without consuming a response',async()=>{
+ const f=await fixture(3);try{const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),other=f.clients[(actor.seat+2)%3];assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);const e=await other.snapshot();assert.equal((await other.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'HU'})).code,'LISTENING_REQUIRED');assert.equal((await other.snapshot()).private.ownResponse,null);assert.equal((await other.send({kind:'SET_LISTENING',enabled:true})).code,'PHASE_CLOSED');assert.equal((await other.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);}finally{await f.close();}
+});

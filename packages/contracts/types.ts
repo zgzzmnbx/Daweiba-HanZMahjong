@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -107,6 +107,8 @@ export type PublicPlayer = Readonly<{
   isBotSeat?: boolean;
   /** Voluntary control delegation; the human identity stays online and keeps its seat. */
   autoPlay?: boolean;
+  /** Player-declared readiness; only their own action turn can change it. */
+  listening?: boolean;
   playerId: PlayerId; seat: SeatIndex; nickname: string; presence: Presence;
   connected: boolean; ready: boolean; handCount: number; eatCount: number; wins: number;
   graceEndsAt: UtcMs | null;
@@ -182,6 +184,7 @@ export type ClientCommand = CommandMeta & (
   | Readonly<{ kind: 'WITHDRAW_DISCARD_HU'; source: Extract<CandidateSource,{kind:'DISCARD'}> }>
   | Readonly<{ kind: 'VOTE'; proposalId: ProposalId; ballot: Ballot }>
   | Readonly<{ kind: 'SET_AUTOPLAY'; enabled: boolean }>
+  | Readonly<{ kind: 'SET_LISTENING'; enabled: boolean }>
   | Readonly<{ kind: 'ROTATE_RECOVERY_CODE' }>
   | Readonly<{ kind: 'CLOSE_AFTER_ROUND' }>
   | Readonly<{ kind: 'CLOSE_ROOM' }>
@@ -191,6 +194,7 @@ export type CommandErrorCode =
   | 'UNAUTHENTICATED' | 'NOT_ROOM_MEMBER' | 'STALE_CONTROL_EPOCH'
   | 'STALE_STATE_VERSION' | 'STALE_PHASE' | 'WRONG_ROUND' | 'ACTION_ID_REUSED'
   | 'PHASE_CLOSED' | 'NOT_ACTOR' | 'ILLEGAL_TILE' | 'INVALID_SENTENCE'
+  | 'LISTENING_REQUIRED' | 'INVALID_LISTENING' | 'LISTENING_NOT_SUPPORTED'
   | 'INVALID_COMMAS' | 'INVALID_OBJECTIONS' | 'NOT_REVIEWER' | 'ALREADY_RESPONDED'
   | 'ALREADY_VOTED' | 'EAT_NOT_NEXT_SEAT' | 'EAT_LIMIT' | 'EAT_TILE_PROTECTED'
   | 'HU_RETRY_FORBIDDEN' | 'NO_HUMAN_REVIEWER' | 'BOT_ACTION_FORBIDDEN'

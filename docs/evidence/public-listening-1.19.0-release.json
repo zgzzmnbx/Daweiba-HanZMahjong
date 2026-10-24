@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-24T03:31:15.803Z",
+  "version": "1.19.0",
+  "release": "1.19.0-20261024-113049",
+  "source": "b803bec",
+  "backup": "pre-release-20261024-113050.sqlite",
+  "health": {
+    "ready": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-CjaawKdc.js",
+      "sha256": "5666de0277dcbeb5e3a54cc7010b9557c9e1801633e38529817c3150f4106642",
+      "exactMatch": true
+    },
+    {
+      "path": "/assets/index-BgkbPKHZ.css",
+      "sha256": "0890bc0ed13dc7f6dd60305d1b4d34f316f71232a19c4f59f7d4b94ca81d80d7",
+      "exactMatch": true
+    }
+  ]
+}

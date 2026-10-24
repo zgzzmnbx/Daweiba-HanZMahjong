@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-24T03:30:06.991Z",
+  "origin": "http://127.0.0.1:3162",
+  "version": "1.19.0",
+  "scope": "three real Chrome clients, HTTP/Socket.IO, authoritative listening state and simulated viewports",
+  "checks": [
+    {
+      "name": "listening button and exact subtitle fit viewport 390",
+      "status": "PASS"
+    },
+    {
+      "name": "listening button and exact subtitle fit viewport 320",
+      "status": "PASS"
+    },
+    {
+      "name": "listening button and exact subtitle fit viewport 667",
+      "status": "PASS"
+    },
+    {
+      "name": "listening button and exact subtitle fit viewport 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "declaration is broadcast to real players and displayed beside the avatar",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh restores listening without resetting the turn deadline",
+      "status": "PASS"
+    },
+    {
+      "name": "unannounced player can borrow only the previous seat; late declaration is unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "four response controls fit viewport 320",
+      "status": "PASS"
+    },
+    {
+      "name": "four response controls fit viewport 667",
+      "status": "PASS"
+    },
+    {
+      "name": "listening player genuinely borrows a non-previous-seat discard into the 14-tile candidate",
+      "status": "PASS"
+    },
+    {
+      "name": "cancelling listening on own turn removes the non-previous-seat privilege",
+      "status": "PASS"
+    },
+    {
+      "name": "round end clears listening; only private verification room closed without score",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
