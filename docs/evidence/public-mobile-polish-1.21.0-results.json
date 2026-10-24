@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-24T06:38:43.145Z",
+  "version": "1.21.0",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real form toggles, six-seat setup, two-client discard/draw/HU vote; phone sizes simulated; no successful HU or public-room changes",
+  "checks": [
+    {
+      "name": "compact watch switch, readable form and bounded dialog 320",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 390",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 430",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 667",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "new form resets switch and lobby menu stays within viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "six-seat setup scrolls internally and last AI seat is operable 320",
+      "status": "PASS"
+    },
+    {
+      "name": "six-seat setup scrolls internally and last AI seat is operable 390",
+      "status": "PASS"
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 320",
+      "status": "PASS"
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 390",
+      "status": "PASS"
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 430",
+      "status": "PASS"
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 667",
+      "status": "PASS"
+    },
+    {
+      "name": "compact tools retain expandable arranging and working quality controls",
+      "status": "PASS"
+    },
+    {
+      "name": "real discard and draw remain operable after layout changes",
+      "status": "PASS"
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 390",
+      "status": "PASS"
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 320",
+      "status": "PASS"
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 667",
+      "status": "PASS"
+    },
+    {
+      "name": "rejected review and private rooms close without scoring or book entry",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

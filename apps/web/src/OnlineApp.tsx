@@ -43,14 +43,14 @@ export default function OnlineApp(){
  const openPanel=(next:Exclude<LobbyPanel,null>,table=1)=>{operation.current++;requestController.current?.abort();setBusy(false);setTableNumber(table);setPanel(next);setStatus('');if(next==='create'){setAllowSpectators(true);setSeats(null);setCapacity(4);}};
  const openTable=(table:LobbyTable)=>{if(table.status==='EMPTY'){openPanel('create',table.tableNumber);return;}if(table.roomId){setRoomId(table.roomId);void run((signal,token)=>inspect(table.roomId!,signal,token));}};
  const closePanel=()=>{if(busy)return;setPanel(null);setStatus('');};
- const form=<section className="entry">
-  {(panel==='create'||!seats||(!seats.inProgress&&seats.returnSeat==null))&&<label>你的称呼<input autoComplete="nickname" autoFocus value={nickname} onChange={e=>setNickname(e.target.value)} maxLength={20} placeholder="朋友怎么叫你"/></label>}
+ const form=<section className={'entry'+(panel==='create'?' room-create-form':'')}>
+  {(panel==='create'||!seats||(!seats.inProgress&&seats.returnSeat==null))&&<label className="room-name-field">你的称呼<input autoComplete="nickname" autoFocus value={nickname} onChange={e=>setNickname(e.target.value)} maxLength={20} placeholder="朋友怎么叫你"/></label>}
   {panel==='create'?<>
-   <label>一桌几人<select value={capacity} onChange={e=>setCapacity(Number(e.target.value) as PlayerCount)}>{[2,3,4,5,6].map(i=><option key={i} value={i}>{i} 人</option>)}</select></label>
-   <label>麻将套组<select aria-label="麻将套组" value={deckSetId} disabled={busy||deckLoading||!!deckLoadError} onChange={e=>setDeckSetId(e.target.value)}>{deckCatalog?.sets.map(s=><option key={s.id} value={s.id}>{s.name}{s.id===deckCatalog.defaultSetId?' · 默认':''}</option>)}</select></label>
+   <label className="room-capacity-field">一桌几人<select value={capacity} onChange={e=>setCapacity(Number(e.target.value) as PlayerCount)}>{[2,3,4,5,6].map(i=><option key={i} value={i}>{i} 人</option>)}</select></label>
+   <label className="room-deck-field">麻将套组<select aria-label="麻将套组" value={deckSetId} disabled={busy||deckLoading||!!deckLoadError} onChange={e=>setDeckSetId(e.target.value)}>{deckCatalog?.sets.map(s=><option key={s.id} value={s.id}>{s.name}{s.id===deckCatalog.defaultSetId?' · 默认':''}</option>)}</select></label>
    {deckLoading?<p role="status">正在载入套组…</p>:deckLoadError?<p role="alert">{deckLoadError} <button disabled={busy} onClick={()=>setDeckReload(n=>n+1)}>重试载入套组</button></p>:<p className="deck-choice-note">{deckCatalog?.sets.find(s=>s.id===deckSetId)?.charCount} 个汉字 · {capacity} 人桌 {deckCatalog?.sets.find(s=>s.id===deckSetId)?.totals[String(capacity) as '2'|'3'|'4'|'5'|'6']} 张牌</p>}
-   <label className="spectating-choice"><input type="checkbox" checked={allowSpectators} onChange={e=>setAllowSpectators(e.target.checked)}/>允许观战</label>
-   <p>此房间会显示在公共大厅，其他玩家可直接入座。也可以添加 AI；一位真人时可胡牌练习，但不计分；AI 评审有 70% 概率赞成。</p>
+   <label className="spectating-choice"><span><strong>允许观战</strong><small id="spectating-note">其他人可旁观，不会看到手牌</small></span><input type="checkbox" role="switch" aria-label="允许观战" aria-describedby="spectating-note" checked={allowSpectators} onChange={e=>setAllowSpectators(e.target.checked)}/></label>
+   <details className="room-create-details"><summary>公共房间 · 入座与 AI 说明</summary><p>房间显示在大厅，其他玩家可直接入座。空位可安排 AI；一位真人时为不计分练习局，每位 AI 评审有 70% 概率赞成。</p></details>
    <button className="primary" disabled={busy||!nickname.trim()||deckLoading||!!deckLoadError||!deckSetId} onClick={create}>{busy?'正在创建…':'创建房间'}</button>
   </>:<>
    {!seats?<><label>已有房间码<input value={roomId} onChange={e=>{setRoomId(e.target.value.toUpperCase());setSeats(null);}} placeholder="输入朋友发来的房间码" autoCapitalize="characters"/></label>
