@@ -1,0 +1,158 @@
+{
+  "at": "2026-10-24T13:42:15.371Z",
+  "version": "1.22.0",
+  "origin": "http://127.0.0.1:3171",
+  "browser": "141.0.7390.37",
+  "scope": "real normalized MP3 playback through Web Audio, upload, two players + spectator, shared clock and socket switches, actual gain/audio samples; phone viewport simulation, not physical iOS",
+  "checks": [
+    {
+      "name": "six real default tracks play in sync with quiet initial gain",
+      "status": "PASS",
+      "audio": [
+        {
+          "exists": true,
+          "paused": false,
+          "time": 1.557719,
+          "ready": 4,
+          "track": "default-38b70bc226f07ca2",
+          "gain": 0.027466248720884323,
+          "state": "running",
+          "peak": 0.006758925970643759
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 1.493721,
+          "ready": 4,
+          "track": "default-38b70bc226f07ca2",
+          "gain": 0.02143065631389618,
+          "state": "running",
+          "peak": 0.0015984021592885256
+        }
+      ]
+    },
+    {
+      "name": "volume is personal and maximum gain remains capped",
+      "status": "PASS"
+    },
+    {
+      "name": "real sound-effect preview silences music even at slider maximum",
+      "status": "PASS"
+    },
+    {
+      "name": "music smoothly returns after foreground effect",
+      "status": "PASS"
+    },
+    {
+      "name": "clicking 我要切歌 updates both clients through the room socket",
+      "status": "PASS",
+      "audio": [
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.041853,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.10607517510652542,
+          "state": "running",
+          "peak": 0.0000014842817108728923
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.053839,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.027494635432958603,
+          "state": "running",
+          "peak": 3.8764426335546887e-7
+        }
+      ]
+    },
+    {
+      "name": "personal mute leaves peer playing and resumes at shared position",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh joins the ongoing song instead of restarting it",
+      "status": "PASS"
+    },
+    {
+      "name": "spectator hears same room music with read-only controls",
+      "status": "PASS",
+      "audio": [
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.850431,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.10981665551662445,
+          "state": "running",
+          "peak": 0.006274412386119366
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.615329,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.027334177866578102,
+          "state": "running",
+          "peak": 0.002624152461066842
+        },
+        {
+          "exists": true,
+          "paused": false,
+          "time": 0.130612,
+          "ready": 4,
+          "track": "default-f1b4ed07892587d2",
+          "gain": 0.01803412474691868,
+          "state": "running",
+          "peak": 0.002295916201546788
+        }
+      ]
+    },
+    {
+      "name": "real audio upload is normalized and enters both room playlists",
+      "status": "PASS"
+    },
+    {
+      "name": "uploaded song streams and synchronizes to players and spectator",
+      "status": "PASS"
+    },
+    {
+      "name": "song end advances automatically through the looping shared playlist",
+      "status": "PASS"
+    },
+    {
+      "name": "music tools stay within viewport and scroll internally 320",
+      "status": "PASS"
+    },
+    {
+      "name": "music tools stay within viewport and scroll internally 390",
+      "status": "PASS"
+    },
+    {
+      "name": "music tools stay within viewport and scroll internally 667",
+      "status": "PASS"
+    },
+    {
+      "name": "music tools stay within viewport and scroll internally 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "real discard and draw keep effects ahead of shared music",
+      "status": "PASS"
+    },
+    {
+      "name": "real HU reveal suppresses music during impact sounds",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closes unscored without adding a book entry",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

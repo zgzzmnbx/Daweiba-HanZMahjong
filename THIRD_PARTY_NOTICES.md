@@ -21,3 +21,7 @@ React / React DOM: MIT. Three.js: MIT (including RoundedBoxGeometry from the sam
 Noto Sans SC from the official [Google Fonts repository](https://github.com/google/fonts/tree/a85815a42757630ce188fdad368c2dfc444d4773/ofl/notosanssc), pinned commit `a85815a42757630ce188fdad368c2dfc444d4773`. Copyright 2014–2021 Adobe, Reserved Font Name “Source”. Licensed under SIL Open Font License 1.1; full license and copyright are distributed in `apps/web/public/fonts/OFL-NotoSansSC.txt`.
 
 Modified font renamed **Hanz Tile Sans**: variable font instantiated at weight 600, split into disjoint Unicode subsets, WOFF2 compressed. No independently redrawn glyph outlines. Manifest with upstream and output hashes: `apps/web/public/fonts/manifest.json`. Reproduction and coverage: `docs/TILE-FONT.md`. Font remains under OFL; this does not change the game code license.
+
+## User-supplied background music
+
+The six default recordings are deployment inputs supplied by the user in `BGM-背景音乐-麻将/`. Their originals and normalized audio are not distributed in this source repository, and no open-source license is asserted for them. The running authorized deployment serves them within game rooms; `scripts/import-music.ts` prepares the user-provided files. Player uploads are private runtime data. FFmpeg/ffprobe are external server tools, not redistributed binaries.

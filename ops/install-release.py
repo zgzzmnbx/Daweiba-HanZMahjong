@@ -33,7 +33,7 @@ config=base/'config/game.env'
 private_lines=[]
 if config.exists():
  for line in config.read_text().splitlines():
-  if line.split('=',1)[0] in {'ADMIN_PASSWORD_HASH','DASHSCOPE_API_KEY_FILE','SPEECH_CACHE_DIR','FFMPEG_BINARY'}:private_lines.append(line)
+  if line.split('=',1)[0] in {'ADMIN_PASSWORD_HASH','DASHSCOPE_API_KEY_FILE','SPEECH_CACHE_DIR','FFMPEG_BINARY','MUSIC_DIR'}:private_lines.append(line)
 if config.exists():shutil.copy2(config,base/'backups'/f'game-{datetime.now().strftime("%Y%m%d-%H%M%S")}.env')
 config.write_text(f'NODE_ENV=production\nPORT=3000\nPUBLIC_ORIGIN=https://118.196.107.182:1240\nDB_PATH="{db}"\nWEB_DIST="{release / "dist/web"}"\n'+'\n'.join(private_lines)+'\n');config.chmod(0o600)
 subprocess.run([sys.executable,str(root/'ops/macos-service.py'),'install','--node',str(node),'--root',str(release),'--env',str(config)],check=True)

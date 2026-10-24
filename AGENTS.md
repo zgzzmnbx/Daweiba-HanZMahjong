@@ -120,3 +120,6 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.21.3牌面统一自托管Hanz Tile Sans（Noto Sans SC 600静态子集），CSS与Canvas必须保持同字重。Canvas显式document.fonts.load触发可见字下载，loadingdone重建纹理，不能只等初始fonts.ready。来源/OFL/构建清单见docs/TILE-FONT.md；常用字包只覆盖核心，新增字由unicode-range子集加载。
 
 - 1.21.4普通摸打/响应阶段编号变化不能打断有效持牌；GameTable、控制器选中与Three.js预览共用上下文边界。手牌实体、草稿修订、身份/轮次/控制权、暂停、托管及胡牌边界继续取消；松手必须使用最新快照元数据，不能保留旧phaseId发命令。公网验收失败需先私有保存临时身份以便关闭自建房，凭据不入Git。
+
+- 1.22.0音乐在独立SQLite表保存共享时间锚/歌单，切歌通过同房鉴权、revision和actionId确认，不更新牌局stateVersion。服务器解码上传并归一响度，音频持久目录不进Git。音乐音量为本机偏好，Web Audio Gain强制上限；前景音效/语音使用可取消musicFocus优先权，音乐降零，不能仅靠HTMLAudio.volume（iOS不可靠）。
+- 音乐的首次手势解锁不能依赖房间网络已就绪，否则慢网下点击菜单后一直无声；可先创建静音AudioContext，播放仍受当前身份/连接门控，未解锁时提供显式按钮。

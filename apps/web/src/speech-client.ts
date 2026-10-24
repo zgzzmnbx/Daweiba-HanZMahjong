@@ -1,3 +1,4 @@
+import {musicFocus} from './audio/music-level';
 import {useEffect,useRef,useState} from 'react';
 import type {PublicRoomSnapshot} from '../../../packages/contracts/types';
 import {discardSpeechEvents,type SpeechFrame} from './discard-speech';
@@ -7,22 +8,23 @@ type SpeechJob={char:string}|{url:string;post:true};
 export function useGameSpeech(room:PublicRoomSnapshot|null,session:string,active:boolean,serverNow:number,administrator=false){
  const [enabled,setEnabled]=useState(()=>localStorage.getItem('hanz-speech')!=='off'),[message,setMessage]=useState(''),[playing,setPlaying]=useState(false);
  const context=useRef<AudioContext|null>(null),source=useRef<AudioBufferSourceNode|null>(null),request=useRef<AbortController|null>(null),generation=useRef(0),seen=useRef<{session:string;id?:string}|null>(null),previous=useRef<SpeechFrame|null>(null),manifest=useRef<Promise<SpeechManifest|null>>(Promise.resolve(null));
+ const musicRelease=useRef<(()=>void)|null>(null);
  const queue=useRef<SpeechJob[]>([]),busy=useRef(false),latest=useRef({enabled,active,room,session});latest.current={enabled,active,room,session};
- const stop=()=>{generation.current++;queue.current=[];busy.current=false;request.current?.abort();request.current=null;const node=source.current;source.current=null;try{node?.stop();}catch{}setPlaying(false);};
+ const stop=()=>{musicRelease.current?.();musicRelease.current=null;generation.current++;queue.current=[];busy.current=false;request.current?.abort();request.current=null;const node=source.current;source.current=null;try{node?.stop();}catch{}setPlaying(false);};
  const unlock=()=>{try{context.current??=new AudioContext();if(context.current.state==='suspended')void context.current.resume().catch(()=>{});}catch{setMessage('当前浏览器暂时无法播放语音。');}return context.current;};
  const canPlay=()=>latest.current.enabled&&latest.current.active&&!document.hidden&&context.current?.state==='running';
  const pump=async()=>{
   if(busy.current||!queue.current.length)return;
   if(!canPlay()){stop();return;}
   const job=queue.current.shift()!,sequence=generation.current,ctx=context.current!,controller=new AbortController();busy.current=true;request.current=controller;
-  const finished=()=>{if(sequence!==generation.current)return;source.current=null;busy.current=false;setPlaying(false);void pump();};
+  const finished=()=>{if(sequence!==generation.current)return;musicRelease.current?.();musicRelease.current=null;source.current=null;busy.current=false;setPlaying(false);void pump();};
   try{
    let url:string,post=false;
    if('char' in job){const catalog=await manifest.current;if(sequence!==generation.current)return;if(!catalog?.ready.includes(job.char))throw Error('unavailable');url=tileSpeechUrl(catalog.profile,job.char);}else{url=job.url;post=true;}
    if(!canPlay()||sequence!==generation.current){if(sequence===generation.current)stop();return;}
    const r=await fetch(url,{method:post?'POST':'GET',credentials:'same-origin',signal:controller.signal});if(!r.ok)throw Error('unavailable');const buffer=await ctx.decodeAudioData(await r.arrayBuffer());
    if(controller.signal.aborted||sequence!==generation.current)return;if(!canPlay()){stop();return;}
-   const node=ctx.createBufferSource();node.buffer=buffer;node.connect(ctx.destination);node.onended=()=>{if(source.current===node)finished();};source.current=node;node.start();setPlaying(true);setMessage('');
+   const node=ctx.createBufferSource();node.buffer=buffer;node.connect(ctx.destination);node.onended=()=>{if(source.current===node)finished();};source.current=node;musicRelease.current=musicFocus.hold(buffer.duration*1000+80);node.start();setPlaying(true);setMessage('');
   }catch{if(!controller.signal.aborted&&sequence===generation.current){setMessage('语音暂未就绪，可稍后再试。');finished();}}
   finally{if(request.current===controller)request.current=null;}
  };

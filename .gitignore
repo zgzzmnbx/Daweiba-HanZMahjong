@@ -13,3 +13,7 @@ __pycache__/
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm
+
+# User-supplied recordings remain private deployment inputs.
+/BGM-背景音乐-麻将/
+/music/

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {musicLevel,musicFocus} from '../../apps/web/src/audio/music-level';
+test('music default is quiet, ceiling follows sfx volume, and foreground always owns audio',()=>{assert.equal(musicLevel(.25,true,.55,false),.027500000000000004);assert.equal(musicLevel(1,true,1,false),.16);assert.equal(musicLevel(1,true,.05,false),.010000000000000002);for(const v of [0,.25,1])for(const s of [0,.01,.55,1])assert.equal(musicLevel(v,true,s,true),0);assert.equal(musicLevel(1,true,0,false),0);assert.equal(musicLevel(1,false,0,false),.1);assert.equal(musicLevel(-1,true,1,false),0);assert.equal(musicLevel(2,true,1,false),.16);});
+
+test('foreground leases overlap safely and cancellation returns music immediately',()=>{const a=musicFocus.hold(10000),b=musicFocus.hold(20000);try{assert(musicFocus.active());a();assert(musicFocus.active());b();assert.equal(musicFocus.active(),false);}finally{a();b();}});
