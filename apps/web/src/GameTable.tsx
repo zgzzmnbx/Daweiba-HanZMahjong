@@ -27,6 +27,7 @@ import type { ResyncEnvelope,PlayerCount,SeatIndex,TileId,Draft,Sentence } from 
 import type { TableView } from '../../../packages/contracts/table-view';
 import { MainView,type Hit,type Label } from './table3d/main-view';
 import { tableViewAdapter,seatTemplate } from './table3d/adapter';
+import {rackInteractionStamp} from './table-ui/rack-interaction';
 import { SentenceRackController,type GameTransport } from './table-ui/SentenceRackController';
 
 
@@ -67,8 +68,7 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
  useEffect(()=>{const el=panelRef.current;if(!el)return;if(panel&&controlled){if(!el.open)el.showModal();}else if(el.open)el.close();},[panel,controlled]);
  useEffect(()=>setPanel(null),[envelope.public.roomId,envelope.public.roundId,envelope.public.phase.phaseId,controlled]);
  const cancelDrag=()=>{pointer.current=null;setDrag(null);if(dropTimer.current)clearTimeout(dropTimer.current);dropTimer.current=null;renderer.current?.setRackPreview(null,null);};
- const currentStamp=()=>[envelope.public.roomId,envelope.public.roundId,envelope.public.phase.phaseId,envelope.private.controlEpoch,envelope.private.draftVersion,envelope.private.candidateDraft?.candidateDraftVersion,envelope.private.candidateDraft?.source.borrowedTileId,[...envelope.private.hand.map(t=>t.tileId)].sort().join(',')].join('|');
- const stamp=currentStamp();
+ const stamp=rackInteractionStamp(envelope);
  useLayoutEffect(()=>{cancelDrag();c.finish();rangeStart.current=null;setComma(false);},[stamp,controlled,compose,fallback,mobile]);
  useLayoutEffect(()=>{c.replace(envelope);},[envelope]);c.connected=connected;c.controlled=controlled;
  useEffect(()=>{if(!controlled)c.revoke();},[controlled]);

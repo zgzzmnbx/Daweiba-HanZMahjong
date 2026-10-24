@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T12:15:55.633Z",
+  "status": "REPRODUCED",
+  "source": "3024d92",
+  "error": "AssertionError [ERR_ASSERTION]: DRAG_INTERRUPTED another player discards",
+  "checks": [],
+  "errors": []
+}

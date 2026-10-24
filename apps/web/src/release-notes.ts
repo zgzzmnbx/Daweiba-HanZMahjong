@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-24',title:'每一张牌，同一种字',features:['桌面3D、手机手牌、出牌和胡牌评审统一使用Noto Sans SC半粗体。','字体随游戏提供，常用字优先加载；手机仍按每行七张排列。']},
+ {version:packageInfo.version,date:'2026-10-24',title:'持牌不被打断',features:['整理手牌时，别人出牌、响应或摸牌不会强制放下你拿着的牌，手机与3D牌桌都支持。','松手后按最新牌局状态保存排序；自己手牌变化、进入胡牌或控制权变化时，仍会安全收起旧拖动。']},
+ {version:'1.21.3',date:'2026-10-24',title:'每一张牌，同一种字',features:['桌面3D、手机手牌、出牌和胡牌评审统一使用Noto Sans SC半粗体。','字体随游戏提供，常用字优先加载；手机仍按每行七张排列。']},
  {version:'1.21.2',date:'2026-10-24',title:'常用工具，一点就开',features:['手机右上角直接显示标点和聊天图标，聊天未读数在图标上提示。','房间信息收紧为两行，低频工具继续收在菜单里，手牌7+7保持不变。']},
  {version:'1.21.1',date:'2026-10-24',title:'手牌两排，每排七张',features:['手机14张手牌固定按7+7排列，插入逗号也不会挤出第三排。','根据屏幕宽度自动调整牌宽和字号，短横屏使用紧凑牌高。']},
  {version:'1.21.0',date:'2026-10-24',title:'手机画面，更集中',features:['允许观战改为紧凑开关，开房表单更清晰，入座和AI说明按需展开。','手机头像、牌桌、计时与手牌集中排列，候场不再重复显示空位头像。','统一手机弹窗、字号和间距；工具中的辅助整理与画面设置可折叠。']},

@@ -2,6 +2,7 @@
  * commit 6830301df3061cdd25350cf56807473e5505b311. MIT; see THIRD_PARTY_NOTICES.md.
  * Retains actual scene/viewGroup, perspective camera, four lights, felt and rim construction.
  * Replaces English game protocol, fixed seats/pool, models, picking and postprocessing. */
+import {rackPhaseKey} from '../table-ui/rack-interaction';
 import * as T from 'three';
 import {tileCanvasFont,ensureTileGlyph} from '../tile-font';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
@@ -102,7 +103,7 @@ export class MainView {
     this.tiles.clear();
   }
   replace(view:TableView,showOwn:boolean,selected:string|null,acquired:string|null=null,urgent=false){
-    if(this.disposed)return;const old=this.last?.view;if(old&&(old.stamp.roomId!==view.stamp.roomId||old.stamp.roundId!==view.stamp.roundId||old.stamp.phaseId!==view.stamp.phaseId||old.stamp.controlEpoch!==view.stamp.controlEpoch||old.rack?.cells.map(c=>c.tile.tileId).sort().join()!==view.rack?.cells.map(c=>c.tile.tileId).sort().join())){this.preview=null;this.drag=null;}this.last={view,showOwn,selected,acquired,urgent};this.clearTiles();
+    if(this.disposed)return;const old=this.last?.view;if(old&&(old.stamp.roomId!==view.stamp.roomId||old.stamp.roundId!==view.stamp.roundId||rackPhaseKey(old.phase)!==rackPhaseKey(view.phase)||old.viewerId!==view.viewerId||old.suspension.kind!==view.suspension.kind||old.stamp.controlEpoch!==view.stamp.controlEpoch||old.rack?.cells.map(c=>c.tile.tileId).sort().join()!==view.rack?.cells.map(c=>c.tile.tileId).sort().join())){this.preview=null;this.drag=null;}this.last={view,showOwn,selected,acquired,urgent};this.clearTiles();
     const n=view.seats.length;const zoom=n>4?1.08:1;
     this.camera.position.set(0,-222*1.44*zoom,222*1.05*zoom);this.camera.rotation.set(Math.PI*.3,0,0);
     // Anonymous decoration: edited large decks keep four wall sides; exact remaining count is on the center plaque.

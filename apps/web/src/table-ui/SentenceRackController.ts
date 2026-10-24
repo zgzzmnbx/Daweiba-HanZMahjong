@@ -1,4 +1,5 @@
 import type { ResyncEnvelope,Draft,TileId,ClientCommand,CommandMeta,CommandResult,ObjectionRange,AtMostThree,Sentence } from '../../../../packages/contracts/types';
+import {rackPhaseKey} from './rack-interaction';
 import { reconcileOwnDraft } from '../../../../packages/contracts/table-view';
 type Payload=ClientCommand extends infer C?C extends ClientCommand?Omit<C,keyof CommandMeta>:never:never;
 export interface GameTransport { send(command:ClientCommand):Promise<CommandResult>; }
@@ -21,7 +22,7 @@ export class SentenceRackController {
       const borrowed=e.public.discards.find(d=>d.discardId===candidate.source.discardId)?.tile;
       this.draft=!sameIdentity||!sameSource||candidate.candidateDraftVersion!==oldCandidate?.candidateDraftVersion?candidate.sentence:reconcileOwnDraft([...e.private.hand,...(borrowed?[borrowed]:[])],this.draft);
     }else this.draft=!sameIdentity||!!oldCandidate||(!handChanged&&e.private.draftVersion!==old.private.draftVersion)?e.private.draft:reconcileOwnDraft(e.private.hand,this.draft);
-    if(changed){this.selected=null;this.ranges=[];this.original=null;this.pending=null;}
+    if(changed){if(!sameIdentity||old.private.controlEpoch!==e.private.controlEpoch||handChanged||rackPhaseKey(old.public.phase)!==rackPhaseKey(e.public.phase))this.selected=null;this.ranges=[];this.original=null;this.pending=null;}
     if(this.selected&&!this.draft.orderedTileIds.includes(this.selected))this.selected=null;this.changed();
   }
   revoke(){this.envelope={...this.envelope,private:{...this.envelope.private,hand:[],draft:{orderedTileIds:[],commaAfterTileIds:[]},candidateDraft:null,ownBallot:null}};this.controlled=false;this.pending=null;this.selected=null;this.ranges=[];this.original=null;this.draft={orderedTileIds:[],commaAfterTileIds:[]};this.message='已在其他设备恢复，此页面已撤销控制。';this.changed();}
