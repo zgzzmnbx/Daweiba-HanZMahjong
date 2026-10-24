@@ -123,3 +123,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 
 - 1.22.0音乐在独立SQLite表保存共享时间锚/歌单，切歌通过同房鉴权、revision和actionId确认，不更新牌局stateVersion。服务器解码上传并归一响度，音频持久目录不进Git。音乐音量为本机偏好，Web Audio Gain强制上限；前景音效/语音使用可取消musicFocus优先权，音乐降零，不能仅靠HTMLAudio.volume（iOS不可靠）。
 - 音乐的首次手势解锁不能依赖房间网络已就绪，否则慢网下点击菜单后一直无声；可先创建静音AudioContext，播放仍受当前身份/连接门控，未解锁时提供显式按钮。
+
+- 1.22.1评审布局由hu-review.css统一管理；mobile-game不得再次强制名单单列/大按钮。不可仅隐藏滚动条：验收14牌、五人全句异议、结果及操作的真实几何边界。反对需先进入圈选再确认，未确认不得发送VOTE；常用验收脚本通过rejectReview走真实两步UI。

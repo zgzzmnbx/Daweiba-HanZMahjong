@@ -51,9 +51,6 @@
  #root .room-setup-heading p{font-size:11px;line-height:1.5}
  #root .room-setup-panel .seat-person strong{font-size:13px}
  #root .room-setup-panel .room-setup-actions button{font-size:12px;min-height:42px}
- .hu-review-heading small{font-size:11px}
- .review-voter strong{font-size:12px}.review-voter small{font-size:10px}
- .hu-review-actions button{min-height:40px;font-size:12px}
 }
 @media(max-width:699px) and (orientation:portrait){
  /* Keep avatars, table and hand as one centered group instead of scattering them over all free height. */
@@ -69,8 +66,6 @@
  #root .game-shell:has(.room-setup-panel) .room-setup-panel{width:calc(100% - 12px);max-height:calc(100% - 16px);padding:12px;gap:10px}
  #root .room-setup-panel .room-deck-name{max-width:150px}
  #root .room-setup-panel .seat-management .rack-label>span{display:none}
- .hu-review-dialog .review-voters{grid-template-columns:1fr;gap:5px}
- .hu-review-dialog .review-voter{padding:7px 8px}
 }
 @media(max-width:359px){
  #root .game-shell>main{padding-left:6px;padding-right:6px;gap:3px}

@@ -10,3 +10,11 @@ export async function gameTool(page,name){
  if(await section.count())await section.locator('summary').click();
  return button;
 }
+
+/** Follow the two-step objection UI; a draft selection is never itself a ballot. */
+export async function rejectReview(page){
+ const begin=page.getByRole('button',{name:'写的什么玩意',exact:true});
+ if(await begin.isVisible())await begin.click();
+ if(await page.locator('.review-tile[aria-pressed=true]').count()===0)await page.locator('.review-tile').first().click();
+ await page.getByRole('button',{name:'确认，投反对票',exact:true}).click();
+}
