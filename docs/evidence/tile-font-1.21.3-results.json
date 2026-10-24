@@ -1,0 +1,301 @@
+{
+  "at": "2026-10-24T08:41:13.919Z",
+  "version": "1.21.3",
+  "origin": "http://127.0.0.1:3168",
+  "browser": "141.0.7390.37",
+  "scope": "real 3D font delay/rebuild, CDP actual platform fonts for hand/discard/HU, on-demand rare glyph, core-only same-origin requests; mobile layout and two-client actions; phone sizes simulated; no successful HU or public-room changes",
+  "checks": [
+    {
+      "name": "compact watch switch, readable form and bounded dialog 320",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 390",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 430",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 667",
+      "status": "PASS"
+    },
+    {
+      "name": "compact watch switch, readable form and bounded dialog 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "new form resets switch and lobby menu stays within viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "six-seat setup scrolls internally and last AI seat is operable 320",
+      "status": "PASS"
+    },
+    {
+      "name": "six-seat setup scrolls internally and last AI seat is operable 390",
+      "status": "PASS"
+    },
+    {
+      "name": "real 3D Canvas uses 600 and repaints fallback faces after delayed font arrival",
+      "status": "PASS",
+      "fallbackPaints": 14,
+      "loadedPaints": 28
+    },
+    {
+      "name": "warm reload keeps custom Canvas tile typography",
+      "status": "PASS"
+    },
+    {
+      "name": "normal game fonts are same-origin and core-only",
+      "status": "PASS",
+      "fonts": [
+        "/fonts/hanz-tile-600-core-e79f9e3695.woff2"
+      ]
+    },
+    {
+      "name": "rare custom-word glyph loads an on-demand subset",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "龘",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      },
+      "requests": [
+        "/fonts/hanz-tile-600-u009-a06a4a94a2.woff2"
+      ]
+    },
+    {
+      "name": "three 44px header shortcuts are directly operable without duplicate menu entries 320",
+      "status": "PASS"
+    },
+    {
+      "name": "three 44px header shortcuts are directly operable without duplicate menu entries 360",
+      "status": "PASS"
+    },
+    {
+      "name": "three 44px header shortcuts are directly operable without duplicate menu entries 390",
+      "status": "PASS"
+    },
+    {
+      "name": "three 44px header shortcuts are directly operable without duplicate menu entries 430",
+      "status": "PASS"
+    },
+    {
+      "name": "direct chat delivers to peer, displays unread badge and clears it on open",
+      "status": "PASS"
+    },
+    {
+      "name": "actual custom font on phone hand 320",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "到",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 320",
+      "status": "PASS"
+    },
+    {
+      "name": "actual custom font on phone hand 390",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "到",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 390",
+      "status": "PASS"
+    },
+    {
+      "name": "actual custom font on phone hand 430",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "到",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 430",
+      "status": "PASS"
+    },
+    {
+      "name": "actual custom font on phone hand 667",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "到",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "table, actions, timer and hand fit as a compact group 667",
+      "status": "PASS"
+    },
+    {
+      "name": "compact tools retain expandable arranging and working quality controls",
+      "status": "PASS"
+    },
+    {
+      "name": "header punctuation opens real tray, touch inserts a comma and auto-folds it",
+      "status": "PASS"
+    },
+    {
+      "name": "14 tiles stay 7+7 with three commas and no rack scroll 320",
+      "status": "PASS"
+    },
+    {
+      "name": "14 tiles stay 7+7 with three commas and no rack scroll 360",
+      "status": "PASS"
+    },
+    {
+      "name": "14 tiles stay 7+7 with three commas and no rack scroll 390",
+      "status": "PASS"
+    },
+    {
+      "name": "14 tiles stay 7+7 with three commas and no rack scroll 430",
+      "status": "PASS"
+    },
+    {
+      "name": "14 tiles stay 7+7 with three commas and no rack scroll 667",
+      "status": "PASS"
+    },
+    {
+      "name": "touch drag crosses rows, keeps commas anchored and saves authoritative order",
+      "status": "PASS"
+    },
+    {
+      "name": "latest discard matches hand typography",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "到",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "real discard and draw remain operable after layout changes",
+      "status": "PASS"
+    },
+    {
+      "name": "HU confirmation uses the tile font",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz Tile Sans\", sans-serif",
+        "weight": "600",
+        "text": "都",
+        "fonts": [
+          {
+            "familyName": "Hanz Tile Sans",
+            "postScriptName": "HanzTileSans-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "both clients review the same custom-font tiles",
+      "status": "PASS",
+      "fonts": [
+        {
+          "family": "\"Hanz Tile Sans\", sans-serif",
+          "weight": "600",
+          "text": "都",
+          "fonts": [
+            {
+              "familyName": "Hanz Tile Sans",
+              "postScriptName": "HanzTileSans-SemiBold",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz Tile Sans\", sans-serif",
+          "weight": "600",
+          "text": "都",
+          "fonts": [
+            {
+              "familyName": "Hanz Tile Sans",
+              "postScriptName": "HanzTileSans-SemiBold",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 390",
+      "status": "PASS"
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 320",
+      "status": "PASS"
+    },
+    {
+      "name": "80-percent review, selectable tiles and pinned voting actions 667",
+      "status": "PASS"
+    },
+    {
+      "name": "rejected review and private rooms close without scoring or book entry",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

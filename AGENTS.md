@@ -116,3 +116,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.21.1手机手牌按7张字牌分行，逗号保持独立且随锚点同排；不得按固定牌宽自动挤出第三排或靠滚动隐藏。修改布局须检查所有逗号位置、13→14稳定、真实跨排触摸和每张牌命中，不能只测外部容器边界。
 
 - 1.21.2手机标点/聊天常驻顶栏，低频功能才放菜单；44px按钮不可压缩。Portal按钮交互应通过显式组件回调协调面板，不能假定React事件会沿Portal的DOM容器冒泡。
+
+- 1.21.3牌面统一自托管Hanz Tile Sans（Noto Sans SC 600静态子集），CSS与Canvas必须保持同字重。Canvas显式document.fonts.load触发可见字下载，loadingdone重建纹理，不能只等初始fonts.ready。来源/OFL/构建清单见docs/TILE-FONT.md；常用字包只覆盖核心，新增字由unicode-range子集加载。

@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.21.2-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.21.3-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -34,6 +34,12 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.21.3 · 牌面字体统一 · 2026-10-24
+
+按用户确认采用Noto Sans SC 600半粗体，打包后的静态子集改名Hanz Tile Sans。3D字纹理、手机手牌、透明逗号、飞牌、最新弃牌、胡牌确认/亮相/评审、天书和大厅装饰牌共用相同字形与字重；标题保持原风格。字体从游戏同源加载，无需安装或访问外部字体CDN。核心947字符122,588字节，包含现有178种字牌；其余按需加载，全部30份共4,803,756字节、覆盖30,890个码位。来源、OFL许可、构建与SHA清单见TILE-FONT.md及THIRD_PARTY_NOTICES.md。
+
+303项自动测试、生产构建、本地41项真实浏览器检查通过；CDP核实实际自定义字体，延迟字体加载后3D重绘、暖缓存刷新、罕见字按需加载均通过。复验320/360/390/430竖屏、667横屏的7+7、三个逗号、触摸拖牌、双客户端摸打与反对评审，未添加计分/天书记录。规则1.5.1不变；手机为Chromium141触摸视口模拟，实体Safari尚未实测。已发布原公网入口，41项同流程检查通过；release `1.21.3-20261024-164244`、冻结源码 `931b5ba`、一致性备份 `pre-release-20261024-164246.sqlite`。ready=true，HTML/JS/CSS、许可、清单及全部30份字体与冻结构建SHA逐一相同。公网测试私房均无计分关闭；证据见 `docs/evidence/public-tile-font-1.21.3-results.json` 和 `public-tile-font-1.21.3-release.json`。源码和证据同步GitHub。
 
 ## v1.21.2 · 顶栏常用工具 · 2026-10-24
 

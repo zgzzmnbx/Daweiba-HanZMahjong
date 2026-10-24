@@ -3,6 +3,7 @@
  * Retains actual scene/viewGroup, perspective camera, four lights, felt and rim construction.
  * Replaces English game protocol, fixed seats/pool, models, picking and postprocessing. */
 import * as T from 'three';
+import {tileCanvasFont,ensureTileGlyph} from '../tile-font';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import type {Draft} from '../../../../packages/contracts/types';
 import {COMMA_WIDTH_RATIO,rackLayout} from '../table-ui/rack-layout';
@@ -78,10 +79,11 @@ export class MainView {
   private onFonts=()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired,this.last.urgent);}};
   private clearFaces(){this.clearOwn();for(const t of this.faces.values())t.dispose();this.faces.clear();}
   private glyph(char:string,transparent=false){
+    ensureTileGlyph(char);
     const key=transparent?'punctuation:'+char:char;let texture=this.faces.get(key);if(texture)return texture;
     const canvas=document.createElement('canvas');canvas.width=192;canvas.height=288;
     const ctx=canvas.getContext('2d')!;if(!transparent){ctx.fillStyle='#f7efdb';ctx.fillRect(0,0,192,288);}
-    ctx.fillStyle=transparent?'#ffe5a2':'#173b2b';ctx.font='600 138px "PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif';
+    ctx.fillStyle=transparent?'#ffe5a2':'#173b2b';ctx.font=tileCanvasFont(138);
     if(transparent){
       // Center the actual ink, not the full-width punctuation advance box.
       ctx.textAlign='left';ctx.textBaseline='alphabetic';const m=ctx.measureText(char),w=m.actualBoundingBoxLeft+m.actualBoundingBoxRight,h=m.actualBoundingBoxAscent+m.actualBoundingBoxDescent;

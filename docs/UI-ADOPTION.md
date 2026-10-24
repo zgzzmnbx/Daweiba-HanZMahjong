@@ -18,7 +18,7 @@
 
 ## 资产边界
 
-原人物、GLB、PNG牌面、Draco、音频和Segment7字体均不进入生产。采用 Three 同版本 RoundedBoxGeometry、程序材质与当前操作系统本地中文字体（不分发系统字体）。未知牌只拥有 `wall:<slot>`、`opponent:<playerId>:<ordinal>` 匿名视觉键；没有别人的真实tileId或字形数据。原作者截图只用于 `handoff/references/englishmahjong/original-game.jpg` 对照。
+原人物、GLB、PNG牌面、Draco、音频和Segment7字体均不进入生产。采用 Three 同版本 RoundedBoxGeometry、程序材质与随游戏提供的Noto Sans SC 600字重（改名Hanz Tile Sans，OFL许可；见TILE-FONT.md）。未知牌只拥有 `wall:<slot>`、`opponent:<playerId>:<ordinal>` 匿名视觉键；没有别人的真实tileId或字形数据。原作者截图只用于 `handoff/references/englishmahjong/original-game.jpg` 对照。
 
 ## 视觉对照
 
