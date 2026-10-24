@@ -1,0 +1,8 @@
+/* The period shares comma geometry, but is a fixed sentence-ending control. */
+.period-tile{cursor:default;touch-action:manipulation}
+@media(max-width:699px){
+ #root .game-shell .period-tile{cursor:pointer}
+ #root .game-shell .table-comma-tray{display:none}
+ #root .game-shell[data-punctuation-open=true] .table-comma-tray{display:flex;position:absolute;top:auto;bottom:0;right:0;left:auto;z-index:25;gap:5px;padding:8px;background:#21392cf5;border-color:#d5ba74aa;box-shadow:0 8px 24px #0006}
+ #root .game-shell .portrait-comma-close{display:grid;place-items:center;flex:none;width:36px;height:44px;min-height:44px;padding:0;font-size:24px;background:transparent;border:0;box-shadow:none;color:#ead7a8}
+}

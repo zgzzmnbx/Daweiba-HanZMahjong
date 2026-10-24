@@ -1,4 +1,5 @@
 import type { ResyncEnvelope,Draft,TileId,ClientCommand,CommandMeta,CommandResult,ObjectionRange,AtMostThree,Sentence } from '../../../../packages/contracts/types';
+import {movePreview} from './rack-layout';
 import {rackPhaseKey} from './rack-interaction';
 import { reconcileOwnDraft } from '../../../../packages/contracts/table-view';
 type Payload=ClientCommand extends infer C?C extends ClientCommand?Omit<C,keyof CommandMeta>:never:never;
@@ -33,7 +34,7 @@ export class SentenceRackController {
   discard(tileId:TileId){if(!this.envelope.private.hand.some(t=>t.tileId===tileId)||this.envelope.private.forbiddenImmediateDiscardTileId===tileId){this.message='这张牌当前不能打出。';this.changed();return;}return this.command({kind:'DISCARD',tileId});}
   saveDraft(){const candidate=this.envelope.private.candidateDraft;if(candidate&&this.envelope.public.phase.kind==='HU_COMPOSE')return this.command({kind:'SAVE_CANDIDATE_DRAFT',source:candidate.source,expectedCandidateDraftVersion:candidate.candidateDraftVersion,sentence:this.sentence()});return this.command({kind:'SAVE_DRAFT',draft:this.draft,expectedDraftVersion:this.envelope.private.draftVersion});}
   select(id:TileId){if(this.draft.orderedTileIds.includes(id)){this.selected=id;this.changed();}}
-  move(id:TileId,to:number){const order=[...this.draft.orderedTileIds],from=order.indexOf(id);if(from<0)return;order.splice(from,1);order.splice(Math.max(0,Math.min(to,order.length)),0,id);this.draft={orderedTileIds:order,commaAfterTileIds:this.draft.commaAfterTileIds.filter(t=>t!==order.at(-1)) as unknown as Draft['commaAfterTileIds']};this.changed();}
+  move(id:TileId,to:number){this.draft=movePreview(this.draft,id,to);this.changed();}
   toggleComma(id:TileId){const commas=[...this.draft.commaAfterTileIds];if(commas.includes(id))commas.splice(commas.indexOf(id),1);else if(id!==this.draft.orderedTileIds.at(-1)&&this.draft.orderedTileIds.includes(id)&&commas.length<3)commas.push(id);else{this.message='逗号只能放在非末尾字后，最多三个。';this.changed();return;}this.draft={...this.draft,commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};this.changed();}
   begin(){this.original=structuredClone(this.draft);}
   cancel(){if(this.original)this.draft=this.original;this.original=null;this.changed();}
