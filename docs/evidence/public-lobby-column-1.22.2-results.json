@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-24T14:26:08.168Z",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "read-only public lobby, open forms only; no rooms created or joined",
+  "checks": [
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 320",
+      "status": "PASS",
+      "table": {
+        "x": 42.953125,
+        "y": 171.75,
+        "w": 234.078125,
+        "h": 141.859375,
+        "bottom": 313.609375
+      },
+      "scrollTop": 277
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 360",
+      "status": "PASS",
+      "table": {
+        "x": 45.359375,
+        "y": 174.96640014648438,
+        "w": 269.265625,
+        "h": 163.1875,
+        "bottom": 338.1539001464844
+      },
+      "scrollTop": 415
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 390",
+      "status": "PASS",
+      "table": {
+        "x": 55,
+        "y": 173.45994567871094,
+        "w": 280,
+        "h": 169.68751525878906,
+        "bottom": 343.1474609375
+      },
+      "scrollTop": 684
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 430",
+      "status": "PASS",
+      "table": {
+        "x": 75,
+        "y": 175.74081420898438,
+        "w": 280,
+        "h": 169.6875,
+        "bottom": 345.4283142089844
+      },
+      "scrollTop": 686
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 600",
+      "status": "PASS",
+      "table": {
+        "x": 160,
+        "y": 175.75,
+        "w": 280,
+        "h": 169.6875,
+        "bottom": 345.4375
+      },
+      "scrollTop": 660
+    },
+    {
+      "name": "sixth table and fixed create entry open their real dialogs without submitting a room",
+      "status": "PASS"
+    },
+    {
+      "name": "landscape and desktop retain three columns 667",
+      "status": "PASS"
+    },
+    {
+      "name": "landscape and desktop retain three columns 1280",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

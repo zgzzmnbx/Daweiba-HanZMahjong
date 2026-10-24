@@ -81,3 +81,23 @@
 @media(max-width:699px),(max-height:599px){
  #root .game-shell .rack-area.expanded{max-height:none;overflow:visible}
 }
+
+/* Portrait lobby: one full-width table per row; scroll the list, never squash the felt. */
+@media(max-width:699px) and (orientation:portrait){
+ #root .game-hall .hall-tables{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-rows:max-content;align-content:start;gap:12px;padding:4px 4px 16px;overflow-x:hidden;overflow-y:auto;scroll-padding-block:8px}
+ #root .game-hall .hall-table-slot{flex:none;min-height:0;overflow:visible;padding-bottom:12px;border-bottom:1px solid #b18b4d26}
+ #root .game-hall .hall-table-slot:last-child{border-bottom:0}
+ #root .game-hall .hall-table-slot>.hall-table{flex:none;min-height:0;padding:10px 10px 8px;gap:6px}
+ #root .game-hall .hall-table-art{flex:none;width:min(280px,88%);height:auto;min-height:0;max-height:none;aspect-ratio:1.65;margin:2px 0 6px}
+ #root .game-hall .hall-felt{inset:14% 10% 16%;border-width:8px;border-radius:22px}
+ #root .game-hall .hall-chair{width:34px;height:11px;left:calc(50% - 17px)}
+ #root .game-hall .hall-chair.west{left:-8px;top:calc(50% - 6px)}
+ #root .game-hall .hall-chair.east{left:auto;right:-8px;top:calc(50% - 6px)}
+ #root .game-hall .hall-table-top strong{width:30px;height:30px;font-size:16px}
+ #root .game-hall .hall-table-action{min-width:146px;min-height:40px;padding:7px 18px;font-size:14px}
+ #root .game-hall .hall-seats{display:flex;height:6px;margin:0}
+ #root .game-hall .hall-table-capacity{display:block;font-size:11px;margin:0}
+ #root .game-hall .hall-player-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible;margin:4px 10px;gap:5px}
+ #root .game-hall .hall-player-list>div{min-height:30px;padding:4px 6px}
+ #root .game-hall .hall-watch{width:calc(100% - 20px);align-self:center;min-height:40px;margin-top:6px}
+}

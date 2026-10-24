@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-24',title:'评审一屏看完，反对先圈词',features:['评审牌面、同桌投票和结果按窗口自适应，手机短屏也不用拖动滚动条。','点击“写的什么玩意”后，点牌圈出不通顺的字，再确认投出反对票；可以返回重选。']},
+ {version:packageInfo.version,date:'2026-10-24',title:'手机大厅，一桌一行',features:['手机竖屏大厅改为单列，上下滑动查看六张公共桌，桌面保持正常比例。','顶栏与创建房间入口固定，座位名字随桌展开，不再挤在小格子里。']},
+ {version:'1.22.1',date:'2026-10-24',title:'评审一屏看完，反对先圈词',features:['评审牌面、同桌投票和结果按窗口自适应，手机短屏也不用拖动滚动条。','点击“写的什么玩意”后，点牌圈出不通顺的字，再确认投出反对票；可以返回重选。']},
  {version:'1.22.0',date:'2026-10-24',title:'同一张桌，同一首歌',features:['工具里新增同桌音乐，六首默认歌曲循环播放，可上传自己喜欢的歌。','点击“我要切歌”全桌同步切换，音量和静音仅影响自己。','默认低音量，音效和朗读出现时音乐自动让位。']},
  {version:'1.21.4',date:'2026-10-24',title:'持牌不被打断',features:['整理手牌时，别人出牌、响应或摸牌不会强制放下你拿着的牌，手机与3D牌桌都支持。','松手后按最新牌局状态保存排序；自己手牌变化、进入胡牌或控制权变化时，仍会安全收起旧拖动。']},
  {version:'1.21.3',date:'2026-10-24',title:'每一张牌，同一种字',features:['桌面3D、手机手牌、出牌和胡牌评审统一使用Noto Sans SC半粗体。','字体随游戏提供，常用字优先加载；手机仍按每行七张排列。']},

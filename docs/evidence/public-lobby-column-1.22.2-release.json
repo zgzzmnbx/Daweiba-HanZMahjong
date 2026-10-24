@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-24T14:25:56.667028+00:00",
+  "origin": "https://118.196.107.182:1240",
+  "version": "1.22.2",
+  "source": "a2b7f22",
+  "ready": true,
+  "release": "1.22.2-20261024-222538",
+  "backup": "pre-release-20261024-222539.sqlite",
+  "checks": [
+    {
+      "path": "/",
+      "bytes": 573,
+      "sha256": "c13ae5b58761ae6718a3da191795b76cbfc6f925b0f75d61313456e4cee8297e"
+    },
+    {
+      "path": "/fonts/hanz-tile-600-core-e79f9e3695.woff2",
+      "bytes": 122588,
+      "sha256": "e79f9e3695785b4687e2c5dbabc3cff994b17fa4f62a4e5898ae4d87f9714dfb"
+    },
+    {
+      "path": "/assets/index-Zmyzr0as.js",
+      "bytes": 922996,
+      "sha256": "ec404ad0cf01caec9991d7e01cc74992bd62ec225c03466868599808a96bb9c7"
+    },
+    {
+      "path": "/assets/index-D6YXDHfQ.css",
+      "bytes": 169179,
+      "sha256": "86d22523644e72295ae34ee508f7c48f673a188a38e2dc0250d64bb2bbbcf533"
+    }
+  ]
+}
