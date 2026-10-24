@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-23T23:51:11.416Z",
+  "scope": "real Chrome, separate browser contexts, HTTP/Socket.IO/SQLite; isolated local database and clock",
+  "checks": [
+    {
+      "name": "UI create enters the table without a recovery-code prompt",
+      "status": "PASS"
+    },
+    {
+      "name": "joining and direct room reload need no recovery-code prompt",
+      "status": "PASS"
+    },
+    {
+      "name": "dropout shows original name + AI托管 in the hall and around the live table",
+      "status": "PASS"
+    },
+    {
+      "name": "root reload stays in hall; only the original seat becomes reclaimable",
+      "status": "PASS"
+    },
+    {
+      "name": "seat picker stays inside the viewport and remains clickable",
+      "status": "PASS",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "seat picker stays inside the viewport and remains clickable",
+      "status": "PASS",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "seat picker stays inside the viewport and remains clickable",
+      "status": "PASS",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "seat picker stays inside the viewport and remains clickable",
+      "status": "PASS",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "a separate browser cannot claim the AI, even with the same name and seat",
+      "status": "PASS"
+    },
+    {
+      "name": "one click restores the exact player, hand and sentence, with fresh control authority",
+      "status": "PASS"
+    },
+    {
+      "name": "room-scoped identity is HttpOnly and inaccessible to page JavaScript",
+      "status": "PASS"
+    },
+    {
+      "name": "visiting another room does not erase original-room identity; My Seats restores it",
+      "status": "PASS"
+    },
+    {
+      "name": "a private active room remains reachable through My Seats",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

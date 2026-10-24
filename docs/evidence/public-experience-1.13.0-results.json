@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-24T00:16:20.373Z",
+  "status": "PASS",
+  "scope": "actual HTTPS/WSS/SQLite, independent Chrome players/observer, real server five-second timer and Qwen speech; no clock changes",
+  "checks": [
+    {
+      "name": "public new room defaults to spectator access; anonymous real 3D observer has no hand or command authority",
+      "status": "PASS"
+    },
+    {
+      "name": "public production serves and plays a real normalized Qwen tile WAV",
+      "status": "PASS"
+    },
+    {
+      "name": "real public chat sends to same-room friend and appears in transparent history",
+      "status": "PASS"
+    },
+    {
+      "name": "public refresh retains durable chat history without replaying old barrage",
+      "status": "PASS"
+    },
+    {
+      "name": "public voluntary AI delegation stays human/online; cancel resumes original two-minute deadline",
+      "status": "PASS"
+    },
+    {
+      "name": "public AI authority waits its actual five-second deadline, then only the next logical seat draws",
+      "status": "PASS"
+    },
+    {
+      "name": "public authority-owned HU sentence is synthesized and played through real Qwen API",
+      "status": "PASS"
+    },
+    {
+      "name": "ordinary public player and observer cannot read administrator match records",
+      "status": "PASS"
+    },
+    {
+      "name": "own public two-player verification room closed without changing any other room",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

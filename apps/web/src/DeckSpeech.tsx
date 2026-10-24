@@ -1,0 +1,12 @@
+import {useEffect,useRef,useState} from 'react';
+import {adminApi} from './admin-client';
+import {tileSpeechUrl,type SpeechManifest} from './speech-client';
+export function useDeckSpeech(){
+ const [manifest,setManifest]=useState<SpeechManifest|null>(null),[message,setMessage]=useState(''),[busy,setBusy]=useState(false),[playing,setPlaying]=useState('');
+ const audio=useRef<HTMLAudioElement|null>(null),generation=useRef(0),request=useRef<AbortController|null>(null);
+ useEffect(()=>{let stopped=false,timer:ReturnType<typeof setTimeout>;const load=async()=>{const current=new AbortController();request.current=current;try{const value=await adminApi('/speech/tiles',undefined,current.signal);if(!stopped)setManifest(value);}catch{if(!stopped&&!current.signal.aborted)setMessage('语音目录暂时不可用。');}finally{if(request.current===current)request.current=null;if(!stopped)timer=setTimeout(()=>void load(),3000);}};void load();return()=>{stopped=true;clearTimeout(timer);request.current?.abort();audio.current?.pause();audio.current=null;generation.current++;};},[]);
+ const play=(char:string)=>{if(!manifest?.ready.includes(char))return;audio.current?.pause();const sequence=++generation.current,node=new Audio(tileSpeechUrl(manifest.profile,char));audio.current=node;setPlaying(char);setMessage('');node.onended=()=>{if(generation.current===sequence)setPlaying('');};node.onerror=()=>{if(generation.current===sequence){setPlaying('');setMessage('语音播放失败，请重试。');}};void node.play().catch(()=>{if(generation.current===sequence){setPlaying('');setMessage('请再次点击播放，或检查浏览器声音设置。');}});};
+ const generate=async(characters:string[])=>{if(busy)return;setBusy(true);setMessage('');try{setManifest(await adminApi('/speech/tiles',{characters}));setMessage('语音正在生成，可继续编辑；完成后会出现试听按钮。');}catch{setMessage('生成未开始，请检查语音配置或稍后重试。');}finally{setBusy(false);}};
+ return{manifest,message,busy,playing,play,generate};
+}
+export function DeckSpeechTag({char,speech}:{char:string;speech:ReturnType<typeof useDeckSpeech>}){const ready=speech.manifest?.ready.includes(char),pending=speech.manifest?.pending?.includes(char),failed=speech.manifest?.failed?.includes(char);return ready?<button className="tile-audio-tag" aria-label={`试听 ${char} 的语音`} onClick={()=>speech.play(char)}>{speech.playing===char?'播放中':'♪ 语音'}</button>:<small>{pending?'生成中':failed?'待重试':'无语音'}</small>;}

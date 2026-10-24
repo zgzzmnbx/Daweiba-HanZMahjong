@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-24T00:19:25.856Z",
+  "status": "PASS",
+  "scope": "read-only comparison of pre-release consistent backup with current production metadata; no hands or credentials read",
+  "priorRooms": 91,
+  "sameRoundRulesPreserved": 91,
+  "deckCatalogAndLatestRevisionsPreserved": true,
+  "defaultTileTotalByCapacity": [
+    144,
+    144,
+    144,
+    144,
+    144
+  ],
+  "defaultCharacters": 142
+}

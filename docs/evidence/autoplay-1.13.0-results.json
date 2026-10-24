@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-24T00:11:16.772Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "punctuation help supports hover, keyboard, click and exact wording; redundant rack labels removed",
+      "status": "PASS"
+    },
+    {
+      "name": "tools enable authority-owned delegation, keep human online, disable manual card commands",
+      "status": "PASS"
+    },
+    {
+      "name": "reload preserves voluntary delegation; cancel resumes original human deadline and control",
+      "status": "PASS"
+    },
+    {
+      "name": "four screen sizes keep game and punctuation explanation within viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "real browser player is auto-discarded exactly at five seconds, never early",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

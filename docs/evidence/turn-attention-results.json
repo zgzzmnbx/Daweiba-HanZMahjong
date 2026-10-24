@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-23T23:12:16.818Z",
+  "status": "PASS",
+  "scope": "real Chrome dev fixtures; Date-only clock override preserves native animations and Socket timers; authority timing tested separately",
+  "checks": [
+    {
+      "mode": "3D",
+      "details": {
+        "color": "f47b73",
+        "tiles": 14,
+        "shakes": true
+      },
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "scrollW": 1440,
+        "scrollH": 900
+      },
+      "expiredWarningCleared": true
+    },
+    {
+      "mode": "DOM",
+      "details": {
+        "color": "rgb(244, 123, 115)",
+        "animation": "turn-tile-shake"
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "expiredWarningCleared": true
+    },
+    {
+      "mode": "3D-reduced",
+      "details": {
+        "color": "f47b73",
+        "tiles": 14,
+        "shakes": false
+      },
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "scrollW": 1440,
+        "scrollH": 900
+      },
+      "expiredWarningCleared": true
+    },
+    {
+      "mode": "DOM-reduced",
+      "details": {
+        "color": "rgb(244, 123, 115)",
+        "animation": "none"
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "expiredWarningCleared": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import * as E from '../../packages/engine/index';
+import {room,pid,forceActor,discard,ok,error} from './helpers';
+test('every 2–6 seat response window preserves all hands until every response; only next logical seat draws',()=>{for(let n=2;n<=6;n++)for(let seat=0;seat<n;seat++){const g=room(n);forceActor(g,seat);discard(g);const cursor=g.cursor,windowId=g.response!.windowId,eligible=[...g.response!.eligible],last=eligible.at(-1)!;for(const p of eligible){assert.equal(g.players.get(p)!.hand.length,13);const i=Number(p.slice(1));ok(g,i,{kind:'RESPOND',responseWindowId:windowId,response:'PASS'});if(p!==last){assert.equal(g.cursor,cursor);assert.ok([...g.players.values()].every(p=>p.hand.length===13));}}assert.equal(g.cursor,cursor+1);assert.equal((g.public.phase as any).actorId,pid((seat+1)%n));for(let i=0;i<n;i++)assert.equal(g.players.get(pid(i))!.hand.length,i===(seat+1)%n?14:13);E.assertGame(g);}});
+test('an out-of-turn forged draw command never draws or changes authoritative state',()=>{const g=room(4);forceActor(g,0);const before=E.encodeGame(g);error(g,2,{kind:'DRAW'},'PHASE_CLOSED');assert.deepEqual(E.encodeGame(g),before);});

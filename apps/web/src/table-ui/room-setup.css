@@ -1,0 +1,29 @@
+/* The stage bounds the menu; only its seat list scrolls, keeping start/ready reachable. */
+#root .game-shell .room-setup-panel{width:min(640px,calc(100% - 24px));max-width:none;max-height:calc(100% - 16px);padding:16px;display:flex;flex-direction:column;gap:12px;overflow:hidden;text-align:left;box-sizing:border-box}
+#root .room-setup-heading{flex:none;text-align:center}
+#root .room-setup-heading h2{font-size:28px;line-height:1.25;margin:3px 0 6px}
+#root .room-setup-heading p{color:#d1bf96;margin:0;font-size:12px}
+#root .room-setup-body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:1px 3px 1px 1px}
+#root .game-shell .room-setup-panel .seat-management{min-height:0;max-height:none;overflow:visible;border:0;padding:0;margin:0;background:none}
+#root .room-setup-panel .seat-management .rack-label{position:static;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:8px;background:none;padding:0;margin:0 0 7px}
+#root .room-setup-panel .rack-label>span{display:inline;font-size:10px;color:#b6a584}
+#root .room-setup-panel .rack-label strong{display:flex;min-width:0;align-items:center;white-space:nowrap}
+#root .room-setup-panel .room-deck-name{display:block;min-width:0;max-width:240px;font-size:10px;font-weight:400;color:#baa981;margin-left:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#root .room-setup-panel .seat-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#root .room-setup-panel .seat-row{padding:7px 9px;gap:8px;min-height:54px;background:#17281e66;border-color:#a58a4b55}
+#root .room-setup-panel .seat-number{display:grid;place-items:center;flex:none;width:25px;height:25px;border:1px solid #a8894b70;border-radius:50%;color:#d1b87b;font-size:12px}
+#root .room-setup-panel .seat-person strong{font-size:13px}
+#root .room-setup-panel .seat-person small{font-size:10px;margin-top:3px}
+#root .room-setup-panel .seat-row button{margin:0;min-height:40px;padding:5px 9px;font-size:11px;white-space:nowrap}
+#root .room-setup-panel .seat-help{font-size:10px;color:#bdaa85;margin:8px 0 0;line-height:1.5}
+#root .room-setup-panel .room-last-sentence{font-size:14px;color:#ebd69c;overflow-wrap:anywhere;text-align:center;margin:0 0 10px}
+#root .room-setup-actions{display:flex;flex:none;justify-content:center;gap:8px;border-top:1px solid #ac874a44;padding-top:11px}
+#root .room-setup-panel .room-setup-actions button{flex:1;min-width:0;min-height:44px;margin:0;padding:6px 8px;font-size:13px;white-space:nowrap}
+@media(max-width:499px){#root .game-shell .room-setup-panel{padding:12px;gap:10px}#root .room-setup-heading h2{font-size:24px}#root .room-setup-panel .seat-list{grid-template-columns:1fr}#root .room-setup-panel .seat-row{min-height:49px;padding:5px 8px}#root .room-setup-panel .room-setup-actions{gap:5px}#root .room-setup-panel .room-setup-actions button{font-size:11px;padding:5px 4px}}
+@media(max-height:499px){#root .game-shell .room-setup-panel{padding:8px 12px;gap:6px}#root .room-setup-heading .eyebrow{display:none}#root .room-setup-heading h2{font-size:21px;margin:0 0 2px}#root .room-setup-heading p{font-size:10px}#root .room-setup-panel .seat-row{min-height:44px;padding:4px 7px}#root .room-setup-panel .room-setup-actions{padding-top:6px}#root .room-setup-panel .room-setup-actions button{min-height:38px}#root .room-setup-panel .seat-management .rack-label{margin-bottom:4px}}
+
+#root .game-shell:has(.room-setup-panel) .rack-area,#root .game-shell:has(.room-setup-panel) .view-tools button[aria-pressed]{display:none}
+@media(max-height:499px) and (min-width:500px){#root .room-setup-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}#root .room-setup-heading h2{margin:0;font-size:21px}#root .room-setup-heading p{margin:0;text-align:right}#root .room-setup-panel .seat-person small{margin-top:1px}#root .room-setup-panel .seat-row button{min-height:36px}}
+
+/* Waiting has no hand draft; AI guidance already lives inside the setup panel. */
+#root .game-shell:has(.room-setup-panel) .practice-notice,#root .game-shell:has(.room-setup-panel) .action-bar{display:none}

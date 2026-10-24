@@ -79,7 +79,7 @@ export type ViewStamp = Readonly<{
   renderRevision: number;
 }>;
 export type TableView = Readonly<{
-  stamp: ViewStamp; viewerId: PlayerId;
+  stamp: ViewStamp; viewerId: PlayerId | null;
   phase: PublicPhase; suspension: PublicSuspension; // keep separate, verbatim
   seats: readonly SeatView[]; wall: WallView;
   discards: readonly PublicDiscard[]; rack: RackView | null;

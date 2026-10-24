@@ -1,0 +1,1671 @@
+{
+  "at": "2026-10-23T23:27:26.534Z",
+  "scope": "explicit dev fixtures, real WebGL projections and DOM bounds; not multiplayer evidence",
+  "checks": [
+    {
+      "width": 700,
+      "height": 500,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 501.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 597.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 532.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 566.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 401.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 497.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 432.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 466.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 301.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 397.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 332.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 366.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 102.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 198.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 133.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 167.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 202.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 298.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 233.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 267.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 700,
+      "height": 500,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 501.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 597.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 532.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 566.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 401.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 497.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 432.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 466.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 302.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 398.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 333.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 367.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 102.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 198.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 133.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 167.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 202.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 298.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 233.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 267.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 600,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 536,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 632,
+          "bottom": 201,
+          "portrait": {
+            "x": 567,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 601,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 436,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 532,
+          "bottom": 201,
+          "portrait": {
+            "x": 467,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 501,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 336,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 432,
+          "bottom": 201,
+          "portrait": {
+            "x": 367,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 401,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 136,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 232,
+          "bottom": 201,
+          "portrait": {
+            "x": 167,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 201,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 236,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 332,
+          "bottom": 201,
+          "portrait": {
+            "x": 267,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 301,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 600,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 535.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 631.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 566.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 600.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 435.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 531.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 466.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 500.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 335.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 431.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 366.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 400.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 136.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 232.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 167.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 201.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 236.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 332.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 267.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 301.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 663.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 759.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 694.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 728.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 563.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 659.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 594.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 628.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 463.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 559.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 494.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 528.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 264.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 360.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 295.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 329.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 364.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 460.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 395.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 429.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 663.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 759.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 694.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 728.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 563.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 659.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 594.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 628.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 463.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 559.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 494.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 528.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 264.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 360.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 295.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 329.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 364.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 460.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 395.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 429.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 1337,
+          "y": 428.65625,
+          "width": 82,
+          "height": 68,
+          "right": 1419,
+          "bottom": 496.65625,
+          "portrait": {
+            "x": 1361,
+            "y": 428.65625,
+            "width": 34,
+            "height": 34,
+            "right": 1395,
+            "bottom": 462.65625
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 1293,
+          "y": 299.328125,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 423.328125,
+          "portrait": {
+            "x": 1321,
+            "y": 299.328125,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 369.328125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 1293,
+          "y": 134,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 258,
+          "portrait": {
+            "x": 1321,
+            "y": 134,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 204
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 21,
+          "y": 204.25,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 328.25,
+          "portrait": {
+            "x": 49,
+            "y": 204.25,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 274.25
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 21,
+          "y": 340.65625,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 464.65625,
+          "portrait": {
+            "x": 49,
+            "y": 340.65625,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 410.65625
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 871.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 967.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 902.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 936.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 771.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 867.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 802.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 836.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 671.9921875,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 767.9921875,
+          "bottom": 201,
+          "portrait": {
+            "x": 702.9921875,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 736.9921875,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 472.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 568.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 503.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 537.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 572.0078125,
+          "y": 133,
+          "width": 96,
+          "height": 68,
+          "right": 668.0078125,
+          "bottom": 201,
+          "portrait": {
+            "x": 603.0078125,
+            "y": 133,
+            "width": 34,
+            "height": 34,
+            "right": 637.0078125,
+            "bottom": 167
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 250.7890625,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 305.9765625,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 261.3828125,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 295.3828125,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 191.5859375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 246.7734375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 202.1796875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 236.1796875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 132.3984375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 187.5859375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 142.9921875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 176.9921875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 14.0078125,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 69.1953125,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 24.6015625,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 58.6015625,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 73.2109375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 128.3984375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 83.8046875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 117.8046875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 250.7890625,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 305.9765625,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 261.3828125,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 295.3828125,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 191.5859375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 246.7734375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 202.1796875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 236.1796875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 132.3984375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 187.5859375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 142.9921875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 176.9921875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 14.0078125,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 69.1953125,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 24.6015625,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 58.6015625,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 73.2109375,
+          "y": 108.59375,
+          "width": 55.1875,
+          "height": 68,
+          "right": 128.3984375,
+          "bottom": 176.59375,
+          "portrait": {
+            "x": 83.8046875,
+            "y": 108.59375,
+            "width": 34,
+            "height": 34,
+            "right": 117.8046875,
+            "bottom": 142.59375
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "n": 6,
+      "mode": "3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 282.796875,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 345.984375,
+          "bottom": 194,
+          "portrait": {
+            "x": 297.390625,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 331.390625,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 215.59375,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 278.78125,
+          "bottom": 194,
+          "portrait": {
+            "x": 230.1875,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 264.1875,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 148.390625,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 211.578125,
+          "bottom": 194,
+          "portrait": {
+            "x": 162.984375,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 196.984375,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 14,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 77.1875,
+          "bottom": 194,
+          "portrait": {
+            "x": 28.59375,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 62.59375,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 81.1875,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 144.375,
+          "bottom": 194,
+          "portrait": {
+            "x": 95.78125,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 129.78125,
+            "bottom": 160
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "n": 6,
+      "mode": "2D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 282.796875,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 345.984375,
+          "bottom": 194,
+          "portrait": {
+            "x": 297.390625,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 331.390625,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 215.59375,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 278.78125,
+          "bottom": 194,
+          "portrait": {
+            "x": 230.1875,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 264.1875,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 148.390625,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 211.578125,
+          "bottom": 194,
+          "portrait": {
+            "x": 162.984375,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 196.984375,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 14,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 77.1875,
+          "bottom": 194,
+          "portrait": {
+            "x": 28.59375,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 62.59375,
+            "bottom": 160
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 81.1875,
+          "y": 126,
+          "width": 63.1875,
+          "height": 68,
+          "right": 144.375,
+          "bottom": 194,
+          "portrait": {
+            "x": 95.78125,
+            "y": 126,
+            "width": 34,
+            "height": 34,
+            "right": 129.78125,
+            "bottom": 160
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "n": 6,
+      "mode": "resize-3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 1293,
+          "y": 630,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 754,
+          "portrait": {
+            "x": 1321,
+            "y": 630,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 700
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 1293,
+          "y": 310.9375,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 434.9375,
+          "portrait": {
+            "x": 1321,
+            "y": 310.9375,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 380.9375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "false",
+          "x": 657,
+          "y": 134,
+          "width": 126,
+          "height": 124,
+          "right": 783,
+          "bottom": 258,
+          "portrait": {
+            "x": 685,
+            "y": 134,
+            "width": 70,
+            "height": 70,
+            "right": 755,
+            "bottom": 204
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 21,
+          "y": 310.9375,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 434.9375,
+          "portrait": {
+            "x": 49,
+            "y": 310.9375,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 380.9375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 21,
+          "y": 461.921875,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 585.921875,
+          "portrait": {
+            "x": 49,
+            "y": 461.921875,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 531.921875
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "n": 6,
+      "mode": "resize-3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 306.796875,
+          "y": 126.0078125,
+          "width": 69.1875,
+          "height": 68,
+          "right": 375.984375,
+          "bottom": 194.0078125,
+          "portrait": {
+            "x": 324.390625,
+            "y": 126.0078125,
+            "width": 34,
+            "height": 34,
+            "right": 358.390625,
+            "bottom": 160.0078125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 233.59375,
+          "y": 126.0078125,
+          "width": 69.1875,
+          "height": 68,
+          "right": 302.78125,
+          "bottom": 194.0078125,
+          "portrait": {
+            "x": 251.1875,
+            "y": 126.0078125,
+            "width": 34,
+            "height": 34,
+            "right": 285.1875,
+            "bottom": 160.0078125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 160.390625,
+          "y": 126.0078125,
+          "width": 69.1875,
+          "height": 68,
+          "right": 229.578125,
+          "bottom": 194.0078125,
+          "portrait": {
+            "x": 177.984375,
+            "y": 126.0078125,
+            "width": 34,
+            "height": 34,
+            "right": 211.984375,
+            "bottom": 160.0078125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 14,
+          "y": 126.0078125,
+          "width": 69.1875,
+          "height": 68,
+          "right": 83.1875,
+          "bottom": 194.0078125,
+          "portrait": {
+            "x": 31.59375,
+            "y": 126.0078125,
+            "width": 34,
+            "height": 34,
+            "right": 65.59375,
+            "bottom": 160.0078125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 87.1875,
+          "y": 126.0078125,
+          "width": 69.1875,
+          "height": 68,
+          "right": 156.375,
+          "bottom": 194.0078125,
+          "portrait": {
+            "x": 104.78125,
+            "y": 126.0078125,
+            "width": 34,
+            "height": 34,
+            "right": 138.78125,
+            "bottom": 160.0078125
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "n": 6,
+      "mode": "resize-3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 518.8046875,
+          "y": 150.71875,
+          "width": 135.1875,
+          "height": 36.125,
+          "right": 653.9921875,
+          "bottom": 186.84375,
+          "portrait": {
+            "x": 518.8046875,
+            "y": 151.78125,
+            "width": 34,
+            "height": 34,
+            "right": 552.8046875,
+            "bottom": 185.78125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 518.8046875,
+          "y": 110.59375,
+          "width": 135.1875,
+          "height": 36.125,
+          "right": 653.9921875,
+          "bottom": 146.71875,
+          "portrait": {
+            "x": 518.8046875,
+            "y": 111.65625,
+            "width": 34,
+            "height": 34,
+            "right": 552.8046875,
+            "bottom": 145.65625
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "true",
+          "x": 13.0078125,
+          "y": 110.59375,
+          "width": 115.1875,
+          "height": 36.125,
+          "right": 128.1953125,
+          "bottom": 146.71875,
+          "portrait": {
+            "x": 13.0078125,
+            "y": 111.65625,
+            "width": 34,
+            "height": 34,
+            "right": 47.0078125,
+            "bottom": 145.65625
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 13.0078125,
+          "y": 150.71875,
+          "width": 115.1875,
+          "height": 36.125,
+          "right": 128.1953125,
+          "bottom": 186.84375,
+          "portrait": {
+            "x": 13.0078125,
+            "y": 151.78125,
+            "width": 34,
+            "height": 34,
+            "right": 47.0078125,
+            "bottom": 185.78125
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 13.0078125,
+          "y": 190.859375,
+          "width": 115.1875,
+          "height": 36.125,
+          "right": 128.1953125,
+          "bottom": 226.984375,
+          "portrait": {
+            "x": 13.0078125,
+            "y": 191.921875,
+            "width": 34,
+            "height": 34,
+            "right": 47.0078125,
+            "bottom": 225.921875
+          },
+          "display": "grid"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "n": 6,
+      "mode": "resize-3D",
+      "collisions": [],
+      "badges": [
+        {
+          "seat": "1",
+          "outside": "true",
+          "x": 1293,
+          "y": 630,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 754,
+          "portrait": {
+            "x": 1321,
+            "y": 630,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 700
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "2",
+          "outside": "true",
+          "x": 1293,
+          "y": 310.9375,
+          "width": 126,
+          "height": 124,
+          "right": 1419,
+          "bottom": 434.9375,
+          "portrait": {
+            "x": 1321,
+            "y": 310.9375,
+            "width": 70,
+            "height": 70,
+            "right": 1391,
+            "bottom": 380.9375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "3",
+          "outside": "false",
+          "x": 657,
+          "y": 134,
+          "width": 126,
+          "height": 124,
+          "right": 783,
+          "bottom": 258,
+          "portrait": {
+            "x": 685,
+            "y": 134,
+            "width": 70,
+            "height": 70,
+            "right": 755,
+            "bottom": 204
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "4",
+          "outside": "true",
+          "x": 21,
+          "y": 310.9375,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 434.9375,
+          "portrait": {
+            "x": 49,
+            "y": 310.9375,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 380.9375
+          },
+          "display": "grid"
+        },
+        {
+          "seat": "5",
+          "outside": "true",
+          "x": 21,
+          "y": 461.921875,
+          "width": 126,
+          "height": 124,
+          "right": 147,
+          "bottom": 585.921875,
+          "portrait": {
+            "x": 49,
+            "y": 461.921875,
+            "width": 70,
+            "height": 70,
+            "right": 119,
+            "bottom": 531.921875
+          },
+          "display": "grid"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

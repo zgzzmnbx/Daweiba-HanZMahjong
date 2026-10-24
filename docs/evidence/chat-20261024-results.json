@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-24T00:05:01.638Z",
+  "scope": "real Chrome, separate identities, real HTTP/Socket.IO/SQLite, controlled local server clock",
+  "checks": [
+    {
+      "name": "real same-room delivery and unread badge, no cross-room delivery or game-state mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "translucent history synchronizes both directions and opening it clears unread/barrage",
+      "status": "PASS"
+    },
+    {
+      "name": "IME composition Enter is not sent; ordinary Enter sends once",
+      "status": "PASS"
+    },
+    {
+      "name": "HTML-looking text renders literally",
+      "status": "PASS"
+    },
+    {
+      "name": "120-character limit prevents oversized sends",
+      "status": "PASS"
+    },
+    {
+      "name": "history/input fit, outer page fixed, barrage above all game controls",
+      "status": "PASS",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "history/input fit, outer page fixed, barrage above all game controls",
+      "status": "PASS",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "history/input fit, outer page fixed, barrage above all game controls",
+      "status": "PASS",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "history/input fit, outer page fixed, barrage above all game controls",
+      "status": "PASS",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "history/input fit, outer page fixed, barrage above all game controls",
+      "status": "PASS",
+      "width": 390,
+      "height": 360
+    },
+    {
+      "name": "barrage can be disabled without disabling chat",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion uses a stationary fading message",
+      "status": "PASS"
+    },
+    {
+      "name": "reload restores durable chat history without replaying old barrage",
+      "status": "PASS"
+    },
+    {
+      "name": "real offline/reconnect retains the unsent draft and resumes the existing chat",
+      "status": "PASS"
+    },
+    {
+      "name": "burst messages stay at two simultaneous lanes with a bounded queue",
+      "status": "PASS"
+    },
+    {
+      "name": "active table remains playable with chat available",
+      "status": "PASS",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "active table remains playable with chat available",
+      "status": "PASS",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "active table remains playable with chat available",
+      "status": "PASS",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "active table remains playable with chat available",
+      "status": "PASS",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "HU confirmation/review takes priority and suppresses barrage",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

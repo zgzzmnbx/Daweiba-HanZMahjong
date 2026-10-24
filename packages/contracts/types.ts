@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -29,8 +29,8 @@ export type RulesDefaults = Readonly<{
   maxCommas: 3; maxEatPerRound: 3;
   eatSource: 'previous_seat_latest_discard';
   eatImmediateDiscardRestriction: 'same_physical_tile';
-  turnMs: 60000; responseMs: 8000; composeMs: 45000; voteMs: 45000 | 60000;
-  postHuDiscardMs: 30000; disconnectGraceMs: 15000; botActionDelayMs: 800;
+  turnMs: 60000 | 120000; responseMs: 8000; composeMs: 45000 | 120000; voteMs: 45000 | 60000;
+  postHuDiscardMs: 30000 | 120000; disconnectGraceMs: 15000; botActionDelayMs: 800 | 5000;
   recoveryMinActionMs: 10000; allOfflineRetentionMs: 86400000;
   reviewerPolicy: 'freeze_other_online_humans_at_vote_start' | 'freeze_other_online_humans_and_designated_bots_at_vote_start';
   approvalPolicy: 'strict_majority'; botMayEat: false; botMayDeclareHu: false;
@@ -105,6 +105,8 @@ export type PublicSuspension =
 export type PublicPlayer = Readonly<{
   /** Missing in legacy 1.0 rooms means a human-owned seat, even when presence=BOT. */
   isBotSeat?: boolean;
+  /** Voluntary control delegation; the human identity stays online and keeps its seat. */
+  autoPlay?: boolean;
   playerId: PlayerId; seat: SeatIndex; nickname: string; presence: Presence;
   connected: boolean; ready: boolean; handCount: number; eatCount: number; wins: number;
   graceEndsAt: UtcMs | null;
@@ -131,6 +133,8 @@ export type PublicRoomSnapshot = Readonly<{
   /** Additive public notice: distinguish one-turn timeout from disconnected BOT control. */
   lastAutomaticDiscard?: Readonly<{playerId:PlayerId;at:UtcMs;reason:'TIMEOUT'|'BOT'}> | null;
   practiceMode?: boolean;
+  /** Missing in legacy rooms means private; fixed at creation. */
+  allowSpectators?: boolean;
   capacity: PlayerCount; closeAfterRound: boolean; hostId: PlayerId; dealerSeat: SeatIndex | null;
   players: readonly PublicPlayer[]; wallRemaining: number;
   phase: PublicPhase; suspension: PublicSuspension;
@@ -177,6 +181,7 @@ export type ClientCommand = CommandMeta & (
       sentence: Sentence }>
   | Readonly<{ kind: 'WITHDRAW_DISCARD_HU'; source: Extract<CandidateSource,{kind:'DISCARD'}> }>
   | Readonly<{ kind: 'VOTE'; proposalId: ProposalId; ballot: Ballot }>
+  | Readonly<{ kind: 'SET_AUTOPLAY'; enabled: boolean }>
   | Readonly<{ kind: 'ROTATE_RECOVERY_CODE' }>
   | Readonly<{ kind: 'CLOSE_AFTER_ROUND' }>
   | Readonly<{ kind: 'CLOSE_ROOM' }>
@@ -190,7 +195,7 @@ export type CommandErrorCode =
   | 'ALREADY_VOTED' | 'EAT_NOT_NEXT_SEAT' | 'EAT_LIMIT' | 'EAT_TILE_PROTECTED'
   | 'HU_RETRY_FORBIDDEN' | 'NO_HUMAN_REVIEWER' | 'BOT_ACTION_FORBIDDEN'
   | 'ROUND_IN_PROGRESS' | 'NOT_ALL_READY' | 'ROOM_PAUSED' | 'EXPIRED'
-  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED';
+  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED' | 'SPECTATING_DISABLED' | 'INVALID_SPECTATOR_SETTING' | 'INVALID_AUTOPLAY' | 'AUTOPLAY_ACTIVE';
 export type CommandResult =
   | Readonly<{ ok: true; actionId: ActionId; stateVersion: StateVersion;
       status: 'APPLIED' | 'RECORDED'; needsResync: boolean }>
@@ -198,8 +203,8 @@ export type CommandResult =
       stateVersion: StateVersion; needsResync: boolean }>;
 export type RestoreRequest = Readonly<{
   actionId: ActionId; roomId: RoomId;
-  /** SESSION reads the existing HttpOnly cookie on the server; no token in JS/JSON. */
-  proof: { kind: 'SESSION' } | { kind: 'RECOVERY_CODE'; code: string };
+  /** SESSION/BROWSER read the corresponding HttpOnly cookie on the server; no token in JS/JSON. */
+  proof: { kind: 'SESSION' } | { kind: 'BROWSER' } | { kind: 'RECOVERY_CODE'; code: string };
 }>;
 /** Identity restoration precedes possession of a current phase/epoch; no fake meta required. */
 export type RestoreResult = Readonly<{ snapshot: ResyncEnvelope }>;
@@ -207,6 +212,7 @@ export type CreateRoomRequest = Readonly<{
   actionId: ActionId; capacity: PlayerCount; nickname: string;
   /** Omitted legacy requests choose the global default once, at successful creation. */
   deckSetId?: string;
+  allowSpectators?: boolean;
 }>;
 export type JoinRoomRequest = Readonly<{
   actionId: ActionId; roomId: RoomId; requestedSeat: SeatIndex; nickname: string;
@@ -273,7 +279,7 @@ export namespace ServerOnly {
     | Readonly<{ kind: 'TURN_TIMEOUT' | 'RESPONSE_END' | 'COMPOSE_END' | 'VOTE_END';
         gate: 'PHASE'; roundId: RoundId; phaseId: PhaseId }>
     | Readonly<{ kind: 'BOT_DISCARD'; gate: 'PHASE_AND_CONTROL'; phaseId: PhaseId;
-        roundId: RoundId; playerId: PlayerId; expectedControlEpoch: ControlEpoch; expectedPresence: 'BOT' }>
+        roundId: RoundId; playerId: PlayerId; expectedControlEpoch: ControlEpoch; expectedPresence: 'BOT' | 'HUMAN'; expectedAutoPlay?:boolean }>
     | Readonly<{ kind: 'GRACE_END'; gate: 'CONTROL_AND_GRACE'; playerId: PlayerId;
         expectedControlEpoch: ControlEpoch; graceEndsAt: UtcMs }>
     | Readonly<{ kind: 'RETENTION_END'; gate: 'PAUSE_AND_EXPIRY';

@@ -30,12 +30,12 @@ if db.exists():
   if (prior_release/'scripts/db-backup.mjs').is_file():backup_root=prior_release
  subprocess.run([str(node),str(backup_root/'scripts/db-backup.mjs'),str(backup)],cwd=backup_root,env={**env,'DB_PATH':str(db)},check=True)
 config=base/'config/game.env'
-admin_line=''
+private_lines=[]
 if config.exists():
  for line in config.read_text().splitlines():
-  if line.startswith('ADMIN_PASSWORD_HASH='):admin_line=line+'\n'
+  if line.split('=',1)[0] in {'ADMIN_PASSWORD_HASH','DASHSCOPE_API_KEY_FILE','SPEECH_CACHE_DIR','FFMPEG_BINARY'}:private_lines.append(line)
 if config.exists():shutil.copy2(config,base/'backups'/f'game-{datetime.now().strftime("%Y%m%d-%H%M%S")}.env')
-config.write_text(f'NODE_ENV=production\nPORT=3000\nPUBLIC_ORIGIN=https://118.196.107.182:1240\nDB_PATH="{db}"\nWEB_DIST="{release / "dist/web"}"\n'+admin_line);config.chmod(0o600)
+config.write_text(f'NODE_ENV=production\nPORT=3000\nPUBLIC_ORIGIN=https://118.196.107.182:1240\nDB_PATH="{db}"\nWEB_DIST="{release / "dist/web"}"\n'+'\n'.join(private_lines)+'\n');config.chmod(0o600)
 subprocess.run([sys.executable,str(root/'ops/macos-service.py'),'install','--node',str(node),'--root',str(release),'--env',str(config)],check=True)
 record={'version':version,'release':str(release),'env':str(config),'database':str(db),'installedAt':datetime.now().isoformat()}
 (root/'runtime/deployment.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')

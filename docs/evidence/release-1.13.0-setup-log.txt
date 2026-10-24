@@ -1,0 +1,26 @@
+PASS central panel and fixed actions fit viewport
+PASS central seat list assigns/removes/reassigns AI with authoritative updates
+PASS ready/start uses the same authoritative controller and removes the setup panel
+PASS central panel and fixed actions fit viewport
+PASS central seat list assigns/removes/reassigns AI with authoritative updates
+PASS ready/start uses the same authoritative controller and removes the setup panel
+PASS central panel and fixed actions fit viewport
+PASS central seat list assigns/removes/reassigns AI with authoritative updates
+PASS ready/start uses the same authoritative controller and removes the setup panel
+PASS central panel and fixed actions fit viewport
+PASS central seat list assigns/removes/reassigns AI with authoritative updates
+PASS ready/start uses the same authoritative controller and removes the setup panel
+PASS non-host sees the shared seats but has no AI controls or start authority
+PASS central panel and fixed actions fit viewport
+PASS central seat list assigns/removes/reassigns AI with authoritative updates
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS ready/start uses the same authoritative controller and removes the setup panel
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport
+PASS central panel and fixed actions fit viewport

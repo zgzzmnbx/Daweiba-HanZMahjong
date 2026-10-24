@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-23T23:59:14.923Z",
+  "status": "PASS",
+  "scope": "real cached Qwen tile voice + live Qwen authoritative HU sentence; Chrome HTMLAudio/WebAudio decoding and playback, HTTP/Socket/SQLite",
+  "checks": [
+    {
+      "name": "actual cached Qwen tile audio decodes and starts through WebAudio on real card selection",
+      "status": "PASS"
+    },
+    {
+      "name": "game voice switch mutes without changing card commands or timer",
+      "status": "PASS"
+    },
+    {
+      "name": "new authoritative HU proposal triggers real Qwen full-sentence synthesis and decoded playback",
+      "status": "PASS",
+      "durationMs": 2645
+    },
+    {
+      "name": "replay uses durable sentence cache and never extends review deadline",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh does not auto-read old HU proposals",
+      "status": "PASS"
+    },
+    {
+      "name": "deck editor marks existing audio and plays real WAV from a user gesture",
+      "status": "PASS"
+    },
+    {
+      "name": "audio controls and deck tags stay in four viewport sizes with internal scrolling",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

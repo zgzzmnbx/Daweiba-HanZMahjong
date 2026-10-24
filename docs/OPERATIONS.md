@@ -1,4 +1,4 @@
-# 运行、备份与恢复 · 1.1.0
+# 运行、备份与恢复 · 1.13.0
 
 生产为单进程Node24.19.0，`dist/server/main.mjs`承载`dist/web`、HTTP及Socket.IO；持久层SQLite3.53.3，schema1，WAL / synchronous FULL / foreign_keys ON / busy_timeout 5000。私密HTTP全部no-store。
 
@@ -26,3 +26,7 @@ macOS生产安装在`~/Library/Application Support/WordMahjong/releases/版本-�
 4. 应用回滚使用匹配schema的旧release。数据恢复可能丢失备份后的对局，必须明确影响范围，不自动静默覆盖。备份、数据库、恢复凭据不进入Git或公开下载。
 
 已实际完成的公网断线/重启/代理重载/在线备份及独立沙盒逐表恢复证据见`docs/evidence/public-operations-results.json`。真实外部账号/秘密不在本文件内。
+
+## 语音数据
+
+1.13.0可选Qwen-TTS配置和缓存独立于SQLite、源码与release。密钥文件0600，缓存目录0700；发布脚本保留配置路径，缺失语音配置不阻止游戏启动。单字规范化可能需要ffmpeg，launchd须有FFMPEG_BINARY路径。详见increments/SPEECH-OPERATIONS-20261024-【codex】.md。

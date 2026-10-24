@@ -1,0 +1,28 @@
+import {chromium} from 'playwright';
+import {createServer} from 'vite';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import assert from 'node:assert/strict';
+const boundaries=process.env.SEAT_BOUNDARIES==='1',dimensions=boundaries?[[700,500],[768,600],[1024,500],[1440,600],[320,480],[360,640]]:[[1440,900],[1280,720],[1024,768],[390,844],[320,568],[844,390],[667,375]],counts=boundaries?[6]:[2,3,4,5,6],prefix=boundaries?'seat-badges-boundaries-1.13.0':'seat-badges-1.13.0';
+const vite=await createServer({configFile:resolve('vite.config.ts'),server:{host:'127.0.0.1',port:5133,strictPort:true}});await vite.listen();
+const browser=await chromium.launch({channel:'chrome',headless:true}),page=await browser.newPage(),checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));await mkdir('docs/evidence',{recursive:true});
+try{for(const [width,height] of dimensions)for(const n of counts)for(const mode of ['3D','2D']){
+ await page.setViewportSize({width,height});await page.goto(`http://127.0.0.1:5133/dev/baseline?n=${n}&phase=TURN_ACTION`);await page.locator('.player-badge').first().waitFor();if(mode==='2D'){await page.getByRole('button',{name:'牌桌工具',exact:true}).click();await page.getByRole('button',{name:'二维模式',exact:true}).click();}await page.waitForTimeout(300);
+ const r=await page.evaluate(()=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};const cards=Object.entries(window.__tableRenderer?.motionAnchors()??{}).filter(([k])=>k.startsWith('hand:')||k.startsWith('tile:')).map(([key,r])=>({key,x:r.x-r.width/2,y:r.y-r.height/2,width:r.width,height:r.height}));cards.push(...[...document.querySelectorAll('.badge-fallback-hand i,.tile,.table-comma-tray,.table-action-dock')].map((e,i)=>({key:'DOM:'+i,...box(e)})));return {badges:[...document.querySelectorAll('.player-badge')].map(e=>({seat:e.dataset.seat,outside:e.dataset.outside,...box(e),portrait:box(e.querySelector('.player-portrait')),display:getComputedStyle(e.querySelector('.player-portrait')).display})),cards,stage:box(document.querySelector('.table-stage')),scrollW:document.documentElement.scrollWidth,scrollH:document.documentElement.scrollHeight};});
+ assert.equal(r.badges.length,n-1);assert(r.scrollW<=width+1&&r.scrollH<=height+1);for(const b of r.badges){assert.notEqual(b.display,'none');assert(b.portrait.width>=30);assert(b.x>=0&&b.y>=0&&b.right<=width+1&&b.bottom<=height+1,JSON.stringify({width,height,n,b}));}
+ const overlap=(a,b)=>Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>2&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>2;
+ const collisions=r.badges.flatMap(b=>r.cards.filter(c=>overlap(b,c)).map(c=>({seat:b.seat,card:c.key})));
+ checks.push({width,height,n,mode,collisions,badges:r.badges});assert.deepEqual(collisions,[],JSON.stringify({width,height,n,mode,collisions}));for(let i=0;i<r.badges.length;i++)for(let j=i+1;j<r.badges.length;j++)assert(!overlap(r.badges[i],r.badges[j]),'badges must not overlap');
+ if(mode==='3D'&&[4,6].includes(n)&&[1440,390,667].includes(width))await page.screenshot({path:`docs/evidence/${prefix}-${n}p-${width}.png`});
+ if(collisions.length)console.log('COLLISION',width,height,n,collisions.length);
+ }
+ if(boundaries){const n=6,mode='resize-3D';await page.goto('http://127.0.0.1:5133/dev/baseline?n=6&phase=TURN_ACTION');for(const [width,height] of [[1440,900],[390,844],[667,375],[1440,900]]){await page.setViewportSize({width,height});await page.waitForTimeout(250);
+ const r=await page.evaluate(()=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};const cards=Object.entries(window.__tableRenderer?.motionAnchors()??{}).filter(([k])=>k.startsWith('hand:')||k.startsWith('tile:')).map(([key,r])=>({key,x:r.x-r.width/2,y:r.y-r.height/2,width:r.width,height:r.height}));cards.push(...[...document.querySelectorAll('.badge-fallback-hand i,.tile,.table-comma-tray,.table-action-dock')].map((e,i)=>({key:'DOM:'+i,...box(e)})));return {badges:[...document.querySelectorAll('.player-badge')].map(e=>({seat:e.dataset.seat,outside:e.dataset.outside,...box(e),portrait:box(e.querySelector('.player-portrait')),display:getComputedStyle(e.querySelector('.player-portrait')).display})),cards,stage:box(document.querySelector('.table-stage')),scrollW:document.documentElement.scrollWidth,scrollH:document.documentElement.scrollHeight};});
+ assert.equal(r.badges.length,n-1);assert(r.scrollW<=width+1&&r.scrollH<=height+1);for(const b of r.badges){assert.notEqual(b.display,'none');assert(b.portrait.width>=30);assert(b.x>=0&&b.y>=0&&b.right<=width+1&&b.bottom<=height+1,JSON.stringify({width,height,n,b}));}
+ const overlap=(a,b)=>Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>2&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>2;
+ const collisions=r.badges.flatMap(b=>r.cards.filter(c=>overlap(b,c)).map(c=>({seat:b.seat,card:c.key})));
+ checks.push({width,height,n,mode,collisions,badges:r.badges});assert.deepEqual(collisions,[],JSON.stringify({width,height,n,mode,collisions}));for(let i=0;i<r.badges.length;i++)for(let j=i+1;j<r.badges.length;j++)assert(!overlap(r.badges[i],r.badges[j]),'badges must not overlap');
+
+ }}
+ await writeFile(`docs/evidence/${prefix}-layout.json`,JSON.stringify({at:new Date().toISOString(),scope:'explicit dev fixtures, real WebGL projections and DOM bounds; not multiplayer evidence',checks,errors},null,2)+'\n');assert.deepEqual(errors,[]);console.log('CHECKED',checks.length,'seat layouts');
+}catch(e){await page.screenshot({path:'Codex-Temp/seat-failure.png'});throw e;}finally{await browser.close();await vite.close();}

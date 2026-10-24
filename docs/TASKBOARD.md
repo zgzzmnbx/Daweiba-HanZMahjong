@@ -1,16 +1,16 @@
 # 当前任务板
 
-应用 1.12.0 / 新局规则 1.3.0；旧 1.1/1.2 局下次 START 归档后升级，活动旧局冻结。1.11 DONE 已归档到 CHANGELOG/HANDOFF。
+应用1.13.0 / 新局规则1.4.0；旧1.1–1.3局下次合法START归档后升级，活动局冻结，1.0不迁移。旧1.12及本轮开发过程归档到CHANGELOG/HANDOFF/各增量记录，本板不堆积旧DONE。
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| REVIEW112 | 60秒实名投票、80%弹窗、圈词鸡蛋及通过/未通过效果 | DONE | 206 项阶段测试、108 项窗口回归；本地和公网各9组真实多客户端交互 |
-| SYNC112 | 补同步 GitHub 完整快照 | DONE | 1.11/1.12及固定牌组记录已补同步，远端文件树与冻结提交7804df2一致 |
-| EXPERIENCE | 后续九项玩家体验增量 | OTHER_THREAD | docs/increments/PLAYER-EXPERIENCE-20261024-【codex】.md |
-| ENV | 实体手机GPU/软键盘/蜂窝/真实读屏 | NOT_RUN_ENV_REQUIRED | 浏览器模拟不替代实体实测 |
+| EXPERIENCE113 | 九项玩家体验、观战/管理员记录/主动托管与Qwen语音 | DONE | 265项自动；178字音频；公网四人牌权4组与综合体验9组 |
+| UI113 | 圆头像、中央开局、原浏览器找回与聊天 | DONE | 公网头像4组、开局26项、真实15秒找回4组；本地聊天20项及公网聊天/刷新 |
+| VIEW113 | 大厅更新日志与固定可见窗口，修复短屏菜单挤压 | DONE | 本地108、公网45窗口检查及真实多尺寸开局菜单 |
+| SYNC113 | GitHub同步冻结发布树，不夹带下一批源码 | DONE | 独立发布分支与远端树逐项核对；不推送涂鸦工作区 |
+| DOODLE | 主线程后续桌面涂鸦需求 | OTHER_THREAD | 单独增量文档和独立验收，不在1.13冻结树 |
+| ENV | 实体手机GPU/软键盘/蜂窝/真实读屏 | NOT_RUN_ENV_REQUIRED | Chrome模拟不替代实体实测 |
 
-## 当前协作占用
+## 当前协作
 
-评审线程在本地提交 `7804df2` 固定1.12源码快照，已通过公网验收并部署。**源码文件现已释放：GameTable、contracts、engine 等可由玩家体验线程继续修改；本线程不再修改这些源码，也不再重新构建或部署。** GitHub同步严格读取7804df2的Git对象，不读取后续工作区，避免混入新功能。GitHub同步已完成；**本线程源码与项目文档全部释放**，玩家体验线程可继续按用户顺序接线、更新版本和部署。
-
-SentenceRackController.ts、tests/ui/acquisition-dismiss.test.ts、scripts/verify-acquisition-dismiss.mjs、turn-attention.ts及对应测试、docs/increments/、TTS探针由另一线程持有，未纳入1.12暂存/提交。turnMs本阶段仍60000，仅voteMs为60000；后续120秒思考/AI5秒、观战/托管/TTS由玩家体验线程按序实现。tileProps的dismissAcquisition接线留给该线程，本线程未执行。
+运行服务采用独立冻结源码d8383c3，正式release见HANDOFF。玩家体验线程维护本次发布文档/证据与GitHub同步，主线程继续涂鸦；不在进行中的工作区重新打包本次版本。固定144张默认组及动态牌组、全部旧局与私有运行配置保留。无根TASKS.md需另建或清理。

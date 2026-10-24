@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-23T23:07:34.006Z",
+  "status": "PASS",
+  "scope": "real Chrome interaction against explicit dev fixtures, not multiplayer acceptance",
+  "checks": [
+    {
+      "mode": "3D hover",
+      "tileId": "demo-t13",
+      "status": "PASS",
+      "geometry": {
+        "w": 1440,
+        "h": 900,
+        "scrollW": 1440,
+        "scrollH": 900
+      }
+    },
+    {
+      "mode": "DOM hover",
+      "tileId": "demo-t13",
+      "status": "PASS",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844
+      }
+    },
+    {
+      "mode": "keyboard focus",
+      "tileId": "demo-t13",
+      "status": "PASS",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844
+      }
+    },
+    {
+      "mode": "touch tap",
+      "tileId": "demo-t13",
+      "status": "PASS",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "one-character API availability probe; no game integration",
+  "model": "qwen3-tts-flash",
+  "voice": "Cherry",
+  "character": "我",
+  "status": "PASS",
+  "sampleRate": 24000,
+  "channels": 1,
+  "sampleWidth": 2,
+  "bytes": 30764,
+  "headerDurationSeconds": 44739.240541666666,
+  "durationSeconds": 0.64,
+  "headerFrameCountIsPlaceholder": true,
+  "peak": 0.322235107421875,
+  "rms": 0.05756051045394556,
+  "checkedAt": "2026-10-23T22:59:03.047861+00:00",
+  "credentialValueRecorded": false,
+  "audioStoredInGit": false
+}

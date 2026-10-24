@@ -35,7 +35,7 @@ export class MainView {
   private shadow = new T.MeshBasicMaterial({color:0x151207,transparent:true,opacity:.2,depthWrite:false});
   private observer: ResizeObserver;
   private disposed = false;
-  private last: { view:TableView; showOwn:boolean; selected:string|null;acquired:string|null } | null = null;
+  private last: { view:TableView; showOwn:boolean; selected:string|null;acquired:string|null;urgent:boolean } | null = null;
   private frame = 0;
   private centerTexture: T.CanvasTexture;
   private centerCanvas = document.createElement('canvas');
@@ -69,13 +69,13 @@ export class MainView {
     this.reduced.addEventListener('change',this.onMotion);
     this.renderer.domElement.addEventListener('webglcontextlost',this.onLost);
     this.observer=new ResizeObserver(()=>this.resize());this.observer.observe(host);
-    document.fonts.ready.then(()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired);}});
+    document.fonts.ready.then(()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired,this.last.urgent);}});
     document.fonts.addEventListener('loadingdone',this.onFonts);
     this.resize();
   }
   private onMotion=()=>{if(this.reduced.matches)for(const node of this.own.values()){node.mesh.position.copy(node.target);node.duration=0;}this.render();};
   private onLost=(event:Event)=>{event.preventDefault();cancelAnimationFrame(this.frame);this.projected([],[]);this.lost();};
-  private onFonts=()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired);}};
+  private onFonts=()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired,this.last.urgent);}};
   private clearFaces(){this.clearOwn();for(const t of this.faces.values())t.dispose();this.faces.clear();}
   private glyph(char:string,transparent=false){
     const key=transparent?'punctuation:'+char:char;let texture=this.faces.get(key);if(texture)return texture;
@@ -99,8 +99,8 @@ export class MainView {
     this.tiles.traverse(o=>{if(o instanceof T.Mesh&&o.material!==this.ivory&&o.material!==this.back&&o.material!==this.shadow)(o.material as T.Material).dispose();});
     this.tiles.clear();
   }
-  replace(view:TableView,showOwn:boolean,selected:string|null,acquired:string|null=null){
-    if(this.disposed)return;const old=this.last?.view;if(old&&(old.stamp.roomId!==view.stamp.roomId||old.stamp.roundId!==view.stamp.roundId||old.stamp.phaseId!==view.stamp.phaseId||old.stamp.controlEpoch!==view.stamp.controlEpoch||old.rack?.cells.map(c=>c.tile.tileId).sort().join()!==view.rack?.cells.map(c=>c.tile.tileId).sort().join())){this.preview=null;this.drag=null;}this.last={view,showOwn,selected,acquired};this.clearTiles();
+  replace(view:TableView,showOwn:boolean,selected:string|null,acquired:string|null=null,urgent=false){
+    if(this.disposed)return;const old=this.last?.view;if(old&&(old.stamp.roomId!==view.stamp.roomId||old.stamp.roundId!==view.stamp.roundId||old.stamp.phaseId!==view.stamp.phaseId||old.stamp.controlEpoch!==view.stamp.controlEpoch||old.rack?.cells.map(c=>c.tile.tileId).sort().join()!==view.rack?.cells.map(c=>c.tile.tileId).sort().join())){this.preview=null;this.drag=null;}this.last={view,showOwn,selected,acquired,urgent};this.clearTiles();
     const n=view.seats.length;const zoom=n>4?1.08:1;
     this.camera.position.set(0,-222*1.44*zoom,222*1.05*zoom);this.camera.rotation.set(Math.PI*.3,0,0);
     // Anonymous decoration: edited large decks keep four wall sides; exact remaining count is on the center plaque.
@@ -136,7 +136,7 @@ export class MainView {
     const draggedItem=layout.items.find(i=>i.key===this.drag?.key);
     for(const item of layout.items){const cell=rack.cells.find(c=>c.tile.tileId===item.tileId);if(!cell)continue;const target=new T.Vector3(111+item.x+item.width/2-layout.width/2,13,10+(last.selected===item.tileId?3:0));let node=this.own.get(item.key);
       if(!node){const mesh=this.ownTile(item.kind==='comma'?'，':cell.tile.char,item.kind==='comma');mesh.position.copy(target);mesh.userData={tileId:item.tileId,kind:item.kind};node={mesh,tileId:item.tileId,kind:item.kind,target:target.clone(),from:target.clone(),started:now,duration:0};this.own.set(item.key,node);this.ownTiles.add(mesh);}
-      if(item.kind==='tile'){const fresh=last.acquired===item.tileId,body=node.mesh.children[0] as T.Mesh<T.BufferGeometry,T.MeshLambertMaterial>;body.material.color.setHex(fresh?0xffd56a:0xf1e8cf);body.material.emissive.setHex(fresh?0x5a3709:0x000000);const face=node.mesh.children[1] as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>;face.material.color.setHex(fresh?0xffedb2:0xffffff);}
+      if(item.kind==='tile'){const fresh=last.acquired===item.tileId,body=node.mesh.children[0] as T.Mesh<T.BufferGeometry,T.MeshLambertMaterial>;body.material.color.setHex(last.urgent?0xf47b73:fresh?0xffd56a:0xf1e8cf);body.material.emissive.setHex(last.urgent?0x6d100c:fresh?0x5a3709:0x000000);const face=node.mesh.children[1] as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>;face.material.color.setHex(last.urgent?0xffb0a5:fresh?0xffedb2:0xffffff);}
       const floating=!!this.drag&&(item.key===this.drag.key||this.drag.key===`tile:${item.tileId}`&&item.kind==='comma');
       node.mesh.visible=!this.motionHidden.has(`tile:${item.tileId}`)&&!(floating&&this.drag?.external);node.mesh.traverse(o=>{if(o instanceof T.Mesh){o.renderOrder=floating?1000:0;(o.material as T.Material).depthTest=!floating;}});
       if(floating&&point&&draggedItem){node.mesh.position.copy(point);node.mesh.position.x+=item.x+item.width/2-draggedItem.x-draggedItem.width/2;node.target.copy(target);node.from.copy(node.mesh.position);node.started=now;node.duration=this.reduced.matches?0:240;
@@ -158,7 +158,7 @@ export class MainView {
   setMotionHidden(keys:Set<string>){this.motionHidden=new Set(keys);for(const g of this.tiles.children)g.visible=!keys.has(g.userData.motionKey);for(const n of this.own.values())n.mesh.visible=!keys.has(`tile:${n.tileId}`)&&!(this.drag?.external&&(this.drag.key===`tile:${n.tileId}`||this.drag.key===`${n.kind}:${n.tileId}`));this.render();}
   private resize(){const width=this.host.clientWidth,height=this.host.clientHeight;if(!width||!height)return;this.size={width,height};this.renderer.setSize(width,height);this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.render();}
   private render(){cancelAnimationFrame(this.frame);this.frame=requestAnimationFrame(()=>{
-    if(this.disposed)return;let moving=false;const now=performance.now();for(const [key,n]of this.own){const floating=this.drag&&(key===this.drag.key||this.drag.key===`tile:${n.tileId}`&&n.kind==='comma');if(floating)continue;const t=n.duration?Math.min(1,(now-n.started)/n.duration):1,eased=1-Math.pow(1-t,3);n.mesh.position.lerpVectors(n.from,n.target,eased);if(t<1)moving=true;}this.scene.updateMatrixWorld(true);this.camera.updateMatrixWorld(true);this.renderer.render(this.scene,this.camera);this.stats.renders++;
+    if(this.disposed)return;let moving=false;const now=performance.now();for(const [key,n]of this.own){const floating=this.drag&&(key===this.drag.key||this.drag.key===`tile:${n.tileId}`&&n.kind==='comma');if(floating)continue;const t=n.duration?Math.min(1,(now-n.started)/n.duration):1,eased=1-Math.pow(1-t,3);n.mesh.position.lerpVectors(n.from,n.target,eased);if(this.last?.urgent&&!this.reduced.matches&&n.kind==='tile'){n.mesh.position.x+=Math.sin(now/32+n.target.x*.7)*.35;moving=true;}if(t<1)moving=true;}this.scene.updateMatrixWorld(true);this.camera.updateMatrixWorld(true);this.renderer.render(this.scene,this.camera);this.stats.renders++;
     const {width:w,height:h}=this.size;
     const project=(v:T.Vector3)=>{v.project(this.camera);return{x:(v.x+1)*w/2,y:(1-v.y)*h/2};};
     const hits=[...this.own.values()].sort((a,b)=>a.target.x-b.target.x).map(({mesh,tileId,kind})=>{const points=[];for(const x of [-3,3])for(const y of [-4.5,4.5])points.push(project(mesh.localToWorld(new T.Vector3(x,y,2.1))));const xs=points.map(p=>p.x),ys=points.map(p=>p.y);return{tileId,comma:kind==='comma',kind,x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};});

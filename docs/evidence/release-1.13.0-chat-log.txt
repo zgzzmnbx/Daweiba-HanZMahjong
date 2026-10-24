@@ -1,0 +1,20 @@
+PASS real same-room delivery and unread badge, no cross-room delivery or game-state mutation
+PASS translucent history synchronizes both directions and opening it clears unread/barrage
+PASS IME composition Enter is not sent; ordinary Enter sends once
+PASS HTML-looking text renders literally
+PASS 120-character limit prevents oversized sends
+PASS history/input fit, outer page fixed, barrage above all game controls
+PASS history/input fit, outer page fixed, barrage above all game controls
+PASS history/input fit, outer page fixed, barrage above all game controls
+PASS history/input fit, outer page fixed, barrage above all game controls
+PASS history/input fit, outer page fixed, barrage above all game controls
+PASS barrage can be disabled without disabling chat
+PASS reduced motion uses a stationary fading message
+PASS reload restores durable chat history without replaying old barrage
+PASS real offline/reconnect retains the unsent draft and resumes the existing chat
+PASS burst messages stay at two simultaneous lanes with a bounded queue
+PASS active table remains playable with chat available
+PASS active table remains playable with chat available
+PASS active table remains playable with chat available
+PASS active table remains playable with chat available
+PASS HU confirmation/review takes priority and suppresses barrage

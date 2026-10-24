@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {fixture} from '../../apps/web/src/fixture';
+import {isTurnUrgent} from '../../apps/web/src/table-ui/turn-attention';
+test('last ten seconds warn only the acting player, and never continue after server expiry',()=>{const e=fixture(),end=e.public.phase.deadline!.endsAt;assert.equal(isTurnUrgent(e,end-10001),false);assert.equal(isTurnUrgent(e,end-10000),true);assert.equal(isTurnUrgent(e,end-1),true);assert.equal(isTurnUrgent(e,end),false);assert.equal(isTurnUrgent(e,end+1),false);(e.public.phase as any).actorId='other';assert.equal(isTurnUrgent(e,end-1000),false);});
+test('borrowed composition warns its applicant, not spectators or opponents',()=>{const e=fixture(4,0,'HU_COMPOSE'),now=e.public.phase.deadline!.endsAt-5000;assert.equal(isTurnUrgent(e,now),true);(e.public.phase as any).applicantId='other';assert.equal(isTurnUrgent(e,now),false);});
+test('paused, expired and unauthorized snapshots never warn a player to act',()=>{const e=fixture(),now=e.public.phase.deadline!.endsAt-1000;for(const kind of ['PAUSED_RECOVERY','PAUSED_ALL_OFFLINE','PAUSED_CLAIMANT_GRACE']){(e.public as any).suspension={kind};assert.equal(isTurnUrgent(e,now),false);}(e.public as any).suspension={kind:'RUNNING'};(e as any).legalActions=[];assert.equal(isTurnUrgent(e,now),false);});
+test('review and discard response countdowns do not make unrelated hand tiles shake',()=>{for(const phase of ['HU_VOTE','DISCARD_RESPONSE','LOBBY','ROUND_FINISHED']){const e=fixture(4,0,phase);assert.equal(isTurnUrgent(e,(e.public.phase.deadline?.endsAt??1000)-1000),false);}});

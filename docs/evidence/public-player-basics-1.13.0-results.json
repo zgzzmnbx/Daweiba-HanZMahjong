@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T00:14:16.326Z",
+  "status": "PASS",
+  "scope": "real four independent Chrome identities, HTTP/Socket.IO and SQLite; local fake server clock or real public clock",
+  "checks": [
+    {
+      "name": "real player acknowledgement clears new tile without drawing or discarding",
+      "status": "PASS"
+    },
+    {
+      "name": "real four-player UI shows draw only to next logical seat; pass and draw intent never skip pending responses",
+      "status": "PASS"
+    },
+    {
+      "name": "server snapshot gives the next actor 120 seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "own four-player verification room closed without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

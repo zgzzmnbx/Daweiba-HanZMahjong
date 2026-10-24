@@ -5,9 +5,10 @@ export type LobbyTable = Readonly<{
   roomId: string | null;
   capacity: number | null;
   occupied: number;
+  allowSpectators?: boolean;
   status: 'EMPTY' | 'WAITING' | 'PLAYING' | 'FINISHED';
   /** Always emitted by current servers; optional for legacy lobby snapshots. No identity IDs. */
-  players?: readonly Readonly<{seat:import('./types').SeatIndex;nickname:string;isBotSeat:boolean}>[];
+  players?: readonly Readonly<{seat:import('./types').SeatIndex;nickname:string;isBotSeat:boolean;isManaged?:boolean}>[];
 }>;
 export type LobbySnapshot = Readonly<{tables: readonly LobbyTable[]}>;
 /** Additive field for POST /api/rooms; omitted preserves the legacy private-room API. */

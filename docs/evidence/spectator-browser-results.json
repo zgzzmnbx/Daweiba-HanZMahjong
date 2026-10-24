@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-23T23:25:23.822Z",
+  "status": "PASS",
+  "scope": "real Chrome, actual HTTP/Socket/SQLite and private test-only admin session; no production credentials or production rooms",
+  "checks": [
+    "lobby opens actual six-seat public-only 3D spectator table without taking a seat or issuing player commands",
+    {
+      "viewport": "1440x900",
+      "geometry": {
+        "w": 1440,
+        "h": 900,
+        "scrollW": 1440,
+        "scrollH": 900,
+        "canvas": {
+          "width": 1153,
+          "height": 768
+        }
+      }
+    },
+    {
+      "viewport": "390x844",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "scrollW": 390,
+        "scrollH": 844,
+        "canvas": {
+          "width": 366,
+          "height": 244
+        }
+      }
+    },
+    {
+      "viewport": "320x480",
+      "geometry": {
+        "w": 320,
+        "h": 480,
+        "scrollW": 320,
+        "scrollH": 480,
+        "canvas": {
+          "width": 296,
+          "height": 197
+        }
+      }
+    },
+    {
+      "viewport": "667x375",
+      "geometry": {
+        "w": 667,
+        "h": 375,
+        "scrollW": 667,
+        "scrollH": 375,
+        "canvas": {
+          "width": 391,
+          "height": 261
+        }
+      }
+    },
+    "new-room watch checkbox starts enabled and resets to enabled for each new creation",
+    "watching in an existing player browser preserves the original player and control epoch",
+    "ordinary view of private room is denied while authenticated admin view works without player controls",
+    "admin logout removes the private-room spectator canvas on the next authorization check"
+  ],
+  "errors": []
+}

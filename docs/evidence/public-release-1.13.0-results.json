@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T00:27:08.827Z",
+  "status": "PASS",
+  "sourceCommit": "d8383c3dbcc870f4740428119d321caac5755865",
+  "applicationVersion": "1.13.0",
+  "ready": true,
+  "assetsChecked": 2,
+  "audioCharacters": 178,
+  "audioEnabled": true,
+  "indexSha256": "8f1b68c0c17e01b148d2761eb396fbfae4b057c2231bcced7ead71b0f17c3966"
+}

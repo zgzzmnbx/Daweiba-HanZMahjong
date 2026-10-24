@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T00:16:45.504Z",
+  "status": "PASS",
+  "scope": "real production HTTPS/WSS/SQLite, independent Chrome browsers and actual elapsed grace time; no server clock mutation",
+  "checks": [
+    {
+      "name": "public browser without room credential cannot claim a matching nickname or managed seat",
+      "status": "PASS"
+    },
+    {
+      "name": "real fifteen-second dropout + lobby My Seats + one click restores exact original player, hand and draft",
+      "status": "PASS"
+    },
+    {
+      "name": "public identity cookie is Secure, HttpOnly, SameSite and scoped to its own room",
+      "status": "PASS"
+    },
+    {
+      "name": "only the script-owned verification room was closed without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

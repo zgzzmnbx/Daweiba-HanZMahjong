@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-23T23:33:51.478Z",
+  "status": "PASS",
+  "scope": "actual Chrome clients + real local HTTP/Socket/SQLite and controlled server clock; test-only admin password",
+  "checks": [
+    {
+      "name": "admin records tab shows actual frozen members and authoritative start timestamp for a running round",
+      "status": "PASS"
+    },
+    {
+      "name": "completed real HU records exact finish time, members and all fourteen characters",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x900 records dialog stays in viewport",
+      "status": "PASS",
+      "w": 1440,
+      "h": 900,
+      "scrollW": 1440,
+      "scrollH": 900,
+      "dialog": {
+        "x": 250,
+        "y": 227.1171875,
+        "right": 1190,
+        "bottom": 672.8828125
+      }
+    },
+    {
+      "name": "390x844 records dialog stays in viewport",
+      "status": "PASS",
+      "w": 390,
+      "h": 844,
+      "scrollW": 390,
+      "scrollH": 844,
+      "dialog": {
+        "x": 12,
+        "y": 207.3125,
+        "right": 378,
+        "bottom": 636.6875
+      }
+    },
+    {
+      "name": "320x480 records dialog stays in viewport",
+      "status": "PASS",
+      "w": 320,
+      "h": 480,
+      "scrollW": 320,
+      "scrollH": 480,
+      "dialog": {
+        "x": 12,
+        "y": 12,
+        "right": 308,
+        "bottom": 468
+      }
+    },
+    {
+      "name": "667x375 records dialog stays in viewport",
+      "status": "PASS",
+      "w": 667,
+      "h": 375,
+      "scrollW": 667,
+      "scrollH": 375,
+      "dialog": {
+        "x": 12,
+        "y": 12,
+        "right": 655,
+        "bottom": 363
+      }
+    },
+    {
+      "name": "ordinary real player session is rejected by the records endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "revoked admin session clears rendered record data and returns to password entry",
+      "status": "PASS"
+    },
+    {
+      "name": "own real verification room closed",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-23T23:27:29.211Z",
+  "status": "PASS",
+  "scope": "real independent Chrome identities, HTTP/Socket.IO and SQLite",
+  "checks": [
+    {
+      "name": "four independent live players see correct opponent names and visible circle avatars on desktop, portrait and landscape",
+      "status": "PASS"
+    },
+    {
+      "name": "actual tile and discard button remain clickable through transparent avatar layer",
+      "status": "PASS"
+    },
+    {
+      "name": "reload restores authoritative names and avatar placement",
+      "status": "PASS"
+    },
+    {
+      "name": "own verification room closed without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
