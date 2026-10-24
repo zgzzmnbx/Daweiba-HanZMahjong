@@ -8,6 +8,19 @@ export function rackLayout(draft:Draft,tileWidth:number,height:number,gap:number
  if(comma){x+=gap;items.push({key:`comma:${tileId}`,kind:'comma',tileId,x,y:row*(height+rowGap),width:tileWidth*COMMA_WIDTH_RATIO,height,row});x+=tileWidth*COMMA_WIDTH_RATIO;}width=Math.max(width,x);x+=gap;}
  return{items,width,height:items.length?(row+1)*height+row*rowGap:0};
 }
+/** Seven characters per row; punctuation shares its anchor's row without adding a third row.
+ * Reserve seven character slots even for a thirteen-tile hand, so drawing does not resize it. */
+export function mobileRackLayout(draft:Draft,maxWidth:number,compact=false){
+ const gap=4,rowGap=8,height=compact?42:58,commas=new Set(draft.commaAfterTileIds);
+ const rows=Array.from({length:Math.ceil(draft.orderedTileIds.length/7)},(_,i)=>draft.orderedTileIds.slice(i*7,i*7+7));
+ const punctuation=Math.max(0,...rows.map(row=>row.filter(id=>commas.has(id)).length));
+ const tileWidth=Math.min(48,Math.max(1,(maxWidth-gap*(6+punctuation))/(7+punctuation*COMMA_WIDTH_RATIO)));
+ const items:RackItem[]=[];let width=0;
+ rows.forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,height,gap);
+  for(const item of line.items)items.push({...item,row,y:row*(height+rowGap)});width=Math.max(width,line.width);
+ });
+ return{items,width,height:rows.length?rows.length*height+(rows.length-1)*rowGap:0,tileWidth,reserve:2*height+rowGap};
+}
 export function movePreview(draft:Draft,tileId:TileId,index:number):Draft{const order=[...draft.orderedTileIds],from=order.indexOf(tileId);if(from<0)return draft;order.splice(from,1);order.splice(Math.max(0,Math.min(index,order.length)),0,tileId);return{orderedTileIds:order,commaAfterTileIds:draft.commaAfterTileIds.filter(id=>id!==order.at(-1)) as unknown as Draft['commaAfterTileIds']};}
 /** null target returns a comma to its tray; invalid anchors leave the draft unchanged. */
 export function commaPreview(draft:Draft,from:TileId|null,to:TileId|null):Draft{if(to&&(to===draft.orderedTileIds.at(-1)||!draft.orderedTileIds.includes(to)||to!==from&&Array.from(draft.commaAfterTileIds).includes(to)))return draft;const commas=draft.commaAfterTileIds.filter(id=>id!==from);if(to){if(commas.length>=3)return draft;commas.push(to);}return{orderedTileIds:[...draft.orderedTileIds],commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};}

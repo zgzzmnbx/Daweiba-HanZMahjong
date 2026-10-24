@@ -81,3 +81,8 @@
 @media(max-width:699px) and (orientation:landscape){
  #root .game-hall .hall-tables{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(130px,1fr))}
 }
+
+/* A complete mobile hand is always visible: seven characters on each of two rows. */
+@media(max-width:699px),(max-height:599px){
+ #root .game-shell .rack-area.expanded{max-height:none;overflow:visible}
+}
