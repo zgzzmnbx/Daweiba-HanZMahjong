@@ -1,4 +1,5 @@
 import {playerDisplayName} from '../../../packages/contracts/browser-return';
+import {HuBook,BookIcon} from './HuBook';
 import {releaseNotes} from './release-notes';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import type {LobbyTable} from '../../../packages/contracts/lobby';
@@ -17,9 +18,11 @@ export function GameLobby({panel,tableNumber,tables,error,busy,status,onOpen,onT
  const [updates,setUpdates]=useState(false),updatesDialog=useRef<HTMLDialogElement>(null);
  useEffect(()=>{const d=updatesDialog.current;if(updates&&!d?.open)d?.showModal();else if(!updates&&d?.open)d.close();},[updates]);
  const empty=tables?.find(t=>t.status==='EMPTY');
+ const [book,setBook]=useState(false);
  return <div className="game-lobby game-hall">
-  <header className="topbar"><div className="wordmark"><span className="hall-logo-tile" aria-hidden="true">字</span><div>字间 <small>文字麻将</small></div></div><nav aria-label="大厅工具"><button className="hall-tool" onClick={()=>setUpdates(true)} aria-label="更新日志"><span aria-hidden="true">▤</span><span>更新</span></button><button className="hall-tool" onClick={()=>onOpen('join')} aria-label="加入 / 找回房间"><HallIcon kind="entry"/><span>房间</span></button><button className="hall-tool" onClick={()=>setHelp(true)} aria-label="玩法帮助"><HallIcon kind="help"/><span>玩法</span></button>{onAdmin&&<button className="hall-tool" onClick={onAdmin} aria-label={adminActive?'管理员模式':'管理员入口'}><span aria-hidden="true">♜</span><span>管理</span></button>}</nav></header>
+  <header className="topbar"><div className="wordmark"><span className="hall-logo-tile" aria-hidden="true">字</span><div>字间 <small>文字麻将</small></div></div><nav aria-label="大厅工具"><button className="hall-tool" onClick={()=>setBook(true)} aria-label="胡牌天书"><BookIcon/><span>天书</span></button><button className="hall-tool" onClick={()=>setUpdates(true)} aria-label="更新日志"><span aria-hidden="true">▤</span><span>更新</span></button><button className="hall-tool" onClick={()=>onOpen('join')} aria-label="加入 / 找回房间"><HallIcon kind="entry"/><span>房间</span></button><button className="hall-tool" onClick={()=>setHelp(true)} aria-label="玩法帮助"><HallIcon kind="help"/><span>玩法</span></button>{onAdmin&&<button className="hall-tool" onClick={onAdmin} aria-label={adminActive?'管理员模式':'管理员入口'}><span aria-hidden="true">♜</span><span>管理</span></button>}</nav></header>
   <main className="hall-content">
+   {book&&<HuBook adminActive={!!adminActive} onClose={()=>setBook(false)}/>}
    <div className="hall-heading"><div className="hall-title-plaque"><h1>游戏大厅</h1><span className={'hall-live '+(error?'unavailable':'')}><i/>{error?'连接中断':tables?'公共牌桌':'连接中'}</span></div><button className="primary hall-create" disabled={!empty||!!error||busy} onClick={()=>empty&&onTable(empty)}><HallIcon kind="plus"/>{tables&&!empty?'已满桌':'创建房间'}</button></div>
    {remembered}
    <section className="hall-tables" aria-label="六张公共牌桌" aria-busy={!tables}>

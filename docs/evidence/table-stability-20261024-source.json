@@ -1,0 +1,19 @@
+{
+  "baseCommit": "366405c",
+  "application": "independent layout candidate; integrated publication owned by v1.15.0",
+  "unitTests": 269,
+  "viewportChecks": 108,
+  "doodleChecks": 19,
+  "sourceSha256": {
+    "apps/web/src/GameTable.tsx": "2b70ed7016fa7d8a11808cef6510ce908fd427dd1ee9e967c35eb17f2614bcdd",
+    "apps/web/src/game-viewport.css": "4f5b1e89d963098899a243c6d8a510c3175d2149b982fb396da7604bc80d551a",
+    "scripts/verify-table-stability.mjs": "0154b53938de3867bab528115d6785dcd54459a482759997c9f8bad2fef61578"
+  },
+  "actualRelease": "1.15.0-20261024-085919",
+  "scope": "local independent clean baseline, real Chrome/Socket.IO and isolated SQLite; public acceptance pending joint release",
+  "jointTests": 275,
+  "publicChecks": 15,
+  "publicEvidence": "public-table-stability-1.15.0-results.json",
+  "backup": "pre-release-20261024-085920.sqlite",
+  "publicationScope": "joint 1.15.0 source 51d8d19; public ready and assets verified by publishing thread"
+}

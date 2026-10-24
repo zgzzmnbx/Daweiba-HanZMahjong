@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-24T01:01:03.247Z",
+  "scope": "external https://118.196.107.182:1240, actual Chrome/HTTP/Socket.IO, only verification-owned rooms/entries removed",
+  "checks": [
+    {
+      "name": "two real games: actual HU confirmation and reviewer approval automatically preserve 14 tiles and comma in public book",
+      "status": "PASS"
+    },
+    {
+      "name": "non-seated browsers see identical archived sentences after rooms close, without admin controls",
+      "status": "PASS"
+    },
+    {
+      "name": "one total daily like, persisted after reload with no second vote",
+      "status": "PASS"
+    },
+    {
+      "name": "another browser has its own daily vote and public counts refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "book and lobby entry fit viewport with only internal scrolling",
+      "status": "PASS",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "book and lobby entry fit viewport with only internal scrolling",
+      "status": "PASS",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "book and lobby entry fit viewport with only internal scrolling",
+      "status": "PASS",
+      "width": 667,
+      "height": 375
+    },
+    {
+      "name": "admin deletion offers cancellable confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "admin removal disappears for every viewer and never refunds a spent daily like",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,4 +1,5 @@
 import {RoundRecords} from './round-records';
+import {HuBook} from './hu-book';
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync,chmodSync } from 'node:fs';
 import { dirname,resolve } from 'node:path';
@@ -17,6 +18,7 @@ export function tableNumber(value:unknown):TableNumber {
 }
 export class Store {
  readonly roundRecords:RoundRecords;
+ readonly huBook:HuBook;
  db:DatabaseSync; deckSets:DeckSets; failNextCommit=false;
  constructor(public path:string){
   if(path!==':memory:')mkdirSync(dirname(resolve(path)),{recursive:true,mode:0o700});
@@ -46,6 +48,7 @@ export class Store {
   this.db.prepare('INSERT OR IGNORE INTO deck_revisions VALUES(0,?,0)').run(JSON.stringify(initialDeck));this.db.prepare('INSERT OR IGNORE INTO deck_current VALUES(1,0)').run();
   try{this.deckSets=new DeckSets(this.db,()=>{if(this.failNextCommit){this.failNextCommit=false;throw new Error('INJECTED_TRANSACTION_FAILURE');}});}catch(error){this.db.close();throw error;}
   try{this.roundRecords=new RoundRecords(this.db);}catch(error){this.db.close();throw error;}
+  try{this.huBook=new HuBook(this.db);}catch(error){this.db.close();throw error;}
   if(path!==':memory:')chmodSync(path,0o600);
  }
  load(){return(this.db.prepare('SELECT data FROM room_snapshots').all() as {data:string}[]).map(r=>decodeGame(JSON.parse(r.data)));}
@@ -84,6 +87,7 @@ export class Store {
    if(session)this.db.prepare('INSERT INTO sessions VALUES(?,?,?,?,?,?) ON CONFLICT(session_id) DO UPDATE SET token_hash=excluded.token_hash,expires_at=excluded.expires_at,revoked=excluded.revoked').run(session.tokenHash,session.sessionId,session.roomId,session.playerId,session.expiresAt,session.revoked);
    for(const result of [...g.archive,g.public]){
     this.roundRecords.capture(result,kind,now,result.roundId===g.public.roundId);
+    this.huBook.capture(result.roomId,result.roundId);
     if(!result.roundId)continue;
     const terminal=result.history.some(h=>h.outcome==='APPROVED')||result.phase.kind==='ROUND_FINISHED';
     if(terminal)this.db.prepare('INSERT OR IGNORE INTO round_results VALUES(?,?,?)').run(g.public.roomId,result.roundId,JSON.stringify({phase:result.phase,history:result.history,rulesVersion:result.rulesVersion,deckVersion:result.deckVersion,deckSetId:result.deckSetId,deckSetName:result.deckSetName,practiceMode:result.practiceMode??false}));

@@ -1,0 +1,1142 @@
+{
+  "at": "2026-10-24T01:01:05.595Z",
+  "status": "PASS",
+  "scope": "public Chrome / HTTP / Socket.IO; real clock; own private room closed without scoring",
+  "checks": [
+    {
+      "name": "four real draw/discard cycles at 1440x900",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 952.5,
+            "max": 952.5
+          },
+          "height": {
+            "min": 635,
+            "max": 635
+          },
+          "x": {
+            "min": 243.75,
+            "max": 243.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 635,
+            "max": 635
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 952.5,
+            "max": 952.5
+          },
+          "height": {
+            "min": 635,
+            "max": 635
+          },
+          "x": {
+            "min": 243.75,
+            "max": 243.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 635,
+            "max": 635
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        192,
+        192
+      ],
+      "pendingFrames": [
+        28,
+        16
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 1280x720",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        187,
+        187
+      ],
+      "pendingFrames": [
+        22,
+        15
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 1024x600",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 502.5,
+            "max": 502.5
+          },
+          "height": {
+            "min": 335,
+            "max": 335
+          },
+          "x": {
+            "min": 260.75,
+            "max": 260.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 335,
+            "max": 335
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 502.5,
+            "max": 502.5
+          },
+          "height": {
+            "min": 335,
+            "max": 335
+          },
+          "x": {
+            "min": 260.75,
+            "max": 260.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 335,
+            "max": 335
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        216,
+        216
+      ],
+      "pendingFrames": [
+        27,
+        21
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 800x600",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 502.5,
+            "max": 502.5
+          },
+          "height": {
+            "min": 335,
+            "max": 335
+          },
+          "x": {
+            "min": 148.75,
+            "max": 148.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 335,
+            "max": 335
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 502.5,
+            "max": 502.5
+          },
+          "height": {
+            "min": 335,
+            "max": 335
+          },
+          "x": {
+            "min": 148.75,
+            "max": 148.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 335,
+            "max": 335
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        183,
+        183
+      ],
+      "pendingFrames": [
+        23,
+        16
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 390x844",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 293.3359375,
+            "max": 293.3359375
+          },
+          "stage": {
+            "min": 462,
+            "max": 462
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 293.3359375,
+            "max": 293.3359375
+          },
+          "stage": {
+            "min": 462,
+            "max": 462
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        }
+      ],
+      "frames": [
+        182,
+        182
+      ],
+      "pendingFrames": [
+        17,
+        21
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 390x844",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 293.3359375,
+            "max": 293.3359375
+          },
+          "stage": {
+            "min": 462,
+            "max": 462
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        },
+        {
+          "width": {
+            "min": 374,
+            "max": 374
+          },
+          "height": {
+            "min": 249.328125,
+            "max": 249.328125
+          },
+          "x": {
+            "min": 8,
+            "max": 8
+          },
+          "y": {
+            "min": 293.3359375,
+            "max": 293.3359375
+          },
+          "stage": {
+            "min": 462,
+            "max": 462
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        }
+      ],
+      "frames": [
+        231,
+        231
+      ],
+      "pendingFrames": [
+        21,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 320x568",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 77.5,
+            "max": 77.5
+          },
+          "y": {
+            "min": 225,
+            "max": 225
+          },
+          "stage": {
+            "min": 186,
+            "max": 186
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        },
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 77.5,
+            "max": 77.5
+          },
+          "y": {
+            "min": 225,
+            "max": 225
+          },
+          "stage": {
+            "min": 186,
+            "max": 186
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        }
+      ],
+      "frames": [
+        202,
+        201
+      ],
+      "pendingFrames": [
+        23,
+        24
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 320x568",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 77.5,
+            "max": 77.5
+          },
+          "y": {
+            "min": 225,
+            "max": 225
+          },
+          "stage": {
+            "min": 186,
+            "max": 186
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        },
+        {
+          "width": {
+            "min": 165,
+            "max": 165
+          },
+          "height": {
+            "min": 110,
+            "max": 110
+          },
+          "x": {
+            "min": 77.5,
+            "max": 77.5
+          },
+          "y": {
+            "min": 225,
+            "max": 225
+          },
+          "stage": {
+            "min": 186,
+            "max": 186
+          },
+          "stageY": {
+            "min": 149,
+            "max": 149
+          }
+        }
+      ],
+      "frames": [
+        300,
+        300
+      ],
+      "pendingFrames": [
+        34,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 844x390",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 334.25,
+            "max": 334.25
+          },
+          "y": {
+            "min": 126,
+            "max": 126
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        },
+        {
+          "width": {
+            "min": 175.5,
+            "max": 175.5
+          },
+          "height": {
+            "min": 117,
+            "max": 117
+          },
+          "x": {
+            "min": 334.25,
+            "max": 334.25
+          },
+          "y": {
+            "min": 126,
+            "max": 126
+          },
+          "stage": {
+            "min": 117,
+            "max": 117
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        }
+      ],
+      "frames": [
+        221,
+        221
+      ],
+      "pendingFrames": [
+        25,
+        23
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 667x375",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 153,
+            "max": 153
+          },
+          "height": {
+            "min": 102,
+            "max": 102
+          },
+          "x": {
+            "min": 257,
+            "max": 257
+          },
+          "y": {
+            "min": 126,
+            "max": 126
+          },
+          "stage": {
+            "min": 102,
+            "max": 102
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        },
+        {
+          "width": {
+            "min": 153,
+            "max": 153
+          },
+          "height": {
+            "min": 102,
+            "max": 102
+          },
+          "x": {
+            "min": 257,
+            "max": 257
+          },
+          "y": {
+            "min": 126,
+            "max": 126
+          },
+          "stage": {
+            "min": 102,
+            "max": 102
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        }
+      ],
+      "frames": [
+        216,
+        215
+      ],
+      "pendingFrames": [
+        18,
+        27
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "four real draw/discard cycles at 320x480",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 114.46875,
+            "max": 114.46875
+          },
+          "height": {
+            "min": 76.3125,
+            "max": 76.3125
+          },
+          "x": {
+            "min": 102.765625,
+            "max": 102.765625
+          },
+          "y": {
+            "min": 202,
+            "max": 202
+          },
+          "stage": {
+            "min": 152.3125,
+            "max": 152.3125
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        },
+        {
+          "width": {
+            "min": 114.46875,
+            "max": 114.46875
+          },
+          "height": {
+            "min": 76.3125,
+            "max": 76.3125
+          },
+          "x": {
+            "min": 102.765625,
+            "max": 102.765625
+          },
+          "y": {
+            "min": 202,
+            "max": 202
+          },
+          "stage": {
+            "min": 152.3125,
+            "max": 152.3125
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        }
+      ],
+      "frames": [
+        208,
+        206
+      ],
+      "pendingFrames": [
+        23,
+        20
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE"
+        ]
+      ]
+    },
+    {
+      "name": "three commas, wrap, last-tile focus and keyboard reorder at 320x480",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 114.46875,
+            "max": 114.46875
+          },
+          "height": {
+            "min": 76.3125,
+            "max": 76.3125
+          },
+          "x": {
+            "min": 102.765625,
+            "max": 102.765625
+          },
+          "y": {
+            "min": 202,
+            "max": 202
+          },
+          "stage": {
+            "min": 152.3125,
+            "max": 152.3125
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        },
+        {
+          "width": {
+            "min": 114.46875,
+            "max": 114.46875
+          },
+          "height": {
+            "min": 76.3125,
+            "max": 76.3125
+          },
+          "x": {
+            "min": 102.765625,
+            "max": 102.765625
+          },
+          "y": {
+            "min": 202,
+            "max": 202
+          },
+          "stage": {
+            "min": 152.3125,
+            "max": 152.3125
+          },
+          "stageY": {
+            "min": 126,
+            "max": 126
+          }
+        }
+      ],
+      "frames": [
+        220,
+        220
+      ],
+      "pendingFrames": [
+        29,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    },
+    {
+      "name": "self HU, automatic DOM rack, review and rejected return",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        88,
+        87
+      ],
+      "pendingFrames": [
+        8,
+        32
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "HU_VOTE"
+        ],
+        [
+          "TURN_ACTION",
+          "HU_VOTE"
+        ]
+      ]
+    },
+    {
+      "name": "borrowed 13+1 composition and withdrawal keep the table frame",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        97,
+        97
+      ],
+      "pendingFrames": [
+        6,
+        20
+      ],
+      "phases": [
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE",
+          "HU_COMPOSE"
+        ],
+        [
+          "TURN_ACTION",
+          "DISCARD_RESPONSE",
+          "HU_COMPOSE"
+        ]
+      ]
+    },
+    {
+      "name": "autoplay notice appears and disappears without moving table",
+      "status": "PASS",
+      "stats": [
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        },
+        {
+          "width": {
+            "min": 682.5,
+            "max": 682.5
+          },
+          "height": {
+            "min": 455,
+            "max": 455
+          },
+          "x": {
+            "min": 298.75,
+            "max": 298.75
+          },
+          "y": {
+            "min": 175,
+            "max": 175
+          },
+          "stage": {
+            "min": 455,
+            "max": 455
+          },
+          "stageY": {
+            "min": 175,
+            "max": 175
+          }
+        }
+      ],
+      "frames": [
+        65,
+        65
+      ],
+      "pendingFrames": [
+        30,
+        0
+      ],
+      "phases": [
+        [
+          "TURN_ACTION"
+        ],
+        [
+          "TURN_ACTION"
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

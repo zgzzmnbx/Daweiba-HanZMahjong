@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-24T00:59:41.971317+00:00",
+  "release": "1.15.0-20261024-085919",
+  "source": "770cbbe + stable layout (same source as 51d8d19)",
+  "backup": "pre-release-20261024-085920.sqlite",
+  "ready": true,
+  "assets": [
+    {
+      "asset": "/assets/index-BWDnTHQg.js",
+      "sha256": "cb9f8f595d2be027dc5b5d3cc4cc0db6556a29aabf7264597871c9dd5970b9b2",
+      "bytes": 883428
+    },
+    {
+      "asset": "/assets/index-DpWSAtZn.css",
+      "sha256": "205a0ac9cd993dabbde5b1c18a338e421141a36206057653899fedf0e4e0fd70",
+      "bytes": 120486
+    }
+  ],
+  "existingApprovedSentenceCount": 44
+}
