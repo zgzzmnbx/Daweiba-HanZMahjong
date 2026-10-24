@@ -8,7 +8,7 @@
 
 正式 release `1.14.0-20261024-083259`，一致性备份 `pre-release-20261024-083300.sqlite`；公网 ready=true，首页与 JS/CSS 字节匹配独立候选构建。沿用 1240 入口和已发布的六人候场修复。源码基于 `d4bebb9` 加发布版本文件与候场 CSS 补丁，运行配置/原局/字库未改写。
 
-证据：`docs/evidence/public-doodle-1.14.0-results.json`、`public-doodle-1.14.0-release.json`；实现边界见 `docs/increments/TABLE-DOODLE-20261024-【codex】.md`。GitHub 同步单独核对后记录；实体手机触控/GPU未以 Chrome 模拟冒充。
+证据：`docs/evidence/public-doodle-1.14.0-results.json`、`public-doodle-1.14.0-release.json`；实现边界见 `docs/increments/TABLE-DOODLE-20261024-【codex】.md`。实现与证据已同步 GitHub `8cacb6c`，提交树与本地交付逐项一致；实体手机触控/GPU未以 Chrome 模拟冒充。
 
 ## v1.13.0 · 2026-10-24
 

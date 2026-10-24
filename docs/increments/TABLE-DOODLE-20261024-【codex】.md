@@ -23,7 +23,7 @@
 
 独立模块：contracts/doodle、server/room-doodle、RoomDoodle、SpectatorDoodle、room-doodle-client、room-doodle.css、table3d/doodle-surface。接线：server、game-client、OnlineApp、GameTable、SpectatorTable、spectator 合同、MainView.refresh。
 
-暂无未修复功能问题。版本、README/CHANGELOG/大厅日志、生产备份与公网16项验收完成；GitHub同步收尾中。
+暂无未修复功能问题。版本、README/CHANGELOG/大厅日志、生产备份与公网16项验收完成；GitHub实现与证据已同步，远端树逐项核对一致。
 
 应用 **1.14.0** / 规则仍为 **1.4.0**。新增共享桌面涂鸦：五色三档笔刷、真实绿绒平面笔迹、同桌实时同步、仅撤销/清空本人、本机显隐、刷新恢复与只读观战。落笔收起菜单，绘画以外事件透传；评审、响应和本人行动末十秒退出。
 
@@ -31,5 +31,4 @@
 
 正式 release `1.14.0-20261024-083259`，一致性备份 `pre-release-20261024-083300.sqlite`；公网 ready=true，首页与 JS/CSS 字节匹配独立候选构建。沿用 1240 入口和已发布的六人候场修复。源码基于 `d4bebb9` 加发布版本文件与候场 CSS 补丁，运行配置/原局/字库未改写。
 
-证据：`docs/evidence/public-doodle-1.14.0-results.json`、`public-doodle-1.14.0-release.json`；实现边界见 `docs/increments/TABLE-DOODLE-20261024-【codex】.md`。GitHub 同步单独核对后记录；实体手机触控/GPU未以 Chrome 模拟冒充。
-
+证据：`docs/evidence/public-doodle-1.14.0-results.json`、`public-doodle-1.14.0-release.json`；实现边界见 `docs/increments/TABLE-DOODLE-20261024-【codex】.md`。实现与证据已同步 GitHub `8cacb6c`，提交树与本地交付逐项一致；实体手机触控/GPU未以 Chrome 模拟冒充。
