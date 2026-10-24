@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-25',title:'整理牌架，一点就开',features:['宽屏顶栏新增整理按钮，直接展开或收起整理牌架。','手机保持现有布局，原设置里的整理入口继续可用。']},
+ {version:packageInfo.version,date:'2026-10-25',title:'牌不挤，标点看得清',features:['整理牌架、胡牌确认和评审按空间自动选择一排或两排，最多两排，字牌保持正常比例。','胡牌逗号与句号占独立位置，清晰显示，不再叠在字牌边缘。']},
+ {version:'1.23.5',date:'2026-10-25',title:'整理牌架，一点就开',features:['宽屏顶栏新增整理按钮，直接展开或收起整理牌架。','手机保持现有布局，原设置里的整理入口继续可用。']},
  {version:'1.23.4',date:'2026-10-25',title:'标点，独立一点',features:['移动字牌时，逗号留在原来的字间位置，不再跟着字牌拖走。','手牌末尾新增固定句号牌，样式与逗号一致，不占字牌数量。','手机点击句号打开逗号菜单；宽屏逗号菜单继续常驻。']},
  {version:'1.23.3',date:'2026-10-25',title:'字间，统一苹方',features:['大厅、菜单、聊天、评审以及桌面和手机麻将牌面统一使用苹方字体。','摸、打、吃、胡等打牌按钮的大字保留原样。','字体由游戏提供，按需加载，无需在设备上安装。']},
  {version:'1.23.2',date:'2026-10-25',title:'音乐，更响一些',features:['背景音乐的默认音量与最大音量均提高至原来的2倍。','音量仍可单独调节；音效和报字、胡句朗读出现时，音乐继续自动让位。']},

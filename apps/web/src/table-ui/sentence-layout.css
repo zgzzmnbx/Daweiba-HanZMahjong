@@ -1,0 +1,16 @@
+/* One measured layout for confirmation, reveal and review. No viewport override may add a third row. */
+.hu-review-dialog .adaptive-sentence.hu-slam-rack,.hu-showcase .adaptive-sentence.hu-slam-rack{display:block;position:relative;flex:1 1 0;min-height:0;max-height:none;width:100%;max-width:none;margin:0;gap:0;perspective:900px;pointer-events:auto}
+.adaptive-sentence .hu-slam-unit{position:absolute;display:block;min-width:0;min-height:0;padding:0;container-type:normal}
+.adaptive-sentence .hu-slam-unit>b,.hu-review-dialog .adaptive-sentence .review-tile{display:block;width:var(--sentence-tile-width);height:var(--sentence-tile-height);min-width:0;min-height:0;max-width:none;flex:none;padding:0}
+.adaptive-sentence .hu-slam-unit>b,.hu-review-dialog .adaptive-sentence .hu-slam-unit b{width:var(--sentence-tile-width);height:var(--sentence-tile-height);display:grid;place-items:center;aspect-ratio:.7;font-size:var(--sentence-font-size);line-height:1;opacity:1;border-width:1px 3px 5px 1px}
+.hu-review-dialog .adaptive-sentence .hu-slam-unit b{animation:none}
+.adaptive-sentence .hu-slam-unit>.hu-slam-comma{position:absolute;right:auto;top:0;width:var(--sentence-punctuation-width);height:var(--sentence-tile-height);display:grid;place-items:center;box-sizing:border-box;margin:0;border:1px solid #e4c38388;border-bottom:4px solid #ac925d60;border-radius:5px;background:#eadab815;color:#ffe3a4;font-style:normal;font-size:calc(var(--sentence-tile-width)*1.35);line-height:1;opacity:1;pointer-events:none;overflow:hidden}
+/* Center actual PingFang punctuation ink (100px font metrics), not its full-width advance. */
+.adaptive-sentence .hu-slam-comma>span{position:absolute;left:50%;top:50%;width:1em;height:1em;display:block;line-height:1;transform:translate(-50%,-50%) translate(.306em,-.382em)}
+.adaptive-sentence .hu-slam-period>span{transform:translate(-50%,-50%) translate(.25em,-.343em)}
+.hu-showcase:not(.hu-review-dialog) .adaptive-sentence{max-height:55%;flex-basis:45%}
+.hu-confirm .adaptive-sentence.hu-confirm-sentence{position:relative;display:block;width:100%;max-width:100%;margin:14px 0;flex:none}
+.hu-confirm .adaptive-sentence .hu-slam-unit>b{min-width:0;border-radius:5px;border-bottom:5px solid #a58b5b;background:#f7eac8;color:#173b2b;font-weight:600;box-shadow:none;animation:none}
+.hu-showcase:not(.hu-review-dialog):not([data-ready=true]) .adaptive-sentence .hu-slam-unit>b{opacity:0}
+/* Two physical rows reserve their own height instead of clipping the second row. */
+#root .game-shell .rack-area.expanded{max-height:none;overflow:visible}

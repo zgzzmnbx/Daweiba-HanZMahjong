@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-24T17:36:54.350Z",
+  "version": "1.23.6",
+  "origin": "http://127.0.0.1:3174",
+  "browser": "141.0.7390.37",
+  "scope": "actual two-client Socket/SQLite, CDP touch, WebGL mouse, three commas and end marker, resize, refresh, discard/draw; simulated phones, not physical Safari",
+  "checks": [
+    {
+      "name": "phone end marker opens real comma menu and three commas save without consuming character tiles",
+      "status": "PASS"
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 320",
+      "status": "PASS",
+      "period": {
+        "x": 294.8571472167969,
+        "y": 385.0670471191406,
+        "width": 19.140625,
+        "height": 39.0625
+      },
+      "viewport": {
+        "w": 320,
+        "h": 480,
+        "sw": 320,
+        "sh": 480
+      },
+      "characters": 14
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 390",
+      "status": "PASS",
+      "period": {
+        "x": 356.4285583496094,
+        "y": 607.93310546875,
+        "width": 23.5625,
+        "height": 48.09375
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "sw": 390,
+        "sh": 844
+      },
+      "characters": 14
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 667",
+      "status": "PASS",
+      "period": {
+        "x": 484.79998779296875,
+        "y": 283,
+        "width": 33.59375,
+        "height": 42
+      },
+      "viewport": {
+        "w": 667,
+        "h": 375,
+        "sw": 667,
+        "sh": 375
+      },
+      "characters": 14
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 1280",
+      "status": "PASS",
+      "period": {
+        "x": 994.5,
+        "y": 561.453125,
+        "width": 32.53125,
+        "height": 65.078125
+      },
+      "viewport": {
+        "w": 1280,
+        "h": 800,
+        "sw": 1280,
+        "sh": 800
+      },
+      "characters": 14
+    },
+    {
+      "name": "only the character lifts, comma remains at old gap and one authoritative draft saves touch across rows",
+      "status": "PASS"
+    },
+    {
+      "name": "only the character lifts, comma remains at old gap and one authoritative draft saves real WebGL mouse",
+      "status": "PASS"
+    },
+    {
+      "name": "period cannot be dragged, reordered or submitted as a tile",
+      "status": "PASS"
+    },
+    {
+      "name": "wide DOM fallback retains final period and persistent comma tray",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh preserves comma gaps and derives one fixed final period",
+      "status": "PASS"
+    },
+    {
+      "name": "real discard/draw keep 13/14 physical tiles and a single final period",
+      "status": "PASS"
+    },
+    {
+      "name": "own private room closes unscored without HU or book entry",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

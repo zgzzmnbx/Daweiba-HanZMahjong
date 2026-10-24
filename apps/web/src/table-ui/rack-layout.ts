@@ -11,15 +11,16 @@ export function rackLayout(draft:Draft,tileWidth:number,height:number,gap:number
 /** Seven characters per row; punctuation shares its anchor's row without adding a third row.
  * Reserve seven character slots even for a thirteen-tile hand, so drawing does not resize it. */
 export function mobileRackLayout(draft:Draft,maxWidth:number,compact=false){
- const gap=4,rowGap=8,height=compact?42:58,commas=new Set(draft.commaAfterTileIds);
+ const gap=4,rowGap=8,maxHeight=compact?42:58,commas=new Set(draft.commaAfterTileIds);
  const rows=Array.from({length:Math.ceil(draft.orderedTileIds.length/7)},(_,i)=>draft.orderedTileIds.slice(i*7,i*7+7));
  const punctuation=Math.max(0,...rows.map((row,i)=>row.filter(id=>commas.has(id)).length+(i===rows.length-1?1:0)));
  const tileWidth=Math.min(48,Math.max(1,(maxWidth-gap*(6+punctuation))/(7+punctuation*COMMA_WIDTH_RATIO)));
+ const height=Math.min(maxHeight,tileWidth/.7);
  const items:RackItem[]=[];let width=0;
  rows.forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,height,gap,Infinity,10,row===rows.length-1);
   for(const item of line.items)items.push({...item,row,y:row*(height+rowGap)});width=Math.max(width,line.width);
  });
- return{items,width,height:rows.length?rows.length*height+(rows.length-1)*rowGap:0,tileWidth,reserve:2*height+rowGap};
+ return{items,width,height:rows.length?rows.length*height+(rows.length-1)*rowGap:0,tileWidth,reserve:2*maxHeight+rowGap};
 }
 /** Moving a character leaves punctuation at its old gap, rather than carrying it. */
 export function movePreview(draft:Draft,tileId:TileId,index:number):Draft{
@@ -38,3 +39,17 @@ export function nearestSlot(rects:readonly RackRect[],x:number,y:number){let res
 /** Only explicit nearby rack targets may reorder; dragging across the table must not shuffle cards. */
 export function insideRect(r:{left:number;top:number;width:number;height:number}|null|undefined,x:number,y:number,pad=0){return !!r&&x>=r.left-pad&&x<=r.left+r.width+pad&&y>=r.top-pad&&y<=r.top+r.height+pad;}
 export function nearRackSlot(rects:readonly RackRect[],x:number,y:number){return rects.some(r=>insideRect(r,x,y,28))?nearestSlot(rects,x,y):null;}
+
+/** At most two rows, with a real punctuation slot and undistorted .7 character aspect.
+ * Budget fourteen characters and all punctuation so drawing/reordering never changes row count. */
+export function adaptiveRackLayout(draft:Draft,maxWidth:number,maxHeight=Infinity,maxTileHeight=76,minTileWidth=46,gap=6,rowGap=8,center=false){
+ const one=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*17)/(14+4*COMMA_WIDTH_RATIO),maxHeight*.7));
+ const two=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*10)/(7+4*COMMA_WIDTH_RATIO),(maxHeight-rowGap)/2*.7));
+ const rows=draft.orderedTileIds.length?one<minTileWidth&&two>one?2:1:0,tileWidth=rows===2?two:one,tileHeight=tileWidth/.7;
+ const groups=rows===2?[draft.orderedTileIds.slice(0,7),draft.orderedTileIds.slice(7)]:[draft.orderedTileIds];
+ const items:RackItem[]=[];let width=0;
+ groups.filter(ids=>ids.length).forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,tileHeight,gap,Infinity,rowGap,row===groups.length-1);
+  for(const item of line.items)items.push({...item,row,x:item.x+(center?(maxWidth-line.width)/2:0),y:row*(tileHeight+rowGap)});width=Math.max(width,line.width);
+ });
+ return{items,width,height:rows?rows*tileHeight+(rows-1)*rowGap:0,tileWidth,tileHeight,rows,reserve:rows?rows*maxTileHeight+(rows-1)*rowGap:0};
+}

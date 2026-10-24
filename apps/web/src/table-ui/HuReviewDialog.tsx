@@ -1,3 +1,4 @@
+import {SentenceTiles} from './SentenceTiles';
 import {TurnHud} from './TurnHud';
 import {phaseClock,turnHint} from './turn-hud';
 import type {useGameSfx} from '../audio/use-game-sfx';
@@ -15,7 +16,7 @@ export function HuReviewDialog({sfx,speech,proposal,presentation,clock,envelope,
  const root=useRef<HTMLDialogElement>(null),seen=useRef(new Set<string>()),initialized=useRef(false);
  const [audioOpen,setAudioOpen]=useState(false),[intro,setIntro]=useState(false),[eggs,setEggs]=useState<Egg[]>([]),[hint,setHint]=useState(''),[rejecting,setRejecting]=useState(false);
  const result='result' in proposal?proposal.result:null,finished='outcome' in proposal,canVote=c.allowed('VOTE')&&!finished;
- const votes=proposal.reviewers??[],commas=new Set(proposal.snapshot.sentence.commaAfterTileIds),ids=proposal.snapshot.sentence.orderedTileIds;
+ const votes=proposal.reviewers??[],ids=proposal.snapshot.sentence.orderedTileIds;
  const nickname=envelope.public.players.find(p=>p.playerId===proposal.applicantId)?.nickname??'同桌';
  const own=envelope.private.ownBallot;
  const objectionNames=(index:number)=>votes.filter(v=>v.choice==='REJECT'&&v.objectionRanges.some(r=>index>=r.start&&index<r.endExclusive)).map(v=>v.nickname);
@@ -23,12 +24,12 @@ export function HuReviewDialog({sfx,speech,proposal,presentation,clock,envelope,
  useLayoutEffect(()=>{
   const el=root.current;if(!el||!presentation)return;setIntro(true);delete el.dataset.ready;
   const started=performance.now()-presentation.age;
-  for(const [i,unit] of [...el.querySelectorAll<HTMLElement>('.hu-slam-unit')].entries()){
+  const frame=requestAnimationFrame(()=>{for(const [i,unit] of [...el.querySelectorAll<HTMLElement>('.hu-slam-unit')].entries()){
    const rect=unit.querySelector('b')!.getBoundingClientRect(),origin=presentation.origins[presentation.sourceKeys[i]];
    unit.style.setProperty('--from-x',`${origin?origin.x-rect.left-rect.width/2:0}px`);unit.style.setProperty('--from-y',`${origin?origin.y-rect.top-rect.height/2:120}px`);unit.style.setProperty('--from-scale',String(origin?Math.max(.25,origin.width/rect.width):.5));
    unit.style.setProperty('--delay',`${HU_INTRO_MS+i*HU_STEP_MS-(performance.now()-started)}ms`);unit.style.setProperty('--impact-delay',`${HU_INTRO_MS+i*HU_STEP_MS+HU_FLIGHT_MS*.72-(performance.now()-started)}ms`);
   }
-  el.dataset.ready='true';const timer=setTimeout(()=>setIntro(false),Math.max(0,HU_SHOW_MS-presentation.age));return()=>clearTimeout(timer);
+  el.dataset.ready='true';});const timer=setTimeout(()=>setIntro(false),Math.max(0,HU_SHOW_MS-presentation.age));return()=>{cancelAnimationFrame(frame);clearTimeout(timer);};
  },[presentation]);
  useLayoutEffect(()=>{
   const el=root.current;if(!el)return;const fresh=votes.filter(v=>v.choice==='REJECT'&&!seen.current.has(v.playerId));
@@ -48,7 +49,7 @@ export function HuReviewDialog({sfx,speech,proposal,presentation,clock,envelope,
   <div className="hu-burst-lines" aria-hidden="true"/>
   <header className="hu-review-heading"><span className="hu-seal" aria-hidden="true">胡</span><div><small>{nickname} · 亮牌请评</small><h2>{finished?(result?.passed?'这句，胡了！':result?'这句，没过！':'本次申请已撤回'):'这句，大家说了算。'}</h2></div>{speech&&<button className="review-audio-toggle" aria-label="评审声音设置" aria-expanded={audioOpen} onClick={()=>setAudioOpen(x=>!x)}><span aria-hidden="true">♫</span><small>声音</small></button>}</header>
   <div className="hu-review-content">
-   <div className={"hu-slam-rack "+(rejecting?"choosing-objection":"")} aria-label="待评审句子">{ids.map((id,i)=>{const char=proposal.snapshot.tiles.find(t=>t.tileId===id)?.char,names=objectionNames(i),selected=showRanges.some(r=>i>=r.start&&i<r.endExclusive);return <span className={'hu-slam-unit '+(names.length?'has-objection ':'')+(selected?'selected':'')} key={id}><button className="review-tile" data-review-index={i} aria-label={`圈选第 ${i+1} 字 ${char}`} aria-pressed={selected} disabled={!canVote||!rejecting} title={names.length?`${names.join('、')}：这里不通顺`:undefined} onClick={()=>toggle(i)}><b>{char}</b>{names.length>0&&<span className="egg-stain" aria-label={`${names.join('、')}提出异议`}/>}</button>{commas.has(id)&&<i className="hu-slam-comma">，</i>}<svg className="hu-impact-spark" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 0 67 38 92 15 80 46 120 52 83 65 106 95 72 81 65 120 53 83 21 104 37 72 0 65 38 53 14 22 47 38Z"/></svg></span>;})}</div>
+   <SentenceTiles className={'hu-slam-rack '+(rejecting?'choosing-objection':'')} label="待评审句子" sentence={proposal.snapshot.sentence} unitClass={i=>{const names=objectionNames(i);return(names.length?'has-objection ':'')+(showRanges.some(r=>i>=r.start&&i<r.endExclusive)?'selected':'');}} renderTile={(id,i)=>{const char=proposal.snapshot.tiles.find(t=>t.tileId===id)?.char,names=objectionNames(i),selected=showRanges.some(r=>i>=r.start&&i<r.endExclusive);return <button className="review-tile" data-review-index={i} aria-label={`圈选第 ${i+1} 字 ${char}`} aria-pressed={selected} disabled={!canVote||!rejecting} title={names.length?`${names.join('、')}：这里不通顺`:undefined} onClick={()=>toggle(i)}><b>{char}</b>{names.length>0&&<span className="egg-stain" aria-label={`${names.join('、')}提出异议`}/>}</button>;}} decoration={()=><svg className="hu-impact-spark" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 0 67 38 92 15 80 46 120 52 83 65 106 95 72 81 65 120 53 83 21 104 37 72 0 65 38 53 14 22 47 38Z"/></svg>}/>
    {speech&&<div className={'hu-speech-controls '+(audioOpen?'expanded':'')}>{sfx&&<button onClick={sfx.toggle}>{sfx.enabled?'关闭音效':'开启音效'}</button>}<button disabled={!speech.enabled} onClick={()=>speech.replayHu(proposal.proposalId)}>{speech.playing?'重新朗读':'朗读胡牌句子'}</button><button onClick={speech.toggle}>{speech.enabled?'关闭语音':'开启语音'}</button>{speech.message&&<small role="status">{speech.message}</small>}</div>}<div className="review-progress">{result?`赞成 ${result.approveCount} · 反对 ${result.rejectCount} · 未投 ${result.abstainCount} · 需 ${result.threshold} 票`:'submittedBallotCount' in proposal?`已投 ${proposal.submittedBallotCount} / ${proposal.reviewerCount} · 需 ${proposal.threshold} 票赞成`:''}</div>
    <section className="review-voters" aria-label="大家的投票">{votes.map(v=><article key={v.playerId} data-voter={v.playerId} className={'review-voter '+v.choice.toLowerCase()}><span className="voter-icon" aria-hidden="true">{v.choice==='APPROVE'?'✓':v.choice==='REJECT'?'🥚':v.choice==='ABSTAIN'?'—':'…'}</span><div><strong title={v.nickname}>{v.nickname}{v.isBotSeat?' · AI':''}</strong><small>{v.choice==='APPROVE'?'赞成':v.choice==='REJECT'?'不赞成':v.choice==='ABSTAIN'?'未投票':'考虑中'}{v.choice==='REJECT'&&v.objectionRanges.length>0&&' · '+v.objectionRanges.map(r=>'「'+ids.slice(r.start,r.endExclusive).map(id=>proposal.snapshot.tiles.find(t=>t.tileId===id)?.char).join('')+'」').join('、')}</small></div></article>)}</section>
    {!votes.length&&<p>本局沿用旧版匿名评审（45 秒）。</p>}
