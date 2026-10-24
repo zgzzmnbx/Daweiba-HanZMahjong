@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-24T03:39:50.333Z",
+  "scope": "Selected immutable release loads a fresh consistent production backup on an isolated port/database; production data remains untouched",
+  "version": "1.19.1",
+  "release": "/Users/sm/Downloads/Codex-MAC/261021-HanzMahjong",
+  "status": "PASS",
+  "roomsChecked": 132,
+  "resultsChecked": 139,
+  "invariants": [
+    "only 1.5.0 -> 1.5.1 repeal and legacy flag removal",
+    "designated AI",
+    "practice mode",
+    "hands",
+    "drafts",
+    "wall order",
+    "cursor",
+    "wins",
+    "archives",
+    "settlement keys",
+    "persisted results"
+  ],
+  "limitation": "Confirms only this selected release loads this snapshot; does not establish 1.1 AI-room downgrade compatibility with 1.0"
+}

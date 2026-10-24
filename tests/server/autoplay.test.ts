@@ -27,7 +27,7 @@ async function fixture(capacity:number,bots=false){
   for(const c of clients)assert.equal((await c.send({kind:'READY',ready:true})).ok,true);
   assert.equal((await clients[0].send({kind:'START_ROUND'})).ok,true);
  }catch(e){for(const c of clients)c.socket.disconnect();await server.close();rmSync(dir,{recursive:true,force:true});throw e;}
- return {server,clients,setNow:(value:number)=>now=value,async close(){for(const c of clients)c.socket.disconnect();await server.close();rmSync(dir,{recursive:true,force:true});}};
+ return {server,clients,setNow:(value:number)=>now=value,async close(){for(const c of clients)c.socket.disconnect();if(server.store.db.isOpen)await server.close();rmSync(dir,{recursive:true,force:true});}};
 }
 
 test('HTTP/WSS delegation is persisted atomically, cancelled without resetting human time, and idempotent across retries',async()=>{
@@ -51,17 +51,25 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
  }finally{await f.close();}
 });
 
-test('listening commits atomically over real sockets, persists publicly, and admits non-previous-seat HU',async()=>{
+test('real sockets borrow non-previous-seat discard without listening, atomically and with 14-tile candidate',async()=>{
  const f=await fixture(3);try{
-  const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),next=f.clients[(actor.seat+1)%3];
-  f.server.store.failNextCommit=true;assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).error,'PERSISTENCE_UNAVAILABLE');assert(!(await actor.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).listening);assert(!f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.listening);
-  assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).ok,true);for(const c of f.clients)assert.equal((await c.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).listening,true);assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.listening,true);
-  assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);for(const c of f.clients.filter(c=>c!==actor)){const e=await c.snapshot();assert.equal((await c.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);}
-  assert.equal((await next.send({kind:'DISCARD',tileId:(await next.snapshot()).private.hand[0].tileId})).ok,true);const e=await actor.snapshot();assert.equal((await actor.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'HU'})).ok,true);for(const c of f.clients.filter(c=>c!==actor&&c!==next))assert.equal((await c.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);
-  const candidate=await actor.snapshot();assert.equal(candidate.public.phase.kind,'HU_COMPOSE');assert.equal(candidate.public.phase.applicantId,actor.id);assert.equal(candidate.private.hand.length,13);assert.equal(candidate.private.candidateDraft.sentence.orderedTileIds.length,14);
+  const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),other=f.clients[(actor.seat+2)%3],next=f.clients[(actor.seat+1)%3];
+  assert(!initial.legalActions.includes('SET_LISTENING'));assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).code,'PHASE_CLOSED');assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);
+  const responseWindowId=(await other.snapshot()).public.phase.responseWindowId;
+  f.server.store.failNextCommit=true;assert.equal((await other.send({kind:'RESPOND',responseWindowId,response:'HU'})).error,'PERSISTENCE_UNAVAILABLE');assert.equal((await other.snapshot()).private.ownResponse,null);
+  assert.equal((await other.send({kind:'RESPOND',responseWindowId,response:'HU'})).ok,true);assert.equal((await next.send({kind:'RESPOND',responseWindowId,response:'PASS'})).ok,true);
+  const candidate=await other.snapshot();assert.equal(candidate.public.phase.kind,'HU_COMPOSE');assert.equal(candidate.public.phase.applicantId,other.id);assert.equal(candidate.private.hand.length,13);assert.equal(candidate.private.candidateDraft.sentence.orderedTileIds.length,14);assert.equal(f.server.store.load()[0].public.phase.kind,'HU_COMPOSE');
  }finally{await f.close();}
 });
 
-test('real socket rejects forged non-previous-seat HU and late listening without consuming a response',async()=>{
- const f=await fixture(3);try{const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),other=f.clients[(actor.seat+2)%3];assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);const e=await other.snapshot();assert.equal((await other.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'HU'})).code,'LISTENING_REQUIRED');assert.equal((await other.snapshot()).private.ownResponse,null);assert.equal((await other.send({kind:'SET_LISTENING',enabled:true})).code,'PHASE_CLOSED');assert.equal((await other.send({kind:'RESPOND',responseWindowId:e.public.phase.responseWindowId,response:'PASS'})).ok,true);}finally{await f.close();}
+test('server startup persists removal of old flags while preserving hands and rule history',async()=>{
+ const f=await fixture(3);let reopened:ReturnType<typeof createGameServer>|undefined;
+ try{
+  const g=f.server.games.values().next().value!;g.public.rulesVersion='1.5.0';(g.public.players[0] as any).listening=true;(g.public.players[1] as any).listening=false;
+  f.server.store.commit(g,'LEGACY_LISTENING_FIXTURE',0);const hands=structuredClone([...g.players].map(([id,p])=>[id,p.hand,p.draft])),path=f.server.store.path;
+  for(const c of f.clients)c.socket.disconnect();await f.server.close();
+  reopened=createGameServer({dbPath:path,publicOrigin:origin,automaticTimers:false,now:()=>1000});
+  const loaded=reopened.store.load()[0];assert.equal(loaded.public.rulesVersion,'1.5.1');assert(loaded.public.players.every(p=>!('listening' in p)));assert.deepEqual([...loaded.players].map(([id,p])=>[id,p.hand,p.draft]),hands);
+  const raw=JSON.parse((reopened.store.db.prepare('SELECT data FROM room_snapshots').get() as any).data);assert(raw.public.players.every((p:any)=>!('listening' in p)));assert.equal(raw.public.rulesVersion,'1.5.1');
+ }finally{await reopened?.close();await f.close();}
 });

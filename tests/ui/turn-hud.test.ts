@@ -40,4 +40,4 @@ test('review and compose prompts respect roles; observer never receives a comman
  assert.match(spectatorHint(fixture().public),/^观看.*出牌$/);
 });
 
-test('three-second AI progress uses the new budget while old rounds retain five seconds',()=>{for(const [version,total]of [['1.4.0',5000],['1.4.1',3000],['1.5.0',3000]] as const){const e=fixture();(e.public as any).rulesVersion=version;(e.public.players[0] as any).autoPlay=true;const end=e.public.phase.deadline!.endsAt;assert.equal(phaseClock(e.public,end-total).ratio,1);assert.equal(phaseClock(e.public,end-total/2).ratio,.5);assert.equal(phaseClock(e.public,end).ratio,0);}});
+test('three-second AI progress uses the new budget while old rounds retain five seconds',()=>{for(const [version,total]of [['1.4.0',5000],['1.4.1',3000],['1.5.1',3000]] as const){const e=fixture();(e.public as any).rulesVersion=version;(e.public.players[0] as any).autoPlay=true;const end=e.public.phase.deadline!.endsAt;assert.equal(phaseClock(e.public,end-total).ratio,1);assert.equal(phaseClock(e.public,end-total/2).ratio,.5);assert.equal(phaseClock(e.public,end).ratio,0);}});

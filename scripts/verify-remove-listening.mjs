@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+import {mkdtemp,mkdir,readFile,writeFile,rm} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {randomUUID} from 'node:crypto';
+import {createGameServer} from '../apps/server/server.ts';
+import {gameTool} from './game-ui-tools.mjs';
+const local=!process.env.PUBLIC_ORIGIN,base=process.env.PUBLIC_ORIGIN??'http://127.0.0.1:3162';
+const version=JSON.parse(await readFile('package.json','utf8')).version,prefix=`${local?'':'public-'}remove-listening-${version}`;
+await mkdir('Codex-Temp',{recursive:true});await mkdir('docs/evidence',{recursive:true});
+const dir=await mkdtemp(resolve('Codex-Temp/remove-listening-'));
+const server=local?createGameServer({dbPath:join(dir,'game.sqlite'),publicOrigin:base,staticDir:resolve('dist/web')}):null;if(server)await server.listen(3162);
+const browser=await chromium.launch({channel:'chrome',headless:true});const contexts=[],rooms=[],checks=[],errors=[];
+const pass=(name,data={})=>{checks.push({name,status:'PASS',...data});console.log('PASS',name);};
+const wait=async fn=>{for(let i=0;i<160;i++){const v=await fn();if(v)return v;await new Promise(r=>setTimeout(r,50));}throw Error('state wait timed out');};
+async function snap(p){const r=await p.context.request.get(`${base}/api/rooms/${p.room}/snapshot`);assert(r.ok());return r.json();}
+async function setup(){const ps=[];for(let i=0;i<3;i++){const context=await browser.newContext({viewport:{width:390,height:844},extraHTTPHeaders:{Origin:base}});contexts.push(context);const page=await context.newPage();page.setDefaultTimeout(8000);page.on('pageerror',e=>errors.push(e.message));ps.push({context,page});}
+ const r=await ps[0].context.request.post(base+'/api/rooms',{data:{actionId:randomUUID(),capacity:3,nickname:'借字验收甲'}});assert(r.ok());const room=(await r.json()).snapshot.public.roomId;
+ for(const [i,p]of ps.entries()){p.room=room;if(i)assert((await p.context.request.post(`${base}/api/rooms/${room}/join`,{data:{actionId:randomUUID(),roomId:room,requestedSeat:i,nickname:'借字验收'+(i+1)}})).ok());await p.page.goto(`${base}/room/${room}`);await p.page.getByRole('button',{name:'准备好了',exact:true}).waitFor();p.id=(await snap(p)).private.playerId;}
+ rooms.push(ps);for(const p of ps){await p.page.getByRole('button',{name:'准备好了',exact:true}).click();await p.page.getByRole('button',{name:'取消准备',exact:true}).waitFor();}
+ await wait(async()=>await ps[0].page.locator('.room-setup-panel .seat-row').filter({hasText:'真人 · 已准备'}).count()===ps.length);
+
+ const before=Date.now();await ps[0].page.getByRole('button',{name:'开始牌局',exact:true}).click();await wait(async()=> (await snap(ps[0])).public.phase.kind==='TURN_ACTION');return{ps,before};
+}
+async function discard(p){const e=await snap(p);await p.page.locator(`[data-tile-id="${e.private.hand[0].tileId}"]`).click();const before=Date.now();await p.page.getByRole('button',{name:'出这张',exact:true}).click();return before;}
+async function close(ps){const p=ps[0];let s=await snap(p);if(s.public.phase.kind==='ROOM_CLOSED')return;for(const other of ps.slice(1))if(!other.page.isClosed())await other.page.close();if(s.public.players.find(x=>x.playerId===p.id).autoPlay){await(await gameTool(p.page,'取消托管')).click();}await wait(async()=>{s=await snap(p);return s.legalActions.includes('END_UNSCORED')||s.legalActions.includes('CLOSE_ROOM');});if(s.legalActions.includes('END_UNSCORED')){await(await gameTool(p.page,'结束本局（不计分）')).click();await p.page.getByRole('button',{name:'确认结束',exact:true}).click();await wait(async()=> (await snap(p)).public.phase.kind==='ROUND_FINISHED');}s=await snap(p);if(s.legalActions.includes('CLOSE_ROOM')){await(await gameTool(p.page,'关闭房间')).click();await p.page.getByRole('button',{name:'确认关闭',exact:true}).click();}await wait(async()=> (await snap(p)).public.phase.kind==='ROOM_CLOSED');}
+async function passAll(ps){for(const p of ps){const e=await snap(p);if(e.legalActions.includes('RESPOND'))await p.page.getByRole('button',{name:/^(摸|过)$/}).click();}await wait(async()=> (await snap(ps[0])).public.phase.kind==='TURN_ACTION');}
+try{
+ const {ps}=await setup();let s=await snap(ps[0]);assert.equal(s.public.rulesVersion,'1.5.1');const actor=ps.find(p=>p.id===s.public.phase.actorId),seat=s.public.players.find(p=>p.playerId===actor.id).seat,next=ps[(seat+1)%3],last=ps[(seat+2)%3];
+ for(const viewport of [{width:390,height:844},{width:320,height:480},{width:667,height:375},{width:1280,height:800}]){
+  await actor.page.setViewportSize(viewport);await actor.page.waitForTimeout(100);assert.equal(await actor.page.getByRole('button',{name:/^(听牌|取消听牌)$/}).count(),0);assert.equal(await actor.page.locator('.remove-listening-action').count(),0);assert((await snap(actor)).public.players.every(p=>!('listening' in p)));
+  for(const button of await actor.page.locator('.table-action-dock button').all()){const b=await button.boundingBox();assert(b&&b.x>=0&&b.y>=0&&b.x+b.width<=viewport.width&&b.y+b.height<=viewport.height);}
+  const dim=await actor.page.evaluate(()=>({h:innerHeight,w:innerWidth,sh:document.documentElement.scrollHeight,sw:document.documentElement.scrollWidth}));assert(dim.sh<=dim.h+1&&dim.sw<=dim.w+1);await actor.page.screenshot({path:`docs/evidence/${prefix}-${viewport.width}.png`});pass('no listening UI; remaining actions fit viewport '+viewport.width);
+ }
+ await actor.page.setViewportSize({width:390,height:844});const deadline=(await snap(actor)).public.phase.deadline.endsAt;await actor.page.reload();await actor.page.getByRole('button',{name:'出这张',exact:true}).waitFor();assert.equal((await snap(actor)).public.phase.deadline.endsAt,deadline);assert.equal(await actor.page.locator('.remove-listening-action').count(),0);pass('refresh preserves deadline and has no retired listening state');
+ await discard(actor);await next.page.getByRole('button',{name:'借字申请胡',exact:true}).waitFor();await last.page.getByRole('button',{name:'借字申请胡',exact:true}).waitFor();assert(await next.page.getByRole('button',{name:'借字申请胡',exact:true}).isEnabled());assert(await last.page.getByRole('button',{name:'借字申请胡',exact:true}).isEnabled());assert.equal(await next.page.getByRole('button',{name:'摸',exact:true}).locator('span').innerText(),'随机摸一张');pass('both opponents can borrow immediately; draw subtitle remains correct');
+ for(const viewport of [{width:320,height:480},{width:667,height:375}]){await next.page.setViewportSize(viewport);await next.page.waitForTimeout(100);for(const button of await next.page.locator('.table-action-dock button').all()){const b=await button.boundingBox();assert(b&&b.x>=0&&b.y>=0&&b.x+b.width<=viewport.width&&b.y+b.height<=viewport.height);}await next.page.screenshot({path:`docs/evidence/${prefix}-response-${viewport.width}.png`});pass('response controls fit viewport '+viewport.width);}
+ await last.page.getByRole('button',{name:'借字申请胡',exact:true}).click();await next.page.getByRole('button',{name:'摸',exact:true}).click();await wait(async()=> (await snap(last)).public.phase.kind==='HU_COMPOSE');const candidate=await snap(last);assert.equal(candidate.public.phase.applicantId,last.id);assert.equal(candidate.private.hand.length,13);assert.equal(candidate.private.candidateDraft.sentence.orderedTileIds.length,14);pass('non-previous-seat player genuinely borrows into a 14-tile candidate without any declaration');
+ await last.page.getByRole('button',{name:'放弃借字',exact:true}).click();await wait(async()=> (await snap(next)).public.phase.kind==='TURN_ACTION');pass('withdrawal continues the original draw sequence');
+ await close(ps);const ended=await snap(ps[0]);assert(ended.public.players.every(p=>!('listening' in p)));assert(ended.public.players.every(p=>p.wins===0));pass('private verification room closed without score');assert.deepEqual(errors,[]);
+ await writeFile(`docs/evidence/${prefix}-results.json`,JSON.stringify({at:new Date().toISOString(),origin:base,version,scope:'three real Chrome clients, HTTP/Socket.IO, unrestricted borrowing and simulated viewports',checks,errors},null,2)+'\n');
+}finally{for(const ps of rooms)try{await close(ps);}catch{}await browser.close();await server?.close();await rm(dir,{recursive:true,force:true});}
