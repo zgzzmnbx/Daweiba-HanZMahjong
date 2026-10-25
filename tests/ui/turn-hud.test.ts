@@ -21,23 +21,37 @@ test('pause freezes the bar, resync does not reset it and no deadline is idle',(
  assert.equal(phaseClock(fixture(4,0,'ROUND_FINISHED').public,at).seconds,null);
 });
 test('action hints distinguish self, opponent, autoplay, pause and lost control',()=>{
- const e=fixture();assert.equal(turnHint(e),'请选择打什么牌');(e.public.phase as any).actorId='demo-p1';assert.equal(turnHint(e),'等听雨出牌');
+ const e=fixture();assert.equal(turnHint(e),'选一张牌，拖到桌中央出牌');(e.public.phase as any).actorId='demo-p1';assert.equal(turnHint(e),'等听雨出牌');
  (e.public.phase as any).actorId='demo-p0';(e.public.players[0] as any).autoPlay=true;assert.equal(turnHint(e),'AI 正在替你出牌');
  assert.equal(turnHint(e,false),'正在重连，请稍候');assert.equal(turnHint(e,true,false),'请在当前控制窗口操作');
  (e.public as any).suspension={kind:'PAUSED_RECOVERY'};assert.equal(turnHint(e),'牌局暂停，等待恢复');
 });
 test('only next eligible player is prompted to eat; submitted and discarder wait',()=>{
- const e=fixture(4,0,'DISCARD_RESPONSE');assert.equal(turnHint(e),'吃这张，还是摸牌？');
- (e.public.players[0] as any).eatCount=3;assert.equal(turnHint(e),'摸一张，还是借字胡？');
- (e.public.phase as any).discarderId='demo-p1';assert.equal(turnHint(e),'借字胡，还是过？');
+ const e=fixture(4,0,'DISCARD_RESPONSE');assert.equal(turnHint(e),'要这张点「吃」，不要点「摸」');
+ (e.public.players[0] as any).eatCount=3;assert.equal(turnHint(e),'点「摸」，随机摸一张');
+ (e.public.phase as any).discarderId='demo-p1';assert.equal(turnHint(e),'还没轮到你，点「过」继续');
  (e.private as any).ownResponse='PASS';assert.equal(turnHint(e),'已回应，等其他玩家');
  (e.public.phase as any).discarderId=e.private.playerId;assert.equal(turnHint(e),'等大家回应这张牌');
 });
 test('review and compose prompts respect roles; observer never receives a command',()=>{
  const e=fixture(4,0,'HU_VOTE');assert.equal(turnHint(e),'这句话通顺吗？请投票');(e as any).legalActions=[];(e.private as any).ownBallot={choice:'APPROVE'};assert.equal(turnHint(e),'已投票，等大家评审');
  (e.private as any).ownBallot=null;(e.public.phase as any).proposal.applicantId=e.private.playerId;assert.equal(turnHint(e),'你的句子，等大家评审');
- const c=fixture(4,0,'HU_COMPOSE');assert.equal(turnHint(c),'排好这句话，再提交');assert.equal(spectatorHint(c.public),'观看借字排句');
+ const c=fixture(4,0,'HU_COMPOSE');assert.equal(turnHint(c),'排齐14字成一句话，再提交');assert.equal(spectatorHint(c.public),'观看借字排句');
  assert.match(spectatorHint(fixture().public),/^观看.*出牌$/);
 });
 
 test('three-second AI progress uses the new budget while old rounds retain five seconds',()=>{for(const [version,total]of [['1.4.0',5000],['1.4.1',3000],['1.5.1',3000]] as const){const e=fixture();(e.public as any).rulesVersion=version;(e.public.players[0] as any).autoPlay=true;const end=e.public.phase.deadline!.endsAt;assert.equal(phaseClock(e.public,end-total).ratio,1);assert.equal(phaseClock(e.public,end-total/2).ratio,.5);assert.equal(phaseClock(e.public,end).ratio,0);}});
+
+test('interaction hints explain actual drop, reorder, protection and connectivity',()=>{
+ const e=fixture();
+ assert.equal(turnHint(e,true,true,{selected:true}),'拖进桌中央，或点击「打」');
+ assert.equal(turnHint(e,true,true,{dragging:true,overDiscard:true}),'松手出牌');
+ assert.equal(turnHint(e,true,true,{dragging:true,overRack:true}),'松手调整顺序');
+ assert.equal(turnHint(e,true,true,{dragging:true,overDiscard:true,forbidden:true}),'刚吃的牌不能立即打出');
+ assert.equal(turnHint(e,false,true,{dragging:true,overDiscard:true}),'正在重连，请稍候');
+});
+test('late response guidance reveals borrowed HU consistently',()=>{
+ const e=fixture(4,0,'DISCARD_RESPONSE');(e.public as any).discards=Array.from({length:40},()=>e.public.discards[0]);
+ (e.public.players[0] as any).eatCount=3;assert.equal(turnHint(e),'点「摸」抽新字，或借字胡');
+ (e.public.phase as any).discarderId='demo-p1';assert.equal(turnHint(e),'凑得成句可借字胡，否则点「过」');
+});
