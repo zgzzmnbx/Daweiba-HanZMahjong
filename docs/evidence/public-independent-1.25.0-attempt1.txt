@@ -1,0 +1,38 @@
+PASS music includes working sound settings 320x480
+PASS music includes working sound settings 390x844
+PASS music includes working sound settings 667x375
+PASS music includes working sound settings 1280x800
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'TIMEOUT'
+- 'DEEPSEEK'
+
+    at file:///Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/scripts/verify-independent-ai.mjs:32:241 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'TIMEOUT',
+  expected: 'DEEPSEEK',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'TIMEOUT'
+- 'DEEPSEEK'
+
+    at file:///Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/scripts/verify-independent-ai.mjs:32:241 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'TIMEOUT',
+  expected: 'DEEPSEEK',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

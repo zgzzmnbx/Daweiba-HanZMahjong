@@ -6,9 +6,4 @@ export function isNextDrawer(e:ResyncEnvelope):boolean{
  return !!discarder&&(discarder.seat+1)%e.public.capacity===e.private.seat;
 }
 
-/** Progressive disclosure only; use the full public ledger, never the rendered discard slice.
- * One circuit is capacity discards, including claimed/eaten tiles. START resets this ledger. */
-export const BORROW_HU_CIRCUITS=10;
-export function borrowedHuVisible(p:PublicRoomSnapshot):boolean{
- return p.discards.length>=p.capacity*BORROW_HU_CIRCUITS;
-}
+export {BORROW_HU_CIRCUITS,borrowedHuVisible} from '../../../../packages/contracts/response-policy';

@@ -31,18 +31,18 @@ async function start(t:Awaited<ReturnType<typeof fixture>>,players:any[],n:numbe
 
 const wait=async(fn:()=>boolean|Promise<boolean>)=>{for(let i=0;i<400;i++){if(await fn())return;await new Promise(r=>setTimeout(r,5));}throw Error('wait timeout');};
 const declare=async(a:any)=>{const e=await a.snapshot();return a.command({kind:'DECLARE_SELF_HU',sentence:{orderedTileIds:e.private.hand.map((t:any)=>t.tileId),commaAfterTileIds:[]}});};
-test('async shared request does not block human voting; result/chat reach all members once; DB failure retries result without model recall',async()=>{
- let calls=0,resolve!:(v:{pass:boolean;roast:string})=>void;
- const t=await fixture(async()=>{calls++;return new Promise(r=>resolve=r);});
+test('async independent requests does not block human voting; result/chat reach all members once; DB failure retries result without model recall',async()=>{
+ let calls=0;const replies:((v:{pass:boolean;roast:string})=>void)[]=[];
+ const t=await fixture(async()=>{calls++;return new Promise(r=>replies.push(r));});
  try{const a=t.client(),b=t.client();await a.create(4);await b.join(a.room);await start(t,[a,b],4);await t.seed(a.room,1);
  const received:any[][]=[[],[]];a.socket!.on('chat:message',m=>received[0].push(m));b.socket!.on('chat:message',m=>received[1].push(m));
- const cmd=await declare(a);assert.equal(cmd.result.ok,true);await wait(()=>calls===1);assert.equal((await b.snapshot()).public.phase.kind,'HU_VOTE');
+ const cmd=await declare(a);assert.equal(cmd.result.ok,true);await wait(()=>calls===2);assert.equal((await b.snapshot()).public.phase.kind,'HU_VOTE');
  const e=await b.snapshot();assert.equal((e.public.phase as any).proposal.submittedBallotCount,0);
  assert.equal((await b.command({kind:'VOTE',proposalId:(e.public.phase as any).proposal.proposalId,ballot:{choice:'REJECT',objectionRanges:[{start:0,endExclusive:1}]}})).result.ok,true);
- t.server.store.failNextCommit=true;resolve({pass:true,roast:'字数凑齐了，语法还在排队。'});
- await wait(()=>received.every(r=>r.length===1));const end=await a.snapshot();assert.equal(end.public.history[0].result!.approveCount,2);assert.equal(end.public.history[0].result!.rejectCount,1);assert.deepEqual(received[0],received[1]);assert.equal(received[0][0].kind,'AI_REVIEW');
- await a.raw(cmd.command);assert.equal(calls,1);assert.equal(t.server.store.chat.history(a.room).length,1);assert.equal(t.server.store.load()[0].public.history.length,1);
- await t.restart();await a.restore();await b.restore();assert.equal(calls,1);assert.equal(t.server.store.chat.history(a.room).length,1);
+ t.server.store.failNextCommit=true;replies[0]({pass:true,roast:'字数凑齐了，语法还在排队。'});replies[1]({pass:true,roast:'意思到了，搭配却在乱停车。'});
+ await wait(()=>received.every(r=>r.length===2));const end=await a.snapshot();assert.equal(end.public.history[0].result!.approveCount,2);assert.equal(end.public.history[0].result!.rejectCount,1);assert.deepEqual(received[0],received[1]);assert.equal(new Set(received[0].map(m=>m.nickname)).size,2);assert.equal(new Set(received[0].map(m=>m.text)).size,2);assert(!JSON.stringify(received).toLowerCase().includes('deepseek'));assert.equal(received[0][0].kind,'AI_REVIEW');
+ await a.raw(cmd.command);assert.equal(calls,2);assert.equal(t.server.store.chat.history(a.room).length,2);assert.equal(t.server.store.load()[0].public.history.length,1);
+ await t.restart();await a.restore();await b.restore();assert.equal(calls,2);assert.equal(t.server.store.chat.history(a.room).length,2);
  }finally{await t.close();}
 });
 test('timeout at persisted 10 seconds, late reply ignored, closed room receives no late chat',async()=>{
@@ -58,5 +58,5 @@ test('claimed request survives restart without another paid call or an extended 
  }finally{await t.close();}
 });
 test('provider error uses independent fallback, labels system message honestly and never calls twice',async()=>{
- let calls=0;const t=await fixture(async()=>{calls++;throw Error('provider unavailable');});try{const a=t.client();await a.create(3);await start(t,[a],3);await t.seed(a.room,123456);await declare(a);await wait(()=>t.server.games.get(a.room)!.public.history.length===1);assert.equal(calls,1);assert.equal((t.server.games.get(a.room)!.public.history[0].aiJudgment as any).source,'ERROR');assert(t.server.store.chat.history(a.room)[0].nickname.includes('兜底'));}finally{await t.close();}
+ let calls=0;const t=await fixture(async()=>{calls++;throw Error('provider unavailable');});try{const a=t.client();await a.create(3);await start(t,[a],3);await t.seed(a.room,123456);await declare(a);await wait(()=>t.server.games.get(a.room)!.public.history.length===1);assert.equal(calls,2);assert.equal((t.server.games.get(a.room)!.public.history[0].aiJudgment as any).source,'ERROR');assert.equal(t.server.store.chat.history(a.room).length,2);assert(t.server.store.chat.history(a.room).every(m=>m.nickname.startsWith('AI ')));}finally{await t.close();}
 });

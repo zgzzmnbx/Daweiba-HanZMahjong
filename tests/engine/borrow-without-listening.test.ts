@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as E from '../../packages/engine/index';
 import {room,pid,ok,error,forceActor,discard,respond,sentence,vote} from './helpers';
-function game(n=3){const g=room(n,false);g.public.rulesVersion='1.5.1';for(let i=0;i<n;i++)ok(g,i,{kind:'READY',ready:true});ok(g,0,{kind:'START_ROUND'});return g;}
+function game(n=3){const g=room(n,false);g.public.rulesVersion='1.5.1';for(let i=0;i<n;i++)ok(g,i,{kind:'READY',ready:true});ok(g,0,{kind:'START_ROUND'});g.public.rulesVersion='1.5.1';return g;}
 test('2–6 seats: every opponent discard can be borrowed without declaring listening',()=>{
  for(let n=2;n<=6;n++)for(let d=0;d<n;d++)for(let who=0;who<n;who++){if(d===who)continue;const g=game(n);forceActor(g,d);discard(g);respond(g,{[who]:'HU'});assert.equal(g.public.phase.kind,'HU_COMPOSE');assert.equal((g.public.phase as any).applicantId,pid(who));assert.equal(g.players.get(pid(who))!.hand.length,13);assert.equal(g.players.get(pid(who))!.candidateDraft!.sentence.orderedTileIds.length,14);E.assertGame(g);}
 });
@@ -21,6 +21,6 @@ test('migrated non-previous-seat borrower can respond immediately; eating and se
 });
 test('historical results retain rule versions; self HU and next-round upgrade remain available',()=>{
  const g=game(2);g.public.rulesVersion='1.5.0';forceActor(g,0);ok(g,0,{kind:'DECLARE_SELF_HU',sentence:sentence(g,0)});vote(g,1);assert.equal(g.public.phase.kind,'ROUND_FINISHED');const history=structuredClone(g.public.history);g.archive.push(structuredClone(g.public));(g.archive[0].players[0] as any).listening=true;
- const restored=E.decodeGame(JSON.parse(JSON.stringify(E.encodeGame(g))));assert.deepEqual(restored.public.history,history);assert.equal(restored.archive[0].rulesVersion,'1.5.0');assert(!('listening' in restored.archive[0].players[0]));for(let i=0;i<2;i++)ok(restored,i,{kind:'READY',ready:true});ok(restored,0,{kind:'START_ROUND'});assert.equal(restored.public.rulesVersion,'1.6.0');
+ const restored=E.decodeGame(JSON.parse(JSON.stringify(E.encodeGame(g))));assert.deepEqual(restored.public.history,history);assert.equal(restored.archive[0].rulesVersion,'1.5.0');assert(!('listening' in restored.archive[0].players[0]));for(let i=0;i<2;i++)ok(restored,i,{kind:'READY',ready:true});ok(restored,0,{kind:'START_ROUND'});assert.equal(restored.public.rulesVersion,'1.6.1');
  const legacy=game(2);legacy.public.rulesVersion='1.4.0';const restoredLegacy=E.decodeGame(JSON.parse(JSON.stringify(E.encodeGame(legacy))));assert.equal(restoredLegacy.public.rulesVersion,'1.4.0');assert.deepEqual(restoredLegacy.public.phase,legacy.public.phase);
 });

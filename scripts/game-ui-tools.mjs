@@ -2,10 +2,12 @@
 export async function gameTool(page,name){
  const button=page.getByRole('button',{name,exact:true});
  if(!await button.isVisible()){
-  const label=/音效|语音|朗读/.test(name)?'声音设置':/画质|二维|3D/.test(name)?'画面设置':/托管/.test(name)?'托管设置':/左移|右移|逗号|排列/.test(name)?'整理句子':'房间设置';
+  const sound=/音效|语音|朗读/.test(name);
+  const label=sound?'同桌音乐':/画质|二维|3D/.test(name)?'画面设置':/托管/.test(name)?'托管设置':/左移|右移|逗号|排列/.test(name)?'整理句子':'房间设置';
   const current=page.getByRole('button',{name:'关闭面板',exact:true});
   if(await current.isVisible())await current.click();
   await gameAction(page,label);
+  if(sound)await page.getByRole('button',{name:'音效与语音',exact:true}).click();
  }
  return button;
 }

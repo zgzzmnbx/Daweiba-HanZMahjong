@@ -1,5 +1,5 @@
-/* Shared action order: punctuation, music, chat, arrange, doodle, help, history, admin, menu. */
-#root .game-shell .topbar .top-action,#root .game-shell .topbar .rack-compose-trigger{display:none}
+/* Frequent tools stay in the upper bar; the hand drawer opens from the bottom tab. */
+#root .game-shell .topbar .top-action{display:none}
 #root .game-shell .topbar .top-priority-1{display:flex}
 .responsive-menu-dialog .overflow-priority-1{display:none}
 #root .game-shell .responsive-menu-trigger{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:1px}
@@ -8,9 +8,11 @@
 #root .game-shell .topbar .hud-tool small{font-size:9px;line-height:12px;white-space:nowrap}
 #root .game-shell .topbar{gap:6px}
 #root .game-shell .topbar .room-meta{min-width:0}
+#root .game-shell .topbar .wordmark{white-space:nowrap;flex-shrink:0}
+#root .game-shell .topbar .online,#root .game-shell .topbar .offline{white-space:nowrap}
 #root .game-shell .topbar .room-code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(min-width:700px){
- #root .game-shell .topbar .top-priority-2,#root .game-shell .topbar .rack-compose-trigger{display:flex}
+ #root .game-shell .topbar .top-priority-2{display:flex}
  .responsive-menu-dialog .overflow-priority-2{display:none}
 }
 @media(max-width:699px){
@@ -21,3 +23,8 @@
  #root .game-shell .topbar .hud-tool{--hud-size:44px}
 }
 #root .game-shell .doodle-tools:not(.open):not(.has-error){display:none}
+
+/* Room code remains in the menu when the wide toolbar is near its lower breakpoint. */
+@media(min-width:700px) and (max-width:899px){
+ #root .game-shell .topbar .room-code{display:none}
+}

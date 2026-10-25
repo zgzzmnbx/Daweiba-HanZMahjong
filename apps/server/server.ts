@@ -59,19 +59,19 @@ export function createGameServer(options:ServerOptions){
      if(closing||p.kind!=='HU_VOTE'||p.proposal.proposalId!==proposal.proposalId||p.proposal.aiJudgment?.status!=='PENDING'||!current.review||current.review.aiRequested)return null;
      const next=structuredClone(current);next.review!.aiRequested=true;
      store.commit(next,'AI_REVIEW_REQUEST',now());games.set(room,next);
-     return{sentence:publicSentenceText(p.proposal.snapshot),deadline:p.proposal.aiJudgment.deadline};
+     return{sentence:publicSentenceText(p.proposal.snapshot),deadline:p.proposal.aiJudgment.deadline,reviewers:p.proposal.aiJudgments?Object.keys(p.proposal.aiJudgments):[undefined]};
     });
     if(!request||controller.signal.aborted)return;
-    let verdict:AiVerdict|null=null;
-    if(now()<request.deadline){
-     const expired=new Promise<null>(resolve=>{timeout=setTimeout(()=>{controller.abort();resolve(null);},Math.max(1,request.deadline-now()));timeout.unref();});
-     verdict=await Promise.race([judge(request.sentence,controller.signal).catch(()=>null),expired]);
-    }
-    // A failed SQLite commit retries this same result, never another provider call.
-    for(let attempt=0;attempt<3&&!closing;attempt++){
-     try{await serial(room,()=>{const next=structuredClone(ensureGame(room));if(applyAiJudgment(next,proposal.proposalId,verdict,now()))commit(next,'AI_REVIEW_RESULT');});break;}
-     catch{if(attempt<2)await new Promise(r=>setTimeout(r,100));}
-    }
+    const expired=new Promise<null>(resolve=>{timeout=setTimeout(()=>{controller.abort();resolve(null);},Math.max(1,request.deadline-now()));timeout.unref();});
+    await Promise.all(request.reviewers.map(async (reviewerId,reviewerIndex)=>{
+     let verdict:AiVerdict|null=null;
+     if(now()<request.deadline)verdict=await Promise.race([judge(request.sentence,controller.signal,reviewerId?reviewerIndex:undefined).catch(()=>null),expired]);
+     // Retry only this transaction/result, never the provider request.
+     for(let attempt=0;attempt<3&&!closing;attempt++){
+      try{await serial(room,()=>{const next=structuredClone(ensureGame(room));if(applyAiJudgment(next,proposal.proposalId,verdict,now(),'ERROR',reviewerId))commit(next,'AI_REVIEW_RESULT');});break;}
+      catch{if(attempt<2)await new Promise(r=>setTimeout(r,100));}
+     }
+    }));
    }finally{if(timeout)clearTimeout(timeout);if(aiFlights.get(room)?.controller===controller)aiFlights.delete(room);}
   })().catch(()=>{/* The persisted absolute deadline still resolves a failed request claim. */});
  }

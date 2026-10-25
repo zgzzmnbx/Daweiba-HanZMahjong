@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-25T14:53:54.961Z",
+  "version": "1.24.5",
+  "sourceCommit": "341d031",
+  "origin": "https://118.196.107.182:1240",
+  "ready": {
+    "ready": true
+  },
+  "resources": 9,
+  "checked": [
+    {
+      "path": "/",
+      "sha256": "39370ff9da7be257f4bcaab0ae75d937da7aa70300c9e5ea4b2eb5f6241d4832",
+      "bytes": 934
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+      "sha256": "1ff5c1cb3ab56a3b7c07a97986056803e9db77376947547a87015f5e2c48715b",
+      "bytes": 133264
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+      "sha256": "8c7d6eeaac98121a908be440ba1b9fcc0ee717bca52493b67232e2afdd4a8d66",
+      "bytes": 132280
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+      "sha256": "98bd29647780ce5c285eb29361384aab369ccfdadfb2e59502d29d396534eedf",
+      "bytes": 133124
+    },
+    {
+      "path": "/fonts/wenkai/wenkai-500-core-5da500484d.woff2",
+      "sha256": "5da500484d6426ad4e5e52c287fe104d1693fc61e7c542363920caba458a6098",
+      "bytes": 195524
+    },
+    {
+      "path": "/assets/index-D0BH8qTC.js",
+      "sha256": "55960c385049cdab9b2b27cbf436ef404265bbd606692b4a71a5284be91bdabf",
+      "bytes": 946488
+    },
+    {
+      "path": "/fonts/wenkai/manifest.json",
+      "sha256": "e5502fd0290f93c54aca14fe1f59983cfaec86430201f311d77de7667a7a2f61",
+      "bytes": 73486
+    },
+    {
+      "path": "/assets/index-DIdzXksw.css",
+      "sha256": "3b105affbbd70177b2b68858208014a02e1ca8edc034dd5329ef7d7a8a99bb62",
+      "bytes": 302127
+    },
+    {
+      "path": "/fonts/pingfang/manifest.json",
+      "sha256": "760af7c2570d4449dbafedaa77425c93baecae44570e632e2fe5cf7432995157",
+      "bytes": 73424
+    }
+  ]
+}

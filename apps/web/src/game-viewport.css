@@ -54,7 +54,6 @@ dialog.hu-showcase{top:var(--app-top,0px);left:var(--app-left,0px);width:var(--a
 #root .game-shell .table-notices{flex:0 0 28px;height:28px;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 #root .game-shell:has(.room-setup-panel) .table-notices{display:none}
 #root .game-shell .rack-area.expanded{flex:0 0 var(--rack-reserve);height:var(--rack-reserve)}
-#root .game-shell .rack-area.rack-overlay{position:absolute;left:16px;right:16px;bottom:70px;z-index:5;max-height:34%;background:linear-gradient(transparent,#241a12ee 25%)}
 #root .game-shell .action-bar{flex:0 0 24px;height:24px;min-height:24px;max-height:24px;flex-direction:row;align-items:center;overflow:hidden}
 #root .game-shell .action-bar .status{flex:1;min-width:0;min-height:0;max-height:20px;overflow:auto;overscroll-behavior:contain}
 #root .game-shell .action-bar button{flex:none;min-height:22px;height:22px;padding:0 7px;font-size:10px}

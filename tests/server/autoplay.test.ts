@@ -38,7 +38,7 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
   assert.equal((await actor.snapshot()).public.players.find((p:any)=>p.playerId===actor.id).autoPlay,undefined);
   assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:true})).ok,true);
   let current=await actor.snapshot();assert.equal(current.private.controlEpoch,e.private.controlEpoch+1);
-  assert.equal(current.public.phase.deadline.endsAt,4000);
+  assert.equal(current.public.phase.deadline.endsAt,2500);
   assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.autoPlay,true);
   assert(!current.legalActions.includes('DISCARD'));assert.equal(current.public.suspension.kind,'RUNNING');
   f.setNow(2000);assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:false})).ok,true);
@@ -46,13 +46,14 @@ test('HTTP/WSS delegation is persisted atomically, cancelled without resetting h
   assert.equal(f.server.store.load()[0].public.players.find(p=>p.playerId===actor.id)!.autoPlay,false);
   f.setNow(6000);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
   f.setNow(7000);assert.equal((await actor.send({kind:'SET_AUTOPLAY',enabled:true})).ok,true);
-  f.setNow(9999);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
-  f.setNow(10000);await f.server.tick();current=await actor.snapshot();assert.equal(current.public.discards.length,1);assert.equal(current.public.lastAutomaticDiscard.reason,'BOT');
+  f.setNow(8499);await f.server.tick();assert.equal((await actor.snapshot()).public.discards.length,0);
+  f.setNow(8500);await f.server.tick();current=await actor.snapshot();assert.equal(current.public.discards.length,1);assert.equal(current.public.lastAutomaticDiscard.reason,'BOT');
  }finally{await f.close();}
 });
 
-test('real sockets borrow non-previous-seat discard without listening, atomically and with 14-tile candidate',async()=>{
+test('legacy real sockets borrow non-previous-seat discard without listening, atomically and with 14-tile candidate',async()=>{
  const f=await fixture(3);try{
+  f.server.games.values().next().value!.public.rulesVersion='1.6.0';
   const initial=await f.clients[0].snapshot(),actor=f.clients.find(c=>c.id===initial.public.phase.actorId),other=f.clients[(actor.seat+2)%3],next=f.clients[(actor.seat+1)%3];
   assert(!initial.legalActions.includes('SET_LISTENING'));assert.equal((await actor.send({kind:'SET_LISTENING',enabled:true})).code,'PHASE_CLOSED');assert.equal((await actor.send({kind:'DISCARD',tileId:(await actor.snapshot()).private.hand[0].tileId})).ok,true);
   const responseWindowId=(await other.snapshot()).public.phase.responseWindowId;

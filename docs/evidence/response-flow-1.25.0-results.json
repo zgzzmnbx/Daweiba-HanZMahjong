@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-25T15:15:57.838Z",
+  "version": "1.25.0",
+  "origin": "http://127.0.0.1:3187",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "before ten circuits: non-next has no useless response; next draws/eats, turn 1",
+      "status": "PASS"
+    },
+    {
+      "name": "before ten circuits: non-next has no useless response; next draws/eats, turn 29",
+      "status": "PASS"
+    },
+    {
+      "name": "ten circuits: non-next can pass or borrow, without disabled eat 390",
+      "status": "PASS"
+    },
+    {
+      "name": "ten circuits: non-next can pass or borrow, without disabled eat 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "30 real UI discards and draws preserve turn order",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closed without score",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

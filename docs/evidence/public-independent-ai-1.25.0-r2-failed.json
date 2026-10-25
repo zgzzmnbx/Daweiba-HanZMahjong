@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-25T15:21:30.477Z",
+  "version": "1.25.0",
+  "checks": [
+    {
+      "name": "music includes working sound settings 320x480",
+      "status": "PASS"
+    },
+    {
+      "name": "music includes working sound settings 390x844",
+      "status": "PASS"
+    },
+    {
+      "name": "music includes working sound settings 667x375",
+      "status": "PASS"
+    },
+    {
+      "name": "music includes working sound settings 1280x800",
+      "status": "PASS"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'TIMEOUT'\n- 'DEEPSEEK'\n",
+  "phase": {
+    "kind": "HU_VOTE",
+    "proposal": {
+      "proposalId": "5AEDBF7BD8:ProposalId:5",
+      "applicantId": "d83040c3-fa76-436a-abcf-57f9ff72dd89",
+      "source": {
+        "kind": "SELF",
+        "playerId": "d83040c3-fa76-436a-abcf-57f9ff72dd89"
+      },
+      "snapshot": {
+        "sentence": {
+          "orderedTileIds": [
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:121:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:112:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:045:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:083:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:090:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:123:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:007:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:079:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:117:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:039:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:047:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:038:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:135:00",
+            "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:031:00"
+          ],
+          "commaAfterTileIds": []
+        },
+        "tiles": [
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:121:00",
+            "char": "恋"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:112:00",
+            "char": "啊"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:045:00",
+            "char": "后"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:083:00",
+            "char": "俄"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:090:00",
+            "char": "个"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:123:00",
+            "char": "故"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:007:00",
+            "char": "风"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:079:00",
+            "char": "有"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:117:00",
+            "char": "心"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:039:00",
+            "char": "迷"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:047:00",
+            "char": "跑"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:038:00",
+            "char": "被"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:135:00",
+            "char": "可"
+          },
+          {
+            "tileId": "5AEDBF7BD8:RoundId:3:set-c82c4b61-b6c5-43bd-9b41-5770079d9f3e-r1:N3:031:00",
+            "char": "你"
+          }
+        ]
+      },
+      "revealedAt": 1792941680284,
+      "reviewerCount": 2,
+      "threshold": 2,
+      "submittedBallotCount": 1,
+      "reviewers": [
+        {
+          "playerId": "a86c61bd-b177-4a89-8922-fd6e5e66f855",
+          "nickname": "AI评审验收甲",
+          "isBotSeat": false,
+          "choice": "PENDING",
+          "objectionRanges": []
+        },
+        {
+          "playerId": "5AEDBF7BD8:PlayerId:2",
+          "nickname": "AI 3",
+          "isBotSeat": true,
+          "choice": "APPROVE",
+          "objectionRanges": [],
+          "comment": "刚才走神了，这票先放你过。"
+        }
+      ],
+      "aiJudgment": {
+        "status": "DONE",
+        "source": "TIMEOUT",
+        "pass": null,
+        "roast": "刚才走神了，这票先放你过。",
+        "at": 1792941690288
+      },
+      "aiJudgments": {
+        "5AEDBF7BD8:PlayerId:2": {
+          "status": "DONE",
+          "source": "TIMEOUT",
+          "pass": null,
+          "roast": "刚才走神了，这票先放你过。",
+          "at": 1792941690288
+        }
+      }
+    },
+    "phaseId": "5AEDBF7BD8:PhaseId:6",
+    "deadline": {
+      "endsAt": 1792941740284,
+      "remainingMsWhenPaused": null
+    }
+  },
+  "history": []
+}

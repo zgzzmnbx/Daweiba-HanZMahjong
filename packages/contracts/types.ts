@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0' | '1.6.1';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -30,7 +30,7 @@ export type RulesDefaults = Readonly<{
   eatSource: 'previous_seat_latest_discard';
   eatImmediateDiscardRestriction: 'same_physical_tile';
   turnMs: 60000 | 120000; responseMs: 8000; composeMs: 45000 | 120000; voteMs: 45000 | 60000;
-  postHuDiscardMs: 30000 | 120000; disconnectGraceMs: 15000; botActionDelayMs: 800 | 3000 | 5000;
+  postHuDiscardMs: 30000 | 120000; disconnectGraceMs: 15000; botActionDelayMs: 800 | 1500 | 3000 | 5000;
   recoveryMinActionMs: 10000; allOfflineRetentionMs: 86400000;
   reviewerPolicy: 'freeze_other_online_humans_at_vote_start' | 'freeze_other_online_humans_and_designated_bots_at_vote_start';
   approvalPolicy: 'strict_majority'; botMayEat: false; botMayDeclareHu: false;
@@ -77,7 +77,7 @@ export type AnonymousVoteResult = Readonly<{
 }>;
 /** Rules 1.3+: frozen reviewer names and authoritative live votes. Legacy rounds omit this. */
 export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;isBotSeat:boolean;comment?:string;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
-/** One shared model decision for designated AI seats; no private input is sent. */
+/** One provider decision; 1.6.0 shares it, 1.6.1 stores one per frozen AI reviewer. No private input. */
 export type AiJudgment = Readonly<
  | {status:'PENDING';deadline:UtcMs}
  | {status:'DONE';source:'DEEPSEEK'|'TIMEOUT'|'ERROR';pass:boolean|null;roast:string;at:UtcMs}
@@ -91,6 +91,8 @@ export type PublicProposal = Readonly<{
   submittedBallotCount: number;
   reviewers?: readonly PublicReviewVote[];
   aiJudgment?: AiJudgment;
+  /** Rule 1.6.1: independent, frozen AI reviewer results. */
+  aiJudgments?: Readonly<Record<string,AiJudgment>>;
 }>;
 export type PublicPhase = PhaseHeader & (
   | Readonly<{ kind: 'LOBBY' }>
@@ -131,6 +133,8 @@ export type PublicHistoryEntry = Readonly<{
   result: AnonymousVoteResult | null;
   reviewers?: readonly PublicReviewVote[];
   aiJudgment?: AiJudgment;
+  /** Rule 1.6.1: independent, frozen AI reviewer results. */
+  aiJudgments?: Readonly<Record<string,AiJudgment>>;
 }>;
 export type PublicRoomSnapshot = Readonly<{
   visibility: 'PUBLIC'; roomId: RoomId; roundId: RoundId | null;

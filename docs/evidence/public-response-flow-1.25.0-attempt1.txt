@@ -1,0 +1,20 @@
+locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '准备好了', exact: true }) to be visible[22m
+
+    at /Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/scripts/verify-response-flow.mjs:10:731 {
+  name: 'TimeoutError'
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '准备好了', exact: true }) to be visible[22m
+
+    at /Users/sm/Downloads/Codex-MAC/261021-HanzMahjong/scripts/verify-response-flow.mjs:10:731 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

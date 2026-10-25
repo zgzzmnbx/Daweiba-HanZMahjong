@@ -58,3 +58,9 @@ dialog.hu-showcase.hu-review-dialog{position:fixed;inset:auto;top:calc(var(--app
  .hu-review-dialog.dense-comments .review-voter-comment{grid-column:2;grid-row:1/3;margin:0;font-size:9px;line-height:1.15}
  .hu-review-dialog.dense-comments .review-voter .voter-icon{display:none}
 }
+
+.review-voter[data-speaking] {animation:reviewer-speaking 1.4s ease-out;}
+.review-voter-comment[data-fresh] {animation:review-comment-in .42s cubic-bezier(.2,.8,.3,1);}
+@keyframes review-comment-in {from {opacity:0;transform:translateY(8px) scale(.97);}to {opacity:1;transform:none;}}
+@keyframes reviewer-speaking {0%,35% {border-color:#edcc80;box-shadow:0 0 14px #d7ad4d55;}100% {box-shadow:none;}}
+@media(prefers-reduced-motion:reduce){.review-voter[data-speaking],.review-voter-comment[data-fresh]{animation:none;}}

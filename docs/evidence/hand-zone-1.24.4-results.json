@@ -1,0 +1,454 @@
+{
+  "at": "2026-10-25T14:43:32.546Z",
+  "version": "1.24.4",
+  "origin": "http://127.0.0.1:3185",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "centered HUD and reachable actions 1280x800 table",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 733,
+        "w": 1248,
+        "h": 40,
+        "right": 1264,
+        "bottom": 773
+      },
+      "hud": {
+        "x": 462,
+        "y": 735,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 771
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 569,
+        "y": 462.109375,
+        "w": 142,
+        "h": 64,
+        "right": 711,
+        "bottom": 526.109375
+      },
+      "rack": null,
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 1280x800 rack",
+      "status": "PASS",
+      "row": {
+        "x": 35,
+        "y": 598.765625,
+        "w": 1210,
+        "h": 40,
+        "right": 1245,
+        "bottom": 638.765625
+      },
+      "hud": {
+        "x": 462,
+        "y": 600.765625,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 636.765625
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 568.9921875,
+        "y": 379.3125,
+        "w": 142,
+        "h": 64,
+        "right": 710.9921875,
+        "bottom": 443.3125
+      },
+      "rack": {
+        "x": 35,
+        "y": 647.765625,
+        "w": 1210,
+        "h": 107.234375,
+        "right": 1245,
+        "bottom": 755
+      },
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 1920x1080 table",
+      "status": "PASS",
+      "row": {
+        "x": 226,
+        "y": 1013,
+        "w": 1468,
+        "h": 40,
+        "right": 1694,
+        "bottom": 1053
+      },
+      "hud": {
+        "x": 782,
+        "y": 1015,
+        "w": 356,
+        "h": 36,
+        "right": 1138,
+        "bottom": 1051
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 889,
+        "y": 613.5625,
+        "w": 142,
+        "h": 64,
+        "right": 1031,
+        "bottom": 677.5625
+      },
+      "rack": null,
+      "scroll": [
+        1920,
+        1080
+      ],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 1920x1080 rack",
+      "status": "PASS",
+      "row": {
+        "x": 245,
+        "y": 857.8125,
+        "w": 1430,
+        "h": 40,
+        "right": 1675,
+        "bottom": 897.8125
+      },
+      "hud": {
+        "x": 782,
+        "y": 859.8125,
+        "w": 356,
+        "h": 36,
+        "right": 1138,
+        "bottom": 895.8125
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 889,
+        "y": 526.96875,
+        "w": 142,
+        "h": 64,
+        "right": 1031,
+        "bottom": 590.96875
+      },
+      "rack": {
+        "x": 245,
+        "y": 906.8125,
+        "w": 1430,
+        "h": 128.1875,
+        "right": 1675,
+        "bottom": 1035
+      },
+      "scroll": [
+        1920,
+        1080
+      ],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 700x600 table",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 533,
+        "w": 668,
+        "h": 40,
+        "right": 684,
+        "bottom": 573
+      },
+      "hud": {
+        "x": 172,
+        "y": 535,
+        "w": 356,
+        "h": 36,
+        "right": 528,
+        "bottom": 571
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 279,
+        "y": 342.203125,
+        "w": 142,
+        "h": 64,
+        "right": 421,
+        "bottom": 406.203125
+      },
+      "rack": null,
+      "scroll": [
+        700,
+        600
+      ],
+      "viewport": [
+        700,
+        600
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 700x600 rack",
+      "status": "PASS",
+      "row": {
+        "x": 35,
+        "y": 302,
+        "w": 630,
+        "h": 40,
+        "right": 665,
+        "bottom": 342
+      },
+      "hud": {
+        "x": 172,
+        "y": 304,
+        "w": 356,
+        "h": 36,
+        "right": 528,
+        "bottom": 340
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 279,
+        "y": 210.15625,
+        "w": 142,
+        "h": 64,
+        "right": 421,
+        "bottom": 274.15625
+      },
+      "rack": {
+        "x": 35,
+        "y": 351,
+        "w": 630,
+        "h": 204,
+        "right": 665,
+        "bottom": 555
+      },
+      "scroll": [
+        700,
+        600
+      ],
+      "viewport": [
+        700,
+        600
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 320x480 rack",
+      "status": "PASS",
+      "row": {
+        "x": 14,
+        "y": 317,
+        "w": 292,
+        "h": 38,
+        "right": 306,
+        "bottom": 355
+      },
+      "hud": {
+        "x": 14,
+        "y": 319,
+        "w": 292,
+        "h": 34,
+        "right": 306,
+        "bottom": 353
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 82,
+        "y": 262,
+        "w": 92,
+        "h": 49.9375,
+        "right": 174,
+        "bottom": 311.9375
+      },
+      "rack": {
+        "x": 14,
+        "y": 357,
+        "w": 292,
+        "h": 92,
+        "right": 306,
+        "bottom": 449
+      },
+      "scroll": [
+        320,
+        480
+      ],
+      "viewport": [
+        320,
+        480
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 390x844 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 515.828125,
+        "w": 354,
+        "h": 38,
+        "right": 372,
+        "bottom": 553.828125
+      },
+      "hud": {
+        "x": 18,
+        "y": 517.828125,
+        "w": 354,
+        "h": 34,
+        "right": 372,
+        "bottom": 551.828125
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 142.5,
+        "y": 426.828125,
+        "w": 105,
+        "h": 49.9375,
+        "right": 247.5,
+        "bottom": 476.765625
+      },
+      "rack": {
+        "x": 18,
+        "y": 561.828125,
+        "w": 354,
+        "h": 124,
+        "right": 372,
+        "bottom": 685.828125
+      },
+      "scroll": [
+        390,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 667x375 rack",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 218,
+        "w": 635,
+        "h": 32,
+        "right": 651,
+        "bottom": 250
+      },
+      "hud": {
+        "x": 16,
+        "y": 219,
+        "w": 635,
+        "h": 30,
+        "right": 651,
+        "bottom": 249
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 442,
+        "y": 77,
+        "w": 74,
+        "h": 76,
+        "right": 516,
+        "bottom": 153
+      },
+      "rack": {
+        "x": 16,
+        "y": 252,
+        "w": 635,
+        "h": 92,
+        "right": 651,
+        "bottom": 344
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "name": "centered HUD and reachable actions 950x375 rack",
+      "status": "PASS",
+      "row": {
+        "x": 35,
+        "y": 218,
+        "w": 880,
+        "h": 32,
+        "right": 915,
+        "bottom": 250
+      },
+      "hud": {
+        "x": 297,
+        "y": 219,
+        "w": 356,
+        "h": 30,
+        "right": 653,
+        "bottom": 249
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 583.5,
+        "y": 77,
+        "w": 78,
+        "h": 86,
+        "right": 661.5,
+        "bottom": 163
+      },
+      "rack": {
+        "x": 35,
+        "y": 252,
+        "w": 880,
+        "h": 92,
+        "right": 915,
+        "bottom": 344
+      },
+      "scroll": [
+        950,
+        375
+      ],
+      "viewport": [
+        950,
+        375
+      ]
+    },
+    {
+      "name": "HU confirmation remains reachable above the split layout",
+      "status": "PASS"
+    },
+    {
+      "name": "felt border does not block borrowing or returning comma; rows stable",
+      "status": "PASS"
+    },
+    {
+      "name": "real cross-zone drag discard and draw remain operational",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closed without scores or HuBook records",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

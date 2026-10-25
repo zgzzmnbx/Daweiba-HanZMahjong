@@ -29,7 +29,7 @@ test('action hints distinguish self, opponent, autoplay, pause and lost control'
 test('only next eligible player is prompted to eat; submitted and discarder wait',()=>{
  const e=fixture(4,0,'DISCARD_RESPONSE');assert.equal(turnHint(e),'要这张点「吃」，不要点「摸」');
  (e.public.players[0] as any).eatCount=3;assert.equal(turnHint(e),'点「摸」，随机摸一张');
- (e.public.phase as any).discarderId='demo-p1';assert.equal(turnHint(e),'还没轮到你，点「过」继续');
+ (e.public.phase as any).discarderId='demo-p1';assert.equal(turnHint(e),'还没轮到你，可先整理手牌');
  (e.private as any).ownResponse='PASS';assert.equal(turnHint(e),'已回应，等其他玩家');
  (e.public.phase as any).discarderId=e.private.playerId;assert.equal(turnHint(e),'等大家回应这张牌');
 });
