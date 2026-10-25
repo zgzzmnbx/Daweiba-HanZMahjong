@@ -1,0 +1,58 @@
+{
+  "version": "1.23.17",
+  "sourceCommit": "e96cc14df130ec5b5acd2e9b3a369225cd60570b",
+  "at": "2026-10-25T13:20:58.082730+00:00",
+  "origin": "https://118.196.107.182:1240",
+  "release": "1.23.17-20261025-212033",
+  "backup": "pre-release-20261025-212034.sqlite",
+  "ready": {
+    "ready": true
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 934,
+      "sha256": "56d2198c252f24565c4ced20fe39a9eb9ce501e67314563508f8de7505406ad7"
+    },
+    {
+      "path": "assets/index-G--rWTsj.js",
+      "bytes": 941787,
+      "sha256": "d376b397bddcdd546e530d778da999b1f3996282624eb844a6060be93fb79a2c"
+    },
+    {
+      "path": "assets/index-Db0ScYUj.css",
+      "bytes": 295473,
+      "sha256": "62a85ff1f169641e5cb108964b6d2880fbea7dac52b5c3be9f2a1d9bd0f59d35"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+      "bytes": 133264,
+      "sha256": "1ff5c1cb3ab56a3b7c07a97986056803e9db77376947547a87015f5e2c48715b"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+      "bytes": 132280,
+      "sha256": "8c7d6eeaac98121a908be440ba1b9fcc0ee717bca52493b67232e2afdd4a8d66"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+      "bytes": 133124,
+      "sha256": "98bd29647780ce5c285eb29361384aab369ccfdadfb2e59502d29d396534eedf"
+    },
+    {
+      "path": "fonts/wenkai/wenkai-500-core-5da500484d.woff2",
+      "bytes": 195524,
+      "sha256": "5da500484d6426ad4e5e52c287fe104d1693fc61e7c542363920caba458a6098"
+    },
+    {
+      "path": "fonts/wenkai/manifest.json",
+      "bytes": 73486,
+      "sha256": "e5502fd0290f93c54aca14fe1f59983cfaec86430201f311d77de7667a7a2f61"
+    },
+    {
+      "path": "fonts/pingfang/manifest.json",
+      "bytes": 73424,
+      "sha256": "760af7c2570d4449dbafedaa77425c93baecae44570e632e2fe5cf7432995157"
+    }
+  ]
+}

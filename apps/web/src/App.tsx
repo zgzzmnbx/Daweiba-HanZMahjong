@@ -7,7 +7,6 @@ import {fixture} from './fixture';
 import type {PlayerCount,SeatIndex} from '../../../packages/contracts/types';
 import type {GameTransport} from './table-ui/SentenceRackController';
 import OnlineApp from './OnlineApp';
-import packageInfo from '../../../package.json';
 const phases:Record<string,string>={LOBBY:'好友入座',TURN_ACTION:'轮到你了',DISCARD_RESPONSE:'弃牌响应',HU_COMPOSE:'借字排句',HU_VOTE:'共同评审',ROUND_FINISHED:'本局结束',ROOM_CLOSED:'房间已关闭'};
 function DevApp(){
  const query=new URLSearchParams(location.search),demo=location.pathname.startsWith('/dev');
@@ -17,4 +16,4 @@ function DevApp(){
  return <div className="home"><header className="topbar"><div className="wordmark">字间 <span>文字麻将</span></div><span className="eyebrow">好友围坐，慢慢成句</span></header><main className="home-content"><span className="eyebrow">一桌熟人 · 一副汉字</span><h1>把手里的字，<br/>排成你的意思。</h1><p>摸一个字，舍一个字。用十四个汉字和最多三个逗号，<br className="desktop-break"/>说一句让大家点头的话。</p><div className="home-tiles">{'字里行间'.split('').map(x=><span key={x}>{x}</span>)}</div><section className="entry"><label>你的称呼<input value={nickname} onChange={e=>setNickname(e.target.value)} maxLength={20} placeholder="朋友怎么叫你"/></label><label>一桌几人<select value={n} onChange={e=>setN(Number(e.target.value) as PlayerCount)}>{[2,3,4,5,6].map(i=><option key={i} value={i}>{i} 人</option>)}</select></label><button className="primary" onClick={()=>setStatus('房间服务待接入；请由 Sol 接入真实创建接口。')}>创建好友房</button><label>已有房间码<input value={code} onChange={e=>setCode(e.target.value)} placeholder="输入朋友发来的房间码"/></label><button onClick={()=>setStatus('入座服务待接入；昵称不能证明原座位身份。')}>加入房间</button><button className="quiet" onClick={()=>setRestore(x=>!x)}>找回我的座位</button>{restore&&<><label>私密恢复码<input type="password" autoComplete="off" placeholder="仅在本机输入，不会公开"/></label><button onClick={()=>setStatus('恢复接口待 Sol 接入；恢复成功后旧设备将只读。')}>恢复身份</button></>}<p role="status">{status}</p></section><div className="home-rules"><span>2—6 位朋友</span><span>只吃上家</span><span>真人评审句意</span><span>掉线可恢复</span></div><p className="fine">全员在线时，{n} 人桌需 {Math.floor((n-1)/2)+1}/{n-1} 位对手赞成。AI 只摸牌、出牌，不吃、不胡、不投票。</p><a href="/dev/baseline">开发专用 · 查看真实 3D 牌桌基线</a></main></div>;
 }
 
-export default function App(){useGameViewport();return <><div className="app-content">{import.meta.env.DEV&&location.pathname.startsWith('/dev')?<DevApp/>:<OnlineApp/>}</div><footer className="app-version" aria-label={`应用版本 ${packageInfo.version}`}>v{packageInfo.version}</footer></>;}
+export default function App(){useGameViewport();return <div className="app-content">{import.meta.env.DEV&&location.pathname.startsWith('/dev')?<DevApp/>:<OnlineApp/>}</div>;}

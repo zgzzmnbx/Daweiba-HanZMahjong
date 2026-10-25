@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-25',title:'开局先看，轻松上手',features:['准备开局前弹出绿金新手指南，四步讲清整理、摸吃、出牌和胡牌；确认后才准备，不消耗行动时间。','可勾选下次不再出现，当前浏览器记住偏好；帮助中可随时重看。']},
+ {version:packageInfo.version,date:'2026-10-25',title:'版本号收进菜单',features:['版本号移至菜单标题下方，随时可查。','移除画面底部常驻版本号及其留白，给游戏多一点空间。']},
+ {version:'1.23.16',date:'2026-10-25',title:'开局先看，轻松上手',features:['准备开局前弹出绿金新手指南，四步讲清整理、摸吃、出牌和胡牌；确认后才准备，不消耗行动时间。','可勾选下次不再出现，当前浏览器记住偏好；帮助中可随时重看。']},
  {version:'1.23.15',date:'2026-10-25',title:'跟着提示，轻松入局',features:['桌中央显示出牌落点，选牌、拖排和松手出牌都有对应提示；摸吃与排句说明更清楚。','全桌累计出牌满10圈后显示借字胡按钮，自摸胡继续保留；刷新重连不会重新计圈。']},
  {version:'1.23.14',date:'2026-10-25',title:'准备就绪，一眼看清',features:['已准备玩家显示麻将主题的绿色金边标签，候场名单与玩家头像同步显示。','取消准备立即收起标签，手机上保持紧凑，开局后不再显示候场标签。']},
  {version:'1.23.13',date:'2026-10-25',title:'向句号借个逗号',features:['从句尾的句号牌拖出逗号，拖回句号即可收起；移除独立逗号窗口。','最多使用3个逗号，尝试第4个会提示上限。点击句号或顶部标点查看用法气泡。']},

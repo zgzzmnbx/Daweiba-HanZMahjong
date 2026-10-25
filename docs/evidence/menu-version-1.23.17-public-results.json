@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-25T13:21:10.932Z",
+  "version": "1.23.17",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real hall/two-client game; four viewports; version visibility/menu focus/full viewport; Chromium touch emulation, not physical Safari",
+  "checks": [
+    {
+      "name": "hall has no external version/footer space; available menu shows version 320",
+      "status": "PASS",
+      "geometry": {
+        "w": 320,
+        "h": 480,
+        "padding": 0,
+        "rootBottom": 480,
+        "scroll": false
+      },
+      "menu": {
+        "top": 183.171875,
+        "bottom": 197.171875,
+        "left": 29,
+        "right": 161,
+        "dialogTop": 113.828125,
+        "dialogBottom": 366.171875,
+        "vw": 320,
+        "vh": 480
+      }
+    },
+    {
+      "name": "hall has no external version/footer space; available menu shows version 390",
+      "status": "PASS",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "padding": 0,
+        "rootBottom": 844,
+        "scroll": false
+      },
+      "menu": {
+        "top": 363.171875,
+        "bottom": 377.171875,
+        "left": 40,
+        "right": 172,
+        "dialogTop": 293.828125,
+        "dialogBottom": 550.171875,
+        "vw": 390,
+        "vh": 844
+      }
+    },
+    {
+      "name": "hall has no external version/footer space; available menu shows version 667",
+      "status": "PASS",
+      "geometry": {
+        "w": 667,
+        "h": 375,
+        "padding": 0,
+        "rootBottom": 375,
+        "scroll": false
+      }
+    },
+    {
+      "name": "hall has no external version/footer space; available menu shows version 1280",
+      "status": "PASS",
+      "geometry": {
+        "w": 1280,
+        "h": 800,
+        "padding": 0,
+        "rootBottom": 800,
+        "scroll": false
+      }
+    },
+    {
+      "name": "real two-client round starts through existing readiness gate",
+      "status": "PASS"
+    },
+    {
+      "name": "game menu version visible, Escape restores focus, no command or external footer 320",
+      "status": "PASS",
+      "geometry": {
+        "w": 320,
+        "h": 480,
+        "padding": 0,
+        "rootBottom": 480,
+        "scroll": false
+      },
+      "menu": {
+        "top": 150.6953125,
+        "bottom": 164.6953125,
+        "left": 29,
+        "right": 241,
+        "dialogTop": 64.3046875,
+        "dialogBottom": 415.6953125,
+        "vw": 320,
+        "vh": 480
+      }
+    },
+    {
+      "name": "game menu version visible, Escape restores focus, no command or external footer 390",
+      "status": "PASS",
+      "geometry": {
+        "w": 390,
+        "h": 844,
+        "padding": 0,
+        "rootBottom": 844,
+        "scroll": false
+      },
+      "menu": {
+        "top": 330.6953125,
+        "bottom": 344.6953125,
+        "left": 40,
+        "right": 300,
+        "dialogTop": 244.3046875,
+        "dialogBottom": 599.6953125,
+        "vw": 390,
+        "vh": 844
+      }
+    },
+    {
+      "name": "game menu version visible, Escape restores focus, no command or external footer 667",
+      "status": "PASS",
+      "geometry": {
+        "w": 667,
+        "h": 375,
+        "padding": 0,
+        "rootBottom": 375,
+        "scroll": false
+      },
+      "menu": {
+        "top": 106.390625,
+        "bottom": 120.390625,
+        "left": 178.5,
+        "right": 438.5,
+        "dialogTop": 20,
+        "dialogBottom": 355,
+        "vw": 667,
+        "vh": 375
+      }
+    },
+    {
+      "name": "game menu version visible, Escape restores focus, no command or external footer 1280",
+      "status": "PASS",
+      "geometry": {
+        "w": 1280,
+        "h": 800,
+        "padding": 0,
+        "rootBottom": 800,
+        "scroll": false
+      },
+      "menu": {
+        "top": 342.34375,
+        "bottom": 356.34375,
+        "left": 487,
+        "right": 743,
+        "dialogTop": 252.65625,
+        "dialogBottom": 547.34375,
+        "vw": 1280,
+        "vh": 800
+      }
+    },
+    {
+      "name": "own verification room closes without score or approved sentence",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
