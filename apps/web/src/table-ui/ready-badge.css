@@ -1,0 +1,7 @@
+.ready-badge{display:inline-flex;align-items:center;justify-content:center;gap:3px;flex:none;height:20px;padding:1px 7px;border:1px solid #a9bf76;border-radius:5px;background:linear-gradient(145deg,#38795a,#20583e);color:#f2e6b5;box-shadow:inset 0 1px 0 #e3f1c326,0 2px 3px #051f1640;font-family:var(--ui-font);font-weight:500;font-size:10px;line-height:16px;letter-spacing:.5px;white-space:nowrap;vertical-align:middle}
+.ready-badge svg{width:10px;height:10px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#root .room-setup-panel .seat-person-heading{display:flex;align-items:center;gap:6px;min-width:0}
+#root .room-setup-panel .seat-person-heading strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.player-presence .ready-badge{height:14px;padding:0 5px;font-size:9px;line-height:12px;letter-spacing:0}
+.player-badge.compact .player-presence .ready-badge{height:11px;padding:0 3px;font-size:8px;line-height:9px}
+.player-presence .ready-badge svg{width:8px;height:8px}

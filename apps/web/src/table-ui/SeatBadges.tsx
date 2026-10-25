@@ -1,3 +1,4 @@
+import {ReadyBadge} from './ReadyBadge';
 import {playerDisplayName} from '../../../../packages/contracts/browser-return';
 import {useLayoutEffect,useRef,useState} from 'react';
 import type {SeatView} from '../../../../packages/contracts/table-view';
@@ -11,7 +12,7 @@ const relation:Record<SeatView['relation'],string>={SELF:'本人',NEXT:'下家',
 const seatRelation=(seat:SeatView,count:number)=>seat.relation==='OTHER'&&count%2===0&&seat.relativeSeat===count/2?'对家':relation[seat.relation];
 const overlaps=(a:Box,b:Box,pad=5)=>a.x<b.x+b.width+pad&&a.x+a.width>b.x-pad&&a.y<b.y+b.height+pad&&a.y+a.height>b.y-pad;
 /** Display-only placement: prefer free outer margins; a reserved rail resizes the entire canvas and its hit targets together. */
-export function SeatBadges({seats,labels,fallback,now,anchors}:{seats:readonly SeatView[];labels:Label[];fallback:boolean;now:number;anchors:()=>MotionAnchors}){
+export function SeatBadges({seats,labels,fallback,now,anchors,waiting=false}:{seats:readonly SeatView[];labels:Label[];fallback:boolean;now:number;anchors:()=>MotionAnchors;waiting?:boolean}){
  const forcedRail=useRef('');
  const root=useRef<HTMLDivElement>(null),readAnchors=useRef(anchors);readAnchors.current=anchors;
  const [layout,setLayout]=useState<Placement[]>([]),[measure,setMeasure]=useState(0);
@@ -68,9 +69,9 @@ export function SeatBadges({seats,labels,fallback,now,anchors}:{seats:readonly S
   }
   setLayout(old=>JSON.stringify(old)===JSON.stringify(next)?old:next);
  },[seats,labels,measure,fallback]);
- return <div ref={root} className="seat-layer player-badges" aria-label="同桌玩家">{seats.filter(s=>s.relation!=='SELF').map(s=>{const pos=layout.find(p=>p.seat===s.logicalSeat),p=s.player,status=!p?'空位':p.isBotSeat?'AI':p.presence==='BOT'||('autoPlay' in p&&p.autoPlay===true)?'托管':p.presence==='DISCONNECTED_GRACE'?'离线':p.ready&&p.handCount===0?'已准备':'在线';return <div key={s.logicalSeat} className={'player-badge '+(pos?.small?'compact ':'')+(pos?.horizontal?'horizontal ':'')+(!p?'empty':'')} data-seat={s.logicalSeat} data-outside={pos?.outside?'true':'false'} style={pos?{left:pos.x,top:pos.y,width:pos.width,height:pos.height,visibility:'visible'}:{visibility:'hidden'}} aria-label={`${p?playerDisplayName(p):'等待好友'}，${seatRelation(s,seats.length)}，${p?.handCount??0}张，${status}`}>
+ return <div ref={root} className="seat-layer player-badges" aria-label="同桌玩家">{seats.filter(s=>s.relation!=='SELF').map(s=>{const pos=layout.find(p=>p.seat===s.logicalSeat),p=s.player,status=!p?'空位':p.isBotSeat?'AI':p.presence==='BOT'||('autoPlay' in p&&p.autoPlay===true)?'托管':p.presence==='DISCONNECTED_GRACE'?'离线':waiting&&p.ready?'已准备':'在线';return <div key={s.logicalSeat} className={'player-badge '+(pos?.small?'compact ':'')+(pos?.horizontal?'horizontal ':'')+(!p?'empty':'')} data-seat={s.logicalSeat} data-outside={pos?.outside?'true':'false'} style={pos?{left:pos.x,top:pos.y,width:pos.width,height:pos.height,visibility:'visible'}:{visibility:'hidden'}} aria-label={`${p?playerDisplayName(p):'等待好友'}，${seatRelation(s,seats.length)}，${p?.handCount??0}张，${status}`}>
    <span className={'player-portrait '+(p?.isBotSeat?'ai':'')} aria-hidden="true">{(p?Array.from(p.nickname)[0]:null)??'空'}<i className={'presence-dot '+(p?.isBotSeat?'ai':p?.connected?'online':'offline')}/></span>
    <span className="player-nameplate"><strong>{p?playerDisplayName(p):'等待好友'}</strong><span> · {seatRelation(s,seats.length)}</span></span>
-   <small className="player-presence">{p?.handCount??0}张 · {status}{p?.presence==='DISCONNECTED_GRACE'?` ${Math.max(0,Math.ceil(((p.graceEndsAt??0)-now)/1000))}秒`:''}</small>
+   <small className="player-presence">{waiting&&p?.ready?<ReadyBadge/>:<>{p?.handCount??0}张 · {status}{p?.presence==='DISCONNECTED_GRACE'?` ${Math.max(0,Math.ceil(((p.graceEndsAt??0)-now)/1000))}秒`:''}</>}</small>
   </div>;})}{fallback&&seats.filter(s=>s.relation!=='SELF'&&s.player).map(s=><div key={s.logicalSeat} className="badge-fallback-hand fallback-hand" style={{left:`${50+s.placement.labelAnchor.x*38}%`,top:`${50-s.placement.labelAnchor.y*35}%`}} aria-hidden="true">{Array.from({length:s.concealed.count},(_,i)=><i key={i} data-motion-anchor={`hand:${s.player!.playerId}:${i}`} data-flight-rect="true"/>)}</div>)}</div>;
 }

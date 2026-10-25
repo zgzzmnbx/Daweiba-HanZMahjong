@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-25T11:31:40.986Z",
+  "version": "1.23.14",
+  "origin": "http://127.0.0.1:3176",
+  "browser": "141.0.7390.37",
+  "scope": "two real clients, six seats, READY/cancel/START/next-round, phone viewports simulated in Chromium",
+  "checks": [
+    {
+      "name": "unready human seats have no ready badge",
+      "status": "PASS"
+    },
+    {
+      "name": "four assigned AI seats show authoritative automatic readiness",
+      "status": "PASS"
+    },
+    {
+      "name": "guest ready broadcasts label to both seat list and portrait",
+      "status": "PASS"
+    },
+    {
+      "name": "cancel readiness immediately removes peer labels",
+      "status": "PASS"
+    },
+    {
+      "name": "self and all five peers show ready before start",
+      "status": "PASS"
+    },
+    {
+      "name": "six ready seats, long name, theme colors and start hit area fit 320x480",
+      "status": "PASS"
+    },
+    {
+      "name": "six ready seats, long name, theme colors and start hit area fit 390x844",
+      "status": "PASS"
+    },
+    {
+      "name": "six ready seats, long name, theme colors and start hit area fit 667x375",
+      "status": "PASS"
+    },
+    {
+      "name": "six ready seats, long name, theme colors and start hit area fit 1280x800",
+      "status": "PASS"
+    },
+    {
+      "name": "playing phase removes all waiting labels",
+      "status": "PASS"
+    },
+    {
+      "name": "preparing next round shows the same badge with remaining physical hands",
+      "status": "PASS"
+    },
+    {
+      "name": "private verification room closed unscored",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
