@@ -1,14 +1,12 @@
 # 当前任务板
 
-## 1.25.0 · 交付完成
+## 1.25.1 · 已发布，GitHub同步收尾
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| AI1250 | 每位AI独立判断/留言、署名动效 | DONE | 363测试；本地真实四AI、17项浏览器检查 |
-| FLOW1250 | 1.5秒AI、十圈响应、声音归入音乐 | DONE | 本地与公网各6项/30次真实摸打，四视口菜单可达 |
-| RELEASE | 原公网发布 | DONE | release 1.25.0-20261025-231801；9资源指纹与ready通过 |
-| GITHUB | 1.24.4—1.25.0变更及证据合并同步 | DONE | main提交bf2a578；160个变更文件，树f95c71c与本地完全一致，CAS成功 |
-| PROVIDER | 外部模型连接波动 | NOTE | 本地正常独立判句通过；公网本轮TIMEOUT，10秒独立70%兜底、聊天及恢复实测通过，不等同正常模型回复 |
+| DANMAKU | 评审弹窗内真人/AI署名弹幕 | DONE | 本地18项弹幕与11项六真人满留言通过，363测试通过 |
+| RELEASE | 原公网发布和验收 | DONE | 公网18项通过；9资源指纹一致，release 1.25.1-20261025-235231 |
+| GITHUB | 源码、文档和证据同步 | DOING | 已核对远端471266c；最终树校验后CAS |
 | ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | 手机以Chromium141模拟 |
 
-旧done任务已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。
+1.25.0已完成事项归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。
