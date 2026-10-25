@@ -34,3 +34,10 @@ dialog.hu-showcase.hu-review-dialog{position:fixed;inset:auto;top:calc(var(--app
 .hu-review-dialog .egg-stain{position:absolute;z-index:5;pointer-events:none;filter:drop-shadow(0 2px 2px #0008);width:min(22px,60%);height:min(16px,36%);bottom:5px;right:3px;background:radial-gradient(ellipse at 52% 48%,#ffcb36 0 31%,#fff3bb 33% 36%,#fff8e9 38% 70%,transparent 72%);border-radius:38% 61% 45% 55%;transform:rotate(-10deg);box-shadow:2px 2px 0 #aa762f66}.egg-stain:before,.egg-stain:after{content:'';position:absolute;background:#fff5db;border-radius:50%;width:5px;height:4px;left:-3px;top:0}.egg-stain:after{left:auto;right:0;top:-4px;width:3px;height:4px}
 
 @media(max-height:599px){.hu-review-dialog .review-verdict{display:flex;align-items:center;justify-content:center;gap:8px}.hu-review-dialog .review-verdict span{max-width:110px;line-height:1.2}.hu-review-dialog .review-verdict b{white-space:nowrap}}
+
+/* Reserve the same small status slot throughout synthesis/playback; the note remains at the right edge. */
+.hu-review-heading .review-audio-group{display:flex;align-items:center;gap:5px;flex:0 0 auto;min-width:0}
+.hu-review-heading .hu-speech-status{display:block;width:5em;flex:none;margin:0;text-align:right;font-size:10px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:clip;color:#c9bf99}
+.hu-review-heading .hu-speech-status[data-stage=preparing],.hu-review-heading .hu-speech-status[data-stage=decoding]{color:#f4d58e}
+.hu-review-heading .hu-speech-status[data-stage=failed]{color:#f2ac8c}
+@media(max-width:599px){.hu-review-heading .review-audio-group{gap:3px}.hu-review-heading .hu-speech-status{font-size:9px}}

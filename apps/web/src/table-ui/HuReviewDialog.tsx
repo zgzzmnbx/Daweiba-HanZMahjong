@@ -3,7 +3,7 @@ import {TurnHud} from './TurnHud';
 import {phaseClock,turnHint} from './turn-hud';
 import type {useGameSfx} from '../audio/use-game-sfx';
 import type {useGameSpeech} from '../speech-client';
-import {useEffect,useLayoutEffect,useRef,useState,type CSSProperties} from 'react';
+import {useEffect,useLayoutEffect,useRef,useState,useId,type CSSProperties} from 'react';
 import {createPortal} from 'react-dom';
 import type {PublicProposal,PublicHistoryEntry,ObjectionRange,ResyncEnvelope} from '../../../../packages/contracts/types';
 import type {SentenceRackController} from './SentenceRackController';
@@ -13,10 +13,13 @@ import './hu-review.css';
 
 type Egg={key:string;x:number;y:number;dx:number;dy:number;delay:number};
 export function HuReviewDialog({sfx,speech,proposal,presentation,clock,envelope,controller:c,onClose}:{sfx?:ReturnType<typeof useGameSfx>;speech?:ReturnType<typeof useGameSpeech>;proposal:PublicProposal|PublicHistoryEntry;presentation:HuPresentation|null;clock:ReturnType<typeof phaseClock>;envelope:ResyncEnvelope;controller:SentenceRackController;onClose:()=>void}){
+ const speechStatusId=useId();
  const root=useRef<HTMLDialogElement>(null),seen=useRef(new Set<string>()),initialized=useRef(false);
  const [audioOpen,setAudioOpen]=useState(false),[intro,setIntro]=useState(false),[eggs,setEggs]=useState<Egg[]>([]),[hint,setHint]=useState(''),[rejecting,setRejecting]=useState(false);
  const result='result' in proposal?proposal.result:null,finished='outcome' in proposal,canVote=c.allowed('VOTE')&&!finished;
  const votes=proposal.reviewers??[],ids=proposal.snapshot.sentence.orderedTileIds;
+ const speechStage=!speech?.enabled?'disabled':speech.huStatus?.proposalId===proposal.proposalId?speech.huStatus.stage:'idle';
+ const speechLabel={disabled:'语音关闭',idle:'待朗读',preparing:'准备语音',decoding:'准备播放',playing:'正在朗读',complete:'朗读完成',failed:'语音失败',blocked:'点击启用'}[speechStage];
  const nickname=envelope.public.players.find(p=>p.playerId===proposal.applicantId)?.nickname??'同桌';
  const own=envelope.private.ownBallot;
  const objectionNames=(index:number)=>votes.filter(v=>v.choice==='REJECT'&&v.objectionRanges.some(r=>index>=r.start&&index<r.endExclusive)).map(v=>v.nickname);
@@ -47,7 +50,7 @@ export function HuReviewDialog({sfx,speech,proposal,presentation,clock,envelope,
  const showRanges=canVote&&rejecting?c.ranges:own?.choice==='REJECT'?own.objectionRanges:[];
  return createPortal(<dialog ref={root} className={'hu-showcase hu-review-dialog '+(intro?'intro ':'')+(finished?(result?.passed?'approved':'rejected'):'voting')} aria-label="胡牌评审" data-proposal-id={proposal.proposalId} onCancel={e=>{e.preventDefault();if(finished)onClose();else if(rejecting)cancelReject();else {setIntro(false);sfx?.skipReveal();}}}>
   <div className="hu-burst-lines" aria-hidden="true"/>
-  <header className="hu-review-heading"><span className="hu-seal" aria-hidden="true">胡</span><div><small>{nickname} · 亮牌请评</small><h2>{finished?(result?.passed?'这句，胡了！':result?'这句，没过！':'本次申请已撤回'):'这句，大家说了算。'}</h2></div>{speech&&<button className="review-audio-toggle" aria-label="评审声音设置" aria-expanded={audioOpen} onClick={()=>setAudioOpen(x=>!x)}><span aria-hidden="true">♫</span><small>声音</small></button>}</header>
+  <header className="hu-review-heading"><span className="hu-seal" aria-hidden="true">胡</span><div><small>{nickname} · 亮牌请评</small><h2>{finished?(result?.passed?'这句，胡了！':result?'这句，没过！':'本次申请已撤回'):'这句，大家说了算。'}</h2></div>{speech&&<div className="review-audio-group"><small id={speechStatusId} className="hu-speech-status" role="status" aria-live="polite" aria-atomic="true" data-stage={speechStage} title={speech.message||speechLabel}>{speechLabel}</small><button className="review-audio-toggle" aria-label="评审声音设置" aria-describedby={speechStatusId} aria-expanded={audioOpen} onClick={()=>setAudioOpen(x=>!x)}><span aria-hidden="true">♫</span><small>声音</small></button></div>}</header>
   <div className="hu-review-content">
    <SentenceTiles className={'hu-slam-rack '+(rejecting?'choosing-objection':'')} label="待评审句子" sentence={proposal.snapshot.sentence} unitClass={i=>{const names=objectionNames(i);return(names.length?'has-objection ':'')+(showRanges.some(r=>i>=r.start&&i<r.endExclusive)?'selected':'');}} renderTile={(id,i)=>{const char=proposal.snapshot.tiles.find(t=>t.tileId===id)?.char,names=objectionNames(i),selected=showRanges.some(r=>i>=r.start&&i<r.endExclusive);return <button className="review-tile" data-review-index={i} aria-label={`圈选第 ${i+1} 字 ${char}`} aria-pressed={selected} disabled={!canVote||!rejecting} title={names.length?`${names.join('、')}：这里不通顺`:undefined} onClick={()=>toggle(i)}><b>{char}</b>{names.length>0&&<span className="egg-stain" aria-label={`${names.join('、')}提出异议`}/>}</button>;}} decoration={()=><svg className="hu-impact-spark" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 0 67 38 92 15 80 46 120 52 83 65 106 95 72 81 65 120 53 83 21 104 37 72 0 65 38 53 14 22 47 38Z"/></svg>}/>
    {speech&&<div className={'hu-speech-controls '+(audioOpen?'expanded':'')}>{sfx&&<button onClick={sfx.toggle}>{sfx.enabled?'关闭音效':'开启音效'}</button>}<button disabled={!speech.enabled} onClick={()=>speech.replayHu(proposal.proposalId)}>{speech.playing?'重新朗读':'朗读胡牌句子'}</button><button onClick={speech.toggle}>{speech.enabled?'关闭语音':'开启语音'}</button>{speech.message&&<small role="status">{speech.message}</small>}</div>}<div className="review-progress">{result?`赞成 ${result.approveCount} · 反对 ${result.rejectCount} · 未投 ${result.abstainCount} · 需 ${result.threshold} 票`:'submittedBallotCount' in proposal?`已投 ${proposal.submittedBallotCount} / ${proposal.reviewerCount} · 需 ${proposal.threshold} 票赞成`:''}</div>

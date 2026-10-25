@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-25T01:33:52.066Z",
+  "version": "1.23.7",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real HTTPS/WSS, configured Qwen sentence audio decoded and played; declared transport-failure and actual-response-delay cancellation cases; viewport simulation, not physical Safari",
+  "checks": [
+    {
+      "name": "new public HU proposal shows preparing, real decoded playback and completion on both players",
+      "status": "PASS",
+      "audio": [
+        {
+          "stages": [
+            {
+              "stage": "idle",
+              "text": "待朗读",
+              "at": 17331.39999961853
+            },
+            {
+              "stage": "preparing",
+              "text": "准备语音",
+              "at": 17341.20000076294
+            },
+            {
+              "stage": "decoding",
+              "text": "准备播放",
+              "at": 19437.89999961853
+            },
+            {
+              "stage": "playing",
+              "text": "正在朗读",
+              "at": 19444.89999961853
+            },
+            {
+              "stage": "complete",
+              "text": "朗读完成",
+              "at": 23059.10000038147
+            }
+          ],
+          "starts": [
+            {
+              "duration": 3.6126666666666667,
+              "at": 19443.20000076294
+            }
+          ],
+          "requests": 1
+        },
+        {
+          "stages": [
+            {
+              "stage": "idle",
+              "text": "待朗读",
+              "at": 9564.10000038147
+            },
+            {
+              "stage": "preparing",
+              "text": "准备语音",
+              "at": 9573.39999961853
+            },
+            {
+              "stage": "decoding",
+              "text": "准备播放",
+              "at": 11768.5
+            },
+            {
+              "stage": "playing",
+              "text": "正在朗读",
+              "at": 11777.70000076294
+            },
+            {
+              "stage": "complete",
+              "text": "朗读完成",
+              "at": 15390.39999961853
+            }
+          ],
+          "starts": [
+            {
+              "duration": 3.6126666666666667,
+              "at": 11775.89999961853
+            }
+          ],
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "name": "rejected same proposal retains completion and never automatically replays",
+      "status": "PASS"
+    },
+    {
+      "name": "status fits beside square note at phone portrait, short landscape and desktop widths",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit replay reuses same proposal and traverses real playback states",
+      "status": "PASS"
+    },
+    {
+      "name": "injected network failure shows failure; explicit retry plays actual server audio",
+      "status": "PASS"
+    },
+    {
+      "name": "muting cancels pending real response; late completion and re-enable cannot replay or overwrite status",
+      "status": "PASS"
+    },
+    {
+      "name": "own private test room closed unscored",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

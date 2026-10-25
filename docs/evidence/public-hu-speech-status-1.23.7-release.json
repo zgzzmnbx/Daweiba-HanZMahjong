@@ -1,0 +1,48 @@
+{
+  "version": "1.23.7",
+  "sourceCommit": "30320c00efff88349c46c22a4c0c1008899c3f4b",
+  "origin": "https://118.196.107.182:1240",
+  "release": "1.23.7-20261025-093254",
+  "backup": "pre-release-20261025-093255.sqlite",
+  "at": "2026-10-25T09:32:56.086280",
+  "ready": {
+    "ready": true
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 819,
+      "sha256": "38b8aafaf1d6b3a359196c6512adfd6b1c74828dc42edeeaa450ce7aaa3211f8"
+    },
+    {
+      "path": "assets/index-Bb2jRSAi.js",
+      "bytes": 929780,
+      "sha256": "7862f5854a113af827ec994fb2b2481418fb94f59b4be31a81a0dce884b0b0f0"
+    },
+    {
+      "path": "assets/index-B-Rd6SqG.css",
+      "bytes": 220959,
+      "sha256": "37f46207f2a5c4b7548ce40961df1554dd3e06f7c20d0cb3e9c2ffc059a51b85"
+    },
+    {
+      "path": "fonts/pingfang/manifest.json",
+      "bytes": 73424,
+      "sha256": "760af7c2570d4449dbafedaa77425c93baecae44570e632e2fe5cf7432995157"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+      "bytes": 133264,
+      "sha256": "1ff5c1cb3ab56a3b7c07a97986056803e9db77376947547a87015f5e2c48715b"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+      "bytes": 133124,
+      "sha256": "98bd29647780ce5c285eb29361384aab369ccfdadfb2e59502d29d396534eedf"
+    },
+    {
+      "path": "fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+      "bytes": 132280,
+      "sha256": "8c7d6eeaac98121a908be440ba1b9fcc0ee717bca52493b67232e2afdd4a8d66"
+    }
+  ]
+}

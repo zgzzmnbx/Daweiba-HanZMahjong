@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-25T01:32:03.812Z",
+  "version": "1.23.7",
+  "origin": "http://127.0.0.1:3174",
+  "browser": "141.0.7390.37",
+  "scope": "real SQLite, two Chromium clients and actual server route; explicitly synthetic tone WAV provider for deterministic lifecycle, not Aliyun quality",
+  "checks": [
+    {
+      "name": "new public HU proposal shows preparing, real decoded playback and completion on both players",
+      "status": "PASS",
+      "audio": [
+        {
+          "stages": [
+            {
+              "stage": "idle",
+              "text": "待朗读",
+              "at": 3545.6000003814697
+            },
+            {
+              "stage": "preparing",
+              "text": "准备语音",
+              "at": 3559.5
+            },
+            {
+              "stage": "decoding",
+              "text": "准备播放",
+              "at": 4647.10000038147
+            },
+            {
+              "stage": "playing",
+              "text": "正在朗读",
+              "at": 4665.199998855591
+            },
+            {
+              "stage": "complete",
+              "text": "朗读完成",
+              "at": 7812.5
+            }
+          ],
+          "starts": [
+            {
+              "duration": 3.15,
+              "at": 4663.60000038147
+            }
+          ],
+          "requests": 1
+        },
+        {
+          "stages": [
+            {
+              "stage": "idle",
+              "text": "待朗读",
+              "at": 685.8999996185303
+            },
+            {
+              "stage": "preparing",
+              "text": "准备语音",
+              "at": 696.8999996185303
+            },
+            {
+              "stage": "decoding",
+              "text": "准备播放",
+              "at": 1782.8000011444092
+            },
+            {
+              "stage": "playing",
+              "text": "正在朗读",
+              "at": 1800.3000011444092
+            },
+            {
+              "stage": "complete",
+              "text": "朗读完成",
+              "at": 4948.60000038147
+            }
+          ],
+          "starts": [
+            {
+              "duration": 3.15,
+              "at": 1798.5
+            }
+          ],
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "name": "rejected same proposal retains completion and never automatically replays",
+      "status": "PASS"
+    },
+    {
+      "name": "status fits beside square note at phone portrait, short landscape and desktop widths",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit replay reuses same proposal and traverses real playback states",
+      "status": "PASS"
+    },
+    {
+      "name": "injected network failure shows failure; explicit retry plays actual server audio",
+      "status": "PASS"
+    },
+    {
+      "name": "muting cancels pending real response; late completion and re-enable cannot replay or overwrite status",
+      "status": "PASS"
+    },
+    {
+      "name": "own private test room closed unscored",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
