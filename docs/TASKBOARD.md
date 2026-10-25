@@ -1,13 +1,12 @@
 # 当前任务板
 
-## 1.26.0 · 交付完成
+## 1.26.1 · 桌心引导
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| ART | 30张独立古风头像 | DONE | 三组各10张，兔子重绘为动物头；清单/SHA256/小尺寸实图 |
-| PROFILE | 选择、随机昵称与持久化 | DONE | 367测试；六真实客户端16项/四视口通过 |
-| RELEASE | 原公网发布和复验 | DONE | 公网六客户端16项通过；39资源SHA256一致 |
-| GITHUB | 源码、文档和证据同步 | DONE | main提交d6bb937；82文件树一致、CAS成功；最终证据随收尾同步 |
+| GUIDE | 投影居中、精简样式与拖入反馈 | DONE | 六视口/四真实客户端18项通过；367测试通过 |
+| RELEASE | 原公网发布及复验 | IN_PROGRESS | 待运行安装、资源指纹、联机复验 |
+| GITHUB | 源码和证据同步 | TODO | 待CAS同步及文件树核对 |
 | ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | 手机以Chromium141模拟 |
 
-1.25.2已完成事项归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。
+1.26.0已完成事项归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。

@@ -45,14 +45,12 @@
 .table-action-dock{position:absolute;z-index:8;left:50%;top:57%;transform:translateX(-50%);display:flex;justify-content:center;gap:10px;white-space:nowrap}
 .game-shell .table-action-dock .game-action{flex-direction:column;gap:0;min-width:66px;min-height:64px;padding:5px 12px;border-radius:13px}
 .table-action-dock .game-action b{font-size:29px;line-height:32px}.table-action-dock .game-action span{font-size:10px}
-.discard-drop-zone{position:absolute;z-index:6;left:50%;top:43%;transform:translate(-50%,-50%);width:31%;height:28%;border:2px dashed #eed48a99;border-radius:22px;display:grid;place-items:center;pointer-events:none;opacity:0;background:#193d2ba8;color:#f4db9d;transition:opacity 120ms,background 120ms,box-shadow 120ms}
-.discard-drop-zone.visible{opacity:1}.discard-drop-zone.over{background:#216744dc;border-style:solid;box-shadow:0 0 26px #efd28966,inset 0 0 22px #eacf8c33}.discard-drop-zone span{font-size:13px;text-shadow:0 2px 4px #000}
 .latest-discard{position:absolute;z-index:5;left:50%;top:43%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;padding:8px 13px;background:#17251be8;border:1px solid #bda46988;border-radius:12px;box-shadow:0 7px 20px #0006;pointer-events:none;animation:discard-arrive 250ms ease-out}
 .latest-player{display:flex;flex-direction:column;gap:4px;font-size:13px;max-width:90px;overflow-wrap:anywhere;color:#f6dfaf}.latest-player small{font-size:10px;color:#c6b894}.latest-tile{display:grid;place-items:center;width:53px;height:70px;border-radius:6px;border:1px solid #f4e5bb;border-bottom:6px solid #ae9c72;background:linear-gradient(#fffbee,#eadcba);color:#193a29;font-family:var(--tile-font);font-size:43px;box-shadow:0 4px 8px #0005}.latest-discard.responding{border:2px solid #f2d276;box-shadow:0 0 24px #c9a54866,0 7px 20px #0006}.latest-discard.drag-obscured{opacity:0}
 .game-shell .action-bar{min-height:24px;padding-top:5px}.game-shell .status{max-width:100%;font-size:10px}
 @keyframes discard-arrive{from{opacity:0;transform:translate(-50%,-50%) scale(.8)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @media(min-width:700px){body:has(.devbar) .game-shell .viewport{width:min(calc(100% - 170px),calc((100dvh - 299px)*1.5))}body:has(.devbar) .game-shell:has(.expanded) .viewport{width:min(calc(100% - 170px),calc((100dvh - 429px)*1.5))}}
-@media(max-width:699px){.game-shell .viewport,.game-shell:has(.expanded) .viewport{width:100%;margin-bottom:0}.game-shell .table-action-dock{top:76%;gap:7px}.game-shell .table-action-dock .game-action{min-width:57px;min-height:53px;padding:3px 8px;border-radius:10px}.table-action-dock .game-action b{font-size:25px;line-height:27px}.table-action-dock .game-action span{font-size:9px}.latest-discard{left:46%;top:45%;gap:7px;padding:5px 8px}.latest-tile{width:38px;height:52px;font-size:33px}.latest-player{font-size:11px;max-width:60px}.latest-player small{font-size:9px}.discard-drop-zone{top:45%;left:50%;height:27%;width:35%}.discard-drop-zone span{font-size:11px}.game-shell .action-bar{padding:4px 15px}}
+@media(max-width:699px){.game-shell .viewport,.game-shell:has(.expanded) .viewport{width:100%;margin-bottom:0}.game-shell .table-action-dock{top:76%;gap:7px}.game-shell .table-action-dock .game-action{min-width:57px;min-height:53px;padding:3px 8px;border-radius:10px}.table-action-dock .game-action b{font-size:25px;line-height:27px}.table-action-dock .game-action span{font-size:9px}.latest-discard{left:46%;top:45%;gap:7px;padding:5px 8px}.latest-tile{width:38px;height:52px;font-size:33px}.latest-player{font-size:11px;max-width:60px}.latest-player small{font-size:9px}.game-shell .action-bar{padding:4px 15px}}
 @media(prefers-reduced-motion:reduce){.latest-discard{animation:none}.discard-drop-zone{transition:none}}
 @media(min-width:700px){.game-shell:has(.expanded) .table-action-dock{top:62%}}
 /* 1.5: recent owned tile remains identifiable after the player moves it. */
@@ -70,16 +68,3 @@
 @media(max-width:699px){.table-public-reveal{top:10%;width:83%;padding:4px 5px 6px}.table-public-reveal>span{font-size:8px;margin-bottom:3px}.table-public-reveal>div{gap:2px}.reveal-unit{gap:1px}.reveal-unit b{width:20px;height:28px;font-size:15px}.reveal-unit i{width:14px;height:28px;font-size:16px}.flying-table-tile{font-size:25px;border-bottom-width:3px}}
 @media(prefers-reduced-motion:reduce){.table-flight-layer{display:none}}
 .table-public-reveal>div{display:flex;flex-direction:column;gap:4px}.table-public-reveal .reveal-row{display:flex;justify-content:center;gap:3px;flex-wrap:nowrap}.table-public-reveal{width:max-content;min-width:220px;max-width:83%;padding-left:12px;padding-right:12px}@media(max-width:699px){.table-public-reveal{min-width:180px;padding-left:7px;padding-right:7px}.table-public-reveal .reveal-row{gap:2px}}
-
-/* Guidance shares the actual drop geometry; it never intercepts tiles or changes table height. */
-.discard-drop-zone{min-width:96px;min-height:58px;border-color:#d4ba7659;background:#102d218c}
-.discard-drop-zone span{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;padding:4px;font-family:var(--ui-font);line-height:1.4}
-.discard-drop-zone b{font-size:clamp(12px,1.5vw,18px);font-weight:600}
-.discard-drop-zone small{font-size:clamp(10px,1vw,12px);color:#e2d4ad}
-.discard-drop-zone em{font-style:normal;font-size:10px;color:#a9c5aa}
-.discard-drop-zone.dragging{border-color:#e6c978b3}
-.discard-drop-zone:has(span) span{animation:drop-guide-in .25s ease-out}
-.discard-drop-zone.forbidden{border-color:#bd947560;background:#392d238c}
-@keyframes drop-guide-in{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:none}}
-@media(max-height:499px){.discard-drop-zone span{gap:1px;padding:1px}.discard-drop-zone b{font-size:11px}.discard-drop-zone small,.discard-drop-zone em{font-size:9px}}
-@media(prefers-reduced-motion:reduce){.discard-drop-zone:has(span) span{animation:none}}

@@ -43,7 +43,7 @@ export class MainView {
   private centerCanvas = document.createElement('canvas');
   private size={width:1,height:1};
   readonly stats={renders:0,capacity:0,fontRebuilds:0};
-  constructor(readonly host:HTMLElement, private projected:(hits:Hit[], labels:Label[])=>void, private lost:()=>void, low=false) {
+  constructor(readonly host:HTMLElement, private projected:(hits:Hit[], labels:Label[], center?:{x:number;y:number;width:number})=>void, private lost:()=>void, low=false) {
     this.renderer = new T.WebGLRenderer({alpha:true,antialias:true});
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,low?1:innerWidth<600?1.5:2));
     this.renderer.domElement.setAttribute('aria-hidden','true');
@@ -167,7 +167,8 @@ export class MainView {
     const project=(v:T.Vector3)=>{v.project(this.camera);return{x:(v.x+1)*w/2,y:(1-v.y)*h/2};};
     const hits=[...this.own.values()].sort((a,b)=>a.target.x-b.target.x).map(({mesh,tileId,kind})=>{const points=[];for(const x of [-3,3])for(const y of [-4.5,4.5])points.push(project(mesh.localToWorld(new T.Vector3(x,y,2.1))));const xs=points.map(p=>p.x),ys=points.map(p=>p.y);return{tileId,comma:kind==='comma',kind,x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};});
     const labels=this.last?.view.seats.map(s=>({seat:s.logicalSeat,...project(new T.Vector3(s.placement.x,s.placement.y,13))}))??[];
-    this.projected(hits,labels);if(moving)this.render();
+    const center=project(new T.Vector3(111,111,3)),left=project(new T.Vector3(51,111,3)),right=project(new T.Vector3(171,111,3));
+    this.projected(hits,labels,{...center,width:Math.abs(right.x-left.x)});if(moving)this.render();
   });}
   refresh(){this.render();}
   diagnostics(){return{...this.stats,memory:{...this.renderer.info.memory},calls:this.renderer.info.render.calls,dpr:this.renderer.getPixelRatio()};}

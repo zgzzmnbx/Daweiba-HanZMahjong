@@ -5,6 +5,7 @@ import type {MusicTransport} from '../../../packages/contracts/music';
 import {PortraitMenu,MenuIcon} from './table-ui/PortraitMenu';
 import type {DoodleControls,DoodleStatus} from './RoomDoodle';
 import './portrait-game.css';
+import './table-ui/discard-guide.css';
 import {TurnHud} from './table-ui/TurnHud';
 import {phaseClock,turnHint} from './table-ui/turn-hud';
 import {useGameSfx} from './audio/use-game-sfx';
@@ -54,6 +55,7 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
  const controllerRef=useRef<SentenceRackController>();if(!controllerRef.current)controllerRef.current=new SentenceRackController(envelope,transport,()=>redraw(n=>n+1));const c=controllerRef.current;
  const host=useRef<HTMLDivElement>(null),renderer=useRef<MainView>(),pointer=useRef<RackPointer|null>(null),rangeStart=useRef<number|null>(null);
  const [drag,setDrag]=useState<RackPointer|null>(null),[rackSize,setRackSize]=useState(innerWidth-34);
+ const [tableCenter,setTableCenter]=useState<{x:number;y:number;width:number}>();
  const rackHost=useRef<HTMLDivElement>(null),discardZone=useRef<HTMLDivElement>(null),dropTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
  const [huShow,setHuShow]=useState<HuPresentation|null>(null);
  const [reviewOpenId,setReviewOpenId]=useState<string|null>(envelope.public.phase.kind==='HU_VOTE'?envelope.public.phase.proposal.proposalId:null);
@@ -91,7 +93,7 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
  const input={public:envelope.public,self:{...envelope.private,...(c.envelope!==envelope?{}:envelope.private.candidateDraft?{candidateDraft:{...envelope.private.candidateDraft,sentence:c.sentence()}}:{draft:c.draft})}};
  const projection=tableViewAdapter.project(input,seatTemplate,c.revision),view=projection.kind==='READY'?projection.view:null;
  const dom=compose||!!fallback||envelope.public.phase.kind==='HU_COMPOSE'||envelope.public.phase.kind==='HU_VOTE';
- useLayoutEffect(()=>{if(!host.current||fallback||!controlled)return;let disposed=false;try{renderer.current=new MainView(host.current,(h,l)=>{if(!disposed){setHits(h);setLabels(l);captureMotion.current();}},()=>{flights.current?.clear();motionPrevious.current=null;setFallback('三维绘图上下文已中断，已保留当前草稿。');},low);if(import.meta.env.DEV)(window as any).__tableRenderer=renderer.current;}catch{setFallback('当前设备无法启动 WebGL，已切换可操作牌桌。');}return()=>{disposed=true;renderer.current?.dispose();renderer.current=undefined;if(import.meta.env.DEV)(window as any).__tableRenderer=null;};},[generation,fallback,low,controlled,!!view]);
+ useLayoutEffect(()=>{if(!host.current||fallback||!controlled)return;let disposed=false;try{renderer.current=new MainView(host.current,(h,l,center)=>{if(!disposed){setHits(h);setLabels(l);setTableCenter(center);captureMotion.current();}},()=>{flights.current?.clear();motionPrevious.current=null;setFallback('三维绘图上下文已中断，已保留当前草稿。');},low);if(import.meta.env.DEV)(window as any).__tableRenderer=renderer.current;}catch{setFallback('当前设备无法启动 WebGL，已切换可操作牌桌。');}return()=>{disposed=true;renderer.current?.dispose();renderer.current=undefined;if(import.meta.env.DEV)(window as any).__tableRenderer=null;};},[generation,fallback,low,controlled,!!view]);
 
  const phase=envelope.public.phase;
  useEffect(()=>setPunctuationOpen(false),[stamp,connected,controlled]);
@@ -122,11 +124,6 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
  const forbidden=!!own?.cells.find(x=>x.tile.tileId===(heldTile?drag.id:c.selected))?.forbiddenToDiscard;
  const showDiscardProtection=forbidden&&!(heldTile&&drag.overRack&&!drag.overDiscard);
  const interaction={selected:!!c.selected,forbidden,dragging:!!heldTile,overDiscard:!!drag?.overDiscard,overRack:!!drag?.overRack};
- const [intro,setIntro]=useState(false),introSeen=useRef(false);
- useEffect(()=>{if(!canGuide||introSeen.current)return;introSeen.current=true;
-  try{if(localStorage.getItem('hanz-drag-guide-v1'))return;localStorage.setItem('hanz-drag-guide-v1','seen');}catch{/* Private browsing still gets a usable one-time hint. */}
-  setIntro(true);const timer=setTimeout(()=>setIntro(false),6000);return()=>{clearTimeout(timer);setIntro(false);};
- },[canGuide]);
  const acquisition=c.acquisition();
  const latestDiscard=phase.kind==='DISCARD_RESPONSE'?envelope.public.discards.find(d=>d.discardId===phase.discardId):envelope.public.discards.at(-1);
  const discardPlayer=latestDiscard?envelope.public.players.find(p=>p.playerId===latestDiscard.playerId):null;
@@ -221,7 +218,7 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
    <SeatBadges waiting={waiting} seats={view.seats} labels={labels} fallback={!!fallback} now={estimatedNow} anchors={readMotionAnchors}/>
    {!dom&&<div className="hit-layer">{hits.map(h=>{const cell=own?.cells.find(x=>x.tile.tileId===h.tileId);return h.kind==='period'?<button key="period" {...periodProps} className="projected-comma period-tile" style={{left:h.x,top:h.y,width:h.width,height:h.height}}/>:h.kind==='comma'?<button key={`comma:${h.tileId}`} {...commaProps(h.tileId as TileId)} className="projected-comma" style={{left:h.x,top:h.y,width:h.width,height:h.height}}/>:<button key={h.tileId} {...tileProps(h.tileId as TileId)} aria-label={`第 ${(cell?.position??0)+1} 张 ${cell?.tile.char}${acquisition?.tileId===h.tileId?acquisition.kind==='EAT'?'，新吃的牌':'，新摸的牌':''}`} aria-pressed={c.selected===h.tileId} className={'projected-tile '+(c.selected===h.tileId?'selected ':'')+(acquisition?.tileId===h.tileId?'fresh-tile':'')} data-acquired={acquisition?.tileId===h.tileId?acquisition.kind:undefined} style={{left:h.x,top:h.y,width:h.width,height:h.height}}/>;})}</div>}
 
-   {canGuide&&!showReveal&&<div ref={discardZone} className={'discard-drop-zone visible '+(heldTile?'dragging ':'')+(drag?.overDiscard&&!forbidden?'over ':'')+(showDiscardProtection?'forbidden':'')} aria-label="桌中央出牌区"><span key={c.selected??'unselected'}><b>{heldTile?(showDiscardProtection?'换一张牌':drag.overDiscard?'松手出牌':drag.overRack?'松手调整顺序':'拖进这里'):forbidden?'换一张牌':c.selected?'拖进这里':'选一张牌'}</b><small>{showDiscardProtection?'刚吃的牌先留着':heldTile?(drag.overDiscard?'这张字就打出去了':drag.overRack?'牌序自动保存':'松手即可出牌'):c.selected?'或点击「打」':'拖到桌中央出牌'}</small>{intro&&!c.selected&&!heldTile&&<em>手牌内拖动可整理</em>}</span></div>}
+   {canGuide&&!showReveal&&<div ref={discardZone} style={!fallback&&tableCenter?{left:tableCenter.x,top:tableCenter.y,width:Math.max(104,Math.min(224,tableCenter.width))}:undefined} className={'discard-drop-zone visible '+(heldTile?'dragging ':'')+(drag?.overDiscard&&!forbidden?'over ':'')+(showDiscardProtection?'forbidden':'')} aria-label="桌中央出牌区"><svg className="discard-guide-icon" viewBox="0 0 32 36" aria-hidden="true"><rect x="4" y="3" width="17" height="25" rx="3"/><path d="M10 10h5m-5 5h5M18 22l5 5 5-5m-5-8v13"/></svg><span className="discard-guide-copy" key={c.selected??'unselected'}><b>{heldTile?(showDiscardProtection?'换一张牌':drag.overDiscard?'松手出牌':drag.overRack?'松手调整顺序':'拖进这里'):forbidden?'换一张牌':c.selected?'拖进这里':'选一张牌'}</b><small>{showDiscardProtection?'刚吃的牌先留着':heldTile?(drag.overDiscard?'这张字就打出去了':drag.overRack?'牌序自动保存':'松手即可出牌'):c.selected?'或点击「打」':'拖到桌中央出牌'}</small></span></div>}
    {latestDiscard&&!waiting&&!showReveal&&!canGuide&&phase.kind!=='ROOM_CLOSED'&&<div key={latestDiscard.discardId} data-motion-anchor={`discard:${latestDiscard.discardId}`} className={'latest-discard '+(phase.kind==='DISCARD_RESPONSE'?'responding ':'')+(drag?.started&&drag.kind==='tile'?'drag-obscured':'')} role="status" aria-live="polite" aria-atomic="true" aria-label={`${discardPlayer?.nickname??'同桌'}${phase.kind==='DISCARD_RESPONSE'?'刚出':'上张弃牌'}：${latestDiscard.tile.char}`}><span className="latest-player">{latestDiscard.playerId===envelope.private.playerId?'你':discardPlayer?.nickname??'同桌'}<small>{phase.kind==='DISCARD_RESPONSE'?'刚刚打出':latestDiscard.status==='CLAIMED'?'已被吃走':'上张弃牌'}</small></span><strong className="latest-tile">{latestDiscard.tile.char}</strong></div>}
    {showReveal&&reveal&&<section className="table-public-reveal" aria-label="公开胡牌句子"><span>{envelope.public.players.find(p=>p.playerId===reveal.applicantId)?.nickname??'同桌'} · {phase.kind==='HU_VOTE'?'请大家评审':'本次胡牌句子'}</span><div>{[0,7].map(start=><div className="reveal-row" key={start}>{reveal.snapshot.sentence.orderedTileIds.slice(start,start+7).map(id=><span className="reveal-unit" key={id}><b data-motion-anchor={`reveal:${reveal.proposalId}:${id}`} data-flight-rect="true">{reveal.snapshot.tiles.find(t=>t.tileId===id)?.char}</b>{Array.from(reveal.snapshot.sentence.commaAfterTileIds).includes(id)&&<i>，</i>}</span>)}</div>)}</div></section>}
    <div className="table-action-dock" aria-label="牌桌操作">

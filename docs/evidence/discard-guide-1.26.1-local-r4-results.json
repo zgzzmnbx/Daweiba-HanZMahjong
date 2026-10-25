@@ -1,0 +1,531 @@
+{
+  "at": "2026-10-25T16:50:32.068Z",
+  "version": "1.26.1",
+  "origin": "http://127.0.0.1:3186",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x859 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 747,
+        "w": 464,
+        "h": 38,
+        "right": 474,
+        "bottom": 785
+      },
+      "hud": {
+        "x": 10,
+        "y": 749,
+        "w": 464,
+        "h": 34,
+        "right": 474,
+        "bottom": 783
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 498.8515625,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 548.7890625
+      },
+      "rack": null,
+      "scroll": [
+        484,
+        859
+      ],
+      "viewport": [
+        484,
+        859
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x859 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 649,
+        "w": 448,
+        "h": 38,
+        "right": 466,
+        "bottom": 687
+      },
+      "hud": {
+        "x": 53,
+        "y": 651,
+        "w": 378,
+        "h": 34,
+        "right": 431,
+        "bottom": 685
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 537.1875,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 587.125
+      },
+      "rack": {
+        "x": 18,
+        "y": 695,
+        "w": 448,
+        "h": 124,
+        "right": 466,
+        "bottom": 819
+      },
+      "scroll": [
+        484,
+        859
+      ],
+      "viewport": [
+        484,
+        859
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x640 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 528,
+        "w": 464,
+        "h": 38,
+        "right": 474,
+        "bottom": 566
+      },
+      "hud": {
+        "x": 10,
+        "y": 530,
+        "w": 464,
+        "h": 34,
+        "right": 474,
+        "bottom": 564
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 389.3515625,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 439.2890625
+      },
+      "rack": null,
+      "scroll": [
+        484,
+        640
+      ],
+      "viewport": [
+        484,
+        640
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x640 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 430,
+        "w": 448,
+        "h": 38,
+        "right": 466,
+        "bottom": 468
+      },
+      "hud": {
+        "x": 53,
+        "y": 432,
+        "w": 378,
+        "h": 34,
+        "right": 431,
+        "bottom": 466
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 324.890625,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 374.828125
+      },
+      "rack": {
+        "x": 18,
+        "y": 476,
+        "w": 448,
+        "h": 124,
+        "right": 466,
+        "bottom": 600
+      },
+      "scroll": [
+        484,
+        640
+      ],
+      "viewport": [
+        484,
+        640
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 390x844 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 732,
+        "w": 370,
+        "h": 38,
+        "right": 380,
+        "bottom": 770
+      },
+      "hud": {
+        "x": 10,
+        "y": 734,
+        "w": 370,
+        "h": 34,
+        "right": 380,
+        "bottom": 768
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 142.5,
+        "y": 478.828125,
+        "w": 105,
+        "h": 49.9375,
+        "right": 247.5,
+        "bottom": 528.765625
+      },
+      "rack": null,
+      "scroll": [
+        390,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 390x844 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 634,
+        "w": 354,
+        "h": 38,
+        "right": 372,
+        "bottom": 672
+      },
+      "hud": {
+        "x": 53,
+        "y": 636,
+        "w": 284,
+        "h": 34,
+        "right": 337,
+        "bottom": 670
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 142.5,
+        "y": 541,
+        "w": 105,
+        "h": 49.9375,
+        "right": 247.5,
+        "bottom": 590.9375
+      },
+      "rack": {
+        "x": 18,
+        "y": 680,
+        "w": 354,
+        "h": 124,
+        "right": 372,
+        "bottom": 804
+      },
+      "scroll": [
+        390,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 320x480 table",
+      "status": "PASS",
+      "row": {
+        "x": 6,
+        "y": 378,
+        "w": 308,
+        "h": 38,
+        "right": 314,
+        "bottom": 416
+      },
+      "hud": {
+        "x": 6,
+        "y": 380,
+        "w": 308,
+        "h": 34,
+        "right": 314,
+        "bottom": 414
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 82,
+        "y": 326.9921875,
+        "w": 92,
+        "h": 49.9375,
+        "right": 174,
+        "bottom": 376.9296875
+      },
+      "rack": null,
+      "scroll": [
+        320,
+        480
+      ],
+      "viewport": [
+        320,
+        480
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 320x480 rack",
+      "status": "PASS",
+      "row": {
+        "x": 14,
+        "y": 317,
+        "w": 292,
+        "h": 38,
+        "right": 306,
+        "bottom": 355
+      },
+      "hud": {
+        "x": 49,
+        "y": 319,
+        "w": 222,
+        "h": 34,
+        "right": 271,
+        "bottom": 353
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 82,
+        "y": 254,
+        "w": 92,
+        "h": 49.9375,
+        "right": 174,
+        "bottom": 303.9375
+      },
+      "rack": {
+        "x": 14,
+        "y": 357,
+        "w": 292,
+        "h": 92,
+        "right": 306,
+        "bottom": 449
+      },
+      "scroll": [
+        320,
+        480
+      ],
+      "viewport": [
+        320,
+        480
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 667x375 table",
+      "status": "PASS",
+      "row": {
+        "x": 8,
+        "y": 279,
+        "w": 651,
+        "h": 32,
+        "right": 659,
+        "bottom": 311
+      },
+      "hud": {
+        "x": 168.5,
+        "y": 280,
+        "w": 330,
+        "h": 30,
+        "right": 498.5,
+        "bottom": 310
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 490.75,
+        "y": 77,
+        "w": 74,
+        "h": 76,
+        "right": 564.75,
+        "bottom": 153
+      },
+      "rack": null,
+      "scroll": [
+        667,
+        375
+      ],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 667x375 rack",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 218,
+        "w": 635,
+        "h": 32,
+        "right": 651,
+        "bottom": 250
+      },
+      "hud": {
+        "x": 51,
+        "y": 219,
+        "w": 565,
+        "h": 30,
+        "right": 616,
+        "bottom": 249
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 442,
+        "y": 77,
+        "w": 74,
+        "h": 76,
+        "right": 516,
+        "bottom": 153
+      },
+      "rack": {
+        "x": 16,
+        "y": 252,
+        "w": 635,
+        "h": 92,
+        "right": 651,
+        "bottom": 344
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 1280x800 table",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 690,
+        "w": 1248,
+        "h": 40,
+        "right": 1264,
+        "bottom": 730
+      },
+      "hud": {
+        "x": 462,
+        "y": 692,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 728
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 569,
+        "y": 437.59375,
+        "w": 142,
+        "h": 64,
+        "right": 711,
+        "bottom": 501.59375
+      },
+      "rack": null,
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 1280x800 rack",
+      "status": "PASS",
+      "row": {
+        "x": 35,
+        "y": 598.765625,
+        "w": 1210,
+        "h": 40,
+        "right": 1245,
+        "bottom": 638.765625
+      },
+      "hud": {
+        "x": 462,
+        "y": 600.765625,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 636.765625
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 568.9921875,
+        "y": 379.3125,
+        "w": 142,
+        "h": 64,
+        "right": 710.9921875,
+        "bottom": 443.3125
+      },
+      "rack": {
+        "x": 35,
+        "y": 647.765625,
+        "w": 1210,
+        "h": 107.234375,
+        "right": 1245,
+        "bottom": 755
+      },
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "keyboard opens drawer and focus transfers to collapse control",
+      "status": "PASS"
+    },
+    {
+      "name": "HU confirmation remains reachable above the split layout",
+      "status": "PASS"
+    },
+    {
+      "name": "felt border does not block borrowing or returning comma; rows stable",
+      "status": "PASS"
+    },
+    {
+      "name": "real cross-zone drag discard and draw remain operational",
+      "status": "PASS"
+    },
+    {
+      "name": "2D fallback retains its only playable hand instead of hiding it",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closed without scores or HuBook records",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
