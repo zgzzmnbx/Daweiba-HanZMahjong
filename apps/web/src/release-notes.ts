@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-25',title:'投票有态度，也有留言',features:['赞成与反对都可附一句留言，评审页显示票意和留言，同步同桌闲聊。','反对票可选择点牌砸鸡蛋；AI可引用句中原词夸妙处、损离谱，同次评审只发一条聊天。']},
+ {version:packageInfo.version,date:'2026-10-25',title:'插入逗号，不再突然换排',features:['大牌行数按固定字牌容量决定，加入或收回逗号保持阵型。','先收紧间距，再适度缩窄牌体；汉字不压扁，手机继续每排七张字牌。']},
+ {version:'1.24.1',date:'2026-10-25',title:'投票有态度，也有留言',features:['赞成与反对都可附一句留言，评审页显示票意和留言，同步同桌闲聊。','反对票可选择点牌砸鸡蛋；AI可引用句中原词夸妙处、损离谱，同次评审只发一条聊天。']},
  {version:'1.24.0',date:'2026-10-25',title:'AI 宽松判句，犀利吐槽',features:['指定AI共用DeepSeek句意判定，真人照常投票；最多10秒，超时或失败则每位AI独立70%赞成兜底。','一句短吐槽同步评审与同桌闲聊，不重复刷屏；已开牌局沿用原规则，下一局生效。']},
  {version:'1.23.17',date:'2026-10-25',title:'版本号收进菜单',features:['版本号移至菜单标题下方，随时可查。','移除画面底部常驻版本号及其留白，给游戏多一点空间。']},
  {version:'1.23.16',date:'2026-10-25',title:'开局先看，轻松上手',features:['准备开局前弹出绿金新手指南，四步讲清整理、摸吃、出牌和胡牌；确认后才准备，不消耗行动时间。','可勾选下次不再出现，当前浏览器记住偏好；帮助中可随时重看。']},

@@ -1,10 +1,10 @@
 # 当前任务板
 
-## 1.24.1 · 交付收尾
+## 1.24.2 · 交付完成
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| RELEASE1241 | 评审留言、原词短评、公网与GitHub | DONE | 348自动测试、本地23项/公网23项浏览器、9资源指纹 |
-| ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | Chromium141触摸视口四尺寸已验证 |
+| RACK1242 | 标点不换行、适度收窄、公网发布与源码同步 | DONE | 349自动测试，本地10项/公网10项，9资源指纹 |
+| ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | Chromium141手机横竖屏模拟已验证 |
 
-1.24.1及以前实现与证据已归档README/CHANGELOG/HANDOFF/VERIFICATION，无遗留功能待办；根目录没有TASKS.md。当前源码发布窗口已收尾，后续修改先读取最新版本。保留ENV作为实际设备验证限制，不伪称实体手机通过。
+1.24.2及以前已归档README/CHANGELOG/HANDOFF/VERIFICATION，旧done任务已清理；无根TASKS.md。当前修改与发布已收尾，后续读取最新版本后继续。

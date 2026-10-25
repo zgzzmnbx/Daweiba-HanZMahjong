@@ -67,20 +67,24 @@ export function nearestSlot(rects:readonly RackRect[],x:number,y:number){let res
 export function insideRect(r:{left:number;top:number;width:number;height:number}|null|undefined,x:number,y:number,pad=0){return !!r&&x>=r.left-pad&&x<=r.left+r.width+pad&&y>=r.top-pad&&y<=r.top+r.height+pad;}
 export function nearRackSlot(rects:readonly RackRect[],x:number,y:number){return rects.some(r=>insideRect(r,x,y,28))?nearestSlot(rects,x,y):null;}
 
-/** At most two rows, with a real punctuation slot and undistorted .7 character aspect.
- * Budget fourteen characters and all punctuation so drawing/reordering never changes row count. */
+/** At most two rows. Stable hands choose rows from fourteen characters plus the period,
+ * independently of commas; tighten gaps then compress tile bodies within .6–.7 aspect.
+ * Keep the same row-height budget while editing punctuation and drawing/discarding. */
 export function adaptiveRackLayout(draft:Draft,maxWidth:number,maxHeight=Infinity,maxTileHeight=76,minTileWidth=46,gap=6,rowGap=8,center:boolean|'stable'=false,reference:Draft=draft){
- const punctuation=center==='stable'?new Set(reference.commaAfterTileIds).size+1:4;
- const one=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(13+punctuation))/(14+punctuation*COMMA_WIDTH_RATIO),maxHeight*.7));
- const two=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(6+punctuation))/(7+punctuation*COMMA_WIDTH_RATIO),(maxHeight-rowGap)/2*.7));
- const rows=draft.orderedTileIds.length?one<minTileWidth&&two>one?2:1:0,tileWidth=rows===2?two:one,tileHeight=tileWidth/.7;
+ const stable=center==='stable',punctuation=stable?new Set(reference.commaAfterTileIds).size+1:4,baseMarks=stable?1:punctuation;
+ const one=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(13+baseMarks))/(14+baseMarks*COMMA_WIDTH_RATIO),maxHeight*.7));
+ const two=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(6+baseMarks))/(7+baseMarks*COMMA_WIDTH_RATIO),(maxHeight-rowGap)/2*.7));
+ const rows=draft.orderedTileIds.length?one<minTileWidth*(stable ? .9 : 1)&&two>one?2:1:0,baseWidth=rows===2?two:one,slots=(rows===2?7:14)+punctuation;
+ const actualGap=stable?Math.max(Math.min(2,gap),Math.min(gap,(maxWidth-slots*baseWidth)/(slots-1))):gap;
+ const tileWidth=stable?Math.max(1,Math.min(baseWidth,(maxWidth-actualGap*(slots-1))/slots)):baseWidth;
+ const tileHeight=stable?Math.min(baseWidth/.7,tileWidth/.6):tileWidth/.7,rowHeight=stable?baseWidth/.7:tileHeight;
  const groups=rows===2?[draft.orderedTileIds.slice(0,7),draft.orderedTileIds.slice(7)]:[draft.orderedTileIds];
  const items:RackItem[]=[];let width=0;
- groups.filter(ids=>ids.length).forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,tileHeight,gap,Infinity,rowGap,row===groups.length-1);
+ groups.filter(ids=>ids.length).forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,tileHeight,actualGap,Infinity,rowGap,row===groups.length-1);
   // Hand rows keep a fourteen/seven-character reference while HU sentences may center their actual content.
   const referenceIds=rows===2?reference.orderedTileIds.slice(row*7,row*7+7):reference.orderedTileIds,marks=referenceIds.filter(id=>Array.from(reference.commaAfterTileIds).includes(id)).length+(row===groups.length-1?1:0),capacity=(rows===2?7:14)+marks;
-  const budget=center==='stable'?capacity*tileWidth+(capacity-1)*gap:line.width,offset=center?Math.max(0,(maxWidth-budget)/2):0;
-  for(const item of line.items)items.push({...item,row,x:item.x+offset,y:row*(tileHeight+rowGap)});width=Math.max(width,line.width);
+  const budget=stable?capacity*tileWidth+(capacity-1)*actualGap:line.width,offset=center?Math.max(0,(maxWidth-budget)/2):0;
+  for(const item of line.items)items.push({...item,row,x:item.x+offset,y:row*(rowHeight+rowGap)});width=Math.max(width,line.width);
  });
- return{items,width,height:rows?rows*tileHeight+(rows-1)*rowGap:0,tileWidth,tileHeight,rows,reserve:rows?rows*(center==='stable'?tileHeight:maxTileHeight)+(rows-1)*rowGap:0};
+ return{items,width,height:rows?rows*rowHeight+(rows-1)*rowGap:0,tileWidth,tileHeight,rows,gap:actualGap,reserve:rows?rows*(stable?rowHeight:maxTileHeight)+(rows-1)*rowGap:0};
 }

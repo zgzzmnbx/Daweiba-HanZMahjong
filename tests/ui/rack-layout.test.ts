@@ -85,12 +85,12 @@ test('hand centering uses full character capacity and keeps surviving tile ancho
   for(const mobile of [false,true]){
    const layout=(draft:Draft)=>mobile?mobileRackLayout(draft,width,false,true):adaptiveRackLayout(draft,width,Infinity,76,46,6,8,'stable'),full=layout(d),short=layout({...d,orderedTileIds:ids.slice(0,13)}),gap=mobile?4:6;
    for(const id of ids.slice(0,13)){const a=full.items.find(i=>i.kind==='tile'&&i.tileId===id)!,b=short.items.find(i=>i.kind==='tile'&&i.tileId===id)!;assert.equal(a.x,b.x);assert.equal(a.y,b.y);assert.equal(a.width,b.width);}
-   for(const l of [full,short])for(const row of [0,1]){const items=l.items.filter(i=>i.row===row);if(!items.length)continue;for(const item of items)assert(item.x>=-.01&&item.x+item.width<=width+.01);const capacity=full.items.some(i=>i.row===1)?7:14,missing=capacity-items.filter(i=>i.kind==='tile').length,left=Math.min(...items.map(i=>i.x)),right=Math.max(...items.map(i=>i.x+i.width))+missing*(l.tileWidth+gap);assert(Math.abs((left+right)/2-width/2)<.01);}
+   for(const l of [full,short])for(const row of [0,1]){const items=l.items.filter(i=>i.row===row);if(!items.length)continue;for(const item of items)assert(item.x>=-.01&&item.x+item.width<=width+.01);const capacity=full.items.some(i=>i.row===1)?7:14,missing=capacity-items.filter(i=>i.kind==='tile').length,left=Math.min(...items.map(i=>i.x)),right=Math.max(...items.map(i=>i.x+i.width))+missing*(l.tileWidth+('gap' in l&&typeof l.gap==='number'?l.gap:gap));assert(Math.abs((left+right)/2-width/2)<.01);}
   }
  }
 });
 
-test('large hand uses available width and height while reserving the fourteenth tile without distortion',()=>{
+test('large hand reserves the fourteenth tile with bounded body compression',()=>{
  const layout=(d:Draft,w:number,h:number)=>adaptiveRackLayout(d,w,Math.max(96,Math.min(320,h*.34)),160,64,6,8,'stable');
  const plain={orderedTileIds:ids,commaAfterTileIds:[]} as Draft;
  assert.equal(layout(plain,1248,800).rows,1);assert(layout(plain,1248,800).tileHeight>100);
@@ -99,7 +99,7 @@ test('large hand uses available width and height while reserving the fourteenth 
  for(const w of [668,768,918,1248,1468])for(const h of [600,800,1080])for(const commas of [[],[ids[2]],[ids[0],ids[6],ids[10]]]){
   const d:Draft={orderedTileIds:ids,commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']},full=layout(d,w,h),short=layout({...d,orderedTileIds:ids.slice(0,13)},w,h);
   assert(full.rows===1||full.rows===2);assert(full.height<=Math.min(320,h*.34)+.01);assert.equal(full.height,full.reserve);assert.equal(full.reserve,short.reserve);assert.equal(full.rows,short.rows);
-  for(const item of full.items){assert(Math.abs(item.width/item.height-.7)<1e-9);assert(item.x>=-.01&&item.x+item.width<=w+.01);}
+  for(const item of full.items){assert(item.width/item.height>=.6-1e-9&&item.width/item.height<=.7+1e-9);assert(item.x>=-.01&&item.x+item.width<=w+.01);}
   for(const item of short.items.filter(i=>i.kind==='tile')){const original=full.items.find(i=>i.key===item.key)!;assert.equal(item.x,original.x);assert.equal(item.y,original.y);assert.equal(item.width,original.width);assert.equal(item.height,original.height);}
  }
 });
@@ -107,4 +107,22 @@ test('large hand uses available width and height while reserving the fourteenth 
 test('a discard that removes an end comma keeps the arranged frame size, row count and anchors',()=>{
  const reference:Draft={orderedTileIds:ids,commaAfterTileIds:[ids[12]]},after:Draft={orderedTileIds:ids.slice(0,13),commaAfterTileIds:[]};
  for(const w of [668,918,1248,1468]){const full=adaptiveRackLayout(reference,w,272,160,64,6,8,'stable',reference),short=adaptiveRackLayout(after,w,272,160,64,6,8,'stable',reference);assert.equal(full.rows,short.rows);assert.equal(full.tileWidth,short.tileWidth);assert.equal(full.reserve,short.reserve);for(const t of short.items.filter(i=>i.kind==='tile')){const original=full.items.find(i=>i.key===t.key)!;assert.equal(t.x,original.x);assert.equal(t.y,original.y);}}
+});
+
+
+test('commas never switch a stable hand between one and two rows, with modest width tolerance',()=>{
+ const base:Draft={orderedTileIds:ids,commaAfterTileIds:[]};
+ for(const width of [668,768,940,980,1044,1100,1248,1468]){
+  const layout=(d:Draft)=>adaptiveRackLayout(d,width,272,160,64,6,8,'stable');
+  const before=layout(base);
+  if(width>=980)assert.equal(before.rows,1);
+  for(const marks of [[ids[2]],[ids[2],ids[8]],[ids[2],ids[8],ids[11]]]){
+   const next=layout({...base,commaAfterTileIds:marks as unknown as Draft['commaAfterTileIds']});
+   assert.equal(next.rows,before.rows);assert.equal(next.reserve,before.reserve);assert.equal(next.height,before.height);
+   assert(next.tileWidth<=before.tileWidth);assert(next.tileWidth/next.tileHeight>=.6-1e-9);assert(next.tileWidth/next.tileHeight<=.7+1e-9);
+   for(const t of next.items)assert(t.x>=-.01&&t.x+t.width<=width+.01&&t.y+t.height<=next.height+.01);
+  }
+ }
+ const baseline=adaptiveRackLayout(base,1044,272,160,64,6,8,'stable');
+ for(const width of [1032,1020,1008])assert.equal(adaptiveRackLayout(base,width,272,160,64,6,8,'stable').rows,baseline.rows);
 });
