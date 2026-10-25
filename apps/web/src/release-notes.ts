@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-25',title:'胡牌确认文案调整',features:['确认提示改为“您确认这是一句完整的人话吗？”。']},
+ {version:packageInfo.version,date:'2026-10-25',title:'标点同大小，插牌更顺手',features:['逗号、句号与普通字牌同宽同高，整理和胡牌界面统一。','拖到逗号左半边插在逗号前，右半边插在逗号后；句号附近可直接插到末尾。','插入预览减少中点抖动，最多两排及桌面稳定布局保留。']},
+ {version:'1.23.8',date:'2026-10-25',title:'胡牌确认文案调整',features:['确认提示改为“您确认这是一句完整的人话吗？”。']},
  {version:'1.23.7',date:'2026-10-25',title:'语音进度，看得见',features:['胡牌音符旁显示准备语音、准备播放、正在朗读和朗读完成等真实状态。','失败、关闭或需要启用时也有提示；同一句子未通过后仍显示当前状态。']},
  {version:'1.23.6',date:'2026-10-25',title:'牌不挤，标点看得清',features:['整理牌架、胡牌确认和评审按空间自动选择一排或两排，最多两排，字牌保持正常比例。','胡牌逗号与句号占独立位置，清晰显示，不再叠在字牌边缘。']},
  {version:'1.23.5',date:'2026-10-25',title:'整理牌架，一点就开',features:['宽屏顶栏新增整理按钮，直接展开或收起整理牌架。','手机保持现有布局，原设置里的整理入口继续可用。']},

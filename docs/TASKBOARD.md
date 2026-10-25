@@ -1,11 +1,11 @@
 # 当前任务板
 
-## 1.23.8 · 胡牌确认文案调整
+## 1.23.9 · 标点同大小，插牌更顺手
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| COPY1238 | 使用用户指定的胡牌确认标题 | DONE | GameTable文案已替换 |
-| RELEASE1238 | 构建、发布与GitHub同步 | DONE | 构建、线上新标题/旧标题缺失和7资源一致；release102120，源码文档同步GitHub |
-| ENV | 实体手机/Safari实测 | NOT_RUN_ENV_REQUIRED | 本次仅提示语调整 |
+| INSERT1239 | 同尺寸标点、逗号两侧插入与末尾吸附 | DONE | 320自动测试、构建、本地21项拖动及26项六人布局检查通过 |
+| RELEASE1239 | 原入口发布、公网复验及GitHub同步 | DONE | 公网21项拖动+26项六人布局；release103219/备份103220；7资源一致，私房关闭，源码证据同步GitHub |
+| ENV | 实体手机/Safari实测 | NOT_RUN_ENV_REQUIRED | 当前为Chromium141触摸视口模拟 |
 
-1.23.7及以前完成项归档CHANGELOG/HANDOFF；无根TASKS.md需清理。
+1.23.8及以前完成项归档CHANGELOG/HANDOFF；无根TASKS.md。

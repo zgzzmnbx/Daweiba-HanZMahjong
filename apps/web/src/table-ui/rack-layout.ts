@@ -1,7 +1,7 @@
 import type {Draft,TileId} from '../../../../packages/contracts/types';
 export type RackItem={key:string;kind:'tile'|'comma'|'period';tileId:TileId;x:number;y:number;width:number;height:number;row:number};
-export const COMMA_WIDTH_RATIO=.7;
-/** Punctuation has its own narrower slot and stays on the same row as its anchor. */
+export const COMMA_WIDTH_RATIO=1;
+/** Punctuation occupies a full tile and stays on the same row as its anchor. */
 export function rackLayout(draft:Draft,tileWidth:number,height:number,gap:number,maxWidth=Infinity,rowGap=10,includePeriod=false){
  const items:RackItem[]=[];let x=0,row=0,width=0;const commas=new Set(draft.commaAfterTileIds);
  for(const tileId of draft.orderedTileIds){const comma=commas.has(tileId),period=includePeriod&&tileId===draft.orderedTileIds.at(-1),group=tileWidth+((comma?1:0)+(period?1:0))*(gap+tileWidth*COMMA_WIDTH_RATIO);if(x&&x+group>maxWidth+.01){row++;x=0;}items.push({key:`tile:${tileId}`,kind:'tile',tileId,x,y:row*(height+rowGap),width:tileWidth,height,row});x+=tileWidth;
@@ -33,6 +33,32 @@ export function movePreview(draft:Draft,tileId:TileId,index:number):Draft{
 /** null target returns a comma to its tray; invalid anchors leave the draft unchanged. */
 export function commaPreview(draft:Draft,from:TileId|null,to:TileId|null):Draft{if(to&&(to===draft.orderedTileIds.at(-1)||!draft.orderedTileIds.includes(to)||to!==from&&Array.from(draft.commaAfterTileIds).includes(to)))return draft;const commas=draft.commaAfterTileIds.filter(id=>id!==from);if(to){if(commas.length>=3)return draft;commas.push(to);}return{orderedTileIds:[...draft.orderedTileIds],commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};}
 export type RackRect={tileId:TileId;left:number;top:number;width:number;height:number};
+export type RackTargetRect=RackRect&{kind:'tile'|'comma'|'period'};
+export type RackInsertion={tileId:TileId;kind:RackTargetRect['kind'];after:boolean};
+/** Freeze all visual slots at pickup, choose the row first, then either half of a tile.
+ * Keep the previous side near its midpoint so small finger movements do not flip the preview. */
+export function rackInsertion(rects:readonly RackTargetRect[],x:number,y:number,previous:RackInsertion|null=null):RackInsertion|null{
+ if(!rects.length)return null;
+ const row=rects.reduce((a,b)=>Math.abs(y-b.top-b.height/2)<Math.abs(y-a.top-a.height/2)?b:a);
+ const line=rects.filter(r=>Math.abs(r.top+r.height/2-row.top-row.height/2)<Math.min(r.height,row.height)/2);
+ if(!line.some(r=>insideRect(r,x,y,28)))return null;
+ const target=line.reduce((a,b)=>Math.abs(x-b.left-b.width/2)<Math.abs(x-a.left-a.width/2)?b:a),dx=x-target.left-target.width/2;
+ const after=target.kind!=='period'&&(previous?.tileId===target.tileId&&previous.kind===target.kind&&Math.abs(dx)<Math.min(6,target.width*.15)?previous.after:dx>=0);
+ return{tileId:target.tileId,kind:target.kind,after};
+}
+/** Insert among visual tokens, so the two sides of a comma remain distinct gaps. */
+export function insertTilePreview(draft:Draft,tileId:TileId,target:RackInsertion):Draft{
+ const placed=new Set(draft.commaAfterTileIds),tokens=draft.orderedTileIds.flatMap(id=>[{kind:'tile' as const,tileId:id},...(placed.has(id)?[{kind:'comma' as const,tileId:id}]:[])]);
+ const from=tokens.findIndex(t=>t.kind==='tile'&&t.tileId===tileId);
+ let at=target.kind==='period'?tokens.length:tokens.findIndex(t=>t.kind===target.kind&&t.tileId===target.tileId);
+ if(from<0||at<0)return draft;
+ if(target.after&&target.kind!=='period')at++;
+ const [held]=tokens.splice(from,1);tokens.splice(at-(from<at?1:0),0,held);
+ const order=tokens.filter(t=>t.kind==='tile').map(t=>t.tileId),commas:TileId[]=[];let anchor:TileId|null=null;
+ for(const token of tokens)if(token.kind==='tile')anchor=token.tileId;else if(anchor&&anchor!==order.at(-1)&&!commas.includes(anchor))commas.push(anchor);
+ if(order.every((id,i)=>id===draft.orderedTileIds[i])&&commas.length===placed.size&&commas.every(id=>placed.has(id)))return draft;
+ return{orderedTileIds:order,commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};
+}
 /** Choose a stable slot by row then horizontal center, never by animated DOM hit testing. */
 export function nearestSlot(rects:readonly RackRect[],x:number,y:number){let result:RackRect|undefined,distance=Infinity;for(const r of rects){const dx=x-r.left-r.width/2,dy=y-r.top-r.height/2,d=Math.abs(dy)*4+Math.abs(dx);if(d<distance){distance=d;result=r;}}return result?.tileId??null;}
 

@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.23.8-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.23.9-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,14 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.23.9 · 标点同大小，插牌更顺手 · 2026-10-25
+
+逗号、句号在手机手牌、宽屏整理、Three.js牌桌及胡牌确认/亮相/评审中与字牌同宽同高；备用逗号按当前字牌尺寸显示，字形放大并按实际墨迹居中。仍最多两排，13→14固定预算及桌面保留高度不变。
+
+拖字时冻结字牌与标点的真实边界，先选行再选左右半边；逗号左半边插在逗号前、右半边插在逗号后，句号整个牌面及附近落点均插在末尾句号前。中点设置小幅防抖，保留让位预览，松手一次保存；逗号独立移动、句号固定末尾且不进入权威手牌、桌外取消及桌中央弃牌语义保留。规则1.5.1不变。
+
+320项自动测试、生产构建、本地21项双客户端拖动检查与26项六人胡牌布局检查通过。覆盖320/390/667/700/1280px标点同宽高及命中、手机备用逗号尺寸、跨排触摸/3D鼠标/宽屏整理、逗号两侧插入与中点防抖、句号外沿末尾插入、松手一次保存、独立逗号与固定句号、刷新和13→14桌面尺寸稳定。六人评审覆盖五人全句异议、字牌及标点实际墨迹无裁切、短横竖屏操作可达。验收私房均无计分关闭。证据见docs/evidence/full-punctuation-1.23.9-verified-local-*与full-punctuation-review-1.23.9-final-local-*；首轮字形占比检查未过，已放大并居中修复，旧候选证据移入Codex-Temp。已发布原公网入口，21项相同真实联机拖动检查与26项六人胡牌布局检查全部通过，验收私房均无计分关闭。release `1.23.9-20261025-103219`、冻结源码 `66831ae`、一致性备份 `pre-release-20261025-103220.sqlite`；ready=true，HTML/JS/CSS、苹方清单与三个核心字体共7资源和冻结构建一致。公网结果与截图见docs/evidence/full-punctuation-1.23.9-public-*、full-punctuation-review-1.23.9-public-*，指纹见public-full-punctuation-1.23.9-release.json。源码证据随本版同步GitHub；手机为Chromium141触摸视口模拟，实体Safari未实测。
 
 ## v1.23.8 · 胡牌确认文案调整 · 2026-10-25
 
@@ -346,7 +354,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.8**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.23.9**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 
