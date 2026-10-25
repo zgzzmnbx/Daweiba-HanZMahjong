@@ -61,4 +61,4 @@
 
 自动测试：tests/server/avatars.test.ts（目录/分组、随机与幂等、同房避重、重启/恢复、聊天冒用拒绝、非法输入）。
 
-真实浏览器：scripts/verify-avatars.mjs，四视口、三组30图、创建与加入、六真人候场、大厅/聊天、刷新、开局牌桌及胡牌确认。证据前缀avatars-1.26.0-local-r2，手机为Chromium模拟。公网结果见VERIFICATION。
+真实浏览器：scripts/verify-avatars.mjs，四视口、三组30图、创建与加入、六真人候场、大厅/聊天、刷新、开局牌桌及胡牌确认。证据前缀avatars-1.26.0-local-r2，手机为Chromium模拟。公网public-avatars-1.26.0-r2共16项通过，39资源指纹一致，测试房关闭。头像与源码已同步GitHub，详细发布与慢请求观察见VERIFICATION。

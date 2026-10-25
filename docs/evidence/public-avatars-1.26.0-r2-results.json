@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-25T16:41:57.943Z",
+  "version": "1.26.0",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "all thirty portraits and picker controls load and fit 320x480",
+      "status": "PASS"
+    },
+    {
+      "name": "all thirty portraits and picker controls load and fit 390x844",
+      "status": "PASS"
+    },
+    {
+      "name": "all thirty portraits and picker controls load and fit 667x375",
+      "status": "PASS"
+    },
+    {
+      "name": "all thirty portraits and picker controls load and fit 1280x800",
+      "status": "PASS"
+    },
+    {
+      "name": "UI create accepts a blank nickname and preserves the selected animal portrait",
+      "status": "PASS"
+    },
+    {
+      "name": "direct room entry selects a female portrait and custom nickname",
+      "status": "PASS"
+    },
+    {
+      "name": "six real seats have valid persistent profiles and random choices avoid duplicate portraits",
+      "status": "PASS"
+    },
+    {
+      "name": "six-seat short-screen setup and public lobby show the same portraits",
+      "status": "PASS"
+    },
+    {
+      "name": "chat delivers the sender portrait to another real client",
+      "status": "PASS"
+    },
+    {
+      "name": "browser refresh restores the original nickname and portrait",
+      "status": "PASS"
+    },
+    {
+      "name": "five opponent portraits fit the live table 320x480",
+      "status": "PASS"
+    },
+    {
+      "name": "five opponent portraits fit the live table 390x844",
+      "status": "PASS"
+    },
+    {
+      "name": "five opponent portraits fit the live table 667x375",
+      "status": "PASS"
+    },
+    {
+      "name": "five opponent portraits fit the live table 1280x800",
+      "status": "PASS"
+    },
+    {
+      "name": "profile addition preserves HU confirmation and live controls",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without scores or book records",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
