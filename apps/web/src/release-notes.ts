@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'返回箭头统一样式',features:['返回大厅改用金色矢量箭头，避免部分设备显示成彩色emoji。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'胡牌后，直接散桌',features:['房主可在胡牌通过页或本局结束页点击解散房间，确认后全桌关闭。']},
+ {version:'1.26.7',date:'2026-10-26',title:'返回箭头统一样式',features:['返回大厅改用金色矢量箭头，避免部分设备显示成彩色emoji。']},
  {version:'1.26.6',date:'2026-10-26',title:'看菜单，不被出牌打断',features:['别人摸牌、出牌时，菜单、音乐、记录和帮助保持打开。','新的胡牌评审仍会优先显示；普通菜单操作不暂停牌局计时。']},
  {version:'1.26.5',date:'2026-10-26',title:'引导单行，更轻巧',features:['桌中央出牌框收为单行，拖入时提示松手出牌。','牌架提示条收窄上下留白，简短提示、倒计时和细进度条保持清楚。']},
  {version:'1.26.4',date:'2026-10-26',title:'AI有文豪名，闲聊看得见',features:['AI从诙谐文豪名字库取名，统一加AI前缀，同桌避开重复名字。','刷新保持原名；旧编号AI升级为文豪名，真人托管仍保留本人昵称。','打开闲聊也能看见自己与同桌的新消息弹幕；手机字幕更清晰，聊天窗口避开弹幕。']},

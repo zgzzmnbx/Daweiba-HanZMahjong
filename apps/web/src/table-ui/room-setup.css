@@ -27,3 +27,5 @@
 
 /* Waiting has no hand draft; AI guidance already lives inside the setup panel. */
 #root .game-shell:has(.room-setup-panel) .practice-notice,#root .game-shell:has(.room-setup-panel) .action-bar{display:none}
+
+#root .room-setup-actions .dissolve-room{background:#513323;border-color:#bc875e;color:#f0d6ae}

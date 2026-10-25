@@ -64,3 +64,5 @@ dialog.hu-showcase.hu-review-dialog{position:fixed;inset:auto;top:calc(var(--app
 @keyframes review-comment-in {from {opacity:0;transform:translateY(8px) scale(.97);}to {opacity:1;transform:none;}}
 @keyframes reviewer-speaking {0%,35% {border-color:#edcc80;box-shadow:0 0 14px #d7ad4d55;}100% {box-shadow:none;}}
 @media(prefers-reduced-motion:reduce){.review-voter[data-speaking],.review-voter-comment[data-fresh]{animation:none;}}
+
+.hu-review-actions .review-result-buttons{display:flex;gap:8px;grid-column:1/-1;min-width:0}.hu-review-actions .review-result-buttons>button{flex:1;white-space:nowrap}.hu-review-actions .dissolve-room{background:#513323;border-color:#bc875e;color:#f0d6ae}
