@@ -1,0 +1,76 @@
+{
+  "version": "1",
+  "generatedAt": "2026-10-26",
+  "generator": "OpenAI built-in image_gen",
+  "basePrompt": "Create ONE original cute cheeky chat sticker for a Chinese literary mahjong game, square composition, transparent background. A chubby anthropomorphic ivory mahjong tile mascot, rounded chunky body, jade green sides, warm gold trim, tiny mitten hands and short feet, rosy cheeks, expressive dark jade eyes. Polished hand-painted cartoon, bold clean silhouette readable at 72 pixels, playful restrained antique Chinese style, soft cel shading, NOT emoji glyphs, not realistic, no text, no letters, no watermark. Character centered with generous transparent padding, all limbs fully visible. ",
+  "assets": [
+    {
+      "id": "proud",
+      "sourceFile": "exec-b4469ce6-ef95-48be-87bf-e268319f5540.png",
+      "sourceSha256": "3cd3fbb85bf0e5f48fc0dc8b59ab32af0bd886437abb6ef7982443720faa3c74",
+      "file": "proud.webp",
+      "sha256": "338c940bed71d85851012569ed97579c6b30e30216c87f577fb949c7eaf58a4f",
+      "bytes": 26354,
+      "width": 320,
+      "height": 320
+    },
+    {
+      "id": "giggle",
+      "sourceFile": "exec-55290972-d33a-4602-860c-9908668dc6ac.png",
+      "sourceSha256": "9b9c933ec0a68077a47e1f6cc0bfaf32fe697b4ef64517dda6e1fa161c059aa7",
+      "file": "giggle.webp",
+      "sha256": "736d5c586286dd30362ee174f11e80ef8147a522b2e46ef5f91c06d78381c25a",
+      "bytes": 29714,
+      "width": 320,
+      "height": 320
+    },
+    {
+      "id": "confused",
+      "sourceFile": "exec-29a55dd0-23d9-4ba6-8d53-5dbee24f8840.png",
+      "sourceSha256": "acc42f3bb844ce498734e233844b588706640df90a298bdad7382188a92b63c0",
+      "file": "confused.webp",
+      "sha256": "801a8c2966a82c382445948987d6edb34cdabb8840aec09c78269e7efffff13c",
+      "bytes": 26210,
+      "width": 320,
+      "height": 320
+    },
+    {
+      "id": "applause",
+      "sourceFile": "exec-0d81a083-aa54-4add-9533-2af4c69fd219.png",
+      "sourceSha256": "fc5d8257eec53aaa0cfd6d5c6f4d95c3e587146f08621494786fce551c31b83a",
+      "file": "applause.webp",
+      "sha256": "ee701f5c4b167ba396b7b5435e3bec5e8f6f621f885e167e43e81b793b9bdd5d",
+      "bytes": 36936,
+      "width": 320,
+      "height": 320
+    },
+    {
+      "id": "sad",
+      "sourceFile": "exec-7bd0d952-e748-4b9a-bbde-f7508394b7c6.png",
+      "sourceSha256": "c6db0e4c4a776245565c18e533b87f68cc6c53c1bbdd14a745154dd72fdf7bb6",
+      "file": "sad.webp",
+      "sha256": "8714cf8238eb966176f43dffc4cbfe99942c7b69c12620a213f54678a8a4e377",
+      "bytes": 27682,
+      "width": 320,
+      "height": 320
+    },
+    {
+      "id": "hurry",
+      "sourceFile": "exec-3d2f8e8d-f871-4ed2-9d8c-4ff998aeb99b.png",
+      "sourceSha256": "5974e4fce39cbe9bd351ad05db843abc3c7eb0383df6695e9be9cad08ef4c846",
+      "file": "hurry.webp",
+      "sha256": "a5c39c7dbe9c27f44e6404adea467fcc117144adf774786d26883e7ad944bdd6",
+      "bytes": 32922,
+      "width": 320,
+      "height": 320
+    }
+  ],
+  "expressions": {
+    "proud": "Smug proud grin, one eyebrow raised, hands on hips, tiny green scholar cap; golden sparkles.",
+    "giggle": "Giggling behind a jade folding fan, squinting eyes, mischievous rosy smile.",
+    "confused": "Puzzled wide eyes, head tilted, scratching scholar cap, small golden question mark.",
+    "applause": "Delighted admiration, clapping tiny hands with golden sparks, joyful smile.",
+    "sad": "Pouting with watery eyes and two teardrops, exaggerated wounded pride.",
+    "hurry": "Playful impatient pout, holding a tiny hourglass and pointing at it, tapping foot."
+  }
+}

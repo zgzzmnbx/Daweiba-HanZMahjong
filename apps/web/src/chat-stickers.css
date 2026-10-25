@@ -1,0 +1,16 @@
+/* Small ivory mascots on green felt; no new space reserved on the table. */
+.player-portrait,.seat-person-avatar{position:relative}
+.avatar-sticker{position:absolute;inset:0;z-index:4;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,#42674e,#143c2e 76%);pointer-events:none;animation:sticker-pop .42s cubic-bezier(.2,1.6,.35,1) both}
+.avatar-sticker img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 2px #07170c66)}
+.chat-toggle .avatar-sticker{inset:2px}.chat-toggle:has(.avatar-sticker)>svg,.chat-toggle:has(.avatar-sticker)>small{visibility:hidden}
+.chat-history .chat-sticker-image{display:block;width:100px;height:100px;object-fit:contain;margin:6px 0 0;filter:drop-shadow(0 3px 3px #041d1466)}
+.chat-composer .sticker-toggle{flex:none;display:grid;place-items:center;width:38px;height:42px;min-width:38px;min-height:42px;padding:7px;border-radius:12px;background:#193f30;border:1px solid #c1a66a66;color:#f0d393;box-shadow:inset 0 1px #fff1}
+.sticker-toggle svg{width:22px;height:22px}.sticker-toggle[aria-expanded=true]{background:#456547;border-color:#e5c782}
+.chat-sticker-picker{flex:1;min-height:0;overflow-y:auto;padding:8px 12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;align-content:start;overscroll-behavior:contain}
+.chat-sticker-picker>p{grid-column:1/-1;margin:0 0 2px;font-size:11px;color:#d5c795;text-align:center}
+.chat-sticker-picker>button{min-width:0;padding:4px;border-radius:12px;background:#244d3b66;border:1px solid #a8945a42;box-shadow:none;display:flex;flex-direction:column;align-items:center;color:#f2deb0;transition:background .15s,transform .15s}
+.chat-sticker-picker>button:hover{background:#56735188;transform:translateY(-2px)}
+.chat-sticker-picker .chat-sticker-image{width:clamp(44px,8vh,70px);height:clamp(44px,8vh,70px);object-fit:contain}
+.chat-sticker-picker small{font-size:11px;line-height:1.5;font-weight:500}.chat-sticker-picker button:disabled{opacity:.5}
+@keyframes sticker-pop{0%{transform:scale(.4) rotate(-14deg);opacity:0}65%{transform:scale(1.12) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.avatar-sticker{animation:none}.chat-sticker-picker>button{transition:none}}

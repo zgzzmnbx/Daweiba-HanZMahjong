@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-25T19:34:16.277Z",
+  "version": "1.27.0",
+  "origin": "http://127.0.0.1:3190",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "real sticker sync, one record, avatar animation, draft and geometry 320x480"
+    },
+    {
+      "name": "real sticker sync, one record, avatar animation, draft and geometry 390x844"
+    },
+    {
+      "name": "real sticker sync, one record, avatar animation, draft and geometry 667x375"
+    },
+    {
+      "name": "real sticker sync, one record, avatar animation, draft and geometry 1280x800"
+    },
+    {
+      "name": "reload restores images without replaying avatar animation"
+    },
+    {
+      "name": "text chat and danmaku still work"
+    },
+    {
+      "name": "avatar reaction during active play does not block actual discard"
+    },
+    {
+      "name": "isolated verification room closed"
+    }
+  ],
+  "errors": []
+}

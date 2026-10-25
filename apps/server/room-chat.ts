@@ -1,3 +1,4 @@
+import {chatSticker} from '../../packages/contracts/stickers';
 import {stableAvatarId} from '../../packages/contracts/avatars';
 import {randomUUID} from 'node:crypto';
 import type {DatabaseSync} from 'node:sqlite';
@@ -8,8 +9,8 @@ import {CHAT_HISTORY_LIMIT,CHAT_MAX_LENGTH,type RoomChatMessage,type RoomChatReq
 import type {Session} from './store';
 class ChatError extends Error{constructor(readonly code:string){super(code);}}
 export class RoomChatStore{
- constructor(private db:DatabaseSync){db.exec(`CREATE TABLE IF NOT EXISTS room_chat(seq INTEGER PRIMARY KEY AUTOINCREMENT,id TEXT UNIQUE NOT NULL,room_id TEXT NOT NULL,player_id TEXT NOT NULL,client_id TEXT NOT NULL,seat INTEGER NOT NULL,nickname TEXT NOT NULL,text TEXT NOT NULL,at INTEGER NOT NULL,UNIQUE(room_id,player_id,client_id));CREATE INDEX IF NOT EXISTS room_chat_history ON room_chat(room_id,seq);CREATE INDEX IF NOT EXISTS room_chat_rate ON room_chat(room_id,player_id,at);`);if(!(db.prepare('PRAGMA table_info(room_chat)').all() as {name:string}[]).some(c=>c.name==='avatar_id'))db.exec('ALTER TABLE room_chat ADD COLUMN avatar_id TEXT');}
- private project(row:any):RoomChatMessage{return{id:row.id,roomId:row.room_id,seat:row.seat,...(row.avatar_id?{avatarId:row.avatar_id}:{}),nickname:row.player_id==='system:ai-review'&&/deep\s*seek|深度求索/i.test(row.nickname)?'AI 评审':row.nickname,text:row.player_id==='system:ai-review'?row.text.replace(/deep\s*seek|深度求索/gi,'我'):row.text,at:row.at,...(row.player_id==='system:ai-review'?{kind:'AI_REVIEW' as const}:row.player_id==='system:hu-review'?{kind:'HU_REVIEW' as const}:{})};}
+ constructor(private db:DatabaseSync){db.exec(`CREATE TABLE IF NOT EXISTS room_chat(seq INTEGER PRIMARY KEY AUTOINCREMENT,id TEXT UNIQUE NOT NULL,room_id TEXT NOT NULL,player_id TEXT NOT NULL,client_id TEXT NOT NULL,seat INTEGER NOT NULL,nickname TEXT NOT NULL,text TEXT NOT NULL,at INTEGER NOT NULL,UNIQUE(room_id,player_id,client_id));CREATE INDEX IF NOT EXISTS room_chat_history ON room_chat(room_id,seq);CREATE INDEX IF NOT EXISTS room_chat_rate ON room_chat(room_id,player_id,at);`);if(!(db.prepare('PRAGMA table_info(room_chat)').all() as {name:string}[]).some(c=>c.name==='avatar_id'))db.exec('ALTER TABLE room_chat ADD COLUMN avatar_id TEXT');if(!(db.prepare('PRAGMA table_info(room_chat)').all() as {name:string}[]).some(c=>c.name==='sticker_id'))db.exec('ALTER TABLE room_chat ADD COLUMN sticker_id TEXT');}
+ private project(row:any):RoomChatMessage{return{id:row.id,roomId:row.room_id,seat:row.seat,...(row.avatar_id?{avatarId:row.avatar_id}:{}),nickname:row.player_id==='system:ai-review'&&/deep\s*seek|深度求索/i.test(row.nickname)?'AI 评审':row.nickname,text:row.player_id==='system:ai-review'?row.text.replace(/deep\s*seek|深度求索/gi,'我'):row.text,at:row.at,...(row.sticker_id?{kind:'STICKER' as const,stickerId:row.sticker_id,senderId:row.player_id}:{}),...(row.player_id==='system:ai-review'?{kind:'AI_REVIEW' as const}:row.player_id==='system:hu-review'?{kind:'HU_REVIEW' as const}:{})};}
  /** Called inside the game transaction: vote and chat cannot diverge. */
  captureReviews(g:Game,now:number){
   const messages:RoomChatMessage[]=[];
@@ -33,16 +34,19 @@ export class RoomChatStore{
  history(room:string){return this.db.prepare('SELECT * FROM room_chat WHERE room_id=? ORDER BY seq DESC LIMIT ?').all(room,CHAT_HISTORY_LIMIT).reverse().map(r=>this.project(r));}
  send(room:string,player:string,seat:number,nickname:string,request:unknown,now:number,avatarId?:string){
   const body=request as Partial<RoomChatRequest>|null;
-  if(!body||body.roomId!==room||typeof body.clientId!=='string'||!/^[-A-Za-z0-9_]{16,80}$/.test(body.clientId)||typeof body.text!=='string'||body.text.length>CHAT_MAX_LENGTH*4)throw new ChatError('CHAT_INVALID');
-  const text=body.text.normalize('NFC').replace(/[\r\n\t]+/g,' ').trim();
+  if(!body||body.roomId!==room||typeof body.clientId!=='string'||!/^[-A-Za-z0-9_]{16,80}$/.test(body.clientId))throw new ChatError('CHAT_INVALID');
+  const sticker=chatSticker(body.stickerId);
+  if(body.stickerId!==undefined&&(!sticker||body.text!==undefined))throw new ChatError('CHAT_INVALID_STICKER');
+  if(!sticker&&(typeof body.text!=='string'||body.text.length>CHAT_MAX_LENGTH*4))throw new ChatError('CHAT_INVALID');
+  const text=sticker?`[${sticker.label}]`:body.text!.normalize('NFC').replace(/[\r\n\t]+/g,' ').trim();
   if(!text||Array.from(text).length>CHAT_MAX_LENGTH||/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u202a-\u202e\u2066-\u2069]/.test(text))throw new ChatError('CHAT_INVALID');
   // Check receipts before throttling: a lost acknowledgement may be retried unchanged.
   const old=this.db.prepare('SELECT * FROM room_chat WHERE room_id=? AND player_id=? AND client_id=?').get(room,player,body.clientId) as any;
-  if(old){if(old.text!==text)throw new ChatError('CHAT_ID_REUSED');return{message:this.project(old),fresh:false};}
+  if(old){if(old.text!==text||(old.sticker_id??null)!==(sticker?.id??null))throw new ChatError('CHAT_ID_REUSED');return{message:this.project(old),fresh:false};}
   const counts=this.db.prepare('SELECT COUNT(*) AS minute,SUM(CASE WHEN at>? THEN 1 ELSE 0 END) AS burst FROM room_chat WHERE room_id=? AND player_id=? AND at>?').get(now-5000,room,player,now-60000) as {minute:number;burst:number};
   if(counts.burst>=3||counts.minute>=12)throw new ChatError('CHAT_RATE_LIMITED');
-  const id=randomUUID();this.db.prepare('INSERT INTO room_chat(id,room_id,player_id,client_id,seat,nickname,text,at,avatar_id) VALUES(?,?,?,?,?,?,?,?,?)').run(id,room,player,body.clientId,seat,nickname,text,now,avatarId??null);
-  return{message:{id,roomId:room,seat,nickname,...(avatarId?{avatarId}:{}),text,at:now} satisfies RoomChatMessage,fresh:true};
+  const id=randomUUID();this.db.prepare('INSERT INTO room_chat(id,room_id,player_id,client_id,seat,nickname,text,at,avatar_id,sticker_id) VALUES(?,?,?,?,?,?,?,?,?,?)').run(id,room,player,body.clientId,seat,nickname,text,now,avatarId??null,sticker?.id??null);
+  return{message:{id,roomId:room,seat,nickname,...(avatarId?{avatarId}:{}),text,at:now,...(sticker?{kind:'STICKER' as const,stickerId:sticker.id,senderId:player}:{})} satisfies RoomChatMessage,fresh:true};
  }
 }
 export function installRoomChat(app:Express,io:Server,db:DatabaseSync,options:{authenticate:(header:string|undefined,room?:string)=>Session;room:(id:string)=>Game;now:()=>number}){
