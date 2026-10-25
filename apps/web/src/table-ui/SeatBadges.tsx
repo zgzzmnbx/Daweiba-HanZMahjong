@@ -36,7 +36,8 @@ export function SeatBadges({seats,labels,fallback,now,anchors,waiting=false}:{se
   }
   if(rail){
    const ordered=seats.filter(s=>s.relation!=='SELF').sort((a,b)=>a.placement.labelAnchor.x-b.placement.labelAnchor.x||b.placement.labelAnchor.y-a.placement.labelAnchor.y),gap=4,width=Math.min(horizontal?138:96,(stage.width-12-gap*(ordered.length-1))/ordered.length),start=left+(stage.width-width*ordered.length-gap*(ordered.length-1))/2;
-   ordered.forEach((s,i)=>next.push({seat:s.logicalSeat,x:start+i*(width+gap),y:top+4,width,height:horizontal?44:68,small:true,outside:true,rail:true,horizontal}));
+   const railTop=window.matchMedia('(max-width:699px) and (orientation:portrait)').matches?Math.max(top+4,-72):top+4;
+   ordered.forEach((s,i)=>next.push({seat:s.logicalSeat,x:start+i*(width+gap),y:railTop,width,height:horizontal?44:68,small:true,outside:true,rail:true,horizontal}));
    setLayout(old=>JSON.stringify(old)===JSON.stringify(next)?old:next);return;
   }
   for(const seat of seats.filter(s=>s.relation!=='SELF').sort((a,b)=>Math.abs(a.placement.labelAnchor.x)-Math.abs(b.placement.labelAnchor.x)||b.placement.labelAnchor.y-a.placement.labelAnchor.y)){

@@ -53,9 +53,10 @@
  #root .room-setup-panel .room-setup-actions button{font-size:12px;min-height:42px}
 }
 @media(max-width:699px) and (orientation:portrait){
- /* Keep avatars, table and hand as one centered group instead of scattering them over all free height. */
- #root .game-shell>main{justify-content:center;gap:5px;padding:8px 10px 6px}
- #root .game-shell .table-stage{flex:0 1 calc((var(--app-width,100vw) - 20px)*.666667 + 84px);min-height:110px;width:100%}
+ /* Anchor the hand at the safe bottom edge; the table takes the remaining portrait height. */
+ #root .game-shell>main{justify-content:flex-start;gap:5px;padding:8px 10px 6px}
+ #root .game-shell .table-stage{flex:1 1 0;min-height:110px;width:100%}
+ #root .game-shell:has(.hand-zone[data-expanded=true]) .viewport:has(.player-badges[data-rail=true]){top:auto;bottom:8px;transform:translateX(-50%)}
  #root .game-shell .rack-area.expanded{flex:none;max-height:none;width:100%;padding:0 0 4px}
  #root .game-shell .table-notices{flex:0 0 20px;height:20px}
  #root .game-shell .turn-hud-row{height:38px;min-height:38px;flex-basis:38px}
