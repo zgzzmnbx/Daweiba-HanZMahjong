@@ -89,3 +89,22 @@ test('hand centering uses full character capacity and keeps surviving tile ancho
   }
  }
 });
+
+test('large hand uses available width and height while reserving the fourteenth tile without distortion',()=>{
+ const layout=(d:Draft,w:number,h:number)=>adaptiveRackLayout(d,w,Math.max(96,Math.min(320,h*.34)),160,64,6,8,'stable');
+ const plain={orderedTileIds:ids,commaAfterTileIds:[]} as Draft;
+ assert.equal(layout(plain,1248,800).rows,1);assert(layout(plain,1248,800).tileHeight>100);
+ assert.equal(layout(plain,668,800).rows,2);assert(layout(plain,668,800).tileHeight>100);
+ assert(layout(plain,1468,1080).tileWidth>85);
+ for(const w of [668,768,918,1248,1468])for(const h of [600,800,1080])for(const commas of [[],[ids[2]],[ids[0],ids[6],ids[10]]]){
+  const d:Draft={orderedTileIds:ids,commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']},full=layout(d,w,h),short=layout({...d,orderedTileIds:ids.slice(0,13)},w,h);
+  assert(full.rows===1||full.rows===2);assert(full.height<=Math.min(320,h*.34)+.01);assert.equal(full.height,full.reserve);assert.equal(full.reserve,short.reserve);assert.equal(full.rows,short.rows);
+  for(const item of full.items){assert(Math.abs(item.width/item.height-.7)<1e-9);assert(item.x>=-.01&&item.x+item.width<=w+.01);}
+  for(const item of short.items.filter(i=>i.kind==='tile')){const original=full.items.find(i=>i.key===item.key)!;assert.equal(item.x,original.x);assert.equal(item.y,original.y);assert.equal(item.width,original.width);assert.equal(item.height,original.height);}
+ }
+});
+
+test('a discard that removes an end comma keeps the arranged frame size, row count and anchors',()=>{
+ const reference:Draft={orderedTileIds:ids,commaAfterTileIds:[ids[12]]},after:Draft={orderedTileIds:ids.slice(0,13),commaAfterTileIds:[]};
+ for(const w of [668,918,1248,1468]){const full=adaptiveRackLayout(reference,w,272,160,64,6,8,'stable',reference),short=adaptiveRackLayout(after,w,272,160,64,6,8,'stable',reference);assert.equal(full.rows,short.rows);assert.equal(full.tileWidth,short.tileWidth);assert.equal(full.reserve,short.reserve);for(const t of short.items.filter(i=>i.kind==='tile')){const original=full.items.find(i=>i.key===t.key)!;assert.equal(t.x,original.x);assert.equal(t.y,original.y);}}
+});

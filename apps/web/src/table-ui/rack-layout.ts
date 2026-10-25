@@ -69,16 +69,18 @@ export function nearRackSlot(rects:readonly RackRect[],x:number,y:number){return
 
 /** At most two rows, with a real punctuation slot and undistorted .7 character aspect.
  * Budget fourteen characters and all punctuation so drawing/reordering never changes row count. */
-export function adaptiveRackLayout(draft:Draft,maxWidth:number,maxHeight=Infinity,maxTileHeight=76,minTileWidth=46,gap=6,rowGap=8,center:boolean|'stable'=false){
- const one=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*17)/(14+4*COMMA_WIDTH_RATIO),maxHeight*.7));
- const two=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*10)/(7+4*COMMA_WIDTH_RATIO),(maxHeight-rowGap)/2*.7));
+export function adaptiveRackLayout(draft:Draft,maxWidth:number,maxHeight=Infinity,maxTileHeight=76,minTileWidth=46,gap=6,rowGap=8,center:boolean|'stable'=false,reference:Draft=draft){
+ const punctuation=center==='stable'?new Set(reference.commaAfterTileIds).size+1:4;
+ const one=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(13+punctuation))/(14+punctuation*COMMA_WIDTH_RATIO),maxHeight*.7));
+ const two=Math.max(1,Math.min(maxTileHeight*.7,(maxWidth-gap*(6+punctuation))/(7+punctuation*COMMA_WIDTH_RATIO),(maxHeight-rowGap)/2*.7));
  const rows=draft.orderedTileIds.length?one<minTileWidth&&two>one?2:1:0,tileWidth=rows===2?two:one,tileHeight=tileWidth/.7;
  const groups=rows===2?[draft.orderedTileIds.slice(0,7),draft.orderedTileIds.slice(7)]:[draft.orderedTileIds];
  const items:RackItem[]=[];let width=0;
  groups.filter(ids=>ids.length).forEach((ids,row)=>{const line=rackLayout({orderedTileIds:ids,commaAfterTileIds:draft.commaAfterTileIds},tileWidth,tileHeight,gap,Infinity,rowGap,row===groups.length-1);
   // Hand rows keep a fourteen/seven-character reference while HU sentences may center their actual content.
-  const budget=line.width+(center==='stable'?(rows===2?7:14)-ids.length:0)*(tileWidth+gap),offset=center?Math.max(0,(maxWidth-budget)/2):0;
+  const referenceIds=rows===2?reference.orderedTileIds.slice(row*7,row*7+7):reference.orderedTileIds,marks=referenceIds.filter(id=>Array.from(reference.commaAfterTileIds).includes(id)).length+(row===groups.length-1?1:0),capacity=(rows===2?7:14)+marks;
+  const budget=center==='stable'?capacity*tileWidth+(capacity-1)*gap:line.width,offset=center?Math.max(0,(maxWidth-budget)/2):0;
   for(const item of line.items)items.push({...item,row,x:item.x+offset,y:row*(tileHeight+rowGap)});width=Math.max(width,line.width);
  });
- return{items,width,height:rows?rows*tileHeight+(rows-1)*rowGap:0,tileWidth,tileHeight,rows,reserve:rows?rows*maxTileHeight+(rows-1)*rowGap:0};
+ return{items,width,height:rows?rows*tileHeight+(rows-1)*rowGap:0,tileWidth,tileHeight,rows,reserve:rows?rows*(center==='stable'?tileHeight:maxTileHeight)+(rows-1)*rowGap:0};
 }

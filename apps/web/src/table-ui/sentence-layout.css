@@ -14,3 +14,11 @@
 .hu-showcase:not(.hu-review-dialog):not([data-ready=true]) .adaptive-sentence .hu-slam-unit>b{opacity:0}
 /* Two physical rows reserve their own height instead of clipping the second row. */
 #root .game-shell .rack-area.expanded{max-height:none;overflow:visible}
+
+/* The large hand uses the measured main area rather than the old 1060px rack cap. */
+#root .game-shell .rack-area.expanded .sentence-rack{max-width:none}
+/* Keep the larger punctuation palette inside the stage when the hand reduces table height. */
+@media(min-width:700px) and (min-height:600px){
+ #root .game-shell:has(.rack-area.expanded) .table-comma-tray{right:calc(50% - 50cqw + 2px);top:auto;bottom:8px}
+ #root .game-shell:has(.rack-area.expanded) .table-action-dock{top:min(57%,max(0px,calc(100% - 72px)))}
+}

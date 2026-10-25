@@ -1,0 +1,266 @@
+{
+  "at": "2026-10-25T09:21:32.034Z",
+  "version": "1.23.11",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "actual two-client Socket/SQLite, CDP touch, WebGL mouse, full-size three commas and end marker, both comma halves, midpoint jitter, outer period edge, resize, refresh, discard/draw; simulated phones, not physical Safari",
+  "checks": [
+    {
+      "name": "phone end marker opens real comma menu and three commas save without consuming character tiles",
+      "status": "PASS"
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 320",
+      "status": "PASS",
+      "period": {
+        "x": 289.6363525390625,
+        "y": 380.8052062988281,
+        "width": 24.359375,
+        "height": 34.796844482421875
+      },
+      "viewport": {
+        "w": 320,
+        "h": 480,
+        "sw": 320,
+        "sh": 480
+      },
+      "characters": 14,
+      "punctuation": [
+        {
+          "kind": "comma",
+          "w": 24.359375,
+          "h": 34.796844482421875,
+          "tileW": 24.359375,
+          "tileH": 34.796875
+        },
+        {
+          "kind": "comma",
+          "w": 24.359375,
+          "h": 34.796844482421875,
+          "tileW": 24.359375,
+          "tileH": 34.796875
+        },
+        {
+          "kind": "comma",
+          "w": 24.359375,
+          "h": 34.796844482421875,
+          "tileW": 24.359375,
+          "tileH": 34.796875
+        },
+        {
+          "kind": "period",
+          "w": 24.359375,
+          "h": 34.796844482421875,
+          "tileW": 24.359375,
+          "tileH": 34.796844482421875
+        }
+      ]
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 390",
+      "status": "PASS",
+      "period": {
+        "x": 350,
+        "y": 602.6852416992188,
+        "width": 30,
+        "height": 42.84381103515625
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "sw": 390,
+        "sh": 844
+      },
+      "characters": 14,
+      "punctuation": [
+        {
+          "kind": "comma",
+          "w": 30,
+          "h": 42.84381103515625,
+          "tileW": 30,
+          "tileH": 42.84375
+        },
+        {
+          "kind": "comma",
+          "w": 30,
+          "h": 42.84381103515625,
+          "tileW": 30,
+          "tileH": 42.84375
+        },
+        {
+          "kind": "comma",
+          "w": 30,
+          "h": 42.84381103515625,
+          "tileW": 30,
+          "tileH": 42.84375
+        },
+        {
+          "kind": "period",
+          "w": 30,
+          "h": 42.84381103515625,
+          "tileW": 30,
+          "tileH": 42.84381103515625
+        }
+      ]
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 667",
+      "status": "PASS",
+      "period": {
+        "x": 569.5,
+        "y": 283,
+        "width": 48,
+        "height": 42
+      },
+      "viewport": {
+        "w": 667,
+        "h": 375,
+        "sw": 667,
+        "sh": 375
+      },
+      "characters": 14,
+      "punctuation": [
+        {
+          "kind": "comma",
+          "w": 48,
+          "h": 42,
+          "tileW": 48,
+          "tileH": 42
+        },
+        {
+          "kind": "comma",
+          "w": 48,
+          "h": 42,
+          "tileW": 48,
+          "tileH": 42
+        },
+        {
+          "kind": "comma",
+          "w": 48,
+          "h": 42,
+          "tileW": 48,
+          "tileH": 42
+        },
+        {
+          "kind": "period",
+          "w": 48,
+          "h": 42,
+          "tileW": 48,
+          "tileH": 42
+        }
+      ]
+    },
+    {
+      "name": "end marker stays last, all character targets work and menu follows screen width 1280",
+      "status": "PASS",
+      "period": {
+        "x": 1007.6875,
+        "y": 561.453125,
+        "width": 45.859375,
+        "height": 65.078125
+      },
+      "viewport": {
+        "w": 1280,
+        "h": 800,
+        "sw": 1280,
+        "sh": 800
+      },
+      "characters": 14,
+      "punctuation": [
+        {
+          "kind": "comma",
+          "w": 44.1875,
+          "h": 65.078125,
+          "tileW": 44.1875,
+          "tileH": 65.078125
+        },
+        {
+          "kind": "comma",
+          "w": 44.59375,
+          "h": 65.078125,
+          "tileW": 44.8125,
+          "tileH": 65.078125
+        },
+        {
+          "kind": "comma",
+          "w": 45.21875,
+          "h": 65.078125,
+          "tileW": 45.4375,
+          "tileH": 65.078125
+        },
+        {
+          "kind": "period",
+          "w": 45.859375,
+          "h": 65.078125,
+          "tileW": 45.640625,
+          "tileH": 65.078125
+        }
+      ]
+    },
+    {
+      "name": "only the character lifts, comma remains at old gap and one authoritative draft saves touch across rows",
+      "status": "PASS"
+    },
+    {
+      "name": "only the character lifts, comma remains at old gap and one authoritative draft saves real WebGL mouse",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma before half inserts correctly, holds steady at midpoint and saves once 390",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma after half inserts correctly, holds steady at midpoint and saves once 390",
+      "status": "PASS"
+    },
+    {
+      "name": "dropping near outer period edge appends before fixed period 390",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma before half inserts correctly, holds steady at midpoint and saves once 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma after half inserts correctly, holds steady at midpoint and saves once 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "dropping near outer period edge appends before fixed period 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma before half inserts correctly, holds steady at midpoint and saves once 700",
+      "status": "PASS"
+    },
+    {
+      "name": "full comma after half inserts correctly, holds steady at midpoint and saves once 700",
+      "status": "PASS"
+    },
+    {
+      "name": "dropping near outer period edge appends before fixed period 700",
+      "status": "PASS"
+    },
+    {
+      "name": "period cannot be dragged, reordered or submitted as a tile",
+      "status": "PASS"
+    },
+    {
+      "name": "wide DOM fallback retains final period and persistent comma tray",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh preserves comma gaps and derives one fixed final period",
+      "status": "PASS"
+    },
+    {
+      "name": "real discard/draw keep 13/14 physical tiles and a single final period",
+      "status": "PASS"
+    },
+    {
+      "name": "own private room closes unscored without HU or book entry",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
