@@ -1,0 +1,246 @@
+{
+  "at": "2026-10-25T20:22:43.883Z",
+  "version": "1.28.0",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "normal remote moves do not interrupt circuit menu"
+    },
+    {
+      "name": "completed 10 circuits remains locked"
+    },
+    {
+      "name": "completed 19 circuits remains locked"
+    },
+    {
+      "name": "20 completed circuits grants ability through actual room commands"
+    },
+    {
+      "name": "header and real edit/cancel controls 320x480",
+      "geometry": [
+        {
+          "label": "圈数与阶段规则",
+          "x": 8,
+          "y": 5.5,
+          "w": 54,
+          "h": 36
+        },
+        {
+          "label": "标点牌",
+          "x": 72,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌音乐",
+          "x": 121,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌聊天",
+          "x": 170,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "桌面涂鸦",
+          "x": 219,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "游戏菜单",
+          "x": 268,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "header and real edit/cancel controls 390x844",
+      "geometry": [
+        {
+          "label": "圈数与阶段规则",
+          "x": 8,
+          "y": 5.5,
+          "w": 54,
+          "h": 36
+        },
+        {
+          "label": "标点牌",
+          "x": 142,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌音乐",
+          "x": 191,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌聊天",
+          "x": 240,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "桌面涂鸦",
+          "x": 289,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "游戏菜单",
+          "x": 338,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "header and real edit/cancel controls 667x375",
+      "geometry": [
+        {
+          "label": "圈数与阶段规则",
+          "x": 8,
+          "y": 5.5,
+          "w": 54,
+          "h": 36
+        },
+        {
+          "label": "标点牌",
+          "x": 419,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌音乐",
+          "x": 468,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌聊天",
+          "x": 517,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "桌面涂鸦",
+          "x": 566,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "游戏菜单",
+          "x": 615,
+          "y": 1.5,
+          "w": 44,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "header and real edit/cancel controls 1280x800",
+      "geometry": [
+        {
+          "label": "离开牌桌",
+          "x": 12,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "圈数与阶段规则",
+          "x": 62,
+          "y": 8.5,
+          "w": 72.40625,
+          "h": 38
+        },
+        {
+          "label": "标点牌",
+          "x": 874,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌音乐",
+          "x": 924,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "同桌聊天",
+          "x": 974,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "桌面涂鸦",
+          "x": 1024,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "牌桌帮助",
+          "x": 1074,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "牌局记录",
+          "x": 1124,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "管理员入口",
+          "x": 1174,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "label": "游戏菜单",
+          "x": 1224,
+          "y": 5.5,
+          "w": 44,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "confirmed rewrite keeps identity, order, deadline, private visibility and single grant"
+    },
+    {
+      "name": "browser restoration and real discard publish changed glyph to opponent"
+    },
+    {
+      "name": "verification room closed without publishing HU records"
+    }
+  ],
+  "errors": []
+}

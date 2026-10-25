@@ -200,3 +200,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.26.8胡牌结果页及终局页散桌入口复用CLOSE_ROOM和确认弹窗；仅权威允许的房主可操作。结果页需已通过且ROUND_FINISHED，不把被拒绝胡牌当作结束；确认取消不发命令，关闭不删除历史。
 
 - 1.27.0聊天表情只接受共享stickerId白名单，服务器派生senderId并按实际玩家匹配头像；不从历史重播，ACK与广播去重。表情/文字共用限流和收据，图片预加载但不阻塞操作；Provider身份变化只清效果，不重挂载整张3D牌桌。
+
+- 1.28.0规则1.7.0：圈数用完整discards长度÷capacity，含CLAIMED；满20圈每人每局一次自己回合单汉字改牌。rewriteUsed及新字事务持久化，tileId/期限/刚吃牌保护不变。替换Tile对象，不改历史引用；同ID Three.js mesh须刷新glyph map。旧局START才升级，手机圈数替代品牌不挤44px工具。

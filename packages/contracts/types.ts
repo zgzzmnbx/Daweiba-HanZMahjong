@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0' | '1.6.1';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0' | '1.6.1' | '1.7.0';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -115,6 +115,8 @@ export type PublicPlayer = Readonly<{
   isBotSeat?: boolean;
   /** Voluntary control delegation; the human identity stays online and keeps its seat. */
   autoPlay?: boolean;
+  /** Rule 1.7.0: one personal rewrite per round, preserved across reconnection. */
+  rewriteUsed?: boolean;
   playerId: PlayerId; seat: SeatIndex; nickname: string; avatarId?: string; presence: Presence;
   connected: boolean; ready: boolean; handCount: number; eatCount: number; wins: number;
   graceEndsAt: UtcMs | null;
@@ -185,6 +187,7 @@ export type ClientCommand = CommandMeta & (
       source: Extract<CandidateSource,{kind:'DISCARD'}>;
       expectedCandidateDraftVersion: DraftVersion; sentence: Sentence }>
   | Readonly<{ kind: 'DISCARD'; tileId: TileId }>
+  | Readonly<{ kind: 'REWRITE_TILE'; tileId: TileId; char: string }>
   | Readonly<{ kind: 'DECLARE_SELF_HU'; sentence: Sentence }>
   | Readonly<{ kind: 'RESPOND'; responseWindowId: ResponseWindowId;
       response: 'HU' | 'EAT' | 'PASS' }>
@@ -206,7 +209,7 @@ export type CommandErrorCode =
   | 'ALREADY_VOTED' | 'EAT_NOT_NEXT_SEAT' | 'EAT_LIMIT' | 'EAT_TILE_PROTECTED'
   | 'HU_RETRY_FORBIDDEN' | 'NO_HUMAN_REVIEWER' | 'BOT_ACTION_FORBIDDEN'
   | 'ROUND_IN_PROGRESS' | 'NOT_ALL_READY' | 'ROOM_PAUSED' | 'EXPIRED'
-  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED' | 'SPECTATING_DISABLED' | 'INVALID_SPECTATOR_SETTING' | 'INVALID_AVATAR' | 'INVALID_NICKNAME' | 'INVALID_AUTOPLAY' | 'AUTOPLAY_ACTIVE';
+  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED' | 'SPECTATING_DISABLED' | 'INVALID_SPECTATOR_SETTING' | 'INVALID_AVATAR' | 'INVALID_NICKNAME' | 'INVALID_AUTOPLAY' | 'AUTOPLAY_ACTIVE' | 'REWRITE_LOCKED' | 'REWRITE_USED' | 'INVALID_REWRITE_CHAR' | 'REWRITE_UNCHANGED';
 export type CommandResult =
   | Readonly<{ ok: true; actionId: ActionId; stateVersion: StateVersion;
       status: 'APPLIED' | 'RECORDED'; needsResync: boolean }>

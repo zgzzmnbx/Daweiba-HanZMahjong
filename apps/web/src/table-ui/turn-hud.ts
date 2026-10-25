@@ -7,7 +7,7 @@ import {isNextDrawer,borrowedHuVisible} from './response-action';
 /** Display only. Denominator comes from the frozen rule version, never from mount time. */
 export function phaseClock(p:PublicRoomSnapshot,now:number){
  const ph=p.phase,t=timingForRules(p.rulesVersion),actor=ph.kind==='TURN_ACTION'?p.players.find(x=>x.playerId===ph.actorId):undefined;
- const total=ph.kind==='TURN_ACTION'?(['1.4.0','1.4.1','1.5.0','1.5.1','1.6.0','1.6.1'].includes(p.rulesVersion)&&(actor?.isBotSeat||actor?.autoPlay||actor?.presence==='BOT')?t.botActionDelayMs:ph.mustDiscard?t.postHuDiscardMs:t.turnMs):ph.kind==='HU_COMPOSE'?t.composeMs:ph.kind==='HU_VOTE'?t.voteMs:defaults.responseMs;
+ const total=ph.kind==='TURN_ACTION'?(['1.4.0','1.4.1','1.5.0','1.5.1','1.6.0','1.6.1','1.7.0'].includes(p.rulesVersion)&&(actor?.isBotSeat||actor?.autoPlay||actor?.presence==='BOT')?t.botActionDelayMs:ph.mustDiscard?t.postHuDiscardMs:t.turnMs):ph.kind==='HU_COMPOSE'?t.composeMs:ph.kind==='HU_VOTE'?t.voteMs:defaults.responseMs;
  const remaining=ph.deadline?Math.max(0,ph.deadline.remainingMsWhenPaused??ph.deadline.endsAt-now):null;
  const ratio=remaining===null?0:Math.min(1,remaining/total);
  const paused=p.suspension.kind!=='RUNNING';
