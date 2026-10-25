@@ -1,0 +1,622 @@
+{
+  "at": "2026-10-25T11:19:30.379Z",
+  "version": "1.23.13",
+  "origin": "http://127.0.0.1:3175",
+  "browser": "141.0.7390.37",
+  "scope": "real two-client room, responsive header hit targets, WebGL/DOM toggle, keyboard focus, fixed-capacity centering, actual discard/opponent turn/draw, original settings and phone regression; simulated mobile",
+  "checks": [
+    {
+      "name": "wide shortcut is visible but unavailable before there are character tiles",
+      "status": "PASS"
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 700x800",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 7,
+          "centerError": 0,
+          "left": 42.125
+        },
+        {
+          "count": 6,
+          "centerError": 0,
+          "left": 0
+        }
+      ],
+      "tile": {
+        "w": 78.25,
+        "h": 111.78125,
+        "font": 61.035
+      },
+      "rack": {
+        "x": 16,
+        "y": 513.4375,
+        "w": 668,
+        "h": 231.5625
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 800x800",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 7,
+          "centerError": 0,
+          "left": 48.375
+        },
+        {
+          "count": 6,
+          "centerError": 0,
+          "left": 0
+        }
+      ],
+      "tile": {
+        "w": 90.75,
+        "h": 129.640625,
+        "font": 70.785
+      },
+      "rack": {
+        "x": 16,
+        "y": 477.71875,
+        "w": 768,
+        "h": 267.28125
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 950x800",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 7,
+          "centerError": -0.0046844482421875,
+          "left": 117.60000610351562
+        },
+        {
+          "count": 6,
+          "centerError": -0.0093841552734375,
+          "left": 68.4000015258789
+        }
+      ],
+      "tile": {
+        "w": 92.390625,
+        "h": 132,
+        "font": 72.072
+      },
+      "rack": {
+        "x": 16,
+        "y": 473,
+        "w": 918,
+        "h": 272
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 1280x800",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 13,
+          "centerError": -0.0062255859375,
+          "left": 0
+        }
+      ],
+      "tile": {
+        "w": 77.59375,
+        "h": 110.84375,
+        "font": 60.528
+      },
+      "rack": {
+        "x": 16,
+        "y": 634.15625,
+        "w": 1248,
+        "h": 110.84375
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 1920x1080",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 13,
+          "centerError": -0.00103759765625,
+          "left": 0
+        }
+      ],
+      "tile": {
+        "w": 92.265625,
+        "h": 131.796875,
+        "font": 71.968
+      },
+      "rack": {
+        "x": 226,
+        "y": 893.203125,
+        "w": 1468,
+        "h": 131.796875
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 700x600",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 7,
+          "centerError": -0.003124237060546875,
+          "left": 75.9000015258789
+        },
+        {
+          "count": 6,
+          "centerError": -0.006244659423828125,
+          "left": 38.599998474121094
+        }
+      ],
+      "tile": {
+        "w": 68.59374237060547,
+        "h": 98,
+        "font": 53.508
+      },
+      "rack": {
+        "x": 16,
+        "y": 341,
+        "w": 668,
+        "h": 204
+      }
+    },
+    {
+      "name": "header remains round, clickable and toggles actual rack without a command 1280x600",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 13,
+          "centerError": -0.0062255859375,
+          "left": 0
+        }
+      ],
+      "tile": {
+        "w": 77.59375,
+        "h": 110.84375,
+        "font": 60.528
+      },
+      "rack": {
+        "x": 16,
+        "y": 434.15625,
+        "w": 1248,
+        "h": 110.84375
+      }
+    },
+    {
+      "name": "same focused header button supports Space and Enter toggling",
+      "status": "PASS"
+    },
+    {
+      "name": "original settings toggle shares state with the new header shortcut",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 320",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 390",
+      "status": "PASS"
+    },
+    {
+      "name": "phone keeps its existing five header actions and automatic rack 667",
+      "status": "PASS"
+    },
+    {
+      "name": "short wide layout retains its automatic rack and does not offer a false collapse",
+      "status": "PASS"
+    },
+    {
+      "name": "14 to 13 keeps each surviving anchor and the table unchanged",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 13,
+          "centerError": -0.0062255859375,
+          "left": 0
+        }
+      ],
+      "table": {
+        "x": 283.6328125,
+        "y": 107,
+        "w": 712.734375,
+        "h": 475.15625
+      }
+    },
+    {
+      "name": "13 to 14 preserves anchors when the next real draw fills its reserved slot",
+      "status": "PASS",
+      "rows": [
+        {
+          "count": 14,
+          "centerError": -0.00311279296875,
+          "left": 0
+        }
+      ],
+      "table": {
+        "x": 283.6328125,
+        "y": 107,
+        "w": 712.734375,
+        "h": 475.15625
+      }
+    },
+    {
+      "name": "discard removing an end comma preserves tile size, row count, anchors and table",
+      "status": "PASS",
+      "before": {
+        "items": [
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:018:01",
+            "kind": "tile",
+            "x": 0,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:029:00",
+            "kind": "tile",
+            "x": 78.375,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:026:00",
+            "kind": "tile",
+            "x": 156.75,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:014:01",
+            "kind": "tile",
+            "x": 235.125,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:028:00",
+            "kind": "tile",
+            "x": 313.5,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:041:01",
+            "kind": "tile",
+            "x": 391.875,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:054:00",
+            "kind": "tile",
+            "x": 470.25,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:006:00",
+            "kind": "tile",
+            "x": 548.625,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:056:00",
+            "kind": "tile",
+            "x": 627,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:018:00",
+            "kind": "tile",
+            "x": 705.375,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:004:00",
+            "kind": "tile",
+            "x": 783.75,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:050:00",
+            "kind": "tile",
+            "x": 862.125,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:021:01",
+            "kind": "tile",
+            "x": 940.5,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:021:01",
+            "kind": "comma",
+            "x": 1018.875,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 202.65
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:012:01",
+            "kind": "tile",
+            "x": 1097.25,
+            "y": -3,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:012:01",
+            "kind": "period",
+            "x": 1175.625,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 130.275
+          }
+        ],
+        "rows": [
+          {
+            "count": 14,
+            "centerError": 0,
+            "left": 0
+          }
+        ],
+        "controls": [
+          {
+            "x": 569,
+            "y": 382.078125,
+            "w": 66,
+            "h": 64,
+            "hit": true,
+            "insideStage": true
+          },
+          {
+            "x": 645,
+            "y": 382.078125,
+            "w": 66,
+            "h": 64,
+            "hit": true,
+            "insideStage": true
+          }
+        ],
+        "viewport": {
+          "w": 1280,
+          "h": 800
+        },
+        "rack": {
+          "x": 16,
+          "y": 641.609375,
+          "w": 1248,
+          "h": 103.390625
+        },
+        "table": {
+          "x": 278.046875,
+          "y": 107,
+          "w": 723.90625,
+          "h": 482.59375
+        }
+      },
+      "after": {
+        "items": [
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:018:01",
+            "kind": "tile",
+            "x": 0,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:029:00",
+            "kind": "tile",
+            "x": 78.375,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:026:00",
+            "kind": "tile",
+            "x": 156.75,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:014:01",
+            "kind": "tile",
+            "x": 235.125,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:028:00",
+            "kind": "tile",
+            "x": 313.5,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:041:01",
+            "kind": "tile",
+            "x": 391.875,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:054:00",
+            "kind": "tile",
+            "x": 470.25,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:006:00",
+            "kind": "tile",
+            "x": 548.625,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:056:00",
+            "kind": "tile",
+            "x": 627,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:018:00",
+            "kind": "tile",
+            "x": 705.375,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:004:00",
+            "kind": "tile",
+            "x": 783.75,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:050:00",
+            "kind": "tile",
+            "x": 862.125,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:021:01",
+            "kind": "tile",
+            "x": 940.5,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 56.4525
+          },
+          {
+            "id": "63B575A184:RoundId:2:daily-v1:N2:021:01",
+            "kind": "period",
+            "x": 1018.875,
+            "y": 0,
+            "w": 72.375,
+            "h": 103.390625,
+            "font": 130.275
+          }
+        ],
+        "rows": [
+          {
+            "count": 13,
+            "centerError": -39.1875,
+            "left": 0
+          }
+        ],
+        "controls": [
+          {
+            "x": 526,
+            "y": 382.078125,
+            "w": 76,
+            "h": 64,
+            "hit": true,
+            "insideStage": true
+          },
+          {
+            "x": 612,
+            "y": 382.078125,
+            "w": 66,
+            "h": 64,
+            "hit": true,
+            "insideStage": true
+          },
+          {
+            "x": 688,
+            "y": 382.078125,
+            "w": 66,
+            "h": 64,
+            "hit": true,
+            "insideStage": true
+          }
+        ],
+        "viewport": {
+          "w": 1280,
+          "h": 800
+        },
+        "rack": {
+          "x": 16,
+          "y": 641.609375,
+          "w": 1248,
+          "h": 103.390625
+        },
+        "table": {
+          "x": 278.046875,
+          "y": 107,
+          "w": 723.90625,
+          "h": 482.59375
+        }
+      }
+    },
+    {
+      "name": "own test room closes without score or book changes",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

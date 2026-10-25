@@ -31,3 +31,10 @@ export async function gameMusic(page){
  await entry.click();
  await page.getByRole('dialog',{name:'同桌音乐面板',exact:true}).waitFor();
 }
+
+/** Borrow a comma from the real period using the pointer path, never a draft API. */
+export async function borrowComma(page,tileId){
+ const a=await page.getByRole('button',{name:'句号牌',exact:true}).boundingBox(),b=await page.locator(`[data-tile-id="${tileId}"]`).boundingBox();
+ if(!a||!b)throw Error('period and target character must both be visible');
+ await page.mouse.move(a.x+a.width/2,a.y+a.height/2);await page.mouse.down();await page.mouse.move(b.x+b.width/2,b.y+b.height/2,{steps:12});await page.mouse.up();
+}

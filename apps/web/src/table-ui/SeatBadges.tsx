@@ -20,14 +20,14 @@ export function SeatBadges({seats,labels,fallback,now,anchors}:{seats:readonly S
   const el=root.current,stage=el?.closest('.table-stage')?.getBoundingClientRect(),vp=el?.closest('.viewport')?.getBoundingClientRect();if(!el||!stage||!vp)return;
   const left=stage.left-vp.left,top=stage.top-vp.top,right=stage.right-vp.left,bottom=stage.bottom-vp.top;
   const blocks:Box[]=Object.entries(readAnchors.current()).filter(([key])=>key.startsWith('hand:')||key.startsWith('tile:')||key.startsWith('discard:')).map(([,r])=>({x:r.x-r.width/2-vp.left,y:r.y-r.height/2-vp.top,width:r.width,height:r.height}));
-  for(const item of el.closest('.viewport')!.querySelectorAll<HTMLElement>('.table-comma-tray,.table-action-dock')){const r=item.getBoundingClientRect();if(r.width&&r.height)blocks.push({x:r.x-vp.left,y:r.y-vp.top,width:r.width,height:r.height});}
+  for(const item of el.closest('.viewport')!.querySelectorAll<HTMLElement>('.table-action-dock')){const r=item.getBoundingClientRect();if(r.width&&r.height)blocks.push({x:r.x-vp.left,y:r.y-vp.top,width:r.width,height:r.height});}
   const layoutKey=`${Math.round(stage.width)}:${Math.round(stage.height)}:${fallback}`,next:Placement[]=[],rail=forcedRail.current===layoutKey||window.matchMedia('(max-width:699px), (max-height:599px)').matches,horizontal=window.matchMedia('(min-width:500px) and (max-height:499px)').matches;
   el.dataset.rail=rail&&!horizontal?'true':'false';
   if(horizontal){
    const others=seats.filter(s=>s.relation!=='SELF'),leftSeats=others.filter(s=>s.placement.labelAnchor.x<=0),rightSeats=others.filter(s=>s.placement.labelAnchor.x>0),rows=Math.max(leftSeats.length,rightSeats.length),height=Math.min(40,(stage.height-12-(rows-1)*4)/rows),width=Math.min(138,(stage.width-vp.width)/2-12);
    [leftSeats,rightSeats].forEach((group,side)=>{
     let available=width;
-    for(const control of el.closest('.viewport')!.querySelectorAll<HTMLElement>('.table-comma-tray,.table-action-dock')){const r=control.getBoundingClientRect();if(side===0&&r.left<vp.left+vp.width/2)available=Math.min(available,r.left-stage.left-12);if(side===1&&r.right>vp.left+vp.width/2)available=Math.min(available,stage.right-r.right-12);}
+    for(const control of el.closest('.viewport')!.querySelectorAll<HTMLElement>('.table-action-dock')){const r=control.getBoundingClientRect();if(side===0&&r.left<vp.left+vp.width/2)available=Math.min(available,r.left-stage.left-12);if(side===1&&r.right>vp.left+vp.width/2)available=Math.min(available,stage.right-r.right-12);}
     available=Math.max(64,available);
     group.sort((a,b)=>b.placement.labelAnchor.y-a.placement.labelAnchor.y).forEach((s,i)=>next.push({seat:s.logicalSeat,x:side?right-available-5:left+5,y:top+6+i*(height+4),width:available,height,small:true,outside:true,horizontal:true}));
    });

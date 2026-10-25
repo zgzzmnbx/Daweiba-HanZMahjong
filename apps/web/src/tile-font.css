@@ -2,10 +2,4 @@
 @import url('./wenkai-faces.css');
 :root{--tile-font:"Hanz WenKai","Hanz PingFang",sans-serif;--tile-font-weight:500}
 /* Original Medium is weight 500. No synthetic bold or horizontal scaling. */
-.sentence-rack>.tile,.sentence-rack>.comma-tile,.game-shell .table-comma-tray .reserve-comma,
-.latest-discard .latest-tile,.rack-drag-ghost,.rack-drag-ghost.comma-ghost,.ghost-comma,.flying-table-tile,
-.reveal-unit b,.reveal-unit i,.hu-showcase .hu-slam-unit b,.hu-showcase .hu-slam-comma,
-.hu-confirm-sentence b,.hu-confirm-sentence i,.book-tile,.book-comma,
-.fallback-discards>span,.review-sentence button,.home-tiles span,.felt-tiles i,.hall-logo-tile,.help-hand span,
-.game-action b,.rack-mark,.adaptive-sentence .hu-slam-unit b,.adaptive-sentence .hu-slam-comma,
-.book-confirm blockquote,.fallback-table>span{font-family:var(--tile-font);font-weight:var(--tile-font-weight);font-synthesis:none}
+.sentence-rack>.tile,.sentence-rack>.comma-tile,.latest-discard .latest-tile,.rack-drag-ghost,.rack-drag-ghost.comma-ghost,.ghost-comma,.flying-table-tile,.reveal-unit b,.reveal-unit i,.hu-showcase .hu-slam-unit b,.hu-showcase .hu-slam-comma,.hu-confirm-sentence b,.hu-confirm-sentence i,.book-tile,.book-comma,.fallback-discards>span,.review-sentence button,.home-tiles span,.felt-tiles i,.hall-logo-tile,.help-hand span,.game-action b,.rack-mark,.adaptive-sentence .hu-slam-unit b,.adaptive-sentence .hu-slam-comma,.book-confirm blockquote,.fallback-table>span{font-family:var(--tile-font);font-weight:var(--tile-font-weight);font-synthesis:none}

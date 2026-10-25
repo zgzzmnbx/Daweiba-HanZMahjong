@@ -31,7 +31,7 @@ export function movePreview(draft:Draft,tileId:TileId,index:number):Draft{
  const commas=draft.commaAfterTileIds.map(id=>id===tileId?draft.orderedTileIds[from-1]:id);
  return{orderedTileIds:order,commaAfterTileIds:[...new Set(commas)].filter((id):id is TileId=>!!id&&id!==order.at(-1)) as unknown as Draft['commaAfterTileIds']};
 }
-/** null target returns a comma to its tray; invalid anchors leave the draft unchanged. */
+/** null target returns a comma to the period; invalid anchors leave the draft unchanged. */
 export function commaPreview(draft:Draft,from:TileId|null,to:TileId|null):Draft{if(to&&(to===draft.orderedTileIds.at(-1)||!draft.orderedTileIds.includes(to)||to!==from&&Array.from(draft.commaAfterTileIds).includes(to)))return draft;const commas=draft.commaAfterTileIds.filter(id=>id!==from);if(to){if(commas.length>=3)return draft;commas.push(to);}return{orderedTileIds:[...draft.orderedTileIds],commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};}
 export type RackRect={tileId:TileId;left:number;top:number;width:number;height:number};
 export type RackTargetRect=RackRect&{kind:'tile'|'comma'|'period'};

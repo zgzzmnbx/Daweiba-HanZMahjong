@@ -1,9 +1,11 @@
 import {createPortal} from 'react-dom';
-import {useId,useRef,useState} from 'react';
+import {useEffect,useLayoutEffect,useRef,useState} from 'react';
 import './punctuation-help.css';
-export const punctuationExplanation='标点符号只是为了让自己和其他朋友便于理解你句子意思，不是胡牌必须';
-export function PunctuationHelp(){
- const id=useId(),button=useRef<HTMLButtonElement>(null),[open,setOpen]=useState(false),[position,setPosition]=useState({left:8,top:8});
- const show=()=>{const r=button.current?.getBoundingClientRect();if(r)setPosition({left:Math.max(8,Math.min(innerWidth-226,r.right-210)),top:Math.max(8,Math.min(innerHeight-150,r.top-120))});setOpen(true);};
- return <div className="punctuation-heading"><span>拖动添加标点</span><span className="punctuation-help" onMouseEnter={show} onMouseLeave={()=>setOpen(false)}><button ref={button} type="button" className="punctuation-help-button" aria-label="标点说明" aria-expanded={open} aria-describedby={open?id:undefined} onFocus={show} onBlur={()=>setOpen(false)} onClick={show} onKeyDown={e=>{if(e.key==='Escape')setOpen(false);}}>?</button>{open&&createPortal(<span id={id} role="tooltip" className="punctuation-tooltip" style={position}>{punctuationExplanation}</span>,document.body)}</span></div>;
+export const punctuationExplanation='拖动句号可以借用逗号，拖回句号即可收起。最多3个逗号，不参与胡牌，仅便于自己和朋友理解。';
+/** A small hint anchored to the real end marker; it never reserves table space. */
+export function PunctuationHelp({anchor,onClose}:{anchor:()=>HTMLElement|null;onClose:()=>void}){
+ const bubble=useRef<HTMLDivElement>(null),[position,setPosition]=useState({left:8,top:8,arrow:20});
+ useLayoutEffect(()=>{const r=anchor()?.getBoundingClientRect(),b=bubble.current?.getBoundingClientRect();if(!r||!b)return;const left=Math.max(8,Math.min(innerWidth-b.width-8,r.left+r.width/2-b.width/2));setPosition({left,top:Math.max(8,r.top-b.height-12),arrow:Math.max(16,Math.min(b.width-16,r.left+r.width/2-left))});},[]);
+ useEffect(()=>{const outside=(e:PointerEvent)=>{if(!(e.target instanceof Element)||e.target.closest('.punctuation-tooltip,.period-tile,.portrait-punctuation-trigger'))return;onClose();},key=(e:KeyboardEvent)=>{if(e.key==='Escape')onClose();};window.addEventListener('pointerdown',outside);window.addEventListener('keydown',key);window.addEventListener('resize',onClose);return()=>{window.removeEventListener('pointerdown',outside);window.removeEventListener('keydown',key);window.removeEventListener('resize',onClose);};},[onClose]);
+ return createPortal(<div ref={bubble} id="punctuation-help" role="tooltip" className="punctuation-tooltip" style={{left:position.left,top:position.top,'--hint-arrow':`${position.arrow}px`} as React.CSSProperties}><strong>从句号，借一个逗号</strong><p>{punctuationExplanation}</p><button type="button" aria-label="关闭标点说明" onClick={onClose}>×</button></div>,document.body);
 }
