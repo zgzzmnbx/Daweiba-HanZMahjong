@@ -1,0 +1,25 @@
+/* A compact, self-contained guide; normal target viewports need no scrolling. */
+dialog.new-player-guide{box-sizing:border-box;width:600px;max-width:calc(100% - 28px);max-height:calc(100dvh - 28px);margin:auto;padding:22px;border:1px solid #bea66b;border-radius:18px;background:radial-gradient(ellipse at top left,#284d3b,#112c22 65%);color:#f5e6bf;box-shadow:inset 0 0 0 3px #e8ca7720,0 18px 70px #0009;font-family:var(--ui-font);overflow:auto}
+.new-player-guide::backdrop{background:#091710bb;backdrop-filter:blur(4px)}
+.new-player-guide header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.new-player-guide .guide-emblem{display:grid;place-items:center;width:40px;height:49px;flex:none;border-radius:6px;background:linear-gradient(125deg,#fff9dd,#e7d7a8);color:#204734;box-shadow:2px 4px 0 #9a875a;font:500 31px/1 var(--tile-font);transform:rotate(-7deg)}
+.new-player-guide h2{margin:0 0 4px;font-size:23px;line-height:1.25;font-weight:600}
+.new-player-guide p{margin:0;line-height:1.5;font-size:12px;color:#dddec7}
+.new-player-guide .guide-close{margin-left:auto;flex:none;width:36px;height:36px;padding:0;border-radius:50%;background:#183b2c;border:1px solid #bba36870;color:#ead6a3;font-size:22px}
+.new-player-guide .guide-steps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
+.new-player-guide .guide-steps li{display:flex;align-items:flex-start;gap:10px;padding:12px 10px;border:1px solid #bca36c40;border-radius:10px;background:#0c231b77;min-width:0}
+.new-player-guide .guide-steps li>span{font:500 25px/1.2 var(--tile-font);color:#e4c780;flex:none}
+.new-player-guide h3{margin:0 0 4px;font-size:13px;font-weight:600;line-height:1.4}
+.new-player-guide aside{margin:12px 0;padding:9px 11px;border-left:2px solid #bba263;background:#d4ba6e0b}
+.new-player-guide aside p{font-size:11px;color:#c5c9ac}
+.new-player-guide footer{display:flex;flex-direction:column;gap:9px;border-top:1px solid #bca46d40;padding-top:10px}
+.new-player-guide label{display:flex;align-items:center;gap:7px;font-size:12px;min-height:24px;cursor:pointer}
+.new-player-guide label span{margin-left:auto;font-size:10px;color:#9eb59f}
+.new-player-guide input[type=checkbox]{width:17px;height:17px;min-width:17px;min-height:17px;margin:0;padding:0;accent-color:#74a782;flex:none}
+.new-player-guide .guide-confirm{width:100%;min-height:44px;padding:8px;border:1px solid #e5c682;border-radius:10px;background:linear-gradient(#efd390,#bd9143);color:#302914;box-shadow:0 3px 0 #735a30;font-family:var(--ui-font);font-size:14px;font-weight:600}
+.new-player-guide footer small{text-align:center;font-size:10px;color:#a7b99e;line-height:1.3}
+.new-player-guide button:focus-visible,.new-player-guide input:focus-visible{outline:2px solid #fff0b4;outline-offset:3px}
+@media(max-width:499px){dialog.new-player-guide{padding:14px}.new-player-guide header{gap:10px;margin-bottom:11px}.new-player-guide h2{font-size:21px}.new-player-guide .guide-steps{grid-template-columns:1fr;gap:6px}.new-player-guide .guide-steps li{padding:8px 9px;gap:9px}.new-player-guide h3{margin-bottom:2px}.new-player-guide aside{margin:9px 0;padding:6px 8px}.new-player-guide footer{gap:7px;padding-top:7px}}
+@media(max-height:599px){dialog.new-player-guide{padding:12px}.new-player-guide header{margin-bottom:8px}.new-player-guide .guide-emblem{width:30px;height:37px;font-size:25px}.new-player-guide h2{font-size:19px;margin-bottom:2px}.new-player-guide p{font-size:11px;line-height:1.4}.new-player-guide .guide-steps{gap:5px}.new-player-guide .guide-steps li{padding:6px 8px;gap:8px}.new-player-guide h3{font-size:12px;margin-bottom:1px}.new-player-guide aside{margin:7px 0;padding:5px 8px}.new-player-guide aside p{font-size:10px}.new-player-guide footer{gap:6px;padding-top:6px}.new-player-guide .guide-confirm{min-height:40px;padding:6px;font-size:13px}.new-player-guide footer small{font-size:9px}}
+@media(max-width:499px) and (max-height:599px){.new-player-guide .guide-steps h3{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.new-player-guide .guide-steps p{font-size:12px;line-height:1.4}.new-player-guide .guide-steps li{align-items:center}.new-player-guide header p{font-size:11px}}
+@media(min-width:500px) and (max-height:599px){.new-player-guide footer{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6px 14px}.new-player-guide footer small{grid-column:1/-1}.new-player-guide .guide-confirm{min-height:44px}}

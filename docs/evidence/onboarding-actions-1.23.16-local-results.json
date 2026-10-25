@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-25T12:43:18.230Z",
+  "version": "1.23.16",
+  "origin": "http://127.0.0.1:3177",
+  "browser": "141.0.7390.37",
+  "scope": "two real clients; twenty-one real discards including one EAT; progressive UI disclosure only; phone viewports simulated in Chromium",
+  "checks": [
+    {
+      "name": "self HU remains available at the first turn with its original confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "guide, full text and action hit areas fit 320x480",
+      "status": "PASS",
+      "zone": {
+        "x": 102.328125,
+        "y": 175.4375,
+        "w": 96,
+        "h": 58
+      },
+      "text": {
+        "x": 122.328125,
+        "y": 191.9375,
+        "w": 56,
+        "h": 30.984375
+      },
+      "hudFits": true,
+      "bodyFits": true,
+      "hitless": true
+    },
+    {
+      "name": "guide, full text and action hit areas fit 390x844",
+      "status": "PASS",
+      "zone": {
+        "x": 115.4375,
+        "y": 324.859375,
+        "w": 129.5,
+        "h": 66.59375
+      },
+      "text": {
+        "x": 146.1875,
+        "y": 336.25,
+        "w": 68,
+        "h": 43.796875
+      },
+      "hudFits": true,
+      "bodyFits": true,
+      "hitless": true
+    },
+    {
+      "name": "guide, full text and action hit areas fit 667x375",
+      "status": "PASS",
+      "zone": {
+        "x": 278.46875,
+        "y": 100.640625,
+        "w": 96,
+        "h": 58
+      },
+      "text": {
+        "x": 298.46875,
+        "y": 114.140625,
+        "w": 56,
+        "h": 30.984375
+      },
+      "hudFits": true,
+      "bodyFits": true,
+      "hitless": true
+    },
+    {
+      "name": "guide, full text and action hit areas fit 1280x800",
+      "status": "PASS",
+      "zone": {
+        "x": 499.8046875,
+        "y": 281.8671875,
+        "w": 280.390625,
+        "h": 168.828125
+      },
+      "text": {
+        "x": 599.9921875,
+        "y": 338.7890625,
+        "w": 80,
+        "h": 54.984375
+      },
+      "hudFits": true,
+      "bodyFits": true,
+      "hitless": true
+    },
+    {
+      "name": "rack preview says reorder; releasing outside does not discard",
+      "status": "PASS"
+    },
+    {
+      "name": "real touch central green drop releases exactly one discard without confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "eating keeps the circuit ledger and guidance respects protected tile",
+      "status": "PASS"
+    },
+    {
+      "name": "protected tile can still be reordered and its explanation fits all four viewports",
+      "status": "PASS"
+    },
+    {
+      "name": "borrowed HU stays hidden through 9 circuits and one discard, on both clients",
+      "status": "PASS"
+    },
+    {
+      "name": "the twentieth discard unlocks borrowed HU for both clients",
+      "status": "PASS"
+    },
+    {
+      "name": "unlocked button opens the real borrowed sentence workflow",
+      "status": "PASS"
+    },
+    {
+      "name": "refresh keeps unlocked progress; desktop 3D central drag discards correctly",
+      "status": "PASS"
+    },
+    {
+      "name": "verification room closed unscored",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
