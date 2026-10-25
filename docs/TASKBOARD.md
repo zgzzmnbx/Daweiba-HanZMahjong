@@ -1,12 +1,13 @@
 # 当前任务板
 
-## 1.28.0 · 交付完成
+## 1.28.1 · 素质满满扩充与配音
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| RULE | 10/20圈、单次改字、恢复/历史安全 | DONE | 389测试通过，2–6人边界覆盖 |
-| UI | 左上圈数、绿金菜单、实际改字与3D更新 | DONE | 本地双端四视口11项通过 |
-| RELEASE | 原公网部署、线上验收、GitHub同步 | DONE | ready=true、46项资源一致、公网11项通过；随本提交CAS同步并核对文件树 |
+| CONTENT | 词库扩充、数量配比、完整构词 | DONE | 336字/672张、165搭配、393测试与2万手分析 |
+| AUDIO | 配词、缓存、旧URL兼容 | DONE | 358WAV本地/公网字节与解码验证 |
+| UI | 真实开局、字体与试听 | DONE | 本地与公网2—6人/六人出牌/管理端各8项通过 |
+| RELEASE | 原公网、原套组CAS更新、GitHub | DONE | 公网46资源一致、原套组修订2、随交付CAS同步GitHub |
 | ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | 当前Chromium141模拟 |
 
 旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。

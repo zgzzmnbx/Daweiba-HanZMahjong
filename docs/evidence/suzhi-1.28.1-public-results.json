@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-25T20:57:07.703Z",
+  "origin": "https://118.196.107.182:1240",
+  "status": "PASS",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "2 seats start with saved 336-character, 672-tile set"
+    },
+    {
+      "name": "3 seats start with saved 336-character, 672-tile set"
+    },
+    {
+      "name": "4 seats start with saved 336-character, 672-tile set"
+    },
+    {
+      "name": "5 seats start with saved 336-character, 672-tile set"
+    },
+    {
+      "name": "6 seats start with saved 336-character, 672-tile set"
+    },
+    {
+      "name": "new glyph renders original WenKai and real discard voice plays to completion",
+      "char": "恶",
+      "fonts": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "requests": [
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E6%81%B6",
+          "status": 200
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E5%82%BB",
+          "status": 206
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E8%A0%A2",
+          "status": 206
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E6%93%8D",
+          "status": 206
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E5%B1%81",
+          "status": 206
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E9%BE%9F",
+          "status": 206
+        },
+        {
+          "url": "/api/speech/tiles/qwen3-flash-Cherry-zh-tile-word-v2/%E7%8C%A5",
+          "status": 206
+        }
+      ]
+    },
+    {
+      "name": "admin displays 336/336 ready and six representative words actually play"
+    },
+    {
+      "name": "verification leaves catalog unchanged and all own rooms closed"
+    }
+  ],
+  "errors": []
+}

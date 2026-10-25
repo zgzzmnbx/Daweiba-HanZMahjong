@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T20:39:54.665Z",
+  "scope": "Fixed-seed 20,000 independent 14-tile draws, without replacement. Presence of subject, verb, >=3 connectors and theme character is only a compositional proxy, not actual sentence correctness or win rate.",
+  "before": {
+    "tiles": 158,
+    "draws": 20000,
+    "meanRoles": {
+      "称呼与指代": 0.88095,
+      "生活与原库补充": 7.8076,
+      "粗口与损人核心": 1.7725,
+      "虚词与句式连接": 2.8298,
+      "动作与谓语": 0.70915
+    },
+    "constructionRoleCoverage": 0.1234
+  },
+  "after": {
+    "tiles": 672,
+    "draws": 20000,
+    "meanRoles": {
+      "动作与谓语": 2.17405,
+      "粗口与损人核心": 4.772,
+      "虚词与句式连接": 4.00055,
+      "生活与原库补充": 1.821,
+      "称呼与指代": 1.2324
+    },
+    "constructionRoleCoverage": 0.5065
+  }
+}

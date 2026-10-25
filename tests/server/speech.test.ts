@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,rm,readFile} from 'node:fs/promises';
+import {mkdtemp,rm,readFile,writeFile,mkdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
 import {tileWord,TILE_WORDS} from '../../apps/server/tile-words';
 import {Speech,SPEECH_PROFILE} from '../../apps/server/speech';
 import {encodeWav,decodeWav,normalizeSpeech} from '../../apps/server/speech-audio';
@@ -39,6 +39,13 @@ test('HTTP speech only synthesizes authoritative revealed sentences; private roo
 test('missing optional voice credential file cannot prevent a healthy game server from starting',async()=>{const previous=process.env.DASHSCOPE_API_KEY_FILE,key=process.env.DASHSCOPE_API_KEY;delete process.env.DASHSCOPE_API_KEY;process.env.DASHSCOPE_API_KEY_FILE='/missing/optional-speech-key';const server=createGameServer({dbPath:':memory:',publicOrigin:'http://speech.test',automaticTimers:false});try{assert.equal(server.speech.enabled,false);await server.listen(0);const r=await fetch(`http://127.0.0.1:${(server.http.address() as any).port}/readyz`);assert.equal(r.status,200);}finally{await server.close();if(previous===undefined)delete process.env.DASHSCOPE_API_KEY_FILE;else process.env.DASHSCOPE_API_KEY_FILE=previous;if(key!==undefined)process.env.DASHSCOPE_API_KEY=key;}});
 
 test('fixed tile words are exactly two ideographs starting with the tile; unknown tiles cannot synthesize a single character',async()=>{
- assert.equal(Object.keys(TILE_WORDS).length,178);for(const {char} of [...fixedDeck.entries,...initialDeck.entries])assert(tileWord(char),`missing word: ${char}`);for(const [char,word] of Object.entries(TILE_WORDS)){assert.match(word,/^\p{Unified_Ideograph}{2}$/u);assert.equal([...word][0],char);}
+ assert.equal(Object.keys(TILE_WORDS).length,358);for(const {char} of [...fixedDeck.entries,...initialDeck.entries])assert(tileWord(char),`missing word: ${char}`);for(const [char,word] of Object.entries(TILE_WORDS)){assert.match(word,/^\p{Unified_Ideograph}{2}$/u);assert.equal([...word][0],char);}
  const dir=await mkdtemp(join(tmpdir(),'tile-word-')),texts:string[]=[];const speech=new Speech({directory:dir,synthesize:async text=>{texts.push(text);return tone(1.5);}});try{const file=await speech.ensure('天',true);await speech.ensure('天',true);assert.deepEqual(texts,['天空']);assert(decodeWav(await readFile(file)).length>36000,'natural word must not be squeezed into 1.1 seconds');await assert.rejects(()=>speech.ensure('龘',true),/SPEECH_WORD_MISSING/);assert.deepEqual(texts,['天空']);const offline=new Speech({directory:dir});assert.deepEqual(await offline.read('天',true),await readFile(file));await offline.close();}finally{await speech.close();await rm(dir,{recursive:true,force:true});}
+});
+
+
+test('legacy immutable tile URLs preserve old cached words without provider calls',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'legacy-word-')),profile='qwen3-flash-Cherry-zh-tile-word-v1',audio=tone(1.2),key=createHash('sha256').update(JSON.stringify([profile,true,'我们'])).digest('hex');await writeFile(join(dir,key+'.wav'),audio);
+ const server=createGameServer({dbPath:':memory:',publicOrigin:'http://legacy.test',automaticTimers:false,speech:{directory:dir}});await server.listen(0);const origin=`http://127.0.0.1:${(server.http.address() as any).port}`;
+ try{const response=await fetch(`${origin}/api/speech/tiles/${profile}/${encodeURIComponent('我')}`);assert.equal(response.status,200);assert(response.headers.get('cache-control')?.includes('immutable'));assert.deepEqual(Buffer.from(await response.arrayBuffer()),audio);for(const [p,c]of [[profile,'傻'],[SPEECH_PROFILE,'我'],['unknown','我']])assert.equal((await fetch(`${origin}/api/speech/tiles/${p}/${encodeURIComponent(c)}`)).status,404);assert.equal(server.speech.enabled,false);}finally{await server.close();await rm(dir,{recursive:true,force:true});}
 });

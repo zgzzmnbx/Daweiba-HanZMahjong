@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25T20:55:12.535Z",
+  "status": "PASS",
+  "origin": "https://118.196.107.182:1240",
+  "name": "素质满满",
+  "id": "set-085876b8-caa9-48f5-b5ec-1e12be4b8a57",
+  "revision": 2,
+  "priorRevision": 1,
+  "noOp": false,
+  "characters": 336,
+  "totals": {
+    "2": 672,
+    "3": 672,
+    "4": 672,
+    "5": 672,
+    "6": 672
+  },
+  "defaultUnchanged": true,
+  "otherSetsUnchanged": true,
+  "ready": 336
+}

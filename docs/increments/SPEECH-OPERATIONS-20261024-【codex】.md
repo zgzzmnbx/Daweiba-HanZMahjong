@@ -28,3 +28,9 @@ node --import tsx scripts/generate-tile-speech.ts
 ## 浏览器语音回归
 
 现有锁定Playwright1.56.1可配套Chromium141执行：先按标准Playwright安装配套浏览器到临时目录，设置`PLAYWRIGHT_BROWSERS_PATH`后运行`scripts/verify-discard-speech.mjs`或`verify-speech.mjs`。未设置时仍使用已安装Chrome。报告记录实际版本；本机Chrome156与旧版控制协议的异常不能当作配套浏览器通过证据。`EVIDENCE_PREFIX`必须唯一，进程退出0后才归档结果。
+
+## 1.28.1扩充
+
+牌词profile为tile-word-v2，共358词；v1旧URL按冻结的tile-words-v1.json继续只读。`migrate-tile-word-cache.ts`验证旧178词是否一致并复制已验证WAV到新key，不覆盖旧文件；`generate-tile-speech.ts`可用SPEECH_DECK_FILE预生成尚未入库的已审核候选配置。`verify-tile-word-cache.ts --local`强制使用无凭据本地服务，即使环境文件带有生产PUBLIC_ORIGIN；报告路径通过EVIDENCE_PREFIX和SPEECH_REPORT指定，不固定178数量。
+
+原“素质满满”用scripts/apply-suzhi-deck.mjs管理API修订，HANZ_ADMIN_PASSWORD从环境读取、不存源码。目标必须唯一同名且与原配置revision和entries一致，否则停止避免覆盖管理员并发编辑。回退请对当前revision提交原始entries，不能把活跃数据库降级。

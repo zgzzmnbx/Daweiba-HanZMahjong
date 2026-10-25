@@ -2,10 +2,11 @@ import {createHash,randomUUID} from 'node:crypto';
 import {mkdir,readFile,writeFile,rename,unlink,stat} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tileWord} from './tile-words';
+import legacyWords from './tile-words-v1.json';
 import {normalizeSpeech,SpeechError} from './speech-audio';
 export {SpeechError} from './speech-audio';
 const HU_SPEECH_PROFILE='qwen3-flash-Cherry-zh-normalized-v1';
-export const SPEECH_PROFILE='qwen3-flash-Cherry-zh-tile-word-v1';
+export const SPEECH_PROFILE='qwen3-flash-Cherry-zh-tile-word-v2';
 export type SpeechOptions={directory:string;apiKey?:string;ffmpeg?:string;synthesize?:(text:string,signal:AbortSignal)=>Promise<Buffer>};
 export class Speech{
  private jobs=new Map<string,Promise<string>>();private waiting:{run:()=>void;reject:(e:unknown)=>void}[]=[];private active=0;private nextStart=0;private timer:ReturnType<typeof setTimeout>|null=null;private closed=false;private aborts=new Set<AbortController>();private failures=new Set<string>();private tiles=new Set<string>();
@@ -14,6 +15,14 @@ export class Speech{
  private key(text:string,single:boolean){return createHash('sha256').update(JSON.stringify([single?SPEECH_PROFILE:HU_SPEECH_PROFILE,single,single?tileWord(text):text])).digest('hex');}
  path(text:string,single:boolean){return join(this.options.directory,this.key(text,single)+'.wav');}
  async existing(text:string,single:boolean){if(single&&!tileWord(text))return false;try{const info=await stat(this.path(text,single));return info.isFile()&&info.size>44;}catch{return false;}}
+ /** Old immutable URLs keep their original word; serving either profile never synthesizes. */
+ async tileAsset(char:string,profile:string):Promise<string|null>{
+  if(profile===SPEECH_PROFILE)return await this.existing(char,true)?this.path(char,true):null;
+  if(profile!=='qwen3-flash-Cherry-zh-tile-word-v1')return null;
+  const word=(legacyWords as Record<string,string>)[char];if(!word)return null;
+  const key=createHash('sha256').update(JSON.stringify([profile,true,word])).digest('hex'),file=join(this.options.directory,key+'.wav');
+  try{const info=await stat(file);return info.isFile()&&info.size>44?file:null;}catch{return null;}
+ }
  async manifest(chars:readonly string[],admin=false){const ready:string[]=[];for(const char of chars)if(await this.existing(char,true))ready.push(char);return{profile:SPEECH_PROFILE,voice:'Cherry',tileDurationMs:null,words:Object.fromEntries(chars.filter(c=>tileWord(c)).map(c=>[c,tileWord(c)])),unmapped:chars.filter(c=>!tileWord(c)),enabled:this.enabled,ready,...(admin?{pending:chars.filter(c=>this.tiles.has(c)),failed:chars.filter(c=>this.failures.has(c))}:{})};}
  generateTiles(chars:string[]){if(chars.some(c=>!tileWord(c)))throw new SpeechError('SPEECH_WORD_MISSING',400);if(!this.enabled)throw new SpeechError('SPEECH_NOT_CONFIGURED');for(const c of chars){if(this.tiles.has(c))continue;this.tiles.add(c);this.failures.delete(c);void this.ensure(c,true).catch(()=>{this.failures.add(c);}).finally(()=>{this.tiles.delete(c);});}}
  private async qwen(text:string,signal:AbortSignal){
