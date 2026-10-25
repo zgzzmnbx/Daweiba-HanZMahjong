@@ -1,0 +1,5 @@
+{
+  "room": "B4A2F0E2C2",
+  "phase": "ROOM_CLOSED",
+  "evidence": "Read-only persisted room_snapshots check; second UI close succeeded after CAS conflict."
+}

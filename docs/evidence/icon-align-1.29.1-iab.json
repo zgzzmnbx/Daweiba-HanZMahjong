@@ -1,0 +1,19 @@
+{
+  "version": "1.29.1",
+  "origin": "https://118.196.107.182:1240/",
+  "method": "Existing IAB tab reload and DOM SVG/button center measurement",
+  "checks": [
+    {
+      "label": "胡牌天书",
+      "beforeCenterX": -2,
+      "afterCenterX": 0,
+      "margin": "0px"
+    },
+    {
+      "label": "大厅菜单",
+      "beforeCenterX": -2,
+      "afterCenterX": 0,
+      "margin": "0px"
+    }
+  ]
+}

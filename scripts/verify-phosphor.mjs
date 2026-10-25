@@ -8,7 +8,7 @@ import {createGameServer} from '../apps/server/server.ts';
 import {gameAction,gameTool,rejectReview} from './game-ui-tools.mjs';
 const base=process.env.PUBLIC_ORIGIN??'http://127.0.0.1:3193',local=!process.env.PUBLIC_ORIGIN;
 const version=JSON.parse(await readFile('package.json','utf8')).version,prefix=process.env.EVIDENCE_PREFIX??`phosphor-${version}`;
-await mkdir('docs/evidence',{recursive:true});await mkdir('Codex-Temp',{recursive:true});
+const screens=process.env.SCREENSHOT_DIR??'docs/evidence';await mkdir(screens,{recursive:true});await mkdir('docs/evidence',{recursive:true});await mkdir('Codex-Temp',{recursive:true});
 const server=local?createGameServer({dbPath:':memory:',publicOrigin:base,staticDir:resolve('dist/web')}):null;if(server)await server.listen(3193);
 const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_BROWSERS_PATH?'chromium':'chrome',headless:true}),clients=[],checks=[],errors=[];let room;
 const pass=(name,data={})=>{checks.push({name,...data});console.log('PASS',name);};
@@ -17,11 +17,11 @@ async function audit(page,selector='body'){
  const result=await page.locator(selector).evaluate(root=>{
   const modal=document.querySelector('dialog:modal:last-of-type');
   const rows=[...root.querySelectorAll('svg')].filter(el=>{const r=el.getBoundingClientRect();return r.width&&r.height&&getComputedStyle(el).visibility!=='hidden'&&(!modal||modal.contains(el));}).map(el=>{
-   const r=el.getBoundingClientRect(),s=getComputedStyle(el),b=el.getBBox();return {name:el.dataset.phosphorIcon,viewBox:el.getAttribute('viewBox'),w:r.width,h:r.height,ink:b.width*b.height,fill:s.fill,stroke:s.stroke,hidden:el.getAttribute('aria-hidden'),focusable:el.getAttribute('focusable'),parent:el.parentElement.className};
+   const r=el.getBoundingClientRect(),s=getComputedStyle(el),b=el.getBBox(),parent=el.parentElement,p=parent.getBoundingClientRect(),ps=getComputedStyle(parent),onlyIcon=parent.tagName==='BUTTON'&&parent.children.length===1&&!parent.textContent.trim(),column=parent.tagName==='BUTTON'&&ps.display.includes('flex')&&ps.flexDirection==='column';return {name:el.dataset.phosphorIcon,viewBox:el.getAttribute('viewBox'),w:r.width,h:r.height,ink:b.width*b.height,fill:s.fill,stroke:s.stroke,hidden:el.getAttribute('aria-hidden'),focusable:el.getAttribute('focusable'),parent:el.parentElement.className,centerX:onlyIcon||column?r.x+r.width/2-p.x-p.width/2:null,centerY:onlyIcon?r.y+r.height/2-p.y-p.height/2:null};
   });return rows;
  });
  assert(result.length,'expected visible Phosphor icons in '+selector);
- for(const i of result){assert(i.name,'legacy SVG '+i.parent);assert.equal(i.viewBox,'0 0 256 256');assert(i.ink>0,'empty icon '+i.name);assert(Math.abs(i.w-i.h)<.6,'squashed icon '+JSON.stringify(i));assert.notEqual(i.fill,'none','invisible icon '+i.name);assert.equal(i.stroke,'none','legacy stroke applied '+i.name);assert.equal(i.hidden,'true');assert.equal(i.focusable,'false');}
+ for(const i of result){assert(i.name,'legacy SVG '+i.parent);assert.equal(i.viewBox,'0 0 256 256');assert(i.ink>0,'empty icon '+i.name);assert(Math.abs(i.w-i.h)<.6,'squashed icon '+JSON.stringify(i));assert.notEqual(i.fill,'none','invisible icon '+i.name);assert.equal(i.stroke,'none','legacy stroke applied '+i.name);assert.equal(i.hidden,'true');assert.equal(i.focusable,'false');if(i.centerX!==null)assert(Math.abs(i.centerX)<.6,'horizontal icon drift '+JSON.stringify(i));if(i.centerY!==null)assert(Math.abs(i.centerY)<.6,'vertical icon drift '+JSON.stringify(i));}
  return [...new Set(result.map(i=>i.name))];
 }
 async function hallCheck(page,width,height){
@@ -31,7 +31,7 @@ async function hallCheck(page,width,height){
   const b=page.getByRole('button',{name:label,exact:true});if(!await b.isVisible())await page.getByRole('button',{name:'大厅菜单',exact:true}).click();await b.click();await page.getByRole('button',{name:close,exact:true}).waitFor();await audit(page);await page.getByRole('button',{name:close,exact:true}).click();
  }
  await page.getByRole('button',{name:'胡牌天书',exact:true}).click();await page.getByRole('button',{name:'关闭胡牌天书',exact:true}).waitFor();await audit(page);await page.getByRole('button',{name:'关闭胡牌天书',exact:true}).click();
- await page.screenshot({path:`docs/evidence/${prefix}-${width}-hall.png`});pass(`${width}x${height} hall, book, updates, help, admin icons`,{iconNames});
+ await page.screenshot({path:`${screens}/${prefix}-${width}-hall.png`});pass(`${width}x${height} hall, book, updates, help, admin icons`,{iconNames});
 }
 async function wait(fn){for(let i=0;i<300;i++){if(await fn())return;await new Promise(r=>setTimeout(r,50));}throw Error('condition timeout');}
 async function snap(p){const r=await p.context.request.get(`${base}/api/rooms/${room}/snapshot`);assert(r.ok());return r.json();}
@@ -42,7 +42,14 @@ async function cleanup(){if(!room||!clients.length)return;for(const p of clients
  for(const p of clients){const back=p.page.getByRole('button',{name:'回到牌桌',exact:true});if(await back.isVisible())await back.click();}
  const e=await snap(clients[0]);if(e.public.phase.kind!=='ROOM_CLOSED'){const host=clients.find(p=>p.id===e.public.hostId);assert(host);const other=clients.find(p=>p!==host);if(!['LOBBY','ROUND_FINISHED'].includes(e.public.phase.kind)){await other.page.goto('about:blank');await wait(async()=> (await snap(host)).legalActions.includes('END_UNSCORED'));await host.page.getByRole('button',{name:'游戏菜单',exact:true}).waitFor();await(await gameTool(host.page,'结束本局（不计分）')).click();await host.page.getByRole('button',{name:'确认结束',exact:true}).click();await wait(async()=> (await snap(host)).public.phase.kind==='ROUND_FINISHED');await other.page.goto(`${base}/room/${room}`,{waitUntil:'domcontentloaded'});await other.page.getByRole('button',{name:'游戏菜单',exact:true}).waitFor();await host.page.locator('.player-badge .presence-dot.online').waitFor({state:'attached'});}
 
- await open(other,'游戏菜单');await(await gameTool(host.page,'关闭房间')).click();await host.page.getByRole('button',{name:'确认关闭',exact:true}).click();await wait(async()=>{const s=await snap(host);if(host.commandFailures.at(-1)?.kind==='CLOSE_ROOM')throw Error(JSON.stringify(host.commandFailures.at(-1)));return s.public.phase.kind==='ROOM_CLOSED';});await wait(async()=>!await other.page.getByRole('dialog',{name:'游戏菜单',exact:true}).isVisible());pass('room closure dismisses obsolete navigation');}
+ await open(other,'游戏菜单');
+ for(let attempt=0;attempt<3;attempt++){
+  if((await snap(host)).public.phase.kind==='ROOM_CLOSED')break;
+  const failureStart=host.commandFailures.length;
+  await closeNavigation(host);await(await gameTool(host.page,'关闭房间')).click();await host.page.getByRole('button',{name:'确认关闭',exact:true}).click();
+  await wait(async()=>{if((await snap(host)).public.phase.kind==='ROOM_CLOSED')return true;const failure=host.commandFailures.slice(failureStart).find(f=>f.kind==='CLOSE_ROOM');if(!failure)return false;if(failure.code!=='STALE_STATE_VERSION')throw Error(JSON.stringify(failure));return true;});
+ }
+ assert.equal((await snap(host)).public.phase.kind,'ROOM_CLOSED','cleanup exhausted fresh-state retries');await wait(async()=>!await other.page.getByRole('dialog',{name:'游戏菜单',exact:true}).isVisible());pass('room closure dismisses obsolete navigation');}
  for(let i=0;i<clients.length;i++)await rm(`Codex-Temp/${prefix}-${i}-identity.json`,{force:true});room=null;
 }
 try{
@@ -58,7 +65,7 @@ try{
  for(const p of clients)await p.page.getByRole('button',{name:'准备好了',exact:true}).click();await clients[0].page.getByRole('button',{name:'开始牌局',exact:true}).click();await wait(async()=> (await snap(clients[0])).public.phase.kind==='TURN_ACTION');
  for(const [width,height] of [[320,480],[390,844],[667,375],[1280,800]]){
   for(const p of clients){await p.page.setViewportSize({width,height});await p.page.evaluate(()=>document.fonts.ready);}
-  const page=clients[0].page;await page.waitForTimeout(200);await audit(page);await page.screenshot({path:`docs/evidence/${prefix}-${width}-table.png`});
+  const page=clients[0].page;await page.waitForTimeout(200);await audit(page);await page.screenshot({path:`${screens}/${prefix}-${width}-table.png`});
   await page.getByRole('button',{name:'同桌聊天',exact:true}).click();await page.getByRole('button',{name:'收起聊天',exact:true}).waitFor();await audit(page,'.chat-panel');
   await page.getByRole('button',{name:'表情包',exact:true}).click();await page.getByRole('button',{name:'表情包',exact:true}).click();
   await page.getByRole('textbox',{name:'聊天内容',exact:true}).fill('图标验收 '+width);await page.getByRole('button',{name:'发送聊天',exact:true}).click();await page.getByRole('button',{name:'收起聊天',exact:true}).click();
@@ -75,7 +82,7 @@ try{
    assert(await dialog.isVisible());assert(await dialog.evaluate(el=>el.matches(':modal')));assert(await focus.evaluate(el=>document.activeElement===el));assert.equal(await dialog.evaluate(el=>el.scrollTop),scroll);
    if(label==='同桌音乐'){assert.equal(await focus.inputValue(),'35');assert.equal(await observer.page.getByRole('button',{name:'音效与语音',exact:true}).getAttribute('aria-pressed'),'true');}
    const after=await snap(observer);assert.notEqual(after.public.phase.phaseId,before.public.phase.phaseId);assert.equal(after.public.discards.length,before.public.discards.length+1);assert(after.legalActions.includes('RESPOND'));const deadline=after.public.phase.deadline;
-   if(label==='游戏菜单'||label==='同桌音乐')await observer.page.screenshot({timeout:30000,path:`docs/evidence/${prefix}-${width}-${label==='游戏菜单'?'menu':'music'}.png`});
+   if(label==='游戏菜单'||label==='同桌音乐')await observer.page.screenshot({timeout:30000,path:`${screens}/${prefix}-${width}-${label==='游戏菜单'?'menu':'music'}.png`});
    await closeNavigation(observer);
    const actorMenu=await open(actor,'游戏菜单');await observer.page.getByRole('button',{name:'摸',exact:true}).click();await actor.page.locator('.game-shell[data-phase="TURN_ACTION"]').waitFor();await actor.page.waitForTimeout(150);assert(await actorMenu.isVisible());const drawn=await snap(observer);assert.equal(drawn.public.phase.actorId,observer.id);assert.equal(drawn.public.wallRemaining,after.public.wallRemaining-1);assert.equal(drawn.private.hand.length,14);
    await closeNavigation(actor);pass(`${width}x${height} ${label}: discard preserves modal, focus, scroll; draw preserves menu`,{phaseBefore:before.public.phase.phaseId,phaseAfter:after.public.phase.phaseId,deadline});
@@ -83,7 +90,7 @@ try{
   // A mandatory review must still supersede navigation, including after prior rejected proposals.
   const state=await snap(clients[0]),actor=clients.find(p=>p.id===state.public.phase.actorId),observer=clients.find(p=>p!==actor),label=width===320?'游戏菜单':width===390?'同桌音乐':width===667?'新手指南':'牌局记录';
   const old=await open(observer,label);await actor.page.getByRole('button',{name:'申请胡牌',exact:true}).click();await actor.page.getByRole('button',{name:'确认，亮给大家看',exact:true}).click();await observer.page.getByRole('dialog',{name:'胡牌评审',exact:true}).waitFor();await wait(async()=>!await old.isVisible());assert(await observer.page.getByRole('dialog',{name:'胡牌评审',exact:true}).evaluate(el=>el.matches(':modal')));
-  const skip=observer.page.getByRole('button',{name:'收起亮相 · 看评审',exact:true});if(await skip.isVisible())await skip.click();await audit(observer.page);await rejectReview(observer.page);await observer.page.locator('.review-verdict.lose').waitFor();await observer.page.waitForTimeout(800);await audit(observer.page);await observer.page.screenshot({path:`docs/evidence/${prefix}-${width}-review.png`});for(const p of clients)await p.page.getByRole('button',{name:'回到牌桌',exact:true}).click();assert.equal((await snap(actor)).public.history.at(-1).outcome,'REJECTED');pass(`${width}x${height}: new review supersedes ${label}, voting and return work`);
+  const skip=observer.page.getByRole('button',{name:'收起亮相 · 看评审',exact:true});if(await skip.isVisible())await skip.click();await audit(observer.page);await rejectReview(observer.page);await observer.page.locator('.review-verdict.lose').waitFor();await observer.page.waitForTimeout(800);await audit(observer.page);await observer.page.screenshot({path:`${screens}/${prefix}-${width}-review.png`});for(const p of clients)await p.page.getByRole('button',{name:'回到牌桌',exact:true}).click();assert.equal((await snap(actor)).public.history.at(-1).outcome,'REJECTED');pass(`${width}x${height}: new review supersedes ${label}, voting and return work`);
  }
  const observer=await browser.newPage({ignoreHTTPSErrors:true});await observer.goto(`${base}/watch/${room}`);await observer.getByRole('button',{name:'返回大厅',exact:true}).waitFor();await audit(observer);await observer.getByText('声音',{exact:true}).click();await audit(observer,'.spectator-audio');await observer.getByRole('button',{name:'返回大厅',exact:true}).click();await observer.close();pass('public-only spectator uses shared icons and return action');
  await cleanup();assert.deepEqual(errors,[]);await writeFile(`docs/evidence/${prefix}-results.json`,JSON.stringify({at:new Date().toISOString(),version,origin:base,browser:browser.version(),checks,errors},null,2)+'\n');

@@ -1,9 +1,10 @@
 /* Phosphor's filled vector paths carry their own optical stroke weight. */
 .game-icon{display:inline-block;width:20px;height:20px;flex:none;vertical-align:middle;fill:currentColor;stroke:none;pointer-events:none;overflow:visible}
-button>.game-icon{vertical-align:-.2em}
-button>.game-icon:not(:only-child):first-child{margin-inline-end:4px}
-button>.game-icon:not(:only-child):last-child{margin-inline-start:4px}
+:where(button>.game-icon:not(:only-child):first-child){margin-inline-end:4px}
+:where(button>.game-icon:not(:only-child):last-child){margin-inline-start:4px}
 .hud-tool>.game-icon,.hall-tool>.game-icon,.portrait-menu-grid button>.game-icon,.chat-send>.game-icon,.sticker-toggle>.game-icon,.rack-expand-tab>.game-icon{margin-inline:0}
+/* Icon-only controls use a real centered layout, independent of font baselines. */
+:where(button):has(>.game-icon:only-child){display:inline-grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center}
 .hall-table-action>.game-icon,.tile-audio-tag>.game-icon{width:14px;height:14px}
 .tile-audio-tag{display:inline-flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap}
 .tile-audio-tag>.game-icon{margin-inline:0}
