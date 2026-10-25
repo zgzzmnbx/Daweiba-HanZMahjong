@@ -1,3 +1,4 @@
+import {GameIcon} from './GameIcon';
 import {useEffect,useRef,useState} from 'react';
 import {adminApi} from './admin-client';
 import {tileSpeechUrl,type SpeechManifest} from './speech-client';
@@ -9,4 +10,4 @@ export function useDeckSpeech(){
  const generate=async(characters:string[])=>{if(busy)return;setBusy(true);setMessage('');try{setManifest(await adminApi('/speech/tiles',{characters}));setMessage('语音正在生成，可继续编辑；完成后会出现试听按钮。');}catch{setMessage('生成未开始，请先检查是否有待配词汉字，再检查语音配置。');}finally{setBusy(false);}};
  return{manifest,message,busy,playing,play,generate};
 }
-export function DeckSpeechTag({char,speech}:{char:string;speech:ReturnType<typeof useDeckSpeech>}){const ready=speech.manifest?.ready.includes(char),pending=speech.manifest?.pending?.includes(char),failed=speech.manifest?.failed?.includes(char);const word=speech.manifest?.words?.[char];return ready?<button className="tile-audio-tag" aria-label={`试听 ${char} 的语音`} title={word?`${char} → ${word}`:undefined} onClick={()=>speech.play(char)}>{speech.playing===char?'播放中':`♪ ${word??'语音'}`}</button>:<small>{speech.manifest?.unmapped?.includes(char)?'待配词':pending?'生成中':failed?'待重试':'无语音'}</small>;}
+export function DeckSpeechTag({char,speech}:{char:string;speech:ReturnType<typeof useDeckSpeech>}){const ready=speech.manifest?.ready.includes(char),pending=speech.manifest?.pending?.includes(char),failed=speech.manifest?.failed?.includes(char);const word=speech.manifest?.words?.[char];return ready?<button className="tile-audio-tag" aria-label={`试听 ${char} 的语音`} title={word?`${char} → ${word}`:undefined} onClick={()=>speech.play(char)}><GameIcon kind={speech.playing===char?'sound':'play'}/>{speech.playing===char?'播放中':word??'语音'}</button>:<small>{speech.manifest?.unmapped?.includes(char)?'待配词':pending?'生成中':failed?'待重试':'无语音'}</small>;}

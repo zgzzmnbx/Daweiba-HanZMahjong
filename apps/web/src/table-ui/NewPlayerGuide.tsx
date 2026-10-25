@@ -1,3 +1,4 @@
+import {GameIcon} from '../GameIcon';
 import {useEffect,useRef,useState} from 'react';
 import './new-player-guide.css';
 const preferenceKey='hanz-new-player-guide-v1';
@@ -8,7 +9,7 @@ export function NewPlayerGuide({preparing=false,disabled=false,onConfirm,onClose
  useEffect(()=>{const el=dialog.current;el?.showModal();return()=>el?.close();},[]);
  const confirm=()=>{if(disabled)return;try{if(skip)localStorage.setItem(preferenceKey,'skip');else localStorage.removeItem(preferenceKey);}catch{/* A blocked preference store must not prevent play. */}onConfirm();};
  return <dialog ref={dialog} className="new-player-guide" aria-labelledby="new-player-guide-title" onCancel={e=>{e.preventDefault();if(!preparing)onClose?.();}}>
-  <header><span className="guide-emblem" aria-hidden="true">字</span><div><h2 id="new-player-guide-title">新手指南</h2><p>把 14 个字，排成一句完整的人话。</p></div>{!preparing&&<button className="guide-close" aria-label="关闭新手指南" onClick={onClose}>×</button>}</header>
+  <header><span className="guide-emblem" aria-hidden="true">字</span><div><h2 id="new-player-guide-title">新手指南</h2><p>把 14 个字，排成一句完整的人话。</p></div>{!preparing&&<button className="guide-close" aria-label="关闭新手指南" onClick={onClose}><GameIcon kind="close"/></button>}</header>
   <ol className="guide-steps">
    <li><span aria-hidden="true">排</span><div><h3>先把字排顺</h3><p>拖动手牌换顺序，拼出你想说的话。</p></div></li>
    <li><span aria-hidden="true">摸</span><div><h3>换个字，试试看</h3><p>「摸」随机摸一张；「吃」拿上家的字。</p></div></li>

@@ -1,3 +1,4 @@
+import {GameIcon} from './GameIcon';
 import {useEffect,useState} from 'react';
 import {api} from './game-client';
 import type {RoomSeatDirectory} from '../../../packages/contracts/browser-return';
@@ -13,5 +14,5 @@ export function RememberedRooms({onOpen,busy}:{onOpen:(id:string)=>void;busy:boo
   if(!controller.signal.aborted)setRooms(found.filter((r):r is {id:string;name:string}=>r!==null));
  })();return()=>controller.abort();},[]);
  if(!rooms.length)return null;
- return <nav className="remembered-rooms" aria-label="我的座位"><span>我的座位</span>{rooms.map(r=><button key={r.id} disabled={busy} onClick={()=>onOpen(r.id)} title={`房间 ${r.id}`}>{r.name}<small>回到房间 ↩</small></button>)}</nav>;
+ return <nav className="remembered-rooms" aria-label="我的座位"><span>我的座位</span>{rooms.map(r=><button key={r.id} disabled={busy} onClick={()=>onOpen(r.id)} title={`房间 ${r.id}`}>{r.name}<small>回到房间 <GameIcon kind="back"/></small></button>)}</nav>;
 }

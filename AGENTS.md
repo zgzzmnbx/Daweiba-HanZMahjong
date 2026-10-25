@@ -204,3 +204,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.28.0规则1.7.0：圈数用完整discards长度÷capacity，含CLAIMED；满20圈每人每局一次自己回合单汉字改牌。rewriteUsed及新字事务持久化，tileId/期限/刚吃牌保护不变。替换Tile对象，不改历史引用；同ID Three.js mesh须刷新glyph map。旧局START才升级，手机圈数替代品牌不挤44px工具。
 
 - 1.28.1词库扩充须同时校验实际张数、词语构件与全部报字配词，不能把结构材料覆盖率称为胡牌率。词语profile升级前验证复用未改词的WAV并预生成缺失音频；旧immutable URL通过冻结旧词表继续只读播放，不能按新配词反推旧音频。原套组更新走管理员expectedRevision，不写活动牌墙。
+
+- 1.29.0功能图标统一GameIcon与锁定Phosphor Core静态SVG，不引入Unicode/emoji代替控制图标。Regular路径已定义线宽，不再叠加旧stroke；方形宽高需成对设置，不能只改width。牌字/品牌章/原创头像贴纸属于游戏内容，保留。MIT随网页发布。

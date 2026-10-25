@@ -1,0 +1,269 @@
+{
+  "source": "https://github.com/phosphor-icons/core",
+  "package": "@phosphor-icons/core",
+  "version": "2.1.1",
+  "license": "MIT",
+  "integrity": "sha512-v4ARvrip4qBCImOE5rmPUylOEK4iiED9ZyKjcvzuezqMaiRASCHKcRIuvvxL/twvLpkfnEODCOJp5dM4eZilxQ==",
+  "assets": [
+    {
+      "key": "shuffle",
+      "path": "@phosphor-icons/core/assets/regular/shuffle.svg",
+      "sha256": "c3fdac72b005805ddf1078b858eecb55f288d7bc34573ffae276de02373bb6f2"
+    },
+    {
+      "key": "back",
+      "path": "@phosphor-icons/core/assets/regular/arrow-u-up-left.svg",
+      "sha256": "37975867f2e89f745250d3601a5674ca37883a8d79f52abcb082beba4df28df7"
+    },
+    {
+      "key": "sound",
+      "path": "@phosphor-icons/core/assets/regular/speaker-high.svg",
+      "sha256": "caca5fc1ee8489ac19232301d2c96f6d4048802491d75d761bbb89d5c98e459d"
+    },
+    {
+      "key": "muted",
+      "path": "@phosphor-icons/core/assets/regular/speaker-slash.svg",
+      "sha256": "66b75267ea8ba8759a70e4c8312bfe06b834fc8fcf0dd1710d9819877f0c8013"
+    },
+    {
+      "key": "display",
+      "path": "@phosphor-icons/core/assets/regular/monitor.svg",
+      "sha256": "ac9005f7dd981b06b7c029b3625bf908ded63e0dc52e781ad550ae2ef621f86a"
+    },
+    {
+      "key": "autoplay",
+      "path": "@phosphor-icons/core/assets/regular/robot.svg",
+      "sha256": "defac7635fe4235e3b6c8a1edabca345ac9dc2e8a2ec79ec82088845562a8128"
+    },
+    {
+      "key": "arrange",
+      "path": "@phosphor-icons/core/assets/regular/cards.svg",
+      "sha256": "de7215a56d6131de7ebded00390671efb03233830b77c41f7736a28baf2eb4da"
+    },
+    {
+      "key": "music",
+      "path": "@phosphor-icons/core/assets/regular/music-notes.svg",
+      "sha256": "b991d76e24e781b864f9ad8b7aa14e516d4fd851871a979928917e20d492eca0"
+    },
+    {
+      "key": "chat",
+      "path": "@phosphor-icons/core/assets/regular/chat-circle-text.svg",
+      "sha256": "782e66bd9b7f809fe8f955d5b41ae9ebffd4cbf59661688dbfd497bfea621f56"
+    },
+    {
+      "key": "brush",
+      "path": "@phosphor-icons/core/assets/regular/paint-brush.svg",
+      "sha256": "71f96a0b1a20e671a4af66d3b6bfaa41cf01778ad858193515d0268f07666972"
+    },
+    {
+      "key": "comma",
+      "path": "@phosphor-icons/core/assets/regular/quotes.svg",
+      "sha256": "e6afaa07d488b94413b5edbbe813d45fa8db5b6c9269a4de3b20bdae77d8a142"
+    },
+    {
+      "key": "history",
+      "path": "@phosphor-icons/core/assets/regular/scroll.svg",
+      "sha256": "e8e1f6aa3ca71259fe81b9bb9d6b697c69cd614b2126fabcdbc21390857a2ac7"
+    },
+    {
+      "key": "settings",
+      "path": "@phosphor-icons/core/assets/regular/sliders-horizontal.svg",
+      "sha256": "1d937baa3bc51ec4052364edf30cf8991d550920534f5d413eb9f60535cc1916"
+    },
+    {
+      "key": "help",
+      "path": "@phosphor-icons/core/assets/regular/question.svg",
+      "sha256": "fd9a87cfce2abaa9113058be90e5281da58f665e2185974b80c7425d5c7fe2d6"
+    },
+    {
+      "key": "admin",
+      "path": "@phosphor-icons/core/assets/regular/shield-check.svg",
+      "sha256": "bb04d552c0baaaabd90f7eb60760cb0c7ddb7e9f47e4b76e9599ddd7dfd8eaa7"
+    },
+    {
+      "key": "exit",
+      "path": "@phosphor-icons/core/assets/regular/sign-out.svg",
+      "sha256": "511fe7958ef31f8904185631fd7045c11f35c8034a2a64ccb3bdcc4dfa81df77"
+    },
+    {
+      "key": "entry",
+      "path": "@phosphor-icons/core/assets/regular/sign-in.svg",
+      "sha256": "4f9ac62582c9319778af5aef0865ba15b777378d222f4475be72ba1115bba076"
+    },
+    {
+      "key": "book",
+      "path": "@phosphor-icons/core/assets/regular/book-open-text.svg",
+      "sha256": "5eb0c8daceb5a6ffa004118720ea712a3eb8b7d2b6ab5bae750c3efca9d35450"
+    },
+    {
+      "key": "room",
+      "path": "@phosphor-icons/core/assets/regular/door-open.svg",
+      "sha256": "d5868e10dbf1c1ae216c4ccbf489cdc98fb91a7886da470e3e7126c1c9a7d6b5"
+    },
+    {
+      "key": "updates",
+      "path": "@phosphor-icons/core/assets/regular/newspaper.svg",
+      "sha256": "edd422b8baf7fcbe2e4ee511b7926f1b92d40e344115fd1ae816d3ff37edab5b"
+    },
+    {
+      "key": "menu",
+      "path": "@phosphor-icons/core/assets/regular/list.svg",
+      "sha256": "fb1851842c74b40a3f42ce3d6ae0e67ede556b624218e79c0f4ead7d9ceec51f"
+    },
+    {
+      "key": "close",
+      "path": "@phosphor-icons/core/assets/regular/x.svg",
+      "sha256": "7397b15e1fa66eaf6ff9b59fe91d483cb5c3bcf75b2fe052097ab6f0593b513a"
+    },
+    {
+      "key": "plus",
+      "path": "@phosphor-icons/core/assets/regular/plus.svg",
+      "sha256": "d688feb9dd2e41c1721d6906a05a2a42e18cd774762fe706d72b2bdfd91cddc4"
+    },
+    {
+      "key": "minus",
+      "path": "@phosphor-icons/core/assets/regular/minus.svg",
+      "sha256": "5a068d1cfd707fde5ddb0ce0623958123b6a5afba98401318983aeb0fdad6382"
+    },
+    {
+      "key": "left",
+      "path": "@phosphor-icons/core/assets/regular/caret-left.svg",
+      "sha256": "623bf248fe21a8170344e168aaac2e174119cea5d7c5d0fb0dc84f581009475f"
+    },
+    {
+      "key": "up",
+      "path": "@phosphor-icons/core/assets/regular/caret-up.svg",
+      "sha256": "bccc26004e73e5de783ac6dde607e3671e776261d81972ccdbd296b4aca21ca9"
+    },
+    {
+      "key": "down",
+      "path": "@phosphor-icons/core/assets/regular/caret-down.svg",
+      "sha256": "53f0cf2d0b144ac3cb07e353e0cd0853ffb3ed432d741460ce288edfcb0924b1"
+    },
+    {
+      "key": "arrowLeft",
+      "path": "@phosphor-icons/core/assets/regular/arrow-left.svg",
+      "sha256": "3c2001cf957d182fc54927e4b286cc8cf66dd97830f441ca2650d42a63a9006a"
+    },
+    {
+      "key": "arrowRight",
+      "path": "@phosphor-icons/core/assets/regular/arrow-right.svg",
+      "sha256": "e45bc4a12592b8723110db42c6deffdf177e4fe7704cf50324963fa0a59b2d74"
+    },
+    {
+      "key": "arrowDown",
+      "path": "@phosphor-icons/core/assets/regular/arrow-down.svg",
+      "sha256": "cc6416ae83e20660f14b11f5525c6d05ee679c3f26cee41b696cb37aa905d4f5"
+    },
+    {
+      "key": "send",
+      "path": "@phosphor-icons/core/assets/regular/paper-plane-tilt.svg",
+      "sha256": "0dbff2ada31c963dfd95bfe2ab2cb39a90fe7100eb7c1724577444a1d8a7c26d"
+    },
+    {
+      "key": "smile",
+      "path": "@phosphor-icons/core/assets/regular/smiley.svg",
+      "sha256": "9486a397f921e6a6472ae4655002a468b9d4475d1ff44dc639aa95fd830b7d60"
+    },
+    {
+      "key": "danmaku",
+      "path": "@phosphor-icons/core/assets/regular/subtitles.svg",
+      "sha256": "830b60f447804704071506de91ee161dd721813d795968faaa5a42be85e88cf1"
+    },
+    {
+      "key": "danmakuOff",
+      "path": "@phosphor-icons/core/assets/regular/subtitles-slash.svg",
+      "sha256": "21b21248cee12eedfe0ab754c0a350f8a709a0eec2087470b688ef18c0d6f5bb"
+    },
+    {
+      "key": "visible",
+      "path": "@phosphor-icons/core/assets/regular/eye.svg",
+      "sha256": "91d39f20bf95e0f36c07bd79b83a85fe6ff4ca20e2759c4afee7419ef80403fe"
+    },
+    {
+      "key": "hidden",
+      "path": "@phosphor-icons/core/assets/regular/eye-slash.svg",
+      "sha256": "070b0296a7df89ebf4cec12436e323b5531d458aa9aed3608924085889e1fd17"
+    },
+    {
+      "key": "check",
+      "path": "@phosphor-icons/core/assets/regular/check.svg",
+      "sha256": "cbb89a8c42f283d4f846eb935e05d88c1be04462f16480e068c0f82b9ce40b12"
+    },
+    {
+      "key": "egg",
+      "path": "@phosphor-icons/core/assets/duotone/egg-duotone.svg",
+      "sha256": "9711d0ee8d2e5d90f8ea179e8e70395a79b69699b5ea0546fcb4b1b169ed38a5"
+    },
+    {
+      "key": "spark",
+      "path": "@phosphor-icons/core/assets/fill/star-four-fill.svg",
+      "sha256": "2e323dacc3116d0fdd2e5748297a868469cdaedcd973b76b87fc127bb8082f91"
+    },
+    {
+      "key": "heart",
+      "path": "@phosphor-icons/core/assets/regular/heart.svg",
+      "sha256": "312dee73d1d969631d5498012f619ccf4edbdf31e1be3e65af4f4f1b3ac1b2dd"
+    },
+    {
+      "key": "heartFilled",
+      "path": "@phosphor-icons/core/assets/fill/heart-fill.svg",
+      "sha256": "d90560d4f762f1b345bd2322cd1ef696926ffa74b0c1396933b6d926faf8341e"
+    },
+    {
+      "key": "waiting",
+      "path": "@phosphor-icons/core/assets/regular/dots-three.svg",
+      "sha256": "ca4e748007101155641ec3041cd129bb03a8030d0eed16e313b9dd75e6beac77"
+    },
+    {
+      "key": "skip",
+      "path": "@phosphor-icons/core/assets/regular/skip-forward.svg",
+      "sha256": "52f1ed5a89f1a38bf8537b38bd2da0501e396fc4cb03a2cdde38d248ceb03fbe"
+    },
+    {
+      "key": "play",
+      "path": "@phosphor-icons/core/assets/regular/play.svg",
+      "sha256": "885b3ed2095889c4ff063dac35dc424cb9f6c00273ab44e2f90dc9dadbee661a"
+    },
+    {
+      "key": "upload",
+      "path": "@phosphor-icons/core/assets/regular/upload-simple.svg",
+      "sha256": "d2b22b75affd718a4a24d71ee71586b277cf48ddb7d52b7d7d0a85b47f8b12d1"
+    },
+    {
+      "key": "disc",
+      "path": "@phosphor-icons/core/assets/regular/vinyl-record.svg",
+      "sha256": "9f670fdd8ae1b144f372b97b9be8acd0cc0d796d2e78607b58a4baa2683461e2"
+    },
+    {
+      "key": "drop",
+      "path": "@phosphor-icons/core/assets/regular/hand-deposit.svg",
+      "sha256": "859dd017eb2e43ece8ca6cc73966b17d38255761fb87827a18286fdddf61f757"
+    },
+    {
+      "key": "undo",
+      "path": "@phosphor-icons/core/assets/regular/arrow-counter-clockwise.svg",
+      "sha256": "4eb160d5ae781107c674481ac081962e6bce6281a646129e6c3f960b9dd5dac6"
+    },
+    {
+      "key": "erase",
+      "path": "@phosphor-icons/core/assets/regular/eraser.svg",
+      "sha256": "3e2e2a1f466051a32abed16cd8e6eadf30f9c560aeb6dcf2545f9c8a95ddfdef"
+    },
+    {
+      "key": "trash",
+      "path": "@phosphor-icons/core/assets/regular/trash.svg",
+      "sha256": "e6a830c0409f9e101e3695c981eef98427d39fd01f502b9cbd6900930b01f19c"
+    },
+    {
+      "key": "refresh",
+      "path": "@phosphor-icons/core/assets/regular/arrows-clockwise.svg",
+      "sha256": "2e80fbc9c5c37553934c9ebbd6324bf7fabe9a4b4d7c2445d99edfce55cc22df"
+    },
+    {
+      "key": "save",
+      "path": "@phosphor-icons/core/assets/regular/floppy-disk.svg",
+      "sha256": "067b385ee62469be500d2d5bcd10e2aedd7529cd615ed180fa8414aaef0e40ab"
+    }
+  ]
+}

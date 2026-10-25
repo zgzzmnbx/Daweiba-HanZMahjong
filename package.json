@@ -1,6 +1,6 @@
 {
   "name": "hanz-mahjong",
-  "version": "1.28.1",
+  "version": "1.29.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -25,6 +25,7 @@
     "three": "0.185.1"
   },
   "devDependencies": {
+    "@phosphor-icons/core": "2.1.1",
     "@types/express": "5.0.3",
     "@types/node": "24.10.1",
     "@types/react": "18.3.12",

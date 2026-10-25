@@ -1,3 +1,4 @@
+import {GameIcon} from './GameIcon';
 import {useRoomMusic} from './audio/use-room-music';
 import {MusicControls} from './audio/MusicControls';
 import {TurnHud} from './table-ui/TurnHud';
@@ -34,8 +35,8 @@ export function SpectatorTable({roomId,administrator=false,onLeave,onAdmin}:{roo
  const sfx=useGameSfx(p??null,[roomId,administrator].join('|'),!!p&&!error,snapshot?.serverNow??0,speech.playing);
  const music=useRoomMusic(roomId,roomId+'|'+administrator,!!p&&!error&&p.phase.kind!=='ROOM_CLOSED',sfx,speech.playing,undefined,administrator);
  const proposal=p?.phase.kind==='HU_VOTE'?p.phase.proposal:p?.history.at(-1),last=p?.discards.at(-1);
- return <section className="spectator-shell" aria-label={administrator?'管理员观战':'观战牌桌'}><header className="topbar game-hud"><button onClick={onLeave} className="hud-tool">返回大厅</button><div className="wordmark">字间</div><strong>{administrator?'管理员观战':'观战'}</strong><span className="room-code">{roomId}</span>{onAdmin&&<button onClick={onAdmin} className="hud-tool" aria-label="管理员入口">管理</button>}</header>
-  <details className="spectator-audio"><summary>♫ 声音</summary><MusicControls music={music} readOnly/><SoundControls sfx={sfx}/><button onClick={speech.toggle}>{speech.enabled?'关闭语音':'开启语音'}</button>{speech.message&&<small role="status">{speech.message}</small>}</details>
+ return <section className="spectator-shell" aria-label={administrator?'管理员观战':'观战牌桌'}><header className="topbar game-hud"><button onClick={onLeave} className="hud-tool" aria-label="返回大厅"><GameIcon kind="back"/><small>大厅</small></button><div className="wordmark">字间</div><strong>{administrator?'管理员观战':'观战'}</strong><span className="room-code">{roomId}</span>{onAdmin&&<button onClick={onAdmin} className="hud-tool" aria-label="管理员入口"><GameIcon kind="admin"/><small>管理</small></button>}</header>
+  <details className="spectator-audio"><summary><GameIcon kind="sound"/> 声音</summary><MusicControls music={music} readOnly/><SoundControls sfx={sfx}/><button onClick={speech.toggle}>{speech.enabled?'关闭语音':'开启语音'}</button>{speech.message&&<small role="status">{speech.message}</small>}</details>
   {error?<div className="notice" role="alert">{error}</div>:!p?<div className="notice" role="status">正在进入观战…</div>:<>
    <div className="spectator-status"><strong>{phaseNames[p.phase.kind]}</strong><span>余 {p.wallRemaining} 张</span></div>
    <div className="table-stage spectator-stage"><div className="viewport"><div ref={host} className="canvas-host" aria-hidden="true"/>{!fallback&&<SpectatorDoodle renderer={renderer} board={snapshot?.doodle}/>}{view&&<SeatBadges waiting={p.phase.kind==='LOBBY'||p.phase.kind==='ROUND_FINISHED'} seats={view.seats} labels={labels} fallback={fallback} now={now} anchors={()=>renderer.current?.motionAnchors()??{}}/>}{fallback&&<div className="spectator-fallback">{p.players.map(player=><span key={player.playerId}>{player.nickname} · {player.handCount} 张</span>)}</div>}{last&&<div className="spectator-discard"><small>最近弃牌</small><b>{last.tile.char}</b></div>}</div></div>

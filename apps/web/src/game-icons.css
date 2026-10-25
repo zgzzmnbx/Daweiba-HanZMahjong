@@ -1,0 +1,25 @@
+/* Phosphor's filled vector paths carry their own optical stroke weight. */
+.game-icon{display:inline-block;width:20px;height:20px;flex:none;vertical-align:middle;fill:currentColor;stroke:none;pointer-events:none;overflow:visible}
+button>.game-icon{vertical-align:-.2em}
+button>.game-icon:not(:only-child):first-child{margin-inline-end:4px}
+button>.game-icon:not(:only-child):last-child{margin-inline-start:4px}
+.hud-tool>.game-icon,.hall-tool>.game-icon,.portrait-menu-grid button>.game-icon,.chat-send>.game-icon,.sticker-toggle>.game-icon,.rack-expand-tab>.game-icon{margin-inline:0}
+.hall-table-action>.game-icon,.tile-audio-tag>.game-icon{width:14px;height:14px}
+.tile-audio-tag{display:inline-flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap}
+.tile-audio-tag>.game-icon{margin-inline:0}
+.book-like>.game-icon{width:20px;height:20px}
+.book-quota>.game-icon{width:16px;height:16px}
+.music-disc>.game-icon{width:30px;height:30px}
+.music-playlist .game-icon{width:16px;height:16px}
+.music-actions .game-icon,.sound-controls .game-icon{width:17px;height:17px}
+.music-upload>.game-icon{width:18px;height:18px}
+.admin-emblem>.game-icon{width:36px;height:36px}
+.admin-tabs .game-icon{width:16px;height:16px}
+.doodle-edits .game-icon{width:15px;height:15px;margin-inline:0}
+.doodle-visibility>.game-icon{width:18px;height:18px}
+.voter-icon>.game-icon{width:1em;height:1em;vertical-align:top}
+.review-danmaku em>.game-icon{width:13px;height:13px;margin-right:3px}
+.review-danmaku-toggle>.game-icon{width:18px;height:18px}
+.thrown-egg>.game-icon{width:30px;height:30px;color:#f5d6a3;filter:drop-shadow(0 2px 2px #47281866)}
+.thrown-egg i>.game-icon{width:44px;height:44px;color:#ffd169}
+@media(max-width:399px){.admin-tabs .game-icon{width:13px;height:13px}}

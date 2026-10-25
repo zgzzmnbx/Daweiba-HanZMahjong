@@ -1,3 +1,4 @@
+import {GameIcon} from '../GameIcon';
 import {SentenceTiles} from './SentenceTiles';
 import {useLayoutEffect,useRef} from 'react';
 import {createPortal} from 'react-dom';
@@ -31,7 +32,7 @@ export function HuShowcase({presentation,onClose}:{presentation:HuPresentation;o
   <div className="hu-burst-lines" aria-hidden="true"/>
   <header className="hu-show-heading"><span className="hu-seal" aria-hidden="true">胡</span><div><small>{presentation.nickname} · 亮牌请评</small><h2>这句，听好了。</h2></div></header>
   <p className="sr-only" role="status">{presentation.nickname} 申请胡牌：{sentence}。请大家评审。</p>
-  <SentenceTiles className="hu-slam-rack" mode="showcase" sentence={p.snapshot.sentence} renderTile={id=><b>{p.snapshot.tiles.find(t=>t.tileId===id)?.char}</b>} decoration={()=><>   <svg className="hu-impact-spark" viewBox="0 0 120 120"><path d="M60 0 67 38 92 15 80 46 120 52 83 65 106 95 72 81 65 120 53 83 21 104 37 72 0 65 38 53 14 22 47 38Z"/><path className="spark-core" d="m60 28 7 24 25 8-24 7-8 25-7-24-25-8 24-7Z"/></svg><span className="hu-impact-ring"/></>}/>
+  <SentenceTiles className="hu-slam-rack" mode="showcase" sentence={p.snapshot.sentence} renderTile={id=><b>{p.snapshot.tiles.find(t=>t.tileId===id)?.char}</b>} decoration={()=><>   <GameIcon className="hu-impact-spark" kind="spark"/><span className="hu-impact-ring"/></>}/>
   <footer><span>十四个字，亮出我的意思。</span><button className="hu-skip" onClick={onClose}>收起亮相 · 看评审</button></footer>
  </dialog>,document.body);
 }

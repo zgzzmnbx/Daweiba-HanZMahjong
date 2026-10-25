@@ -1,14 +1,14 @@
 /* One shared visible target and hit rectangle, anchored to the rendered table center. */
 .discard-drop-zone{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(104px,38%,224px);height:44px;display:flex;align-items:center;justify-content:center;gap:7px;padding:4px 9px;border:1px solid #b89b596e;border-radius:9px;background:linear-gradient(135deg,#173d2ff5,#102f24f5);box-shadow:inset 0 1px #efdb9b12,0 4px 12px #081e1833;color:#f0dba5;pointer-events:none;opacity:0;transition:opacity 120ms,border-color 140ms,background 140ms,box-shadow 140ms}
 .discard-drop-zone.visible{opacity:1}
-.discard-guide-icon{width:19px;height:25px;flex:none;fill:#e2c17a12;stroke:#d5bc7d;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.discard-guide-icon{width:22px;height:22px;flex:none;color:#d5bc7d}
 .discard-guide-copy{display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;text-align:center;font-family:var(--ui-font);line-height:1.4}
 .discard-guide-copy b{font-size:clamp(12px,1.2vw,15px);font-weight:600;white-space:nowrap}
 .discard-drop-zone.dragging{border-color:#dec582;background:linear-gradient(135deg,#22523c,#143e2c);box-shadow:0 0 0 3px #e4c57c12,0 5px 18px #081e1844}
 .discard-drop-zone.over{border-color:#ffe3a0;background:linear-gradient(135deg,#366849,#1e5138);box-shadow:0 0 0 3px #e4c57c35,inset 0 0 18px #e6d38e10,0 0 22px #d3c27635}
-.discard-drop-zone.over .discard-guide-icon{stroke:#ffe5a4;animation:discard-guide-land 280ms ease-out}
+.discard-drop-zone.over .discard-guide-icon{color:#ffe5a4;animation:discard-guide-land 280ms ease-out}
 .discard-drop-zone.forbidden{border-color:#bd957a;background:#382e24;color:#efd6b8}
 @keyframes discard-guide-land{from{transform:translateY(-4px)}to{transform:none}}
-@media(max-width:699px){.discard-drop-zone{padding:4px 6px;gap:4px;height:44px;border-radius:10px}.discard-guide-icon{width:16px;height:22px}.discard-guide-copy{gap:2px}.discard-guide-copy b{font-size:12px}}
+@media(max-width:699px){.discard-drop-zone{padding:4px 6px;gap:4px;height:44px;border-radius:10px}.discard-guide-icon{width:18px;height:18px}.discard-guide-copy{gap:2px}.discard-guide-copy b{font-size:12px}}
 @media(max-height:499px){.discard-drop-zone{padding:6px;height:44px;gap:4px;border-radius:9px}.discard-guide-icon{display:none}.discard-guide-copy b{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.discard-drop-zone{transition:none}.discard-drop-zone.over .discard-guide-icon{animation:none}}
