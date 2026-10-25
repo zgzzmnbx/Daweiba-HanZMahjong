@@ -14,7 +14,6 @@
  content:'';height:1px;flex:1;max-width:240px;background:linear-gradient(90deg,transparent,#c8ae6c66);pointer-events:none;
 }
 .hand-zone[data-expanded=true] .turn-hud-row::after{transform:rotate(180deg)}
-#root .game-shell .hand-zone[data-expanded=true] .turn-hud{background:linear-gradient(100deg,#122c23f2,#142e24f2);border-color:#cab27759;box-shadow:inset 0 1px #e5ce8c0d,0 3px 8px #031d1533}
 #root .game-shell .hand-zone[data-expanded=true] .action-bar{overflow:visible}
 #root .game-shell .hand-zone[data-expanded=true] .status{color:#b5cbb7}
 @media(max-width:699px){
@@ -33,19 +32,19 @@
 .rack-expand-tab{display:flex;align-items:center;justify-content:center;gap:10px;min-width:166px;height:40px;min-height:40px;padding:4px 18px;border:1px solid #bd9f627a;border-bottom:0;border-radius:15px 15px 0 0;background:linear-gradient(#25523c,#123426);color:#f0d9a2;box-shadow:inset 0 1px #efd49a33,0 -4px 18px #10130d33;font-size:13px;font-weight:500;cursor:pointer}
 .rack-expand-tab>svg{width:20px;height:20px;flex:none}
 .rack-expand-tab>svg:last-child,.rack-collapse>svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-#root .game-shell .rack-collapse{position:absolute;right:12px;top:10px;z-index:2;display:grid;place-items:center;width:36px;height:36px;min-width:36px;min-height:36px;padding:6px;border:1px solid #b99e6266;border-radius:9px;background:#143526;color:#efd69b;box-shadow:inset 0 1px #ead29c20;cursor:pointer}
+#root .game-shell .rack-collapse{position:absolute;right:12px;top:20px;z-index:2;display:grid;place-items:center;width:36px;height:36px;min-width:36px;min-height:36px;padding:6px;border:1px solid #b99e6266;border-radius:9px;background:#143526;color:#efd69b;box-shadow:inset 0 1px #ead29c20;cursor:pointer}
 .rack-collapse::before{content:'';position:absolute;inset:-6px}
 .rack-collapse>svg{width:22px;height:22px}
 .rack-expand-tab:hover,.rack-collapse:hover:not(:disabled){background:#2a583f;border-color:#e4c683}
 .rack-expand-tab:focus-visible,.rack-collapse:focus-visible{outline:2px solid #f2d18a;outline-offset:-4px}
 #root .game-shell .hand-zone[data-expanded=true] .turn-hud-row{padding-inline:40px}
 @media(max-width:699px){
- #root .game-shell .rack-collapse{right:7px;top:6px;width:32px;height:32px;min-width:32px;min-height:32px;padding:5px}
+ #root .game-shell .rack-collapse{right:7px;top:17px;width:32px;height:32px;min-width:32px;min-height:32px;padding:5px}
  #root .game-shell .hand-zone[data-expanded=true] .turn-hud-row{padding-inline:35px}
  #root .game-shell:has(.rack-tab-rail) .table-stage{flex:1;min-height:110px}
 }
 @media(max-height:499px){
- #root .game-shell .rack-collapse{top:3px;height:30px;min-height:30px}
+ #root .game-shell .rack-collapse{top:12px;height:30px;min-height:30px}
  #root .game-shell .rack-tab-rail{flex-basis:34px;min-height:34px}
  .rack-expand-tab{height:34px;min-height:34px;font-size:12px}
 }

@@ -17,8 +17,6 @@
  #root .game-shell .action-bar{height:18px;min-height:18px;max-height:18px;flex-basis:18px}
  #root .game-shell .action-bar[data-message=false] .status{visibility:hidden}
  #root .game-shell .doodle-tools:not(.open):not(.has-error):not(.doodle-popover){display:none}
- #root .game-shell .turn-hud-row{padding-right:0;flex-basis:38px;height:38px;min-height:38px}
- #root .game-shell .turn-hud{width:100%;height:34px;background:linear-gradient(90deg,#1a2a21aa,#172b22ee);border-color:#b89f5e35}
  #root .game-shell .rack-area.expanded{padding-bottom:2px}
  #root .game-shell .chat-panel{top:51px;max-height:calc(100% - 58px)}
 }

@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'头像靠上，牌桌用足空间',features:['手机竖屏头像固定为顶部紧凑一排，昵称、座次和状态保持可见。','牌桌按剩余宽高调整真实3D取景，长屏更舒展、短屏保持紧凑，整理区仍可展开收起。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'下一步，看得更清楚',features:['行动提示字号加大，吃、摸、打等关键词用暖金色强调，倒计时与进度条层次更清晰。','绿金引导条适配长短屏，保持手牌与操作按钮可用。']},
+ {version:'1.26.2',date:'2026-10-26',title:'头像靠上，牌桌用足空间',features:['手机竖屏头像固定为顶部紧凑一排，昵称、座次和状态保持可见。','牌桌按剩余宽高调整真实3D取景，长屏更舒展、短屏保持紧凑，整理区仍可展开收起。']},
  {version:'1.26.1',date:'2026-10-26',title:'桌心引导，更轻巧也更准确',features:['出牌引导跟随3D牌桌实际中心，横竖屏与放大手牌切换时保持居中。','细金边绿绒提示替代大虚线框，拖入时亮边提示松手出牌，减少桌面遮挡。']},
  {version:'1.26.0',date:'2026-10-26',title:'文豪入席，各有面孔',features:['新增30个文豪头像：10位文人、10位才女和10位灵兽，开房、入座时可选择。','头像不选、称呼留空也可直接入座，自动分配头像和诙谐文豪名；刷新、掉线恢复保留原身份。']},
  {version:'1.25.2',date:'2026-10-26',title:'牌桌居中，手牌贴近手边',features:['手机拖牌提示框恢复居中。','竖屏手牌区靠近屏幕底部，牌桌自适应剩余高度，头像跟随牌桌，不再留下大片底部空白。']},
