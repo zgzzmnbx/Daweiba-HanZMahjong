@@ -1,11 +1,11 @@
 # 当前任务板
 
-## 1.23.7 · 语音进度，看得见
+## 1.23.8 · 胡牌确认文案调整
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| SPEECH1237 | 音符旁显示真实语音阶段 | DONE | 317自动测试、构建、本地7项语音与26项六人布局检查 |
-| RELEASE1237 | 原入口发布、公网复验和GitHub同步 | DONE | release093254/备份093255；7资源一致，公网7项通过，私房无计分关闭；本版源码证据同步GitHub |
-| ENV | 实体手机/Safari实测 | NOT_RUN_ENV_REQUIRED | 当前为Chromium141触摸视口模拟 |
+| COPY1238 | 使用用户指定的胡牌确认标题 | DONE | GameTable文案已替换 |
+| RELEASE1238 | 构建、发布与GitHub同步 | DONE | 构建、线上新标题/旧标题缺失和7资源一致；release102120，源码文档同步GitHub |
+| ENV | 实体手机/Safari实测 | NOT_RUN_ENV_REQUIRED | 本次仅提示语调整 |
 
-1.23.6及以前完成项归档CHANGELOG/HANDOFF，无根TASKS.md。
+1.23.7及以前完成项归档CHANGELOG/HANDOFF；无根TASKS.md需清理。
