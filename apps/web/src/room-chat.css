@@ -8,3 +8,5 @@
 @media(max-width:399px){.game-hud:has(.chat-dock) .wordmark{display:none}.chat-composer textarea{font-size:16px}.chat-danmaku b{max-width:70px}}
 @media(max-height:499px){.chat-panel{top:46px;height:calc(100% - 54px)}.chat-history article{margin-bottom:10px}.chat-composer textarea{min-height:38px;height:38px}.chat-panel .chat-send{width:36px;min-width:36px;height:36px;min-height:36px;padding:7px}}
 @media(prefers-reduced-motion:reduce){.chat-panel{animation:none}.chat-danmaku{animation:chat-still 4.2s ease forwards;left:50%;transform:translateX(-50%);will-change:auto}}
+
+.chat-history .ai-review-chat .chat-avatar{color:#f3d68f;border:1px solid #b89a58;background:#173e31}.chat-history .ai-review-chat p{border-left:2px solid #b89a58;color:#f0dfb7}.chat-history .ai-review-chat .chat-meta b{color:#dec17e}

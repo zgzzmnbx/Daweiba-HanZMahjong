@@ -6,7 +6,7 @@ import {isNextDrawer,borrowedHuVisible} from './response-action';
 /** Display only. Denominator comes from the frozen rule version, never from mount time. */
 export function phaseClock(p:PublicRoomSnapshot,now:number){
  const ph=p.phase,t=timingForRules(p.rulesVersion),actor=ph.kind==='TURN_ACTION'?p.players.find(x=>x.playerId===ph.actorId):undefined;
- const total=ph.kind==='TURN_ACTION'?(['1.4.0','1.4.1','1.5.0','1.5.1'].includes(p.rulesVersion)&&(actor?.isBotSeat||actor?.autoPlay||actor?.presence==='BOT')?t.botActionDelayMs:ph.mustDiscard?t.postHuDiscardMs:t.turnMs):ph.kind==='HU_COMPOSE'?t.composeMs:ph.kind==='HU_VOTE'?t.voteMs:defaults.responseMs;
+ const total=ph.kind==='TURN_ACTION'?(['1.4.0','1.4.1','1.5.0','1.5.1','1.6.0'].includes(p.rulesVersion)&&(actor?.isBotSeat||actor?.autoPlay||actor?.presence==='BOT')?t.botActionDelayMs:ph.mustDiscard?t.postHuDiscardMs:t.turnMs):ph.kind==='HU_COMPOSE'?t.composeMs:ph.kind==='HU_VOTE'?t.voteMs:defaults.responseMs;
  const remaining=ph.deadline?Math.max(0,ph.deadline.remainingMsWhenPaused??ph.deadline.endsAt-now):null;
  const ratio=remaining===null?0:Math.min(1,remaining/total);
  const paused=p.suspension.kind!=='RUNNING';
@@ -27,7 +27,7 @@ export function turnHint(e:ResyncEnvelope,connected=true,controlled=true,interac
   case 'DISCARD_RESPONSE':
    if(ph.discarderId===self.playerId)return '等大家回应这张牌';
    if(self.ownResponse||!can('RESPOND'))return '已回应，等其他玩家';
-   if(isNextDrawer(e))return me&&me.eatCount<3?(borrowedHuVisible(p)?'摸新字、吃这张，或借字胡':'要这张点「吃」，不要点「摸」'):borrowedHuVisible(p)?'点「摸」抽新字，或借字胡':'点「摸」，随机摸一张';
+   if(isNextDrawer(e))return me&&(p.rulesVersion==='1.6.0'||me.eatCount<3)?(borrowedHuVisible(p)?'摸新字、吃这张，或借字胡':'要这张点「吃」，不要点「摸」'):borrowedHuVisible(p)?'点「摸」抽新字，或借字胡':'点「摸」，随机摸一张';
    return borrowedHuVisible(p)?'凑得成句可借字胡，否则点「过」':'还没轮到你，点「过」继续';
   case 'HU_COMPOSE':return ph.applicantId===self.playerId?'排齐14字成一句话，再提交':`等${name(ph.applicantId)}排句`;
   case 'HU_VOTE':return can('VOTE')?'这句话通顺吗？请投票':self.ownBallot?'已投票，等大家评审':ph.proposal.applicantId===self.playerId?'你的句子，等大家评审':'等同桌完成评审';

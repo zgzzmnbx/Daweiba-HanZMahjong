@@ -1,3 +1,4 @@
+import {configuredAiJudge,publicSentenceText,type AiJudge,type AiVerdict} from './ai-judge';
 import {installRoomMusic} from './room-music';
 import {installRoomDoodle} from './room-doodle';
 import {installRoomChat} from './room-chat';
@@ -11,7 +12,7 @@ import { createHash,randomBytes,randomUUID,timingSafeEqual } from 'node:crypto';
 import { resolve,dirname } from 'node:path';
 import { existsSync,readFileSync } from 'node:fs';
 import type * as C from '../../packages/contracts/types';
-import { createGame,joinGame,applyCommand,snapshot,connect,disconnect,restart,runDue,closeGame,kickSeat,RuleError,type Game } from '../../packages/engine/index';
+import { createGame,joinGame,applyAiJudgment,applyCommand,snapshot,connect,disconnect,restart,runDue,closeGame,kickSeat,RuleError,type Game } from '../../packages/engine/index';
 import { Store,LobbyError,tableNumber,type Session } from './store';
 import type {LobbySnapshot,TableNumber} from '../../packages/contracts/lobby';
 import type {AdminRoom} from '../../packages/contracts/admin';
@@ -26,7 +27,7 @@ export function canonical(value:any):string{if(value===null||typeof value!=='obj
 function validId(value:any){if(typeof value!=='string'||value.length<1||value.length>160||!/^[-A-Za-z0-9_:]+$/.test(value))throw new RuleError('UNAUTHENTICATED');return value;}
 function nickname(value:any){if(typeof value!=='string'||value.trim().length<1||value.trim().length>20||/[\u0000-\u001f\u007f]/.test(value))throw new RuleError('UNAUTHENTICATED');return value.trim();}
 function cookieToken(header:string|undefined,name=COOKIE){const value=header?.split(';').map(x=>x.trim()).find(x=>x.startsWith(name+'='))?.slice(name.length+1);return value&&/^[A-Za-z0-9_-]{43}$/.test(value)?value:null;}
-export type ServerOptions={dbPath:string;publicOrigin:string;production?:boolean;staticDir?:string;now?:()=>number;automaticTimers?:boolean;adminPasswordHash?:string;musicDirectory?:string;speech?:Omit<SpeechOptions,'directory'>&{directory?:string}};
+export type ServerOptions={dbPath:string;publicOrigin:string;aiJudge?:AiJudge;production?:boolean;staticDir?:string;now?:()=>number;automaticTimers?:boolean;adminPasswordHash?:string;musicDirectory?:string;speech?:Omit<SpeechOptions,'directory'>&{directory?:string}};
 export function createGameServer(options:ServerOptions){
  const now=options.now??Date.now,store=new Store(options.dbPath),games=new Map<string,Game>(),queues=new Map<string,Promise<any>>(),sockets=new Map<string,Set<Socket>>(),timers=new Map<string,ReturnType<typeof setTimeout>>();let closing=false;const generation=randomUUID(),adminHash=options.adminPasswordHash??process.env.ADMIN_PASSWORD_HASH,adminConfigured=isAdminConfigured(adminHash),adminConfigHash=adminConfigured?digest(adminHash):'';
  const speech=new Speech({directory:resolve(options.speech?.directory??process.env.SPEECH_CACHE_DIR??resolve(dirname(options.dbPath),'speech')),apiKey:speechKey(),ffmpeg:process.env.FFMPEG_BINARY,...options.speech});
@@ -39,9 +40,41 @@ export function createGameServer(options:ServerOptions){
  function newSession(roomId:string,playerId:string){const token=secret();return{token,data:{tokenHash:digest(token),sessionId:randomUUID() as string,roomId,playerId,expiresAt:now()+30*86400000,revoked:0} satisfies Session};}
  function publish(g:Game){for(const pub of g.public.players){const p=g.players.get(pub.playerId)!;for(const sock of sockets.get(p.sessionId??'')??[])sock.emit('message',{type:'RESYNC',payload:snapshot(g,pub.playerId,now())} satisfies C.ServerSocketEvent);} // Released identities still receive a seat=null envelope.
  for(const [pid,p]of g.players)if(p.seat===null)for(const sock of sockets.get(p.sessionId??'')??[])sock.emit('message',{type:'RESYNC',payload:snapshot(g,pid,now())} satisfies C.ServerSocketEvent);}
- function schedule(g:Game){const old=timers.get(g.public.roomId);if(old)clearTimeout(old);timers.delete(g.public.roomId);if(options.automaticTimers===false||closing)return;const due=Math.min(...g.pendingJobs.map(j=>j.fireAt),store.lobbyReleaseAt(g.public.roomId)??Infinity);if(!Number.isFinite(due))return;const timer=setTimeout(()=>{void serial(g.public.roomId,()=>{const current=ensureGame(g.public.roomId),next=structuredClone(current);if(runDue(next,now())||store.lobbyReleaseDue(next.public.roomId,now())){store.commit(next,'TIMER',now());games.set(g.public.roomId,next);publish(next);}schedule(ensureGame(g.public.roomId));}).catch(()=>{setTimeout(()=>schedule(ensureGame(g.public.roomId)),1000).unref();});},Math.max(1,Math.min(2147483647,due-now())));timer.unref();timers.set(g.public.roomId,timer);}
- function commit(g:Game,kind:string,session?:Session,revokePlayer?:string,actionId?:string,selectedTable?:TableNumber,adminActor?:string){store.commit(g,kind,now(),session,revokePlayer,actionId,selectedTable,adminActor);games.set(g.public.roomId,g);publish(g);schedule(g);}
+ function schedule(g:Game){pumpAi(g);const old=timers.get(g.public.roomId);if(old)clearTimeout(old);timers.delete(g.public.roomId);if(options.automaticTimers===false||closing)return;const due=Math.min(...g.pendingJobs.map(j=>j.fireAt),store.lobbyReleaseAt(g.public.roomId)??Infinity);if(!Number.isFinite(due))return;const timer=setTimeout(()=>{void serial(g.public.roomId,()=>{const current=ensureGame(g.public.roomId),next=structuredClone(current);if(runDue(next,now())||store.lobbyReleaseDue(next.public.roomId,now())){commit(next,'TIMER');}schedule(ensureGame(g.public.roomId));}).catch(()=>{setTimeout(()=>schedule(ensureGame(g.public.roomId)),1000).unref();});},Math.max(1,Math.min(2147483647,due-now())));timer.unref();timers.set(g.public.roomId,timer);}
+ function commit(g:Game,kind:string,session?:Session,revokePlayer?:string,actionId?:string,selectedTable?:TableNumber,adminActor?:string){const messages=store.commit(g,kind,now(),session,revokePlayer,actionId,selectedTable,adminActor);games.set(g.public.roomId,g);publish(g);chat.broadcast(messages);schedule(g);}
  function revoke(sessionId:string|null,reason:'RESTORED_ELSEWHERE'|'ADMIN_KICKED'='RESTORED_ELSEWHERE'){if(!sessionId)return;for(const sock of sockets.get(sessionId)??[]){sock.emit('message',{type:'CONTROL_REVOKED',reason} satisfies C.ServerSocketEvent);sock.disconnect(true);}sockets.delete(sessionId);}
+ const chat=installRoomChat(app,io,store.db,{authenticate,room:ensureGame,now});
+ const judge=options.aiJudge??configuredAiJudge(),aiFlights=new Map<string,{proposalId:string;controller:AbortController}>();
+ function pumpAi(g:Game){
+  const room=g.public.roomId,ph=g.public.phase,flight=aiFlights.get(room);
+  const pending=ph.kind==='HU_VOTE'&&ph.proposal.aiJudgment?.status==='PENDING';
+  if(flight&&(!pending||ph.proposal.proposalId!==flight.proposalId)){flight.controller.abort();aiFlights.delete(room);}
+  if(closing||!pending||g.review?.aiRequested||aiFlights.has(room))return;
+  const proposal=ph.proposal,controller=new AbortController();aiFlights.set(room,{proposalId:proposal.proposalId,controller});
+  void (async()=>{
+   let timeout:ReturnType<typeof setTimeout>|undefined;
+   try{
+    const request=await serial(room,()=>{
+     const current=ensureGame(room),p=current.public.phase;
+     if(closing||p.kind!=='HU_VOTE'||p.proposal.proposalId!==proposal.proposalId||p.proposal.aiJudgment?.status!=='PENDING'||!current.review||current.review.aiRequested)return null;
+     const next=structuredClone(current);next.review!.aiRequested=true;
+     store.commit(next,'AI_REVIEW_REQUEST',now());games.set(room,next);
+     return{sentence:publicSentenceText(p.proposal.snapshot),deadline:p.proposal.aiJudgment.deadline};
+    });
+    if(!request||controller.signal.aborted)return;
+    let verdict:AiVerdict|null=null;
+    if(now()<request.deadline){
+     const expired=new Promise<null>(resolve=>{timeout=setTimeout(()=>{controller.abort();resolve(null);},Math.max(1,request.deadline-now()));timeout.unref();});
+     verdict=await Promise.race([judge(request.sentence,controller.signal).catch(()=>null),expired]);
+    }
+    // A failed SQLite commit retries this same result, never another provider call.
+    for(let attempt=0;attempt<3&&!closing;attempt++){
+     try{await serial(room,()=>{const next=structuredClone(ensureGame(room));if(applyAiJudgment(next,proposal.proposalId,verdict,now()))commit(next,'AI_REVIEW_RESULT');});break;}
+     catch{if(attempt<2)await new Promise(r=>setTimeout(r,100));}
+    }
+   }finally{if(timeout)clearTimeout(timeout);if(aiFlights.get(room)?.controller===controller)aiFlights.delete(room);}
+  })().catch(()=>{/* The persisted absolute deadline still resolves a failed request claim. */});
+ }
  for(const g of store.load()){restart(g,now(),generation);store.commit(g,'RESTART_RECOVERY',now());games.set(g.public.roomId,g);schedule(g);}
  const rate=new Map<string,{count:number;until:number}>();function limit(key:string,max:number,window=60000){const t=now();let entry=rate.get(key);if(!entry||entry.until<=t){entry={count:0,until:t+window};rate.set(key,entry);}entry.count++;if(entry.count>max)throw Object.assign(new Error('RATE_LIMITED'),{status:429});if(rate.size>10000)for(const[k,v]of rate)if(v.until<t)rate.delete(k);}
  const handle=(work:(q:express.Request,r:express.Response)=>any)=>(q:express.Request,r:express.Response,next:express.NextFunction)=>{Promise.resolve().then(()=>{if(closing)throw Object.assign(new Error('MAINTENANCE'),{status:503});return work(q,r);}).catch(next);};
@@ -105,10 +138,9 @@ export function createGameServer(options:ServerOptions){
  }).catch(e=>{ack?.({error:e instanceof RuleError?e.code:'PERSISTENCE_UNAVAILABLE'});if(e instanceof RuleError)socket.emit('message',{type:'ERROR',code:e.code,serverNow:now() as C.UtcMs} satisfies C.ServerSocketEvent);});});
  socket.on('disconnect',()=>{const set=sockets.get(session.sessionId);set?.delete(socket);if(set?.size)return;sockets.delete(session.sessionId);void serial(session.roomId,()=>{const g=structuredClone(ensureGame(session.roomId));disconnect(g,session.playerId as C.PlayerId,session.sessionId,now());commit(g,'DISCONNECTED');}).catch(()=>{});});
  });
- installRoomChat(app,io,store.db,{authenticate,room:ensureGame,now});
  const music=installRoomMusic(app,io,store.db,{directory:resolve(options.musicDirectory??process.env.MUSIC_DIR??resolve(dirname(options.dbPath),'music')),ffmpeg:process.env.FFMPEG_BINARY,authenticate,adminAuth,room:ensureGame,now,limit});
  const doodles=installRoomDoodle(app,io,store.db,{authenticate,room:ensureGame,now});
  if(options.staticDir&&existsSync(options.staticDir)){app.use('/assets',express.static(resolve(options.staticDir,'assets'),{maxAge:'1y',immutable:true}));app.use(express.static(options.staticDir,{index:false,maxAge:0}));app.get('/{*path}',(q,r)=>{if(q.path.startsWith('/api/')||q.path.startsWith('/dev')){r.status(404).end();return;}r.set('Cache-Control','no-cache');r.sendFile(resolve(options.staticDir!,'index.html'));});}
  app.use((e:any,_q:express.Request,r:express.Response,_next:express.NextFunction)=>{r.set('Cache-Control','no-store');const code=e instanceof RuleError||e instanceof LobbyError||e instanceof AdminError||e instanceof SpeechError?e.code:e.type==='entity.parse.failed'?'INVALID_JSON':e.message==='RATE_LIMITED'?'RATE_LIMITED':'PERSISTENCE_UNAVAILABLE';r.status(e.status??(e instanceof RuleError?403:503)).json({error:code,serverNow:now()});});
- return{app,http,io,store,games,serial,speech,music,async tick(){for(const roomId of games.keys())await serial(roomId,()=>{const g=structuredClone(ensureGame(roomId));if(runDue(g,now())||store.lobbyReleaseDue(g.public.roomId,now()))commit(g,'TIMER');});},async listen(port:number,host='127.0.0.1'){await new Promise<void>(r=>http.listen(port,host,r));return http.address();},async close(){closing=true;await music.close();await speech.close();for(const t of timers.values())clearTimeout(t);await Promise.allSettled([...queues.values()]);await new Promise<void>(r=>io.close(()=>r()));await Promise.allSettled([...queues.values()]);store.close();}};
+ return{app,http,io,store,games,serial,speech,music,async tick(){for(const roomId of games.keys())await serial(roomId,()=>{const g=structuredClone(ensureGame(roomId));if(runDue(g,now())||store.lobbyReleaseDue(g.public.roomId,now()))commit(g,'TIMER');});},async listen(port:number,host='127.0.0.1'){await new Promise<void>(r=>http.listen(port,host,r));return http.address();},async close(){closing=true;for(const flight of aiFlights.values())flight.controller.abort();await music.close();await speech.close();for(const t of timers.values())clearTimeout(t);await Promise.allSettled([...queues.values()]);await new Promise<void>(r=>io.close(()=>r()));await Promise.allSettled([...queues.values()]);store.close();}};
 }

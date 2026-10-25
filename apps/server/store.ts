@@ -1,3 +1,4 @@
+import {RoomChatStore} from './room-chat';
 import {RoundRecords} from './round-records';
 import {HuBook} from './hu-book';
 import { DatabaseSync } from 'node:sqlite';
@@ -17,6 +18,7 @@ export function tableNumber(value:unknown):TableNumber {
  return value as TableNumber;
 }
 export class Store {
+ readonly chat:RoomChatStore;
  readonly roundRecords:RoundRecords;
  readonly huBook:HuBook;
  db:DatabaseSync; deckSets:DeckSets; failNextCommit=false;
@@ -49,6 +51,7 @@ export class Store {
   try{this.deckSets=new DeckSets(this.db,()=>{if(this.failNextCommit){this.failNextCommit=false;throw new Error('INJECTED_TRANSACTION_FAILURE');}});}catch(error){this.db.close();throw error;}
   try{this.roundRecords=new RoundRecords(this.db);}catch(error){this.db.close();throw error;}
   try{this.huBook=new HuBook(this.db);}catch(error){this.db.close();throw error;}
+  this.chat=new RoomChatStore(this.db);
   if(path!==':memory:')chmodSync(path,0o600);
  }
  load(){return(this.db.prepare('SELECT data FROM room_snapshots').all() as {data:string}[]).map(r=>decodeGame(JSON.parse(r.data)));}
@@ -92,7 +95,8 @@ export class Store {
     const terminal=result.history.some(h=>h.outcome==='APPROVED')||result.phase.kind==='ROUND_FINISHED';
     if(terminal)this.db.prepare('INSERT OR IGNORE INTO round_results VALUES(?,?,?)').run(g.public.roomId,result.roundId,JSON.stringify({phase:result.phase,history:result.history,rulesVersion:result.rulesVersion,deckVersion:result.deckVersion,deckSetId:result.deckSetId,deckSetName:result.deckSetName,practiceMode:result.practiceMode??false}));
    }
-   this.db.exec('COMMIT');
+   const chatMessages=this.chat.captureReviews(g,now);
+   this.db.exec('COMMIT');return chatMessages;
   }catch(e){this.db.exec('ROLLBACK');throw e;}
  }
  adminSession(hash:string){return this.db.prepare('SELECT expires_at AS expiresAt,config_hash AS configHash FROM admin_sessions WHERE token_hash=?').get(hash) as {expiresAt:number;configHash:string}|undefined;}

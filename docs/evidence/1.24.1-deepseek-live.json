@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T14:03:31.365Z",
+  "model": "deepseek-flash",
+  "promptVersion": "lenient-roast-v2",
+  "results": [
+    {
+      "sentence": "月亮请假星星替她照亮回家的路。",
+      "elapsedMs": 10019,
+      "error": "unavailable within 10 seconds"
+    },
+    {
+      "sentence": "桌月去的把上云或你为在人花好。",
+      "elapsedMs": 5554,
+      "error": "unavailable within 10 seconds"
+    }
+  ],
+  "additionalObservedProbe": {
+    "recordedAt": "2026-10-25T14:08:30.619614+00:00",
+    "sentence": "月亮请假星星替她照亮回家的小路。",
+    "httpStatus": 200,
+    "finishReason": "stop",
+    "outputTokens": 30,
+    "elapsedMs": 2087,
+    "pass": true,
+    "roast": "月亮请假、星星代班，拟人顺溜得像考勤表，照亮小路没毛病。",
+    "note": "独立诊断请求，与前两次请求不同，不是对同一次牌局重试；recordedAt为补录时间。"
+  }
+}

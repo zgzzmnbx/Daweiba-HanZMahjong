@@ -1,0 +1,114 @@
+{
+  "at": "2026-10-25T13:39:11.875Z",
+  "version": "1.24.0",
+  "origin": "http://127.0.0.1:3180",
+  "browser": "141.0.7390.37",
+  "scope": "two real clients; guide before READY; actual START/move/draw; next-round guide; three private rooms; Chromium viewport emulation, not physical Safari",
+  "checks": [
+    {
+      "name": "both new players see guide before readiness and before any turn deadline",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape cannot bypass the explicit pre-game confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "four steps, checkbox and confirmation fit without scrolling 320x480",
+      "status": "PASS",
+      "x": 14,
+      "y": 28.1875,
+      "w": 292,
+      "h": 423.609375,
+      "sw": 290,
+      "cw": 290,
+      "sh": 422,
+      "ch": 422,
+      "steps": 4,
+      "font": "\"Hanz PingFang\", \"PingFang SC\", sans-serif"
+    },
+    {
+      "name": "four steps, checkbox and confirmation fit without scrolling 390x844",
+      "status": "PASS",
+      "x": 14,
+      "y": 154.625,
+      "w": 362,
+      "h": 534.75,
+      "sw": 360,
+      "cw": 360,
+      "sh": 533,
+      "ch": 533,
+      "steps": 4,
+      "font": "\"Hanz PingFang\", \"PingFang SC\", sans-serif"
+    },
+    {
+      "name": "four steps, checkbox and confirmation fit without scrolling 667x375",
+      "status": "PASS",
+      "x": 33.5,
+      "y": 32.203125,
+      "w": 600,
+      "h": 310.59375,
+      "sw": 598,
+      "cw": 598,
+      "sh": 309,
+      "ch": 309,
+      "steps": 4,
+      "font": "\"Hanz PingFang\", \"PingFang SC\", sans-serif"
+    },
+    {
+      "name": "four steps, checkbox and confirmation fit without scrolling 1280x800",
+      "status": "PASS",
+      "x": 340,
+      "y": 161.9375,
+      "w": 600,
+      "h": 476.125,
+      "sw": 598,
+      "cw": 598,
+      "sh": 474,
+      "ch": 474,
+      "steps": 4,
+      "font": "\"Hanz PingFang\", \"PingFang SC\", sans-serif"
+    },
+    {
+      "name": "confirm readies only its player; host cannot start over an unread guest",
+      "status": "PASS"
+    },
+    {
+      "name": "cancel and re-ready does not repeat a guide already acknowledged this preparation",
+      "status": "PASS"
+    },
+    {
+      "name": "opt-out is saved only when confirming",
+      "status": "PASS"
+    },
+    {
+      "name": "real play starts after readiness; live-game reload never blocks the ticking table",
+      "status": "PASS"
+    },
+    {
+      "name": "help reopens the guide during play and Escape closes this optional copy",
+      "status": "PASS"
+    },
+    {
+      "name": "without opt-out next preparation shows guide again, while results remain unobstructed",
+      "status": "PASS"
+    },
+    {
+      "name": "same-browser opt-out survives a new room and reload",
+      "status": "PASS"
+    },
+    {
+      "name": "help can re-enable automatic guidance without changing readiness",
+      "status": "PASS"
+    },
+    {
+      "name": "re-enabled preference shows guide in the next room",
+      "status": "PASS"
+    },
+    {
+      "name": "all three verification rooms closed without scores or approved sentences",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

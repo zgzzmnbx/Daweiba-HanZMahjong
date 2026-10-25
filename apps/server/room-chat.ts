@@ -8,7 +8,25 @@ import type {Session} from './store';
 class ChatError extends Error{constructor(readonly code:string){super(code);}}
 export class RoomChatStore{
  constructor(private db:DatabaseSync){db.exec(`CREATE TABLE IF NOT EXISTS room_chat(seq INTEGER PRIMARY KEY AUTOINCREMENT,id TEXT UNIQUE NOT NULL,room_id TEXT NOT NULL,player_id TEXT NOT NULL,client_id TEXT NOT NULL,seat INTEGER NOT NULL,nickname TEXT NOT NULL,text TEXT NOT NULL,at INTEGER NOT NULL,UNIQUE(room_id,player_id,client_id));CREATE INDEX IF NOT EXISTS room_chat_history ON room_chat(room_id,seq);CREATE INDEX IF NOT EXISTS room_chat_rate ON room_chat(room_id,player_id,at);`);}
- private project(row:any):RoomChatMessage{return{id:row.id,roomId:row.room_id,seat:row.seat,nickname:row.nickname,text:row.text,at:row.at};}
+ private project(row:any):RoomChatMessage{return{id:row.id,roomId:row.room_id,seat:row.seat,nickname:row.nickname,text:row.text,at:row.at,...(row.player_id==='system:ai-review'?{kind:'AI_REVIEW' as const}:row.player_id==='system:hu-review'?{kind:'HU_REVIEW' as const}:{})};}
+ /** Called inside the game transaction: vote and chat cannot diverge. */
+ captureReviews(g:Game,now:number){
+  const messages:RoomChatMessage[]=[];
+  const proposals=[...g.public.history,...(g.public.phase.kind==='HU_VOTE'?[g.public.phase.proposal]:[])];
+  for(const p of proposals){
+   for(const v of p.reviewers??[]){if(v.isBotSeat||!v.comment||!['APPROVE','REJECT'].includes(v.choice))continue;
+    const id=`vote:${p.proposalId}:${v.playerId}`,text=(v.choice==='APPROVE'?'赞成 · ':'不赞成 · ')+v.comment,seat=g.public.players.find(x=>x.playerId===v.playerId)?.seat??-1,at=now;
+    const result=this.db.prepare('INSERT OR IGNORE INTO room_chat(id,room_id,player_id,client_id,seat,nickname,text,at) VALUES(?,?,?,?,?,?,?,?)').run(id,g.public.roomId,'system:hu-review',id,seat,v.nickname,text,at);
+    if(result.changes)messages.push({id,roomId:g.public.roomId,seat,nickname:v.nickname,text,at,kind:'HU_REVIEW'});
+   }
+   const ai=p.aiJudgment;if(ai?.status!=='DONE')continue;
+   const text=(ai.source==='DEEPSEEK'?(ai.pass?'通过 · ':'不通过 · '):'兜底 · ')+ai.roast;
+   const id=`ai:${p.proposalId}`,nickname=ai.source==='DEEPSEEK'?'DeepSeek · 嘴替评审':'AI 评审 · 兜底';
+   const result=this.db.prepare('INSERT OR IGNORE INTO room_chat(id,room_id,player_id,client_id,seat,nickname,text,at) VALUES(?,?,?,?,?,?,?,?)').run(id,g.public.roomId,'system:ai-review',p.proposalId,-1,nickname,text,ai.at);
+   if(result.changes)messages.push({id,roomId:g.public.roomId,seat:-1,nickname,text,at:ai.at,kind:'AI_REVIEW'});
+  }
+  return messages;
+ }
  history(room:string){return this.db.prepare('SELECT * FROM room_chat WHERE room_id=? ORDER BY seq DESC LIMIT ?').all(room,CHAT_HISTORY_LIMIT).reverse().map(r=>this.project(r));}
  send(room:string,player:string,seat:number,nickname:string,request:unknown,now:number){
   const body=request as Partial<RoomChatRequest>|null;
@@ -27,15 +45,17 @@ export class RoomChatStore{
 export function installRoomChat(app:Express,io:Server,db:DatabaseSync,options:{authenticate:(header:string|undefined,room?:string)=>Session;room:(id:string)=>Game;now:()=>number}){
  const store=new RoomChatStore(db);
  const member=(header:string|undefined,room?:string)=>{const session=options.authenticate(header,room),game=options.room(session.roomId),player=game.public.players.find(p=>p.playerId===session.playerId&&!p.isBotSeat);if(!player)throw new ChatError('CHAT_NOT_MEMBER');return{session,game,player};};
+ const broadcast=(messages:RoomChatMessage[])=>{for(const message of messages)for(const other of io.sockets.sockets.values()){try{member(other.request.headers.cookie,message.roomId);other.emit('chat:message',message);}catch{}}};
  const code=(e:unknown)=>e instanceof ChatError?e.code:(e as {code?:string})?.code==='UNAUTHENTICATED'||(e as {code?:string})?.code==='STALE_CONTROL_EPOCH'?'CHAT_NOT_MEMBER':'CHAT_UNAVAILABLE';
  app.get('/api/rooms/:roomId/chat',(q,r)=>{try{const {session}=member(q.headers.cookie,String(q.params.roomId));r.json({messages:store.history(session.roomId)});}catch(e){const error=code(e);r.status(error==='CHAT_UNAVAILABLE'?503:403).json({error});}});
  io.on('connection',socket=>{
   socket.on('chat:send',(body:unknown,ack?: (reply:unknown)=>void)=>{
    try{const {session,game,player}=member(socket.request.headers.cookie);if((body as Partial<RoomChatRequest>|null)?.roomId!==session.roomId)throw new ChatError('CHAT_NOT_MEMBER');if(!player.connected||player.presence!=='HUMAN'||game.public.phase.kind==='ROOM_CLOSED')throw new ChatError('CHAT_CLOSED');
     const result=store.send(session.roomId,session.playerId,player.seat,player.nickname,body,options.now());
-    if(result.fresh)for(const other of io.sockets.sockets.values()){try{member(other.request.headers.cookie,session.roomId);other.emit('chat:message',result.message);}catch{}}
+    if(result.fresh)broadcast([result.message]);
     if(typeof ack==='function')ack({ok:true,message:result.message});
    }catch(e){if(typeof ack==='function')ack({ok:false,error:code(e)});}
   });
  });
+ return{broadcast};
 }

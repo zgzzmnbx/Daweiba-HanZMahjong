@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-25T13:34:04.803Z",
+  "model": "deepseek-flash",
+  "promptVersion": "lenient-roast-v1",
+  "results": [
+    {
+      "sentence": "今晚月亮请假星星替她照亮回家路。",
+      "elapsedMs": 1129,
+      "pass": true,
+      "roast": "月亮请假，星星顶班，这排班表谁批的？"
+    },
+    {
+      "sentence": "我把春天装进口袋明天送给远方你。",
+      "elapsedMs": 1629,
+      "pass": true,
+      "roast": "口袋能装春天，却装不下个“给”字，语病比春风还飘。"
+    },
+    {
+      "sentence": "桌月去的把上云或你为在人花好。",
+      "elapsedMs": 5999,
+      "pass": false,
+      "roast": "字堆得像打翻的麻将，凑不出一句人话。"
+    }
+  ]
+}

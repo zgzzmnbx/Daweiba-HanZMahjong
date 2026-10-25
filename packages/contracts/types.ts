@@ -20,13 +20,13 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
   allowDesignatedBots?: boolean;
   playerCounts: readonly [2,3,4,5,6]; handSize: 13; winningTileCount: 14;
-  maxCommas: 3; maxEatPerRound: 3;
+  maxCommas: 3; maxEatPerRound: number | null;
   eatSource: 'previous_seat_latest_discard';
   eatImmediateDiscardRestriction: 'same_physical_tile';
   turnMs: 60000 | 120000; responseMs: 8000; composeMs: 45000 | 120000; voteMs: 45000 | 60000;
@@ -54,8 +54,8 @@ export type Draft = Readonly<{
 /** Runtime: 0 <= start < endExclusive <= 14; sorted, pairwise non-overlapping. */
 export type ObjectionRange = Readonly<{ start: number; endExclusive: number }>;
 export type Ballot =
-  | Readonly<{ choice: 'APPROVE'; objectionRanges?: never }>
-  | Readonly<{ choice: 'REJECT'; objectionRanges: AtMostThree<ObjectionRange> }>;
+  | Readonly<{ choice: 'APPROVE'; comment?:string; objectionRanges?: never }>
+  | Readonly<{ choice: 'REJECT'; comment?:string; objectionRanges: AtMostThree<ObjectionRange> }>;
 export type Presence = 'HUMAN' | 'DISCONNECTED_GRACE' | 'BOT';
 export type Deadline = Readonly<{ endsAt: UtcMs; remainingMsWhenPaused: number | null }>;
 export type PhaseHeader = Readonly<{ phaseId: PhaseId; deadline: Deadline | null }>;
@@ -76,7 +76,12 @@ export type AnonymousVoteResult = Readonly<{
   mergedObjectionRanges: readonly ObjectionRange[];
 }>;
 /** Rules 1.3+: frozen reviewer names and authoritative live votes. Legacy rounds omit this. */
-export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;isBotSeat:boolean;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
+export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;isBotSeat:boolean;comment?:string;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
+/** One shared model decision for designated AI seats; no private input is sent. */
+export type AiJudgment = Readonly<
+ | {status:'PENDING';deadline:UtcMs}
+ | {status:'DONE';source:'DEEPSEEK'|'TIMEOUT'|'ERROR';pass:boolean|null;roast:string;at:UtcMs}
+>;
 export type PublicProposal = Readonly<{
   proposalId: ProposalId; applicantId: PlayerId; source: CandidateSource;
   /** Server time of the public reveal; legacy snapshots may omit it. */
@@ -85,6 +90,7 @@ export type PublicProposal = Readonly<{
   /** Legacy rounds only expose aggregate progress; 1.3 includes named reviewers below. */
   submittedBallotCount: number;
   reviewers?: readonly PublicReviewVote[];
+  aiJudgment?: AiJudgment;
 }>;
 export type PublicPhase = PhaseHeader & (
   | Readonly<{ kind: 'LOBBY' }>
@@ -124,6 +130,7 @@ export type PublicHistoryEntry = Readonly<{
   outcome: 'APPROVED' | 'REJECTED' | 'WITHDRAWN';
   result: AnonymousVoteResult | null;
   reviewers?: readonly PublicReviewVote[];
+  aiJudgment?: AiJudgment;
 }>;
 export type PublicRoomSnapshot = Readonly<{
   visibility: 'PUBLIC'; roomId: RoomId; roundId: RoundId | null;
@@ -276,7 +283,7 @@ export namespace ServerOnly {
     processGeneration: string; fireAt: UtcMs;
   }>;
   export type TimerJob = TimerBase & (
-    | Readonly<{ kind: 'TURN_TIMEOUT' | 'RESPONSE_END' | 'COMPOSE_END' | 'VOTE_END';
+    | Readonly<{ kind: 'TURN_TIMEOUT' | 'RESPONSE_END' | 'COMPOSE_END' | 'VOTE_END' | 'AI_REVIEW_END';
         gate: 'PHASE'; roundId: RoundId; phaseId: PhaseId }>
     | Readonly<{ kind: 'BOT_DISCARD'; gate: 'PHASE_AND_CONTROL'; phaseId: PhaseId;
         roundId: RoundId; playerId: PlayerId; expectedControlEpoch: ControlEpoch; expectedPresence: 'BOT' | 'HUMAN'; expectedAutoPlay?:boolean }>

@@ -1,5 +1,5 @@
 {
-  "rulesVersion": "1.5.1",
+  "rulesVersion": "1.6.0",
   "deckVersion": "daily-v1",
   "playerCounts": [
     2,
@@ -11,7 +11,7 @@
   "handSize": 13,
   "winningTileCount": 14,
   "maxCommas": 3,
-  "maxEatPerRound": 3,
+  "maxEatPerRound": null,
   "eatSource": "previous_seat_latest_discard",
   "eatImmediateDiscardRestriction": "same_physical_tile",
   "turnMs": 120000,

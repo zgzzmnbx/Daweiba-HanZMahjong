@@ -1,5 +1,5 @@
 /** Room-only chat, independent of game commands and state versions. */
-export type RoomChatMessage=Readonly<{id:string;roomId:string;seat:number;nickname:string;text:string;at:number}>;
+export type RoomChatMessage=Readonly<{id:string;roomId:string;seat:number;nickname:string;text:string;at:number;kind?:'AI_REVIEW'|'HU_REVIEW'}>;
 export type RoomChatRequest=Readonly<{roomId:string;clientId:string;text:string}>;
 export type RoomChatAck={ok:true;message:RoomChatMessage}|{ok:false;error:string};
 export interface RoomChatTransport{

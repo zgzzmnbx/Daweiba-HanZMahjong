@@ -50,7 +50,7 @@ export default function OnlineApp(){
    <label className="room-deck-field">麻将套组<select aria-label="麻将套组" value={deckSetId} disabled={busy||deckLoading||!!deckLoadError} onChange={e=>setDeckSetId(e.target.value)}>{deckCatalog?.sets.map(s=><option key={s.id} value={s.id}>{s.name}{s.id===deckCatalog.defaultSetId?' · 默认':''}</option>)}</select></label>
    {deckLoading?<p role="status">正在载入套组…</p>:deckLoadError?<p role="alert">{deckLoadError} <button disabled={busy} onClick={()=>setDeckReload(n=>n+1)}>重试载入套组</button></p>:<p className="deck-choice-note">{deckCatalog?.sets.find(s=>s.id===deckSetId)?.charCount} 个汉字 · {capacity} 人桌 {deckCatalog?.sets.find(s=>s.id===deckSetId)?.totals[String(capacity) as '2'|'3'|'4'|'5'|'6']} 张牌</p>}
    <label className="spectating-choice"><span><strong>允许观战</strong><small id="spectating-note">其他人可旁观，不会看到手牌</small></span><input type="checkbox" role="switch" aria-label="允许观战" aria-describedby="spectating-note" checked={allowSpectators} onChange={e=>setAllowSpectators(e.target.checked)}/></label>
-   <details className="room-create-details"><summary>公共房间 · 入座与 AI 说明</summary><p>房间显示在大厅，其他玩家可直接入座。空位可安排 AI；一位真人时为不计分练习局，每位 AI 评审有 70% 概率赞成。</p></details>
+   <details className="room-create-details"><summary>公共房间 · 入座与 AI 说明</summary><p>房间显示在大厅，其他玩家可直接入座。空位可安排 AI；一位真人时为不计分练习局，AI 由 DeepSeek 宽松判句；10秒未答按70%赞成兜底，吐槽同步闲聊。</p></details>
    <button className="primary" disabled={busy||!nickname.trim()||deckLoading||!!deckLoadError||!deckSetId} onClick={create}>{busy?'正在创建…':'创建房间'}</button>
   </>:<>
    {!seats?<><label>已有房间码<input value={roomId} onChange={e=>{setRoomId(e.target.value.toUpperCase());setSeats(null);}} placeholder="输入朋友发来的房间码" autoCapitalize="characters"/></label>
