@@ -9,7 +9,9 @@
  #root .game-shell .topbar .room-code{font-size:10px;letter-spacing:0}
  #root .game-shell .topbar .online,#root .game-shell .topbar .offline{font-size:9px;white-space:nowrap}
  #root .game-shell .topbar .portrait-menu-trigger{--hud-size:44px}
- #root .game-shell .chat-airspace{position:absolute;left:0;right:0;top:49px;height:24px;margin:0 10px;z-index:7}
+ /* Use the gap below the fixed 76px avatar rail; do not steal short-screen table height. */
+ #root .game-shell .chat-airspace{position:absolute;left:0;right:0;top:128px;height:32px;margin:0 8px}
+ #root .game-shell[data-phase=LOBBY] .chat-airspace{top:49px}
  #root .game-shell>main{padding-top:2px;gap:2px}
  #root .game-shell .view-tools{display:none}
  #root .game-shell .table-notices{height:20px;flex-basis:20px}

@@ -1,3 +1,4 @@
+import {AVATARS,LITERARY_NICKNAMES,stableAvatarId} from '../contracts/avatars';
 import {borrowedHuVisible,usesDeepSeekRules} from '../contracts/response-policy';
 import {timingForRules} from './timing';
 import type * as C from '../contracts/types';
@@ -16,6 +17,24 @@ export const rules = defaults as unknown as C.RulesDefaults;
 export class RuleError extends Error { constructor(public code:C.CommandErrorCode){super(code);} }
 function need(value:unknown,code:C.CommandErrorCode):asserts value { if(!value)throw new RuleError(code); }
 const id=<T extends string>(g:Game,kind:T): C.Id<T> => `${g.public.roomId}:${kind}:${++g.serial}` as C.Id<T>;
+/** Cosmetic choice is stable per identity and never consumes dealing/voting RNG. */
+function botNickname(g:Game,playerId:C.PlayerId){
+ const start=AVATARS.findIndex(a=>a.id===stableAvatarId(playerId));
+ const taken=new Set(g.public.players.map(p=>p.nickname.replace(/^AI\s*[·・]\s*/i,'')));
+ for(let offset=0;offset<LITERARY_NICKNAMES.length;offset++){
+  const name=LITERARY_NICKNAMES[(start+offset)%LITERARY_NICKNAMES.length];
+  if(!taken.has(name))return `AI · ${name}`;
+ }
+ return `AI · ${LITERARY_NICKNAMES[start]}`;
+}
+/** Only old designated seats are upgraded; human and frozen review names are untouched. */
+function upgradeLegacyBotNames(g:Game){
+ for(const pub of g.public.players){
+  if(!pub.isBotSeat||!/^AI \d+$/.test(pub.nickname))continue;
+  const nickname=botNickname(g,pub.playerId);
+  pub.nickname=nickname;g.players.get(pub.playerId)!.nickname=nickname;
+ }
+}
 export function nextSeat(seat:number,n:number){return (seat+1)%n;}
 export function previousSeat(seat:number,n:number){return (seat-1+n)%n;}
 function random(g:Game){let x=g.rng|0;x^=x<<13;x^=x>>>17;x^=x<<5;g.rng=x>>>0;return g.rng/4294967296;}
@@ -148,7 +167,7 @@ export function kickSeat(g:Game,seat:number,now:number){
  if(g.botDue?.playerId===pid)g.botDue=null;delete p.manualTurnDeadline;p.epoch++;p.sessionId=null;p.recoveryHash='';p.seat=null;p.candidateDraft=null;
  g.public.players.splice(g.public.players.indexOf(pub),1);
  if(playing){
-  const botId=id(g,'PlayerId'),bot:Player={hand:p.hand,draft:p.draft,draftVersion:p.draftVersion,candidateDraft:null,epoch:1,sessionId:null,recoveryHash:'',protected:p.protected,seat:seat as C.SeatIndex,nickname:`AI ${seat+1}`,wins:0};
+  const botId=id(g,'PlayerId'),bot:Player={hand:p.hand,draft:p.draft,draftVersion:p.draftVersion,candidateDraft:null,epoch:1,sessionId:null,recoveryHash:'',protected:p.protected,seat:seat as C.SeatIndex,nickname:botNickname(g,botId),wins:0};
   p.hand=[];p.draft={orderedTileIds:[],commaAfterTileIds:[]};p.draftVersion++;p.protected=null;g.players.set(botId,bot);
   g.public.players.push({playerId:botId,seat:seat as C.SeatIndex,nickname:bot.nickname,isBotSeat:true,presence:'BOT',connected:false,ready:true,handCount:bot.hand.length,eatCount:pub.eatCount,wins:0,graceEndsAt:null});g.public.players.sort((a,b)=>a.seat-b.seat);
   if(g.public.phase.kind==='TURN_ACTION'&&g.public.phase.actorId===pid)g.public.phase.actorId=botId;
@@ -176,7 +195,7 @@ export function applyCommand(g:Game,pid:C.PlayerId,session:string,c:C.ClientComm
  case 'START_ROUND':need(pid===g.public.hostId,'NOT_ACTOR');need(['LOBBY','ROUND_FINISHED'].includes(ph.kind),'ROUND_IN_PROGRESS');beginRound(g,now,nextDeck);break;
  case 'ASSIGN_BOT':case 'REMOVE_BOT':{
  need(pid===g.public.hostId,'NOT_ACTOR');need(g.public.rulesVersion!=='1.0.0','AI_NOT_SUPPORTED');need(['LOBBY','ROUND_FINISHED'].includes(ph.kind),'ROUND_IN_PROGRESS');need(Number.isInteger(c.seat)&&c.seat>=0&&c.seat<g.public.capacity,'SEAT_OCCUPIED');const occupied=g.public.players.find(p=>p.seat===c.seat);
- if(c.kind==='ASSIGN_BOT'){need(!occupied,'SEAT_OCCUPIED');const botId=id(g,'PlayerId');g.players.set(botId,{hand:[],draft:{orderedTileIds:[],commaAfterTileIds:[]},draftVersion:0,candidateDraft:null,epoch:1,sessionId:null,recoveryHash:'',protected:null,seat:c.seat,nickname:`AI ${c.seat+1}`,wins:0});g.public.players.push({playerId:botId,seat:c.seat,nickname:`AI ${c.seat+1}`,isBotSeat:true,presence:'BOT',connected:false,ready:true,handCount:0,eatCount:0,wins:0,graceEndsAt:null});g.public.players.sort((a,b)=>a.seat-b.seat);
+ if(c.kind==='ASSIGN_BOT'){need(!occupied,'SEAT_OCCUPIED');const botId=id(g,'PlayerId'),nickname=botNickname(g,botId);g.players.set(botId,{hand:[],draft:{orderedTileIds:[],commaAfterTileIds:[]},draftVersion:0,candidateDraft:null,epoch:1,sessionId:null,recoveryHash:'',protected:null,seat:c.seat,nickname,wins:0});g.public.players.push({playerId:botId,seat:c.seat,nickname,isBotSeat:true,presence:'BOT',connected:false,ready:true,handCount:0,eatCount:0,wins:0,graceEndsAt:null});g.public.players.sort((a,b)=>a.seat-b.seat);
  }else{need(occupied?.isBotSeat,'NOT_ACTOR');g.players.get(occupied.playerId)!.seat=null;g.public.players.splice(g.public.players.indexOf(occupied),1);}
  updatePractice(g);break;}
  case 'SAVE_DRAFT':need(c.expectedDraftVersion===p.draftVersion,'STALE_DRAFT_VERSION');validateDraft(c.draft,p.hand);p.draft=structuredClone(c.draft);p.draftVersion++;shared=false;break;
@@ -231,7 +250,7 @@ function resume(g:Game,now:number){
  if(g.public.suspension.kind!=='RUNNING'){if(g.public.phase.deadline)g.public.phase.deadline={endsAt:(now+Math.max(rules.recoveryMinActionMs,g.pausedRemaining??0)) as C.UtcMs,remainingMsWhenPaused:null};g.public.suspension={kind:'RUNNING'};g.pausedRemaining=null;g.expiresAt=null;for(const p of g.players.values())if(p.manualTurnDeadline?.remainingMs!==undefined){p.manualTurnDeadline.endsAt=now+p.manualTurnDeadline.remainingMs;delete p.manualTurnDeadline.remainingMs;}}
  g.expiresAt=null;if(g.public.phase.kind==='HU_VOTE'&&g.review&&g.review.ballots.size===g.review.reviewers.length)settleVote(g,now);scheduleBot(g,now);
 }
-export function restart(g:Game,now:number,generation:string){const hadOnline=online(g).length>0;if(g.public.phase.kind!=='ROOM_CLOSED'&&g.public.players.some(p=>p.isBotSeat)&&(hadOnline||g.aiAutoCloseAt===null))g.aiAutoCloseAt=now+120000;const priorApplicant=applicant(g),prior=priorApplicant?g.public.players.find(p=>p.playerId===priorApplicant):null;if(prior&&(prior.presence==='BOT'||(prior.graceEndsAt!==null&&now>=prior.graceEndsAt)))g.pendingWithdrawal=true;if(g.public.phase.kind==='ROOM_CLOSED'){g.aiAutoCloseAt=null;g.pendingJobs=[];return;}if(g.aiAutoCloseAt!==null&&now>=g.aiAutoCloseAt){closeGame(g,now);return;}freezeDeadline(g,now);g.processGeneration=generation;g.firstRecoveryPending=true;const oldPhase=g.public.phase.phaseId;g.public.phase.phaseId=id(g,'PhaseId');for(const p of g.players.values())if(p.manualTurnDeadline?.phaseId===oldPhase)p.manualTurnDeadline.phaseId=g.public.phase.phaseId;for(const p of g.players.values()){p.epoch++;p.sessionId=null;if(p.candidateDraft)p.candidateDraft={...p.candidateDraft,phaseId:g.public.phase.phaseId};}for(const p of g.public.players){p.connected=false;p.presence=p.isBotSeat?'BOT':'DISCONNECTED_GRACE';p.graceEndsAt=null;}g.expiresAt??=now+rules.allOfflineRetentionMs;g.public.suspension={kind:'PAUSED_RECOVERY',expiresAt:g.expiresAt as C.UtcMs};if(now>=g.expiresAt){if(active(g))finish(g,'EXPIRED',null,now);else phase(g,{kind:'ROOM_CLOSED'},now,null);}bump(g);refreshJobs(g,now);}
+export function restart(g:Game,now:number,generation:string){const hadOnline=online(g).length>0;if(g.public.phase.kind!=='ROOM_CLOSED'&&g.public.players.some(p=>p.isBotSeat)&&(hadOnline||g.aiAutoCloseAt===null))g.aiAutoCloseAt=now+120000;const priorApplicant=applicant(g),prior=priorApplicant?g.public.players.find(p=>p.playerId===priorApplicant):null;if(prior&&(prior.presence==='BOT'||(prior.graceEndsAt!==null&&now>=prior.graceEndsAt)))g.pendingWithdrawal=true;if(g.public.phase.kind==='ROOM_CLOSED'){g.aiAutoCloseAt=null;g.pendingJobs=[];return;}if(g.aiAutoCloseAt!==null&&now>=g.aiAutoCloseAt){closeGame(g,now);return;}upgradeLegacyBotNames(g);freezeDeadline(g,now);g.processGeneration=generation;g.firstRecoveryPending=true;const oldPhase=g.public.phase.phaseId;g.public.phase.phaseId=id(g,'PhaseId');for(const p of g.players.values())if(p.manualTurnDeadline?.phaseId===oldPhase)p.manualTurnDeadline.phaseId=g.public.phase.phaseId;for(const p of g.players.values()){p.epoch++;p.sessionId=null;if(p.candidateDraft)p.candidateDraft={...p.candidateDraft,phaseId:g.public.phase.phaseId};}for(const p of g.public.players){p.connected=false;p.presence=p.isBotSeat?'BOT':'DISCONNECTED_GRACE';p.graceEndsAt=null;}g.expiresAt??=now+rules.allOfflineRetentionMs;g.public.suspension={kind:'PAUSED_RECOVERY',expiresAt:g.expiresAt as C.UtcMs};if(now>=g.expiresAt){if(active(g))finish(g,'EXPIRED',null,now);else phase(g,{kind:'ROOM_CLOSED'},now,null);}bump(g);refreshJobs(g,now);}
 export function botChoice(input:C.ServerOnly.BotPolicyInput):C.TileId{const legal=input.ownHand.filter(t=>t.tileId!==input.protectedTileId);need(legal.length,'ILLEGAL_TILE');const count=new Map<string,number>();for(const t of input.ownHand)count.set(t.char,(count.get(t.char)??0)+1);let x=Number(input.replayableRngState)||1;legal.sort((a,b)=>Number((count.get(b.char)??0)>1)-Number((count.get(a.char)??0)>1)||(input.connectionWeights[a.char]??1)-(input.connectionWeights[b.char]??1)||a.tileId.localeCompare(b.tileId));const best=legal.filter(t=>Number((count.get(t.char)??0)>1)===Number((count.get(legal[0].char)??0)>1)&&(input.connectionWeights[t.char]??1)===(input.connectionWeights[legal[0].char]??1));x^=x<<13;x^=x>>>17;x^=x<<5;return best[(x>>>0)%best.length].tileId;}
 function autoDiscard(g:Game,pid:C.PlayerId,now:number,reason:'TIMEOUT'|'BOT'){const p=g.players.get(pid)!;const tileId=botChoice({ownHand:p.hand.map(t=>g.tiles.get(t)!),publicView:structuredClone(g.public),protectedTileId:p.protected,connectionWeights:Object.fromEntries(deck.entries.map(e=>[e.char,e.connectionWeight])),replayableRngState:String(g.rng)});random(g);discard(g,pid,tileId,now);g.lastAutoDiscard={playerId:pid,at:now,reason};g.public.lastAutomaticDiscard={playerId:pid,at:now as C.UtcMs,reason};}
 export function runDue(g:Game,now:number){updateAiDeadline(g,now);if(g.aiAutoCloseAt!==null&&now>=g.aiAutoCloseAt)return closeGame(g,now);let changed=false;
