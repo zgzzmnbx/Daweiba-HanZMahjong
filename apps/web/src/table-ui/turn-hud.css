@@ -18,34 +18,35 @@
 
 .turn-hint>span{white-space:normal;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-/* The action rail owns its typography and height; review dialogs keep their compact HUD. */
-#root .game-shell .turn-hud-row{--turn-rail-height:56px;flex-basis:var(--turn-rail-height);height:var(--turn-rail-height);min-height:var(--turn-rail-height)}
-.turn-hud-row .turn-hud{width:520px;height:52px;gap:14px;padding:5px 14px;border:1px solid #d2b67673;border-radius:11px;background:linear-gradient(110deg,#244b37,#143627 65%,#102d23);box-shadow:inset 0 1px #f3dc9d25,inset 3px 0 #d5ba7959,0 3px 10px #061e1433;color:#f7eccf}
-.turn-hud-row .turn-hint{font-size:16px;font-weight:600;gap:9px;letter-spacing:.01em}
-.turn-hud-row .turn-hint>span{line-height:1.35}
-.turn-hud-row .turn-hint-clause{display:inline-block;max-width:100%;vertical-align:top}
-.turn-hud-row .turn-hint i{width:7px;height:7px;border-radius:2px;transform:rotate(45deg);box-shadow:0 0 0 3px #a5d7a414,0 0 10px #a5d7a42b}
+/* One-line action rail; review dialogs retain their own compact text layout. */
+#root .game-shell .turn-hud-row{--turn-rail-height:40px;flex-basis:var(--turn-rail-height);height:var(--turn-rail-height);min-height:var(--turn-rail-height)}
+.turn-hud-row .turn-hud{width:480px;height:36px;gap:12px;padding:3px 12px;border:1px solid #c9ad665c;border-radius:8px;background:linear-gradient(110deg,#1c3e2f,#123025);box-shadow:inset 0 1px #f3dc9d14,0 2px 6px #061e1426;color:#f7eccf}
+.turn-hud-row .turn-hint{font-size:15px;font-weight:500;gap:7px;letter-spacing:0}
+.turn-hud-row .turn-hint>span{display:block;white-space:nowrap;line-height:1.3;overflow:hidden;text-overflow:ellipsis}
+.turn-hud-row .turn-hint-clause{display:inline}
+.turn-hud-row .turn-hint i{width:5px;height:5px;border-radius:50%}
 .turn-hint-key{font-weight:600;color:inherit}
-.turn-hud-row .turn-hint-key{display:inline;white-space:nowrap;color:#ffe3a0;background:#d9bb6c14;border-radius:3px;text-decoration:underline;text-decoration-color:#e3c17c66;text-underline-offset:3px}
-.turn-hud-row .turn-clock{flex-basis:82px;padding-left:10px;border-left:1px solid #c1b98529}
-.turn-hud-row .turn-clock-number{height:27px;gap:4px}
-.turn-hud-row .turn-clock-number b{font-size:25px;font-weight:600}
-.turn-hud-row .turn-clock-number small{font-size:10px}
-.turn-hud-row .turn-clock-track{height:5px;margin-top:2px}
-.turn-hud-row .turn-hud[data-tone=idle] .turn-clock-number b{font-size:12px}
+.turn-hud-row .turn-hint-key{white-space:nowrap;color:#ffe3a0}
+.turn-hud-row .turn-clock{flex-basis:66px;padding-left:8px;border-left:1px solid #c1b98529}
+.turn-hud-row .turn-clock-number{height:21px;gap:3px}
+.turn-hud-row .turn-clock-number b{font-size:21px;font-weight:500}
+.turn-hud-row .turn-clock-number small{font-size:9px}
+.turn-hud-row .turn-clock-track{height:3px;margin-top:1px}
+.turn-hud-row .turn-hud[data-tone=idle] .turn-clock-number b{font-size:11px}
 .turn-hud-row .turn-hud[data-tone=danger]{border-color:#e3a16c99}
 @media(max-width:699px){
- .turn-hud-row .turn-hud{width:100%;padding:4px 9px;gap:8px}
- .turn-hud-row .turn-hint{font-size:14px;gap:7px;letter-spacing:0}
- .turn-hud-row .turn-clock{flex-basis:60px;padding-left:7px}
- .turn-hud-row .turn-clock-number b{font-size:24px}
+ #root .game-shell .turn-hud-row{--turn-rail-height:38px}
+ .turn-hud-row .turn-hud{width:100%;height:34px;padding:3px 8px;gap:7px}
+ .turn-hud-row .turn-hint{font-size:13px;gap:6px}
+ .turn-hud-row .turn-clock{flex-basis:47px;padding-left:6px}
+ .turn-hud-row .turn-clock-number{height:19px}
+ .turn-hud-row .turn-clock-number b{font-size:19px}
 }
 @media(max-height:499px){
- #root .game-shell .turn-hud-row{--turn-rail-height:48px}
- .turn-hud-row .turn-hud{height:44px;padding-block:2px}
+ #root .game-shell .turn-hud-row{--turn-rail-height:36px}
+ .turn-hud-row .turn-hud{height:32px;padding-block:2px}
  .turn-hud-row .turn-hint{font-size:13px}
- .turn-hud-row .turn-clock{flex-basis:54px}
- .turn-hud-row .turn-clock-number{height:23px}
- .turn-hud-row .turn-clock-number b{font-size:21px}
- .turn-hud-row .turn-clock-track{height:4px;margin-top:1px}
+ .turn-hud-row .turn-clock{flex-basis:47px}
+ .turn-hud-row .turn-clock-number{height:19px}
+ .turn-hud-row .turn-clock-number b{font-size:19px}
 }

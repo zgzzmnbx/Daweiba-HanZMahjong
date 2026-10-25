@@ -22,17 +22,17 @@ export function turnHint(e:ResyncEnvelope,connected=true,controlled=true,interac
  if(p.suspension.kind!=='RUNNING')return '牌局暂停，等待恢复';
  const me=p.players.find(x=>x.playerId===self.playerId),name=(id:string)=>p.players.find(x=>x.playerId===id)?.nickname??'同桌';
  switch(ph.kind){
-  case 'LOBBY':return me?.ready?'等大家准备好，就开局':'准备好了就入局';
+  case 'LOBBY':return me?.ready?'等大家准备好':'准备好了就入局';
   case 'ROUND_FINISHED':return '本局结束，再来一局？';
-  case 'TURN_ACTION':return ph.actorId!==self.playerId?`等${name(ph.actorId)}出牌`:me?.autoPlay?'AI 正在替你出牌':can('DISCARD')?(interaction.dragging?(interaction.overDiscard?(interaction.forbidden?'刚吃的牌不能立即打出':'松手出牌'):interaction.overRack?'松手调整顺序':'拖进桌中央出牌'):interaction.forbidden?'刚吃的牌不能立即打出':interaction.selected?'拖进桌中央，或点击「打」':'选一张牌，拖到桌中央出牌'):'等待牌局更新';
+  case 'TURN_ACTION':return ph.actorId!==self.playerId?`等${name(ph.actorId)}出牌`:me?.autoPlay?'AI 正在替你出牌':can('DISCARD')?(interaction.dragging?(interaction.overDiscard?(interaction.forbidden?'刚吃的牌暂不能打':'松手出牌'):interaction.overRack?'松手调整顺序':'拖进桌中央出牌'):interaction.forbidden?'刚吃的牌暂不能打':interaction.selected?'拖到桌中央或点「打」':'选牌，拖到桌中央'):'等待牌局更新';
   case 'DISCARD_RESPONSE':
    if(ph.discarderId===self.playerId)return '等大家回应这张牌';
    if(self.ownResponse)return '已回应，等其他玩家';
-   if(!isNextDrawer(e)&&!borrowedHuVisible(p))return '还没轮到你，可先整理手牌';
+   if(!isNextDrawer(e)&&!borrowedHuVisible(p))return '等候时可整理手牌';
    if(!can('RESPOND'))return '已回应，等其他玩家';
-   if(isNextDrawer(e))return me&&(usesDeepSeekRules(p.rulesVersion)||me.eatCount<3)?(borrowedHuVisible(p)?'摸新字、吃这张，或借字胡':'要这张点「吃」，不要点「摸」'):borrowedHuVisible(p)?'点「摸」抽新字，或借字胡':'点「摸」，随机摸一张';
-   return borrowedHuVisible(p)?'凑得成句可借字胡，否则点「过」':'还没轮到你，可先整理手牌';
-  case 'HU_COMPOSE':return ph.applicantId===self.playerId?'排齐14字成一句话，再提交':`等${name(ph.applicantId)}排句`;
+   if(isNextDrawer(e))return me&&(usesDeepSeekRules(p.rulesVersion)||me.eatCount<3)?(borrowedHuVisible(p)?'摸、吃或借字胡':'「吃」这张或「摸」'):borrowedHuVisible(p)?'摸新字或借字胡':'点「摸」，随机摸一张';
+   return borrowedHuVisible(p)?'借字胡或点「过」':'等候时可整理手牌';
+  case 'HU_COMPOSE':return ph.applicantId===self.playerId?'排齐14字再提交':`等${name(ph.applicantId)}排句`;
   case 'HU_VOTE':return can('VOTE')?'这句话通顺吗？请投票':self.ownBallot?'已投票，等大家评审':ph.proposal.applicantId===self.playerId?'你的句子，等大家评审':'等同桌完成评审';
  }
 }

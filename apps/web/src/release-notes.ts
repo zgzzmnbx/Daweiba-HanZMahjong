@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'AI有文豪名，闲聊看得见',features:['AI从诙谐文豪名字库取名，统一加AI前缀，同桌避开重复名字。','刷新保持原名；旧编号AI升级为文豪名，真人托管仍保留本人昵称。','打开闲聊也能看见自己与同桌的新消息弹幕；手机字幕更清晰，聊天窗口避开弹幕。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'引导单行，更轻巧',features:['桌中央出牌框收为单行，拖入时提示松手出牌。','牌架提示条收窄上下留白，简短提示、倒计时和细进度条保持清楚。']},
+ {version:'1.26.4',date:'2026-10-26',title:'AI有文豪名，闲聊看得见',features:['AI从诙谐文豪名字库取名，统一加AI前缀，同桌避开重复名字。','刷新保持原名；旧编号AI升级为文豪名，真人托管仍保留本人昵称。','打开闲聊也能看见自己与同桌的新消息弹幕；手机字幕更清晰，聊天窗口避开弹幕。']},
  {version:'1.26.3',date:'2026-10-26',title:'下一步，看得更清楚',features:['行动提示字号加大，吃、摸、打等关键词用暖金色强调，倒计时与进度条层次更清晰。','绿金引导条适配长短屏，保持手牌与操作按钮可用。']},
  {version:'1.26.2',date:'2026-10-26',title:'头像靠上，牌桌用足空间',features:['手机竖屏头像固定为顶部紧凑一排，昵称、座次和状态保持可见。','牌桌按剩余宽高调整真实3D取景，长屏更舒展、短屏保持紧凑，整理区仍可展开收起。']},
  {version:'1.26.1',date:'2026-10-26',title:'桌心引导，更轻巧也更准确',features:['出牌引导跟随3D牌桌实际中心，横竖屏与放大手牌切换时保持居中。','细金边绿绒提示替代大虚线框，拖入时亮边提示松手出牌，减少桌面遮挡。']},
