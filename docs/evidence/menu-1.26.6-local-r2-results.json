@@ -1,0 +1,348 @@
+{
+  "at": "2026-10-25T18:30:30.848Z",
+  "version": "1.26.6",
+  "origin": "http://127.0.0.1:3184",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "320x480 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:3",
+      "phaseAfter": "A24F24FD13:PhaseId:6",
+      "deadline": {
+        "endsAt": 1792953012144,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:7",
+      "phaseAfter": "A24F24FD13:PhaseId:10",
+      "deadline": {
+        "endsAt": 1792953012926,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:11",
+      "phaseAfter": "A24F24FD13:PhaseId:14",
+      "deadline": {
+        "endsAt": 1792953013642,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:15",
+      "phaseAfter": "A24F24FD13:PhaseId:18",
+      "deadline": {
+        "endsAt": 1792953014309,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:19",
+      "phaseAfter": "A24F24FD13:PhaseId:22",
+      "deadline": {
+        "endsAt": 1792953014992,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:23",
+      "phaseAfter": "A24F24FD13:PhaseId:26",
+      "deadline": {
+        "endsAt": 1792953015626,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:27",
+      "phaseAfter": "A24F24FD13:PhaseId:30",
+      "deadline": {
+        "endsAt": 1792953016276,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:31",
+      "phaseAfter": "A24F24FD13:PhaseId:34",
+      "deadline": {
+        "endsAt": 1792953016909,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:35",
+      "phaseAfter": "A24F24FD13:PhaseId:38",
+      "deadline": {
+        "endsAt": 1792953017559,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480: new review supersedes 游戏菜单, voting and return work"
+    },
+    {
+      "name": "390x844 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:42",
+      "phaseAfter": "A24F24FD13:PhaseId:45",
+      "deadline": {
+        "endsAt": 1792953018843,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:46",
+      "phaseAfter": "A24F24FD13:PhaseId:49",
+      "deadline": {
+        "endsAt": 1792953019592,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:50",
+      "phaseAfter": "A24F24FD13:PhaseId:53",
+      "deadline": {
+        "endsAt": 1792953020309,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:54",
+      "phaseAfter": "A24F24FD13:PhaseId:57",
+      "deadline": {
+        "endsAt": 1792953020959,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:58",
+      "phaseAfter": "A24F24FD13:PhaseId:61",
+      "deadline": {
+        "endsAt": 1792953021642,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:62",
+      "phaseAfter": "A24F24FD13:PhaseId:65",
+      "deadline": {
+        "endsAt": 1792953022276,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:66",
+      "phaseAfter": "A24F24FD13:PhaseId:69",
+      "deadline": {
+        "endsAt": 1792953022910,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:70",
+      "phaseAfter": "A24F24FD13:PhaseId:73",
+      "deadline": {
+        "endsAt": 1792953023557,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:74",
+      "phaseAfter": "A24F24FD13:PhaseId:77",
+      "deadline": {
+        "endsAt": 1792953024194,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844: new review supersedes 同桌音乐, voting and return work"
+    },
+    {
+      "name": "667x375 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:81",
+      "phaseAfter": "A24F24FD13:PhaseId:84",
+      "deadline": {
+        "endsAt": 1792953025493,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:85",
+      "phaseAfter": "A24F24FD13:PhaseId:88",
+      "deadline": {
+        "endsAt": 1792953026196,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:89",
+      "phaseAfter": "A24F24FD13:PhaseId:92",
+      "deadline": {
+        "endsAt": 1792953026875,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:93",
+      "phaseAfter": "A24F24FD13:PhaseId:96",
+      "deadline": {
+        "endsAt": 1792953027525,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:97",
+      "phaseAfter": "A24F24FD13:PhaseId:100",
+      "deadline": {
+        "endsAt": 1792953028192,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:101",
+      "phaseAfter": "A24F24FD13:PhaseId:104",
+      "deadline": {
+        "endsAt": 1792953028859,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:105",
+      "phaseAfter": "A24F24FD13:PhaseId:108",
+      "deadline": {
+        "endsAt": 1792953029492,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:109",
+      "phaseAfter": "A24F24FD13:PhaseId:112",
+      "deadline": {
+        "endsAt": 1792953030276,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:113",
+      "phaseAfter": "A24F24FD13:PhaseId:116",
+      "deadline": {
+        "endsAt": 1792953030909,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375: new review supersedes 新手指南, voting and return work"
+    },
+    {
+      "name": "1280x800 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:120",
+      "phaseAfter": "A24F24FD13:PhaseId:123",
+      "deadline": {
+        "endsAt": 1792953032111,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:124",
+      "phaseAfter": "A24F24FD13:PhaseId:127",
+      "deadline": {
+        "endsAt": 1792953032844,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:128",
+      "phaseAfter": "A24F24FD13:PhaseId:131",
+      "deadline": {
+        "endsAt": 1792953033544,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:132",
+      "phaseAfter": "A24F24FD13:PhaseId:135",
+      "deadline": {
+        "endsAt": 1792953034144,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:136",
+      "phaseAfter": "A24F24FD13:PhaseId:139",
+      "deadline": {
+        "endsAt": 1792953034777,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:140",
+      "phaseAfter": "A24F24FD13:PhaseId:143",
+      "deadline": {
+        "endsAt": 1792953035416,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:144",
+      "phaseAfter": "A24F24FD13:PhaseId:147",
+      "deadline": {
+        "endsAt": 1792953036060,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:148",
+      "phaseAfter": "A24F24FD13:PhaseId:151",
+      "deadline": {
+        "endsAt": 1792953036694,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "A24F24FD13:PhaseId:152",
+      "phaseAfter": "A24F24FD13:PhaseId:155",
+      "deadline": {
+        "endsAt": 1792953037328,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800: new review supersedes 牌局记录, voting and return work"
+    },
+    {
+      "name": "room closure dismisses obsolete navigation"
+    }
+  ],
+  "errors": []
+}
