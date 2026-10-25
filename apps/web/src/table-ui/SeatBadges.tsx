@@ -37,7 +37,7 @@ export function SeatBadges({seats,labels,fallback,now,anchors,waiting=false}:{se
   }
   if(rail){
    const ordered=seats.filter(s=>s.relation!=='SELF').sort((a,b)=>a.placement.labelAnchor.x-b.placement.labelAnchor.x||b.placement.labelAnchor.y-a.placement.labelAnchor.y),gap=4,width=Math.min(horizontal?138:96,(stage.width-12-gap*(ordered.length-1))/ordered.length),start=left+(stage.width-width*ordered.length-gap*(ordered.length-1))/2;
-   const railTop=window.matchMedia('(max-width:699px) and (orientation:portrait)').matches?Math.max(top+4,-72):top+4;
+   const railTop=window.matchMedia('(max-width:699px) and (orientation:portrait)').matches?top+4:top+4;
    ordered.forEach((s,i)=>next.push({seat:s.logicalSeat,x:start+i*(width+gap),y:railTop,width,height:horizontal?44:68,small:true,outside:true,rail:true,horizontal}));
    setLayout(old=>JSON.stringify(old)===JSON.stringify(next)?old:next);return;
   }
@@ -74,6 +74,6 @@ export function SeatBadges({seats,labels,fallback,now,anchors,waiting=false}:{se
  return <div ref={root} className="seat-layer player-badges" aria-label="同桌玩家">{seats.filter(s=>s.relation!=='SELF').map(s=>{const pos=layout.find(p=>p.seat===s.logicalSeat),p=s.player,status=!p?'空位':p.isBotSeat?'AI':p.presence==='BOT'||('autoPlay' in p&&p.autoPlay===true)?'托管':p.presence==='DISCONNECTED_GRACE'?'离线':waiting&&p.ready?'已准备':'在线';return <div key={s.logicalSeat} className={'player-badge '+(pos?.small?'compact ':'')+(pos?.horizontal?'horizontal ':'')+(!p?'empty':'')} data-seat={s.logicalSeat} data-outside={pos?.outside?'true':'false'} style={pos?{left:pos.x,top:pos.y,width:pos.width,height:pos.height,visibility:'visible'}:{visibility:'hidden'}} aria-label={`${p?playerDisplayName(p):'等待好友'}，${seatRelation(s,seats.length)}，${p?.handCount??0}张，${status}`}>
    <span className={'player-portrait '+(p?.isBotSeat?'ai':'')} aria-hidden="true">{p?<PlayerAvatar avatarId={p.avatarId} name={p.nickname} seed={p.playerId}/>: '空'}<i className={'presence-dot '+(p?.isBotSeat?'ai':p?.connected?'online':'offline')}/></span>
    <span className="player-nameplate"><strong>{p?playerDisplayName(p):'等待好友'}</strong><span> · {seatRelation(s,seats.length)}</span></span>
-   <small className="player-presence">{waiting&&p?.ready?<ReadyBadge/>:<>{p?.handCount??0}张 · {status}{p?.presence==='DISCONNECTED_GRACE'?` ${Math.max(0,Math.ceil(((p.graceEndsAt??0)-now)/1000))}秒`:''}</>}</small>
+   <small className="player-presence">{waiting&&p?.ready?<ReadyBadge/>:<><span className="player-rail-relation">{seatRelation(s,seats.length)} · </span>{p?.handCount??0}张 · {status}{p?.presence==='DISCONNECTED_GRACE'?` ${Math.max(0,Math.ceil(((p.graceEndsAt??0)-now)/1000))}秒`:''}</>}</small>
   </div>;})}{fallback&&seats.filter(s=>s.relation!=='SELF'&&s.player).map(s=><div key={s.logicalSeat} className="badge-fallback-hand fallback-hand" style={{left:`${50+s.placement.labelAnchor.x*38}%`,top:`${50-s.placement.labelAnchor.y*35}%`}} aria-hidden="true">{Array.from({length:s.concealed.count},(_,i)=><i key={i} data-motion-anchor={`hand:${s.player!.playerId}:${i}`} data-flight-rect="true"/>)}</div>)}</div>;
 }

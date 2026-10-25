@@ -1,0 +1,1156 @@
+{
+  "at": "2026-10-25T17:04:47.220Z",
+  "version": "1.26.2",
+  "capacity": 6,
+  "origin": "http://127.0.0.1:3186",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x859 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 747,
+        "w": 464,
+        "h": 38,
+        "right": 474,
+        "bottom": 785
+      },
+      "hud": {
+        "x": 10,
+        "y": 749,
+        "w": 464,
+        "h": 34,
+        "right": 474,
+        "bottom": 783
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 475.1875,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 525.125
+      },
+      "rack": null,
+      "scroll": [
+        484,
+        859
+      ],
+      "viewport": [
+        484,
+        859
+      ],
+      "projectedHand": [
+        {
+          "x": 77.640625,
+          "y": 582.453125,
+          "width": 23.4375,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 101.078125,
+          "bottom": 604.96875,
+          "left": 77.640625,
+          "hit": true
+        },
+        {
+          "x": 99.609375,
+          "y": 582.453125,
+          "width": 23.078125,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 122.6875,
+          "bottom": 604.96875,
+          "left": 99.609375,
+          "hit": true
+        },
+        {
+          "x": 121.578125,
+          "y": 582.453125,
+          "width": 22.71875,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 144.296875,
+          "bottom": 604.96875,
+          "left": 121.578125,
+          "hit": true
+        },
+        {
+          "x": 143.5625,
+          "y": 582.453125,
+          "width": 22.359375,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 165.921875,
+          "bottom": 604.96875,
+          "left": 143.5625,
+          "hit": true
+        },
+        {
+          "x": 165.53125,
+          "y": 582.453125,
+          "width": 22,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 187.53125,
+          "bottom": 604.96875,
+          "left": 165.53125,
+          "hit": true
+        },
+        {
+          "x": 187.5,
+          "y": 582.453125,
+          "width": 21.640625,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 209.140625,
+          "bottom": 604.96875,
+          "left": 187.5,
+          "hit": true
+        },
+        {
+          "x": 209.46875,
+          "y": 582.453125,
+          "width": 21.265625,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 230.734375,
+          "bottom": 604.96875,
+          "left": 209.46875,
+          "hit": true
+        },
+        {
+          "x": 231.453125,
+          "y": 582.453125,
+          "width": 21.078125,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 252.53125,
+          "bottom": 604.96875,
+          "left": 231.453125,
+          "hit": true
+        },
+        {
+          "x": 253.234375,
+          "y": 582.453125,
+          "width": 21.265625,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 274.5,
+          "bottom": 604.96875,
+          "left": 253.234375,
+          "hit": true
+        },
+        {
+          "x": 274.84375,
+          "y": 582.453125,
+          "width": 21.640625,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 296.484375,
+          "bottom": 604.96875,
+          "left": 274.84375,
+          "hit": true
+        },
+        {
+          "x": 296.453125,
+          "y": 582.453125,
+          "width": 22,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 318.453125,
+          "bottom": 604.96875,
+          "left": 296.453125,
+          "hit": true
+        },
+        {
+          "x": 318.0625,
+          "y": 582.453125,
+          "width": 22.359375,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 340.421875,
+          "bottom": 604.96875,
+          "left": 318.0625,
+          "hit": true
+        },
+        {
+          "x": 339.671875,
+          "y": 582.453125,
+          "width": 22.71875,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 362.390625,
+          "bottom": 604.96875,
+          "left": 339.671875,
+          "hit": true
+        },
+        {
+          "x": 361.296875,
+          "y": 582.453125,
+          "width": 23.078125,
+          "height": 22.515625,
+          "top": 582.453125,
+          "right": 384.375,
+          "bottom": 604.96875,
+          "left": 361.296875,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x859 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 649,
+        "w": 448,
+        "h": 38,
+        "right": 466,
+        "bottom": 687
+      },
+      "hud": {
+        "x": 53,
+        "y": 651,
+        "w": 378,
+        "h": 34,
+        "right": 431,
+        "bottom": 685
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 423.234375,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 473.171875
+      },
+      "rack": {
+        "x": 18,
+        "y": 695,
+        "w": 448,
+        "h": 124,
+        "right": 466,
+        "bottom": 819
+      },
+      "scroll": [
+        484,
+        859
+      ],
+      "viewport": [
+        484,
+        859
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x640 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 528,
+        "w": 464,
+        "h": 38,
+        "right": 474,
+        "bottom": 566
+      },
+      "hud": {
+        "x": 10,
+        "y": 530,
+        "w": 464,
+        "h": 34,
+        "right": 474,
+        "bottom": 564
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 365.234375,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 415.171875
+      },
+      "rack": null,
+      "scroll": [
+        484,
+        640
+      ],
+      "viewport": [
+        484,
+        640
+      ],
+      "projectedHand": [
+        {
+          "x": 79.890625,
+          "y": 452.609375,
+          "width": 23.59375,
+          "height": 24.46875,
+          "top": 452.609375,
+          "right": 103.484375,
+          "bottom": 477.078125,
+          "left": 79.890625,
+          "hit": true
+        },
+        {
+          "x": 102.421875,
+          "y": 454.4375,
+          "width": 23.015625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 125.4375,
+          "bottom": 478.71875,
+          "left": 102.421875,
+          "hit": true
+        },
+        {
+          "x": 123.96875,
+          "y": 454.4375,
+          "width": 22.578125,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 146.546875,
+          "bottom": 478.71875,
+          "left": 123.96875,
+          "hit": true
+        },
+        {
+          "x": 145.5,
+          "y": 454.4375,
+          "width": 22.15625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 167.65625,
+          "bottom": 478.71875,
+          "left": 145.5,
+          "hit": true
+        },
+        {
+          "x": 167.046875,
+          "y": 454.4375,
+          "width": 21.734375,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 188.78125,
+          "bottom": 478.71875,
+          "left": 167.046875,
+          "hit": true
+        },
+        {
+          "x": 188.578125,
+          "y": 454.4375,
+          "width": 21.3125,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 209.890625,
+          "bottom": 478.71875,
+          "left": 188.578125,
+          "hit": true
+        },
+        {
+          "x": 210.109375,
+          "y": 454.4375,
+          "width": 20.890625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 231,
+          "bottom": 478.71875,
+          "left": 210.109375,
+          "hit": true
+        },
+        {
+          "x": 231.65625,
+          "y": 454.4375,
+          "width": 20.671875,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 252.328125,
+          "bottom": 478.71875,
+          "left": 231.65625,
+          "hit": true
+        },
+        {
+          "x": 252.96875,
+          "y": 454.4375,
+          "width": 20.890625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 273.859375,
+          "bottom": 478.71875,
+          "left": 252.96875,
+          "hit": true
+        },
+        {
+          "x": 274.078125,
+          "y": 454.4375,
+          "width": 21.3125,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 295.390625,
+          "bottom": 478.71875,
+          "left": 274.078125,
+          "hit": true
+        },
+        {
+          "x": 295.203125,
+          "y": 454.4375,
+          "width": 21.734375,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 316.9375,
+          "bottom": 478.71875,
+          "left": 295.203125,
+          "hit": true
+        },
+        {
+          "x": 316.3125,
+          "y": 454.4375,
+          "width": 22.15625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 338.46875,
+          "bottom": 478.71875,
+          "left": 316.3125,
+          "hit": true
+        },
+        {
+          "x": 337.421875,
+          "y": 454.4375,
+          "width": 22.578125,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 360,
+          "bottom": 478.71875,
+          "left": 337.421875,
+          "hit": true
+        },
+        {
+          "x": 358.546875,
+          "y": 454.4375,
+          "width": 23.015625,
+          "height": 24.28125,
+          "top": 454.4375,
+          "right": 381.5625,
+          "bottom": 478.71875,
+          "left": 358.546875,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 484x640 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 430,
+        "w": 448,
+        "h": 38,
+        "right": 466,
+        "bottom": 468
+      },
+      "hud": {
+        "x": 53,
+        "y": 432,
+        "w": 378,
+        "h": 34,
+        "right": 431,
+        "bottom": 466
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 189.5,
+        "y": 312.46875,
+        "w": 105,
+        "h": 49.9375,
+        "right": 294.5,
+        "bottom": 362.40625
+      },
+      "rack": {
+        "x": 18,
+        "y": 476,
+        "w": 448,
+        "h": 124,
+        "right": 466,
+        "bottom": 600
+      },
+      "scroll": [
+        484,
+        640
+      ],
+      "viewport": [
+        484,
+        640
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 390x844 table",
+      "status": "PASS",
+      "row": {
+        "x": 10,
+        "y": 732,
+        "w": 370,
+        "h": 38,
+        "right": 380,
+        "bottom": 770
+      },
+      "hud": {
+        "x": 10,
+        "y": 734,
+        "w": 370,
+        "h": 34,
+        "right": 380,
+        "bottom": 768
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 142.5,
+        "y": 468.03125,
+        "w": 105,
+        "h": 49.9375,
+        "right": 247.5,
+        "bottom": 517.96875
+      },
+      "rack": null,
+      "scroll": [
+        390,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "projectedHand": [
+        {
+          "x": 62.953125,
+          "y": 544.796875,
+          "width": 18.5,
+          "height": 18.5,
+          "top": 544.796875,
+          "right": 81.453125,
+          "bottom": 563.296875,
+          "left": 62.953125,
+          "hit": true
+        },
+        {
+          "x": 81.015625,
+          "y": 545.9375,
+          "width": 18.1875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 99.203125,
+          "bottom": 564.359375,
+          "left": 81.015625,
+          "hit": true
+        },
+        {
+          "x": 98.609375,
+          "y": 545.9375,
+          "width": 17.953125,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 116.5625,
+          "bottom": 564.359375,
+          "left": 98.609375,
+          "hit": true
+        },
+        {
+          "x": 116.1875,
+          "y": 545.9375,
+          "width": 17.71875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 133.90625,
+          "bottom": 564.359375,
+          "left": 116.1875,
+          "hit": true
+        },
+        {
+          "x": 133.78125,
+          "y": 545.9375,
+          "width": 17.46875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 151.25,
+          "bottom": 564.359375,
+          "left": 133.78125,
+          "hit": true
+        },
+        {
+          "x": 151.375,
+          "y": 545.9375,
+          "width": 17.234375,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 168.609375,
+          "bottom": 564.359375,
+          "left": 151.375,
+          "hit": true
+        },
+        {
+          "x": 168.953125,
+          "y": 545.9375,
+          "width": 17,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 185.953125,
+          "bottom": 564.359375,
+          "left": 168.953125,
+          "hit": true
+        },
+        {
+          "x": 186.546875,
+          "y": 545.9375,
+          "width": 16.875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 203.421875,
+          "bottom": 564.359375,
+          "left": 186.546875,
+          "hit": true
+        },
+        {
+          "x": 204.015625,
+          "y": 545.9375,
+          "width": 17,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 221.015625,
+          "bottom": 564.359375,
+          "left": 204.015625,
+          "hit": true
+        },
+        {
+          "x": 221.375,
+          "y": 545.9375,
+          "width": 17.234375,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 238.609375,
+          "bottom": 564.359375,
+          "left": 221.375,
+          "hit": true
+        },
+        {
+          "x": 238.71875,
+          "y": 545.9375,
+          "width": 17.46875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 256.1875,
+          "bottom": 564.359375,
+          "left": 238.71875,
+          "hit": true
+        },
+        {
+          "x": 256.078125,
+          "y": 545.9375,
+          "width": 17.71875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 273.796875,
+          "bottom": 564.359375,
+          "left": 256.078125,
+          "hit": true
+        },
+        {
+          "x": 273.421875,
+          "y": 545.9375,
+          "width": 17.953125,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 291.375,
+          "bottom": 564.359375,
+          "left": 273.421875,
+          "hit": true
+        },
+        {
+          "x": 290.78125,
+          "y": 545.9375,
+          "width": 18.1875,
+          "height": 18.421875,
+          "top": 545.9375,
+          "right": 308.96875,
+          "bottom": 564.359375,
+          "left": 290.78125,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 390x844 rack",
+      "status": "PASS",
+      "row": {
+        "x": 18,
+        "y": 634,
+        "w": 354,
+        "h": 38,
+        "right": 372,
+        "bottom": 672
+      },
+      "hud": {
+        "x": 53,
+        "y": 636,
+        "w": 284,
+        "h": 34,
+        "right": 337,
+        "bottom": 670
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 142.5,
+        "y": 416.0625,
+        "w": 105,
+        "h": 49.9375,
+        "right": 247.5,
+        "bottom": 466
+      },
+      "rack": {
+        "x": 18,
+        "y": 680,
+        "w": 354,
+        "h": 124,
+        "right": 372,
+        "bottom": 804
+      },
+      "scroll": [
+        390,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 320x480 table",
+      "status": "PASS",
+      "row": {
+        "x": 6,
+        "y": 378,
+        "w": 308,
+        "h": 38,
+        "right": 314,
+        "bottom": 416
+      },
+      "hud": {
+        "x": 6,
+        "y": 380,
+        "w": 308,
+        "h": 34,
+        "right": 314,
+        "bottom": 414
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 114,
+        "y": 281.890625,
+        "w": 92,
+        "h": 40,
+        "right": 206,
+        "bottom": 321.890625
+      },
+      "rack": null,
+      "scroll": [
+        320,
+        480
+      ],
+      "viewport": [
+        320,
+        480
+      ],
+      "projectedHand": [
+        {
+          "x": 55.15625,
+          "y": 329.21875,
+          "width": 15.09375,
+          "height": 16.65625,
+          "top": 329.21875,
+          "right": 70.25,
+          "bottom": 345.875,
+          "left": 55.15625,
+          "hit": true
+        },
+        {
+          "x": 69.734375,
+          "y": 330.625,
+          "width": 14.75,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 84.484375,
+          "bottom": 347.15625,
+          "left": 69.734375,
+          "hit": true
+        },
+        {
+          "x": 83.65625,
+          "y": 330.625,
+          "width": 14.5,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 98.15625,
+          "bottom": 347.15625,
+          "left": 83.65625,
+          "hit": true
+        },
+        {
+          "x": 97.59375,
+          "y": 330.625,
+          "width": 14.25,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 111.84375,
+          "bottom": 347.15625,
+          "left": 97.59375,
+          "hit": true
+        },
+        {
+          "x": 111.515625,
+          "y": 330.625,
+          "width": 14,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 125.515625,
+          "bottom": 347.15625,
+          "left": 111.515625,
+          "hit": true
+        },
+        {
+          "x": 125.453125,
+          "y": 330.625,
+          "width": 13.75,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 139.203125,
+          "bottom": 347.15625,
+          "left": 125.453125,
+          "hit": true
+        },
+        {
+          "x": 139.375,
+          "y": 330.625,
+          "width": 13.5,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 152.875,
+          "bottom": 347.15625,
+          "left": 139.375,
+          "hit": true
+        },
+        {
+          "x": 153.3125,
+          "y": 330.625,
+          "width": 13.359375,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 166.671875,
+          "bottom": 347.15625,
+          "left": 153.3125,
+          "hit": true
+        },
+        {
+          "x": 167.109375,
+          "y": 330.625,
+          "width": 13.5,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 180.609375,
+          "bottom": 347.15625,
+          "left": 167.109375,
+          "hit": true
+        },
+        {
+          "x": 180.78125,
+          "y": 330.625,
+          "width": 13.75,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 194.53125,
+          "bottom": 347.15625,
+          "left": 180.78125,
+          "hit": true
+        },
+        {
+          "x": 194.46875,
+          "y": 330.625,
+          "width": 14,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 208.46875,
+          "bottom": 347.15625,
+          "left": 194.46875,
+          "hit": true
+        },
+        {
+          "x": 208.140625,
+          "y": 330.625,
+          "width": 14.25,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 222.390625,
+          "bottom": 347.15625,
+          "left": 208.140625,
+          "hit": true
+        },
+        {
+          "x": 221.8125,
+          "y": 330.625,
+          "width": 14.5,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 236.3125,
+          "bottom": 347.15625,
+          "left": 221.8125,
+          "hit": true
+        },
+        {
+          "x": 235.5,
+          "y": 330.625,
+          "width": 14.75,
+          "height": 16.53125,
+          "top": 330.625,
+          "right": 250.25,
+          "bottom": 347.15625,
+          "left": 235.5,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 320x480 rack",
+      "status": "PASS",
+      "row": {
+        "x": 14,
+        "y": 317,
+        "w": 292,
+        "h": 38,
+        "right": 306,
+        "bottom": 355
+      },
+      "hud": {
+        "x": 49,
+        "y": 319,
+        "w": 222,
+        "h": 34,
+        "right": 271,
+        "bottom": 353
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 114,
+        "y": 248.9375,
+        "w": 92,
+        "h": 40,
+        "right": 206,
+        "bottom": 288.9375
+      },
+      "rack": {
+        "x": 14,
+        "y": 357,
+        "w": 292,
+        "h": 92,
+        "right": 306,
+        "bottom": 449
+      },
+      "scroll": [
+        320,
+        480
+      ],
+      "viewport": [
+        320,
+        480
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 667x375 table",
+      "status": "PASS",
+      "row": {
+        "x": 8,
+        "y": 279,
+        "w": 651,
+        "h": 32,
+        "right": 659,
+        "bottom": 311
+      },
+      "hud": {
+        "x": 168.5,
+        "y": 280,
+        "w": 330,
+        "h": 30,
+        "right": 498.5,
+        "bottom": 310
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 490.75,
+        "y": 77,
+        "w": 74,
+        "h": 76,
+        "right": 564.75,
+        "bottom": 153
+      },
+      "rack": null,
+      "scroll": [
+        667,
+        375
+      ],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 667x375 rack",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 218,
+        "w": 635,
+        "h": 32,
+        "right": 651,
+        "bottom": 250
+      },
+      "hud": {
+        "x": 51,
+        "y": 219,
+        "w": 565,
+        "h": 30,
+        "right": 616,
+        "bottom": 249
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 442,
+        "y": 77,
+        "w": 74,
+        "h": 76,
+        "right": 516,
+        "bottom": 153
+      },
+      "rack": {
+        "x": 16,
+        "y": 252,
+        "w": 635,
+        "h": 92,
+        "right": 651,
+        "bottom": 344
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 1280x800 table",
+      "status": "PASS",
+      "row": {
+        "x": 16,
+        "y": 690,
+        "w": 1248,
+        "h": 40,
+        "right": 1264,
+        "bottom": 730
+      },
+      "hud": {
+        "x": 462,
+        "y": 692,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 728
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 569,
+        "y": 437.59375,
+        "w": 142,
+        "h": 64,
+        "right": 711,
+        "bottom": 501.59375
+      },
+      "rack": null,
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "centered drop target, filled height, drawer and reachable actions 1280x800 rack",
+      "status": "PASS",
+      "row": {
+        "x": 35,
+        "y": 598.765625,
+        "w": 1210,
+        "h": 40,
+        "right": 1245,
+        "bottom": 638.765625
+      },
+      "hud": {
+        "x": 462,
+        "y": 600.765625,
+        "w": 356,
+        "h": 36,
+        "right": 818,
+        "bottom": 636.765625
+      },
+      "pointer": "none",
+      "actions": {
+        "x": 568.9921875,
+        "y": 379.3125,
+        "w": 142,
+        "h": 64,
+        "right": 710.9921875,
+        "bottom": 443.3125
+      },
+      "rack": {
+        "x": 35,
+        "y": 647.765625,
+        "w": 1210,
+        "h": 107.234375,
+        "right": 1245,
+        "bottom": 755
+      },
+      "scroll": [
+        1280,
+        800
+      ],
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    {
+      "name": "keyboard opens drawer and focus transfers to collapse control",
+      "status": "PASS"
+    },
+    {
+      "name": "HU confirmation remains reachable above the split layout",
+      "status": "PASS"
+    },
+    {
+      "name": "felt border does not block borrowing or returning comma; rows stable",
+      "status": "PASS"
+    },
+    {
+      "name": "real cross-zone drag discard and draw remain operational",
+      "status": "PASS"
+    },
+    {
+      "name": "2D fallback retains its only playable hand instead of hiding it",
+      "status": "PASS"
+    },
+    {
+      "name": "test room closed without scores or HuBook records",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

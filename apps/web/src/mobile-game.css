@@ -56,7 +56,7 @@
  /* Anchor the hand at the safe bottom edge; the table takes the remaining portrait height. */
  #root .game-shell>main{justify-content:flex-start;gap:5px;padding:8px 10px 6px}
  #root .game-shell .table-stage{flex:1 1 0;min-height:110px;width:100%}
- #root .game-shell:has(.hand-zone[data-expanded=true]) .viewport:has(.player-badges[data-rail=true]){top:auto;bottom:8px;transform:translateX(-50%)}
+ #root .game-shell .viewport:has(.player-badges[data-rail=true]),#root .game-shell:has(.expanded) .viewport:has(.player-badges[data-rail=true]){top:76px;bottom:auto;transform:translateX(-50%);width:100%;height:calc(100% - 76px);aspect-ratio:auto}
  #root .game-shell .rack-area.expanded{flex:none;max-height:none;width:100%;padding:0 0 4px}
  #root .game-shell .table-notices{flex:0 0 20px;height:20px}
  #root .game-shell .turn-hud-row{height:38px;min-height:38px;flex-basis:38px}
@@ -101,4 +101,11 @@
  #root .game-hall .hall-player-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible;margin:4px 10px;gap:5px}
  #root .game-hall .hall-player-list>div{min-height:30px;padding:4px 6px}
  #root .game-hall .hall-watch{width:calc(100% - 20px);align-self:center;min-height:40px;margin-top:6px}
+}
+
+/* In short portrait, leave room between the projected centre and the real 3D hand. */
+@media(max-width:499px) and (max-height:499px) and (orientation:portrait){
+ #root .game-shell .table-action-dock .game-action{height:40px;min-height:40px;padding:1px 4px}
+ #root .game-shell .table-action-dock .game-action b{font-size:22px;line-height:22px}
+ #root .game-shell .table-action-dock .game-action span{font-size:9px;line-height:11px}
 }

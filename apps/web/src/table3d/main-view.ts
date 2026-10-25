@@ -104,8 +104,7 @@ export class MainView {
   }
   replace(view:TableView,showOwn:boolean,selected:string|null,acquired:string|null=null,urgent=false){
     if(this.disposed)return;const old=this.last?.view;if(old&&(old.stamp.roomId!==view.stamp.roomId||old.stamp.roundId!==view.stamp.roundId||rackPhaseKey(old.phase)!==rackPhaseKey(view.phase)||old.viewerId!==view.viewerId||old.suspension.kind!==view.suspension.kind||old.stamp.controlEpoch!==view.stamp.controlEpoch||old.rack?.cells.map(c=>c.tile.tileId).sort().join()!==view.rack?.cells.map(c=>c.tile.tileId).sort().join())){this.preview=null;this.drag=null;}this.last={view,showOwn,selected,acquired,urgent};this.clearTiles();
-    const n=view.seats.length;const zoom=n>4?1.08:1;
-    this.camera.position.set(0,-222*1.44*zoom,222*1.05*zoom);this.camera.rotation.set(Math.PI*.3,0,0);
+    const n=view.seats.length;this.frameCamera();
     // Anonymous decoration: edited large decks keep four wall sides; exact remaining count is on the center plaque.
     for(let i=0;i<Math.min(view.wall.count,216);i++){
       const side=Math.floor(i/54),slot=Math.floor((i%54)/2),layer=i%2;
@@ -160,7 +159,26 @@ export class MainView {
     return out;
   }
   setMotionHidden(keys:Set<string>){this.motionHidden=new Set(keys);for(const g of this.tiles.children)g.visible=!keys.has(g.userData.motionKey);for(const n of this.own.values())n.mesh.visible=(n.kind!=='tile'||!keys.has(`tile:${n.tileId}`))&&!(this.drag?.external&&(this.drag.key===(n.kind==='period'?'period':`${n.kind}:${n.tileId}`)));this.render();}
-  private resize(){const width=this.host.clientWidth,height=this.host.clientHeight;if(!width||!height)return;this.size={width,height};this.renderer.setSize(width,height);this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.render();}
+  /** Portrait uses its real available height; fit the table in perspective, never stretch the canvas. */
+  private frameCamera(){
+    if(matchMedia('(max-width:699px) and (orientation:portrait)').matches){
+      const aspect=this.size.width/this.size.height;
+      const angle=Math.PI*(.12+.18*Math.min(1,Math.max(0,(aspect-1)/.7)));
+      const sin=Math.sin(angle),cos=Math.cos(angle),tan=Math.tan(this.camera.fov*Math.PI/360);
+      let distance=0;
+      // Include rim and raised hands in the fit, with a small safe edge for hit targets.
+      for(const x of [-124,124])for(const y of [-124,124])for(const z of [0,24]){
+        distance=Math.max(distance,Math.abs(x)/(tan*aspect*.96)-sin*y+cos*z,Math.abs(cos*y+sin*z)/(tan*.94)-sin*y+cos*z);
+      }
+      this.camera.far=Math.max(1000,distance+250);this.camera.updateProjectionMatrix();
+      this.camera.position.set(0,-distance*sin,distance*cos);this.camera.rotation.set(angle,0,0);
+    }else{
+      this.camera.far=1000;this.camera.updateProjectionMatrix();
+      const zoom=(this.last?.view.seats.length??4)>4?1.08:1;
+      this.camera.position.set(0,-222*1.44*zoom,222*1.05*zoom);this.camera.rotation.set(Math.PI*.3,0,0);
+    }
+  }
+  private resize(){const width=this.host.clientWidth,height=this.host.clientHeight;if(!width||!height)return;this.size={width,height};this.renderer.setSize(width,height);this.camera.aspect=width/height;this.frameCamera();this.camera.updateProjectionMatrix();this.render();}
   private render(){cancelAnimationFrame(this.frame);this.frame=requestAnimationFrame(()=>{
     if(this.disposed)return;let moving=false;const now=performance.now();for(const [key,n]of this.own){const floating=this.drag&&(key===this.drag.key);if(floating)continue;const t=n.duration?Math.min(1,(now-n.started)/n.duration):1,eased=1-Math.pow(1-t,3);n.mesh.position.lerpVectors(n.from,n.target,eased);if(this.last?.urgent&&!this.reduced.matches&&n.kind==='tile'){n.mesh.position.x+=Math.sin(now/32+n.target.x*.7)*.35;moving=true;}if(t<1)moving=true;}this.scene.updateMatrixWorld(true);this.camera.updateMatrixWorld(true);this.renderer.render(this.scene,this.camera);this.stats.renders++;
     const {width:w,height:h}=this.size;
