@@ -78,3 +78,14 @@ test('full punctuation hit targets choose row before x, both halves snap and mid
  const uneven:RackTargetRect[]=[{kind:'tile',tileId:ids[0],left:300,top:0,width:40,height:58},{kind:'comma',tileId:ids[0],left:344,top:0,width:40,height:58},{kind:'tile',tileId:ids[1],left:0,top:66,width:40,height:58}];
  assert.equal(rackInsertion(uneven,350,48)?.kind,'comma');
 });
+
+test('hand centering uses full character capacity and keeps surviving tile anchors fixed at thirteen/fourteen',()=>{
+ for(const width of [284,370,647,700,926,1060])for(const commas of [[],[ids[1]],[ids[1],ids[6],ids[10]]]){
+  const d:Draft={orderedTileIds:ids,commaAfterTileIds:commas as unknown as Draft['commaAfterTileIds']};
+  for(const mobile of [false,true]){
+   const layout=(draft:Draft)=>mobile?mobileRackLayout(draft,width,false,true):adaptiveRackLayout(draft,width,Infinity,76,46,6,8,'stable'),full=layout(d),short=layout({...d,orderedTileIds:ids.slice(0,13)}),gap=mobile?4:6;
+   for(const id of ids.slice(0,13)){const a=full.items.find(i=>i.kind==='tile'&&i.tileId===id)!,b=short.items.find(i=>i.kind==='tile'&&i.tileId===id)!;assert.equal(a.x,b.x);assert.equal(a.y,b.y);assert.equal(a.width,b.width);}
+   for(const l of [full,short])for(const row of [0,1]){const items=l.items.filter(i=>i.row===row);if(!items.length)continue;for(const item of items)assert(item.x>=-.01&&item.x+item.width<=width+.01);const capacity=full.items.some(i=>i.row===1)?7:14,missing=capacity-items.filter(i=>i.kind==='tile').length,left=Math.min(...items.map(i=>i.x)),right=Math.max(...items.map(i=>i.x+i.width))+missing*(l.tileWidth+gap);assert(Math.abs((left+right)/2-width/2)<.01);}
+  }
+ }
+});

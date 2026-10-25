@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.23.9-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.23.10-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -35,6 +35,14 @@
 - **桌面随手涂鸦**：五色三档画笔，同桌实时可见；笔迹贴在牌下，可撤销/擦除本人、本机隐藏，刷新和观战仍可看见。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕，评审时停下弹幕，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## v1.23.10 · 大牌居中，菜单统一 · 2026-10-25
+
+顶栏“整理”改为固定显示“大牌”，展开/收起的大牌提示、键盘操作与菜单微调入口同步。下方手牌按整副14字、两排各7字的容量确定居中起点，13字时保留最后一字空间；摸打时不按当前实体牌总宽逐次重新居中，旧牌坐标和桌面几何保持稳定。单/双排、标点同尺寸与独立插入语义保留，HU整句仍沿用原内容居中。
+
+本版同时合并另一聊天已授权的面板调整：音乐、记录、帮助等面板采用聊天窗口的深绿底与柔金边框；原设置中的声音、画面、整理、托管、房间项目直接进入菜单，移除重复设置入口，子面板提供返回菜单。处理器和规则1.5.1不变。
+
+80项界面自动测试、生产构建、本地15项大牌/固定居中、21项插牌与14项绿金面板检查通过。线上同样15+21+14共50项通过，包含真实出牌、对手摸打、本人再摸牌时的牌坐标和桌面尺寸一致、逗号两侧插入、菜单可达、原操作处理器与管理员入口的焦点样式；验收私房均无计分关闭。最终本地证据为stable-center-1.23.10-final-local-*、stable-center-drag-1.23.10-local-*、green-panels-1.23.10-frozen-local-*；公网为stable-center-1.23.10-public-*、stable-center-drag-1.23.10-serial-public-*、green-panels-1.23.10-final-public-*。初轮菜单焦点旧CSS及两次并行导航超时未计通过；冻结源码后重新构建发布，最后串行插牌检查退出0。release `1.23.10-20261025-163516`、冻结源码 `b155c59`、一致性备份 `pre-release-20261025-163517.sqlite`；ready=true，7资源与冻结构建一致，游戏JS与此前已通过居中检查的JS完全一致。指纹见docs/evidence/public-stable-center-1.23.10-release.json。源码、文档与证据随本版同步GitHub；手机为Chromium141触摸视口模拟，实体Safari未实测。
 
 ## v1.23.9 · 标点同大小，插牌更顺手 · 2026-10-25
 
@@ -354,7 +362,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.9**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.23.10**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 

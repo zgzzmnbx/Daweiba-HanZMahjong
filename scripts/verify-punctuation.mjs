@@ -33,7 +33,7 @@ try{
  // Both halves of the full punctuation tile are real insertion targets, not a narrow gap.
  for(const [width,height,touch]of [[390,844,true],[1280,800,false],[700,800,false]]){
   await actor.page.setViewportSize({width,height});await stable(actor);
-  if(width===700&&!await actor.page.locator('.sentence-rack').isVisible()){await actor.page.getByRole('button',{name:'展开整理牌架',exact:true}).click();await stable(actor);}
+  if(width===700&&!await actor.page.locator('.sentence-rack').isVisible()){await actor.page.getByRole('button',{name:'展开大牌',exact:true}).click();await stable(actor);}
   for(const side of ['before','after']){
    e=await snap(actor);const d=e.private.draft,anchor=d.commaAfterTileIds[0],available=d.orderedTileIds.filter(id=>!d.commaAfterTileIds.includes(id)),id=d.orderedTileIds.indexOf(anchor)>6?available[0]:available.at(-1),from=await point(actor.page.locator(`[data-tile-id="${id}"]`)),r=await actor.page.locator(`[data-anchor-id="${anchor}"]`).boundingBox(),to={x:r.x+r.width*(side==='before'?.18:.82),y:r.y+r.height/2},expected=d.orderedTileIds.filter(i=>i!==id);expected.splice(expected.indexOf(anchor)+1,0,id);actor.commands.length=0;
    let touchSession;if(touch){touchSession=await actor.context.newCDPSession(actor.page);activeTouch=touchSession;await touchSession.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[from]});for(let i=1;i<=12;i++)await touchSession.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:from.x+(to.x-from.x)*i/12,y:from.y+(to.y-from.y)*i/12}]});}else{await actor.page.mouse.move(from.x,from.y);await actor.page.mouse.down();await actor.page.mouse.move(to.x,to.y,{steps:12});}

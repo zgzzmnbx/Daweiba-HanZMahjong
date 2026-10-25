@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-25T08:36:33.104Z",
+  "version": "1.23.10",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real two-client UI; green modal styles, five viewports, direct menu settings, focus, chat, autoplay and draw/discard; simulated phone",
+  "checks": [
+    {
+      "name": "music menu loads all six real tracks",
+      "status": "PASS"
+    },
+    {
+      "name": "direct menu settings, seven green panels, single modal return and round header 320",
+      "status": "PASS"
+    },
+    {
+      "name": "direct menu settings, seven green panels, single modal return and round header 390",
+      "status": "PASS"
+    },
+    {
+      "name": "direct menu settings, seven green panels, single modal return and round header 667",
+      "status": "PASS"
+    },
+    {
+      "name": "direct menu settings, seven green panels, single modal return and round header 700",
+      "status": "PASS"
+    },
+    {
+      "name": "direct menu settings, seven green panels, single modal return and round header 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "admin entry shares green panel without authenticating or changing rooms",
+      "status": "PASS"
+    },
+    {
+      "name": "moved sound setting still toggles real preference",
+      "status": "PASS"
+    },
+    {
+      "name": "moved display setting retains working quality toggle",
+      "status": "PASS"
+    },
+    {
+      "name": "reference chat remains functional across both clients",
+      "status": "PASS"
+    },
+    {
+      "name": "direct autoplay menu uses authoritative enable and reclaim actions",
+      "status": "PASS"
+    },
+    {
+      "name": "real discard and draw populate themed history",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard menu opening and Escape restore trigger focus",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

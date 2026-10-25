@@ -1,0 +1,37 @@
+/* Shared jade glass and muted brass, drawn from the room chat panel. */
+:root{--panel-green:linear-gradient(150deg,#163c2bf5,#11291ef5);--panel-edge:#d0ac6980;--panel-text:#f1e7cb;--panel-muted:#c3bea0;--panel-gold:#edcf92;--panel-control:#ffffff07;--panel-line:#d3bd8629}
+dialog[class]:is(.table-dialog,.hall-dialog,.portrait-menu-dialog,.admin-dialog,.admin-confirm,.hu-book,.book-confirm),.spectator-audio{
+ background:var(--panel-green);color:var(--panel-text);border:1px solid var(--panel-edge);border-radius:16px;
+ box-shadow:0 18px 60px #0007,inset 0 1px #f4dca125;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+ --muted:var(--panel-muted);
+}
+dialog[class]:is(.table-dialog,.hall-dialog,.portrait-menu-dialog,.admin-dialog,.admin-confirm,.hu-book,.book-confirm)::backdrop{background:#07180fb3;backdrop-filter:blur(5px)}
+:is(.table-dialog-heading,.hall-dialog-heading,.admin-heading){border-color:var(--panel-line);background:#153728}
+:is(.game-menu-panel,.hall-dialog,.admin-dialog) :is(h2,h3){color:var(--panel-gold)}
+:is(.game-menu-panel,.hall-dialog,.admin-dialog) p{color:var(--panel-muted)}
+.game-menu-panel :is(button,.tool-grid button),.portrait-menu-dialog .portrait-menu-grid button,.hall-dialog button,.admin-dialog button{
+ background:var(--panel-control);color:var(--panel-text);border:1px solid #c9b17b50;box-shadow:inset 0 1px #fff1;
+}
+.game-menu-panel button:not(.hud-tool){border-radius:10px}
+:is(.game-menu-panel,.hall-dialog,.admin-dialog) button:hover:not(:disabled){background:#d4b57120;border-color:#d0ac69}
+:is(.game-menu-panel,.hall-dialog,.admin-dialog) :is(button,input,select,textarea):focus-visible{outline:2px solid var(--panel-gold);outline-offset:2px}
+:is(.game-menu-panel,.hall-dialog,.admin-dialog) button.primary,.admin-dialog .admin-tabs button[aria-pressed=true]{background:linear-gradient(#eed49a,#c29b55);color:#233424;border-color:#e4c482}
+.game-menu-panel .table-dialog-heading h2{flex:1;min-width:0;font-size:22px;letter-spacing:1px}
+.game-menu-panel .table-dialog-heading{gap:10px;margin-bottom:16px}
+.game-shell .game-menu-panel .hud-tool{background:#ffffff08;color:var(--panel-gold);box-shadow:none;border-color:#c6b27940}
+.game-menu-panel .music-player,.game-menu-panel .sound-controls{background:#0b211850;border-color:var(--panel-line)}
+.music-dialog .music-player{background:none}
+.game-menu-panel .music-playlist button{border:0;box-shadow:none;background:transparent}
+.game-menu-panel .music-playlist button[aria-pressed=true]{background:#e8c27320;color:#ffe1a0}
+.game-menu-panel .music-upload{background:#ffffff04;border-color:#c5aa6c70}
+.music-upload:focus-within{outline:2px solid var(--panel-gold)}
+.game-menu-panel :is(.proposal-history,.discard-history){border-color:var(--panel-line);background:#0b211833;border-radius:10px;padding:0 12px}
+.game-menu-panel .proposal-history article{border-color:var(--panel-line)}
+.game-menu-panel .empty-record{color:#c3bea0}
+:is(.hall-dialog,.admin-dialog) :is(input:not([type=checkbox]):not([type=range]),select,textarea){background:#0b1e1770;color:var(--panel-text);border-color:#bba26d70}
+.admin-dialog :is(.admin-room,.deck-set-picker,.deck-set-create){background:#0b211850;border-color:var(--panel-line)}
+.admin-dialog .admin-deck-table th{background:#193e2e}
+.admin-dialog .admin-danger{background:#633b2b;color:#ffd5bc;border-color:#bd8165}
+.portrait-menu-dialog .portrait-menu-grid button{font-size:12px}
+@media(max-width:699px){.game-menu-panel .table-dialog-heading h2{font-size:20px}.game-menu-panel .table-dialog-heading{margin-bottom:12px}}
+@media(max-height:499px){.game-menu-panel .table-dialog-heading{padding-bottom:6px;margin-bottom:8px}.game-menu-panel .music-now{margin-bottom:8px}}

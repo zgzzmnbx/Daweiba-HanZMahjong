@@ -12,8 +12,7 @@ export async function gameTool(page,name){
 
 export async function gameAction(page,name){
  const entry=page.getByRole('button',{name,exact:true});
- if(['声音设置','画面设置','托管设置','房间设置','整理句子'].includes(name)&&!await entry.isVisible())await gameAction(page,'游戏设置');
- else if(!await entry.isVisible())await page.getByRole('button',{name:'游戏菜单',exact:true}).click();
+ if(!await entry.isVisible())await page.getByRole('button',{name:'游戏菜单',exact:true}).click();
  await entry.click();
 }
 
