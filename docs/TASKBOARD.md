@@ -1,12 +1,13 @@
 # 当前任务板
 
-## 1.25.2 · 交付完成
+## 1.26.0 · 文豪入席
 
 | ID | 目标 | 状态 | 验收依据 |
 |---|---|---|---|
-| FIT | 居中拖牌框与竖屏自适应 | DONE | 六视口/四真实客户端18项通过、363测试通过 |
-| RELEASE | 原公网发布和验收 | DONE | 公网18项通过，9资源指纹一致 |
-| GITHUB | 源码、文档和证据同步 | DONE | main提交c39f265；40个变更文件树一致、CAS成功 |
+| ART | 30张独立古风头像 | DONE | 三组各10张，兔子重绘为动物头；清单/SHA256/小尺寸实图 |
+| PROFILE | 选择、随机昵称与持久化 | DONE | 367测试；六真实客户端16项/四视口通过 |
+| RELEASE | 原公网发布和复验 | IN_PROGRESS | 待安装与公网资源指纹、六客户端检查 |
+| GITHUB | 源码、文档和证据同步 | TODO | 待CAS同步并核对文件树 |
 | ENV | 实体手机Safari | NOT_RUN_ENV_REQUIRED | 手机以Chromium141模拟 |
 
-1.25.1已完成事项归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。
+1.25.2已完成事项归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。

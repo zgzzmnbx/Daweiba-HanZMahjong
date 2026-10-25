@@ -1,0 +1,309 @@
+{
+  "generatedAt": "2026-10-26",
+  "tool": "native image_gen",
+  "modelIdReported": false,
+  "style": "Premium hand-painted 2.5D Chinese editorial portrait; jade green background; cream light; antique gold accents; close-up head and shoulders; no text; circle-safe framing.",
+  "size": 256,
+  "assets": [
+    {
+      "id": "m-li-bai",
+      "category": "男",
+      "name": "李白",
+      "nickname": "杯酒就胡",
+      "subject": "Li Bai, mischievous handsome middle-aged poet, loose white robe with jade green collar, black hair loosely tied, fine mustache and small wine cup",
+      "originalSha256": "844b01094ef33272b089bf434b98e258961640c666f771ceef9b9489f5e4cfdb",
+      "webSha256": "0fc79177d3f9d6e8400925ded0c4fec78772712db2117e91b1850769d4cfe6b7",
+      "bytes": 17064
+    },
+    {
+      "id": "m-su-shi",
+      "category": "男",
+      "name": "苏轼",
+      "nickname": "东坡不背锅",
+      "subject": "Su Shi, warm round-faced bearded middle-aged scholar, black Dongpo square scholar cap, jade robe, amused smile, small bamboo scroll",
+      "originalSha256": "45b7ec73f8a86229a95b8c802798f0fa2e2dbfa77ff0a3af56b10aee15f2fbc7",
+      "webSha256": "06496402e0eb532b157a0994ca0dbde80fb8e6a1ac838ba1a2530db8503658ea",
+      "bytes": 14390
+    },
+    {
+      "id": "m-du-fu",
+      "category": "男",
+      "name": "杜甫",
+      "nickname": "子美先别急",
+      "subject": "Du Fu, lean older poet with furrowed brow, thin gray beard, simple sage green cloth cap and weathered cream robe, wry skeptical raised eyebrow",
+      "originalSha256": "aeae8bfc6b4fdb00d67485252a4d3874919e63ef95b63244792d89bf5a6c50cf",
+      "webSha256": "08517460c240a633a6f6bc359f5ec40093d20dcd0a7194a09315064860848e3a",
+      "bytes": 13784
+    },
+    {
+      "id": "m-bai-juyi",
+      "category": "男",
+      "name": "白居易",
+      "nickname": "乐天摸鱼中",
+      "subject": "Bai Juyi, friendly middle-aged poet, neat short beard, rounded soft dark green scholar hat, cream collar, knowing gentle grin, small folding fan",
+      "originalSha256": "da79942545b693e6b0ba88fbc72b66d79efc7720c43b14c1ce35c8c55ec6a47b",
+      "webSha256": "dafa80b7eb0516c490eec5c3fb41ee64f3c8c3a44f662a283f9457a2c6af042a",
+      "bytes": 15394
+    },
+    {
+      "id": "m-tao-yuanming",
+      "category": "男",
+      "name": "陶渊明",
+      "nickname": "五柳不加班",
+      "subject": "Tao Yuanming, relaxed middle-aged recluse, wispy beard, straw hat, loose moss-green robe, smiling eyes, a single chrysanthemum near shoulder",
+      "originalSha256": "63f33e6fed5258f52466daa84420500b597b5fd6f575d906cf98536d7257ec6d",
+      "webSha256": "5c6b770780fc6a12f43adfcdb44558c9c8fa1271176b70786d0bf9ca6513dec8",
+      "bytes": 20378
+    },
+    {
+      "id": "m-wang-wei",
+      "category": "男",
+      "name": "王维",
+      "nickname": "摩诘佛系打",
+      "subject": "Wang Wei, serene elegant young adult poet, clean shaven slender face, modest tied hair under green scholar scarf, pale jade robe, quiet smile, bamboo leaf motif",
+      "originalSha256": "b28762f4f258b51afa4a2725fd83a0cf291c3e9528b481ca691a5688c460b0c5",
+      "webSha256": "ba2758649ced640a29696d42ef6a64070d484ee081813a066c6e2fcada220d68",
+      "bytes": 17304
+    },
+    {
+      "id": "m-xin-qiji",
+      "category": "男",
+      "name": "辛弃疾",
+      "nickname": "稼轩拍桌子",
+      "subject": "Xin Qiji, vigorous middle-aged warrior poet with strong eyebrows and short beard, dark scholar headband, green robe with bronze clasp, confident playful grin",
+      "originalSha256": "26fc82e2a03a2cb59e77ce9905a6baa5fb6ea2c214050289956d9843a8aa9019",
+      "webSha256": "40844b67f191235f97025113df0331643ef7dfb0e9e11f2a036fff87d614b2f0",
+      "bytes": 15748
+    },
+    {
+      "id": "m-liu-yong",
+      "category": "男",
+      "name": "柳永",
+      "nickname": "柳七慢慢来",
+      "subject": "Liu Yong, romantic slim young adult lyric poet, long black hair with antique gold pin, jade and cream robe, sideways roguish smile, folded fan near shoulder",
+      "originalSha256": "4ccc543e0783733d7ead7c11a5a43046192f697f5eace843b7324cfaaf65cea7",
+      "webSha256": "b49f3bd53c746504a9aade4e16034a106ffd5fa1dcb02dd719aecb5ec1b9bde9",
+      "bytes": 17788
+    },
+    {
+      "id": "m-lu-you",
+      "category": "男",
+      "name": "陆游",
+      "nickname": "放翁还想胡",
+      "subject": "Lu You, sprightly elderly poet, white eyebrows and neat gray beard, soft sage cloth hat, dark emerald robe, bright determined eyes, rolled manuscript",
+      "originalSha256": "5f021c14488752a7e48a81e4536f8a1944728a4f6a8ef467e01e6681f6d0403a",
+      "webSha256": "022a81521f8d52fc7602ee55eff0c4fa11b24c720520b038f1593623b1579266",
+      "bytes": 18226
+    },
+    {
+      "id": "m-cao-zhi",
+      "category": "男",
+      "name": "曹植",
+      "nickname": "子建才八斗",
+      "subject": "Cao Zhi, proud brilliant young aristocratic poet, high tied hair with small bronze crown, clean shaven, richly embroidered ivory robe with jade trim, playful smug smile",
+      "originalSha256": "d1c1fe69910be9e520a7b8f4398885e8fe4df5f6c47907e097acbd289fc2e44f",
+      "webSha256": "3c1b2d9667b4787999f8664bc5f99beba1c2cd0d8d9cb0f71f592566a723fbd1",
+      "bytes": 19140
+    },
+    {
+      "id": "f-li-qingzhao",
+      "category": "女",
+      "name": "李清照",
+      "nickname": "易安今天赢",
+      "subject": "Li Qingzhao, confident witty adult woman poet, oval face, elegant loosely swept hair with simple gold chrysanthemum pin, cream and deep green Song-style robe, lively raised eyebrow, small wine cup",
+      "originalSha256": "fdba72c70121cc6271f83567aaf50765df613a3e502d6154663d565b651a27df",
+      "webSha256": "4ff9a34862b0bae68cdd53cd32f84514377194f9d8797b851891746b61a73b5b",
+      "bytes": 17692
+    },
+    {
+      "id": "f-shangguan-waner",
+      "category": "女",
+      "name": "上官婉儿",
+      "nickname": "婉儿改卷中",
+      "subject": "Shangguan Waner, sharp poised adult woman scholar, high Tang-style coiffure with restrained antique gold ornament, jade green robe, amused intelligent eyes, slim writing brush",
+      "originalSha256": "e66c2a6d8e45d1ee4fdcc6deca37bc34c8280082810337b08438ff923d1209ac",
+      "webSha256": "daa2788861d8d577e33261ff42f526d3fe120199681c5fb3e09a0d0a2359b651",
+      "bytes": 16782
+    },
+    {
+      "id": "f-cai-wenji",
+      "category": "女",
+      "name": "蔡文姬",
+      "nickname": "文姬别催稿",
+      "subject": "Cai Wenji, thoughtful adult woman scholar, neatly swept black hair with green ribbon, modest Han-inspired cream robe with jade trim, gentle wistful smile, bamboo manuscript",
+      "originalSha256": "972bf436287f1e10becd4648377787cd83d9840a1af4061dbae0971dcab11dcf",
+      "webSha256": "81823108473eef0b7be9d4e00202b3050dcb3a2a5e1f4ca830f11e67f89c7907",
+      "bytes": 17518
+    },
+    {
+      "id": "f-xue-tao",
+      "category": "女",
+      "name": "薛涛",
+      "nickname": "薛涛笺上见",
+      "subject": "Xue Tao, self-assured mature woman poet, soft updo with copper hairpin, green Tang-inspired shawl with muted coral collar, warm cheeky smile, pale pink paper near shoulder",
+      "originalSha256": "f5bf0e13e98da5cd19a7a5fd3183c72f40debb46df6a89d78bce4d4a3abc59e8",
+      "webSha256": "54e31e6eaf0ed23a6d677deeddf93d02dbfb973f0bc09f68a7c5c1b16c31fb89",
+      "bytes": 14400
+    },
+    {
+      "id": "f-yu-xuanji",
+      "category": "女",
+      "name": "鱼玄机",
+      "nickname": "玄机有点多",
+      "subject": "Yu Xuanji, spirited young adult woman poet, Daoist-inspired hair bun with jade pin, pale sage robe, curious playful side glance, small bamboo scroll",
+      "originalSha256": "1ebf80eaab32ad6f015d6253efbd2eafdc092f8a6778bb65b288baaa784f6db5",
+      "webSha256": "2292b0ff55b2a5a1d35a63ee5d490b444a6300c1a08cbe136f433353fcea1402",
+      "bytes": 16834
+    },
+    {
+      "id": "f-zhu-shuzhen",
+      "category": "女",
+      "name": "朱淑真",
+      "nickname": "淑真不认输",
+      "subject": "Zhu Shuzhen, expressive young adult woman poet, paired soft hair loops and gold plum-blossom pin, emerald robe with ivory scarf, determined teasing smile",
+      "originalSha256": "2530b1e985f311c9db3ae469e9c8f59384d5c4c9df3a1a819b0918d13ce06548",
+      "webSha256": "25f598f6560a713fcf13ca1683beae1aa544fd7fb2429c18c076ff6090d19dbd",
+      "bytes": 18346
+    },
+    {
+      "id": "f-li-ye",
+      "category": "女",
+      "name": "李冶",
+      "nickname": "季兰先落笔",
+      "subject": "Li Ye, mature composed woman poet, tall simple Taoist hair bun and bronze pin, gray jade robe, bright shrewd eyes, lightly smiling, brush held near shoulder",
+      "originalSha256": "ab92f579f9bb21f2b1c0809788153abe9334828c5537849afc700c48985d104b",
+      "webSha256": "e2d53172cbbc532daac61154ede7dce5b9ef0fd21324e6c371b9e073ec98f1ac",
+      "bytes": 14360
+    },
+    {
+      "id": "f-ban-zhao",
+      "category": "女",
+      "name": "班昭",
+      "nickname": "班昭有批注",
+      "subject": "Ban Zhao, dignified older woman scholar with subtle gray hair, formal neat updo and simple jade hairpin, deep green Han-inspired robe, clever kindly smile, bamboo book",
+      "originalSha256": "de48315b6caffbdf040e4fd6223541ff7fa556a92613bcf02757adf9b7b4f703",
+      "webSha256": "f7899516c446ca8c6616e645895ae699da0649ac037afd28e79ed28ff149fab1",
+      "bytes": 15588
+    },
+    {
+      "id": "f-zuo-fen",
+      "category": "女",
+      "name": "左棻",
+      "nickname": "左棻不服卷",
+      "subject": "Zuo Fen, reserved adult woman poet, rounded face, elegant dark hair swept back with understated gold comb, pale cream and emerald robe, confident small smile",
+      "originalSha256": "b74846b286f2d95e09e2b3c8b3d512a3f63d5e44d423f940995341bf630f7cc2",
+      "webSha256": "7d822bc7b6ee634596bf8a9082328b67252e7cb186484ebb84210256dbb38ff3",
+      "bytes": 15414
+    },
+    {
+      "id": "f-guan-daosheng",
+      "category": "女",
+      "name": "管道昇",
+      "nickname": "道昇画个圈",
+      "subject": "Guan Daosheng, elegant mature woman calligrapher, long swept up hair with bamboo-shaped gold pin, jade green robe, warm assured smile, ink brush and bamboo leaf near shoulder",
+      "originalSha256": "d7314e592b1fd202d8331ce95499312168c4a27a6a57b13e42fdeca4daeaf060",
+      "webSha256": "1c1aec3f9eed4d3f338329dbf33bcf225e4d155d7a14543fbfb495c25e36d4e7",
+      "bytes": 17116
+    },
+    {
+      "id": "a-cat",
+      "category": "兽",
+      "name": "东坡猫",
+      "nickname": "东坡喵一声",
+      "subject": "anthropomorphic orange tabby cat as Su Shi, round cuddly cheeks, black Dongpo scholar cap, deep jade robe, tiny mustache-like whiskers, delighted mischievous grin",
+      "originalSha256": "5a32d66618f5a1b37cb66970984f4ecab0f3b5e35f21647ef95e1767377f223f",
+      "webSha256": "ce2d77ef7d79dfa6cdeef76cb34b3b162074f6a6dfbff95e8be101ddd60936c1",
+      "bytes": 17824
+    },
+    {
+      "id": "a-fox",
+      "category": "兽",
+      "name": "太白狐",
+      "nickname": "太白狐说话",
+      "subject": "anthropomorphic red fox as Li Bai, bright narrow clever eyes, white poet scarf, black topknot ribbon, green robe, small wine cup, roguish smile",
+      "originalSha256": "82f522f7c2317453b92c4cd6021de3a81fd1748a0d61f446378cfdcd5a08ef61",
+      "webSha256": "4ea1b92bc5aa031b2629565e31bb2db13cc6cedb0b7b420f37db7b62b4011949",
+      "bytes": 18138
+    },
+    {
+      "id": "a-panda",
+      "category": "兽",
+      "name": "子美熊",
+      "nickname": "子美熊有理",
+      "subject": "anthropomorphic giant panda as Du Fu, distinctive black eye patches, worried funny eyebrow, sage cloth scholar hat, ivory and jade robe, small scroll",
+      "originalSha256": "dfd40c127fb5d3c1433e89e5ba483f2e78e9d7f8386a73c5447c028e584baaf5",
+      "webSha256": "502afcdc7eb007469f66b2d6981971adf2f443ef679c4dc9e4b912edb6a9ee52",
+      "bytes": 16630
+    },
+    {
+      "id": "a-crane",
+      "category": "兽",
+      "name": "摩诘鹤",
+      "nickname": "摩诘鹤一下",
+      "subject": "anthropomorphic white crane as Wang Wei, red crown and elegant black neck markings, jade scholar robe, small bamboo leaf, serene witty half-closed eyes, beak fully within frame",
+      "originalSha256": "c6b4e3b0fb11fa552e68288c93222f753bbdc7690671840263354dec7ab3084b",
+      "webSha256": "5c68726cf042905856bee30c6e7ae34f1b184d2c03a5ec7eb5107f719d9b6767",
+      "bytes": 14628
+    },
+    {
+      "id": "a-rabbit",
+      "category": "兽",
+      "name": "易安兔",
+      "nickname": "易安兔个胡",
+      "subject": "anthropomorphic white rabbit as Li Qingzhao, expressive bright eyes, upright ears kept inside frame, small gold chrysanthemum pin, jade green robe, cheeky smile",
+      "originalSha256": "de3624a97504fc200956167e3b9e3742ec5b786e0574837d53b833b3f6bdff51",
+      "webSha256": "f5e6c4652d36e6b7a42a3a36998c6fc76cd5f3d3451c6dad3f4f3a2eb5dd885b",
+      "bytes": 17734
+    },
+    {
+      "id": "a-deer",
+      "category": "兽",
+      "name": "五柳鹿",
+      "nickname": "五柳鹿过此",
+      "subject": "anthropomorphic small brown deer as Tao Yuanming, short antlers with one chrysanthemum, sage green recluse robe, lazy contented eyes, straw ribbon",
+      "originalSha256": "cde7f3a3fa7d6477c96f55c865e18e4243489b6789d1c65a193383575659b55c",
+      "webSha256": "b022c2b10bfc12cf87bb4667a792fefdee32113ea599029eb9522f97647e06ba",
+      "bytes": 17658
+    },
+    {
+      "id": "a-owl",
+      "category": "兽",
+      "name": "班昭鸮",
+      "nickname": "班昭鸮得很",
+      "subject": "anthropomorphic tawny owl as Ban Zhao, large inquisitive golden eyes, neat ancient scholar headband, jade robe, bamboo book, wise humorous expression, no modern glasses",
+      "originalSha256": "2b0a9ad10156dfa50398abfc03f319d00f5c636142058d0abfba60b6cac8f49d",
+      "webSha256": "f1ee2f2de31d15a3394c82660cfb73634b2f5b5404a289c88cb5fe97cfca9e58",
+      "bytes": 20022
+    },
+    {
+      "id": "a-raccoon",
+      "category": "兽",
+      "name": "乐天浣熊",
+      "nickname": "乐天浣个牌",
+      "subject": "anthropomorphic raccoon as Bai Juyi, soft gray fur and dark eye mask, rounded green scholar hat, cream collar, open friendly grin, small folding fan",
+      "originalSha256": "08af0800b5898d6300ac999ba259b64000ce50cb31ef27bf448545a6fd9b9640",
+      "webSha256": "83f22963e47387bea3b8fea93ae392577a253a71b8333bee27be1bb85cb8d4cf",
+      "bytes": 17932
+    },
+    {
+      "id": "a-tiger",
+      "category": "兽",
+      "name": "稼轩虎",
+      "nickname": "稼轩虎一把",
+      "subject": "anthropomorphic friendly tiger as Xin Qiji, bold orange black stripes, strong expressive brows, dark green poet headband, bronze robe clasp, confident playful grin",
+      "originalSha256": "90f21c534a593f728111e6d47ecce44edca749a66af72217b42a3cdd68914d8e",
+      "webSha256": "b43c250626d5b62a4dd55b8792e491ed232e6863b8883f2d6dcf79b55e823281",
+      "bytes": 19734
+    },
+    {
+      "id": "a-otter",
+      "category": "兽",
+      "name": "柳七獭",
+      "nickname": "柳七獭着赢",
+      "subject": "anthropomorphic brown otter as Liu Yong, rounded muzzle and shiny eyes, loose ivory scholar scarf, jade robe, small fan, mischievous leisurely smile",
+      "originalSha256": "d1c6d38e3c48ad276f478f776512532d28b3b54314d33ec3c40ff1fda36705da",
+      "webSha256": "49fcd526bdbcef91635ecc077975c441307b24948de65c44a71e631b6643037e",
+      "bytes": 17222
+    }
+  ]
+}

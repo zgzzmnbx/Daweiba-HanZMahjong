@@ -1,3 +1,4 @@
+import {isAvatarId} from '../../packages/contracts/avatars';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync} from 'node:fs';
@@ -29,7 +30,7 @@ async function fixture(){
 }
 test('browser credential is HttpOnly, room-scoped, private and cannot be forged by nickname or seat',async()=>{
  const f=await fixture();try{const a=await f.create(),cookie=a.r.cookies.find(s=>s.startsWith(RETURN_COOKIE+'='))!;assert.match(cookie,new RegExp(`Path=/api/rooms/${a.room}`));assert.match(cookie,/HttpOnly/);assert.match(cookie,/SameSite=Lax/);assert.match(cookie,/Max-Age=2592000/);
- const own=await f.request(`/api/rooms/${a.room}/seats`,undefined,a.proof),stranger=await f.request(`/api/rooms/${a.room}/seats`);assert.equal(own.body.returnSeat,0);assert.equal(own.body.returnMethod,'BROWSER');assert.equal(stranger.body.returnSeat,null);assert.equal(stranger.body.returnMethod,null);assert.equal(own.cache,'no-store');assert.deepEqual(own.body.players,[{seat:0,nickname:'原玩家',isBotSeat:false,isManaged:false}]);
+ const own=await f.request(`/api/rooms/${a.room}/seats`,undefined,a.proof),stranger=await f.request(`/api/rooms/${a.room}/seats`);assert.equal(own.body.returnSeat,0);assert.equal(own.body.returnMethod,'BROWSER');assert.equal(stranger.body.returnSeat,null);assert.equal(stranger.body.returnMethod,null);assert.equal(own.cache,'no-store');assert.deepEqual(own.body.players.map(({avatarId,...p}:any)=>{assert(isAvatarId(avatarId));return p;}),[{seat:0,nickname:'原玩家',isBotSeat:false,isManaged:false}]);
  for(const header of ['',RETURN_COOKIE+'='+'A'.repeat(43)])assert.equal((await f.restore(a,randomUUID(),header)).status,403);
  assert.equal((await f.request(`/api/rooms/${a.room}/restore`,{actionId:randomUUID(),roomId:a.room,proof:{kind:'BROWSER'},nickname:'原玩家',seat:0})).status,403);
  const pub=JSON.stringify([a.r.body.snapshot,own.body,stranger.body,(await f.request('/api/lobby')).body]);for(const secret of [a.proof.split('=')[1],'browserReturnHash',f.server.games.get(a.room)!.players.get(a.pid)!.browserReturnHash!])assert(!pub.includes(secret));

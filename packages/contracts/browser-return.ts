@@ -1,5 +1,5 @@
 import type {SeatIndex} from './types';
-export type RoomSeatPerson=Readonly<{seat:SeatIndex;nickname:string;isBotSeat:boolean;isManaged:boolean}>;
+export type RoomSeatPerson=Readonly<{seat:SeatIndex;nickname:string;avatarId?:string;isBotSeat:boolean;isManaged:boolean}>;
 export type RoomSeatDirectory=Readonly<{
  capacity:number;seats:number[];inProgress:boolean;closed:boolean;allowSpectators?:boolean;
  players?:readonly RoomSeatPerson[];
@@ -7,4 +7,4 @@ export type RoomSeatDirectory=Readonly<{
  returnSeat?:SeatIndex|null;returnMethod?:'BROWSER'|'SESSION'|null;
 }>;
 /** Keep authoritative nicknames unchanged; decorate only their current public display. */
-export function playerDisplayName(p:{nickname:string;isBotSeat?:boolean;presence?:string;isManaged?:boolean;autoPlay?:boolean}){return p.nickname+(!p.isBotSeat&&(p.isManaged||p.presence==='BOT'||p.autoPlay)?'（AI托管）':'');}
+export function playerDisplayName(p:{nickname:string;avatarId?:string;isBotSeat?:boolean;presence?:string;isManaged?:boolean;autoPlay?:boolean}){return p.nickname+(!p.isBotSeat&&(p.isManaged||p.presence==='BOT'||p.autoPlay)?'（AI托管）':'');}

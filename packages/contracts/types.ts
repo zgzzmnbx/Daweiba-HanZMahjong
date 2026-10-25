@@ -76,7 +76,7 @@ export type AnonymousVoteResult = Readonly<{
   mergedObjectionRanges: readonly ObjectionRange[];
 }>;
 /** Rules 1.3+: frozen reviewer names and authoritative live votes. Legacy rounds omit this. */
-export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;isBotSeat:boolean;comment?:string;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
+export type PublicReviewVote = Readonly<{playerId:PlayerId;nickname:string;avatarId?:string;isBotSeat:boolean;comment?:string;choice:'PENDING'|'APPROVE'|'REJECT'|'ABSTAIN';objectionRanges:readonly ObjectionRange[]}>;
 /** One provider decision; 1.6.0 shares it, 1.6.1 stores one per frozen AI reviewer. No private input. */
 export type AiJudgment = Readonly<
  | {status:'PENDING';deadline:UtcMs}
@@ -115,7 +115,7 @@ export type PublicPlayer = Readonly<{
   isBotSeat?: boolean;
   /** Voluntary control delegation; the human identity stays online and keeps its seat. */
   autoPlay?: boolean;
-  playerId: PlayerId; seat: SeatIndex; nickname: string; presence: Presence;
+  playerId: PlayerId; seat: SeatIndex; nickname: string; avatarId?: string; presence: Presence;
   connected: boolean; ready: boolean; handCount: number; eatCount: number; wins: number;
   graceEndsAt: UtcMs | null;
 }>;
@@ -206,7 +206,7 @@ export type CommandErrorCode =
   | 'ALREADY_VOTED' | 'EAT_NOT_NEXT_SEAT' | 'EAT_LIMIT' | 'EAT_TILE_PROTECTED'
   | 'HU_RETRY_FORBIDDEN' | 'NO_HUMAN_REVIEWER' | 'BOT_ACTION_FORBIDDEN'
   | 'ROUND_IN_PROGRESS' | 'NOT_ALL_READY' | 'ROOM_PAUSED' | 'EXPIRED'
-  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED' | 'SPECTATING_DISABLED' | 'INVALID_SPECTATOR_SETTING' | 'INVALID_AUTOPLAY' | 'AUTOPLAY_ACTIVE';
+  | 'STALE_DRAFT_VERSION' | 'SEAT_OCCUPIED' | 'INVALID_CAPACITY' | 'AI_NOT_SUPPORTED' | 'SPECTATING_DISABLED' | 'INVALID_SPECTATOR_SETTING' | 'INVALID_AVATAR' | 'INVALID_NICKNAME' | 'INVALID_AUTOPLAY' | 'AUTOPLAY_ACTIVE';
 export type CommandResult =
   | Readonly<{ ok: true; actionId: ActionId; stateVersion: StateVersion;
       status: 'APPLIED' | 'RECORDED'; needsResync: boolean }>
@@ -220,13 +220,13 @@ export type RestoreRequest = Readonly<{
 /** Identity restoration precedes possession of a current phase/epoch; no fake meta required. */
 export type RestoreResult = Readonly<{ snapshot: ResyncEnvelope }>;
 export type CreateRoomRequest = Readonly<{
-  actionId: ActionId; capacity: PlayerCount; nickname: string;
+  actionId: ActionId; capacity: PlayerCount; nickname?: string; avatarId?: string;
   /** Omitted legacy requests choose the global default once, at successful creation. */
   deckSetId?: string;
   allowSpectators?: boolean;
 }>;
 export type JoinRoomRequest = Readonly<{
-  actionId: ActionId; roomId: RoomId; requestedSeat: SeatIndex; nickname: string;
+  actionId: ActionId; roomId: RoomId; requestedSeat: SeatIndex; nickname?: string; avatarId?: string;
 }>;
 export type SeatSessionResult = Readonly<{
   snapshot: ResyncEnvelope; recovery: RecoveryCodeDelivery | null;

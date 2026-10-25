@@ -1,3 +1,4 @@
+import {PlayerAvatar} from '../PlayerAvatar';
 import {useEffect,useLayoutEffect,useRef,useState} from 'react';
 import type {PublicProposal} from '../../../../packages/contracts/types';
 import {useDanmakuPreference} from '../danmaku-preference';
@@ -19,7 +20,7 @@ function CommentFlight({vote,lane,reduced,onReady,onDone}:{vote:Reviewer;lane:nu
   return()=>{live=false;animation.cancel();};
  },[vote.playerId,reduced]);
  return <div ref={ref} className={'review-danmaku '+(reduced?'still':'')} data-reviewer={vote.playerId} data-choice={vote.choice} style={{top:lane*30}} title={`${vote.nickname}：${vote.comment}`}>
-  <span className="danmaku-avatar">{Array.from(vote.nickname)[0]}</span><b>{vote.nickname}</b><em>{vote.choice==='APPROVE'?'✓ 赞成':'🥚 反对'}</em><span className="danmaku-words">{vote.comment}</span>
+  <span className="danmaku-avatar"><PlayerAvatar avatarId={vote.avatarId} name={vote.nickname} seed={vote.playerId}/></span><b>{vote.nickname}</b><em>{vote.choice==='APPROVE'?'✓ 赞成':'🥚 反对'}</em><span className="danmaku-words">{vote.comment}</span>
  </div>;
 }
 
