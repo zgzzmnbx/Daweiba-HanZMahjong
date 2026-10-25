@@ -1,5 +1,9 @@
-/* Final typography layer: every UI surface uses the supplied PingFang font.
-   The large play-action glyphs retain their existing serif style by request. */
-:root{--ui-font:"Hanz PingFang","PingFang SC",sans-serif}
-body,body *,body *::before,body *::after{font-family:var(--ui-font)!important}
-body .game-action b{font-family:serif!important}
+/* Functional typography inherits naturally; tile/display surfaces opt in explicitly. */
+:root{--ui-font:"Hanz PingFang","PingFang SC",sans-serif;--display-font:var(--tile-font)}
+body{font-family:var(--ui-font);font-weight:400}
+button,input,select,textarea{font-family:var(--ui-font)}
+h1,h2,h3,h4,b,strong{font-weight:600}
+label{font-weight:500}
+/* Metadata inside a tile remains interface typography. */
+.tile small,.fresh-tile::after,.game-action>span,.wordmark small,.wordmark>span:not(.hall-logo-tile){font-family:var(--ui-font)}
+.wordmark,.book-header h2{font-family:var(--display-font);font-weight:500;letter-spacing:.08em}

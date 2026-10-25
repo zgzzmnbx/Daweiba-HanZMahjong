@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import type {HuBookEntry,HuBookPage} from '../../../packages/contracts/hu-book';
 import './hu-book.css';
 
@@ -23,7 +23,7 @@ export function HuBook({adminActive,onClose}:{adminActive:boolean;onClose:()=>vo
   <div className="book-scroll" ref={scroll} aria-busy={busy}>
    {page?.entries.map(entry=><article className="book-entry" key={entry.id} data-book-id={entry.id}>
     <div className="book-entry-meta"><span className="book-author"><i aria-hidden="true">{Array.from(entry.nickname)[0]}</i><b>{entry.nickname}</b></span><time>{date(entry.finishedAt)}</time></div>
-    <p className="book-sentence" aria-label={entry.tiles.map(t=>t.char+(t.comma?'，':'')).join('')}>{[0,7].map(start=><span className="book-line" key={start}>{entry.tiles.slice(start,start+7).map((tile,i)=><span className="book-word" key={i}><span className="book-tile" aria-hidden="true">{tile.char}</span>{tile.comma&&<span className="book-comma" aria-hidden="true">，</span>}</span>)}</span>)}</p>
+    <p className="book-sentence" aria-label={entry.tiles.map(t=>t.char+(t.comma?'，':'')).join('')}>{[0,7].map(start=><span className="book-line" key={start} style={{'--book-slots':Math.max(...[0,7].map(n=>entry.tiles.slice(n,n+7).reduce((s,t)=>s+1+Number(t.comma),0))) } as CSSProperties}>{entry.tiles.slice(start,start+7).map((tile,i)=><span className="book-word" key={i}><span className="book-tile" aria-hidden="true">{tile.char}</span>{tile.comma&&<span className="book-comma" aria-hidden="true"><span className="rack-mark">，</span></span>}</span>)}</span>)}</p>
     <footer className="book-entry-foot"><span className="book-entry-tags">{entry.practiceMode?<em>练习佳句</em>:<em>评审通过</em>}{entry.deckSetName&&<small title={entry.deckSetName}>{entry.deckSetName}</small>}</span><div className="book-entry-actions">{adminActive&&<button className="book-delete" disabled={busy} aria-label={`删除 ${entry.nickname} 的第 ${entry.id} 句`} onClick={()=>{setConfirm(entry);setError('');}}>移除</button>}<button className={`book-like ${page.likedId===entry.id?'liked':''} ${burst===entry.id?'burst':''}`} disabled={busy||page.likedId!==null} aria-label={`赞第 ${entry.id} 句，${entry.likes} 个赞`} aria-pressed={page.likedId===entry.id} onAnimationEnd={()=>setBurst(null)} onClick={()=>void like(entry)}><span aria-hidden="true">♥</span><b>{entry.likes}</b><small>{page.likedId===entry.id?'今日已赞':'赞'}</small></button></div></footer>
    </article>)}
    {page?.total===0&&<div className="book-empty"><span aria-hidden="true">天 书 待 续</span><h3>好句子，值得留一页。</h3><p>第一句通过评审的胡牌，会自动收录在这里。</p></div>}

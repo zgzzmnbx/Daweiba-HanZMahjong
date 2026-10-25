@@ -29,3 +29,7 @@ Modified font renamed **Hanz Tile Sans**: variable font instantiated at weight 6
 ## User-supplied background music
 
 The six default recordings are deployment inputs supplied by the user in `BGM-背景音乐-麻将/`. Their originals and normalized audio are not distributed in this source repository, and no open-source license is asserted for them. The running authorized deployment serves them within game rooms; `scripts/import-music.ts` prepares the user-provided files. Player uploads are private runtime data. FFmpeg/ffprobe are external server tools, not redistributed binaries.
+
+## LXGW WenKai Medium v1.530 (1.23.12)
+
+User-supplied original LXGWWenKai-Medium.ttf, weight500. SHA256 f4b8a34d1f838fe411540cb7c97b1c384ac9738a876c4104500bc42508b2312a. Copyright LXGW and The Klee Project Authors; SIL OFL1.1 plus source-package additional permission for retaining original reserved names in web-only subsets. Original outlines/names retained; WOFF2 subsets solely for same-origin web delivery, no installable desktop derivative distributed. License and reproducibility manifest: apps/web/public/fonts/wenkai/OFL.txt and manifest.json. See docs/TILE-FONT.md.

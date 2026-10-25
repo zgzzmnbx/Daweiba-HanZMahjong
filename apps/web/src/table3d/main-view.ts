@@ -72,7 +72,7 @@ export class MainView {
     this.renderer.domElement.addEventListener('webglcontextlost',this.onLost);
     this.observer=new ResizeObserver(()=>this.resize());this.observer.observe(host);
     document.fonts.ready.then(()=>{if(!this.disposed){this.clearFaces();this.stats.fontRebuilds++;if(this.last)this.replace(this.last.view,this.last.showOwn,this.last.selected,this.last.acquired,this.last.urgent);}});
-    document.fonts.addEventListener('loadingdone',this.onFonts);
+    document.fonts.addEventListener('loadingdone',this.onFonts);document.addEventListener('hanz-font-ready',this.onFonts);
     this.resize();
   }
   private onMotion=()=>{if(this.reduced.matches)for(const node of this.own.values()){node.mesh.position.copy(node.target);node.duration=0;}this.render();};
@@ -82,16 +82,16 @@ export class MainView {
   private glyph(char:string,transparent=false){
     ensureTileGlyph(char);
     const key=transparent?'punctuation:'+char:char;let texture=this.faces.get(key);if(texture)return texture;
-    const canvas=document.createElement('canvas');canvas.width=192;canvas.height=288;
-    const ctx=canvas.getContext('2d')!;if(!transparent){ctx.fillStyle='#f7efdb';ctx.fillRect(0,0,192,288);}
-    ctx.fillStyle=transparent?'#ffe5a2':'#173b2b';ctx.font=tileCanvasFont(138);
+    const canvas=document.createElement('canvas');canvas.width=384;canvas.height=576;
+    const ctx=canvas.getContext('2d')!;ctx.scale(2,2);if(!transparent){ctx.fillStyle='#f7efdb';ctx.fillRect(0,0,192,288);}
+    ctx.fillStyle=transparent?'#ffe5a2':'#173b2b';ctx.font=tileCanvasFont(transparent?192*(char==='，'?2.8:1.8):148);
     if(transparent){
       // Center the actual ink, not the full-width punctuation advance box.
       ctx.textAlign='left';ctx.textBaseline='alphabetic';const m=ctx.measureText(char),w=m.actualBoundingBoxLeft+m.actualBoundingBoxRight,h=m.actualBoundingBoxAscent+m.actualBoundingBoxDescent;
-      const scale=Math.min(140/Math.max(1,w),190/Math.max(1,h));ctx.save();ctx.translate((192-w*scale)/2,(288-h*scale)/2);ctx.scale(scale,scale);ctx.fillText(char,m.actualBoundingBoxLeft,m.actualBoundingBoxAscent);ctx.restore();
+      ctx.fillText(char,(192-w)/2+m.actualBoundingBoxLeft,(288-h)/2+m.actualBoundingBoxAscent);
       ctx.strokeStyle='rgba(255,225,162,.55)';ctx.lineWidth=3;ctx.strokeRect(7,7,178,274);
-    }else{ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(char,96,143);}
-    texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;this.faces.set(key,texture);return texture;
+    }else{ctx.textAlign='center';ctx.textBaseline='alphabetic';ctx.fillText(char,96,196); /* shared CJK baseline, no per-character stretching */}
+    texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());this.faces.set(key,texture);return texture;
   }
   private tile(char:string|null){
     const group=new T.Group();const mesh=new T.Mesh(this.body,this.ivory);group.add(mesh);
@@ -124,7 +124,7 @@ export class MainView {
     }
     this.layoutOwn();this.setMotionHidden(this.motionHidden);
     this.stats.capacity=this.tiles.children.length+this.ownTiles.children.length;
-    const ctx=this.centerCanvas.getContext('2d')!;ctx.fillStyle='#17251f';ctx.fillRect(0,0,512,256);ctx.fillStyle='#d6bd7e';ctx.textAlign='center';ensureUiGlyphs('字 间 · 文字麻将余牌 / 人桌0123456789');ensureUiGlyphs('0123456789',600);ctx.font=uiCanvasFont(30);ctx.fillText('字 间 · 文字麻将',256,60);ctx.font=uiCanvasFont(76,600);ctx.fillText(String(view.wall.count),256,153);ctx.font=uiCanvasFont(25);ctx.fillText('余牌  /  '+n+' 人桌',256,213);this.centerTexture.needsUpdate=true;
+    const ctx=this.centerCanvas.getContext('2d')!;ctx.fillStyle='#17251f';ctx.fillRect(0,0,512,256);ctx.fillStyle='#d6bd7e';ctx.textAlign='center';ensureTileGlyph('字 间');ensureUiGlyphs('余牌 / 人桌0123456789');ensureUiGlyphs('0123456789',600);ctx.font=tileCanvasFont(30);ctx.fillText('字 间',256,60);ctx.font=uiCanvasFont(76,600);ctx.fillText(String(view.wall.count),256,153);ctx.font=uiCanvasFont(25);ctx.fillText('余牌  /  '+n+' 人桌',256,213);this.centerTexture.needsUpdate=true;
     this.render();
   }
   private clearOwn(){for(const n of this.own.values())n.mesh.traverse(o=>{if(o instanceof T.Mesh){for(const m of Array.isArray(o.material)?o.material:[o.material])m.dispose();}});this.own.clear();this.ownTiles.clear();}
@@ -171,5 +171,5 @@ export class MainView {
   });}
   refresh(){this.render();}
   diagnostics(){return{...this.stats,memory:{...this.renderer.info.memory},calls:this.renderer.info.render.calls,dpr:this.renderer.getPixelRatio()};}
-  dispose(){if(this.disposed)return;this.disposed=true;this.reduced.removeEventListener('change',this.onMotion);cancelAnimationFrame(this.frame);this.observer.disconnect();document.fonts.removeEventListener('loadingdone',this.onFonts);this.renderer.domElement.removeEventListener('webglcontextlost',this.onLost);this.clearTiles();this.clearFaces();const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();this.scene.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();this.body.dispose();this.face.dispose();this.ivory.dispose();this.back.dispose();this.shadow.dispose();this.centerTexture.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+  dispose(){if(this.disposed)return;this.disposed=true;this.reduced.removeEventListener('change',this.onMotion);cancelAnimationFrame(this.frame);this.observer.disconnect();document.fonts.removeEventListener('loadingdone',this.onFonts);document.removeEventListener('hanz-font-ready',this.onFonts);this.renderer.domElement.removeEventListener('webglcontextlost',this.onLost);this.clearTiles();this.clearFaces();const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();this.scene.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();this.body.dispose();this.face.dispose();this.ivory.dispose();this.back.dispose();this.shadow.dispose();this.centerTexture.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

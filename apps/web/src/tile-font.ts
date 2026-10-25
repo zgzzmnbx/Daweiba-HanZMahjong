@@ -1,18 +1,15 @@
-/** One bundled font face and weight for DOM tiles and canvas textures. */
-export const TILE_FONT_FAMILY='"Hanz PingFang",sans-serif';
-export const TILE_FONT_WEIGHT=600;
+/** Font roles shared by all Canvas labels. CSS roles mirror these names. */
+export const TILE_FONT_FAMILY='"Hanz WenKai","Hanz PingFang",sans-serif';
+export const UI_FONT_FAMILY='"Hanz PingFang","PingFang SC",sans-serif';
+export const TILE_FONT_WEIGHT=500;
 export const tileCanvasFont=(size:number)=>`${TILE_FONT_WEIGHT} ${size}px ${TILE_FONT_FAMILY}`;
-const requested=new Set<string>();
-/** Canvas text does not reliably initiate CSS font downloads; request each visible glyph explicitly. */
-export function ensureTileGlyph(char:string){
- if(requested.has(char))return;requested.add(char);
- void document.fonts.load(tileCanvasFont(32),char).catch(()=>{requested.delete(char);});
+export const uiCanvasFont=(size:number,weight=400)=>`${weight} ${size}px ${UI_FONT_FAMILY}`;
+// Failed requests are evicted: a later snapshot/repaint may retry without blocking play.
+const requested=new Map<string,Promise<FontFace[]>>();
+function ensure(font:string,text:string){
+ const key=font+':'+text;if(requested.has(key))return;
+ const request=document.fonts.load(font,text);requested.set(key,request);
+ void request.then(faces=>{if(!faces.length)requested.delete(key);},()=>requested.delete(key));
 }
-
-/** Shared UI font for the small labels rendered into the 3D table. */
-export const uiCanvasFont=(size:number,weight=400)=>`${weight} ${size}px ${TILE_FONT_FAMILY}`;
-const requestedUi=new Set<string>();
-export function ensureUiGlyphs(text:string,weight=400){
- const key=weight+':'+text;if(requestedUi.has(key))return;requestedUi.add(key);
- void document.fonts.load(uiCanvasFont(32,weight),text).catch(()=>requestedUi.delete(key));
-}
+export function ensureTileGlyph(text:string){ensure(tileCanvasFont(32),text);}
+export function ensureUiGlyphs(text:string,weight=400){ensure(uiCanvasFont(32,weight),text);}

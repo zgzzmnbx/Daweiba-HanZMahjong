@@ -1,3 +1,48 @@
+# 牌面与界面字体分工 · 1.23.12
+
+## 当前字体角色
+
+- 牌字、独立标点、拖影、飞牌、胡牌确认/亮相/评审、天书作品、大厅装饰牌，以及摸/打/吃/胡大字：原版 **LXGW WenKai Medium v1.530，500**，CSS别名 `Hanz WenKai`。
+- “字间”“胡牌天书”等短品牌标题使用同一文楷。普通弹窗标题、菜单、设置、聊天、昵称、说明、计时、余牌数、房间号、人数和作品元数据使用 `Hanz PingFang`，正文400、标签500、重点600。
+- `--ui-font`、`--tile-font`、`--display-font`明确分工；移除旧 `body * !important`。原始样式中的宋体/系统字体声明改为角色变量，不通过追加强制覆盖切换字体。
+
+## 锁定来源
+
+用户提供 `Font-字体/霞鹜文楷-lxgw-wenkai-v1.530.zip`；唯一采用文件为 `lxgw-wenkai-v1.530/LXGWWenKai-Medium.ttf`，不采用 Screen、GB、Mono。
+
+- ZIP SHA256：`1644a3f88f84b9627c1b00e3e41c5752ef1bdea0dec2ac3a024bf107a7bd149e`
+- 原TTF SHA256：`f4b8a34d1f838fe411540cb7c97b1c384ac9738a876c4104500bc42508b2312a`
+- 原始PostScript名：`LXGWWenKai-Medium`；OS/2字重500。源名字与轮廓保留，仅制作网页WOFF2子集。
+- 150个不重叠子集，完整46,926码点，合计10,709,764字节；核心950码点195,524字节预加载，其余按unicode-range请求。原版不覆盖的自定义字符仍有苹方/系统回退，不承诺覆盖所有Unicode。
+- 完整来源、分片校验和与覆盖范围：`apps/web/public/fonts/wenkai/manifest.json`；许可：同目录 `OFL.txt`。随包附加许可明确允许仅网页交付的子集/格式转换保留原名字；不发布可安装桌面字体。
+
+## 绘制与布局
+
+`tileCanvasFont`和`uiCanvasFont`独立，中央品牌文楷、余牌数量和说明苹方。每个可见字显式请求字体；loadingdone及字体恢复完成后清理缓存、重建纹理。加载失败不阻止操作，失败字面自动有限重试，网络恢复可再次触发。
+
+3D字牌纹理384×576（原192×288），逻辑绘制坐标不改变牌体；使用实际字体、正常采样和有限各向异性，不加描边。汉字统一字号约增加7%–9%，保留统一基线，不逐字撑满、无水平压缩。DOM标点依据100px原版墨迹校准：逗号中心偏移(.334em,-.336em)，句号(.286em,-.2855em)。逗号字号为牌宽2.8倍、句号1.8倍，完整独立牌位保持不变。3D标点按实际墨迹居中，比例对应DOM。
+
+保留1.23.11的大牌空间预算、两排上限与13/14张固定布局。天书作品也是两排，标点占完整牌位，作者/时间/点赞使用苹方。
+
+## 重建和验收
+
+```sh
+python scripts/build-wenkai-fonts.py --zip /absolute/path/霞鹜文楷-lxgw-wenkai-v1.530.zip --root .
+npm run build
+node --import tsx scripts/verify-wenkai-font.mjs
+node --import tsx scripts/verify-review-fit.mjs
+node --import tsx scripts/verify-punctuation.mjs
+node --import tsx scripts/verify-top-rack.mjs
+```
+
+生成器依赖fonttools4.60.2/Brotli1.1.0，生产运行不依赖Python；源ZIP不重复提交。`verify-wenkai-assets.py`可只读核对部署库当前套组，证据仅记录覆盖数量，绝不导出私有数据。`verify-pingfang-font.mjs`保留为新分工验收入口别名。真实字体通过CDP原始PostScript名核对，Canvas记录加载和绘制；天书字体排版用明确标记的展示夹具，不据此冒称真实点赞或写入测试。
+
+验收包含320×480、390×844、667×375、1280×800；缺失请求恢复、冷启动和非核心按需加载；当前2套组及样例共188个不同字符无缺字；鼠标/触摸拖排、标点、摸打和六人评审。生产构建及82项UI测试通过，本地与公网各86项浏览器检查通过；231个线上资源与冻结构建一致。最终记录见本版本 `docs/evidence/wenkai-*`；视口模拟不等于实体手机Safari实测。
+
+---
+
+## 历史记录（已被以上分工替代）
+
 # 界面与牌面字体 · 1.23.3
 
 当前全界面使用用户提供的苹方Web字体：regular 400、medium 500、semibold 600–900。CSS别名Hanz PingFang；原始字体内部名称.PingFang SC、各字重PostScript名称和字形轮廓保留。仅打牌按钮.game-action b保留原serif，按钮说明文字仍统一为苹方。

@@ -1,0 +1,12 @@
+{
+  "version": "1.23.12",
+  "sourceVersion": "1.530",
+  "sourceSha256": "f4b8a34d1f838fe411540cb7c97b1c384ac9738a876c4104500bc42508b2312a",
+  "subsets": 150,
+  "codepoints": 46926,
+  "deckSetsChecked": 2,
+  "requiredUniqueGlyphs": 188,
+  "missingGlyphs": [],
+  "fontWeight": 500,
+  "status": "PASS"
+}

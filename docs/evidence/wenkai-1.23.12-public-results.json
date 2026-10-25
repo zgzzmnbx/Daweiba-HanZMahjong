@@ -1,0 +1,524 @@
+{
+  "at": "2026-10-25T09:28:54.314Z",
+  "version": "1.23.12",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real lobby/two-player game, actual CDP font rendering and Canvas loading, mobile viewport simulation",
+  "checks": [
+    {
+      "name": "lobby tile is WenKai while heading is PingFang",
+      "status": "PASS",
+      "fonts": [
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz PingFang\", \"PingFang SC\", sans-serif",
+          "weight": "600",
+          "fonts": [
+            {
+              "familyName": ".PingFang SC",
+              "postScriptName": ".PingFang-SC-Semibold",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "book typography fixture: original Medium title/works, PingFang metadata and full-size punctuation in two rows",
+      "status": "PASS"
+    },
+    {
+      "name": "simple, complex and confusable glyphs each render original Medium with uniform size",
+      "status": "PASS",
+      "glyphs": [
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "create-room form and labels use PingFang",
+      "status": "PASS"
+    },
+    {
+      "name": "settings title and controls actually use PingFang",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz PingFang\", \"PingFang SC\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": ".PingFang SC",
+            "postScriptName": ".PingFang-SC-Medium",
+            "isCustomFont": true,
+            "glyphCount": 4
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayed WenKai 3D tiles repaint while central functional labels remain PingFang",
+      "status": "PASS",
+      "canvas": [
+        {
+          "text": "被",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "爱",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "。",
+          "font": "500 345.6px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "字 间",
+          "font": "500 30px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "117",
+          "font": "600 76px \"Hanz PingFang\", \"PingFang SC\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "余牌  /  2 人桌",
+          "font": "25px \"Hanz PingFang\", \"PingFang SC\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "影",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "都",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "谁",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "如",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "花",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "到",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "了",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "生",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "不",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "地",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "把",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "色",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "被",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "爱",
+          "font": "500 148px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "。",
+          "font": "500 345.6px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "字 间",
+          "font": "500 30px \"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "117",
+          "font": "600 76px \"Hanz PingFang\", \"PingFang SC\", sans-serif",
+          "loaded": true
+        },
+        {
+          "text": "余牌  /  2 人桌",
+          "font": "25px \"Hanz PingFang\", \"PingFang SC\", sans-serif",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "name": "only self-hosted role-specific fonts are requested",
+      "status": "PASS",
+      "requests": [
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+          "bytes": 133564
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+          "bytes": 133424
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+          "bytes": 132580
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/wenkai/wenkai-500-core-5da500484d.woff2",
+          "bytes": 195824
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-400-u002-7b536766ca.woff2",
+          "bytes": 63532
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-500-u008-054f99c4b8.woff2",
+          "bytes": 702272
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-600-u008-cc1e4d72e4.woff2",
+          "bytes": 692800
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-600-u004-453e8ec017.woff2",
+          "bytes": 763352
+        },
+        {
+          "name": "https://118.196.107.182:1240/fonts/pingfang/pingfang-400-u000-da543d1ab3.woff2",
+          "bytes": 25240
+        }
+      ]
+    },
+    {
+      "name": "UI uses PingFang, play glyphs WenKai and viewport fits 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "phone hand actually renders original WenKai Medium at 390",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "UI uses PingFang, play glyphs WenKai and viewport fits 390",
+      "status": "PASS"
+    },
+    {
+      "name": "phone hand actually renders original WenKai Medium at 320",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "UI uses PingFang, play glyphs WenKai and viewport fits 320",
+      "status": "PASS"
+    },
+    {
+      "name": "phone hand actually renders original WenKai Medium at 667",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "UI uses PingFang, play glyphs WenKai and viewport fits 667",
+      "status": "PASS"
+    },
+    {
+      "name": "failed non-core request retries and renders original WenKai without reload",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "chat input and delivered message use the same interface font",
+      "status": "PASS"
+    },
+    {
+      "name": "real held-tile drag ghost uses original Medium",
+      "status": "PASS"
+    },
+    {
+      "name": "opponent latest discard uses WenKai",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "HU confirmation tiles use WenKai",
+      "status": "PASS",
+      "font": {
+        "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+        "weight": "500",
+        "fonts": [
+          {
+            "familyName": "霞鶩文楷 Medium",
+            "postScriptName": "LXGWWenKai-Medium",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "both public review sentences render original WenKai Medium",
+      "status": "PASS",
+      "fonts": [
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "family": "\"Hanz WenKai\", \"Hanz PingFang\", sans-serif",
+          "weight": "500",
+          "fonts": [
+            {
+              "familyName": "霞鶩文楷 Medium",
+              "postScriptName": "LXGWWenKai-Medium",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "real discard, draw, HU rejection and cleanup finish without scoring",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

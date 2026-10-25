@@ -1,7 +1,7 @@
 /* Separate from legacy .seat/.avatar rules, which shrank and hid portraits on small screens. */
 .player-badges{z-index:4;pointer-events:none;overflow:visible}
 .player-badge{position:absolute;display:flex;align-items:center;flex-direction:column;justify-content:flex-start;gap:6px;pointer-events:none;color:#e4d5ad;text-align:center;filter:drop-shadow(0 3px 3px #0005)}
-.player-portrait{position:relative;display:grid;place-items:center;width:70px;height:70px;flex:none;border-radius:50%;border:3px solid #ae8c4f;background:radial-gradient(circle at 36% 28%,#285245,#183c31 75%);box-shadow:inset 0 0 0 1px #ead39320,0 3px 0 #0a1913,0 0 0 1px #42341f;color:#f0e3bd;font:500 29px/1 'Songti SC','STSong',serif}
+.player-portrait{position:relative;display:grid;place-items:center;width:70px;height:70px;flex:none;border-radius:50%;border:3px solid #ae8c4f;background:radial-gradient(circle at 36% 28%,#285245,#183c31 75%);box-shadow:inset 0 0 0 1px #ead39320,0 3px 0 #0a1913,0 0 0 1px #42341f;color:#f0e3bd;font:500 29px/1 var(--ui-font)}
 .player-portrait.ai{background:radial-gradient(circle at 35% 25%,#465549,#263c31)}
 .presence-dot{position:absolute;right:1px;bottom:4px;width:11px;height:11px;border:2px solid #243d2d;border-radius:50%;background:#a3c685;box-shadow:0 0 0 1px #131f18}.presence-dot.ai{background:#ddbc6b}.presence-dot.offline{background:#9c9785}
 .player-nameplate{display:flex;justify-content:center;align-items:center;width:100%;height:25px;min-height:25px;padding:2px 9px;background:linear-gradient(#152e21,#0d2117);border:1px solid #8b7649;border-radius:18px;color:#e7d8ad;font-size:12px;line-height:18px;white-space:nowrap;box-shadow:inset 0 1px #d9c18715}

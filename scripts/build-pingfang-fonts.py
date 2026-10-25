@@ -36,6 +36,6 @@ print('TOTAL',len(records),sum(r['bytes'] for r in records),'CORE',sum(r['bytes'
 
 html=a.output/'apps/web/index.html';html.parent.mkdir(parents=True,exist_ok=True)
 text=(html if html.exists() else a.root/'apps/web/index.html').read_text()
-text=re.sub(r'<link rel="preload" href="/fonts/[^"]+" as="font" type="font/woff2" crossorigin/>','',text)
+text=re.sub(r'<link rel="preload" href="/fonts/pingfang/[^"]+" as="font" type="font/woff2" crossorigin/>','',text)
 tags=''.join('<link rel="preload" href="/fonts/pingfang/'+name+'" as="font" type="font/woff2" crossorigin/>' for name in preloads)
 html.write_text(text.replace('</head>',tags+'</head>'))

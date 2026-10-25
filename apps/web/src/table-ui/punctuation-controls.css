@@ -12,5 +12,5 @@
 
 /* Center punctuation ink rather than its full-width font advance box. */
 .comma-tile,.game-shell .table-comma-tray .reserve-comma,.rack-drag-ghost.comma-ghost{overflow:hidden}
-.rack-mark{position:absolute;left:50%;top:50%;display:block;width:1em;height:1em;line-height:1;transform:translate(-50%,-50%) translate(.306em,-.382em);pointer-events:none}
-.period-tile>.rack-mark{transform:translate(-50%,-50%) translate(.25em,-.343em)}
+.rack-mark{position:absolute;left:50%;top:50%;display:block;width:1em;height:1em;line-height:1;transform:translate(-50%,-50%) translate(.334em,-.336em);pointer-events:none}
+.period-tile>.rack-mark{transform:translate(-50%,-50%) translate(.286em,-.2855em)}
