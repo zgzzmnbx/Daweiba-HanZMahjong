@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-25T18:53:39.317Z",
+  "version": "1.26.7",
+  "origin": "http://127.0.0.1:3185",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "visible": false,
+      "mobileMenuExit": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "visible": false,
+      "mobileMenuExit": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "visible": false,
+      "mobileMenuExit": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "visible": true,
+      "x": 24,
+      "y": 11,
+      "w": 20,
+      "h": 20,
+      "bw": 44,
+      "bh": 44,
+      "color": "rgb(230, 200, 143)",
+      "stroke": "rgb(230, 200, 143)"
+    },
+    {
+      "returnToHall": true,
+      "roomClosed": true
+    }
+  ],
+  "errors": []
+}
