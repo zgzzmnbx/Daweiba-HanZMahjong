@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'从容吃字，HTTP 开桌',features:['新开局吃牌响应延长到15秒，倒计时同步；进行中的旧局保持原时限。','测试入口统一使用HTTP，玩家和管理员均可进入，不再依赖游戏证书。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'音乐更响，初始六成',features:['音乐最大音量提高到此前的1.5倍，新浏览器初始音量60%。','保留已保存的个人音量，音效与报字播放时音乐继续自动让位。']},
+ {version:'1.31.0',date:'2026-10-26',title:'从容吃字，HTTP 开桌',features:['新开局吃牌响应延长到15秒，倒计时同步；进行中的旧局保持原时限。','测试入口统一使用HTTP，玩家和管理员均可进入，不再依赖游戏证书。']},
  {version:'1.30.11',date:'2026-10-26',title:'十圈点炮，及时提醒',features:['全场借字胡牌解锁时，圈数旁提示「第十圈，开启全场点炮胡牌」。','绿金气泡3秒自动消失，每局一次，刷新不重复，不打断操作。']},
  {version:'1.30.10',date:'2026-10-26',title:'闪光可吃，句号借逗号',features:['可吃字牌出现时闪过柔金光，气泡提示「可拖到手牌」，拖起即收起。','第三圈在句号牌旁提示「拖动出逗号」3秒，每局一次，不遮挡操作。']},
  {version:'1.30.9',date:'2026-10-26',title:'指南不再卡住重连',features:['断线时仍可确认并关闭新手指南，返回房间重新连接。','准备仍需连接恢复后主动确认，指南中清楚提示当前状态。']},

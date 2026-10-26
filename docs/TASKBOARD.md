@@ -1,11 +1,9 @@
 # 当前任务板
 
-## 1.31.0 · HTTP与吃牌15秒
+## 1.31.1 · 音乐音量
 
-- DONE：规则1.7.1、旧局兼容、HTTP显式配置/Cookie/UUID/剪贴板。
-- DONE：构建、405项测试、非安全上下文双客户端7项浏览器验证。
-- DONE：1240切换HTTP，公网6项HTTP/11项拖牌检查、79资源一致；云主机文档与Obsidian管理区同步。
-- DONE：GitHub随交付同步源码/证据/记录；旧done已归档。
-- NOT_RUN_ENV_REQUIRED：实体手机；已有真实Chromium验证。
+- DONE：上限1.5倍、初始60%、保留偏好及前景优先；构建与93项UI测试。
+- DONE：本地与公网各11项真实音频检查、完整405项测试、79资源一致；已发布1.31.1，GitHub随交付同步。
+- NOT_RUN_ENV_REQUIRED：实体手机听音。
 
 旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。
