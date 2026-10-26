@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-26T04:07:45.950Z",
+  "version": "1.30.5",
+  "browser": "141.0.7390.37",
+  "fontDelaysSimulated": true,
+  "checks": [
+    {
+      "mode": "fast",
+      "initial": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "recovered": null,
+      "threePerChar": true
+    },
+    {
+      "mode": "slow",
+      "initial": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Medium",
+          "isCustomFont": false,
+          "glyphCount": 1
+        }
+      ],
+      "recovered": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "threePerChar": true
+    },
+    {
+      "mode": "failed",
+      "initial": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Medium",
+          "isCustomFont": false,
+          "glyphCount": 1
+        }
+      ],
+      "recovered": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "threePerChar": true
+    },
+    {
+      "mode": "close",
+      "initial": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "recovered": null,
+      "threePerChar": true
+    }
+  ],
+  "errors": []
+}

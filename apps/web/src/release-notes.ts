@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'拖回手牌，直接吃字',features:['上家刚出的字可以拖到手牌或吃按钮，松手完成吃牌。','可吃时显示轻提示，手牌落点高亮；拖出、取消或响应结束不提交。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'牌组更清爽，字形更稳定',features:['同字最多展示3张，角标继续显示实际数量。','牌组按整组准备文楷字形后展示；慢网使用稳定备用字体，可手动重试。']},
+ {version:'1.30.4',date:'2026-10-26',title:'拖回手牌，直接吃字',features:['上家刚出的字可以拖到手牌或吃按钮，松手完成吃牌。','可吃时显示轻提示，手牌落点高亮；拖出、取消或响应结束不提交。']},
  {version:'1.30.3',date:'2026-10-26',title:'桌心落牌区更宽松',features:['扩大桌中央拖入出牌范围，提示框与实际落牌范围一致。','绿绒底色更通透，拖入时金边高亮，保留一行提示。']},
  {version:'1.30.2',date:'2026-10-26',title:'键盘弹出，聊天不遮挡',features:['手机聊天跟随键盘上方的可见区域，上移窗口并缩短记录区，保留输入与发送。','修复旧整屏高度覆盖，键盘收起恢复布局，输入草稿保留。']},
  {version:'1.30.1',date:'2026-10-26',title:'出牌提示，对准桌心',features:['刚出牌提示框跟随真实牌桌中心定位，手机横竖屏与放大麻将切换时不再偏左。','昵称区域固定宽度，长名字最多两行，牌面保持完整。']},

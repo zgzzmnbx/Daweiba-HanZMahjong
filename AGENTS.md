@@ -220,3 +220,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.30.2游戏根高度由game-viewport.css统一控制，后加载100dvh会覆盖visualViewport键盘适配；聊天避让须验证仅visualViewport缩高/offsetTop平移，不只setViewportSize。异步发送后focus应等disabled解除的DOM提交帧。
 
 - 1.30.4拖动上家弃牌复用canEatDiscard与RESPOND/EAT；只做公开影像，不能预写私密草稿。响应拖动须绑定phaseId/discardId并在失权/过期清理，不套用本人整理牌跨普通阶段持续持牌的PLAY边界。
+
+- 1.30.5牌组浏览同字最多3张，角标为真实数量，覆盖1.30.0的10张展示上限。字形批次最多等2秒，备用字体在本次展示期间固定；恢复须核对loaded字体覆盖和实际CDP字形，不能因旧error FontFace导致font.check为false而误判。

@@ -15,3 +15,8 @@
 .deck-view-status{display:grid;place-content:center;flex:1;text-align:center;color:#dfd3af;gap:10px}
 @media(max-width:699px){#root .game-shell dialog.deck-view-dialog{padding:12px;height:88dvh}.deck-view-grid{grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:8px 6px;padding:9px}.deck-view-summary strong{font-size:14px}.deck-view{gap:8px}}
 @media(max-height:499px){#root .game-shell dialog.deck-view-dialog{height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);padding:10px}#root .deck-view-dialog .table-dialog-heading{margin-bottom:7px;padding-bottom:4px}.deck-view-summary>div{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.deck-view{gap:6px}}
+
+/* Freeze the fallback instead of swapping individual glyphs as font chunks arrive. */
+.deck-view[data-font=fallback] .deck-view-tile b{font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+#root .deck-font-notice{flex:none;margin:0;color:#c9c4a8;font:400 11px/1.4 var(--ui-font)}
+.deck-font-notice button{padding:2px 6px;min-height:0;border:0;background:none;box-shadow:none;color:#efcf88;text-decoration:underline;font:500 11px/1.4 var(--ui-font)}
