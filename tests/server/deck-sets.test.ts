@@ -75,3 +75,20 @@ test('over-twenty copies save, persist and start correctly while active rounds s
   await c.next();assert.equal(t.server.games.get(c.room)!.tiles.size,1000);assert.equal((await c.env()).public.wallRemaining,973);const snapshot=await c.env();assert.equal(snapshot.private.hand.length,snapshot.public.phase.actorId===snapshot.private.playerId?14:13);
  }finally{await t.close();}
 });
+
+test('room deck viewer exposes composition only, freezes at START and requires the same room session',async()=>{
+ const t=await fixture();try{
+  const selected=await t.clone('可查看套组'),a=t.client();await a.create(selected.id);await a.open();
+  const path=`/api/rooms/${a.room}/deck`;
+  assert.equal((await t.client().request(path)).status,403);
+  const other=t.client();await other.create();await other.open();assert.equal((await other.request(path)).status,403);
+  const first=await t.save(selected,entries(),'最新预览');
+  let view=await a.request(path);assert.equal(view.status,200);assert.equal(view.headers.get('cache-control'),'no-store');assert.equal(view.data.frozen,false);assert.equal(view.data.name,first.name);assert.equal(view.data.total,100);assert.equal(view.data.entries[0].count,20);
+  assert.deepEqual(Object.keys(view.data).sort(),['roomId','roundId','name','version','capacity','frozen','total','entries'].sort());assert(view.data.entries.every((e:any)=>Object.keys(e).sort().join(',')==='char,count'));
+  await a.prepare();await a.ok({kind:'START_ROUND'});const frozen=(await a.request(path)).data;assert.equal(frozen.frozen,true);assert.equal(frozen.version,first.version);
+  const mixed=entries(10).map((e,i)=>({...e,copiesByPlayers:{'2':i===0?0:30,'3':40,'4':40,'5':40,'6':40}}));
+  const second=await t.save(first,mixed,'下一局新名');assert.deepEqual((await a.request(path)).data,frozen);
+  await t.restart();assert.equal((await a.restore()).status,200);await a.open();assert.deepEqual((await a.request(path)).data,frozen);
+  await a.next();view=await a.request(path);assert.equal(view.data.version,second.version);assert.equal(view.data.total,120);assert.equal(view.data.entries.length,4);assert(view.data.entries.every((e:any)=>e.count===30));
+ }finally{await t.close();}
+});

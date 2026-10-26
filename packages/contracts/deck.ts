@@ -14,3 +14,9 @@ export type DeckSetCatalog = Readonly<{revision:number;defaultSetId:string;sets:
 export type CreateDeckSetRequest = Readonly<{actionId:string;name:string;sourceSetId:string;expectedCatalogRevision:number}>;
 export type SaveDeckSetRequest = SaveDeckRequest & Readonly<{name:string}>;
 export type SetDefaultDeckSetRequest = Readonly<{expectedCatalogRevision:number;setId:string}>;
+
+/** Room members may inspect composition, never physical tile IDs or wall order. */
+export type RoomDeckView=Readonly<{
+ roomId:string;roundId:string|null;name:string;version:string;capacity:number;frozen:boolean;
+ total:number;entries:readonly Readonly<{char:string;count:number}>[];
+}>;

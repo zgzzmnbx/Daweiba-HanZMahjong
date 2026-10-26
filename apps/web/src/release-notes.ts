@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'顶栏留白，更舒展',features:['手机顶栏增加上下留白，五个常用按钮保持圆形与完整点击区域。','短屏使用紧凑高度，给牌桌和手牌保留空间。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'牌组一览，字字在桌',features:['新增牌组按钮，用麻将牌阵列查看当前套组，同字最多展示10张并标注实际张数。','开局后展示本局固定配比；标点入口收进菜单，提示从句号牌拖出逗号。']},
+ {version:'1.29.5',date:'2026-10-26',title:'顶栏留白，更舒展',features:['手机顶栏增加上下留白，五个常用按钮保持圆形与完整点击区域。','短屏使用紧凑高度，给牌桌和手牌保留空间。']},
  {version:'1.29.4',date:'2026-10-26',title:'字库张数自由配',features:['取消单个汉字最多20张的限制，支持按需要增加重复字。','仍按每种人数校验总牌数，保存后下一局生效。']},
  {version:'1.29.3',date:'2026-10-26',title:'手机头像轻装上桌',features:['30张头像新增128像素手机版，总体积减少约82%，桌面保留高清版。','头像面板打开时才加载候选图，手机头像长期缓存，加载失败自动回退。']},
  {version:'1.29.2',date:'2026-10-26',title:'开房更紧凑',features:['人数与麻将套组并排，消除单独一行的空白。','昵称和头像完整一行，手机输入及按钮保持易操作尺寸。']},

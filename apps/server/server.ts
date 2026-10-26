@@ -1,3 +1,4 @@
+import type {RoomDeckView} from '../../packages/contracts/deck';
 import {AVATARS,LITERARY_NICKNAMES,isAvatarId,stableAvatarId} from '../../packages/contracts/avatars';
 import {configuredAiJudge,publicSentenceText,type AiJudge,type AiVerdict} from './ai-judge';
 import {installRoomMusic} from './room-music';
@@ -137,6 +138,12 @@ export function createGameServer(options:ServerOptions){
  // Observer reads never connect a player, set a Cookie, mutate presence, or reveal private state.
  app.get('/api/rooms/:roomId/spectate',handle((q,r)=>{limit(`spectate:${q.ip}`,3600);const g=ensureGame(validId(q.params.roomId));if(g.public.allowSpectators!==true)throw new RuleError('SPECTATING_DISABLED');r.json({serverNow:now(),public:structuredClone(g.public),...(doodles.history(g.public.roomId).revision?{doodle:doodles.history(g.public.roomId)}:{})});}));
  app.get('/api/admin/rooms/:roomId/spectate',handle((q,r)=>{adminAuth(q.headers.cookie);const g=ensureGame(validId(q.params.roomId));r.json({serverNow:now(),public:structuredClone(g.public),...(doodles.history(g.public.roomId).revision?{doodle:doodles.history(g.public.roomId)}:{})});}));
+ app.get('/api/rooms/:roomId/deck',handle((q,r)=>{
+  const session=authenticate(q.headers.cookie,validId(q.params.roomId));limit(`room-deck:${session.sessionId}`,120);
+  const g=ensureGame(session.roomId),frozen=g.public.roundId!==null,deck=frozen?g.roundDeck:store.roomDeck(g),countKey=String(g.public.capacity) as '2'|'3'|'4'|'5'|'6';
+  const entries=deck.entries.map(e=>({char:e.char,count:e.copiesByPlayers[countKey]})).filter(e=>e.count>0);
+  r.json({roomId:g.public.roomId,roundId:g.public.roundId,name:('name' in deck&&typeof deck.name==='string'?deck.name:g.public.deckSetName)??'麻将牌组',version:deck.version,capacity:g.public.capacity,frozen,total:entries.reduce((n,e)=>n+e.count,0),entries} satisfies RoomDeckView);
+ }));
  app.get('/api/rooms/:roomId/snapshot',handle((q,r)=>{const s=authenticate(q.headers.cookie,validId(q.params.roomId));r.json(snapshot(ensureGame(s.roomId),s.playerId as C.PlayerId,now()));}));
  io.use((socket,next)=>{try{socket.data.session=authenticate(socket.request.headers.cookie);next();}catch{next(new Error('UNAUTHENTICATED'));}});
  io.on('connection',socket=>{const session=socket.data.session as Session;let set=sockets.get(session.sessionId);if(!set){set=new Set();sockets.set(session.sessionId,set);}set.add(socket);void serial(session.roomId,()=>{const g=structuredClone(ensureGame(session.roomId));connect(g,session.playerId as C.PlayerId,session.sessionId,now());commit(g,'CONNECTED');}).catch(()=>socket.disconnect(true));

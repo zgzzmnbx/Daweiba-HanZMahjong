@@ -78,7 +78,7 @@ try{
   await page.getByRole('textbox',{name:'聊天内容',exact:true}).fill('图标验收 '+width);await page.getByRole('button',{name:'发送聊天',exact:true}).click();await page.getByRole('button',{name:'收起聊天',exact:true}).click();
   await gameAction(page,'桌面涂鸦');await page.getByRole('group',{name:'选择画笔',exact:true}).waitFor();await audit(page,'.doodle-popover');await page.getByRole('button',{name:'完成 · 继续打牌',exact:true}).click();pass(`${width}x${height} chat send, sticker picker, drawing controls and table SVGs`);
 
-  for(const label of ['游戏菜单','同桌音乐','牌局记录','牌桌帮助','新手指南','画面设置','房间设置','托管设置','整理句子']){
+  for(const label of ['游戏菜单','同桌音乐','牌组','牌局记录','牌桌帮助','新手指南','画面设置','房间设置','托管设置','整理句子']){
    const before=await snap(clients[0]),actor=clients.find(p=>p.id===before.public.phase.actorId),observer=clients.find(p=>p!==actor);assert(actor);
    const dialog=await open(observer,label);await dialog.waitFor();await audit(observer.page);
    const focus=label==='同桌音乐'?observer.page.getByRole('slider',{name:'音效音量',exact:true}):label==='新手指南'?observer.page.getByRole('button',{name:'关闭新手指南',exact:true}):label==='游戏菜单'?observer.page.getByRole('button',{name:'收起菜单',exact:true}):observer.page.getByRole('button',{name:'关闭面板',exact:true});

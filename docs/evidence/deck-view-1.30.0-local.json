@@ -1,0 +1,184 @@
+{
+  "at": "2026-10-26T02:20:29.383Z",
+  "version": "1.30.0",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "topLabels": [
+        "牌组",
+        "音乐",
+        "闲聊",
+        "涂鸦",
+        "菜单"
+      ],
+      "total": 142,
+      "displayed": 131,
+      "geometry": {
+        "width": 320,
+        "height": 480,
+        "dialog": {
+          "left": 12,
+          "right": 308,
+          "top": 8,
+          "bottom": 472,
+          "overflowX": 0,
+          "overflowY": 0
+        },
+        "grid": {
+          "left": 23,
+          "right": 297,
+          "top": 168.25,
+          "bottom": 461,
+          "overflowX": 0,
+          "lastVisible": true
+        },
+        "bodyOverflow": 0
+      },
+      "font": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "closed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "topLabels": [
+        "牌组",
+        "音乐",
+        "闲聊",
+        "涂鸦",
+        "菜单"
+      ],
+      "total": 142,
+      "displayed": 131,
+      "geometry": {
+        "width": 390,
+        "height": 844,
+        "dialog": {
+          "left": 12,
+          "right": 378,
+          "top": 50.640625,
+          "bottom": 793.359375,
+          "overflowX": 0,
+          "overflowY": 0
+        },
+        "grid": {
+          "left": 25,
+          "right": 365,
+          "top": 223.75,
+          "bottom": 780.359375,
+          "overflowX": 0,
+          "lastVisible": true
+        },
+        "bodyOverflow": 0
+      },
+      "font": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "closed": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "topLabels": [
+        "牌组",
+        "音乐",
+        "闲聊",
+        "涂鸦",
+        "菜单"
+      ],
+      "total": 142,
+      "displayed": 131,
+      "geometry": {
+        "width": 667,
+        "height": 375,
+        "dialog": {
+          "left": 12,
+          "right": 655,
+          "top": 8,
+          "bottom": 367,
+          "overflowX": 0,
+          "overflowY": 0
+        },
+        "grid": {
+          "left": 23,
+          "right": 644,
+          "top": 123.875,
+          "bottom": 356,
+          "overflowX": 0,
+          "lastVisible": true
+        },
+        "bodyOverflow": 0
+      },
+      "font": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "closed": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "topLabels": [
+        "大厅",
+        "牌组",
+        "音乐",
+        "闲聊",
+        "涂鸦",
+        "帮助",
+        "记录",
+        "管理",
+        "菜单"
+      ],
+      "total": 142,
+      "displayed": 131,
+      "geometry": {
+        "width": 1280,
+        "height": 800,
+        "dialog": {
+          "left": 120,
+          "right": 1160,
+          "top": 48,
+          "bottom": 752,
+          "overflowX": 0,
+          "overflowY": 0
+        },
+        "grid": {
+          "left": 139,
+          "right": 1141,
+          "top": 220.34375,
+          "bottom": 733,
+          "overflowX": 0,
+          "lastVisible": true
+        },
+        "bodyOverflow": 0
+      },
+      "font": [
+        {
+          "familyName": "霞鶩文楷 Medium",
+          "postScriptName": "LXGWWenKai-Medium",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ],
+      "closed": true
+    }
+  ],
+  "errors": []
+}
