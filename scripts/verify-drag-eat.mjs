@@ -11,7 +11,7 @@ async function close(){if(!room||!clients.length)return;const e=await snap(clien
 }
 try{
  for(let i=0;i<2;i++){
-  const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,ignoreHTTPSErrors:true,extraHTTPHeaders:{Origin:base}});
+  const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,ignoreHTTPSErrors:false,extraHTTPHeaders:{Origin:base}});
   await context.addInitScript(()=>{localStorage.setItem('hanz-new-player-guide-v1','skip');localStorage.setItem('hanz-speech','off');localStorage.setItem('hanz-sfx-v1',JSON.stringify({enabled:false,volume:.55}));});
   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));const p={page,context};clients.push(p);const r=await context.request.post(base+(room?`/api/rooms/${room}/join`:'/api/rooms'),{data:room?{roomId:room,requestedSeat:1,nickname:'拖吃验收乙',actionId:randomUUID()}:{capacity:2,nickname:'拖吃验收甲',actionId:randomUUID()}});assert(r.ok());const e=(await r.json()).snapshot;room=e.public.roomId;p.id=e.private.playerId;await context.storageState({path:`Codex-Temp/${prefix}/${i}-identity.json`});await page.goto(`${base}/room/${room}`);await page.getByRole('button',{name:'准备好了',exact:true}).waitFor();
  }
@@ -19,7 +19,20 @@ try{
  let n=0;for(const [width,height]of [[320,480],[390,844],[667,375],[1280,800]])for(const expanded of [true,false]){
   const e=await snap(clients[0]),a=clients.find(p=>p.id===e.public.phase.actorId),b=clients.find(p=>p!==a);for(const p of [a,b]){await p.page.setViewportSize({width,height});await p.page.waitForTimeout(200);if(expanded!==await p.page.locator('.sentence-rack').isVisible())await p.page.getByRole('button',{name:expanded?'放大麻将':'收起整理区',exact:true}).click();}await a.page.waitForTimeout(250);
   const tile=a.page.locator('[data-tile-id]:visible').first();await tile.click();await a.page.getByRole('button',{name:'出这张',exact:true}).click();await wait(async()=>(await snap(b)).public.phase.kind==='DISCARD_RESPONSE');
-  const source=b.page.locator('.eat-draggable');await source.waitFor();await b.page.waitForTimeout(300);assert.equal(await a.page.locator('.eat-draggable').count(),0,'discarder cannot eat own tile');const windowState=(await snap(b)).public.stateVersion,discard=(await snap(b)).public.discards.at(-1);const r=await source.boundingBox(),from={x:r.x+r.width/2,y:r.y+r.height/2};
+  const source=b.page.locator('.eat-draggable');await source.waitFor();await b.page.waitForTimeout(150);
+  const hint=b.page.locator('.eat-micro-hint');await hint.waitFor();assert.equal(await hint.innerText(),'可拖到手牌');
+  assert.equal(await hint.evaluate(el=>getComputedStyle(el).pointerEvents),'none');
+  const hintBox=await hint.boundingBox();assert(hintBox.x>=0&&hintBox.y>=0&&hintBox.x+hintBox.width<=width&&hintBox.y+hintBox.height<=height,'eat hint in viewport');
+  assert.equal(await source.evaluate(el=>getComputedStyle(el,'::before').animationName),'eat-tile-glint');
+  if(expanded)await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-eat-hint.png`});
+  if(n===3){
+   const period=b.page.locator('.period-micro-hint');await period.waitFor();assert.equal(await period.innerText(),'拖动出逗号');
+   const box=await period.boundingBox();assert(box.x>=0&&box.y>=0&&box.x+box.width<=width&&box.y+box.height<=height);
+   assert.equal(await period.evaluate(el=>getComputedStyle(el).pointerEvents),'none');
+   await b.page.screenshot({path:`Codex-Temp/${prefix}/third-circuit-period.png`});
+   await b.page.waitForTimeout(3100);assert.equal(await period.count(),0);checks.push({thirdCircuit:true,periodHintExpires:true});
+  }else if(n<3)assert.equal(await b.page.locator('.period-micro-hint').count(),0,'no early period lesson');
+  assert.equal(await a.page.locator('.eat-draggable').count(),0,'discarder cannot eat own tile');const windowState=(await snap(b)).public.stateVersion,discard=(await snap(b)).public.discards.at(-1);const r=await source.boundingBox(),from={x:r.x+r.width/2,y:r.y+r.height/2};
   await source.click();assert.equal((await snap(b)).public.stateVersion,windowState,'tap must not eat');
   // An outside release and Escape cancel without consuming this response.
   await b.page.mouse.move(from.x,from.y);await b.page.mouse.down();await b.page.mouse.move(5,90,{steps:10});await b.page.mouse.up();assert.equal((await snap(b)).public.stateVersion,windowState);assert.equal(await b.page.locator('.eat-drag-ghost').count(),0);
@@ -31,8 +44,9 @@ try{
   const cdp=width<700?await b.context.newCDPSession(b.page):null;
   if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[start]});for(let i=1;i<=12;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:start.x+(to.x-start.x)*i/12,y:start.y+(to.y-start.y)*i/12}]});}
   else{await b.page.mouse.move(start.x,start.y);await b.page.mouse.down();await b.page.mouse.move(to.x,to.y,{steps:14});}
-  await b.page.locator('.eat-drop-outline.over').waitFor();assert(await b.page.getByText('松手吃牌',{exact:true}).isVisible());await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-${expanded?'rack':'table'}-drag.png`});if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}else await b.page.mouse.up();
+  await b.page.locator('.eat-drop-outline.over').waitFor();assert.equal(await b.page.locator('.eat-micro-hint').count(),0,'hint hides during drag');assert(await b.page.getByText('松手吃牌',{exact:true}).isVisible());await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-${expanded?'rack':'table'}-drag.png`});if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}else await b.page.mouse.up();
   await wait(async()=>{const s=await snap(b);return s.private.hand.length===14&&s.public.phase.kind==='TURN_ACTION';});const after=await snap(b);assert(after.private.hand.some(t=>t.tileId===discard.tile.tileId));assert.equal(after.public.discards.at(-1).status,'CLAIMED');assert.equal(after.public.players.find(p=>p.playerId===b.id).eatCount,(e.public.players.find(p=>p.playerId===b.id).eatCount??0)+1);assert.equal(await b.page.locator('.eat-drag-ghost').count(),0);await b.page.waitForTimeout(250);assert(await b.page.locator('[data-acquired="EAT"]').count()>0);
+  if(n===3){await b.page.reload({waitUntil:'domcontentloaded'});await b.page.getByRole('button',{name:'出这张',exact:true}).waitFor();await b.page.waitForTimeout(400);assert.equal(await b.page.locator('.period-micro-hint').count(),0,'same-round refresh does not replay period lesson');checks.push({periodRefreshSilent:true});}
   checks.push({width,height,expanded,touch:!!cdp,dropOnEatButton:n===7,tapOutsideEscapeCancelResizeSafe:true,claimed:true});console.log('PASS',width,height,expanded?'rack':'table','drag EAT');n++;
  }
 

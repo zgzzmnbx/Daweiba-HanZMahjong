@@ -1,6 +1,7 @@
 import {useEffect,useImperativeHandle,useLayoutEffect,useRef,useState,type PointerEvent as ReactPointerEvent,type Ref} from 'react';
 import {createPortal} from 'react-dom';
 import './drag-eat.css';
+import {TileHint} from './TileHint';
 export type EatDragControls={cancel:()=>void};
 type Area={left:number;top:number;width:number;height:number};
 type Gesture={pointerId:number;key:string;startX:number;startY:number;x:number;y:number;width:number;height:number;started:boolean;over:boolean;areas:Area[]};
@@ -16,6 +17,14 @@ function targets(source:HTMLElement):Area[]{
  const eat=shell.querySelector<HTMLElement>('[aria-label="吃上家的字"]')?.getBoundingClientRect();if(eat)areas.push({left:eat.left,top:eat.top,width:eat.width,height:eat.height});return areas;
 }
 export function DraggableDiscardTile({char,enabled,resetKey,onEat,onStart,controls}:{char:string;enabled:boolean;resetKey:string;onEat:()=>void;onStart:()=>void;controls:Ref<EatDragControls>}){
+ const tile=useRef<HTMLButtonElement>(null),flashed=useRef(''),[shimmer,setShimmer]=useState(false);
+ useEffect(()=>{
+  if(!enabled||flashed.current===resetKey)return;
+  let frame=0;
+  const arrive=()=>{const el=tile.current;if(el&&!el.closest('[data-motion-hidden="true"]')){flashed.current=resetKey;setShimmer(true);}else frame=requestAnimationFrame(arrive);};
+  frame=requestAnimationFrame(arrive);return()=>cancelAnimationFrame(frame);
+ },[enabled,resetKey]);
+ useEffect(()=>{if(!shimmer)return;const timer=setTimeout(()=>setShimmer(false),1200);return()=>clearTimeout(timer);},[shimmer]);
  const pointer=useRef<Gesture|null>(null),[drag,setDrag]=useState<Gesture|null>(null),valid=useRef({enabled,resetKey,onEat});valid.current={enabled,resetKey,onEat};
  const cancel=()=>{pointer.current=null;setDrag(null);};useImperativeHandle(controls,()=>({cancel}));
  useLayoutEffect(cancel,[enabled,resetKey]);
@@ -23,7 +32,8 @@ export function DraggableDiscardTile({char,enabled,resetKey,onEat,onStart,contro
  const begin=(e:ReactPointerEvent<HTMLButtonElement>)=>{if(!enabled||e.button!==0||!e.isPrimary||pointer.current)return;const areas=targets(e.currentTarget);if(!areas.length)return;e.preventDefault();e.stopPropagation();onStart();const r=e.currentTarget.getBoundingClientRect();const p={pointerId:e.pointerId,key:resetKey,startX:e.clientX,startY:e.clientY,x:r.left+r.width/2,y:r.top+r.height/2,width:r.width,height:r.height,started:false,over:false,areas};pointer.current=p;e.currentTarget.setPointerCapture(e.pointerId);};
  const move=(e:ReactPointerEvent<HTMLButtonElement>)=>{const p=pointer.current;if(!p||e.pointerId!==p.pointerId)return;if(!valid.current.enabled||valid.current.resetKey!==p.key){cancel();return;}if(!p.started&&Math.hypot(e.clientX-p.startX,e.clientY-p.startY)<7)return;e.preventDefault();p.started=true;p.x=e.clientX;p.y=e.clientY-18;p.over=p.areas.some(r=>inside(r,e.clientX,e.clientY));setDrag({...p});};
  const end=(e:ReactPointerEvent<HTMLButtonElement>)=>{const p=pointer.current;if(!p||p.pointerId!==e.pointerId)return;move(e);const accept=pointer.current===p&&p.started&&p.over&&valid.current.enabled&&valid.current.resetKey===p.key;cancel();if(accept)valid.current.onEat();};
- return <>{enabled?<button type="button" className={'latest-tile eat-draggable '+(drag?.started?'eat-lifted':'')} aria-label={`拖动「${char}」到手牌吃牌`} title="拖到手牌，或拖到「吃」" onPointerDown={begin} onPointerMove={move} onPointerUp={end} onPointerCancel={cancel} onLostPointerCapture={cancel} onClick={e=>{if(e.detail===0&&valid.current.enabled)valid.current.onEat();}}>{char}</button>:<strong className="latest-tile">{char}</strong>}
+ return <>{enabled?<button ref={tile} type="button" className={'latest-tile eat-draggable '+(shimmer?'eat-arrival ':'')+(drag?.started?'eat-lifted':'')} aria-label={`拖动「${char}」到手牌吃牌`} title="拖到手牌，或拖到「吃」" onPointerDown={begin} onPointerMove={move} onPointerUp={end} onPointerCancel={cancel} onLostPointerCapture={cancel} onClick={e=>{if(e.detail===0&&valid.current.enabled)valid.current.onEat();}}>{char}</button>:<strong className="latest-tile">{char}</strong>}
+ {enabled&&!drag?.started&&<TileHint anchor={()=>tile.current} text="可拖到手牌" kind="eat"/>}
  {drag?.started&&createPortal(<>
   <div className={'eat-drop-outline '+(drag.over?'over':'')} aria-hidden="true" style={drag.areas[0]}><span>{drag.over?'松手吃牌':'拖到手牌，吃这张'}</span></div>
   <div className="rack-drag-ghost eat-drag-ghost" aria-hidden="true" style={{width:drag.width,height:drag.height,fontSize:drag.width*.81,transform:`translate3d(${drag.x-drag.width/2}px,${drag.y-drag.height/2}px,0)`}}>{char}</div>

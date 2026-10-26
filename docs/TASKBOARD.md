@@ -1,10 +1,10 @@
 # 当前任务板
 
-## 1.30.9 · 指南断线死路修复
+## 1.30.10 · 拖牌轻提示
 
-- DONE：指南已读/准备解耦、网络状态说明、同局恢复保留已读。
-- DONE：构建/402测试、真实指南/离线/重连/开局/偏好流程，三个本地房清理。
-- DONE：公网16项真实流程及79资源一致；修复游戏专用TLS续期hook并通过严格HTTPS，主机记录/Obsidian管理区已同步；GitHub随交付同步。
-- NOT_RUN_ENV_REQUIRED：实体手机；已用Chromium视口和真实本地Socket断线验证。
+- DONE：可吃牌闪光与气泡、第三圈句号3秒提示、刷新防重及指针透传。
+- DONE：构建、402测试与11项真实两客户端浏览器检查；测试房无计分关闭。
+- DONE：公网同套11项真实回归与79资源一致，测试房关闭；GitHub随交付同步。
+- NOT_RUN_ENV_REQUIRED：实体手机；已用Chromium视口/CDP触摸验证。
 
 旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。

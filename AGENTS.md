@@ -232,3 +232,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.30.9指南已读确认是本地操作，不得随READY/网络权限禁用而遮住重连入口；断线只确认已读、不排队准备。RoomSetupPanel按房间/局/玩家隔离，controlEpoch恢复不重置已读；发送READY仍复核最新控制器。
 
 - 游戏入口外置TLS证书续期hook必须force reload独立2021管理口；普通相同配置reload会继续提供旧证书。验收核对线上握手有效期和严格HTTPS/WSS，不得凭timer成功或磁盘新证书判断恢复。
+
+- 1.30.10贴牌气泡须跟随真实DOM/3D牌位并透传指针；已有飞牌隐藏目标期间气泡与闪光等待落定。第三圈按completedCircuits+1，同局刷新不重播3秒句号提示，不影响权威时间。
