@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'键盘弹出，聊天不遮挡',features:['手机聊天跟随键盘上方的可见区域，上移窗口并缩短记录区，保留输入与发送。','修复旧整屏高度覆盖，键盘收起恢复布局，输入草稿保留。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'桌心落牌区更宽松',features:['扩大桌中央拖入出牌范围，提示框与实际落牌范围一致。','绿绒底色更通透，拖入时金边高亮，保留一行提示。']},
+ {version:'1.30.2',date:'2026-10-26',title:'键盘弹出，聊天不遮挡',features:['手机聊天跟随键盘上方的可见区域，上移窗口并缩短记录区，保留输入与发送。','修复旧整屏高度覆盖，键盘收起恢复布局，输入草稿保留。']},
  {version:'1.30.1',date:'2026-10-26',title:'出牌提示，对准桌心',features:['刚出牌提示框跟随真实牌桌中心定位，手机横竖屏与放大麻将切换时不再偏左。','昵称区域固定宽度，长名字最多两行，牌面保持完整。']},
  {version:'1.30.0',date:'2026-10-26',title:'牌组一览，字字在桌',features:['新增牌组按钮，用麻将牌阵列查看当前套组，同字最多展示10张并标注实际张数。','开局后展示本局固定配比；标点入口收进菜单，提示从句号牌拖出逗号。']},
  {version:'1.29.5',date:'2026-10-26',title:'顶栏留白，更舒展',features:['手机顶栏增加上下留白，五个常用按钮保持圆形与完整点击区域。','短屏使用紧凑高度，给牌桌和手牌保留空间。']},
