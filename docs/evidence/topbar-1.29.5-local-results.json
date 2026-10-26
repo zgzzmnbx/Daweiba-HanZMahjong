@@ -1,0 +1,401 @@
+{
+  "at": "2026-10-26T01:57:55.128Z",
+  "version": "1.29.5",
+  "origin": "http://127.0.0.1:3193",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "320x480 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "list",
+        "plus"
+      ]
+    },
+    {
+      "name": "390x844 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "list",
+        "plus"
+      ]
+    },
+    {
+      "name": "667x375 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "newspaper",
+        "sign-in",
+        "question",
+        "shield-check",
+        "plus"
+      ]
+    },
+    {
+      "name": "1280x800 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "newspaper",
+        "sign-in",
+        "question",
+        "shield-check",
+        "plus"
+      ]
+    },
+    {
+      "name": "320x480 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "320x480 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:3",
+      "phaseAfter": "CE869B76D1:PhaseId:6",
+      "deadline": {
+        "endsAt": 1792979849188,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:7",
+      "phaseAfter": "CE869B76D1:PhaseId:10",
+      "deadline": {
+        "endsAt": 1792979849921,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:11",
+      "phaseAfter": "CE869B76D1:PhaseId:14",
+      "deadline": {
+        "endsAt": 1792979850604,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:15",
+      "phaseAfter": "CE869B76D1:PhaseId:18",
+      "deadline": {
+        "endsAt": 1792979851305,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:19",
+      "phaseAfter": "CE869B76D1:PhaseId:22",
+      "deadline": {
+        "endsAt": 1792979851988,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:23",
+      "phaseAfter": "CE869B76D1:PhaseId:26",
+      "deadline": {
+        "endsAt": 1792979852638,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:27",
+      "phaseAfter": "CE869B76D1:PhaseId:30",
+      "deadline": {
+        "endsAt": 1792979853287,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:31",
+      "phaseAfter": "CE869B76D1:PhaseId:34",
+      "deadline": {
+        "endsAt": 1792979853937,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:35",
+      "phaseAfter": "CE869B76D1:PhaseId:38",
+      "deadline": {
+        "endsAt": 1792979854588,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480: new review supersedes 游戏菜单, voting and return work"
+    },
+    {
+      "name": "390x844 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "390x844 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:42",
+      "phaseAfter": "CE869B76D1:PhaseId:45",
+      "deadline": {
+        "endsAt": 1792979857270,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:46",
+      "phaseAfter": "CE869B76D1:PhaseId:49",
+      "deadline": {
+        "endsAt": 1792979858004,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:50",
+      "phaseAfter": "CE869B76D1:PhaseId:53",
+      "deadline": {
+        "endsAt": 1792979858738,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:54",
+      "phaseAfter": "CE869B76D1:PhaseId:57",
+      "deadline": {
+        "endsAt": 1792979859386,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:58",
+      "phaseAfter": "CE869B76D1:PhaseId:61",
+      "deadline": {
+        "endsAt": 1792979860109,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:62",
+      "phaseAfter": "CE869B76D1:PhaseId:65",
+      "deadline": {
+        "endsAt": 1792979860770,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:66",
+      "phaseAfter": "CE869B76D1:PhaseId:69",
+      "deadline": {
+        "endsAt": 1792979861420,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:70",
+      "phaseAfter": "CE869B76D1:PhaseId:73",
+      "deadline": {
+        "endsAt": 1792979862071,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:74",
+      "phaseAfter": "CE869B76D1:PhaseId:77",
+      "deadline": {
+        "endsAt": 1792979862720,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844: new review supersedes 同桌音乐, voting and return work"
+    },
+    {
+      "name": "667x375 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "667x375 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:81",
+      "phaseAfter": "CE869B76D1:PhaseId:84",
+      "deadline": {
+        "endsAt": 1792979865420,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:85",
+      "phaseAfter": "CE869B76D1:PhaseId:88",
+      "deadline": {
+        "endsAt": 1792979866120,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:89",
+      "phaseAfter": "CE869B76D1:PhaseId:92",
+      "deadline": {
+        "endsAt": 1792979866804,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:93",
+      "phaseAfter": "CE869B76D1:PhaseId:96",
+      "deadline": {
+        "endsAt": 1792979867453,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:97",
+      "phaseAfter": "CE869B76D1:PhaseId:100",
+      "deadline": {
+        "endsAt": 1792979868136,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:101",
+      "phaseAfter": "CE869B76D1:PhaseId:104",
+      "deadline": {
+        "endsAt": 1792979868787,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:105",
+      "phaseAfter": "CE869B76D1:PhaseId:108",
+      "deadline": {
+        "endsAt": 1792979869437,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:109",
+      "phaseAfter": "CE869B76D1:PhaseId:112",
+      "deadline": {
+        "endsAt": 1792979870086,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:113",
+      "phaseAfter": "CE869B76D1:PhaseId:116",
+      "deadline": {
+        "endsAt": 1792979870737,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375: new review supersedes 新手指南, voting and return work"
+    },
+    {
+      "name": "1280x800 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "1280x800 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:120",
+      "phaseAfter": "CE869B76D1:PhaseId:123",
+      "deadline": {
+        "endsAt": 1792979873673,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:124",
+      "phaseAfter": "CE869B76D1:PhaseId:127",
+      "deadline": {
+        "endsAt": 1792979874421,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:128",
+      "phaseAfter": "CE869B76D1:PhaseId:131",
+      "deadline": {
+        "endsAt": 1792979875105,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:132",
+      "phaseAfter": "CE869B76D1:PhaseId:135",
+      "deadline": {
+        "endsAt": 1792979875720,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:136",
+      "phaseAfter": "CE869B76D1:PhaseId:139",
+      "deadline": {
+        "endsAt": 1792979876372,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:140",
+      "phaseAfter": "CE869B76D1:PhaseId:143",
+      "deadline": {
+        "endsAt": 1792979877021,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:144",
+      "phaseAfter": "CE869B76D1:PhaseId:147",
+      "deadline": {
+        "endsAt": 1792979877673,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:148",
+      "phaseAfter": "CE869B76D1:PhaseId:151",
+      "deadline": {
+        "endsAt": 1792979878321,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "CE869B76D1:PhaseId:152",
+      "phaseAfter": "CE869B76D1:PhaseId:155",
+      "deadline": {
+        "endsAt": 1792979878972,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800: new review supersedes 牌局记录, voting and return work"
+    },
+    {
+      "name": "public-only spectator uses shared icons and return action"
+    },
+    {
+      "name": "room closure dismisses obsolete navigation"
+    }
+  ],
+  "errors": []
+}

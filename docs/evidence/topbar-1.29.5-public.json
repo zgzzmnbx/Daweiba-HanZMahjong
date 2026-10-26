@@ -1,0 +1,315 @@
+{
+  "at": "2026-10-26T02:02:28.931Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "viewportWidth": 320,
+      "viewportHeight": 480,
+      "topbar": {
+        "height": 56,
+        "overflow": 0,
+        "buttons": [
+          {
+            "name": "标点",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 72.8125,
+            "right": 203.1875
+          },
+          {
+            "name": "音乐",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 121.609375,
+            "right": 154.390625
+          },
+          {
+            "name": "闲聊",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 170.40625,
+            "right": 105.59375
+          },
+          {
+            "name": "涂鸦",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 219.203125,
+            "right": 56.796875
+          },
+          {
+            "name": "菜单",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 268,
+            "right": 8
+          }
+        ]
+      }
+    },
+    {
+      "viewportWidth": 320,
+      "viewportHeight": 480,
+      "height": 436.953125,
+      "width": 296,
+      "overflowX": 0,
+      "capacityY": 177.2109375,
+      "deckY": 177.2109375,
+      "profileBottom": 167.2109375,
+      "optionsY": 177.2109375,
+      "selectHeight": 44,
+      "createdAndClosed": true
+    },
+    {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "topbar": {
+        "height": 64,
+        "overflow": 0,
+        "buttons": [
+          {
+            "name": "标点",
+            "w": 44,
+            "h": 44,
+            "top": 9.5,
+            "bottom": 10.5,
+            "left": 138.625,
+            "right": 207.375
+          },
+          {
+            "name": "音乐",
+            "w": 44,
+            "h": 44,
+            "top": 9.5,
+            "bottom": 10.5,
+            "left": 188.46875,
+            "right": 157.53125
+          },
+          {
+            "name": "闲聊",
+            "w": 44,
+            "h": 44,
+            "top": 9.5,
+            "bottom": 10.5,
+            "left": 238.3125,
+            "right": 107.6875
+          },
+          {
+            "name": "涂鸦",
+            "w": 44,
+            "h": 44,
+            "top": 9.5,
+            "bottom": 10.5,
+            "left": 288.15625,
+            "right": 57.84375
+          },
+          {
+            "name": "菜单",
+            "w": 44,
+            "h": 44,
+            "top": 9.5,
+            "bottom": 10.5,
+            "left": 338,
+            "right": 8
+          }
+        ]
+      }
+    },
+    {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "height": 436.953125,
+      "width": 366,
+      "overflowX": 0,
+      "capacityY": 359.2109375,
+      "deckY": 359.2109375,
+      "profileBottom": 349.2109375,
+      "optionsY": 359.2109375,
+      "selectHeight": 44,
+      "createdAndClosed": true
+    },
+    {
+      "viewportWidth": 667,
+      "viewportHeight": 375,
+      "topbar": {
+        "height": 56,
+        "overflow": 0,
+        "buttons": [
+          {
+            "name": "标点",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 415,
+            "right": 208
+          },
+          {
+            "name": "音乐",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 465,
+            "right": 158
+          },
+          {
+            "name": "闲聊",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 515,
+            "right": 108
+          },
+          {
+            "name": "涂鸦",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 565,
+            "right": 58
+          },
+          {
+            "name": "菜单",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 615,
+            "right": 8
+          }
+        ]
+      }
+    },
+    {
+      "viewportWidth": 667,
+      "viewportHeight": 375,
+      "height": 343,
+      "width": 440,
+      "overflowX": 0,
+      "capacityY": 171.6875,
+      "deckY": 171.6875,
+      "profileBottom": 161.6875,
+      "optionsY": 171.6875,
+      "selectHeight": 44,
+      "createdAndClosed": true
+    },
+    {
+      "viewportWidth": 1280,
+      "viewportHeight": 800,
+      "topbar": {
+        "height": 56,
+        "overflow": 0,
+        "buttons": [
+          {
+            "name": "大厅",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 12,
+            "right": 1224
+          },
+          {
+            "name": "标点",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 874,
+            "right": 362
+          },
+          {
+            "name": "音乐",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 924,
+            "right": 312
+          },
+          {
+            "name": "闲聊",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 974,
+            "right": 262
+          },
+          {
+            "name": "涂鸦",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 1024,
+            "right": 212
+          },
+          {
+            "name": "帮助",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 1074,
+            "right": 162
+          },
+          {
+            "name": "记录",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 1124,
+            "right": 112
+          },
+          {
+            "name": "管理",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 1174,
+            "right": 62
+          },
+          {
+            "name": "菜单",
+            "w": 44,
+            "h": 44,
+            "top": 5.5,
+            "bottom": 6.5,
+            "left": 1224,
+            "right": 12
+          }
+        ]
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "viewportHeight": 800,
+      "height": 505.46875,
+      "width": 440,
+      "overflowX": 0,
+      "capacityY": 341.90625,
+      "deckY": 341.90625,
+      "profileBottom": 329.90625,
+      "optionsY": 341.90625,
+      "selectHeight": 44,
+      "createdAndClosed": true
+    }
+  ],
+  "errors": []
+}

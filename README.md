@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.29.4-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.29.5-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -38,6 +38,14 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.29.5 · 手机顶栏留白 · 2026-10-26
+
+手机顶栏普通高度64px、短屏（高≤549px）56px，常用五入口保持44px正圆，横向间隔按屏宽4—6px；左右独立保留安全区。避免按钮贴满顶栏，桌面不改。
+
+构建与396测试通过；Chromium141真实双客户端320×480、390×844、667×375、1280×800共50项验证通过，补充顶栏无溢出、按钮正圆、手机上下至少5px留白检查。聊天/涂鸦/菜单、摸打与胡牌评审保持可用；测试房已关闭。证据topbar-1.29.5-local-results.json。实体Safari未测。
+
+已发布原公网v1.29.5：release `1.29.5-20261026-100020`，源码冻结 `afc1287`，数据库一致性备份 `pre-release-20261026-100021.sqlite`。ready=true，77项资源与构建逐字节一致；公网四视口候场顶栏尺寸及实际开关房通过，测试房均关闭。证据topbar-1.29.5-public.json及public-release.json。源码、文档和证据随交付CAS同步GitHub并核对文件树。
 
 ## 1.29.4 · 取消每字20张上限 · 2026-10-26
 

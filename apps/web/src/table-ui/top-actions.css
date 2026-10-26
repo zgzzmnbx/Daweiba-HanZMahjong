@@ -17,7 +17,7 @@
 }
 @media(max-width:699px){
  #root .game-shell .topbar>.portrait-secondary,#root .game-shell .topbar .room-meta{display:none}
- #root .game-shell .topbar{padding:0 8px;gap:5px;justify-content:flex-end}
+ #root .game-shell .topbar{height:64px;padding:0 max(8px,env(safe-area-inset-right,0px)) 0 max(8px,env(safe-area-inset-left,0px));gap:clamp(4px,1.5vw,6px);justify-content:flex-end}
  #root .game-shell .topbar .wordmark{margin-right:auto;font-size:21px;letter-spacing:0;flex:none}
  #root .game-shell .topbar .chat-dock{display:flex;flex:none}
  #root .game-shell .topbar .hud-tool{--hud-size:44px}
@@ -27,4 +27,9 @@
 /* Room code remains in the menu when the wide toolbar is near its lower breakpoint. */
 @media(min-width:700px) and (max-width:899px){
  #root .game-shell .topbar .room-code{display:none}
+}
+
+/* Short phones keep breathing room without taking a full extra row from the table. */
+@media(max-width:699px) and (max-height:549px){
+ #root .game-shell .topbar{height:56px}
 }

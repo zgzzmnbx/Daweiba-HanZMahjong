@@ -14,6 +14,13 @@ const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_BROWSERS_PAT
 const pass=(name,data={})=>{checks.push({name,...data});console.log('PASS',name);};
 async function audit(page,selector='body'){
  await page.evaluate(()=>document.fonts.ready);
+ const bar=page.locator('.game-shell .topbar');
+ if(await bar.isVisible()){
+  const geometry=await bar.evaluate(el=>{const r=el.getBoundingClientRect();return {w:innerWidth,h:innerHeight,height:r.height,overflow:el.scrollWidth-el.clientWidth,buttons:[...el.querySelectorAll('button')].filter(b=>b.getBoundingClientRect().width&&getComputedStyle(b).visibility!=='hidden').map(b=>{const q=b.getBoundingClientRect();return {name:b.getAttribute('aria-label'),round:b.classList.contains('hud-tool'),width:q.width,height:q.height,top:q.top-r.top,bottom:r.bottom-q.bottom,left:q.left-r.left,right:r.right-q.right};})};});
+  assert(geometry.overflow<=1,'toolbar overflows '+JSON.stringify(geometry));
+  for(const b of geometry.buttons){assert(b.left>=0&&b.right>=0,'toolbar clips '+JSON.stringify(b));if(b.round){assert(Math.abs(b.width-b.height)<.6);if(geometry.w<700){assert(b.width>=44);assert(b.top>=5&&b.bottom>=5,'toolbar needs vertical space '+JSON.stringify(b));}}}
+  if(geometry.w<700)assert.equal(geometry.height,geometry.h<=549?56:64);
+ }
  const result=await page.locator(selector).evaluate(root=>{
   const modal=document.querySelector('dialog:modal:last-of-type');
   const rows=[...root.querySelectorAll('svg')].filter(el=>{const r=el.getBoundingClientRect();return r.width&&r.height&&getComputedStyle(el).visibility!=='hidden'&&(!modal||modal.contains(el));}).map(el=>{
