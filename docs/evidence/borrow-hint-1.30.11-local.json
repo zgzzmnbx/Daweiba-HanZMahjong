@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-26T11:48:34.896Z",
+  "version": "1.30.11",
+  "browser": "141.0.7390.37",
+  "origin": "http://127.0.0.1:3199",
+  "checks": [
+    {
+      "unlockAt": 20,
+      "capacity": 2,
+      "noEarlyHint": true,
+      "menuNotInterrupted": true,
+      "bothPlayersInformed": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "bubbleFits": true,
+      "belowCircuitButton": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "bubbleFits": true,
+      "belowCircuitButton": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "bubbleFits": true,
+      "belowCircuitButton": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "bubbleFits": true,
+      "belowCircuitButton": true
+    },
+    {
+      "expiresAfterThreeSeconds": true
+    },
+    {
+      "refreshDoesNotReplay": true
+    }
+  ],
+  "errors": []
+}

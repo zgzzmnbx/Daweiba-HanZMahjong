@@ -3,7 +3,7 @@ import {createPortal} from 'react-dom';
 import './tile-hint.css';
 
 /** Follow the visible tile (DOM or projected 3D), without changing layout or hit testing. */
-export function TileHint({anchor,text,kind}:{anchor:()=>HTMLElement|null;text:string;kind:'eat'|'period'}){
+export function TileHint({anchor,text,kind}:{anchor:()=>HTMLElement|null;text:string;kind:'eat'|'period'|'borrow'}){
  const bubble=useRef<HTMLDivElement>(null),latest=useRef(anchor);latest.current=anchor;
  useLayoutEffect(()=>{
   let frame=0;
@@ -27,16 +27,20 @@ export function TileHint({anchor,text,kind}:{anchor:()=>HTMLElement|null;text:st
 }
 
 /** One three-second lesson per round and browser tab; reconnects never extend it. */
-export function ThirdCircuitHint({identity,circuit,active,anchor}:{identity:string;circuit:number;active:boolean;anchor:()=>HTMLElement|null}){
+export function RoundMilestoneHint({identity,eligible,active,anchor,text,kind}:{identity:string;eligible:boolean;active:boolean;anchor:()=>HTMLElement|null;text:string;kind:'period'|'borrow'}){
  const [visible,setVisible]=useState<string|null>(null),seen=useRef('');
  useEffect(()=>{
-  if(circuit!==3||!active||seen.current===identity||document.querySelector('dialog[open]'))return;
-  const key=`hanz-period-hint:${identity}`;
+  if(!eligible||!active||document.hidden||seen.current===identity||document.querySelector('dialog[open]'))return;
+  const key=`hanz-${kind}-hint:${identity}`;
   try{if(sessionStorage.getItem(key)){seen.current=identity;return;}}catch{/* Storage is optional. */}
   const tile=anchor()?.getBoundingClientRect();if(!tile?.width||!tile.height)return;
   seen.current=identity;try{sessionStorage.setItem(key,'seen');}catch{/* Keep the in-memory guard. */}
   setVisible(identity);
- },[identity,circuit,active,anchor]);
+ },[identity,eligible,active,anchor,kind]);
  useEffect(()=>{if(!visible)return;const timer=setTimeout(()=>setVisible(null),3000);return()=>clearTimeout(timer);},[visible]);
- return visible===identity&&active&&circuit===3?<TileHint anchor={anchor} text="拖动出逗号" kind="period"/>:null;
+ return visible===identity&&active&&eligible?<TileHint anchor={anchor} text={text} kind={kind}/>:null;
+}
+
+export function ThirdCircuitHint({identity,circuit,active,anchor}:{identity:string;circuit:number;active:boolean;anchor:()=>HTMLElement|null}){
+ return <RoundMilestoneHint identity={identity} eligible={circuit===3} active={active} anchor={anchor} text="拖动出逗号" kind="period"/>;
 }

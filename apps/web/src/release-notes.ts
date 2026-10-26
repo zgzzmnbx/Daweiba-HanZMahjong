@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'闪光可吃，句号借逗号',features:['可吃字牌出现时闪过柔金光，气泡提示「可拖到手牌」，拖起即收起。','第三圈在句号牌旁提示「拖动出逗号」3秒，每局一次，不遮挡操作。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'十圈点炮，及时提醒',features:['全场借字胡牌解锁时，圈数旁提示「第十圈，开启全场点炮胡牌」。','绿金气泡3秒自动消失，每局一次，刷新不重复，不打断操作。']},
+ {version:'1.30.10',date:'2026-10-26',title:'闪光可吃，句号借逗号',features:['可吃字牌出现时闪过柔金光，气泡提示「可拖到手牌」，拖起即收起。','第三圈在句号牌旁提示「拖动出逗号」3秒，每局一次，不遮挡操作。']},
  {version:'1.30.9',date:'2026-10-26',title:'指南不再卡住重连',features:['断线时仍可确认并关闭新手指南，返回房间重新连接。','准备仍需连接恢复后主动确认，指南中清楚提示当前状态。']},
  {version:'1.30.8',date:'2026-10-26',title:'桌号完整，入座清楚',features:['修复大厅桌号和人数被卡片边界截断的问题。','短窗口保留完整卡片、内部滚动查看，悬停不再上移。']},
  {version:'1.30.7',date:'2026-10-26',title:'木桌焕新，绿绒相迎',features:['大厅牌桌换成细腻木纹、绿绒桌面与黄铜包角的立体素材。','手机轻量素材约27KB，六桌共用缓存；桌位、玩家和入座操作保持实时。']},
