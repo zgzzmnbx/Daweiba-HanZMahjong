@@ -218,3 +218,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.30.1最新弃牌提示与出牌引导共用tableCenter投影，禁止恢复手机left:46%或短屏侧槽；昵称最多两行、牌面flex:none。修改提示或按钮位置须验证展开/收起手牌时水平中心与实际操作框不相交，不能只验单一视口。
 
 - 1.30.2游戏根高度由game-viewport.css统一控制，后加载100dvh会覆盖visualViewport键盘适配；聊天避让须验证仅visualViewport缩高/offsetTop平移，不只setViewportSize。异步发送后focus应等disabled解除的DOM提交帧。
+
+- 1.30.4拖动上家弃牌复用canEatDiscard与RESPOND/EAT；只做公开影像，不能预写私密草稿。响应拖动须绑定phaseId/discardId并在失权/过期清理，不套用本人整理牌跨普通阶段持续持牌的PLAY边界。

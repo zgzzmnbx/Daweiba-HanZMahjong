@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-26T03:56:17.092Z",
+  "version": "1.30.4",
+  "browser": "141.0.7390.37",
+  "origin": "https://118.196.107.182:1240",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "expanded": true,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "expanded": false,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expanded": true,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expanded": false,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "expanded": true,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "expanded": false,
+      "touch": true,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "expanded": true,
+      "touch": false,
+      "dropOnEatButton": false,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "expanded": false,
+      "touch": false,
+      "dropOnEatButton": true,
+      "tapOutsideEscapeCancelResizeSafe": true,
+      "claimed": true
+    },
+    {
+      "expiredHeldDiscardCancelled": true
+    }
+  ],
+  "errors": []
+}
