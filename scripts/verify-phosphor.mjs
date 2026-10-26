@@ -31,6 +31,25 @@ async function audit(page,selector='body'){
  for(const i of result){assert(i.name,'legacy SVG '+i.parent);assert.equal(i.viewBox,'0 0 256 256');assert(i.ink>0,'empty icon '+i.name);assert(Math.abs(i.w-i.h)<.6,'squashed icon '+JSON.stringify(i));assert.notEqual(i.fill,'none','invisible icon '+i.name);assert.equal(i.stroke,'none','legacy stroke applied '+i.name);assert.equal(i.hidden,'true');assert.equal(i.focusable,'false');if(i.centerX!==null)assert(Math.abs(i.centerX)<.6,'horizontal icon drift '+JSON.stringify(i));if(i.centerY!==null)assert(Math.abs(i.centerY)<.6,'vertical icon drift '+JSON.stringify(i));}
  return [...new Set(result.map(i=>i.name))];
 }
+async function auditLatestDiscard(page,width,height){
+ const initial=await page.locator('.sentence-rack').isVisible();
+ for(const expanded of [true,false]){
+  const visible=await page.locator('.sentence-rack').isVisible();
+  if(visible!==expanded)await page.getByRole('button',{name:expanded?'放大麻将':'收起整理区',exact:true}).click();
+  await page.waitForTimeout(350);
+  const g=await page.locator('.latest-discard').evaluate(el=>{
+   const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};
+   return {box:rect(el),table:rect(document.querySelector('.canvas-host')),actions:rect(document.querySelector('.table-action-dock')),tile:rect(el.querySelector('.latest-tile')),name:el.querySelector('.latest-player-name').textContent,pointer:getComputedStyle(el).pointerEvents};
+  });
+  assert(Math.abs(g.box.x+g.box.width/2-(g.table.x+g.table.width/2))<1,'latest discard is off table center '+JSON.stringify(g));
+  assert(g.box.x>=0&&g.box.right<=width&&g.box.y>=0&&g.box.bottom<=height,'latest discard clipped '+JSON.stringify(g));
+  assert(!(g.box.x<g.actions.right&&g.box.right>g.actions.x&&g.box.y<g.actions.bottom&&g.box.bottom>g.actions.y),'latest discard overlaps action dock '+JSON.stringify(g));
+  assert.equal(g.pointer,'none');assert(g.tile.x>=g.box.x&&g.tile.right<=g.box.right&&g.tile.bottom<=g.box.bottom);
+  await page.screenshot({path:`${screens}/${prefix}-${width}-latest-${expanded?'rack':'table'}.png`});
+  pass(`${width}x${height} latest discard centered with ${expanded?'expanded':'collapsed'} rack`,g);
+ }
+ if(await page.locator('.sentence-rack').isVisible()!==initial)await page.getByRole('button',{name:initial?'放大麻将':'收起整理区',exact:true}).click();
+}
 async function hallCheck(page,width,height){
  await page.setViewportSize({width,height});await page.goto(base);await page.getByRole('button',{name:'胡牌天书',exact:true}).waitFor();await page.waitForTimeout(180);
  const iconNames=await audit(page,'.game-hall');
@@ -65,10 +84,10 @@ try{
   const page=await context.newPage();page.setDefaultTimeout(10000);page.setDefaultNavigationTimeout(30000);page.on('pageerror',e=>errors.push(e.message));const p={context,page,commands:new Map(),commandFailures:[]};clients.push(p);
   page.on('websocket',socket=>{socket.on('framesent',({payload})=>{try{const data=JSON.parse(String(payload).slice(String(payload).indexOf('['))),c=data[1]?.command;if(c){p.commands.set(c.actionId,c.kind);if(c.kind==='CLOSE_ROOM')console.log('CLOSE sent',c.expectedStateVersion);}}catch{}});socket.on('framereceived',({payload})=>{try{const data=JSON.parse(String(payload).slice(String(payload).indexOf('['))),result=data[1]?.type==='COMMAND_RESULT'?data[1].result:null;if(result&&!result.ok){const failure={kind:p.commands.get(result.actionId),code:result.code};p.commandFailures.push(failure);console.log('COMMAND REJECTED',JSON.stringify(failure));}}catch{}});});
   if(i===0)for(const [w,h] of [[320,480],[390,844],[667,375],[1280,800]])await hallCheck(page,w,h);
-  const r=await context.request.post(base+(room?`/api/rooms/${room}/join`:'/api/rooms'),{data:room?{roomId:room,requestedSeat:1,nickname:'菜单验收乙',actionId:randomUUID()}:{capacity:2,nickname:'菜单验收甲',actionId:randomUUID()}});assert(r.ok());room=(await r.json()).snapshot.public.roomId;p.id=(await snap(p)).private.playerId;
+  const r=await context.request.post(base+(room?`/api/rooms/${room}/join`:'/api/rooms'),{data:room?{roomId:room,requestedSeat:1,nickname:'AI · 稼轩拍桌子',actionId:randomUUID()}:{capacity:2,nickname:'AI · 东坡不想加班',actionId:randomUUID()}});assert(r.ok());room=(await r.json()).snapshot.public.roomId;p.id=(await snap(p)).private.playerId;
   await writeFile(`Codex-Temp/${prefix}-${i}-identity.json`,JSON.stringify(await context.storageState()),{mode:0o600});await page.goto(`${base}/room/${room}`,{waitUntil:'domcontentloaded'});await page.getByRole('button',{name:'准备好了',exact:true}).waitFor({timeout:30000});
  }
- await clients[0].page.locator('.seat-person-heading strong').filter({hasText:'菜单验收乙'}).waitFor();
+ await clients[0].page.locator('.seat-person-heading strong').filter({hasText:'AI · 稼轩拍桌子'}).waitFor();
  for(const p of clients)await p.page.getByRole('button',{name:'准备好了',exact:true}).click();await clients[0].page.getByRole('button',{name:'开始牌局',exact:true}).click();await wait(async()=> (await snap(clients[0])).public.phase.kind==='TURN_ACTION');
  for(const [width,height] of [[320,480],[390,844],[667,375],[1280,800]]){
   for(const p of clients){await p.page.setViewportSize({width,height});await p.page.evaluate(()=>document.fonts.ready);}
@@ -90,7 +109,7 @@ try{
    if(label==='同桌音乐'){assert.equal(await focus.inputValue(),'35');assert.equal(await observer.page.getByRole('button',{name:'音效与语音',exact:true}).getAttribute('aria-pressed'),'true');}
    const after=await snap(observer);assert.notEqual(after.public.phase.phaseId,before.public.phase.phaseId);assert.equal(after.public.discards.length,before.public.discards.length+1);assert(after.legalActions.includes('RESPOND'));const deadline=after.public.phase.deadline;
    if(label==='游戏菜单'||label==='同桌音乐')await observer.page.screenshot({timeout:30000,path:`${screens}/${prefix}-${width}-${label==='游戏菜单'?'menu':'music'}.png`});
-   await closeNavigation(observer);
+   await closeNavigation(observer);if(label==='游戏菜单')await auditLatestDiscard(observer.page,width,height);
    const actorMenu=await open(actor,'游戏菜单');await observer.page.getByRole('button',{name:'摸',exact:true}).click();await actor.page.locator('.game-shell[data-phase="TURN_ACTION"]').waitFor();await actor.page.waitForTimeout(150);assert(await actorMenu.isVisible());const drawn=await snap(observer);assert.equal(drawn.public.phase.actorId,observer.id);assert.equal(drawn.public.wallRemaining,after.public.wallRemaining-1);assert.equal(drawn.private.hand.length,14);
    await closeNavigation(actor);pass(`${width}x${height} ${label}: discard preserves modal, focus, scroll; draw preserves menu`,{phaseBefore:before.public.phase.phaseId,phaseAfter:after.public.phase.phaseId,deadline});
   }

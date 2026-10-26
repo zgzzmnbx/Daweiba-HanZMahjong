@@ -72,7 +72,7 @@ dialog.hu-showcase{top:var(--app-top,0px);left:var(--app-left,0px);width:var(--a
  #root .game-shell .table-action-dock .game-action{min-width:42px;min-height:42px;padding:2px 4px}
  #root .game-shell .doodle-tools:not(.doodle-popover){left:calc(50% - 50cqw + 4px);top:calc(50% + 50cqh - 80px)}
  #root .game-shell .doodle-visibility{position:absolute;bottom:calc(100% + 4px);left:0}
- #root .game-shell .latest-discard{left:calc(50% + 50cqw - 24px);top:calc(50% + 50cqh - 116px);padding:3px}
+ #root .game-shell .latest-discard{padding:3px}
  #root .game-shell .latest-player{display:none}
  #root .game-shell .latest-tile{width:30px;height:40px;font-size:26px}
 }
