@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-26T05:15:06.413Z",
+  "origin": "http://127.0.0.1:3173",
+  "browser": "141.0.7390.37",
+  "scope": "real local lobby and six-player room",
+  "checks": [
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 320",
+      "status": "PASS",
+      "table": {
+        "x": 27,
+        "y": 169.75,
+        "w": 266,
+        "h": 177.328125,
+        "bottom": 347.078125
+      },
+      "scrollTop": 298
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 360",
+      "status": "PASS",
+      "table": {
+        "x": 27,
+        "y": 170.75,
+        "w": 306,
+        "h": 204,
+        "bottom": 374.75
+      },
+      "scrollTop": 456
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 390",
+      "status": "PASS",
+      "table": {
+        "x": 27,
+        "y": 170.75,
+        "w": 336,
+        "h": 224,
+        "bottom": 394.75
+      },
+      "scrollTop": 630
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 430",
+      "status": "PASS",
+      "table": {
+        "x": 45,
+        "y": 173.75,
+        "w": 340,
+        "h": 226.65625,
+        "bottom": 400.40625
+      },
+      "scrollTop": 689
+    },
+    {
+      "name": "portrait single column, stable table ratio, touch scroll and sixth table reachable 600",
+      "status": "PASS",
+      "table": {
+        "x": 130,
+        "y": 173.75,
+        "w": 340,
+        "h": 226.65625,
+        "bottom": 400.40625
+      },
+      "scrollTop": 679
+    },
+    {
+      "name": "sixth table and fixed create entry open their real dialogs without submitting a room",
+      "status": "PASS"
+    },
+    {
+      "name": "landscape and desktop retain three columns 667",
+      "status": "PASS"
+    },
+    {
+      "name": "landscape and desktop retain three columns 1280",
+      "status": "PASS"
+    },
+    {
+      "name": "real six-player lobby names expand with table, no nested name-list scroller 320",
+      "status": "PASS"
+    },
+    {
+      "name": "real six-player lobby names expand with table, no nested name-list scroller 390",
+      "status": "PASS"
+    },
+    {
+      "name": "local occupied public table test room closed",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

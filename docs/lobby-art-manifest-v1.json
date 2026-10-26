@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "source": "OpenAI built-in image generation",
+  "sourceSha256": "1151b9429ba8842306ea380e6f11c440ed86fe4b2b41c9f23cfd2b74fb072154",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "processing": "Proportional resize and WebP encoding only; alpha retained",
+  "assets": [
+    {
+      "file": "table-480.webp",
+      "width": 480,
+      "height": 320,
+      "bytes": 27944,
+      "sha256": "ee7626cdf72d46a0185a59c5947295693d5c5175bbb321e322ab068d886e9de6"
+    },
+    {
+      "file": "table-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 85832,
+      "sha256": "a25ae36cc58bb4be2f117cab22bd9f3ca23563367db700b3deb54c62cd21cbaa"
+    }
+  ]
+}
