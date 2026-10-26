@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-26T06:30:46.965Z",
+  "version": "1.30.8",
+  "origin": "http://127.0.0.1:3182",
+  "browser": "141.0.7390.37",
+  "scope": "read-only lobby; loading and failure simulated with browser routes",
+  "checks": [
+    {
+      "width": 390,
+      "height": 844,
+      "expected": "480",
+      "requests": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-480.webp",
+          "loaded": true,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "expected": "960",
+      "requests": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "http://127.0.0.1:3182/lobby/v1/table-960.webp",
+          "loaded": true,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "mode": "delayed download",
+      "geometryStable": true,
+      "entryReachable": true
+    },
+    {
+      "mode": "download failure",
+      "geometryStable": true,
+      "entryReachable": true
+    }
+  ]
+}

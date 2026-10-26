@@ -1,0 +1,3518 @@
+{
+  "at": "2026-10-26T06:35:35.174Z",
+  "version": "1.30.8",
+  "origin": "https://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "read-only lobby; no room mutations; real hover, focus and scroll",
+  "checks": [
+    {
+      "width": 1280,
+      "height": 600,
+      "normal": [
+        {
+          "card": {
+            "left": 76,
+            "top": 133.75,
+            "right": 437,
+            "bottom": 351.25,
+            "width": 361,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 76,
+            "top": 133.75,
+            "right": 437,
+            "bottom": 460.296875,
+            "width": 361,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 96,
+              "top": 139.75,
+              "right": 122,
+              "bottom": 165.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 367,
+              "top": 140.75,
+              "right": 417,
+              "bottom": 164.75,
+              "width": 50,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 89,
+              "top": 171.75,
+              "right": 424,
+              "bottom": 271.75,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 235.5,
+              "top": 275.75,
+              "right": 277.5,
+              "bottom": 281.75,
+              "width": 42,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 184.5,
+              "top": 289.75,
+              "right": 328.5,
+              "bottom": 323.75,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 223.5,
+              "top": 329.75,
+              "right": 289.5,
+              "bottom": 345.25,
+              "width": 66,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 455,
+            "top": 133.75,
+            "right": 816,
+            "bottom": 460.296875,
+            "width": 361,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 455,
+            "top": 133.75,
+            "right": 816,
+            "bottom": 460.296875,
+            "width": 361,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 475,
+              "top": 194.265625,
+              "right": 501,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 756,
+              "top": 195.265625,
+              "right": 796,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 468,
+              "top": 226.265625,
+              "right": 803,
+              "bottom": 326.265625,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 602.5,
+              "top": 330.265625,
+              "right": 668.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 563.5,
+              "top": 344.265625,
+              "right": 707.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 616.203125,
+              "top": 384.265625,
+              "right": 654.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 834,
+            "top": 133.75,
+            "right": 1195,
+            "bottom": 460.296875,
+            "width": 361,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 834,
+            "top": 133.75,
+            "right": 1195,
+            "bottom": 460.296875,
+            "width": 361,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 854,
+              "top": 194.265625,
+              "right": 880,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1135,
+              "top": 195.265625,
+              "right": 1175,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 847,
+              "top": 226.265625,
+              "right": 1182,
+              "bottom": 326.265625,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 981.5,
+              "top": 330.265625,
+              "right": 1047.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 942.5,
+              "top": 344.265625,
+              "right": 1086.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 995.203125,
+              "top": 384.265625,
+              "right": 1033.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 76,
+            "top": 470.296875,
+            "right": 437,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 76,
+            "top": 470.296875,
+            "right": 437,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 96,
+              "top": 476.296875,
+              "right": 122,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 377,
+              "top": 477.296875,
+              "right": 417,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 89,
+              "top": 508.296875,
+              "right": 424,
+              "bottom": 608.296875,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 223.5,
+              "top": 612.296875,
+              "right": 289.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 184.5,
+              "top": 626.296875,
+              "right": 328.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 237.203125,
+              "top": 666.296875,
+              "right": 275.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 455,
+            "top": 470.296875,
+            "right": 816,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 455,
+            "top": 470.296875,
+            "right": 816,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 475,
+              "top": 476.296875,
+              "right": 501,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 756,
+              "top": 477.296875,
+              "right": 796,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 468,
+              "top": 508.296875,
+              "right": 803,
+              "bottom": 608.296875,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 602.5,
+              "top": 612.296875,
+              "right": 668.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 563.5,
+              "top": 626.296875,
+              "right": 707.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 616.203125,
+              "top": 666.296875,
+              "right": 654.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 834,
+            "top": 470.296875,
+            "right": 1195,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 834,
+            "top": 470.296875,
+            "right": 1195,
+            "bottom": 687.796875,
+            "width": 361,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 854,
+              "top": 476.296875,
+              "right": 880,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1135,
+              "top": 477.296875,
+              "right": 1175,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 847,
+              "top": 508.296875,
+              "right": 1182,
+              "bottom": 608.296875,
+              "width": 335,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 981.5,
+              "top": 612.296875,
+              "right": 1047.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 942.5,
+              "top": 626.296875,
+              "right": 1086.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 995.203125,
+              "top": 666.296875,
+              "right": 1033.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "normal": [
+        {
+          "card": {
+            "left": 119,
+            "top": 133.75,
+            "right": 480,
+            "bottom": 415.25,
+            "width": 361,
+            "height": 281.5
+          },
+          "slot": {
+            "left": 119,
+            "top": 133.75,
+            "right": 480,
+            "bottom": 524.296875,
+            "width": 361,
+            "height": 390.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 139,
+              "top": 139.75,
+              "right": 165,
+              "bottom": 165.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 410,
+              "top": 140.75,
+              "right": 460,
+              "bottom": 164.75,
+              "width": 50,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 132,
+              "top": 171.75,
+              "right": 467,
+              "bottom": 335.75,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 278.5,
+              "top": 339.75,
+              "right": 320.5,
+              "bottom": 345.75,
+              "width": 42,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 227.5,
+              "top": 353.75,
+              "right": 371.5,
+              "bottom": 387.75,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 266.5,
+              "top": 393.75,
+              "right": 332.5,
+              "bottom": 409.25,
+              "width": 66,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 498,
+            "top": 133.75,
+            "right": 859,
+            "bottom": 524.296875,
+            "width": 361,
+            "height": 390.546875
+          },
+          "slot": {
+            "left": 498,
+            "top": 133.75,
+            "right": 859,
+            "bottom": 524.296875,
+            "width": 361,
+            "height": 390.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 518,
+              "top": 194.265625,
+              "right": 544,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 799,
+              "top": 195.265625,
+              "right": 839,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 511,
+              "top": 226.265625,
+              "right": 846,
+              "bottom": 390.265625,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 645.5,
+              "top": 394.265625,
+              "right": 711.5,
+              "bottom": 400.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 606.5,
+              "top": 408.265625,
+              "right": 750.5,
+              "bottom": 442.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 659.203125,
+              "top": 448.265625,
+              "right": 697.78125,
+              "bottom": 463.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 877,
+            "top": 133.75,
+            "right": 1238,
+            "bottom": 524.296875,
+            "width": 361,
+            "height": 390.546875
+          },
+          "slot": {
+            "left": 877,
+            "top": 133.75,
+            "right": 1238,
+            "bottom": 524.296875,
+            "width": 361,
+            "height": 390.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 897,
+              "top": 194.265625,
+              "right": 923,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1178,
+              "top": 195.265625,
+              "right": 1218,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 890,
+              "top": 226.265625,
+              "right": 1225,
+              "bottom": 390.265625,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 1024.5,
+              "top": 394.265625,
+              "right": 1090.5,
+              "bottom": 400.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 985.5,
+              "top": 408.265625,
+              "right": 1129.5,
+              "bottom": 442.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 1038.203125,
+              "top": 448.265625,
+              "right": 1076.78125,
+              "bottom": 463.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 119,
+            "top": 534.296875,
+            "right": 480,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "slot": {
+            "left": 119,
+            "top": 534.296875,
+            "right": 480,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 139,
+              "top": 540.296875,
+              "right": 165,
+              "bottom": 566.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 420,
+              "top": 541.296875,
+              "right": 460,
+              "bottom": 565.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 132,
+              "top": 572.296875,
+              "right": 467,
+              "bottom": 736.296875,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 266.5,
+              "top": 740.296875,
+              "right": 332.5,
+              "bottom": 746.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 227.5,
+              "top": 754.296875,
+              "right": 371.5,
+              "bottom": 788.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 280.203125,
+              "top": 794.296875,
+              "right": 318.78125,
+              "bottom": 809.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 498,
+            "top": 534.296875,
+            "right": 859,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "slot": {
+            "left": 498,
+            "top": 534.296875,
+            "right": 859,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 518,
+              "top": 540.296875,
+              "right": 544,
+              "bottom": 566.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 799,
+              "top": 541.296875,
+              "right": 839,
+              "bottom": 565.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 511,
+              "top": 572.296875,
+              "right": 846,
+              "bottom": 736.296875,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 645.5,
+              "top": 740.296875,
+              "right": 711.5,
+              "bottom": 746.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 606.5,
+              "top": 754.296875,
+              "right": 750.5,
+              "bottom": 788.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 659.203125,
+              "top": 794.296875,
+              "right": 697.78125,
+              "bottom": 809.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 877,
+            "top": 534.296875,
+            "right": 1238,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "slot": {
+            "left": 877,
+            "top": 534.296875,
+            "right": 1238,
+            "bottom": 815.796875,
+            "width": 361,
+            "height": 281.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 897,
+              "top": 540.296875,
+              "right": 923,
+              "bottom": 566.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1178,
+              "top": 541.296875,
+              "right": 1218,
+              "bottom": 565.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 890,
+              "top": 572.296875,
+              "right": 1225,
+              "bottom": 736.296875,
+              "width": 335,
+              "height": 164
+            },
+            {
+              "name": "hall-seats",
+              "left": 1024.5,
+              "top": 740.296875,
+              "right": 1090.5,
+              "bottom": 746.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 985.5,
+              "top": 754.296875,
+              "right": 1129.5,
+              "bottom": 788.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 1038.203125,
+              "top": 794.296875,
+              "right": 1076.78125,
+              "bottom": 809.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "normal": [
+        {
+          "card": {
+            "left": 76,
+            "top": 133.75,
+            "right": 437,
+            "bottom": 431.25,
+            "width": 361,
+            "height": 297.5
+          },
+          "slot": {
+            "left": 76,
+            "top": 133.75,
+            "right": 437,
+            "bottom": 540.296875,
+            "width": 361,
+            "height": 406.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 96,
+              "top": 139.75,
+              "right": 122,
+              "bottom": 165.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 367,
+              "top": 140.75,
+              "right": 417,
+              "bottom": 164.75,
+              "width": 50,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 89,
+              "top": 171.75,
+              "right": 424,
+              "bottom": 351.75,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 235.5,
+              "top": 355.75,
+              "right": 277.5,
+              "bottom": 361.75,
+              "width": 42,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 184.5,
+              "top": 369.75,
+              "right": 328.5,
+              "bottom": 403.75,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 223.5,
+              "top": 409.75,
+              "right": 289.5,
+              "bottom": 425.25,
+              "width": 66,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 455,
+            "top": 133.75,
+            "right": 816,
+            "bottom": 540.296875,
+            "width": 361,
+            "height": 406.546875
+          },
+          "slot": {
+            "left": 455,
+            "top": 133.75,
+            "right": 816,
+            "bottom": 540.296875,
+            "width": 361,
+            "height": 406.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 475,
+              "top": 194.265625,
+              "right": 501,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 756,
+              "top": 195.265625,
+              "right": 796,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 468,
+              "top": 226.265625,
+              "right": 803,
+              "bottom": 406.265625,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 602.5,
+              "top": 410.265625,
+              "right": 668.5,
+              "bottom": 416.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 563.5,
+              "top": 424.265625,
+              "right": 707.5,
+              "bottom": 458.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 616.203125,
+              "top": 464.265625,
+              "right": 654.78125,
+              "bottom": 479.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 834,
+            "top": 133.75,
+            "right": 1195,
+            "bottom": 540.296875,
+            "width": 361,
+            "height": 406.546875
+          },
+          "slot": {
+            "left": 834,
+            "top": 133.75,
+            "right": 1195,
+            "bottom": 540.296875,
+            "width": 361,
+            "height": 406.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 854,
+              "top": 194.265625,
+              "right": 880,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1135,
+              "top": 195.265625,
+              "right": 1175,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 847,
+              "top": 226.265625,
+              "right": 1182,
+              "bottom": 406.265625,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 981.5,
+              "top": 410.265625,
+              "right": 1047.5,
+              "bottom": 416.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 942.5,
+              "top": 424.265625,
+              "right": 1086.5,
+              "bottom": 458.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 995.203125,
+              "top": 464.265625,
+              "right": 1033.78125,
+              "bottom": 479.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 76,
+            "top": 550.296875,
+            "right": 437,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "slot": {
+            "left": 76,
+            "top": 550.296875,
+            "right": 437,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 96,
+              "top": 556.296875,
+              "right": 122,
+              "bottom": 582.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 377,
+              "top": 557.296875,
+              "right": 417,
+              "bottom": 581.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 89,
+              "top": 588.296875,
+              "right": 424,
+              "bottom": 768.296875,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 223.5,
+              "top": 772.296875,
+              "right": 289.5,
+              "bottom": 778.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 184.5,
+              "top": 786.296875,
+              "right": 328.5,
+              "bottom": 820.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 237.203125,
+              "top": 826.296875,
+              "right": 275.78125,
+              "bottom": 841.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 455,
+            "top": 550.296875,
+            "right": 816,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "slot": {
+            "left": 455,
+            "top": 550.296875,
+            "right": 816,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 475,
+              "top": 556.296875,
+              "right": 501,
+              "bottom": 582.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 756,
+              "top": 557.296875,
+              "right": 796,
+              "bottom": 581.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 468,
+              "top": 588.296875,
+              "right": 803,
+              "bottom": 768.296875,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 602.5,
+              "top": 772.296875,
+              "right": 668.5,
+              "bottom": 778.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 563.5,
+              "top": 786.296875,
+              "right": 707.5,
+              "bottom": 820.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 616.203125,
+              "top": 826.296875,
+              "right": 654.78125,
+              "bottom": 841.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 834,
+            "top": 550.296875,
+            "right": 1195,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "slot": {
+            "left": 834,
+            "top": 550.296875,
+            "right": 1195,
+            "bottom": 847.796875,
+            "width": 361,
+            "height": 297.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 854,
+              "top": 556.296875,
+              "right": 880,
+              "bottom": 582.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 1135,
+              "top": 557.296875,
+              "right": 1175,
+              "bottom": 581.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 847,
+              "top": 588.296875,
+              "right": 1182,
+              "bottom": 768.296875,
+              "width": 335,
+              "height": 180
+            },
+            {
+              "name": "hall-seats",
+              "left": 981.5,
+              "top": 772.296875,
+              "right": 1047.5,
+              "bottom": 778.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 942.5,
+              "top": 786.296875,
+              "right": 1086.5,
+              "bottom": 820.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 995.203125,
+              "top": 826.296875,
+              "right": 1033.78125,
+              "bottom": 841.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 1000,
+      "height": 600,
+      "normal": [
+        {
+          "card": {
+            "left": 26,
+            "top": 133.75,
+            "right": 327,
+            "bottom": 351.25,
+            "width": 301,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 26,
+            "top": 133.75,
+            "right": 327,
+            "bottom": 460.296875,
+            "width": 301,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 46,
+              "top": 139.75,
+              "right": 72,
+              "bottom": 165.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 257,
+              "top": 140.75,
+              "right": 307,
+              "bottom": 164.75,
+              "width": 50,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 39,
+              "top": 171.75,
+              "right": 314,
+              "bottom": 271.75,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 155.5,
+              "top": 275.75,
+              "right": 197.5,
+              "bottom": 281.75,
+              "width": 42,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 104.5,
+              "top": 289.75,
+              "right": 248.5,
+              "bottom": 323.75,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 143.5,
+              "top": 329.75,
+              "right": 209.5,
+              "bottom": 345.25,
+              "width": 66,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 345,
+            "top": 133.75,
+            "right": 646,
+            "bottom": 460.296875,
+            "width": 301,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 345,
+            "top": 133.75,
+            "right": 646,
+            "bottom": 460.296875,
+            "width": 301,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 365,
+              "top": 194.265625,
+              "right": 391,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 586,
+              "top": 195.265625,
+              "right": 626,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 358,
+              "top": 226.265625,
+              "right": 633,
+              "bottom": 326.265625,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 462.5,
+              "top": 330.265625,
+              "right": 528.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 423.5,
+              "top": 344.265625,
+              "right": 567.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 476.203125,
+              "top": 384.265625,
+              "right": 514.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 664,
+            "top": 133.75,
+            "right": 965,
+            "bottom": 460.296875,
+            "width": 301,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 664,
+            "top": 133.75,
+            "right": 965,
+            "bottom": 460.296875,
+            "width": 301,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 684,
+              "top": 194.265625,
+              "right": 710,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 905,
+              "top": 195.265625,
+              "right": 945,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 677,
+              "top": 226.265625,
+              "right": 952,
+              "bottom": 326.265625,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 781.5,
+              "top": 330.265625,
+              "right": 847.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 742.5,
+              "top": 344.265625,
+              "right": 886.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 795.203125,
+              "top": 384.265625,
+              "right": 833.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 26,
+            "top": 470.296875,
+            "right": 327,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 26,
+            "top": 470.296875,
+            "right": 327,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 46,
+              "top": 476.296875,
+              "right": 72,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 267,
+              "top": 477.296875,
+              "right": 307,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 39,
+              "top": 508.296875,
+              "right": 314,
+              "bottom": 608.296875,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 143.5,
+              "top": 612.296875,
+              "right": 209.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 104.5,
+              "top": 626.296875,
+              "right": 248.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 157.203125,
+              "top": 666.296875,
+              "right": 195.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 345,
+            "top": 470.296875,
+            "right": 646,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 345,
+            "top": 470.296875,
+            "right": 646,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 365,
+              "top": 476.296875,
+              "right": 391,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 586,
+              "top": 477.296875,
+              "right": 626,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 358,
+              "top": 508.296875,
+              "right": 633,
+              "bottom": 608.296875,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 462.5,
+              "top": 612.296875,
+              "right": 528.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 423.5,
+              "top": 626.296875,
+              "right": 567.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 476.203125,
+              "top": 666.296875,
+              "right": 514.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 664,
+            "top": 470.296875,
+            "right": 965,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 664,
+            "top": 470.296875,
+            "right": 965,
+            "bottom": 687.796875,
+            "width": 301,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 684,
+              "top": 476.296875,
+              "right": 710,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 905,
+              "top": 477.296875,
+              "right": 945,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 677,
+              "top": 508.296875,
+              "right": 952,
+              "bottom": 608.296875,
+              "width": 275,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 781.5,
+              "top": 612.296875,
+              "right": 847.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 742.5,
+              "top": 626.296875,
+              "right": 886.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 795.203125,
+              "top": 666.296875,
+              "right": 833.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 700,
+      "height": 500,
+      "normal": [
+        {
+          "card": {
+            "left": 26,
+            "top": 133.75,
+            "right": 227,
+            "bottom": 351.25,
+            "width": 201,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 26,
+            "top": 133.75,
+            "right": 227,
+            "bottom": 460.296875,
+            "width": 201,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 46,
+              "top": 139.75,
+              "right": 72,
+              "bottom": 165.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 157,
+              "top": 140.75,
+              "right": 207,
+              "bottom": 164.75,
+              "width": 50,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 39,
+              "top": 171.75,
+              "right": 214,
+              "bottom": 271.75,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 105.5,
+              "top": 275.75,
+              "right": 147.5,
+              "bottom": 281.75,
+              "width": 42,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 54.5,
+              "top": 289.75,
+              "right": 198.5,
+              "bottom": 323.75,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 93.5,
+              "top": 329.75,
+              "right": 159.5,
+              "bottom": 345.25,
+              "width": 66,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 245,
+            "top": 133.75,
+            "right": 446,
+            "bottom": 460.296875,
+            "width": 201,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 245,
+            "top": 133.75,
+            "right": 446,
+            "bottom": 460.296875,
+            "width": 201,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 265,
+              "top": 194.265625,
+              "right": 291,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 386,
+              "top": 195.265625,
+              "right": 426,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 258,
+              "top": 226.265625,
+              "right": 433,
+              "bottom": 326.265625,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 312.5,
+              "top": 330.265625,
+              "right": 378.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 273.5,
+              "top": 344.265625,
+              "right": 417.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 326.203125,
+              "top": 384.265625,
+              "right": 364.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 464,
+            "top": 133.75,
+            "right": 665,
+            "bottom": 460.296875,
+            "width": 201,
+            "height": 326.546875
+          },
+          "slot": {
+            "left": 464,
+            "top": 133.75,
+            "right": 665,
+            "bottom": 460.296875,
+            "width": 201,
+            "height": 326.546875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 484,
+              "top": 194.265625,
+              "right": 510,
+              "bottom": 220.265625,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 605,
+              "top": 195.265625,
+              "right": 645,
+              "bottom": 219.265625,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 477,
+              "top": 226.265625,
+              "right": 652,
+              "bottom": 326.265625,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 531.5,
+              "top": 330.265625,
+              "right": 597.5,
+              "bottom": 336.265625,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 492.5,
+              "top": 344.265625,
+              "right": 636.5,
+              "bottom": 378.265625,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 545.203125,
+              "top": 384.265625,
+              "right": 583.78125,
+              "bottom": 399.765625,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 26,
+            "top": 470.296875,
+            "right": 227,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 26,
+            "top": 470.296875,
+            "right": 227,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 46,
+              "top": 476.296875,
+              "right": 72,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 167,
+              "top": 477.296875,
+              "right": 207,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 39,
+              "top": 508.296875,
+              "right": 214,
+              "bottom": 608.296875,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 93.5,
+              "top": 612.296875,
+              "right": 159.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 54.5,
+              "top": 626.296875,
+              "right": 198.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 107.203125,
+              "top": 666.296875,
+              "right": 145.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 245,
+            "top": 470.296875,
+            "right": 446,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 245,
+            "top": 470.296875,
+            "right": 446,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 265,
+              "top": 476.296875,
+              "right": 291,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 386,
+              "top": 477.296875,
+              "right": 426,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 258,
+              "top": 508.296875,
+              "right": 433,
+              "bottom": 608.296875,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 312.5,
+              "top": 612.296875,
+              "right": 378.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 273.5,
+              "top": 626.296875,
+              "right": 417.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 326.203125,
+              "top": 666.296875,
+              "right": 364.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 464,
+            "top": 470.296875,
+            "right": 665,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "slot": {
+            "left": 464,
+            "top": 470.296875,
+            "right": 665,
+            "bottom": 687.796875,
+            "width": 201,
+            "height": 217.5
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 484,
+              "top": 476.296875,
+              "right": 510,
+              "bottom": 502.296875,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 605,
+              "top": 477.296875,
+              "right": 645,
+              "bottom": 501.296875,
+              "width": 40,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 477,
+              "top": 508.296875,
+              "right": 652,
+              "bottom": 608.296875,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "name": "hall-seats",
+              "left": 531.5,
+              "top": 612.296875,
+              "right": 597.5,
+              "bottom": 618.296875,
+              "width": 66,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 492.5,
+              "top": 626.296875,
+              "right": 636.5,
+              "bottom": 660.296875,
+              "width": 144,
+              "height": 34
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 545.203125,
+              "top": 666.296875,
+              "right": 583.78125,
+              "bottom": 681.796875,
+              "width": 38.578125,
+              "height": 15.5
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "normal": [
+        {
+          "card": {
+            "left": 12,
+            "top": 120.75,
+            "right": 218,
+            "bottom": 314.75,
+            "width": 206,
+            "height": 194
+          },
+          "slot": {
+            "left": 12,
+            "top": 120.75,
+            "right": 218,
+            "bottom": 397.75,
+            "width": 206,
+            "height": 277
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 22,
+              "top": 135.75,
+              "right": 48,
+              "bottom": 161.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 161,
+              "top": 136.75,
+              "right": 208,
+              "bottom": 160.75,
+              "width": 47,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 19,
+              "top": 166.75,
+              "right": 211,
+              "bottom": 266.75,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 58,
+              "top": 269.75,
+              "right": 172,
+              "bottom": 301.75,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 226,
+            "top": 120.75,
+            "right": 432,
+            "bottom": 397.75,
+            "width": 206,
+            "height": 277
+          },
+          "slot": {
+            "left": 226,
+            "top": 120.75,
+            "right": 432,
+            "bottom": 397.75,
+            "width": 206,
+            "height": 277
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 236,
+              "top": 177.25,
+              "right": 262,
+              "bottom": 203.25,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 384,
+              "top": 178.25,
+              "right": 422,
+              "bottom": 202.25,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 233,
+              "top": 208.25,
+              "right": 425,
+              "bottom": 308.25,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 272,
+              "top": 311.25,
+              "right": 386,
+              "bottom": 343.25,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 440,
+            "top": 120.75,
+            "right": 646,
+            "bottom": 397.75,
+            "width": 206,
+            "height": 277
+          },
+          "slot": {
+            "left": 440,
+            "top": 120.75,
+            "right": 646,
+            "bottom": 397.75,
+            "width": 206,
+            "height": 277
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 450,
+              "top": 177.25,
+              "right": 476,
+              "bottom": 203.25,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 598,
+              "top": 178.25,
+              "right": 636,
+              "bottom": 202.25,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 447,
+              "top": 208.25,
+              "right": 639,
+              "bottom": 308.25,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 486,
+              "top": 311.25,
+              "right": 600,
+              "bottom": 343.25,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 12,
+            "top": 405.75,
+            "right": 218,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "slot": {
+            "left": 12,
+            "top": 405.75,
+            "right": 218,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 22,
+              "top": 420.75,
+              "right": 48,
+              "bottom": 446.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 170,
+              "top": 421.75,
+              "right": 208,
+              "bottom": 445.75,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 19,
+              "top": 451.75,
+              "right": 211,
+              "bottom": 551.75,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 58,
+              "top": 554.75,
+              "right": 172,
+              "bottom": 586.75,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 226,
+            "top": 405.75,
+            "right": 432,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "slot": {
+            "left": 226,
+            "top": 405.75,
+            "right": 432,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 236,
+              "top": 420.75,
+              "right": 262,
+              "bottom": 446.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 384,
+              "top": 421.75,
+              "right": 422,
+              "bottom": 445.75,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 233,
+              "top": 451.75,
+              "right": 425,
+              "bottom": 551.75,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 272,
+              "top": 554.75,
+              "right": 386,
+              "bottom": 586.75,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 440,
+            "top": 405.75,
+            "right": 646,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "slot": {
+            "left": 440,
+            "top": 405.75,
+            "right": 646,
+            "bottom": 599.75,
+            "width": 206,
+            "height": 194
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 450,
+              "top": 420.75,
+              "right": 476,
+              "bottom": 446.75,
+              "width": 26,
+              "height": 26
+            },
+            {
+              "name": "hall-empty ",
+              "left": 598,
+              "top": 421.75,
+              "right": 636,
+              "bottom": 445.75,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 447,
+              "top": 451.75,
+              "right": 639,
+              "bottom": 551.75,
+              "width": 192,
+              "height": 100
+            },
+            {
+              "name": "hall-table-action",
+              "left": 486,
+              "top": 554.75,
+              "right": 600,
+              "bottom": 586.75,
+              "width": 114,
+              "height": 32
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "normal": [
+        {
+          "card": {
+            "left": 16,
+            "top": 122.75,
+            "right": 295,
+            "bottom": 431.125,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 122.75,
+            "right": 295,
+            "bottom": 567.125,
+            "width": 279,
+            "height": 444.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 133.75,
+              "right": 60,
+              "bottom": 163.75,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 234,
+              "top": 136.75,
+              "right": 281,
+              "bottom": 160.75,
+              "width": 47,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 169.75,
+              "right": 284,
+              "bottom": 341.078125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 136.5,
+              "top": 347.078125,
+              "right": 174.5,
+              "bottom": 353.078125,
+              "width": 38,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 359.078125,
+              "right": 228.5,
+              "bottom": 399.078125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 119.640625,
+              "top": 405.078125,
+              "right": 191.34375,
+              "bottom": 422.125,
+              "width": 71.703125,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 579.125,
+            "right": 295,
+            "bottom": 887.5,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 579.125,
+            "right": 295,
+            "bottom": 900.5,
+            "width": 279,
+            "height": 321.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 590.125,
+              "right": 60,
+              "bottom": 620.125,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 243,
+              "top": 593.125,
+              "right": 281,
+              "bottom": 617.125,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 626.125,
+              "right": 284,
+              "bottom": 797.453125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 125.5,
+              "top": 803.453125,
+              "right": 185.5,
+              "bottom": 809.453125,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 815.453125,
+              "right": 228.5,
+              "bottom": 855.453125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 134.53125,
+              "top": 861.453125,
+              "right": 176.46875,
+              "bottom": 878.5,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 912.5,
+            "right": 295,
+            "bottom": 1220.875,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 912.5,
+            "right": 295,
+            "bottom": 1233.875,
+            "width": 279,
+            "height": 321.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 923.5,
+              "right": 60,
+              "bottom": 953.5,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 243,
+              "top": 926.5,
+              "right": 281,
+              "bottom": 950.5,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 959.5,
+              "right": 284,
+              "bottom": 1130.828125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 125.5,
+              "top": 1136.828125,
+              "right": 185.5,
+              "bottom": 1142.828125,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 1148.828125,
+              "right": 228.5,
+              "bottom": 1188.828125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 134.53125,
+              "top": 1194.828125,
+              "right": 176.46875,
+              "bottom": 1211.875,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1245.875,
+            "right": 295,
+            "bottom": 1554.25,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 1245.875,
+            "right": 295,
+            "bottom": 1567.25,
+            "width": 279,
+            "height": 321.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1256.875,
+              "right": 60,
+              "bottom": 1286.875,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 243,
+              "top": 1259.875,
+              "right": 281,
+              "bottom": 1283.875,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1292.875,
+              "right": 284,
+              "bottom": 1464.203125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 125.5,
+              "top": 1470.203125,
+              "right": 185.5,
+              "bottom": 1476.203125,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 1482.203125,
+              "right": 228.5,
+              "bottom": 1522.203125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 134.53125,
+              "top": 1528.203125,
+              "right": 176.46875,
+              "bottom": 1545.25,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1579.25,
+            "right": 295,
+            "bottom": 1887.625,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 1579.25,
+            "right": 295,
+            "bottom": 1900.625,
+            "width": 279,
+            "height": 321.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1590.25,
+              "right": 60,
+              "bottom": 1620.25,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 243,
+              "top": 1593.25,
+              "right": 281,
+              "bottom": 1617.25,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1626.25,
+              "right": 284,
+              "bottom": 1797.578125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 125.5,
+              "top": 1803.578125,
+              "right": 185.5,
+              "bottom": 1809.578125,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 1815.578125,
+              "right": 228.5,
+              "bottom": 1855.578125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 134.53125,
+              "top": 1861.578125,
+              "right": 176.46875,
+              "bottom": 1878.625,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1912.625,
+            "right": 295,
+            "bottom": 2221,
+            "width": 279,
+            "height": 308.375
+          },
+          "slot": {
+            "left": 16,
+            "top": 1912.625,
+            "right": 295,
+            "bottom": 2233,
+            "width": 279,
+            "height": 320.375
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1923.625,
+              "right": 60,
+              "bottom": 1953.625,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 243,
+              "top": 1926.625,
+              "right": 281,
+              "bottom": 1950.625,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1959.625,
+              "right": 284,
+              "bottom": 2130.953125,
+              "width": 257,
+              "height": 171.328125
+            },
+            {
+              "name": "hall-seats",
+              "left": 125.5,
+              "top": 2136.953125,
+              "right": 185.5,
+              "bottom": 2142.953125,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 82.5,
+              "top": 2148.953125,
+              "right": 228.5,
+              "bottom": 2188.953125,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 134.53125,
+              "top": 2194.953125,
+              "right": 176.46875,
+              "bottom": 2212,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "normal": [
+        {
+          "card": {
+            "left": 16,
+            "top": 126.75,
+            "right": 365,
+            "bottom": 481.796875,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 126.75,
+            "right": 365,
+            "bottom": 617.796875,
+            "width": 349,
+            "height": 491.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 137.75,
+              "right": 60,
+              "bottom": 167.75,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty playing",
+              "left": 304,
+              "top": 140.75,
+              "right": 351,
+              "bottom": 164.75,
+              "width": 47,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 173.75,
+              "right": 354,
+              "bottom": 391.75,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 171.5,
+              "top": 397.75,
+              "right": 209.5,
+              "bottom": 403.75,
+              "width": 38,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 409.75,
+              "right": 263.5,
+              "bottom": 449.75,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 154.640625,
+              "top": 455.75,
+              "right": 226.34375,
+              "bottom": 472.796875,
+              "width": 71.703125,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 629.796875,
+            "right": 365,
+            "bottom": 984.84375,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 629.796875,
+            "right": 365,
+            "bottom": 997.84375,
+            "width": 349,
+            "height": 368.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 640.796875,
+              "right": 60,
+              "bottom": 670.796875,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 313,
+              "top": 643.796875,
+              "right": 351,
+              "bottom": 667.796875,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 676.796875,
+              "right": 354,
+              "bottom": 894.796875,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 160.5,
+              "top": 900.796875,
+              "right": 220.5,
+              "bottom": 906.796875,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 912.796875,
+              "right": 263.5,
+              "bottom": 952.796875,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 169.53125,
+              "top": 958.796875,
+              "right": 211.46875,
+              "bottom": 975.84375,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1009.84375,
+            "right": 365,
+            "bottom": 1364.890625,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 1009.84375,
+            "right": 365,
+            "bottom": 1377.890625,
+            "width": 349,
+            "height": 368.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1020.84375,
+              "right": 60,
+              "bottom": 1050.84375,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 313,
+              "top": 1023.84375,
+              "right": 351,
+              "bottom": 1047.84375,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1056.84375,
+              "right": 354,
+              "bottom": 1274.84375,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 160.5,
+              "top": 1280.84375,
+              "right": 220.5,
+              "bottom": 1286.84375,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 1292.84375,
+              "right": 263.5,
+              "bottom": 1332.84375,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 169.53125,
+              "top": 1338.84375,
+              "right": 211.46875,
+              "bottom": 1355.890625,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1389.890625,
+            "right": 365,
+            "bottom": 1744.9375,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 1389.890625,
+            "right": 365,
+            "bottom": 1757.9375,
+            "width": 349,
+            "height": 368.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1400.890625,
+              "right": 60,
+              "bottom": 1430.890625,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 313,
+              "top": 1403.890625,
+              "right": 351,
+              "bottom": 1427.890625,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1436.890625,
+              "right": 354,
+              "bottom": 1654.890625,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 160.5,
+              "top": 1660.890625,
+              "right": 220.5,
+              "bottom": 1666.890625,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 1672.890625,
+              "right": 263.5,
+              "bottom": 1712.890625,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 169.53125,
+              "top": 1718.890625,
+              "right": 211.46875,
+              "bottom": 1735.9375,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 1769.9375,
+            "right": 365,
+            "bottom": 2124.984375,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 1769.9375,
+            "right": 365,
+            "bottom": 2137.984375,
+            "width": 349,
+            "height": 368.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 1780.9375,
+              "right": 60,
+              "bottom": 1810.9375,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 313,
+              "top": 1783.9375,
+              "right": 351,
+              "bottom": 1807.9375,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 1816.9375,
+              "right": 354,
+              "bottom": 2034.9375,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 160.5,
+              "top": 2040.9375,
+              "right": 220.5,
+              "bottom": 2046.9375,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 2052.9375,
+              "right": 263.5,
+              "bottom": 2092.9375,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 169.53125,
+              "top": 2098.9375,
+              "right": 211.46875,
+              "bottom": 2115.984375,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        },
+        {
+          "card": {
+            "left": 16,
+            "top": 2149.984375,
+            "right": 365,
+            "bottom": 2505.03125,
+            "width": 349,
+            "height": 355.046875
+          },
+          "slot": {
+            "left": 16,
+            "top": 2149.984375,
+            "right": 365,
+            "bottom": 2517.03125,
+            "width": 349,
+            "height": 367.046875
+          },
+          "children": [
+            {
+              "name": "STRONG",
+              "left": 30,
+              "top": 2160.984375,
+              "right": 60,
+              "bottom": 2190.984375,
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "hall-empty ",
+              "left": 313,
+              "top": 2163.984375,
+              "right": 351,
+              "bottom": 2187.984375,
+              "width": 38,
+              "height": 24
+            },
+            {
+              "name": "hall-scene",
+              "left": 27,
+              "top": 2196.984375,
+              "right": 354,
+              "bottom": 2414.984375,
+              "width": 327,
+              "height": 218
+            },
+            {
+              "name": "hall-seats",
+              "left": 160.5,
+              "top": 2420.984375,
+              "right": 220.5,
+              "bottom": 2426.984375,
+              "width": 60,
+              "height": 6
+            },
+            {
+              "name": "hall-table-action",
+              "left": 117.5,
+              "top": 2432.984375,
+              "right": 263.5,
+              "bottom": 2472.984375,
+              "width": 146,
+              "height": 40
+            },
+            {
+              "name": "hall-table-capacity",
+              "left": 169.53125,
+              "top": 2478.984375,
+              "right": 211.46875,
+              "bottom": 2496.03125,
+              "width": 41.9375,
+              "height": 17.046875
+            }
+          ]
+        }
+      ],
+      "hoverAndFocus": true,
+      "firstAndLastFullyVisible": true
+    }
+  ],
+  "errors": []
+}

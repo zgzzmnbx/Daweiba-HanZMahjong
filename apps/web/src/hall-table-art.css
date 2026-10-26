@@ -1,9 +1,14 @@
 /* The raster scene keeps its own aspect ratio; live status remains ordinary accessible DOM. */
-#root .game-hall .hall-scene{position:relative;display:grid;place-items:center;flex:none;min-width:0;width:100%;max-width:360px;height:clamp(110px,calc((100dvh - 340px)/2),224px);margin:2px 0 0;pointer-events:none;isolation:isolate}
+#root .game-hall .hall-scene{position:relative;display:grid;place-items:center;flex:none;min-width:0;width:100%;max-width:360px;height:clamp(100px,calc((100dvh - 440px)/2),210px);margin:2px 0 0;pointer-events:none;isolation:isolate}
 .hall-scene picture{display:block;width:100%;height:100%;min-height:0;z-index:1}
 .hall-scene img{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 7px 5px #130b0750);transition:filter 180ms}
 .hall-scene::before{content:'';position:absolute;left:10%;right:10%;top:26%;bottom:8%;border-radius:50%;background:radial-gradient(ellipse,#bf92551b,transparent 70%);pointer-events:none}
-#root .game-hall .hall-table{gap:4px;border-radius:16px}
+/* Content sets the row minimum: a fixed viewport fraction can clip the badge and caption. */
+#root .game-hall .hall-table-slot>.hall-table{flex:1 0 auto;gap:4px;border-radius:16px}
+#root .game-hall .hall-table:focus-visible{outline:2px solid #efd28b;outline-offset:-3px}
+@media(min-width:700px),(orientation:landscape){
+ #root .game-hall .hall-content .hall-tables{grid-template-rows:repeat(2,minmax(max-content,1fr))}
+}
 #root .game-hall .hall-table:hover .hall-scene img,#root .game-hall .hall-table:focus-visible .hall-scene img{filter:drop-shadow(0 9px 7px #130b0760) brightness(1.06)}
 #root .game-hall .hall-table-top{padding:0 7px}
 #root .game-hall .hall-empty{padding:3px 9px;background:#16352766;border:1px solid #8eaa7f35;border-radius:20px;line-height:16px;letter-spacing:0}
@@ -20,7 +25,6 @@
  #root .game-hall .hall-table-capacity{font-size:11px}
 }
 @media(max-height:499px) and (min-width:500px){
- #root .game-hall .hall-tables{grid-template-rows:repeat(2,minmax(202px,1fr))}
  #root .game-hall .hall-scene{height:100px}
  #root .game-hall .hall-table-slot>.hall-table{min-height:194px}
  #root .game-hall .hall-table-action{min-height:30px;min-width:114px;font-size:11px}

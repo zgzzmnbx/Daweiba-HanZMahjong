@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'木桌焕新，绿绒相迎',features:['大厅牌桌换成细腻木纹、绿绒桌面与黄铜包角的立体素材。','手机轻量素材约27KB，六桌共用缓存；桌位、玩家和入座操作保持实时。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'桌号完整，入座清楚',features:['修复大厅桌号和人数被卡片边界截断的问题。','短窗口保留完整卡片、内部滚动查看，悬停不再上移。']},
+ {version:'1.30.7',date:'2026-10-26',title:'木桌焕新，绿绒相迎',features:['大厅牌桌换成细腻木纹、绿绒桌面与黄铜包角的立体素材。','手机轻量素材约27KB，六桌共用缓存；桌位、玩家和入座操作保持实时。']},
  {version:'1.30.6',date:'2026-10-26',title:'围桌而坐，出牌区归位',features:['头像按真实座次围坐，允许贴近牌桌，空间足够时稍微放大。','竖屏大牌模式下，刚出牌、拖牌提示与摸打吃胡集中在牌桌下、手牌上。']},
  {version:'1.30.5',date:'2026-10-26',title:'牌组更清爽，字形更稳定',features:['同字最多展示3张，角标继续显示实际数量。','牌组按整组准备文楷字形后展示；慢网使用稳定备用字体，可手动重试。']},
  {version:'1.30.4',date:'2026-10-26',title:'拖回手牌，直接吃字',features:['上家刚出的字可以拖到手牌或吃按钮，松手完成吃牌。','可吃时显示轻提示，手牌落点高亮；拖出、取消或响应结束不提交。']},
