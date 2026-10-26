@@ -26,6 +26,8 @@ Mac：`com.daweiba.word-mahjong.frpc` 用户LaunchAgent，二进制及配置位�
 
 Caddy使用同一公网IP既有Let's Encrypt短期证书的独立副本。现有自动续期任务完成后，`/etc/letsencrypt/renewal-hooks/deploy/90-word-mahjong` 只复制证书并重载本游戏入口。不要手动复制过期证书长期使用。维护需验证证书有效期、timer状态和真实HTTPS响应。
 
+2026-10-26修复：外置证书文件更新后必须使用`caddy reload --config /etc/word-mahjong/Caddyfile --adapter caddyfile --address 127.0.0.1:2021 --force`。相同配置的普通reload可能保留旧证书；不能只凭磁盘证书有效或timer成功判断入口正常。当前部署钩子模板见`ops/word-mahjong-cert-deploy.sh`，只对指定lineage和游戏独立2021管理口生效；当前续期timer实测每日00/12点检查。验收应核对实际握手证书和严格HTTPS/WSS，不能关闭证书校验。
+
 ## 故障顺序
 
 1. Mac `http://127.0.0.1:3000/healthz` 与 `/readyz`。

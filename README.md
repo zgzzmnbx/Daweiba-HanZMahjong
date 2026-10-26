@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.30.8-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.30.9-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -38,6 +38,16 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.30.9 · 新手指南断线可退出 · 2026-10-26
+
+用户现场指南按钮禁用，页面DOM同时显示“正在重连 / Failed to fetch / 重新连接”。原按钮绑定READY可用性，网络失联时连本地已读确认也被禁用，且原生dialog挡住重连入口。改为始终可确认指南：可准备时沿用READY；不可准备时只记本次已读并关闭，明确提示连接/控制权/待处理状态，不自动排队准备。读指南确认不依赖网络，真正准备仍走原控制器和服务器校验。
+
+候场组件key保留房间/局/玩家身份，移除controlEpoch；恢复同一座位不清除本次已读状态，新的局和身份仍独立。已验证离线关闭、重连不自动准备、不重复弹指南，以及正常确认/不再提示/下局再次提示/实际开局摸打流程。构建、402测试与18项真实浏览器验证通过；四种指南布局外加567×859和320×480断线提示完整可点击。三个本地测试房均已关闭；断线用浏览器offline与本地Socket断开模拟，非实体手机实测。证据见docs/evidence/guide-reconnect-1.30.9-local-*。
+
+发布原公网v1.30.9，release `1.30.9-20261026-165450`，源码冻结 `5a3ea71`，一致性备份 `pre-release-20261026-165451.sqlite`。公网16项真实指南/准备/开局/摸打/偏好验收通过，三个自建验收私房已关闭；ready=true，79资源SHA256与dist一致。线上浏览器及Node请求保持证书验证。
+
+进一步定位真正断线原因：实际TLS握手仍提供10月26日07:18:20 UTC到期旧证书，磁盘新证书则到10月29日19:11:57 UTC；续期timer成功但相同Caddy配置reload跳过了外置证书重载。修正游戏专用deploy hook增加`--address 127.0.0.1:2021 --force`并执行，公网HTTPS恢复，独立Caddy PID不变。未更改共享服务、证书信任或端口权限；原hook备份在云端`/root/codex-backups/word-mahjong-cert-20261026/90-word-mahjong.before`。模板存ops/word-mahjong-cert-deploy.sh；[Caddy官方说明](https://caddyserver.com/docs/command-line#caddy-reload)明确force用于相同配置下重新加载外置证书。现场timer实际为每日00/12点，记录已纠正；未声称新签发证书。主机权威说明v0.1.30及Obsidian既有管理区已备份、定点同步、回读；未启动Obsidian或宣称界面验收。
 
 ## 1.30.8 · 大厅卡片完整显示 · 2026-10-26
 

@@ -1,10 +1,10 @@
 # 当前任务板
 
-## 1.30.8 · 大厅卡片截断修复
+## 1.30.9 · 指南断线死路修复
 
-- DONE：按内容保留网格行高，取消悬停位移，内收焦点环。
-- DONE：构建/402测试、8项边界、13项大厅/六人房、4项资源回归。
-- DONE：原公网ready/79资源一致、8种视口只读边界通过；GitHub随交付同步。
-- NOT_RUN_ENV_REQUIRED：实体手机；已做Chromium视口/CDP触摸验证。
+- DONE：指南已读/准备解耦、网络状态说明、同局恢复保留已读。
+- DONE：构建/402测试、真实指南/离线/重连/开局/偏好流程，三个本地房清理。
+- DONE：公网16项真实流程及79资源一致；修复游戏专用TLS续期hook并通过严格HTTPS，主机记录/Obsidian管理区已同步；GitHub随交付同步。
+- NOT_RUN_ENV_REQUIRED：实体手机；已用Chromium视口和真实本地Socket断线验证。
 
 旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。

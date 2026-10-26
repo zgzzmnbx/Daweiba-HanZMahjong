@@ -15,9 +15,11 @@ export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,on
  const self=envelope.public.players.find(p=>p.playerId===envelope.private.playerId),host=envelope.public.hostId===envelope.private.playerId;
  const [guideOpen,setGuideOpen]=useState(()=>!finished&&!self?.ready&&!skipsNewPlayerGuide()),[acknowledged,setAcknowledged]=useState(false);
  const prepare=()=>{if(!finished&&self?.ready){void c.command({kind:'READY',ready:false});return;}if(!acknowledged&&!skipsNewPlayerGuide()){setGuideOpen(true);return;}void c.command({kind:'READY',ready:true});};
- const confirmGuide=()=>{setAcknowledged(true);setGuideOpen(false);void c.command({kind:'READY',ready:true});};
+ // Reading is local. Losing the connection must not trap the player behind a modal.
+ const confirmGuide=()=>{setAcknowledged(true);setGuideOpen(false);if(c.allowed('READY'))void c.command({kind:'READY',ready:true});};
+ const guideNotice=c.allowed('READY')?undefined:!c.controlled?'当前页面不能控制座位。可先关闭指南，返回房间查看。':!c.connected?'连接暂时断开。可先关闭指南，重新连接后再点「准备好了」。':c.pending?'上一操作仍在处理。可先关闭指南，完成后再点准备。':'当前暂时不能准备。可先关闭指南，返回房间查看状态。';
  const history=envelope.public.history.at(-1),hasAI=envelope.public.players.some(p=>p.isBotSeat);
- return <>{guideOpen&&<NewPlayerGuide preparing disabled={!c.allowed('READY')} onConfirm={confirmGuide}/>}<section className={'table-overlay room-setup-panel'+(!finished?' lobby-panel':'')} aria-label={finished?'下一局设置':'开局设置'}>
+ return <>{guideOpen&&<NewPlayerGuide preparing readinessNotice={guideNotice} onConfirm={confirmGuide}/>}<section className={'table-overlay room-setup-panel'+(!finished?' lobby-panel':'')} aria-label={finished?'下一局设置':'开局设置'}>
   <header className="room-setup-heading"><span className="eyebrow">{finished?'这一局，留个念想':'好友房'}</span><h2>{finished?(phase.reason==='WIN'?'好句，胡了！':'本局已结束'):'人齐，开一桌。'}</h2><p>{finished?(practice?'练习局 · 不累计胜局':'结果已记录'):`${envelope.public.players.length} / ${seats.length} 席已入座 · 坐满并准备后开局`}</p></header>
   <div className="room-setup-body">
    {finished&&history&&<p className="room-last-sentence">{history.snapshot.sentence.orderedTileIds.map(id=>history.snapshot.tiles.find(t=>t.tileId===id)?.char).join('')}</p>}

@@ -1,0 +1,43 @@
+2026-10-26T17:08:02+08:00
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                             
+LISTEN 0      4096       127.0.0.1:2021      0.0.0.0:*    users:(("caddy",pid=2647336,fd=9)) 
+LISTEN 0      4096       127.0.0.1:1242      0.0.0.0:*    users:(("frps",pid=2647332,fd=8))  
+LISTEN 0      4096               *:1240            *:*    users:(("caddy",pid=2647336,fd=10))
+LISTEN 0      4096               *:1241            *:*    users:(("frps",pid=2647332,fd=4))  
+State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+Id=word-mahjong-frps.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=word-mahjong-caddy.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=caddy.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=frps.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=gongwen-mac-frps.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=daweiba-automation-caddy.service
+ActiveState=active
+UnitFileState=enabled
+
+Id=daweiba-automation-frps.service
+ActiveState=active
+UnitFileState=enabled
+{"ready":true}issuer=C = US, O = Let's Encrypt, CN = YE2
+notBefore=Oct 23 03:11:58 2026 GMT
+notAfter=Oct 29 19:11:57 2026 GMT
+X509v3 Subject Alternative Name: critical
+    IP Address:118.196.107.182
+NextElapseUSecRealtime=Tue 2026-10-27 00:02:19 CST
+ActiveState=active
+UnitFileState=enabled
+
