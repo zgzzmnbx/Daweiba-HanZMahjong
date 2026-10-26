@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-26T01:24:58.141Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "30 mobile assets match hashes and immutable cache",
+      "count": 30,
+      "bytes": 94204
+    },
+    {
+      "name": "cold picker and selected portrait",
+      "width": 320,
+      "height": 480,
+      "dpr": 2,
+      "touch": true,
+      "variant": "mobile-v1",
+      "images": 30
+    },
+    {
+      "name": "cold picker and selected portrait",
+      "width": 390,
+      "height": 844,
+      "dpr": 3,
+      "touch": true,
+      "variant": "mobile-v1",
+      "images": 30
+    },
+    {
+      "name": "cold picker and selected portrait",
+      "width": 667,
+      "height": 375,
+      "dpr": 2,
+      "touch": true,
+      "variant": "mobile-v1",
+      "images": 30
+    },
+    {
+      "name": "cold picker and selected portrait",
+      "width": 844,
+      "height": 390,
+      "dpr": 3,
+      "touch": true,
+      "variant": "mobile-v1",
+      "images": 30
+    },
+    {
+      "name": "cold picker and selected portrait",
+      "width": 1280,
+      "height": 800,
+      "dpr": 2,
+      "touch": false,
+      "variant": "v1",
+      "images": 30
+    },
+    {
+      "name": "mobile fails: desktop fallback and next portrait recovers"
+    },
+    {
+      "name": "both fail: initial fallback and next portrait recovers"
+    }
+  ]
+}

@@ -208,3 +208,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.29.0功能图标统一GameIcon与锁定Phosphor Core静态SVG，不引入Unicode/emoji代替控制图标。Regular路径已定义线宽，不再叠加旧stroke；方形宽高需成对设置，不能只改width。牌字/品牌章/原创头像贴纸属于游戏内容，保留。MIT随网页发布。
 
 - 1.29.1图标验收除方形/墨迹外须检查相对按钮中心；通用图文margin须低优先级，纯图标网格轨道用minmax(0,1fr)，防短屏padding导致最小轨道单侧溢出。
+
+- 1.29.3头像小图mobile-v1路径immutable，后续重编码换版本目录；picture必须核对currentSrc与实际请求，不能仅查img.src。隐藏头像窗不得提前加载候选图，display:contents包装须复验牌桌定位与fallback。

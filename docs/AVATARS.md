@@ -62,3 +62,13 @@
 自动测试：tests/server/avatars.test.ts（目录/分组、随机与幂等、同房避重、重启/恢复、聊天冒用拒绝、非法输入）。
 
 真实浏览器：scripts/verify-avatars.mjs，四视口、三组30图、创建与加入、六真人候场、大厅/聊天、刷新、开局牌桌及胡牌确认。证据前缀avatars-1.26.0-local-r2，手机为Chromium模拟。公网public-avatars-1.26.0-r2共16项通过，39资源指纹一致，测试房关闭。头像与源码已同步GitHub，详细发布与慢请求观察见VERIFICATION。
+
+## 1.29.3 手机版派生资源
+
+原v1文件SHA保持不变；scripts/prepare-mobile-avatars.cjs用sharp等比缩至128×128，WebP quality76/effort6。脚本先核对源SHA，输出apps/web/public/avatars/mobile-v1/与docs/avatar-mobile-manifest-v1.json，记录工具版本、30张源/目标SHA和字节数。开发环境需sharp，可通过NODE_PATH提供；运行时不依赖sharp。
+
+整套510788→94204字节，约499→92KiB，减少81.56%。picture/source按(max-width:699px)或(pointer:coarse)且(max-width:1023px)选择小图，覆盖高DPR手机横竖屏；桌面保留256px。picture使用display:contents保持既有头像几何，牌桌绝对定位匹配内部img。小图失败退原图，双失败退昵称首字。
+
+仅mobile-v1目录使用一年immutable缓存，后续修改编码必须换版本路径；禁止原路径覆盖。候选图仅在头像弹窗打开时渲染。scripts/verify-mobile-avatars.mjs验证冷启动请求、尺寸选择、缓存与失败恢复；verify-avatars.mjs继续验收六人真实联机。
+
+圆形外框需穿过picture继承border-radius；实测图片计算半径为50%，与既有金边一致。公网冷加载校验允许大厅中真实玩家的头像请求，但关闭的候选面板必须无图片节点和额外候选请求。

@@ -1,6 +1,7 @@
+.portrait-source{display:contents;border-radius:inherit}
 .portrait-image{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit;flex:none;user-select:none;pointer-events:none}
 .portrait-fallback{display:grid;place-items:center;width:100%;height:100%;border-radius:inherit;background:#214c39;color:#eed9a4}
-.player-portrait>.portrait-image{position:absolute;inset:0}.player-portrait .presence-dot{z-index:1}
+.player-portrait .portrait-image{position:absolute;inset:0}.player-portrait .presence-dot{z-index:1}
 .player-profile-field{display:flex;align-items:center;gap:12px;grid-column:1/-1;min-width:0}
 .entry .profile-avatar-trigger{position:relative;display:block;width:62px;height:62px;min-width:62px;min-height:62px;flex:none;padding:0;border:2px solid #b69759;border-radius:50%;background:#18432e;box-shadow:0 3px 0 #0a2018;color:#efdba7}
 .profile-avatar-trigger small{position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);padding:1px 6px;border:1px solid #a78c54;border-radius:8px;background:#123125;font-size:9px;white-space:nowrap;color:#f5dfab}

@@ -186,5 +186,5 @@ export const AVATAR_CATEGORIES=['男','女','兽'] as const;
 export function isAvatarId(value:unknown):value is AvatarId{return typeof value==='string'&&AVATARS.some(a=>a.id===value);}
 /** A deterministic fallback keeps legacy seats and AI stable without consuming game RNG. */
 export function stableAvatarId(seed:string):AvatarId{let hash=2166136261;for(const char of seed){hash^=char.codePointAt(0)!;hash=Math.imul(hash,16777619);}return AVATARS[(hash>>>0)%AVATARS.length].id;}
-export function avatarUrl(id:unknown,seed:string){return '/avatars/v1/'+(isAvatarId(id)?id:stableAvatarId(seed))+'.webp';}
+export function avatarUrl(id:unknown,seed:string,size:'desktop'|'mobile'='desktop'){return (size==='mobile'?'/avatars/mobile-v1/':'/avatars/v1/')+(isAvatarId(id)?id:stableAvatarId(seed))+'.webp';}
 export const LITERARY_NICKNAMES=AVATARS.map(a=>a.nickname);
