@@ -1,0 +1,811 @@
+{
+  "at": "2026-10-26T04:36:53.764Z",
+  "version": "1.30.6",
+  "origin": "http://127.0.0.1:3193",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "320x480 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "list",
+        "plus"
+      ]
+    },
+    {
+      "name": "390x844 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "list",
+        "plus"
+      ]
+    },
+    {
+      "name": "667x375 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "newspaper",
+        "sign-in",
+        "question",
+        "shield-check",
+        "plus"
+      ]
+    },
+    {
+      "name": "1280x800 hall, book, updates, help, admin icons",
+      "iconNames": [
+        "book-open-text",
+        "newspaper",
+        "sign-in",
+        "question",
+        "shield-check",
+        "plus"
+      ]
+    },
+    {
+      "name": "320x480 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": {
+        "x": 6,
+        "y": 246,
+        "width": 308,
+        "height": 66,
+        "right": 314,
+        "bottom": 312
+      },
+      "hand": {
+        "x": 6,
+        "y": 315,
+        "width": 308,
+        "height": 159,
+        "right": 314,
+        "bottom": 474
+      },
+      "box": {
+        "x": 11,
+        "y": 251,
+        "width": 187,
+        "height": 56,
+        "right": 198,
+        "bottom": 307
+      },
+      "table": {
+        "x": 6,
+        "y": 64,
+        "width": 308,
+        "height": 179,
+        "right": 314,
+        "bottom": 243
+      },
+      "actions": {
+        "x": 204,
+        "y": 259,
+        "width": 105,
+        "height": 40,
+        "right": 309,
+        "bottom": 299
+      },
+      "tile": {
+        "x": 87.5,
+        "y": 256,
+        "width": 34,
+        "height": 46,
+        "right": 121.5,
+        "bottom": 302
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "box": {
+        "x": 140,
+        "y": 194.328125,
+        "width": 40,
+        "height": 50,
+        "right": 180,
+        "bottom": 244.328125
+      },
+      "table": {
+        "x": 6,
+        "y": 64,
+        "width": 308,
+        "height": 313,
+        "right": 314,
+        "bottom": 377
+      },
+      "actions": {
+        "x": 107.5,
+        "y": 249.328125,
+        "width": 105,
+        "height": 40,
+        "right": 212.5,
+        "bottom": 289.328125
+      },
+      "tile": {
+        "x": 145,
+        "y": 199.328125,
+        "width": 30,
+        "height": 40,
+        "right": 175,
+        "bottom": 239.328125
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "320x480 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:3",
+      "phaseAfter": "701EF29766:PhaseId:6",
+      "deadline": {
+        "endsAt": 1792989381558,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:7",
+      "phaseAfter": "701EF29766:PhaseId:10",
+      "deadline": {
+        "endsAt": 1792989383222,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌组: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:11",
+      "phaseAfter": "701EF29766:PhaseId:14",
+      "deadline": {
+        "endsAt": 1792989383923,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:15",
+      "phaseAfter": "701EF29766:PhaseId:18",
+      "deadline": {
+        "endsAt": 1792989384573,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:19",
+      "phaseAfter": "701EF29766:PhaseId:22",
+      "deadline": {
+        "endsAt": 1792989385222,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:23",
+      "phaseAfter": "701EF29766:PhaseId:26",
+      "deadline": {
+        "endsAt": 1792989385922,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:27",
+      "phaseAfter": "701EF29766:PhaseId:30",
+      "deadline": {
+        "endsAt": 1792989386572,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:31",
+      "phaseAfter": "701EF29766:PhaseId:34",
+      "deadline": {
+        "endsAt": 1792989387222,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:35",
+      "phaseAfter": "701EF29766:PhaseId:38",
+      "deadline": {
+        "endsAt": 1792989387873,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:39",
+      "phaseAfter": "701EF29766:PhaseId:42",
+      "deadline": {
+        "endsAt": 1792989388522,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "320x480: new review supersedes 游戏菜单, voting and return work"
+    },
+    {
+      "name": "390x844 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": {
+        "x": 10,
+        "y": 537,
+        "width": 370,
+        "height": 86,
+        "right": 380,
+        "bottom": 623
+      },
+      "hand": {
+        "x": 10,
+        "y": 628,
+        "width": 370,
+        "height": 210,
+        "right": 380,
+        "bottom": 838
+      },
+      "box": {
+        "x": 18,
+        "y": 546,
+        "width": 229,
+        "height": 68,
+        "right": 247,
+        "bottom": 614
+      },
+      "table": {
+        "x": 10,
+        "y": 72,
+        "width": 370,
+        "height": 460,
+        "right": 380,
+        "bottom": 532
+      },
+      "actions": {
+        "x": 257,
+        "y": 550,
+        "width": 115,
+        "height": 60,
+        "right": 372,
+        "bottom": 610
+      },
+      "tile": {
+        "x": 166.5,
+        "y": 553,
+        "width": 40,
+        "height": 54,
+        "right": 206.5,
+        "bottom": 607
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "box": {
+        "x": 132.5,
+        "y": 365.015625,
+        "width": 125,
+        "height": 66,
+        "right": 257.5,
+        "bottom": 431.015625
+      },
+      "table": {
+        "x": 10,
+        "y": 72,
+        "width": 370,
+        "height": 655,
+        "right": 380,
+        "bottom": 727
+      },
+      "actions": {
+        "x": 139,
+        "y": 438.015625,
+        "width": 112,
+        "height": 49.9375,
+        "right": 251,
+        "bottom": 487.953125
+      },
+      "tile": {
+        "x": 209.5,
+        "y": 372.015625,
+        "width": 38,
+        "height": 52,
+        "right": 247.5,
+        "bottom": 424.015625
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "390x844 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:46",
+      "phaseAfter": "701EF29766:PhaseId:49",
+      "deadline": {
+        "endsAt": 1792989391222,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:50",
+      "phaseAfter": "701EF29766:PhaseId:53",
+      "deadline": {
+        "endsAt": 1792989392888,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌组: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:54",
+      "phaseAfter": "701EF29766:PhaseId:57",
+      "deadline": {
+        "endsAt": 1792989393605,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:58",
+      "phaseAfter": "701EF29766:PhaseId:61",
+      "deadline": {
+        "endsAt": 1792989394271,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:62",
+      "phaseAfter": "701EF29766:PhaseId:65",
+      "deadline": {
+        "endsAt": 1792989394922,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:66",
+      "phaseAfter": "701EF29766:PhaseId:69",
+      "deadline": {
+        "endsAt": 1792989395605,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:70",
+      "phaseAfter": "701EF29766:PhaseId:73",
+      "deadline": {
+        "endsAt": 1792989396255,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:74",
+      "phaseAfter": "701EF29766:PhaseId:77",
+      "deadline": {
+        "endsAt": 1792989396905,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:78",
+      "phaseAfter": "701EF29766:PhaseId:81",
+      "deadline": {
+        "endsAt": 1792989397555,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:82",
+      "phaseAfter": "701EF29766:PhaseId:85",
+      "deadline": {
+        "endsAt": 1792989398205,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "390x844: new review supersedes 同桌音乐, voting and return work"
+    },
+    {
+      "name": "667x375 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 8,
+        "y": 210,
+        "width": 651,
+        "height": 165,
+        "right": 659,
+        "bottom": 375
+      },
+      "box": {
+        "x": 271,
+        "y": 115.03125,
+        "width": 125,
+        "height": 66,
+        "right": 396,
+        "bottom": 181.03125
+      },
+      "table": {
+        "x": 246.5,
+        "y": 91,
+        "width": 174,
+        "height": 116,
+        "right": 420.5,
+        "bottom": 207
+      },
+      "actions": {
+        "x": 428.5,
+        "y": 91,
+        "width": 83,
+        "height": 116,
+        "right": 511.5,
+        "bottom": 207
+      },
+      "tile": {
+        "x": 348,
+        "y": 122.03125,
+        "width": 38,
+        "height": 52,
+        "right": 386,
+        "bottom": 174.03125
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "box": {
+        "x": 271.25,
+        "y": 147,
+        "width": 125,
+        "height": 66,
+        "right": 396.25,
+        "bottom": 213
+      },
+      "table": {
+        "x": 197.75,
+        "y": 91,
+        "width": 271.5,
+        "height": 181,
+        "right": 469.25,
+        "bottom": 272
+      },
+      "actions": {
+        "x": 477.25,
+        "y": 91,
+        "width": 83,
+        "height": 116,
+        "right": 560.25,
+        "bottom": 207
+      },
+      "tile": {
+        "x": 348.25,
+        "y": 154,
+        "width": 38,
+        "height": 52,
+        "right": 386.25,
+        "bottom": 206
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "667x375 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:89",
+      "phaseAfter": "701EF29766:PhaseId:92",
+      "deadline": {
+        "endsAt": 1792989400888,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:93",
+      "phaseAfter": "701EF29766:PhaseId:96",
+      "deadline": {
+        "endsAt": 1792989402504,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌组: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:97",
+      "phaseAfter": "701EF29766:PhaseId:100",
+      "deadline": {
+        "endsAt": 1792989403172,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:101",
+      "phaseAfter": "701EF29766:PhaseId:104",
+      "deadline": {
+        "endsAt": 1792989403821,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:105",
+      "phaseAfter": "701EF29766:PhaseId:108",
+      "deadline": {
+        "endsAt": 1792989404471,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:109",
+      "phaseAfter": "701EF29766:PhaseId:112",
+      "deadline": {
+        "endsAt": 1792989405154,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:113",
+      "phaseAfter": "701EF29766:PhaseId:116",
+      "deadline": {
+        "endsAt": 1792989405804,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:117",
+      "phaseAfter": "701EF29766:PhaseId:120",
+      "deadline": {
+        "endsAt": 1792989406454,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:121",
+      "phaseAfter": "701EF29766:PhaseId:124",
+      "deadline": {
+        "endsAt": 1792989407104,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:125",
+      "phaseAfter": "701EF29766:PhaseId:128",
+      "deadline": {
+        "endsAt": 1792989407754,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "667x375: new review supersedes 新手指南, voting and return work"
+    },
+    {
+      "name": "1280x800 chat send, sticker picker, drawing controls and table SVGs"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 16,
+        "y": 587.765625,
+        "width": 1248,
+        "height": 212.234375,
+        "right": 1264,
+        "bottom": 800
+      },
+      "box": {
+        "x": 547.6796875,
+        "y": 297.03125,
+        "width": 185,
+        "height": 90,
+        "right": 732.6796875,
+        "bottom": 387.03125
+      },
+      "table": {
+        "x": 281.6796875,
+        "y": 107,
+        "width": 716.640625,
+        "height": 477.75,
+        "right": 998.3203125,
+        "bottom": 584.75
+      },
+      "actions": {
+        "x": 526.1796875,
+        "y": 396.03125,
+        "width": 228,
+        "height": 64,
+        "right": 754.1796875,
+        "bottom": 460.03125
+      },
+      "tile": {
+        "x": 664.6796875,
+        "y": 307.03125,
+        "width": 53,
+        "height": 70,
+        "right": 717.6796875,
+        "bottom": 377.03125
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "AI · 稼轩拍桌子",
+      "bar": null,
+      "hand": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "box": {
+        "x": 547.5,
+        "y": 347.1875,
+        "width": 185,
+        "height": 90,
+        "right": 732.5,
+        "bottom": 437.1875
+      },
+      "table": {
+        "x": 205,
+        "y": 107,
+        "width": 870,
+        "height": 580,
+        "right": 1075,
+        "bottom": 687
+      },
+      "actions": {
+        "x": 526,
+        "y": 446.1875,
+        "width": 228,
+        "height": 64,
+        "right": 754,
+        "bottom": 510.1875
+      },
+      "tile": {
+        "x": 664.5,
+        "y": 357.1875,
+        "width": 53,
+        "height": 70,
+        "right": 717.5,
+        "bottom": 427.1875
+      },
+      "pointer": "none"
+    },
+    {
+      "name": "1280x800 游戏菜单: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:132",
+      "phaseAfter": "701EF29766:PhaseId:135",
+      "deadline": {
+        "endsAt": 1792989410623,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 同桌音乐: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:136",
+      "phaseAfter": "701EF29766:PhaseId:139",
+      "deadline": {
+        "endsAt": 1792989412470,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌组: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:140",
+      "phaseAfter": "701EF29766:PhaseId:143",
+      "deadline": {
+        "endsAt": 1792989413189,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌局记录: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:144",
+      "phaseAfter": "701EF29766:PhaseId:147",
+      "deadline": {
+        "endsAt": 1792989413804,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 牌桌帮助: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:148",
+      "phaseAfter": "701EF29766:PhaseId:151",
+      "deadline": {
+        "endsAt": 1792989414421,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 新手指南: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:152",
+      "phaseAfter": "701EF29766:PhaseId:155",
+      "deadline": {
+        "endsAt": 1792989415071,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 画面设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:156",
+      "phaseAfter": "701EF29766:PhaseId:159",
+      "deadline": {
+        "endsAt": 1792989415722,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 房间设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:160",
+      "phaseAfter": "701EF29766:PhaseId:163",
+      "deadline": {
+        "endsAt": 1792989416370,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 托管设置: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:164",
+      "phaseAfter": "701EF29766:PhaseId:167",
+      "deadline": {
+        "endsAt": 1792989417022,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800 整理句子: discard preserves modal, focus, scroll; draw preserves menu",
+      "phaseBefore": "701EF29766:PhaseId:168",
+      "phaseAfter": "701EF29766:PhaseId:171",
+      "deadline": {
+        "endsAt": 1792989417670,
+        "remainingMsWhenPaused": null
+      }
+    },
+    {
+      "name": "1280x800: new review supersedes 牌局记录, voting and return work"
+    },
+    {
+      "name": "public-only spectator uses shared icons and return action"
+    },
+    {
+      "name": "room closure dismisses obsolete navigation"
+    }
+  ],
+  "errors": []
+}

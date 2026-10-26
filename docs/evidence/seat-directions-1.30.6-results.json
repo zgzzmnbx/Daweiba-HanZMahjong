@@ -1,0 +1,7036 @@
+{
+  "at": "2026-10-26T04:41:47.269Z",
+  "browser": "141.0.7390.37",
+  "scope": "dev fixtures; real WebGL, bounds, directions and pointer hit tests",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "count": 2,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 113.328125,
+          "y": 101.84375,
+          "width": 93.328125,
+          "height": 40,
+          "top": 101.84375,
+          "right": 206.65625,
+          "bottom": 141.84375,
+          "left": 113.328125,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 113.328125,
+            "y": 104.84375,
+            "width": 34,
+            "height": 34,
+            "top": 104.84375,
+            "right": 147.328125,
+            "bottom": 138.84375,
+            "left": 113.328125
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 2,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 116,
+          "y": 97,
+          "width": 88,
+          "height": 80,
+          "top": 97,
+          "right": 204,
+          "bottom": 177,
+          "left": 116,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 136,
+            "y": 97,
+            "width": 48,
+            "height": 48,
+            "top": 97,
+            "right": 184,
+            "bottom": 145,
+            "left": 136
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 3,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 212.65625,
+          "y": 121.5,
+          "width": 93.328125,
+          "height": 40,
+          "top": 121.5,
+          "right": 305.984375,
+          "bottom": 161.5,
+          "left": 212.65625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 124.5,
+            "width": 34,
+            "height": 34,
+            "top": 124.5,
+            "right": 246.65625,
+            "bottom": 158.5,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 14,
+          "y": 121.5,
+          "width": 93.328125,
+          "height": 40,
+          "top": 121.5,
+          "right": 107.328125,
+          "bottom": 161.5,
+          "left": 14,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 124.5,
+            "width": 34,
+            "height": 34,
+            "top": 124.5,
+            "right": 48,
+            "bottom": 158.5,
+            "left": 14
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 3,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 216,
+          "y": 142.921875,
+          "width": 88,
+          "height": 80,
+          "top": 142.921875,
+          "right": 304,
+          "bottom": 222.921875,
+          "left": 216,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 236,
+            "y": 142.921875,
+            "width": 48,
+            "height": 48,
+            "top": 142.921875,
+            "right": 284,
+            "bottom": 190.921875,
+            "left": 236
+          }
+        },
+        {
+          "x": 15.984375,
+          "y": 142.921875,
+          "width": 88,
+          "height": 80,
+          "top": 142.921875,
+          "right": 103.984375,
+          "bottom": 222.921875,
+          "left": 15.984375,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 35.984375,
+            "y": 142.921875,
+            "width": 48,
+            "height": 48,
+            "top": 142.921875,
+            "right": 83.984375,
+            "bottom": 190.921875,
+            "left": 35.984375
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 4,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 212.65625,
+          "y": 140.84375,
+          "width": 93.328125,
+          "height": 40,
+          "top": 140.84375,
+          "right": 305.984375,
+          "bottom": 180.84375,
+          "left": 212.65625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 143.84375,
+            "width": 34,
+            "height": 34,
+            "top": 143.84375,
+            "right": 246.65625,
+            "bottom": 177.84375,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 113.328125,
+          "y": 101.84375,
+          "width": 93.328125,
+          "height": 40,
+          "top": 101.84375,
+          "right": 206.65625,
+          "bottom": 141.84375,
+          "left": 113.328125,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 113.328125,
+            "y": 104.84375,
+            "width": 34,
+            "height": 34,
+            "top": 104.84375,
+            "right": 147.328125,
+            "bottom": 138.84375,
+            "left": 113.328125
+          }
+        },
+        {
+          "x": 14,
+          "y": 140.84375,
+          "width": 93.328125,
+          "height": 40,
+          "top": 140.84375,
+          "right": 107.328125,
+          "bottom": 180.84375,
+          "left": 14,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 143.84375,
+            "width": 34,
+            "height": 34,
+            "top": 143.84375,
+            "right": 48,
+            "bottom": 177.84375,
+            "left": 14
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 4,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 223,
+          "y": 189.625,
+          "width": 88,
+          "height": 80,
+          "top": 189.625,
+          "right": 311,
+          "bottom": 269.625,
+          "left": 223,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 243,
+            "y": 189.625,
+            "width": 48,
+            "height": 48,
+            "top": 189.625,
+            "right": 291,
+            "bottom": 237.625,
+            "left": 243
+          }
+        },
+        {
+          "x": 116,
+          "y": 97,
+          "width": 88,
+          "height": 80,
+          "top": 97,
+          "right": 204,
+          "bottom": 177,
+          "left": 116,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 136,
+            "y": 97,
+            "width": 48,
+            "height": 48,
+            "top": 97,
+            "right": 184,
+            "bottom": 145,
+            "left": 136
+          }
+        },
+        {
+          "x": 9,
+          "y": 189.625,
+          "width": 88,
+          "height": 80,
+          "top": 189.625,
+          "right": 97,
+          "bottom": 269.625,
+          "left": 9,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 29,
+            "y": 189.625,
+            "width": 48,
+            "height": 48,
+            "top": 189.625,
+            "right": 77,
+            "bottom": 237.625,
+            "left": 29
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 5,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 212.65625,
+          "y": 158.015625,
+          "width": 93.328125,
+          "height": 40,
+          "top": 158.015625,
+          "right": 305.984375,
+          "bottom": 198.015625,
+          "left": 212.65625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 161.015625,
+            "width": 34,
+            "height": 34,
+            "top": 161.015625,
+            "right": 246.65625,
+            "bottom": 195.015625,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 212.65625,
+          "y": 114.015625,
+          "width": 93.328125,
+          "height": 40,
+          "top": 114.015625,
+          "right": 305.984375,
+          "bottom": 154.015625,
+          "left": 212.65625,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 117.015625,
+            "width": 34,
+            "height": 34,
+            "top": 117.015625,
+            "right": 246.65625,
+            "bottom": 151.015625,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 14,
+          "y": 114.015625,
+          "width": 93.328125,
+          "height": 40,
+          "top": 114.015625,
+          "right": 107.328125,
+          "bottom": 154.015625,
+          "left": 14,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 117.015625,
+            "width": 34,
+            "height": 34,
+            "top": 117.015625,
+            "right": 48,
+            "bottom": 151.015625,
+            "left": 14
+          }
+        },
+        {
+          "x": 14,
+          "y": 158.015625,
+          "width": 93.328125,
+          "height": 40,
+          "top": 158.015625,
+          "right": 107.328125,
+          "bottom": 198.015625,
+          "left": 14,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 161.015625,
+            "width": 34,
+            "height": 34,
+            "top": 161.015625,
+            "right": 48,
+            "bottom": 195.015625,
+            "left": 14
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 5,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 223,
+          "y": 220.75,
+          "width": 88,
+          "height": 80,
+          "top": 220.75,
+          "right": 311,
+          "bottom": 300.75,
+          "left": 223,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 243,
+            "y": 220.75,
+            "width": 48,
+            "height": 48,
+            "top": 220.75,
+            "right": 291,
+            "bottom": 268.75,
+            "left": 243
+          }
+        },
+        {
+          "x": 200.546875,
+          "y": 123.265625,
+          "width": 88,
+          "height": 80,
+          "top": 123.265625,
+          "right": 288.546875,
+          "bottom": 203.265625,
+          "left": 200.546875,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 220.546875,
+            "y": 123.265625,
+            "width": 48,
+            "height": 48,
+            "top": 123.265625,
+            "right": 268.546875,
+            "bottom": 171.265625,
+            "left": 220.546875
+          }
+        },
+        {
+          "x": 31.4375,
+          "y": 123.265625,
+          "width": 88,
+          "height": 80,
+          "top": 123.265625,
+          "right": 119.4375,
+          "bottom": 203.265625,
+          "left": 31.4375,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 51.4375,
+            "y": 123.265625,
+            "width": 48,
+            "height": 48,
+            "top": 123.265625,
+            "right": 99.4375,
+            "bottom": 171.265625,
+            "left": 51.4375
+          }
+        },
+        {
+          "x": 9,
+          "y": 220.75,
+          "width": 88,
+          "height": 80,
+          "top": 220.75,
+          "right": 97,
+          "bottom": 300.75,
+          "left": 9,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 29,
+            "y": 220.75,
+            "width": 48,
+            "height": 48,
+            "top": 220.75,
+            "right": 77,
+            "bottom": 268.75,
+            "left": 29
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 6,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 212.65625,
+          "y": 168.546875,
+          "width": 93.328125,
+          "height": 40,
+          "top": 168.546875,
+          "right": 305.984375,
+          "bottom": 208.546875,
+          "left": 212.65625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 171.546875,
+            "width": 34,
+            "height": 34,
+            "top": 171.546875,
+            "right": 246.65625,
+            "bottom": 205.546875,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 212.65625,
+          "y": 124.546875,
+          "width": 93.328125,
+          "height": 40,
+          "top": 124.546875,
+          "right": 305.984375,
+          "bottom": 164.546875,
+          "left": 212.65625,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 212.65625,
+            "y": 127.546875,
+            "width": 34,
+            "height": 34,
+            "top": 127.546875,
+            "right": 246.65625,
+            "bottom": 161.546875,
+            "left": 212.65625
+          }
+        },
+        {
+          "x": 113.328125,
+          "y": 101.84375,
+          "width": 93.328125,
+          "height": 40,
+          "top": 101.84375,
+          "right": 206.65625,
+          "bottom": 141.84375,
+          "left": 113.328125,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 113.328125,
+            "y": 104.84375,
+            "width": 34,
+            "height": 34,
+            "top": 104.84375,
+            "right": 147.328125,
+            "bottom": 138.84375,
+            "left": 113.328125
+          }
+        },
+        {
+          "x": 14,
+          "y": 124.546875,
+          "width": 93.328125,
+          "height": 40,
+          "top": 124.546875,
+          "right": 107.328125,
+          "bottom": 164.546875,
+          "left": 14,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 127.546875,
+            "width": 34,
+            "height": 34,
+            "top": 127.546875,
+            "right": 48,
+            "bottom": 161.546875,
+            "left": 14
+          }
+        },
+        {
+          "x": 14,
+          "y": 168.546875,
+          "width": 93.328125,
+          "height": 40,
+          "top": 168.546875,
+          "right": 107.328125,
+          "bottom": 208.546875,
+          "left": 14,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 14,
+            "y": 171.546875,
+            "width": 34,
+            "height": 34,
+            "top": 171.546875,
+            "right": 48,
+            "bottom": 205.546875,
+            "left": 14
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 149,
+        "top": 94,
+        "right": 314,
+        "bottom": 243,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 6,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 223,
+          "y": 234.6875,
+          "width": 88,
+          "height": 80,
+          "top": 234.6875,
+          "right": 311,
+          "bottom": 314.6875,
+          "left": 223,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 243,
+            "y": 234.6875,
+            "width": 48,
+            "height": 48,
+            "top": 234.6875,
+            "right": 291,
+            "bottom": 282.6875,
+            "left": 243
+          }
+        },
+        {
+          "x": 223,
+          "y": 150.6875,
+          "width": 88,
+          "height": 80,
+          "top": 150.6875,
+          "right": 311,
+          "bottom": 230.6875,
+          "left": 223,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 243,
+            "y": 150.6875,
+            "width": 48,
+            "height": 48,
+            "top": 150.6875,
+            "right": 291,
+            "bottom": 198.6875,
+            "left": 243
+          }
+        },
+        {
+          "x": 116,
+          "y": 97,
+          "width": 88,
+          "height": 80,
+          "top": 97,
+          "right": 204,
+          "bottom": 177,
+          "left": 116,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 136,
+            "y": 97,
+            "width": 48,
+            "height": 48,
+            "top": 97,
+            "right": 184,
+            "bottom": 145,
+            "left": 136
+          }
+        },
+        {
+          "x": 9,
+          "y": 150.6875,
+          "width": 88,
+          "height": 80,
+          "top": 150.6875,
+          "right": 97,
+          "bottom": 230.6875,
+          "left": 9,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 29,
+            "y": 150.6875,
+            "width": 48,
+            "height": 48,
+            "top": 150.6875,
+            "right": 77,
+            "bottom": 198.6875,
+            "left": 29
+          }
+        },
+        {
+          "x": 9,
+          "y": 234.6875,
+          "width": 88,
+          "height": 80,
+          "top": 234.6875,
+          "right": 97,
+          "bottom": 314.6875,
+          "left": 9,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 29,
+            "y": 234.6875,
+            "width": 48,
+            "height": 48,
+            "top": 234.6875,
+            "right": 77,
+            "bottom": 282.6875,
+            "left": 29
+          }
+        }
+      ],
+      "stage": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "vp": {
+        "x": 6,
+        "y": 94,
+        "width": 308,
+        "height": 283,
+        "top": 94,
+        "right": 314,
+        "bottom": 377,
+        "left": 6
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        320,
+        480
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 2,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 151,
+          "y": 145.515625,
+          "width": 88,
+          "height": 80,
+          "top": 145.515625,
+          "right": 239,
+          "bottom": 225.515625,
+          "left": 151,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 145.515625,
+            "width": 48,
+            "height": 48,
+            "top": 145.515625,
+            "right": 219,
+            "bottom": 193.515625,
+            "left": 171
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 2,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 151,
+          "y": 238.609375,
+          "width": 88,
+          "height": 80,
+          "top": 238.609375,
+          "right": 239,
+          "bottom": 318.609375,
+          "left": 151,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 238.609375,
+            "width": 48,
+            "height": 48,
+            "top": 238.609375,
+            "right": 219,
+            "bottom": 286.609375,
+            "left": 171
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 3,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 270.09375,
+          "y": 209.65625,
+          "width": 88,
+          "height": 80,
+          "top": 209.65625,
+          "right": 358.09375,
+          "bottom": 289.65625,
+          "left": 270.09375,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 290.09375,
+            "y": 209.65625,
+            "width": 48,
+            "height": 48,
+            "top": 209.65625,
+            "right": 338.09375,
+            "bottom": 257.65625,
+            "left": 290.09375
+          }
+        },
+        {
+          "x": 31.890625,
+          "y": 209.65625,
+          "width": 88,
+          "height": 80,
+          "top": 209.65625,
+          "right": 119.890625,
+          "bottom": 289.65625,
+          "left": 31.890625,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 51.890625,
+            "y": 209.65625,
+            "width": 48,
+            "height": 48,
+            "top": 209.65625,
+            "right": 99.890625,
+            "bottom": 257.65625,
+            "left": 51.890625
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 3,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 273.5625,
+          "y": 304.578125,
+          "width": 88,
+          "height": 80,
+          "top": 304.578125,
+          "right": 361.5625,
+          "bottom": 384.578125,
+          "left": 273.5625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 293.5625,
+            "y": 304.578125,
+            "width": 48,
+            "height": 48,
+            "top": 304.578125,
+            "right": 341.5625,
+            "bottom": 352.578125,
+            "left": 293.5625
+          }
+        },
+        {
+          "x": 28.421875,
+          "y": 304.578125,
+          "width": 88,
+          "height": 80,
+          "top": 304.578125,
+          "right": 116.421875,
+          "bottom": 384.578125,
+          "left": 28.421875,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 48.421875,
+            "y": 304.578125,
+            "width": 48,
+            "height": 48,
+            "top": 304.578125,
+            "right": 96.421875,
+            "bottom": 352.578125,
+            "left": 48.421875
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 4,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 286.984375,
+          "y": 270.765625,
+          "width": 88,
+          "height": 80,
+          "top": 270.765625,
+          "right": 374.984375,
+          "bottom": 350.765625,
+          "left": 286.984375,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 306.984375,
+            "y": 270.765625,
+            "width": 48,
+            "height": 48,
+            "top": 270.765625,
+            "right": 354.984375,
+            "bottom": 318.765625,
+            "left": 306.984375
+          }
+        },
+        {
+          "x": 151,
+          "y": 145.515625,
+          "width": 88,
+          "height": 80,
+          "top": 145.515625,
+          "right": 239,
+          "bottom": 225.515625,
+          "left": 151,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 145.515625,
+            "width": 48,
+            "height": 48,
+            "top": 145.515625,
+            "right": 219,
+            "bottom": 193.515625,
+            "left": 171
+          }
+        },
+        {
+          "x": 15,
+          "y": 270.765625,
+          "width": 88,
+          "height": 80,
+          "top": 270.765625,
+          "right": 103,
+          "bottom": 350.765625,
+          "left": 15,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 35,
+            "y": 270.765625,
+            "width": 48,
+            "height": 48,
+            "top": 270.765625,
+            "right": 83,
+            "bottom": 318.765625,
+            "left": 35
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 4,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 289,
+          "y": 368.078125,
+          "width": 88,
+          "height": 80,
+          "top": 368.078125,
+          "right": 377,
+          "bottom": 448.078125,
+          "left": 289,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 309,
+            "y": 368.078125,
+            "width": 48,
+            "height": 48,
+            "top": 368.078125,
+            "right": 357,
+            "bottom": 416.078125,
+            "left": 309
+          }
+        },
+        {
+          "x": 151,
+          "y": 238.609375,
+          "width": 88,
+          "height": 80,
+          "top": 238.609375,
+          "right": 239,
+          "bottom": 318.609375,
+          "left": 151,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 238.609375,
+            "width": 48,
+            "height": 48,
+            "top": 238.609375,
+            "right": 219,
+            "bottom": 286.609375,
+            "left": 171
+          }
+        },
+        {
+          "x": 13,
+          "y": 368.078125,
+          "width": 88,
+          "height": 80,
+          "top": 368.078125,
+          "right": 101,
+          "bottom": 448.078125,
+          "left": 13,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 33,
+            "y": 368.078125,
+            "width": 48,
+            "height": 48,
+            "top": 368.078125,
+            "right": 81,
+            "bottom": 416.078125,
+            "left": 33
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 5,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 286.71875,
+          "y": 310.640625,
+          "width": 88,
+          "height": 80,
+          "top": 310.640625,
+          "right": 374.71875,
+          "bottom": 390.640625,
+          "left": 286.71875,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 306.71875,
+            "y": 310.640625,
+            "width": 48,
+            "height": 48,
+            "top": 310.640625,
+            "right": 354.71875,
+            "bottom": 358.640625,
+            "left": 306.71875
+          }
+        },
+        {
+          "x": 250.921875,
+          "y": 183.4375,
+          "width": 88,
+          "height": 80,
+          "top": 183.4375,
+          "right": 338.921875,
+          "bottom": 263.4375,
+          "left": 250.921875,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 270.921875,
+            "y": 183.4375,
+            "width": 48,
+            "height": 48,
+            "top": 183.4375,
+            "right": 318.921875,
+            "bottom": 231.4375,
+            "left": 270.921875
+          }
+        },
+        {
+          "x": 51.0625,
+          "y": 183.4375,
+          "width": 88,
+          "height": 80,
+          "top": 183.4375,
+          "right": 139.0625,
+          "bottom": 263.4375,
+          "left": 51.0625,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 71.0625,
+            "y": 183.4375,
+            "width": 48,
+            "height": 48,
+            "top": 183.4375,
+            "right": 119.0625,
+            "bottom": 231.4375,
+            "left": 71.0625
+          }
+        },
+        {
+          "x": 15.265625,
+          "y": 310.640625,
+          "width": 88,
+          "height": 80,
+          "top": 310.640625,
+          "right": 103.265625,
+          "bottom": 390.640625,
+          "left": 15.265625,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 35.265625,
+            "y": 310.640625,
+            "width": 48,
+            "height": 48,
+            "top": 310.640625,
+            "right": 83.265625,
+            "bottom": 358.640625,
+            "left": 35.265625
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 5,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 289,
+          "y": 408.921875,
+          "width": 88,
+          "height": 80,
+          "top": 408.921875,
+          "right": 377,
+          "bottom": 488.921875,
+          "left": 289,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 309,
+            "y": 408.921875,
+            "width": 48,
+            "height": 48,
+            "top": 408.921875,
+            "right": 357,
+            "bottom": 456.921875,
+            "left": 309
+          }
+        },
+        {
+          "x": 253.953125,
+          "y": 276.984375,
+          "width": 88,
+          "height": 80,
+          "top": 276.984375,
+          "right": 341.953125,
+          "bottom": 356.984375,
+          "left": 253.953125,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 273.953125,
+            "y": 276.984375,
+            "width": 48,
+            "height": 48,
+            "top": 276.984375,
+            "right": 321.953125,
+            "bottom": 324.984375,
+            "left": 273.953125
+          }
+        },
+        {
+          "x": 48.03125,
+          "y": 276.984375,
+          "width": 88,
+          "height": 80,
+          "top": 276.984375,
+          "right": 136.03125,
+          "bottom": 356.984375,
+          "left": 48.03125,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 68.03125,
+            "y": 276.984375,
+            "width": 48,
+            "height": 48,
+            "top": 276.984375,
+            "right": 116.03125,
+            "bottom": 324.984375,
+            "left": 68.03125
+          }
+        },
+        {
+          "x": 13,
+          "y": 408.921875,
+          "width": 88,
+          "height": 80,
+          "top": 408.921875,
+          "right": 101,
+          "bottom": 488.921875,
+          "left": 13,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 33,
+            "y": 408.921875,
+            "width": 48,
+            "height": 48,
+            "top": 408.921875,
+            "right": 81,
+            "bottom": 456.921875,
+            "left": 33
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 6,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 285.03125,
+          "y": 324.296875,
+          "width": 88,
+          "height": 80,
+          "top": 324.296875,
+          "right": 373.03125,
+          "bottom": 404.296875,
+          "left": 285.03125,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 305.03125,
+            "y": 324.296875,
+            "width": 48,
+            "height": 48,
+            "top": 324.296875,
+            "right": 353.03125,
+            "bottom": 372.296875,
+            "left": 305.03125
+          }
+        },
+        {
+          "x": 279.703125,
+          "y": 219.921875,
+          "width": 88,
+          "height": 80,
+          "top": 219.921875,
+          "right": 367.703125,
+          "bottom": 299.921875,
+          "left": 279.703125,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 299.703125,
+            "y": 219.921875,
+            "width": 48,
+            "height": 48,
+            "top": 219.921875,
+            "right": 347.703125,
+            "bottom": 267.921875,
+            "left": 299.703125
+          }
+        },
+        {
+          "x": 151,
+          "y": 145.515625,
+          "width": 88,
+          "height": 80,
+          "top": 145.515625,
+          "right": 239,
+          "bottom": 225.515625,
+          "left": 151,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 145.515625,
+            "width": 48,
+            "height": 48,
+            "top": 145.515625,
+            "right": 219,
+            "bottom": 193.515625,
+            "left": 171
+          }
+        },
+        {
+          "x": 22.28125,
+          "y": 219.921875,
+          "width": 88,
+          "height": 80,
+          "top": 219.921875,
+          "right": 110.28125,
+          "bottom": 299.921875,
+          "left": 22.28125,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 42.28125,
+            "y": 219.921875,
+            "width": 48,
+            "height": 48,
+            "top": 219.921875,
+            "right": 90.28125,
+            "bottom": 267.921875,
+            "left": 42.28125
+          }
+        },
+        {
+          "x": 16.953125,
+          "y": 324.296875,
+          "width": 88,
+          "height": 80,
+          "top": 324.296875,
+          "right": 104.953125,
+          "bottom": 404.296875,
+          "left": 16.953125,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 36.953125,
+            "y": 324.296875,
+            "width": 48,
+            "height": 48,
+            "top": 324.296875,
+            "right": 84.953125,
+            "bottom": 372.296875,
+            "left": 36.953125
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 430,
+        "top": 102,
+        "right": 380,
+        "bottom": 532,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 6,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 287.28125,
+          "y": 422.796875,
+          "width": 88,
+          "height": 80,
+          "top": 422.796875,
+          "right": 375.28125,
+          "bottom": 502.796875,
+          "left": 287.28125,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 307.28125,
+            "y": 422.796875,
+            "width": 48,
+            "height": 48,
+            "top": 422.796875,
+            "right": 355.28125,
+            "bottom": 470.796875,
+            "left": 307.28125
+          }
+        },
+        {
+          "x": 283.390625,
+          "y": 315.328125,
+          "width": 88,
+          "height": 80,
+          "top": 315.328125,
+          "right": 371.390625,
+          "bottom": 395.328125,
+          "left": 283.390625,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 303.390625,
+            "y": 315.328125,
+            "width": 48,
+            "height": 48,
+            "top": 315.328125,
+            "right": 351.390625,
+            "bottom": 363.328125,
+            "left": 303.390625
+          }
+        },
+        {
+          "x": 151,
+          "y": 238.609375,
+          "width": 88,
+          "height": 80,
+          "top": 238.609375,
+          "right": 239,
+          "bottom": 318.609375,
+          "left": 151,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 171,
+            "y": 238.609375,
+            "width": 48,
+            "height": 48,
+            "top": 238.609375,
+            "right": 219,
+            "bottom": 286.609375,
+            "left": 171
+          }
+        },
+        {
+          "x": 18.59375,
+          "y": 315.328125,
+          "width": 88,
+          "height": 80,
+          "top": 315.328125,
+          "right": 106.59375,
+          "bottom": 395.328125,
+          "left": 18.59375,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 38.59375,
+            "y": 315.328125,
+            "width": 48,
+            "height": 48,
+            "top": 315.328125,
+            "right": 86.59375,
+            "bottom": 363.328125,
+            "left": 38.59375
+          }
+        },
+        {
+          "x": 14.703125,
+          "y": 422.796875,
+          "width": 88,
+          "height": 80,
+          "top": 422.796875,
+          "right": 102.703125,
+          "bottom": 502.796875,
+          "left": 14.703125,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 34.703125,
+            "y": 422.796875,
+            "width": 48,
+            "height": 48,
+            "top": 422.796875,
+            "right": 82.703125,
+            "bottom": 470.796875,
+            "left": 34.703125
+          }
+        }
+      ],
+      "stage": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "vp": {
+        "x": 10,
+        "y": 102,
+        "width": 370,
+        "height": 625,
+        "top": 102,
+        "right": 380,
+        "bottom": 727,
+        "left": 10
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 2,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 283.5,
+          "y": 92,
+          "width": 100,
+          "height": 40,
+          "top": 92,
+          "right": 383.5,
+          "bottom": 132,
+          "left": 283.5,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.5,
+            "y": 95,
+            "width": 34,
+            "height": 34,
+            "top": 95,
+            "right": 317.5,
+            "bottom": 129,
+            "left": 283.5
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 118,
+        "top": 89,
+        "right": 659,
+        "bottom": 207,
+        "left": 8
+      },
+      "vp": {
+        "x": 245,
+        "y": 89,
+        "width": 177,
+        "height": 118,
+        "top": 89,
+        "right": 422,
+        "bottom": 207,
+        "left": 245
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 2,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 283.75,
+          "y": 106.578125,
+          "width": 100,
+          "height": 40,
+          "top": 106.578125,
+          "right": 383.75,
+          "bottom": 146.578125,
+          "left": 283.75,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.75,
+            "y": 109.578125,
+            "width": 34,
+            "height": 34,
+            "top": 109.578125,
+            "right": 317.75,
+            "bottom": 143.578125,
+            "left": 283.75
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 183,
+        "top": 89,
+        "right": 659,
+        "bottom": 272,
+        "left": 8
+      },
+      "vp": {
+        "x": 196.25,
+        "y": 89,
+        "width": 274.5,
+        "height": 183,
+        "top": 89,
+        "right": 470.75,
+        "bottom": 272,
+        "left": 196.25
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 3,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 551,
+          "y": 107.25,
+          "width": 100,
+          "height": 40,
+          "top": 107.25,
+          "right": 651,
+          "bottom": 147.25,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 110.25,
+            "width": 34,
+            "height": 34,
+            "top": 110.25,
+            "right": 585,
+            "bottom": 144.25,
+            "left": 551
+          }
+        },
+        {
+          "x": 16,
+          "y": 107.25,
+          "width": 100,
+          "height": 40,
+          "top": 107.25,
+          "right": 116,
+          "bottom": 147.25,
+          "left": 16,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 110.25,
+            "width": 34,
+            "height": 34,
+            "top": 110.25,
+            "right": 50,
+            "bottom": 144.25,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 118,
+        "top": 89,
+        "right": 659,
+        "bottom": 207,
+        "left": 8
+      },
+      "vp": {
+        "x": 245,
+        "y": 89,
+        "width": 177,
+        "height": 118,
+        "top": 89,
+        "right": 422,
+        "bottom": 207,
+        "left": 245
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 3,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 551,
+          "y": 128.328125,
+          "width": 100,
+          "height": 40,
+          "top": 128.328125,
+          "right": 651,
+          "bottom": 168.328125,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 131.328125,
+            "width": 34,
+            "height": 34,
+            "top": 131.328125,
+            "right": 585,
+            "bottom": 165.328125,
+            "left": 551
+          }
+        },
+        {
+          "x": 16,
+          "y": 128.328125,
+          "width": 100,
+          "height": 40,
+          "top": 128.328125,
+          "right": 116,
+          "bottom": 168.328125,
+          "left": 16,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 131.328125,
+            "width": 34,
+            "height": 34,
+            "top": 131.328125,
+            "right": 50,
+            "bottom": 165.328125,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 183,
+        "top": 89,
+        "right": 659,
+        "bottom": 272,
+        "left": 8
+      },
+      "vp": {
+        "x": 196.25,
+        "y": 89,
+        "width": 274.5,
+        "height": 183,
+        "top": 89,
+        "right": 470.75,
+        "bottom": 272,
+        "left": 196.25
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 4,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 551,
+          "y": 122.40625,
+          "width": 100,
+          "height": 40,
+          "top": 122.40625,
+          "right": 651,
+          "bottom": 162.40625,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 125.40625,
+            "width": 34,
+            "height": 34,
+            "top": 125.40625,
+            "right": 585,
+            "bottom": 159.40625,
+            "left": 551
+          }
+        },
+        {
+          "x": 283.5,
+          "y": 92,
+          "width": 100,
+          "height": 40,
+          "top": 92,
+          "right": 383.5,
+          "bottom": 132,
+          "left": 283.5,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.5,
+            "y": 95,
+            "width": 34,
+            "height": 34,
+            "top": 95,
+            "right": 317.5,
+            "bottom": 129,
+            "left": 283.5
+          }
+        },
+        {
+          "x": 16,
+          "y": 122.40625,
+          "width": 100,
+          "height": 40,
+          "top": 122.40625,
+          "right": 116,
+          "bottom": 162.40625,
+          "left": 16,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 125.40625,
+            "width": 34,
+            "height": 34,
+            "top": 125.40625,
+            "right": 50,
+            "bottom": 159.40625,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 118,
+        "top": 89,
+        "right": 659,
+        "bottom": 207,
+        "left": 8
+      },
+      "vp": {
+        "x": 245,
+        "y": 89,
+        "width": 177,
+        "height": 118,
+        "top": 89,
+        "right": 422,
+        "bottom": 207,
+        "left": 245
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 4,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 551,
+          "y": 151.828125,
+          "width": 100,
+          "height": 40,
+          "top": 151.828125,
+          "right": 651,
+          "bottom": 191.828125,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 154.828125,
+            "width": 34,
+            "height": 34,
+            "top": 154.828125,
+            "right": 585,
+            "bottom": 188.828125,
+            "left": 551
+          }
+        },
+        {
+          "x": 283.75,
+          "y": 106.578125,
+          "width": 100,
+          "height": 40,
+          "top": 106.578125,
+          "right": 383.75,
+          "bottom": 146.578125,
+          "left": 283.75,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.75,
+            "y": 109.578125,
+            "width": 34,
+            "height": 34,
+            "top": 109.578125,
+            "right": 317.75,
+            "bottom": 143.578125,
+            "left": 283.75
+          }
+        },
+        {
+          "x": 16,
+          "y": 151.828125,
+          "width": 100,
+          "height": 40,
+          "top": 151.828125,
+          "right": 116,
+          "bottom": 191.828125,
+          "left": 16,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 154.828125,
+            "width": 34,
+            "height": 34,
+            "top": 154.828125,
+            "right": 50,
+            "bottom": 188.828125,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 183,
+        "top": 89,
+        "right": 659,
+        "bottom": 272,
+        "left": 8
+      },
+      "vp": {
+        "x": 196.25,
+        "y": 89,
+        "width": 274.5,
+        "height": 183,
+        "top": 89,
+        "right": 470.75,
+        "bottom": 272,
+        "left": 196.25
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 5,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 551,
+          "y": 147.15625,
+          "width": 100,
+          "height": 40,
+          "top": 147.15625,
+          "right": 651,
+          "bottom": 187.15625,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 150.15625,
+            "width": 34,
+            "height": 34,
+            "top": 150.15625,
+            "right": 585,
+            "bottom": 184.15625,
+            "left": 551
+          }
+        },
+        {
+          "x": 551,
+          "y": 103.15625,
+          "width": 100,
+          "height": 40,
+          "top": 103.15625,
+          "right": 651,
+          "bottom": 143.15625,
+          "left": 551,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 106.15625,
+            "width": 34,
+            "height": 34,
+            "top": 106.15625,
+            "right": 585,
+            "bottom": 140.15625,
+            "left": 551
+          }
+        },
+        {
+          "x": 16,
+          "y": 103.15625,
+          "width": 100,
+          "height": 40,
+          "top": 103.15625,
+          "right": 116,
+          "bottom": 143.15625,
+          "left": 16,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 106.15625,
+            "width": 34,
+            "height": 34,
+            "top": 106.15625,
+            "right": 50,
+            "bottom": 140.15625,
+            "left": 16
+          }
+        },
+        {
+          "x": 16,
+          "y": 147.15625,
+          "width": 100,
+          "height": 40,
+          "top": 147.15625,
+          "right": 116,
+          "bottom": 187.15625,
+          "left": 16,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 150.15625,
+            "width": 34,
+            "height": 34,
+            "top": 150.15625,
+            "right": 50,
+            "bottom": 184.15625,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 118,
+        "top": 89,
+        "right": 659,
+        "bottom": 207,
+        "left": 8
+      },
+      "vp": {
+        "x": 245,
+        "y": 89,
+        "width": 177,
+        "height": 118,
+        "top": 89,
+        "right": 422,
+        "bottom": 207,
+        "left": 245
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 5,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 551,
+          "y": 168.53125,
+          "width": 100,
+          "height": 40,
+          "top": 168.53125,
+          "right": 651,
+          "bottom": 208.53125,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 171.53125,
+            "width": 34,
+            "height": 34,
+            "top": 171.53125,
+            "right": 585,
+            "bottom": 205.53125,
+            "left": 551
+          }
+        },
+        {
+          "x": 551,
+          "y": 121.984375,
+          "width": 100,
+          "height": 40,
+          "top": 121.984375,
+          "right": 651,
+          "bottom": 161.984375,
+          "left": 551,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 124.984375,
+            "width": 34,
+            "height": 34,
+            "top": 124.984375,
+            "right": 585,
+            "bottom": 158.984375,
+            "left": 551
+          }
+        },
+        {
+          "x": 16,
+          "y": 121.984375,
+          "width": 100,
+          "height": 40,
+          "top": 121.984375,
+          "right": 116,
+          "bottom": 161.984375,
+          "left": 16,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 124.984375,
+            "width": 34,
+            "height": 34,
+            "top": 124.984375,
+            "right": 50,
+            "bottom": 158.984375,
+            "left": 16
+          }
+        },
+        {
+          "x": 16,
+          "y": 168.53125,
+          "width": 100,
+          "height": 40,
+          "top": 168.53125,
+          "right": 116,
+          "bottom": 208.53125,
+          "left": 16,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 171.53125,
+            "width": 34,
+            "height": 34,
+            "top": 171.53125,
+            "right": 50,
+            "bottom": 205.53125,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 183,
+        "top": 89,
+        "right": 659,
+        "bottom": 272,
+        "left": 8
+      },
+      "vp": {
+        "x": 196.25,
+        "y": 89,
+        "width": 274.5,
+        "height": 183,
+        "top": 89,
+        "right": 470.75,
+        "bottom": 272,
+        "left": 196.25
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 551,
+          "y": 154.953125,
+          "width": 100,
+          "height": 40,
+          "top": 154.953125,
+          "right": 651,
+          "bottom": 194.953125,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 157.953125,
+            "width": 34,
+            "height": 34,
+            "top": 157.953125,
+            "right": 585,
+            "bottom": 191.953125,
+            "left": 551
+          }
+        },
+        {
+          "x": 551,
+          "y": 110.953125,
+          "width": 100,
+          "height": 40,
+          "top": 110.953125,
+          "right": 651,
+          "bottom": 150.953125,
+          "left": 551,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 113.953125,
+            "width": 34,
+            "height": 34,
+            "top": 113.953125,
+            "right": 585,
+            "bottom": 147.953125,
+            "left": 551
+          }
+        },
+        {
+          "x": 283.5,
+          "y": 92,
+          "width": 100,
+          "height": 40,
+          "top": 92,
+          "right": 383.5,
+          "bottom": 132,
+          "left": 283.5,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.5,
+            "y": 95,
+            "width": 34,
+            "height": 34,
+            "top": 95,
+            "right": 317.5,
+            "bottom": 129,
+            "left": 283.5
+          }
+        },
+        {
+          "x": 16,
+          "y": 110.953125,
+          "width": 100,
+          "height": 40,
+          "top": 110.953125,
+          "right": 116,
+          "bottom": 150.953125,
+          "left": 16,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 113.953125,
+            "width": 34,
+            "height": 34,
+            "top": 113.953125,
+            "right": 50,
+            "bottom": 147.953125,
+            "left": 16
+          }
+        },
+        {
+          "x": 16,
+          "y": 154.953125,
+          "width": 100,
+          "height": 40,
+          "top": 154.953125,
+          "right": 116,
+          "bottom": 194.953125,
+          "left": 16,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 157.953125,
+            "width": 34,
+            "height": 34,
+            "top": 157.953125,
+            "right": 50,
+            "bottom": 191.953125,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 118,
+        "top": 89,
+        "right": 659,
+        "bottom": 207,
+        "left": 8
+      },
+      "vp": {
+        "x": 245,
+        "y": 89,
+        "width": 177,
+        "height": 118,
+        "top": 89,
+        "right": 422,
+        "bottom": 207,
+        "left": 245
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 551,
+          "y": 178.0625,
+          "width": 100,
+          "height": 40,
+          "top": 178.0625,
+          "right": 651,
+          "bottom": 218.0625,
+          "left": 551,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 181.0625,
+            "width": 34,
+            "height": 34,
+            "top": 181.0625,
+            "right": 585,
+            "bottom": 215.0625,
+            "left": 551
+          }
+        },
+        {
+          "x": 551,
+          "y": 134.0625,
+          "width": 100,
+          "height": 40,
+          "top": 134.0625,
+          "right": 651,
+          "bottom": 174.0625,
+          "left": 551,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 551,
+            "y": 137.0625,
+            "width": 34,
+            "height": 34,
+            "top": 137.0625,
+            "right": 585,
+            "bottom": 171.0625,
+            "left": 551
+          }
+        },
+        {
+          "x": 283.75,
+          "y": 109.46875,
+          "width": 100,
+          "height": 40,
+          "top": 109.46875,
+          "right": 383.75,
+          "bottom": 149.46875,
+          "left": 283.75,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 283.75,
+            "y": 112.46875,
+            "width": 34,
+            "height": 34,
+            "top": 112.46875,
+            "right": 317.75,
+            "bottom": 146.46875,
+            "left": 283.75
+          }
+        },
+        {
+          "x": 16,
+          "y": 134.0625,
+          "width": 100,
+          "height": 40,
+          "top": 134.0625,
+          "right": 116,
+          "bottom": 174.0625,
+          "left": 16,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 137.0625,
+            "width": 34,
+            "height": 34,
+            "top": 137.0625,
+            "right": 50,
+            "bottom": 171.0625,
+            "left": 16
+          }
+        },
+        {
+          "x": 16,
+          "y": 178.0625,
+          "width": 100,
+          "height": 40,
+          "top": 178.0625,
+          "right": 116,
+          "bottom": 218.0625,
+          "left": 16,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 16,
+            "y": 181.0625,
+            "width": 34,
+            "height": 34,
+            "top": 181.0625,
+            "right": 50,
+            "bottom": 215.0625,
+            "left": 16
+          }
+        }
+      ],
+      "stage": {
+        "x": 8,
+        "y": 89,
+        "width": 651,
+        "height": 183,
+        "top": 89,
+        "right": 659,
+        "bottom": 272,
+        "left": 8
+      },
+      "vp": {
+        "x": 196.25,
+        "y": 89,
+        "width": 274.5,
+        "height": 183,
+        "top": 89,
+        "right": 470.75,
+        "bottom": 272,
+        "left": 196.25
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        667,
+        375
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 2,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 576.9296875,
+          "y": 106.1875,
+          "width": 126,
+          "height": 124,
+          "top": 106.1875,
+          "right": 702.9296875,
+          "bottom": 230.1875,
+          "left": 576.9296875,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 604.9296875,
+            "y": 106.1875,
+            "width": 70,
+            "height": 70,
+            "top": 106.1875,
+            "right": 674.9296875,
+            "bottom": 176.1875,
+            "left": 604.9296875
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 492.765625,
+        "top": 92,
+        "right": 1264,
+        "bottom": 584.765625,
+        "left": 16
+      },
+      "vp": {
+        "x": 270.4296875,
+        "y": 92,
+        "width": 739.140625,
+        "height": 492.75,
+        "top": 92,
+        "right": 1009.5703125,
+        "bottom": 584.75,
+        "left": 270.4296875
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 2,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 577.25,
+          "y": 132.71875,
+          "width": 126,
+          "height": 124,
+          "top": 132.71875,
+          "right": 703.25,
+          "bottom": 256.71875,
+          "left": 577.25,
+          "seat": 1,
+          "label": "听雨，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 605.25,
+            "y": 132.71875,
+            "width": 70,
+            "height": 70,
+            "top": 132.71875,
+            "right": 675.25,
+            "bottom": 202.71875,
+            "left": 605.25
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 595,
+        "top": 92,
+        "right": 1264,
+        "bottom": 687,
+        "left": 16
+      },
+      "vp": {
+        "x": 193.75,
+        "y": 92,
+        "width": 892.5,
+        "height": 595,
+        "top": 92,
+        "right": 1086.25,
+        "bottom": 687,
+        "left": 193.75
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 3,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 771.1953125,
+          "y": 189.84375,
+          "width": 126,
+          "height": 124,
+          "top": 189.84375,
+          "right": 897.1953125,
+          "bottom": 313.84375,
+          "left": 771.1953125,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 799.1953125,
+            "y": 189.84375,
+            "width": 70,
+            "height": 70,
+            "top": 189.84375,
+            "right": 869.1953125,
+            "bottom": 259.84375,
+            "left": 799.1953125
+          }
+        },
+        {
+          "x": 382.6484375,
+          "y": 189.84375,
+          "width": 126,
+          "height": 124,
+          "top": 189.84375,
+          "right": 508.6484375,
+          "bottom": 313.84375,
+          "left": 382.6484375,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 410.6484375,
+            "y": 189.84375,
+            "width": 70,
+            "height": 70,
+            "top": 189.84375,
+            "right": 480.6484375,
+            "bottom": 259.84375,
+            "left": 410.6484375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 492.765625,
+        "top": 92,
+        "right": 1264,
+        "bottom": 584.765625,
+        "left": 16
+      },
+      "vp": {
+        "x": 270.4296875,
+        "y": 92,
+        "width": 739.140625,
+        "height": 492.75,
+        "top": 92,
+        "right": 1009.5703125,
+        "bottom": 584.75,
+        "left": 270.4296875
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 3,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 803.375,
+          "y": 222.921875,
+          "width": 126,
+          "height": 124,
+          "top": 222.921875,
+          "right": 929.375,
+          "bottom": 346.921875,
+          "left": 803.375,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 831.375,
+            "y": 222.921875,
+            "width": 70,
+            "height": 70,
+            "top": 222.921875,
+            "right": 901.375,
+            "bottom": 292.921875,
+            "left": 831.375
+          }
+        },
+        {
+          "x": 351.109375,
+          "y": 222.921875,
+          "width": 126,
+          "height": 124,
+          "top": 222.921875,
+          "right": 477.109375,
+          "bottom": 346.921875,
+          "left": 351.109375,
+          "seat": 2,
+          "label": "望月，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 379.109375,
+            "y": 222.921875,
+            "width": 70,
+            "height": 70,
+            "top": 222.921875,
+            "right": 449.109375,
+            "bottom": 292.921875,
+            "left": 379.109375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 595,
+        "top": 92,
+        "right": 1264,
+        "bottom": 687,
+        "left": 16
+      },
+      "vp": {
+        "x": 193.75,
+        "y": 92,
+        "width": 892.5,
+        "height": 595,
+        "top": 92,
+        "right": 1086.25,
+        "bottom": 687,
+        "left": 193.75
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 4,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 813.5546875,
+          "y": 253.171875,
+          "width": 126,
+          "height": 124,
+          "top": 253.171875,
+          "right": 939.5546875,
+          "bottom": 377.171875,
+          "left": 813.5546875,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 841.5546875,
+            "y": 253.171875,
+            "width": 70,
+            "height": 70,
+            "top": 253.171875,
+            "right": 911.5546875,
+            "bottom": 323.171875,
+            "left": 841.5546875
+          }
+        },
+        {
+          "x": 576.9296875,
+          "y": 106.1875,
+          "width": 126,
+          "height": 124,
+          "top": 106.1875,
+          "right": 702.9296875,
+          "bottom": 230.1875,
+          "left": 576.9296875,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 604.9296875,
+            "y": 106.1875,
+            "width": 70,
+            "height": 70,
+            "top": 106.1875,
+            "right": 674.9296875,
+            "bottom": 176.1875,
+            "left": 604.9296875
+          }
+        },
+        {
+          "x": 340.2890625,
+          "y": 253.171875,
+          "width": 126,
+          "height": 124,
+          "top": 253.171875,
+          "right": 466.2890625,
+          "bottom": 377.171875,
+          "left": 340.2890625,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 368.2890625,
+            "y": 253.171875,
+            "width": 70,
+            "height": 70,
+            "top": 253.171875,
+            "right": 438.2890625,
+            "bottom": 323.171875,
+            "left": 368.2890625
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 492.765625,
+        "top": 92,
+        "right": 1264,
+        "bottom": 584.765625,
+        "left": 16
+      },
+      "vp": {
+        "x": 270.4296875,
+        "y": 92,
+        "width": 739.140625,
+        "height": 492.75,
+        "top": 92,
+        "right": 1009.5703125,
+        "bottom": 584.75,
+        "left": 270.4296875
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 4,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 854.5,
+          "y": 299.34375,
+          "width": 126,
+          "height": 124,
+          "top": 299.34375,
+          "right": 980.5,
+          "bottom": 423.34375,
+          "left": 854.5,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 882.5,
+            "y": 299.34375,
+            "width": 70,
+            "height": 70,
+            "top": 299.34375,
+            "right": 952.5,
+            "bottom": 369.34375,
+            "left": 882.5
+          }
+        },
+        {
+          "x": 577.25,
+          "y": 132.71875,
+          "width": 126,
+          "height": 124,
+          "top": 132.71875,
+          "right": 703.25,
+          "bottom": 256.71875,
+          "left": 577.25,
+          "seat": 2,
+          "label": "望月，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 605.25,
+            "y": 132.71875,
+            "width": 70,
+            "height": 70,
+            "top": 132.71875,
+            "right": 675.25,
+            "bottom": 202.71875,
+            "left": 605.25
+          }
+        },
+        {
+          "x": 299.984375,
+          "y": 299.34375,
+          "width": 126,
+          "height": 124,
+          "top": 299.34375,
+          "right": 425.984375,
+          "bottom": 423.34375,
+          "left": 299.984375,
+          "seat": 3,
+          "label": "小满，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 327.984375,
+            "y": 299.34375,
+            "width": 70,
+            "height": 70,
+            "top": 299.34375,
+            "right": 397.984375,
+            "bottom": 369.34375,
+            "left": 327.984375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 595,
+        "top": 92,
+        "right": 1264,
+        "bottom": 687,
+        "left": 16
+      },
+      "vp": {
+        "x": 193.75,
+        "y": 92,
+        "width": 892.5,
+        "height": 595,
+        "top": 92,
+        "right": 1086.25,
+        "bottom": 687,
+        "left": 193.75
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 5,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 806.6328125,
+          "y": 300.75,
+          "width": 126,
+          "height": 124,
+          "top": 300.75,
+          "right": 932.6328125,
+          "bottom": 424.75,
+          "left": 806.6328125,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 834.6328125,
+            "y": 300.75,
+            "width": 70,
+            "height": 70,
+            "top": 300.75,
+            "right": 904.6328125,
+            "bottom": 370.75,
+            "left": 834.6328125
+          }
+        },
+        {
+          "x": 727.4453125,
+          "y": 172.75,
+          "width": 126,
+          "height": 124,
+          "top": 172.75,
+          "right": 853.4453125,
+          "bottom": 296.75,
+          "left": 727.4453125,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 755.4453125,
+            "y": 172.75,
+            "width": 70,
+            "height": 70,
+            "top": 172.75,
+            "right": 825.4453125,
+            "bottom": 242.75,
+            "left": 755.4453125
+          }
+        },
+        {
+          "x": 426.3984375,
+          "y": 172.75,
+          "width": 126,
+          "height": 124,
+          "top": 172.75,
+          "right": 552.3984375,
+          "bottom": 296.75,
+          "left": 426.3984375,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 454.3984375,
+            "y": 172.75,
+            "width": 70,
+            "height": 70,
+            "top": 172.75,
+            "right": 524.3984375,
+            "bottom": 242.75,
+            "left": 454.3984375
+          }
+        },
+        {
+          "x": 347.2109375,
+          "y": 300.75,
+          "width": 126,
+          "height": 124,
+          "top": 300.75,
+          "right": 473.2109375,
+          "bottom": 424.75,
+          "left": 347.2109375,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 375.2109375,
+            "y": 300.75,
+            "width": 70,
+            "height": 70,
+            "top": 300.75,
+            "right": 445.2109375,
+            "bottom": 370.75,
+            "left": 375.2109375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 492.765625,
+        "top": 92,
+        "right": 1264,
+        "bottom": 584.765625,
+        "left": 16
+      },
+      "vp": {
+        "x": 270.4296875,
+        "y": 92,
+        "width": 739.140625,
+        "height": 492.75,
+        "top": 92,
+        "right": 1009.5703125,
+        "bottom": 584.75,
+        "left": 270.4296875
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 5,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 846.140625,
+          "y": 353.625,
+          "width": 126,
+          "height": 124,
+          "top": 353.625,
+          "right": 972.140625,
+          "bottom": 477.625,
+          "left": 846.140625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 874.140625,
+            "y": 353.625,
+            "width": 70,
+            "height": 70,
+            "top": 353.625,
+            "right": 944.140625,
+            "bottom": 423.625,
+            "left": 874.140625
+          }
+        },
+        {
+          "x": 750.578125,
+          "y": 202.28125,
+          "width": 126,
+          "height": 124,
+          "top": 202.28125,
+          "right": 876.578125,
+          "bottom": 326.28125,
+          "left": 750.578125,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 778.578125,
+            "y": 202.28125,
+            "width": 70,
+            "height": 70,
+            "top": 202.28125,
+            "right": 848.578125,
+            "bottom": 272.28125,
+            "left": 778.578125
+          }
+        },
+        {
+          "x": 403.90625,
+          "y": 202.28125,
+          "width": 126,
+          "height": 124,
+          "top": 202.28125,
+          "right": 529.90625,
+          "bottom": 326.28125,
+          "left": 403.90625,
+          "seat": 3,
+          "label": "小满，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 431.90625,
+            "y": 202.28125,
+            "width": 70,
+            "height": 70,
+            "top": 202.28125,
+            "right": 501.90625,
+            "bottom": 272.28125,
+            "left": 431.90625
+          }
+        },
+        {
+          "x": 308.34375,
+          "y": 353.625,
+          "width": 126,
+          "height": 124,
+          "top": 353.625,
+          "right": 434.34375,
+          "bottom": 477.625,
+          "left": 308.34375,
+          "seat": 4,
+          "label": "晚风，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 336.34375,
+            "y": 353.625,
+            "width": 70,
+            "height": 70,
+            "top": 353.625,
+            "right": 406.34375,
+            "bottom": 423.625,
+            "left": 336.34375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 595,
+        "top": 92,
+        "right": 1264,
+        "bottom": 687,
+        "left": 16
+      },
+      "vp": {
+        "x": 193.75,
+        "y": 92,
+        "width": 892.5,
+        "height": 595,
+        "top": 92,
+        "right": 1086.25,
+        "bottom": 687,
+        "left": 193.75
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 6,
+      "expanded": true,
+      "badges": [
+        {
+          "x": 806.6328125,
+          "y": 333.3125,
+          "width": 126,
+          "height": 124,
+          "top": 333.3125,
+          "right": 932.6328125,
+          "bottom": 457.3125,
+          "left": 806.6328125,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 834.6328125,
+            "y": 333.3125,
+            "width": 70,
+            "height": 70,
+            "top": 333.3125,
+            "right": 904.6328125,
+            "bottom": 403.3125,
+            "left": 834.6328125
+          }
+        },
+        {
+          "x": 777.5078125,
+          "y": 205.3125,
+          "width": 126,
+          "height": 124,
+          "top": 205.3125,
+          "right": 903.5078125,
+          "bottom": 329.3125,
+          "left": 777.5078125,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 805.5078125,
+            "y": 205.3125,
+            "width": 70,
+            "height": 70,
+            "top": 205.3125,
+            "right": 875.5078125,
+            "bottom": 275.3125,
+            "left": 805.5078125
+          }
+        },
+        {
+          "x": 576.9296875,
+          "y": 113.984375,
+          "width": 126,
+          "height": 124,
+          "top": 113.984375,
+          "right": 702.9296875,
+          "bottom": 237.984375,
+          "left": 576.9296875,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 604.9296875,
+            "y": 113.984375,
+            "width": 70,
+            "height": 70,
+            "top": 113.984375,
+            "right": 674.9296875,
+            "bottom": 183.984375,
+            "left": 604.9296875
+          }
+        },
+        {
+          "x": 376.3359375,
+          "y": 205.3125,
+          "width": 126,
+          "height": 124,
+          "top": 205.3125,
+          "right": 502.3359375,
+          "bottom": 329.3125,
+          "left": 376.3359375,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 404.3359375,
+            "y": 205.3125,
+            "width": 70,
+            "height": 70,
+            "top": 205.3125,
+            "right": 474.3359375,
+            "bottom": 275.3125,
+            "left": 404.3359375
+          }
+        },
+        {
+          "x": 347.2109375,
+          "y": 333.3125,
+          "width": 126,
+          "height": 124,
+          "top": 333.3125,
+          "right": 473.2109375,
+          "bottom": 457.3125,
+          "left": 347.2109375,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 375.2109375,
+            "y": 333.3125,
+            "width": 70,
+            "height": 70,
+            "top": 333.3125,
+            "right": 445.2109375,
+            "bottom": 403.3125,
+            "left": 375.2109375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 492.765625,
+        "top": 92,
+        "right": 1264,
+        "bottom": 584.765625,
+        "left": 16
+      },
+      "vp": {
+        "x": 270.4296875,
+        "y": 92,
+        "width": 739.140625,
+        "height": 492.75,
+        "top": 92,
+        "right": 1009.5703125,
+        "bottom": 584.75,
+        "left": 270.4296875
+      },
+      "actions": [
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        },
+        {
+          "label": "今",
+          "hit": true
+        },
+        {
+          "label": "夜",
+          "hit": true
+        },
+        {
+          "label": "月",
+          "hit": true
+        },
+        {
+          "label": "明",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        },
+        {
+          "label": "和",
+          "hit": true
+        },
+        {
+          "label": "你",
+          "hit": true
+        },
+        {
+          "label": "一",
+          "hit": true
+        },
+        {
+          "label": "起",
+          "hit": true
+        },
+        {
+          "label": "看",
+          "hit": true
+        },
+        {
+          "label": "山",
+          "hit": true
+        },
+        {
+          "label": "河",
+          "hit": true
+        },
+        {
+          "label": "的",
+          "hit": true
+        },
+        {
+          "label": "我",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 6,
+      "expanded": false,
+      "badges": [
+        {
+          "x": 846.140625,
+          "y": 372.53125,
+          "width": 126,
+          "height": 124,
+          "top": 372.53125,
+          "right": 972.140625,
+          "bottom": 496.53125,
+          "left": 846.140625,
+          "seat": 1,
+          "label": "听雨，下家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 874.140625,
+            "y": 372.53125,
+            "width": 70,
+            "height": 70,
+            "top": 372.53125,
+            "right": 944.140625,
+            "bottom": 442.53125,
+            "left": 874.140625
+          }
+        },
+        {
+          "x": 811,
+          "y": 241.578125,
+          "width": 126,
+          "height": 124,
+          "top": 241.578125,
+          "right": 937,
+          "bottom": 365.578125,
+          "left": 811,
+          "seat": 2,
+          "label": "望月，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 839,
+            "y": 241.578125,
+            "width": 70,
+            "height": 70,
+            "top": 241.578125,
+            "right": 909,
+            "bottom": 311.578125,
+            "left": 839
+          }
+        },
+        {
+          "x": 577.25,
+          "y": 142.125,
+          "width": 126,
+          "height": 124,
+          "top": 142.125,
+          "right": 703.25,
+          "bottom": 266.125,
+          "left": 577.25,
+          "seat": 3,
+          "label": "小满，对家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 605.25,
+            "y": 142.125,
+            "width": 70,
+            "height": 70,
+            "top": 142.125,
+            "right": 675.25,
+            "bottom": 212.125,
+            "left": 605.25
+          }
+        },
+        {
+          "x": 343.484375,
+          "y": 241.578125,
+          "width": 126,
+          "height": 124,
+          "top": 241.578125,
+          "right": 469.484375,
+          "bottom": 365.578125,
+          "left": 343.484375,
+          "seat": 4,
+          "label": "晚风，同桌，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 371.484375,
+            "y": 241.578125,
+            "width": 70,
+            "height": 70,
+            "top": 241.578125,
+            "right": 441.484375,
+            "bottom": 311.578125,
+            "left": 371.484375
+          }
+        },
+        {
+          "x": 308.34375,
+          "y": 372.53125,
+          "width": 126,
+          "height": 124,
+          "top": 372.53125,
+          "right": 434.34375,
+          "bottom": 496.53125,
+          "left": 308.34375,
+          "seat": 5,
+          "label": "白露，上家，13张，在线",
+          "pointer": "none",
+          "portrait": {
+            "x": 336.34375,
+            "y": 372.53125,
+            "width": 70,
+            "height": 70,
+            "top": 372.53125,
+            "right": 406.34375,
+            "bottom": 442.53125,
+            "left": 336.34375
+          }
+        }
+      ],
+      "stage": {
+        "x": 16,
+        "y": 92,
+        "width": 1248,
+        "height": 595,
+        "top": 92,
+        "right": 1264,
+        "bottom": 687,
+        "left": 16
+      },
+      "vp": {
+        "x": 193.75,
+        "y": 92,
+        "width": 892.5,
+        "height": 595,
+        "top": 92,
+        "right": 1086.25,
+        "bottom": 687,
+        "left": 193.75
+      },
+      "actions": [
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "",
+          "hit": true
+        },
+        {
+          "label": "胡申请胡牌",
+          "hit": true
+        }
+      ],
+      "scroll": [
+        1280,
+        800
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 6,
+      "phase": "DISCARD_RESPONSE",
+      "controls": [
+        {
+          "text": "摸随机摸一张",
+          "x": 204,
+          "y": 259,
+          "width": 55,
+          "height": 40,
+          "top": 259,
+          "right": 259,
+          "bottom": 299,
+          "left": 204,
+          "hit": true
+        },
+        {
+          "text": "吃上家的字",
+          "x": 263,
+          "y": 259,
+          "width": 46,
+          "height": 40,
+          "top": 259,
+          "right": 309,
+          "bottom": 299,
+          "left": 263,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 6,
+      "phase": "HU_COMPOSE",
+      "controls": [
+        {
+          "text": "提交这句话",
+          "x": 102,
+          "y": 257,
+          "width": 109,
+          "height": 44,
+          "top": 257,
+          "right": 211,
+          "bottom": 301,
+          "left": 102,
+          "hit": true
+        },
+        {
+          "text": "放弃借字",
+          "x": 215,
+          "y": 257,
+          "width": 94,
+          "height": 44,
+          "top": 257,
+          "right": 309,
+          "bottom": 301,
+          "left": 215,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 6,
+      "phase": "DISCARD_RESPONSE",
+      "controls": [
+        {
+          "text": "摸随机摸一张",
+          "x": 257,
+          "y": 550,
+          "width": 59,
+          "height": 60,
+          "top": 550,
+          "right": 316,
+          "bottom": 610,
+          "left": 257,
+          "hit": true
+        },
+        {
+          "text": "吃上家的字",
+          "x": 322,
+          "y": 550,
+          "width": 50,
+          "height": 60,
+          "top": 550,
+          "right": 372,
+          "bottom": 610,
+          "left": 322,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 6,
+      "phase": "HU_COMPOSE",
+      "controls": [
+        {
+          "text": "提交这句话",
+          "x": 163,
+          "y": 558,
+          "width": 109,
+          "height": 44,
+          "top": 558,
+          "right": 272,
+          "bottom": 602,
+          "left": 163,
+          "hit": true
+        },
+        {
+          "text": "放弃借字",
+          "x": 278,
+          "y": 558,
+          "width": 94,
+          "height": 44,
+          "top": 558,
+          "right": 372,
+          "bottom": 602,
+          "left": 278,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "phase": "DISCARD_RESPONSE",
+      "controls": [
+        {
+          "text": "摸随机摸一张",
+          "x": 430,
+          "y": 89,
+          "width": 83,
+          "height": 36,
+          "top": 89,
+          "right": 513,
+          "bottom": 125,
+          "left": 430,
+          "hit": true
+        },
+        {
+          "text": "吃上家的字",
+          "x": 430,
+          "y": 129,
+          "width": 83,
+          "height": 36,
+          "top": 129,
+          "right": 513,
+          "bottom": 165,
+          "left": 430,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "phase": "HU_COMPOSE",
+      "controls": [
+        {
+          "text": "提交这句话",
+          "x": 430,
+          "y": 89,
+          "width": 109,
+          "height": 44,
+          "top": 89,
+          "right": 539,
+          "bottom": 133,
+          "left": 430,
+          "hit": true
+        },
+        {
+          "text": "放弃借字",
+          "x": 430,
+          "y": 137,
+          "width": 109,
+          "height": 44,
+          "top": 137,
+          "right": 539,
+          "bottom": 181,
+          "left": 430,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 6,
+      "phase": "DISCARD_RESPONSE",
+      "controls": [
+        {
+          "text": "摸随机摸一张",
+          "x": 564.25,
+          "y": 439.078125,
+          "width": 76,
+          "height": 64,
+          "top": 439.078125,
+          "right": 640.25,
+          "bottom": 503.078125,
+          "left": 564.25,
+          "hit": true
+        },
+        {
+          "text": "吃上家的字",
+          "x": 650.25,
+          "y": 439.078125,
+          "width": 66,
+          "height": 64,
+          "top": 439.078125,
+          "right": 716.25,
+          "bottom": 503.078125,
+          "left": 650.25,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 6,
+      "phase": "HU_COMPOSE",
+      "controls": [
+        {
+          "text": "提交这句话",
+          "x": 533.4296875,
+          "y": 388.828125,
+          "width": 109,
+          "height": 44,
+          "top": 388.828125,
+          "right": 642.4296875,
+          "bottom": 432.828125,
+          "left": 533.4296875,
+          "hit": true
+        },
+        {
+          "text": "放弃借字",
+          "x": 652.4296875,
+          "y": 388.828125,
+          "width": 94,
+          "height": 44,
+          "top": 388.828125,
+          "right": 746.4296875,
+          "bottom": 432.828125,
+          "left": 652.4296875,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "count": 6,
+      "mode": "2D",
+      "badges": [
+        {
+          "x": 212.65625,
+          "y": 173.53125,
+          "width": 93.328125,
+          "height": 40,
+          "top": 173.53125,
+          "right": 305.984375,
+          "bottom": 213.53125,
+          "left": 212.65625,
+          "label": "听雨，下家，13张，在线"
+        },
+        {
+          "x": 212.65625,
+          "y": 123.453125,
+          "width": 93.328125,
+          "height": 40,
+          "top": 123.453125,
+          "right": 305.984375,
+          "bottom": 163.453125,
+          "left": 212.65625,
+          "label": "望月，同桌，13张，在线"
+        },
+        {
+          "x": 113.328125,
+          "y": 97,
+          "width": 93.328125,
+          "height": 40,
+          "top": 97,
+          "right": 206.65625,
+          "bottom": 137,
+          "left": 113.328125,
+          "label": "小满，对家，13张，在线"
+        },
+        {
+          "x": 14,
+          "y": 123.453125,
+          "width": 93.328125,
+          "height": 40,
+          "top": 123.453125,
+          "right": 107.328125,
+          "bottom": 163.453125,
+          "left": 14,
+          "label": "晚风，同桌，13张，在线"
+        },
+        {
+          "x": 14,
+          "y": 173.53125,
+          "width": 93.328125,
+          "height": 40,
+          "top": 173.53125,
+          "right": 107.328125,
+          "bottom": 213.53125,
+          "left": 14,
+          "label": "白露，上家，13张，在线"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 6,
+      "mode": "2D",
+      "badges": [
+        {
+          "x": 289,
+          "y": 349.234375,
+          "width": 88,
+          "height": 80,
+          "top": 349.234375,
+          "right": 377,
+          "bottom": 429.234375,
+          "left": 289,
+          "label": "听雨，下家，13张，在线"
+        },
+        {
+          "x": 289,
+          "y": 204.75,
+          "width": 88,
+          "height": 80,
+          "top": 204.75,
+          "right": 377,
+          "bottom": 284.75,
+          "left": 289,
+          "label": "望月，同桌，13张，在线"
+        },
+        {
+          "x": 151,
+          "y": 108.53125,
+          "width": 88,
+          "height": 80,
+          "top": 108.53125,
+          "right": 239,
+          "bottom": 188.53125,
+          "left": 151,
+          "label": "小满，对家，13张，在线"
+        },
+        {
+          "x": 13,
+          "y": 204.75,
+          "width": 88,
+          "height": 80,
+          "top": 204.75,
+          "right": 101,
+          "bottom": 284.75,
+          "left": 13,
+          "label": "晚风，同桌，13张，在线"
+        },
+        {
+          "x": 13,
+          "y": 349.234375,
+          "width": 88,
+          "height": 80,
+          "top": 349.234375,
+          "right": 101,
+          "bottom": 429.234375,
+          "left": 13,
+          "label": "白露，上家，13张，在线"
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "mode": "2D",
+      "badges": [
+        {
+          "x": 551,
+          "y": 152.171875,
+          "width": 100,
+          "height": 40,
+          "top": 152.171875,
+          "right": 651,
+          "bottom": 192.171875,
+          "left": 551,
+          "label": "听雨，下家，13张，在线"
+        },
+        {
+          "x": 551,
+          "y": 108.171875,
+          "width": 100,
+          "height": 40,
+          "top": 108.171875,
+          "right": 651,
+          "bottom": 148.171875,
+          "left": 551,
+          "label": "望月，同桌，13张，在线"
+        },
+        {
+          "x": 283.5,
+          "y": 92,
+          "width": 100,
+          "height": 40,
+          "top": 92,
+          "right": 383.5,
+          "bottom": 132,
+          "left": 283.5,
+          "label": "小满，对家，13张，在线"
+        },
+        {
+          "x": 16,
+          "y": 108.171875,
+          "width": 100,
+          "height": 40,
+          "top": 108.171875,
+          "right": 116,
+          "bottom": 148.171875,
+          "left": 16,
+          "label": "晚风，同桌，13张，在线"
+        },
+        {
+          "x": 16,
+          "y": 152.171875,
+          "width": 100,
+          "height": 40,
+          "top": 152.171875,
+          "right": 116,
+          "bottom": 192.171875,
+          "left": 16,
+          "label": "白露，上家，13张，在线"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "count": 6,
+      "mode": "2D",
+      "badges": [
+        {
+          "x": 864.4765625,
+          "y": 359.15625,
+          "width": 126,
+          "height": 124,
+          "top": 359.15625,
+          "right": 990.4765625,
+          "bottom": 483.15625,
+          "left": 864.4765625,
+          "label": "听雨，下家，13张，在线"
+        },
+        {
+          "x": 864.4765625,
+          "y": 193.578125,
+          "width": 126,
+          "height": 124,
+          "top": 193.578125,
+          "right": 990.4765625,
+          "bottom": 317.578125,
+          "left": 864.4765625,
+          "label": "望月，同桌，13张，在线"
+        },
+        {
+          "x": 576.9921875,
+          "y": 95,
+          "width": 126,
+          "height": 124,
+          "top": 95,
+          "right": 702.9921875,
+          "bottom": 219,
+          "left": 576.9921875,
+          "label": "小满，对家，13张，在线"
+        },
+        {
+          "x": 289.5078125,
+          "y": 193.578125,
+          "width": 126,
+          "height": 124,
+          "top": 193.578125,
+          "right": 415.5078125,
+          "bottom": 317.578125,
+          "left": 289.5078125,
+          "label": "晚风，同桌，13张，在线"
+        },
+        {
+          "x": 289.5078125,
+          "y": 359.15625,
+          "width": 126,
+          "height": 124,
+          "top": 359.15625,
+          "right": 415.5078125,
+          "bottom": 483.15625,
+          "left": 289.5078125,
+          "label": "白露，上家，13张，在线"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

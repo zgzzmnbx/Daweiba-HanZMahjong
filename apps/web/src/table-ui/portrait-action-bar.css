@@ -1,0 +1,30 @@
+/* One real DOM action group moves below the table in portrait with an open hand.
+   Stable row height avoids camera jumps when TURN_ACTION becomes DISCARD_RESPONSE. */
+#root .game-shell .portrait-action-bar{flex:none;position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:86px;min-width:0;padding:6px 8px;border-block:1px solid #c2a56738;border-radius:14px;background:linear-gradient(100deg,#16372a9c,#12271d70);box-shadow:inset 0 1px #f0dba50a,0 5px 16px #100e091a}
+#root .portrait-action-bar .discard-drop-zone,#root .portrait-action-bar .latest-discard{position:relative;inset:auto;transform:none;flex:1;min-width:0;width:auto;max-width:240px;height:68px;margin:0;animation:none}
+#root .portrait-action-bar .discard-drop-zone{border-style:dashed;background:linear-gradient(135deg,#173d2f38,#102f2452)}
+#root .portrait-action-bar .table-action-dock{position:relative;inset:auto;transform:none;flex:none;flex-direction:row;align-items:center;justify-content:center;gap:6px;overflow:visible;max-height:none}
+#root .portrait-action-bar .table-action-dock:empty{display:none}
+#root .portrait-action-bar .table-action-dock .game-action{flex:none;min-width:50px;width:auto;height:60px;min-height:60px;padding:3px 6px;border-radius:12px;flex-direction:column;gap:0}
+#root .portrait-action-bar .table-action-dock .game-action b{font-size:29px;line-height:32px}
+#root .portrait-action-bar .table-action-dock .game-action span{font-size:9px;line-height:14px}
+#root .portrait-action-bar .latest-discard{justify-content:center;gap:8px;padding:4px 7px;border-width:1px;border-radius:12px;background:#102b20a6;box-shadow:inset 0 1px #fff1}
+#root .portrait-action-bar .latest-player{flex:1;min-width:0;max-width:100px;width:auto;font-size:11px}
+#root .portrait-action-bar .latest-tile{flex:none;width:40px;height:54px;font-size:36px}
+#root .portrait-action-bar .latest-player small{font-size:9px}
+#root .portrait-action-bar .discard-guide-icon{display:block;width:20px;height:20px}
+#root .portrait-action-bar .discard-guide-copy b{font-size:12px}
+@media(max-width:359px){
+ #root .game-shell .portrait-action-bar{gap:6px;padding-inline:5px}
+ #root .portrait-action-bar .table-action-dock{gap:4px}
+ #root .portrait-action-bar .table-action-dock .game-action{min-width:46px;padding-inline:4px}
+ #root .portrait-action-bar .latest-discard{gap:5px;padding-inline:5px}
+ #root .portrait-action-bar .latest-player{font-size:10px}
+}
+@media(max-height:599px){
+ #root .game-shell .portrait-action-bar{height:66px;padding-block:4px}
+ #root .portrait-action-bar .discard-drop-zone,#root .portrait-action-bar .latest-discard{height:56px}
+ #root .portrait-action-bar .table-action-dock .game-action{height:50px;min-height:50px}
+ #root .portrait-action-bar .table-action-dock .game-action b{font-size:25px;line-height:27px}
+ #root .portrait-action-bar .latest-tile{width:34px;height:46px;font-size:31px}
+}

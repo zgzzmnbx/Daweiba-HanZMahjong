@@ -1,0 +1,936 @@
+{
+  "at": "2026-10-26T04:33:25.662Z",
+  "version": "1.30.5",
+  "browser": "141.0.7390.37",
+  "origin": "http://127.0.0.1:3198",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 11,
+          "y": 251,
+          "width": 196,
+          "height": 56,
+          "top": 251,
+          "right": 207,
+          "bottom": 307,
+          "left": 11
+        },
+        "viewport": {
+          "x": 6,
+          "y": 64,
+          "width": 308,
+          "height": 179,
+          "top": 64,
+          "right": 314,
+          "bottom": 243,
+          "left": 6
+        },
+        "bar": {
+          "x": 6,
+          "y": 246,
+          "width": 308,
+          "height": 66,
+          "top": 246,
+          "right": 314,
+          "bottom": 312,
+          "left": 6
+        },
+        "hand": {
+          "x": 6,
+          "y": 315,
+          "width": 308,
+          "height": 159,
+          "top": 315,
+          "right": 314,
+          "bottom": 474,
+          "left": 6
+        },
+        "stage": {
+          "x": 6,
+          "y": 64,
+          "width": 308,
+          "height": 179,
+          "top": 64,
+          "right": 314,
+          "bottom": 243,
+          "left": 6
+        },
+        "actions": {
+          "x": 213,
+          "y": 259,
+          "width": 96,
+          "height": 40,
+          "top": 259,
+          "right": 309,
+          "bottom": 299,
+          "left": 213
+        },
+        "copy": {
+          "x": 85,
+          "y": 270.59375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 270.59375,
+          "right": 157,
+          "bottom": 287.390625,
+          "left": 85
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 17,
+        "y": 279
+      },
+      "discarded": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 87.3984375,
+          "y": 195.328125,
+          "width": 145.203125,
+          "height": 48,
+          "top": 195.328125,
+          "right": 232.6015625,
+          "bottom": 243.328125,
+          "left": 87.3984375
+        },
+        "viewport": {
+          "x": 6,
+          "y": 64,
+          "width": 308,
+          "height": 313,
+          "top": 64,
+          "right": 314,
+          "bottom": 377,
+          "left": 6
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 6,
+          "y": 64,
+          "width": 308,
+          "height": 313,
+          "top": 64,
+          "right": 314,
+          "bottom": 377,
+          "left": 6
+        },
+        "actions": {
+          "x": 114,
+          "y": 249.328125,
+          "width": 92,
+          "height": 40,
+          "top": 249.328125,
+          "right": 206,
+          "bottom": 289.328125,
+          "left": 114
+        },
+        "copy": {
+          "x": 123.9921875,
+          "y": 210.921875,
+          "width": 72,
+          "height": 16.796875,
+          "top": 210.921875,
+          "right": 195.9921875,
+          "bottom": 227.71875,
+          "left": 123.9921875
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 226.6015625,
+        "y": 219.328125
+      },
+      "discarded": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 18,
+          "y": 546,
+          "width": 238,
+          "height": 68,
+          "top": 546,
+          "right": 256,
+          "bottom": 614,
+          "left": 18
+        },
+        "viewport": {
+          "x": 10,
+          "y": 72,
+          "width": 370,
+          "height": 460,
+          "top": 72,
+          "right": 380,
+          "bottom": 532,
+          "left": 10
+        },
+        "bar": {
+          "x": 10,
+          "y": 537,
+          "width": 370,
+          "height": 86,
+          "top": 537,
+          "right": 380,
+          "bottom": 623,
+          "left": 10
+        },
+        "hand": {
+          "x": 10,
+          "y": 628,
+          "width": 370,
+          "height": 210,
+          "top": 628,
+          "right": 380,
+          "bottom": 838,
+          "left": 10
+        },
+        "stage": {
+          "x": 10,
+          "y": 72,
+          "width": 370,
+          "height": 460,
+          "top": 72,
+          "right": 380,
+          "bottom": 532,
+          "left": 10
+        },
+        "actions": {
+          "x": 266,
+          "y": 550,
+          "width": 106,
+          "height": 60,
+          "top": 550,
+          "right": 372,
+          "bottom": 610,
+          "left": 266
+        },
+        "copy": {
+          "x": 113,
+          "y": 571.59375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 571.59375,
+          "right": 185,
+          "bottom": 588.390625,
+          "left": 113
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 24,
+        "y": 580
+      },
+      "discarded": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 103.1875,
+          "y": 366.015625,
+          "width": 183.625,
+          "height": 64,
+          "top": 366.015625,
+          "right": 286.8125,
+          "bottom": 430.015625,
+          "left": 103.1875
+        },
+        "viewport": {
+          "x": 10,
+          "y": 72,
+          "width": 370,
+          "height": 655,
+          "top": 72,
+          "right": 380,
+          "bottom": 727,
+          "left": 10
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 10,
+          "y": 72,
+          "width": 370,
+          "height": 655,
+          "top": 72,
+          "right": 380,
+          "bottom": 727,
+          "left": 10
+        },
+        "actions": {
+          "x": 142.5,
+          "y": 438.015625,
+          "width": 105,
+          "height": 49.9375,
+          "top": 438.015625,
+          "right": 247.5,
+          "bottom": 487.953125,
+          "left": 142.5
+        },
+        "copy": {
+          "x": 170,
+          "y": 389.609375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 389.609375,
+          "right": 242,
+          "bottom": 406.40625,
+          "left": 170
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 280.8125,
+        "y": 398.015625
+      },
+      "discarded": true
+    },
+    {
+      "width": 484,
+      "height": 640,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 64,
+          "y": 342,
+          "width": 240,
+          "height": 68,
+          "top": 342,
+          "right": 304,
+          "bottom": 410,
+          "left": 64
+        },
+        "viewport": {
+          "x": 10,
+          "y": 72,
+          "width": 464,
+          "height": 256,
+          "top": 72,
+          "right": 474,
+          "bottom": 328,
+          "left": 10
+        },
+        "bar": {
+          "x": 10,
+          "y": 333,
+          "width": 464,
+          "height": 86,
+          "top": 333,
+          "right": 474,
+          "bottom": 419,
+          "left": 10
+        },
+        "hand": {
+          "x": 10,
+          "y": 424,
+          "width": 464,
+          "height": 210,
+          "top": 424,
+          "right": 474,
+          "bottom": 634,
+          "left": 10
+        },
+        "stage": {
+          "x": 10,
+          "y": 72,
+          "width": 464,
+          "height": 256,
+          "top": 72,
+          "right": 474,
+          "bottom": 328,
+          "left": 10
+        },
+        "actions": {
+          "x": 314,
+          "y": 346,
+          "width": 106,
+          "height": 60,
+          "top": 346,
+          "right": 420,
+          "bottom": 406,
+          "left": 314
+        },
+        "copy": {
+          "x": 160,
+          "y": 367.59375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 367.59375,
+          "right": 232,
+          "bottom": 384.390625,
+          "left": 160
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 70,
+        "y": 376
+      },
+      "discarded": true
+    },
+    {
+      "width": 484,
+      "height": 640,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 133.7109375,
+          "y": 263.65625,
+          "width": 216.578125,
+          "height": 64,
+          "top": 263.65625,
+          "right": 350.2890625,
+          "bottom": 327.65625,
+          "left": 133.7109375
+        },
+        "viewport": {
+          "x": 10,
+          "y": 72,
+          "width": 464,
+          "height": 451,
+          "top": 72,
+          "right": 474,
+          "bottom": 523,
+          "left": 10
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 10,
+          "y": 72,
+          "width": 464,
+          "height": 451,
+          "top": 72,
+          "right": 474,
+          "bottom": 523,
+          "left": 10
+        },
+        "actions": {
+          "x": 189.5,
+          "y": 335.65625,
+          "width": 105,
+          "height": 49.9375,
+          "top": 335.65625,
+          "right": 294.5,
+          "bottom": 385.59375,
+          "left": 189.5
+        },
+        "copy": {
+          "x": 216.9921875,
+          "y": 287.25,
+          "width": 72,
+          "height": 16.796875,
+          "top": 287.25,
+          "right": 288.9921875,
+          "bottom": 304.046875,
+          "left": 216.9921875
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 344.2890625,
+        "y": 295.65625
+      },
+      "discarded": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 265.5,
+          "y": 116.03125,
+          "width": 136,
+          "height": 64,
+          "top": 116.03125,
+          "right": 401.5,
+          "bottom": 180.03125,
+          "left": 265.5
+        },
+        "viewport": {
+          "x": 246.5,
+          "y": 91,
+          "width": 174,
+          "height": 116,
+          "top": 91,
+          "right": 420.5,
+          "bottom": 207,
+          "left": 246.5
+        },
+        "bar": null,
+        "hand": {
+          "x": 8,
+          "y": 210,
+          "width": 651,
+          "height": 165,
+          "top": 210,
+          "right": 659,
+          "bottom": 375,
+          "left": 8
+        },
+        "stage": {
+          "x": 8,
+          "y": 91,
+          "width": 651,
+          "height": 116,
+          "top": 91,
+          "right": 659,
+          "bottom": 207,
+          "left": 8
+        },
+        "actions": {
+          "x": 428.5,
+          "y": 91,
+          "width": 74,
+          "height": 76,
+          "top": 91,
+          "right": 502.5,
+          "bottom": 167,
+          "left": 428.5
+        },
+        "copy": {
+          "x": 297.5,
+          "y": 139.625,
+          "width": 72,
+          "height": 16.796875,
+          "top": 139.625,
+          "right": 369.5,
+          "bottom": 156.421875,
+          "left": 297.5
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 271.5,
+        "y": 148.03125
+      },
+      "discarded": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 265.75,
+          "y": 148,
+          "width": 136,
+          "height": 64,
+          "top": 148,
+          "right": 401.75,
+          "bottom": 212,
+          "left": 265.75
+        },
+        "viewport": {
+          "x": 197.75,
+          "y": 91,
+          "width": 271.5,
+          "height": 181,
+          "top": 91,
+          "right": 469.25,
+          "bottom": 272,
+          "left": 197.75
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 8,
+          "y": 91,
+          "width": 651,
+          "height": 181,
+          "top": 91,
+          "right": 659,
+          "bottom": 272,
+          "left": 8
+        },
+        "actions": {
+          "x": 477.25,
+          "y": 91,
+          "width": 74,
+          "height": 76,
+          "top": 91,
+          "right": 551.25,
+          "bottom": 167,
+          "left": 477.25
+        },
+        "copy": {
+          "x": 297.75,
+          "y": 171.59375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 171.59375,
+          "right": 369.75,
+          "bottom": 188.390625,
+          "left": 297.75
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 395.75,
+        "y": 180
+      },
+      "discarded": true
+    },
+    {
+      "width": 922,
+      "height": 700,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 380.5078125,
+          "y": 186.453125,
+          "width": 161.484375,
+          "height": 84,
+          "top": 186.453125,
+          "right": 541.9921875,
+          "bottom": 270.453125,
+          "left": 380.5078125
+        },
+        "viewport": {
+          "x": 275.75,
+          "y": 107,
+          "width": 370.5,
+          "height": 247,
+          "top": 107,
+          "right": 646.25,
+          "bottom": 354,
+          "left": 275.75
+        },
+        "bar": null,
+        "hand": {
+          "x": 16,
+          "y": 357,
+          "width": 890,
+          "height": 343,
+          "top": 357,
+          "right": 906,
+          "bottom": 700,
+          "left": 16
+        },
+        "stage": {
+          "x": 16,
+          "y": 107,
+          "width": 890,
+          "height": 247,
+          "top": 107,
+          "right": 906,
+          "bottom": 354,
+          "left": 16
+        },
+        "actions": {
+          "x": 390.25,
+          "y": 282.453125,
+          "width": 142,
+          "height": 64,
+          "top": 282.453125,
+          "right": 532.25,
+          "bottom": 346.453125,
+          "left": 390.25
+        },
+        "copy": {
+          "x": 439.7421875,
+          "y": 220.046875,
+          "width": 72,
+          "height": 16.796875,
+          "top": 220.046875,
+          "right": 511.7421875,
+          "bottom": 236.84375,
+          "left": 439.7421875
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 386.5078125,
+        "y": 228.453125
+      },
+      "discarded": true
+    },
+    {
+      "width": 922,
+      "height": 700,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 304.09375,
+          "y": 301.015625,
+          "width": 313.8125,
+          "height": 84,
+          "top": 301.015625,
+          "right": 617.90625,
+          "bottom": 385.015625,
+          "left": 304.09375
+        },
+        "viewport": {
+          "x": 101,
+          "y": 107,
+          "width": 720,
+          "height": 480,
+          "top": 107,
+          "right": 821,
+          "bottom": 587,
+          "left": 101
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 16,
+          "y": 107,
+          "width": 890,
+          "height": 480,
+          "top": 107,
+          "right": 906,
+          "bottom": 587,
+          "left": 16
+        },
+        "actions": {
+          "x": 390,
+          "y": 397.015625,
+          "width": 142,
+          "height": 64,
+          "top": 397.015625,
+          "right": 532,
+          "bottom": 461.015625,
+          "left": 390
+        },
+        "copy": {
+          "x": 439.5,
+          "y": 334.609375,
+          "width": 72,
+          "height": 16.796875,
+          "top": 334.609375,
+          "right": 511.5,
+          "bottom": 351.40625,
+          "left": 439.5
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 611.90625,
+        "y": 343.015625
+      },
+      "discarded": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "expanded": true,
+      "geometry": {
+        "box": {
+          "x": 483.9296875,
+          "y": 300.03125,
+          "width": 312.5,
+          "height": 84,
+          "top": 300.03125,
+          "right": 796.4296875,
+          "bottom": 384.03125,
+          "left": 483.9296875
+        },
+        "viewport": {
+          "x": 281.6796875,
+          "y": 107,
+          "width": 716.640625,
+          "height": 477.75,
+          "top": 107,
+          "right": 998.3203125,
+          "bottom": 584.75,
+          "left": 281.6796875
+        },
+        "bar": null,
+        "hand": {
+          "x": 16,
+          "y": 587.765625,
+          "width": 1248,
+          "height": 212.234375,
+          "top": 587.765625,
+          "right": 1264,
+          "bottom": 800,
+          "left": 16
+        },
+        "stage": {
+          "x": 16,
+          "y": 107,
+          "width": 1248,
+          "height": 477.765625,
+          "top": 107,
+          "right": 1264,
+          "bottom": 584.765625,
+          "left": 16
+        },
+        "actions": {
+          "x": 569.1796875,
+          "y": 396.03125,
+          "width": 142,
+          "height": 64,
+          "top": 396.03125,
+          "right": 711.1796875,
+          "bottom": 460.03125,
+          "left": 569.1796875
+        },
+        "copy": {
+          "x": 609.6796875,
+          "y": 331.53125,
+          "width": 90,
+          "height": 21,
+          "top": 331.53125,
+          "right": 699.6796875,
+          "bottom": 352.53125,
+          "left": 609.6796875
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 489.9296875,
+        "y": 342.03125
+      },
+      "discarded": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "expanded": false,
+      "geometry": {
+        "box": {
+          "x": 470,
+          "y": 350.1875,
+          "width": 340,
+          "height": 84,
+          "top": 350.1875,
+          "right": 810,
+          "bottom": 434.1875,
+          "left": 470
+        },
+        "viewport": {
+          "x": 205,
+          "y": 107,
+          "width": 870,
+          "height": 580,
+          "top": 107,
+          "right": 1075,
+          "bottom": 687,
+          "left": 205
+        },
+        "bar": null,
+        "hand": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "stage": {
+          "x": 16,
+          "y": 107,
+          "width": 1248,
+          "height": 580,
+          "top": 107,
+          "right": 1264,
+          "bottom": 687,
+          "left": 16
+        },
+        "actions": {
+          "x": 569,
+          "y": 446.1875,
+          "width": 142,
+          "height": 64,
+          "top": 446.1875,
+          "right": 711,
+          "bottom": 510.1875,
+          "left": 569
+        },
+        "copy": {
+          "x": 609.5,
+          "y": 381.6875,
+          "width": 90,
+          "height": 21,
+          "top": 381.6875,
+          "right": 699.5,
+          "bottom": 402.6875,
+          "left": 609.5
+        },
+        "background": "linear-gradient(135deg, rgba(23, 61, 47, 0.22), rgba(16, 47, 36, 0.32))",
+        "pointer": "none"
+      },
+      "edge": {
+        "x": 804,
+        "y": 392.1875
+      },
+      "discarded": true
+    }
+  ],
+  "errors": []
+}

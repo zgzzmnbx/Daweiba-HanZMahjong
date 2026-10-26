@@ -58,7 +58,7 @@
  /* Anchor the hand at the safe bottom edge; the table takes the remaining portrait height. */
  #root .game-shell>main{justify-content:flex-start;gap:5px;padding:8px 10px 6px}
  #root .game-shell .table-stage{flex:1 1 0;min-height:110px;width:100%}
- #root .game-shell .viewport:has(.player-badges[data-rail=true]),#root .game-shell:has(.expanded) .viewport:has(.player-badges[data-rail=true]){top:76px;bottom:auto;transform:translateX(-50%);width:100%;height:calc(100% - 76px);aspect-ratio:auto}
+ #root .game-shell .viewport:has(.player-badges),#root .game-shell:has(.expanded) .viewport:has(.player-badges){top:0;bottom:auto;transform:translateX(-50%);width:100%;height:100%;aspect-ratio:auto}
  #root .game-shell .rack-area.expanded{flex:none;max-height:none;width:100%;padding:0 0 4px}
  #root .game-shell .table-notices{flex:0 0 20px;height:20px}
  #root .game-shell .action-bar{flex:0 0 18px;height:18px;min-height:18px}

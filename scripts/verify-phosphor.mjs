@@ -39,14 +39,14 @@ async function auditLatestDiscard(page,width,height){
   await page.waitForTimeout(350);
   const g=await page.locator('.latest-discard').evaluate(el=>{
    const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};
-   return {box:rect(el),table:rect(document.querySelector('.canvas-host')),actions:rect(document.querySelector('.table-action-dock')),tile:rect(el.querySelector('.latest-tile')),name:el.querySelector('.latest-player-name').textContent,pointer:getComputedStyle(el).pointerEvents};
+   return {bar:document.querySelector('.portrait-action-bar')?rect(document.querySelector('.portrait-action-bar')):null,hand:rect(document.querySelector('.hand-zone')),box:rect(el),table:rect(document.querySelector('.canvas-host')),actions:rect(document.querySelector('.table-action-dock')),tile:rect(el.querySelector('.latest-tile')),name:el.querySelector('.latest-player-name').textContent,pointer:getComputedStyle(el).pointerEvents};
   });
-  assert(Math.abs(g.box.x+g.box.width/2-(g.table.x+g.table.width/2))<1,'latest discard is off table center '+JSON.stringify(g));
+  if(g.bar){assert(g.bar.y>=g.table.bottom-1&&g.bar.bottom<=g.hand.y+1);assert(g.box.y>=g.bar.y&&g.box.bottom<=g.bar.bottom);}else assert(Math.abs(g.box.x+g.box.width/2-(g.table.x+g.table.width/2))<1,'latest discard is off table center '+JSON.stringify(g));
   assert(g.box.x>=0&&g.box.right<=width&&g.box.y>=0&&g.box.bottom<=height,'latest discard clipped '+JSON.stringify(g));
   assert(!(g.box.x<g.actions.right&&g.box.right>g.actions.x&&g.box.y<g.actions.bottom&&g.box.bottom>g.actions.y),'latest discard overlaps action dock '+JSON.stringify(g));
   assert.equal(g.pointer,'none');assert(g.tile.x>=g.box.x&&g.tile.right<=g.box.right&&g.tile.bottom<=g.box.bottom);
   await page.screenshot({path:`${screens}/${prefix}-${width}-latest-${expanded?'rack':'table'}.png`});
-  pass(`${width}x${height} latest discard centered with ${expanded?'expanded':'collapsed'} rack`,g);
+  pass(`${width}x${height} latest discard aligned with ${expanded?'expanded':'collapsed'} rack`,g);
  }
  if(await page.locator('.sentence-rack').isVisible()!==initial)await page.getByRole('button',{name:initial?'放大麻将':'收起整理区',exact:true}).click();
 }
