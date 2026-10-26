@@ -1,3 +1,4 @@
+import {newActionId} from '../browser-compat';
 import type { ResyncEnvelope,Draft,TileId,ClientCommand,CommandMeta,CommandResult,ObjectionRange,AtMostThree,Sentence } from '../../../../packages/contracts/types';
 import {movePreview} from './rack-layout';
 import {rackPhaseKey} from './rack-interaction';
@@ -43,7 +44,7 @@ export class SentenceRackController {
   allowed(kind:ClientCommand['kind']){return this.connected&&this.controlled&&!this.pending&&(kind==='SET_AUTOPLAY'||this.envelope.public.suspension.kind==='RUNNING')&&this.envelope.legalActions.includes(kind);}
   sentence(){return this.draft as Sentence;}
   async command(payload:Payload){if(!this.allowed(payload.kind)){this.message='当前不可操作：请等待连接、同步或行动权限。';this.changed();return;}const e=this.envelope;
-    const command={...payload,roomId:e.public.roomId,roundId:e.public.roundId,actionId:crypto.randomUUID(),expectedStateVersion:e.public.stateVersion,phaseId:e.public.phase.phaseId,controlEpoch:e.private.controlEpoch} as ClientCommand;
+    const command={...payload,roomId:e.public.roomId,roundId:e.public.roundId,actionId:newActionId(),expectedStateVersion:e.public.stateVersion,phaseId:e.public.phase.phaseId,controlEpoch:e.private.controlEpoch} as ClientCommand;
     this.pending=command;this.message='正在提交…';this.changed();await this.transmit(command);
   }
   private async transmit(command:ClientCommand){try{const result=await this.transport.send(command);if(this.pending?.actionId!==command.actionId)return;this.message=result.ok?'':`未提交：${({REWRITE_LOCKED:'完成20圈后才可改字。',REWRITE_USED:'本局的改字机会已用完。',INVALID_REWRITE_CHAR:'请输入一个汉字。',REWRITE_UNCHANGED:'请选择不同的字。'} as Record<string,string>)[result.code]??result.code}`;this.pending=null;}catch{if(this.pending?.actionId!==command.actionId)return;this.message='提交结果未知，请重试（沿用同一动作编号）。';}this.changed();}

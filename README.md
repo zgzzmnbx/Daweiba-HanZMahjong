@@ -6,12 +6,12 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.30.11-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.31.0-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
 
-[开始游戏](https://118.196.107.182:1240) · [快速启动](#快速启动) · [游戏规则](docs/01-RULES.md) · [更新日志](CHANGELOG.md)
+[开始游戏](http://118.196.107.182:1240) · [快速启动](#快速启动) · [游戏规则](docs/01-RULES.md) · [更新日志](CHANGELOG.md)
 
 </div>
 
@@ -38,6 +38,18 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.31.0 · HTTP测试入口与15秒吃牌 · 2026-10-26
+
+用户明确选择玩家与管理员均使用HTTP。生产需显式ALLOW_INSECURE_HTTP=true；独立HTTP Cookie避免旧Secure Cookie覆写冲突，保留HttpOnly、同站与Origin鉴权。浏览器操作ID兼容非安全上下文，复制邀请链接保留HTTP回退。旧HTTPS身份不会自动迁移到HTTP；原牌局数据保留。
+
+规则1.7.1弃牌响应15秒，服务端期限与HUD共用冻结时长。旧活动局保持8秒，下一次START归档后升级；AI1.5秒、真人120秒不变。
+
+构建及405项引擎/服务器/UI测试通过。真实非安全上下文Chromium141双客户端7项检查通过：页面确认isSecureContext=false且原生randomUUID/clipboard不存在，实际开房/复制/WS/同桌聊天/同浏览器恢复/HTTP管理员登录可用，第8秒后仍可吃牌，进度条按15秒递减。自建测试房关闭；实体手机未实测。证据：http-1.31.0-local.json及响应截图。已发布HTTP入口 http://118.196.107.182:1240，release `1.31.0-20261026-204035`，冻结源码 `ef30ed9`，一致性备份 `pre-release-20261026-204037.sqlite`。公网真实双客户端6项HTTP检查及11项拖吃/提示回归通过，测试房均关闭；79项资源SHA256一致、ready=true。第一次拖牌截图等待fonts.ready超时，未生成通过证据；随后将截图与交互验收分开，保留全部拖放/取消/过期/四尺寸检查，11项通过且明确captureScreenshots=false。HTTP6项检查已另留真实响应截图。管理员HTTP实测在本地隔离测试配置完成，未使用线上管理密码。
+
+云端于2026-10-26 20:42切换游戏独立Caddy，1240为HTTP、1241 FRPS、1242/2021仅回环；备份 `/root/word-mahjong-http-20261026-204201`。移出游戏专用证书hook，共享续期timer仍active/enabled，其他业务配置未改。20:44复核HTTP 200/ready、相关服务及监听；主机权威说明v0.1.31和Obsidian既有管理区已同步并备份回读。
+
+源码、证据和项目记录随交付同步GitHub。
 
 ## 1.30.11 · 全场点炮解锁提示 · 2026-10-26
 

@@ -1,0 +1,25 @@
+{
+  "verifiedAt": "2026-10-26T20:44:34+08:00",
+  "origin": "http://118.196.107.182:1240",
+  "ready": true,
+  "backup": "/root/word-mahjong-http-20261026-204201",
+  "caddyPidUnchanged": 2647336,
+  "gameCertificateHookDisabled": true,
+  "sharedRenewalTimer": {
+    "name": "daweiba-automation-cert-renew.timer",
+    "active": true,
+    "enabled": true,
+    "next": "2026-10-27 00:02:19 CST"
+  },
+  "ports": {
+    "1240": "HTTP TCP public",
+    "1241": "FRPS TCP public",
+    "1242": "TCP loopback",
+    "2021": "Caddy admin TCP loopback"
+  },
+  "noUdp": [
+    1240,
+    1241
+  ],
+  "otherServiceConfigsUnchanged": true
+}

@@ -9,7 +9,7 @@ test('timer uses frozen phase duration, clamps expiry and grades remaining fract
  assert.equal(phaseClock(e.public,end-300000).ratio,1);
 });
 test('old rounds, mandatory discard, response, composition, review and AI keep distinct budgets',()=>{
- for(const [kind,version,total]of [['TURN_ACTION','1.0.0',60000],['HU_COMPOSE','1.0.0',45000],['HU_COMPOSE','1.4.0',120000],['HU_VOTE','1.2.0',45000],['HU_VOTE','1.3.0',60000],['DISCARD_RESPONSE','1.4.0',8000]] as const){const e=fixture(4,0,kind);(e.public as any).rulesVersion=version;assert.equal(phaseClock(e.public,e.public.phase.deadline!.endsAt-total/2).ratio,.5);}
+ for(const [kind,version,total]of [['TURN_ACTION','1.0.0',60000],['HU_COMPOSE','1.0.0',45000],['HU_COMPOSE','1.4.0',120000],['HU_VOTE','1.2.0',45000],['HU_VOTE','1.3.0',60000],['DISCARD_RESPONSE','1.4.0',8000],['DISCARD_RESPONSE','1.7.0',8000],['DISCARD_RESPONSE','1.7.1',15000]] as const){const e=fixture(4,0,kind);(e.public as any).rulesVersion=version;assert.equal(phaseClock(e.public,e.public.phase.deadline!.endsAt-total/2).ratio,.5);}
  const e=fixture();(e.public.phase as any).mustDiscard=true;assert.equal(phaseClock(e.public,e.public.phase.deadline!.endsAt-15000).ratio,.5);
  (e.public as any).rulesVersion='1.4.0';(e.public.players[0] as any).autoPlay=true;assert.equal(phaseClock(e.public,e.public.phase.deadline!.endsAt-2500).ratio,.5);
 });

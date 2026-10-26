@@ -3,7 +3,7 @@
 import argparse,json,os,shutil,subprocess,sys
 from datetime import datetime
 from pathlib import Path
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--node',required=True);a=p.parse_args()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--node',required=True);p.add_argument('--public-origin');p.add_argument('--allow-insecure-http',action='store_true');a=p.parse_args()
 if sys.platform!='darwin':p.error('macOS installer only')
 root=Path(__file__).resolve().parents[1];node=Path(a.node).expanduser().resolve()
 version=json.loads((root/'package.json').read_text())['version']
@@ -31,11 +31,17 @@ if db.exists():
  subprocess.run([str(node),str(backup_root/'scripts/db-backup.mjs'),str(backup)],cwd=backup_root,env={**env,'DB_PATH':str(db)},check=True)
 config=base/'config/game.env'
 private_lines=[]
+previous_config={}
 if config.exists():
  for line in config.read_text().splitlines():
+  if '=' in line:previous_config[line.split('=',1)[0]]=line.split('=',1)[1]
   if line.split('=',1)[0] in {'ADMIN_PASSWORD_HASH','DASHSCOPE_API_KEY_FILE','SPEECH_CACHE_DIR','FFMPEG_BINARY','MUSIC_DIR','DEEPSEEK_API_KEY_FILE','DEEPSEEK_HTTPS_PROXY'}:private_lines.append(line)
 if config.exists():shutil.copy2(config,base/'backups'/f'game-{datetime.now().strftime("%Y%m%d-%H%M%S")}.env')
-config.write_text(f'NODE_ENV=production\nPORT=3000\nPUBLIC_ORIGIN=https://118.196.107.182:1240\nDB_PATH="{db}"\nWEB_DIST="{release / "dist/web"}"\n'+'\n'.join(private_lines)+'\n');config.chmod(0o600)
+origin=a.public_origin or previous_config.get('PUBLIC_ORIGIN','https://118.196.107.182:1240')
+allow_http=a.allow_insecure_http or previous_config.get('ALLOW_INSECURE_HTTP')=='true'
+from urllib.parse import urlsplit
+if urlsplit(origin).scheme not in ('http','https') or (urlsplit(origin).scheme=='http' and not allow_http):p.error('HTTP requires --allow-insecure-http')
+config.write_text(f'NODE_ENV=production\nPORT=3000\nPUBLIC_ORIGIN={origin}\nALLOW_INSECURE_HTTP={str(allow_http).lower()}\nDB_PATH="{db}"\nWEB_DIST="{release / "dist/web"}"\n'+'\n'.join(private_lines)+'\n');config.chmod(0o600)
 subprocess.run([sys.executable,str(root/'ops/macos-service.py'),'install','--node',str(node),'--root',str(release),'--env',str(config)],check=True)
 record={'version':version,'release':str(release),'env':str(config),'database':str(db),'installedAt':datetime.now().isoformat()}
 (root/'runtime/deployment.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')

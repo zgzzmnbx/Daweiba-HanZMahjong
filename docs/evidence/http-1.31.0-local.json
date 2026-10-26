@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-26T12:35:59.174Z",
+  "version": "1.31.0",
+  "origin": "http://192.168.31.181:3198",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "insecureContext": {
+        "secure": false,
+        "uuid": "undefined",
+        "clipboard": "undefined"
+      }
+    },
+    {
+      "uiCreateWithUuidFallback": true,
+      "joinAndWebsocket": true
+    },
+    {
+      "httpClipboardFallback": true
+    },
+    {
+      "chatDeliveredToOtherPlayer": true
+    },
+    {
+      "sameBrowserRestore": true
+    },
+    {
+      "adminHttpLogin": true
+    },
+    {
+      "response15Seconds": true,
+      "eatAfterOld8SecondDeadline": true,
+      "progressTracks15Seconds": true
+    }
+  ],
+  "errors": []
+}

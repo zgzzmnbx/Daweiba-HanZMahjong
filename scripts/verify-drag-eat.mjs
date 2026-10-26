@@ -1,6 +1,7 @@
 /** Two real clients: dragging the upstream public tile into a private hand submits EAT once. */
 import assert from 'node:assert/strict';import {chromium} from 'playwright';import {createGameServer} from '../apps/server/server.ts';import {readFile,writeFile,mkdir,rm} from 'node:fs/promises';import {resolve} from 'node:path';import {randomUUID} from 'node:crypto';import {gameTool} from './game-ui-tools.mjs';
 const base=process.env.PUBLIC_ORIGIN||'http://127.0.0.1:3199',version=JSON.parse(await readFile('package.json')).version,prefix=process.env.EVIDENCE_PREFIX||`drag-eat-${version}-local`;
+const captureScreenshots=process.env.CAPTURE_SCREENSHOTS!=='0';
 const server=process.env.PUBLIC_ORIGIN?null:createGameServer({dbPath:':memory:',publicOrigin:base,staticDir:resolve('dist/web'),automaticTimers:false});if(server)await server.listen(3199);
 await mkdir(`Codex-Temp/${prefix}`,{recursive:true});const browser=await chromium.launch({headless:true}),clients=[],checks=[],errors=[];let room;
 async function snap(p){return(await p.context.request.get(`${base}/api/rooms/${room}/snapshot`)).json();}
@@ -24,12 +25,12 @@ try{
   assert.equal(await hint.evaluate(el=>getComputedStyle(el).pointerEvents),'none');
   const hintBox=await hint.boundingBox();assert(hintBox.x>=0&&hintBox.y>=0&&hintBox.x+hintBox.width<=width&&hintBox.y+hintBox.height<=height,'eat hint in viewport');
   assert.equal(await source.evaluate(el=>getComputedStyle(el,'::before').animationName),'eat-tile-glint');
-  if(expanded)await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-eat-hint.png`});
+  if(expanded&&captureScreenshots)await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-eat-hint.png`});
   if(n===3){
    const period=b.page.locator('.period-micro-hint');await period.waitFor();assert.equal(await period.innerText(),'拖动出逗号');
    const box=await period.boundingBox();assert(box.x>=0&&box.y>=0&&box.x+box.width<=width&&box.y+box.height<=height);
    assert.equal(await period.evaluate(el=>getComputedStyle(el).pointerEvents),'none');
-   await b.page.screenshot({path:`Codex-Temp/${prefix}/third-circuit-period.png`});
+   if(captureScreenshots)await b.page.screenshot({path:`Codex-Temp/${prefix}/third-circuit-period.png`});
    await b.page.waitForTimeout(3100);assert.equal(await period.count(),0);checks.push({thirdCircuit:true,periodHintExpires:true});
   }else if(n<3)assert.equal(await b.page.locator('.period-micro-hint').count(),0,'no early period lesson');
   assert.equal(await a.page.locator('.eat-draggable').count(),0,'discarder cannot eat own tile');const windowState=(await snap(b)).public.stateVersion,discard=(await snap(b)).public.discards.at(-1);const r=await source.boundingBox(),from={x:r.x+r.width/2,y:r.y+r.height/2};
@@ -44,7 +45,7 @@ try{
   const cdp=width<700?await b.context.newCDPSession(b.page):null;
   if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[start]});for(let i=1;i<=12;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:start.x+(to.x-start.x)*i/12,y:start.y+(to.y-start.y)*i/12}]});}
   else{await b.page.mouse.move(start.x,start.y);await b.page.mouse.down();await b.page.mouse.move(to.x,to.y,{steps:14});}
-  await b.page.locator('.eat-drop-outline.over').waitFor();assert.equal(await b.page.locator('.eat-micro-hint').count(),0,'hint hides during drag');assert(await b.page.getByText('松手吃牌',{exact:true}).isVisible());await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-${expanded?'rack':'table'}-drag.png`});if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}else await b.page.mouse.up();
+  await b.page.locator('.eat-drop-outline.over').waitFor();assert.equal(await b.page.locator('.eat-micro-hint').count(),0,'hint hides during drag');assert(await b.page.getByText('松手吃牌',{exact:true}).isVisible());if(captureScreenshots)await b.page.screenshot({path:`Codex-Temp/${prefix}/${width}-${expanded?'rack':'table'}-drag.png`});if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}else await b.page.mouse.up();
   await wait(async()=>{const s=await snap(b);return s.private.hand.length===14&&s.public.phase.kind==='TURN_ACTION';});const after=await snap(b);assert(after.private.hand.some(t=>t.tileId===discard.tile.tileId));assert.equal(after.public.discards.at(-1).status,'CLAIMED');assert.equal(after.public.players.find(p=>p.playerId===b.id).eatCount,(e.public.players.find(p=>p.playerId===b.id).eatCount??0)+1);assert.equal(await b.page.locator('.eat-drag-ghost').count(),0);await b.page.waitForTimeout(250);assert(await b.page.locator('[data-acquired="EAT"]').count()>0);
   if(n===3){await b.page.reload({waitUntil:'domcontentloaded'});await b.page.getByRole('button',{name:'出这张',exact:true}).waitFor();await b.page.waitForTimeout(400);assert.equal(await b.page.locator('.period-micro-hint').count(),0,'same-round refresh does not replay period lesson');checks.push({periodRefreshSilent:true});}
   checks.push({width,height,expanded,touch:!!cdp,dropOnEatButton:n===7,tapOutsideEscapeCancelResizeSafe:true,claimed:true});console.log('PASS',width,height,expanded?'rack':'table','drag EAT');n++;
@@ -57,5 +58,5 @@ try{
  await receiver.page.mouse.move(r.x+r.width/2,r.y+r.height/2);await receiver.page.mouse.down();await receiver.page.mouse.move(target.x+target.width/2,target.y+target.height/2,{steps:12});await receiver.page.locator('.eat-drop-outline.over').waitFor();
  await receiver.page.waitForTimeout(Math.max(0,pending.public.phase.deadline.endsAt-Date.now())+700);if(server)await server.tick();await receiver.page.mouse.up();await wait(async()=>!(await snap(receiver)).legalActions.includes('RESPOND'));assert.equal(await receiver.page.locator('.eat-drag-ghost').count(),0);const expired=await snap(receiver);assert.equal(expired.public.discards.find(d=>d.discardId===offered.discardId).status,'AVAILABLE');assert(!expired.private.hand.some(t=>t.tileId===offered.tile.tileId));checks.push({expiredHeldDiscardCancelled:true});
 
- await close();assert.deepEqual(errors,[]);await writeFile(`docs/evidence/${prefix}.json`,JSON.stringify({at:new Date().toISOString(),version,browser:browser.version(),origin:base,checks,errors},null,2)+'\n');
+ await close();assert.deepEqual(errors,[]);await writeFile(`docs/evidence/${prefix}.json`,JSON.stringify({at:new Date().toISOString(),version,browser:browser.version(),origin:base,captureScreenshots,checks,errors},null,2)+'\n');
 }catch(e){for(let i=0;i<clients.length;i++)if(!clients[i].page.isClosed())await clients[i].page.screenshot({path:`Codex-Temp/${prefix}/failure-${i}.png`}).catch(()=>{});throw e;}finally{try{await close();}catch(e){console.error('Cleanup failed; private test identities retained',e.message);}await browser.close();await server?.close();}

@@ -1,3 +1,4 @@
+import {newActionId} from './browser-compat';
 import {chatPanelFrame} from './chat-panel-layout';
 import {GameIcon} from './GameIcon';
 import {CHAT_STICKERS} from '../../../packages/contracts/stickers';
@@ -63,9 +64,9 @@ export function RoomChat({transport,dock,connected,controlled,quiet,closed,selfS
  useLayoutEffect(()=>{if(open&&atBottom.current&&list.current)list.current.scrollTop=list.current.scrollHeight;},[open,messages]);
  useLayoutEffect(()=>{if(!sending&&focusAfterSend.current){focusAfterSend.current=false;if(open)input.current?.focus({preventScroll:true});}},[sending,open]);
  const close=()=>{setOpen(false);toggle.current?.focus({preventScroll:true});};
- const send=async()=>{const text=draft.trim();if(sending||!connected||!controlled||closed||!text||Array.from(text).length>CHAT_MAX_LENGTH)return;const request=pending.current?.text===text?pending.current:{text,id:crypto.randomUUID()};pending.current=request;setSending(true);setError('');try{const message=await transport.send(text,request.id);if(!alive.current)return;receive(message);pending.current=null;setDraft('');atBottom.current=true;}catch(e){if(alive.current)setError(chatError((e as Error).message));}finally{if(alive.current){focusAfterSend.current=true;setSending(false);}}};
+ const send=async()=>{const text=draft.trim();if(sending||!connected||!controlled||closed||!text||Array.from(text).length>CHAT_MAX_LENGTH)return;const request=pending.current?.text===text?pending.current:{text,id:newActionId()};pending.current=request;setSending(true);setError('');try{const message=await transport.send(text,request.id);if(!alive.current)return;receive(message);pending.current=null;setDraft('');atBottom.current=true;}catch(e){if(alive.current)setError(chatError((e as Error).message));}finally{if(alive.current){focusAfterSend.current=true;setSending(false);}}};
  const sendSticker=async(stickerId:string)=>{if(sending||!connected||!controlled||closed)return;
-  const request=stickerPending.current?.stickerId===stickerId?stickerPending.current:{stickerId,id:crypto.randomUUID()};stickerPending.current=request;setSending(true);setError('');
+  const request=stickerPending.current?.stickerId===stickerId?stickerPending.current:{stickerId,id:newActionId()};stickerPending.current=request;setSending(true);setError('');
   try{const message=await transport.sendSticker(stickerId,request.id);if(!alive.current)return;receive(message);stickerPending.current=null;setPicker(false);atBottom.current=true;}
   catch(e){if(alive.current)setError(chatError((e as Error).message)+' 再点这张表情重试。');}
   finally{if(alive.current)setSending(false);}

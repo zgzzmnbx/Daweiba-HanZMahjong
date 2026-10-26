@@ -1,3 +1,4 @@
+import {copyInvitation} from '../browser-compat';
 import {AvatarSticker} from '../ChatStickers';
 import {PlayerAvatar} from '../PlayerAvatar';
 import {useState} from 'react';
@@ -13,6 +14,7 @@ import './room-setup.css';
 export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,onDissolve}:{envelope:ResyncEnvelope;seats:readonly SeatView[];controller:SentenceRackController;practice?:boolean;aiReview:boolean;onDissolve:()=>void}){
  const phase=envelope.public.phase,finished=phase.kind==='ROUND_FINISHED';
  const self=envelope.public.players.find(p=>p.playerId===envelope.private.playerId),host=envelope.public.hostId===envelope.private.playerId;
+ const [copyLabel,setCopyLabel]=useState('复制邀请链接');
  const [guideOpen,setGuideOpen]=useState(()=>!finished&&!self?.ready&&!skipsNewPlayerGuide()),[acknowledged,setAcknowledged]=useState(false);
  const prepare=()=>{if(!finished&&self?.ready){void c.command({kind:'READY',ready:false});return;}if(!acknowledged&&!skipsNewPlayerGuide()){setGuideOpen(true);return;}void c.command({kind:'READY',ready:true});};
  // Reading is local. Losing the connection must not trap the player behind a modal.
@@ -29,6 +31,6 @@ export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,on
     {hasAI&&<p className="seat-help">{envelope.public.rulesVersion!=='1.0.0'?'AI 自动准备；AI 宽松判句、犀利吐槽，10秒未答按70%赞成兜底。':'本房沿用旧规则；新建房间可使用 AI 评审。'}</p>}
    </section>
   </div>
-  <footer className="room-setup-actions">{!finished&&<button onClick={()=>navigator.clipboard?.writeText(location.href)}>复制邀请链接</button>}<button disabled={!c.allowed('READY')} onClick={prepare}>{finished?'准备下一局':self?.ready?'取消准备':'准备好了'}</button><button className="primary" disabled={!c.allowed('START_ROUND')} onClick={()=>c.command({kind:'START_ROUND'})}>{finished?'再开一局':'开始牌局'}</button>{finished&&host&&envelope.legalActions.includes('CLOSE_ROOM')&&<button className="dissolve-room" disabled={!c.allowed('CLOSE_ROOM')} onClick={onDissolve}>解散房间</button>}</footer>
+  <footer className="room-setup-actions">{!finished&&<button onClick={()=>void copyInvitation(location.href).then(ok=>setCopyLabel(ok?'已复制邀请链接':'请复制浏览器地址'))}>{copyLabel}</button>}<button disabled={!c.allowed('READY')} onClick={prepare}>{finished?'准备下一局':self?.ready?'取消准备':'准备好了'}</button><button className="primary" disabled={!c.allowed('START_ROUND')} onClick={()=>c.command({kind:'START_ROUND'})}>{finished?'再开一局':'开始牌局'}</button>{finished&&host&&envelope.legalActions.includes('CLOSE_ROOM')&&<button className="dissolve-room" disabled={!c.allowed('CLOSE_ROOM')} onClick={onDissolve}>解散房间</button>}</footer>
  </section></>;
 }

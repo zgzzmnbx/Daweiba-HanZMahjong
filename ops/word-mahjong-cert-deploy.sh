@@ -1,5 +1,6 @@
 #!/bin/sh
-# Installed as /etc/letsencrypt/renewal-hooks/deploy/90-word-mahjong.
+# Historical HTTPS-only hook; removed from deploy hooks in HTTP mode (1.31.0).
+# Restore as /etc/letsencrypt/renewal-hooks/deploy/90-word-mahjong only when reverting to HTTPS.
 # A stable Caddyfile does not imply its externally loaded certificate is unchanged.
 set -eu
 [ "${RENEWED_LINEAGE:-}" = /etc/letsencrypt/live/daweiba-control-ip ] || exit 0

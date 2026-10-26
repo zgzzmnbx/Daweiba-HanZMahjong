@@ -20,7 +20,7 @@ export type ControlEpoch = number & { readonly [brand]: 'ControlEpoch' };
 export type DraftVersion = number & { readonly [brand]: 'DraftVersion' };
 export type SeatIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type PlayerCount = 2 | 3 | 4 | 5 | 6;
-export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0' | '1.6.1' | '1.7.0';
+export type RulesVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.4.1' | '1.5.0' | '1.5.1' | '1.6.0' | '1.6.1' | '1.7.0' | '1.7.1';
 /** Frozen configuration for this version, loaded from rules.defaults.json at runtime. */
 export type RulesDefaults = Readonly<{
   rulesVersion: RulesVersion; deckVersion: 'daily-v1';
@@ -29,7 +29,7 @@ export type RulesDefaults = Readonly<{
   maxCommas: 3; maxEatPerRound: number | null;
   eatSource: 'previous_seat_latest_discard';
   eatImmediateDiscardRestriction: 'same_physical_tile';
-  turnMs: 60000 | 120000; responseMs: 8000; composeMs: 45000 | 120000; voteMs: 45000 | 60000;
+  turnMs: 60000 | 120000; responseMs: 8000 | 15000; composeMs: 45000 | 120000; voteMs: 45000 | 60000;
   postHuDiscardMs: 30000 | 120000; disconnectGraceMs: 15000; botActionDelayMs: 800 | 1500 | 3000 | 5000;
   recoveryMinActionMs: 10000; allOfflineRetentionMs: 86400000;
   reviewerPolicy: 'freeze_other_online_humans_at_vote_start' | 'freeze_other_online_humans_and_designated_bots_at_vote_start';

@@ -234,3 +234,6 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 游戏入口外置TLS证书续期hook必须force reload独立2021管理口；普通相同配置reload会继续提供旧证书。验收核对线上握手有效期和严格HTTPS/WSS，不得凭timer成功或磁盘新证书判断恢复。
 
 - 1.30.10贴牌气泡须跟随真实DOM/3D牌位并透传指针；已有飞牌隐藏目标期间气泡与闪光等待落定。第三圈按completedCircuits+1，同局刷新不重播3秒句号提示，不影响权威时间。
+
+- 1.31.0用户明确选择全HTTP测试入口（含管理），生产需ALLOW_INSECURE_HTTP=true及精确HTTP PUBLIC_ORIGIN；HTTP使用独立Cookie名避免旧Secure Cookie阻止覆写。保留HttpOnly/Origin/鉴权，前端UUID必须走browser-compat（加密随机），不能直接调用仅安全上下文可用的randomUUID。旧HTTPS浏览器身份不会自动迁移到HTTP；勿按昵称替代身份校验。
+- 1.31.0规则1.7.1响应15秒；旧活动局仍8秒，下一次START先归档后升级。期限创建和HUD分母必须都取timingForRules。

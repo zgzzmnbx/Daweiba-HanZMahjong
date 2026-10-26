@@ -1,5 +1,5 @@
 {
-  "rulesVersion": "1.7.0",
+  "rulesVersion": "1.7.1",
   "deckVersion": "daily-v1",
   "playerCounts": [
     2,
@@ -15,7 +15,7 @@
   "eatSource": "previous_seat_latest_discard",
   "eatImmediateDiscardRestriction": "same_physical_tile",
   "turnMs": 120000,
-  "responseMs": 8000,
+  "responseMs": 15000,
   "composeMs": 120000,
   "voteMs": 60000,
   "postHuDiscardMs": 120000,

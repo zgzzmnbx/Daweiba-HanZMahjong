@@ -1,8 +1,8 @@
 # 公网入口运维
 
-游戏入口：https://118.196.107.182:1240
+游戏入口：http://118.196.107.182:1240
 
-本机运行真实游戏服务，火山云负责HTTPS和隧道。关闭Mac、退出当前用户或网络中断会使公网服务不可用；云端返回明确503，不会丢弃本机存档。生产文件安装在 `~/Library/Application Support/WordMahjong/`，源代码仍在本项目。每次发布使用独立 `releases/版本-时间/`，数据库位于 `data/mahjong.sqlite`，配置位于 `config/game.env`。当前安装路径记录在项目 `runtime/deployment.json`。
+本机运行真实游戏服务，火山云负责HTTP反向代理和隧道。关闭Mac、退出当前用户或网络中断会使公网服务不可用；云端返回明确503，不会丢弃本机存档。生产文件安装在 `~/Library/Application Support/WordMahjong/`，源代码仍在本项目。每次发布使用独立 `releases/版本-时间/`，数据库位于 `data/mahjong.sqlite`，配置位于 `config/game.env`。当前安装路径记录在项目 `runtime/deployment.json`。
 
 ## 构建与发布
 
@@ -11,7 +11,7 @@
 ```bash
 python3 ops/install-release.py --node "$(command -v node)"
 python3 ops/macos-service.py status
-curl --fail https://118.196.107.182:1240/readyz
+curl --fail http://118.196.107.182:1240/readyz
 ```
 
 安装器复制已构建文件，按锁文件安装生产依赖；已有数据库会先用一致性备份脚本备份。然后更新应用专属 LaunchAgent。安装成功仍须检查 ready 和真实命令。新构建不会自动修改已运行的独立 release。首次部署曾实测后台 Node 读取 Downloads 中 env 被系统挂起，因此生产安装到标准应用数据目录；未修改系统隐私权限。
@@ -22,18 +22,18 @@ curl --fail https://118.196.107.182:1240/readyz
 
 Mac：`com.daweiba.word-mahjong.frpc` 用户LaunchAgent，二进制及配置位于项目 `runtime/`，日志 `runtime/logs/frpc.*.log`。通过 `launchctl print gui/<UID>/com.daweiba.word-mahjong.frpc` 查看；UID由 `id -u` 获得，不能写死其他用户UID。
 
-云端：`word-mahjong-caddy.service` 与 `word-mahjong-frps.service`，独立系统用户和配置 `/etc/word-mahjong`。1240HTTPS、1241FRPS、1242回环后端、2021回环管理。禁止把1242/2021改为全网监听。
+云端：`word-mahjong-caddy.service` 与 `word-mahjong-frps.service`，独立系统用户和配置 `/etc/word-mahjong`。1240HTTP、1241FRPS、1242回环后端、2021回环管理。禁止把1242/2021改为全网监听。
 
-Caddy使用同一公网IP既有Let's Encrypt短期证书的独立副本。现有自动续期任务完成后，`/etc/letsencrypt/renewal-hooks/deploy/90-word-mahjong` 只复制证书并重载本游戏入口。不要手动复制过期证书长期使用。维护需验证证书有效期、timer状态和真实HTTPS响应。
+**历史HTTPS配置（1.31.0已停用，仅供回滚）：** Caddy曾使用同一公网IP既有Let's Encrypt短期证书的独立副本。现有自动续期任务完成后，`/etc/letsencrypt/renewal-hooks/deploy/90-word-mahjong` 只复制证书并重载本游戏入口。不要手动复制过期证书长期使用。维护需验证证书有效期、timer状态和真实HTTPS响应。
 
-2026-10-26修复：外置证书文件更新后必须使用`caddy reload --config /etc/word-mahjong/Caddyfile --adapter caddyfile --address 127.0.0.1:2021 --force`。相同配置的普通reload可能保留旧证书；不能只凭磁盘证书有效或timer成功判断入口正常。当前部署钩子模板见`ops/word-mahjong-cert-deploy.sh`，只对指定lineage和游戏独立2021管理口生效；当前续期timer实测每日00/12点检查。验收应核对实际握手证书和严格HTTPS/WSS，不能关闭证书校验。
+2026-10-26修复：外置证书文件更新后必须使用`caddy reload --config /etc/word-mahjong/Caddyfile --adapter caddyfile --address 127.0.0.1:2021 --force`。相同配置的普通reload可能保留旧证书；不能只凭磁盘证书有效或timer成功判断入口正常。保留的历史部署钩子模板见`ops/word-mahjong-cert-deploy.sh`，只对指定lineage和游戏独立2021管理口生效；共享续期timer仍每日00/12点检查，游戏HTTP入口不依赖它。验收应核对实际握手证书和严格HTTPS/WSS，不能关闭证书校验。
 
 ## 故障顺序
 
 1. Mac `http://127.0.0.1:3000/healthz` 与 `/readyz`。
 2. Mac游戏与FRPC LaunchAgent，FRPC日志是否连接失败。
 3. 云端两个专用服务与 `127.0.0.1:1242/healthz`。
-4. 公网 `https://118.196.107.182:1240/healthz`，再实际开房/Socket连接；HTTP首页正常不等于联机正常。
+4. 公网 `http://118.196.107.182:1240/healthz`，再实际开房/Socket连接；HTTP首页正常不等于联机正常。
 
 不因游戏故障重启主Caddy、共享FRPS、公文、中心或麒麟服务。
 
@@ -43,7 +43,7 @@ Caddy使用同一公网IP既有Let's Encrypt短期证书的独立副本。现有
 
 ## 秘密与存档
 
-管理员密码只在服务端以scrypt验证值配置，不写入前端、Git或浏览器存储。运行 `python3 ops/set-admin-password.py` 在隐藏输入中设置；脚本备份受限配置，写入ADMIN_PASSWORD_HASH，需下次重启/发布生效。发布器会保留此字段。缺配置时管理员登录禁用；密码更换后旧管理会话自动失效，普通玩家Cookie不受影响。管理员会话8小时到期，独立HttpOnly/Secure Cookie仅用于/api/admin，登录每IP每分钟最多5次。
+管理员密码只在服务端以scrypt验证值配置，不写入前端、Git或浏览器存储。运行 `python3 ops/set-admin-password.py` 在隐藏输入中设置；脚本备份受限配置，写入ADMIN_PASSWORD_HASH，需下次重启/发布生效。发布器会保留此字段。缺配置时管理员登录禁用；密码更换后旧管理会话自动失效，普通玩家Cookie不受影响。管理员会话8小时到期，独立HttpOnly Cookie仅用于/api/admin（HTTPS模式另加Secure，HTTP使用独立名称），登录每IP每分钟最多5次。
 
 1.7.0数据库新增管理员会话、管理审计、字库修订与当前修订表。保存字库采用revision并发校验，历史修订保留；恢复旧配比可读取相应deck_revisions记录，按当前revision重新保存，禁止直接把旧revision设回去造成版本重用。每局START固定整份roundDeck，活动牌墙不随编辑改变。回退必须兼容managed-rN和管理员撤销/两分钟期限，不能将1.7存档直接交给旧构建。
 
@@ -62,3 +62,9 @@ Caddy使用同一公网IP既有Let's Encrypt短期证书的独立副本。现有
 ## 1.9.0套组备份兼容
 
 命名套组新增deck_sets/deck_set_revisions/deck_catalog/deck_set_receipts/room_deck_sets，整库备份自动包含全部数据；旧字库迁移classic，原deck_revisions仍镜像经典组修订。schema_info与codec仍为1，仅代表可加式迁移，不能把含新套组的存档交给1.8及更早构建继续写入。恢复须用兼容1.9的版本；若需要旧版数据恢复，必须保留当前库并核对备份之后的变化。
+
+## 1.31.0 HTTP测试入口
+
+首次切换使用 `python3 ops/install-release.py --node "$(command -v node)" --public-origin http://118.196.107.182:1240 --allow-insecure-http`；后续发布自动保留协议和显式开关。玩家与管理员都使用HTTP，Cookie保留HttpOnly/SameSite/路径隔离，游戏API/Socket继续严格Origin与身份验证。HTTP独立Cookie不与旧HTTPS Secure Cookie冲突；旧HTTPS身份不会自动迁移，旧牌局数据保留。邀请复制及操作ID均走browser-compat。
+
+云端仅修改word-mahjong独立Caddy的1240监听为HTTP，后端仍127.0.0.1:1242；不影响共享Caddy/FRP或其他服务。游戏专用证书部署hook移入备份，共享daweiba-automation-cert-renew.timer保留。回滚时恢复原Caddyfile/hook及Mac旧env/release，校验后重载游戏Caddy。
