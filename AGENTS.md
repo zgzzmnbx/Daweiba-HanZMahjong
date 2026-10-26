@@ -210,3 +210,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.29.1图标验收除方形/墨迹外须检查相对按钮中心；通用图文margin须低优先级，纯图标网格轨道用minmax(0,1fr)，防短屏padding导致最小轨道单侧溢出。
 
 - 1.29.3头像小图mobile-v1路径immutable，后续重编码换版本目录；picture必须核对currentSrc与实际请求，不能仅查img.src。隐藏头像窗不得提前加载候选图，display:contents包装须复验牌桌定位与fallback。
+
+- 1.29.4取消每字20张上限，前后端统一接受非负安全整数，仍受各人数总牌数上限1000约束。已有大于20份的配置或冻结局不能直接交给旧版校验器读写；回滚须评估数据兼容，不得静默截断数量。

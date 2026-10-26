@@ -10,7 +10,7 @@ export function validateDeckEntries(value:unknown):{entries:DeckEntry[];totals:D
  const entries=value.map(entry=>{
   if(!entry||typeof entry!=='object'||Object.keys(entry).some(k=>!['char','copiesByPlayers'].includes(k))||!isHanChar(entry.char)||seen.has(entry.char))throw new Error('INVALID_DECK');
   seen.add(entry.char);const copies=entry.copiesByPlayers;
-  if(!copies||typeof copies!=='object'||Array.isArray(copies)||Object.keys(copies).length!==5||counts.some(n=>!Number.isInteger(copies[n])||copies[n]<0||copies[n]>20))throw new Error('INVALID_DECK');
+  if(!copies||typeof copies!=='object'||Array.isArray(copies)||Object.keys(copies).length!==5||counts.some(n=>!Number.isSafeInteger(copies[n])||copies[n]<0))throw new Error('INVALID_DECK');
   const copiesByPlayers={} as Record<typeof counts[number],number>;
   for(const n of counts){copiesByPlayers[n]=copies[n];totals[n]+=copies[n];}
   return{char:entry.char,copiesByPlayers};

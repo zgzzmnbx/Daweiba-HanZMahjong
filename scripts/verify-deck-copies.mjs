@@ -1,0 +1,16 @@
+/** Local isolated administrator save flow. Never edits the production catalog. */
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {chromium} from 'playwright';
+import {createGameServer} from '../apps/server/server.ts';
+import {hashAdminPassword} from '../apps/server/admin-auth.ts';
+const base='http://127.0.0.1:3196',password=randomUUID(),server=createGameServer({dbPath:':memory:',publicOrigin:base,adminPasswordHash:await hashAdminPassword(password),staticDir:resolve('dist/web')});await server.listen(3196);const browser=await chromium.launch({headless:true}),checks=[];
+try{for(const [width,height] of [[320,480],[1280,800]]){
+ const context=await browser.newContext({viewport:{width,height},extraHTTPHeaders:{Origin:base}}),page=await context.newPage();await page.goto(base);const admin=page.getByRole('button',{name:'管理员入口',exact:true});if(!await admin.isVisible())await page.getByRole('button',{name:'大厅菜单',exact:true}).click();await admin.click();await page.getByLabel('管理员密码',{exact:true}).fill(password);await page.getByRole('button',{name:'进入管理员模式',exact:true}).click();await page.getByRole('button',{name:/^麻将字库/}).click();
+ const count=page.locator('input[aria-label$="，2 人桌张数"]').first(),save=page.getByRole('button',{name:'保存套组',exact:true});await count.waitFor();assert.equal(await count.getAttribute('max'),null);const label=await count.getAttribute('aria-label');await count.fill('21');await page.waitForFunction(()=>Array.from(document.querySelectorAll('button')).some(b=>b.textContent==='保存套组'&&!b.disabled));assert(await save.isEnabled());await count.fill('1001');await page.waitForFunction(()=>Array.from(document.querySelectorAll('button')).some(b=>b.textContent==='保存套组'&&b.disabled));assert(await save.isDisabled());assert((await page.locator('.admin-deck .admin-error').innerText()).includes('总牌数'));await count.fill('100');await page.waitForFunction(()=>Array.from(document.querySelectorAll('button')).some(b=>b.textContent==='保存套组'&&!b.disabled));assert(await save.isEnabled());
+ const response=page.waitForResponse(r=>r.url().includes('/api/admin/deck-sets/')&&r.request().method()==='POST');await save.click();const result=await response;assert(result.ok());const deck=await result.json();assert.equal(deck.entries.find(e=>label.startsWith(e.char+'，')).copiesByPlayers['2'],100);await page.getByText('套组已保存，使用它的房间下一局生效。',{exact:true}).waitFor();await page.getByRole('button',{name:'刷新套组',exact:true}).click();await count.waitFor();assert.equal(await count.inputValue(),'100');await page.screenshot({path:`docs/evidence/deck-copies-1.29.4-local-${width}.png`});
+ // Leave the next run a different starting value so the real save button remains dirty.
+ await count.fill('22');await save.click();await page.getByText('套组已保存，使用它的房间下一局生效。',{exact:true}).waitFor();checks.push({width,height,overTwentyAccepted:true,totalBudgetEnforced:true,savedAndReloaded:100});await context.close();console.log('PASS',width,height);
+}await writeFile('docs/evidence/deck-copies-1.29.4-local.json',JSON.stringify({at:new Date().toISOString(),browser:browser.version(),checks},null,2)+'\n');}finally{await browser.close();await server.close();}

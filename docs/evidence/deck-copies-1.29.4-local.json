@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-26T01:44:12.697Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "overTwentyAccepted": true,
+      "totalBudgetEnforced": true,
+      "savedAndReloaded": 100
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "overTwentyAccepted": true,
+      "totalBudgetEnforced": true,
+      "savedAndReloaded": 100
+    }
+  ]
+}

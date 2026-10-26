@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-26',title:'手机头像轻装上桌',features:['30张头像新增128像素手机版，总体积减少约82%，桌面保留高清版。','头像面板打开时才加载候选图，手机头像长期缓存，加载失败自动回退。']},
+ {version:packageInfo.version,date:'2026-10-26',title:'字库张数自由配',features:['取消单个汉字最多20张的限制，支持按需要增加重复字。','仍按每种人数校验总牌数，保存后下一局生效。']},
+ {version:'1.29.3',date:'2026-10-26',title:'手机头像轻装上桌',features:['30张头像新增128像素手机版，总体积减少约82%，桌面保留高清版。','头像面板打开时才加载候选图，手机头像长期缓存，加载失败自动回退。']},
  {version:'1.29.2',date:'2026-10-26',title:'开房更紧凑',features:['人数与麻将套组并排，消除单独一行的空白。','昵称和头像完整一行，手机输入及按钮保持易操作尺寸。']},
  {version:'1.29.1',date:'2026-10-26',title:'图标归位，排列端正',features:['修复顶栏和菜单图标被图文间距带偏的问题，图标与文字重新同轴居中。','关闭、返回等纯图标按钮使用独立居中布局，消除文字基线造成的上下偏移。']},
  {version:'1.29.0',date:'2026-10-26',title:'图标焕新，处处一致',features:['全游戏功能图标统一采用Phosphor矢量图标，保持绿金牌馆风格。','大厅、顶栏、菜单、闲聊、音乐、涂鸦、管理、评审与观战统一图形语言，手机和桌面清晰一致。','摸打吃胡大字、麻将牌面与原创头像表情保留，所有原有操作照常使用。']},
