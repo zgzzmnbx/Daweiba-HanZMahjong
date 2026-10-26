@@ -1,6 +1,10 @@
 /* Mobile game rhythm: felt stays central; controls, labels and panels share a small scale. */
 .tool-section{margin:12px 0;border-block:1px solid #b18b4d30}.tool-section+.tool-section{border-top:0;margin-top:-12px}
 .tool-section>summary{cursor:pointer;padding:12px 0;font-size:13px;color:#dfc58d}.tool-section[open]{padding-bottom:12px}.tool-section>p{margin:0 0 10px}
+/* Keep capacity and deck together; profile picker owns a separate full row. */
+.room-create-options{display:grid;grid-template-columns:88px minmax(0,1fr);gap:10px;align-items:start;min-width:0}
+.room-create-options>label{min-width:0}
+.room-create-options select{max-width:100%}
 @media(max-width:699px){
  #root{--mobile-space:12px;--mobile-label:12px}
  #root .game-hall .hall-content{padding:8px 12px}
@@ -22,10 +26,8 @@
  #root .hall-dialog-heading>button{margin:0}
  #root .hall-dialog .entry{gap:12px}
  #root .hall-dialog .entry label{font-size:12px}
- #root .room-create-form{grid-template-columns:minmax(0,1fr) 92px;align-items:start}
+ #root .hall-dialog .room-create-form{grid-template-columns:minmax(0,1fr);gap:10px;align-items:start}
  #root .room-create-form>*{grid-column:1/-1;min-width:0}
- #root .room-create-form>.room-name-field{grid-column:1}
- #root .room-create-form>.room-capacity-field{grid-column:2}
  #root .room-create-form>.deck-choice-note{margin:-5px 0 0;font-size:11px;line-height:1.4}
  #root .room-create-form>.primary{min-height:44px;font-size:14px;letter-spacing:1px;margin:0}
  #root .hall-dialog .entry .spectating-choice{min-height:60px;margin:0}

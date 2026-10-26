@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-26T01:05:23.493Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "width": 296,
+      "height": 436.953125,
+      "overflowX": 0,
+      "capacityY": 177.2109375,
+      "deckY": 177.2109375,
+      "profileBottom": 167.2109375,
+      "optionsY": 177.2109375,
+      "selectHeight": 44,
+      "createdAndClosed": true,
+      "viewportWidth": 320,
+      "viewportHeight": 480
+    },
+    {
+      "width": 366,
+      "height": 436.953125,
+      "overflowX": 0,
+      "capacityY": 359.2109375,
+      "deckY": 359.2109375,
+      "profileBottom": 349.2109375,
+      "optionsY": 359.2109375,
+      "selectHeight": 44,
+      "createdAndClosed": true,
+      "viewportWidth": 390,
+      "viewportHeight": 844
+    },
+    {
+      "width": 440,
+      "height": 343,
+      "overflowX": 0,
+      "capacityY": 171.6875,
+      "deckY": 171.6875,
+      "profileBottom": 161.6875,
+      "optionsY": 171.6875,
+      "selectHeight": 44,
+      "createdAndClosed": true,
+      "viewportWidth": 667,
+      "viewportHeight": 375
+    },
+    {
+      "width": 440,
+      "height": 505.46875,
+      "overflowX": 0,
+      "capacityY": 341.90625,
+      "deckY": 341.90625,
+      "profileBottom": 329.90625,
+      "optionsY": 341.90625,
+      "selectHeight": 44,
+      "createdAndClosed": true,
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    }
+  ],
+  "errors": []
+}
