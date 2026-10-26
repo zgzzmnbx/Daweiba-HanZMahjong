@@ -216,3 +216,5 @@ docs/04-ACCEPTANCE.md及docs/12-UI-ACCEPTANCE.md的P0/P1场景通过；所有人
 - 1.30.0用户将标点收进菜单，顶栏原位置改为牌组（手机：牌组/音乐/闲聊/涂鸦/菜单）。查看配比只给字和数量：候场绑定组最新，roundId存在时读冻结roundDeck，不从当前手牌或剩余牌墙重建。每字展示最多10张不改变实际配比；实际数量角标保留。
 
 - 1.30.1最新弃牌提示与出牌引导共用tableCenter投影，禁止恢复手机left:46%或短屏侧槽；昵称最多两行、牌面flex:none。修改提示或按钮位置须验证展开/收起手牌时水平中心与实际操作框不相交，不能只验单一视口。
+
+- 1.30.2游戏根高度由game-viewport.css统一控制，后加载100dvh会覆盖visualViewport键盘适配；聊天避让须验证仅visualViewport缩高/offsetTop平移，不只setViewportSize。异步发送后focus应等disabled解除的DOM提交帧。

@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-26T03:03:02.409Z",
+  "version": "1.30.2",
+  "origin": "http://127.0.0.1:3183",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "sender and receiver see one moving bubble above open, usable chat 320x480"
+    },
+    {
+      "name": "sender and receiver see one moving bubble above open, usable chat 390x844"
+    },
+    {
+      "name": "sender and receiver see one moving bubble above open, usable chat 667x375"
+    },
+    {
+      "name": "sender and receiver see one moving bubble above open, usable chat 1280x800"
+    },
+    {
+      "name": "explicit preference still suppresses bubbles without losing messages"
+    },
+    {
+      "name": "reload restores history without replay"
+    },
+    {
+      "name": "isolated verification room closed"
+    }
+  ],
+  "errors": []
+}

@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.30.1-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.30.2-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -38,6 +38,14 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.30.2 · 手机键盘与聊天输入 · 2026-10-26
+
+移除后加载style.css中覆盖visualViewport高度的旧100dvh声明，恢复游戏可见区域同步。聊天面板同时监听可见区域缩小/平移、游戏容器与弹幕锚点变化：空间不足时上移，优先保留输入框/发送/关闭，聊天记录与表情列表内部缩短。键盘收起恢复原位置，保留草稿；发送完成后在textarea重新启用的提交帧恢复焦点，避免对disabled输入框提前focus失效。
+
+构建与399测试通过。Chromium141真实双客户端聊天，模拟visualViewport-only键盘缩高和平移：344×650→300、390×844→320、320×480→200且offsetTop=60、667×375→185，输入/发送/关闭均在可见区且真实命中；草稿、中文组合输入不误发、另一客户端接收、表情面板、收起恢复及layoutViewport缩放通过。普通聊天/弹幕7项回归通过；320×480、390×844、667×375、1280×800普通牌局62项交互通过（摸打、菜单保持、最新弃牌居中、评审、观战及关闭房间）。此证据为键盘几何模拟，未在实体Android/iOS键盘验收。证据chat-keyboard-1.30.2-local.json与barrage-results.json；测试房已关闭。
+
+已发布原公网v1.30.2：release `1.30.2-20261026-111725`，源码冻结 `3c89608`，一致性备份 `pre-release-20261026-111726.sqlite`。ready=true，77项资源逐字节匹配；公网双客户端四组键盘几何模拟及layoutViewport缩放、真实收发、表情、草稿与恢复全部通过，测试房已关闭。证据chat-keyboard-1.30.2-public.json与public-release.json。实体Android/iOS软键盘仍未实测。源码、文档与证据随交付CAS同步GitHub并核对文件树。
 
 ## 1.30.1 · 刚出牌提示居中 · 2026-10-26
 
