@@ -15,7 +15,7 @@ import {pid,ok,command} from '../engine/helpers';
 import type {DeckSetSnapshot,DeckSetCatalog} from '../../packages/contracts/deck';
 
 const origin='http://deck-sets.test',password=`test-${randomUUID()}`,hash=await hashAdminPassword(password);
-const entries=(offset=0)=>Array.from({length:5},(_,n)=>({char:String.fromCodePoint(0x20000+offset+n),copiesByPlayers:{'2':20,'3':20,'4':20,'5':20,'6':20}}));
+const entries=(offset=0)=>Array.from({length:5},(_,n)=>({char:n===0?'我':n===1?'吃':String.fromCodePoint(0x20000+offset+n),copiesByPlayers:{'2':20,'3':20,'4':20,'5':20,'6':20}}));
 async function fixture(){
  const directory=mkdtempSync(join(tmpdir(),'deck-sets-'));let now=0;
  let server=createGameServer({dbPath:join(directory,'game.sqlite'),publicOrigin:origin,adminPasswordHash:hash,automaticTimers:false,now:()=>now});await server.listen(0);let url=`http://127.0.0.1:${(server.http.address() as any).port}`;const clients:Client[]=[];
@@ -66,10 +66,10 @@ test('a broken legacy revision aborts the entire migration without partial catal
 
 test('over-twenty copies save, persist and start correctly while active rounds stay frozen',async()=>{
  const t=await fixture();try{
-  const stock=(n:number)=>[{char:'我',copiesByPlayers:{'2':n,'3':n,'4':n,'5':n,'6':n}}];
+  const stock=(n:number)=>[{char:'我',copiesByPlayers:{'2':n-6,'3':n-6,'4':n-6,'5':n-6,'6':n-6}},{char:'吃',copiesByPlayers:{'2':6,'3':6,'4':6,'5':6,'6':6}}];
   const selected=await t.clone('重复字自由配'),first=await t.save(selected,stock(120));
   const c=t.client();await c.create(selected.id);await c.open();await c.prepare();await c.ok({kind:'START_ROUND'});
-  assert.equal(t.server.games.get(c.room)!.tiles.size,120);assert([...t.server.games.get(c.room)!.tiles.values()].every(tile=>tile.char==='我'));
+  assert.equal(t.server.games.get(c.room)!.tiles.size,120);assert.equal([...t.server.games.get(c.room)!.tiles.values()].filter(tile=>tile.char==='我').length,114);assert.equal([...t.server.games.get(c.room)!.tiles.values()].filter(tile=>tile.char==='吃').length,6);
   await t.save(first,stock(1000));assert.equal(t.server.games.get(c.room)!.tiles.size,120);
   await t.restart();assert.equal((await c.restore()).status,200);await c.open();assert.equal(t.server.games.get(c.room)!.tiles.size,120);
   await c.next();assert.equal(t.server.games.get(c.room)!.tiles.size,1000);assert.equal((await c.env()).public.wallRemaining,973);const snapshot=await c.env();assert.equal(snapshot.private.hand.length,snapshot.public.phase.actorId===snapshot.private.playerId?14:13);
@@ -86,7 +86,7 @@ test('room deck viewer exposes composition only, freezes at START and requires t
   let view=await a.request(path);assert.equal(view.status,200);assert.equal(view.headers.get('cache-control'),'no-store');assert.equal(view.data.frozen,false);assert.equal(view.data.name,first.name);assert.equal(view.data.total,100);assert.equal(view.data.entries[0].count,20);
   assert.deepEqual(Object.keys(view.data).sort(),['roomId','roundId','name','version','capacity','frozen','total','entries'].sort());assert(view.data.entries.every((e:any)=>Object.keys(e).sort().join(',')==='char,count'));
   await a.prepare();await a.ok({kind:'START_ROUND'});const frozen=(await a.request(path)).data;assert.equal(frozen.frozen,true);assert.equal(frozen.version,first.version);
-  const mixed=entries(10).map((e,i)=>({...e,copiesByPlayers:{'2':i===0?0:30,'3':40,'4':40,'5':40,'6':40}}));
+  const mixed=entries(10).map((e,i)=>({...e,...(i===2?{char:'你'}:{}),copiesByPlayers:{'2':i===0?0:30,'3':40,'4':40,'5':40,'6':40}}));
   const second=await t.save(first,mixed,'下一局新名');assert.deepEqual((await a.request(path)).data,frozen);
   await t.restart();assert.equal((await a.restore()).status,200);await a.open();assert.deepEqual((await a.request(path)).data,frozen);
   await a.next();view=await a.request(path);assert.equal(view.data.version,second.version);assert.equal(view.data.total,120);assert.equal(view.data.entries.length,4);assert(view.data.entries.every((e:any)=>e.count===30));

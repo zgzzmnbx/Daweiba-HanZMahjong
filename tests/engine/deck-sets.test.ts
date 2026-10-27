@@ -5,7 +5,7 @@ import {validateDeckEntries} from '../../packages/engine/deck';
 import type {DeckSetSnapshot} from '../../packages/contracts/deck';
 import {pid,ok,command,send} from './helpers';
 const id='set-00000000-0000-0000-0000-000000000001',other='set-00000000-0000-0000-0000-000000000002';
-function set(revision=0):DeckSetSnapshot{return{id,name:`套组 ${revision}`,revision,version:`${id}-r${revision}`,...validateDeckEntries(Array.from({length:5},(_,i)=>({char:String.fromCodePoint(0x20000+i+revision*5),copiesByPlayers:{'2':20,'3':20,'4':20,'5':20,'6':20}})))};}
+function set(revision=0):DeckSetSnapshot{return{id,name:`套组 ${revision}`,revision,version:`${id}-r${revision}`,...validateDeckEntries(Array.from({length:5},(_,i)=>({char:i===0?'我':i===1?'吃':String.fromCodePoint(0x20000+i+revision*5),copiesByPlayers:{'2':20,'3':20,'4':20,'5':20,'6':20}})))};}
 let serial=0;
 function room(n=2){const g=E.createGame(`set-engine-${++serial}`,n,pid(0),'房主','s0','x',0,1);g.public.deckSetId=id;g.public.deckSetName='建房名字';for(let seat=1;seat<n;seat++)ok(g,0,{kind:'ASSIGN_BOT',seat});ok(g,0,{kind:'READY',ready:true});return g;}
 function start(g:E.Game,deck:DeckSetSnapshot){const c=command(g,0,{kind:'START_ROUND'}),result=E.applyCommand(g,pid(0),'s0',c,JSON.stringify(c),0,deck);assert.equal(result.ok,true);return{c,result};}

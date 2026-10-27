@@ -121,7 +121,7 @@ export function GameTable({envelope,transport,connected=true,controlled=true,onL
  const humanCount=envelope.public.players.filter(p=>!p.isBotSeat).length;
  const hasAssignedBot=envelope.public.players.some(p=>p.isBotSeat);
  const practice=phase.kind==='LOBBY'?humanCount===1&&hasAssignedBot:envelope.public.practiceMode;
- const aiReview=['1.2.0','1.3.0','1.4.0','1.4.1','1.5.0','1.5.1','1.6.0','1.6.1','1.7.0','1.7.1'].includes(envelope.public.rulesVersion);
+ const aiReview=['1.2.0','1.3.0','1.4.0','1.4.1','1.5.0','1.5.1','1.6.0','1.6.1','1.7.0','1.7.1','1.8.0'].includes(envelope.public.rulesVersion);
  const latestReview=envelope.public.history.at(-1);
  const [reviewNotice,setReviewNotice]=useState(false);
  useEffect(()=>{setReviewNotice(!!latestReview?.result);const timer=setTimeout(()=>setReviewNotice(false),10000);return()=>clearTimeout(timer);},[envelope.public.roomId,envelope.public.roundId,latestReview?.proposalId]);

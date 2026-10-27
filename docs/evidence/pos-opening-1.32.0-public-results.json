@@ -1,0 +1,317 @@
+{
+  "at": "2026-10-27T02:13:02.168Z",
+  "version": "1.32.0",
+  "origin": "http://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "real browser host UI plus authenticated socket peers and each own private envelope; 2–6 default tables and six-seat alternate sets; no fixed phrases; mobile Chromium emulation, not physical Safari",
+  "checks": [
+    {
+      "name": "all 2 private hands have independent S/V/O entities: 默认麻将套组（基于文字失明）",
+      "status": "PASS",
+      "capacity": 2,
+      "set": "默认麻将套组（基于文字失明）",
+      "roles": [
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 117
+    },
+    {
+      "name": "reload retains the exact opening: 2/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 2/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 2/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "all 3 private hands have independent S/V/O entities: 默认麻将套组（基于文字失明）",
+      "status": "PASS",
+      "capacity": 3,
+      "set": "默认麻将套组（基于文字失明）",
+      "roles": [
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "pronoun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 104
+    },
+    {
+      "name": "reload retains the exact opening: 3/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 3/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 3/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "all 4 private hands have independent S/V/O entities: 默认麻将套组（基于文字失明）",
+      "status": "PASS",
+      "capacity": 4,
+      "set": "默认麻将套组（基于文字失明）",
+      "roles": [
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 91
+    },
+    {
+      "name": "reload retains the exact opening: 4/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 4/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 4/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "all 5 private hands have independent S/V/O entities: 默认麻将套组（基于文字失明）",
+      "status": "PASS",
+      "capacity": 5,
+      "set": "默认麻将套组（基于文字失明）",
+      "roles": [
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ],
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "pronoun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 78
+    },
+    {
+      "name": "reload retains the exact opening: 5/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 5/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 5/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "all 6 private hands have independent S/V/O entities: 默认麻将套组（基于文字失明）",
+      "status": "PASS",
+      "capacity": 6,
+      "set": "默认麻将套组（基于文字失明）",
+      "roles": [
+        [
+          "pronoun",
+          "verb",
+          "pronoun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "pronoun",
+          "verb",
+          "pronoun"
+        ]
+      ],
+      "wallRemaining": 65
+    },
+    {
+      "name": "reload retains the exact opening: 6/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 6/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 6/默认麻将套组（基于文字失明）",
+      "status": "PASS"
+    },
+    {
+      "name": "all 6 private hands have independent S/V/O entities: 动态牌组",
+      "status": "PASS",
+      "capacity": 6,
+      "set": "动态牌组",
+      "roles": [
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "pronoun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 137
+    },
+    {
+      "name": "reload retains the exact opening: 6/动态牌组",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 6/动态牌组",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 6/动态牌组",
+      "status": "PASS"
+    },
+    {
+      "name": "all 6 private hands have independent S/V/O entities: “素质满满”套组",
+      "status": "PASS",
+      "capacity": 6,
+      "set": "“素质满满”套组",
+      "roles": [
+        [
+          "noun",
+          "verb",
+          "pronoun"
+        ],
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "noun",
+          "verb",
+          "noun"
+        ],
+        [
+          "pronoun",
+          "verb",
+          "noun"
+        ]
+      ],
+      "wallRemaining": 696
+    },
+    {
+      "name": "reload retains the exact opening: 6/“素质满满”套组",
+      "status": "PASS"
+    },
+    {
+      "name": "browser discard and authoritative next-seat draw remain valid: 6/“素质满满”套组",
+      "status": "PASS"
+    },
+    {
+      "name": "own test room closed without a score or book entry: 6/“素质满满”套组",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

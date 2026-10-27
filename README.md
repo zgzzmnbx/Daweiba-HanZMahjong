@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.31.1-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.32.0-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -38,6 +38,14 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.32.0 · 按词性发主谓宾起手牌 · 2026-10-27
+
+用户明确采用单字主要词性抽取，取消固定组合方案。每位玩家（含指定AI）先无放回抽一张名词／代词作主语、一张动词作谓语、一张名词／代词作宾语，其余随机补齐；庄家14张、其他人13张，牌组实体与配比不变。三个候选实体独立，不保证三字语义自然或14字胡牌成功。固定词性表覆盖11,580单字，校正常见牌字，当前线上358种牌字全部有分类；未知生僻字标其他、不冒充主谓宾。详见[词性与发牌说明](docs/TILE-POS.md)。
+
+规则1.8.0仅下次START启用，活动旧局不重发；1.0兼容局保留。自定义配比不足时在任何牌局变更前拒绝开局并明确提示，不加牌、不回退纯随机。15秒响应、1.5秒AI、独立评审及改字规则继承。
+
+生产构建及414项自动测试通过，新增覆盖600次跨人数/三套组发牌、15组真实HTTP/WebSocket/SQLite发牌与摸打、真人/AI、实体守恒、重复提交、持久化回滚、旧局恢复及开局失败原子性。初轮旧测试只适配旧版本号和不具备主谓宾的纯生僻字夹具，已按新规则补足候选并保留原验收含义；未放宽业务校验。真实浏览器28项检查通过，覆盖默认组2–6人及另两个六人套组、各自私密起手、刷新不重发和实际UI出牌/下一家摸牌；所有测试房无计分关闭。初轮验收用浏览器恢复前的辅助Socket操作房主响应导致超时，已改用当前真实UI操作重测，旧截图移入Codex-Temp，未计通过。线上当前库的一致性副本恢复检查通过：375个房间及342条局记录的规则、手牌、牌墙、草稿与结果不变。手机为Chromium141触摸视口模拟，实体Safari未实测。证据为pos-opening-1.32.0-frozen-local-*及recovery-compatibility.json。已发布原HTTP入口，公网相同28项检查全部通过，进程退出0；默认牌组2–6人、动态/素质套组六人均验证私密起手与实际摸打，所有验收私房无计分关闭。release `1.32.0-20261027-101003`、冻结源码 `94de6cd`、一致性备份 `pre-release-20261027-101004.sqlite`；ready=true，80项资源与冻结构建SHA256一致。正式公网证据为pos-opening-1.32.0-public-*。源码、词性清单、文档与证据随本版同步GitHub。
 
 ## 1.31.1 · 音乐音量 · 2026-10-26
 
@@ -769,7 +777,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.23.11**，新房规则 **1.5.1**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.32.0**，新房规则 **1.8.0**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 
@@ -782,3 +790,5 @@ npm run db:restore -- /absolute/path/backup.sqlite
 3D 牌桌渲染移植自 [Bruce-pac/EnglishMahjong-web](https://github.com/Bruce-pac/EnglishMahjong-web)，固定提交 `6830301df3061cdd25350cf56807473e5505b311`，并保留其涉及的 Autotable 来源与 MIT 许可文本。当前字牌使用程序几何和游戏自托管苹方字体生成。
 
 第三方许可与具体使用范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 及 [licenses](licenses/)。这些许可对应第三方采用部分；本仓库未另行声明整个项目的开源许可证。
+
+起手词性参考Jieba v0.42.1单字词条并校正常见牌字；[MIT许可](apps/web/public/licenses/Jieba-MIT.txt)随网页交付，规则及局限见[单字词性说明](docs/TILE-POS.md)。

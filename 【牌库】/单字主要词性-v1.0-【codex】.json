@@ -1,0 +1,1439 @@
+{
+  "version": "primary-pos-v1",
+  "description": "单字用于发牌的主要词性；不是上下文语法判定，不限定胡牌时的实际用法。",
+  "source": "Jieba v0.42.1 单字词性及常见牌字主要用法校正",
+  "entries": [
+    {
+      "char": "一",
+      "pos": "numeral"
+    },
+    {
+      "char": "三",
+      "pos": "numeral"
+    },
+    {
+      "char": "上",
+      "pos": "direction"
+    },
+    {
+      "char": "下",
+      "pos": "direction"
+    },
+    {
+      "char": "不",
+      "pos": "adverb"
+    },
+    {
+      "char": "与",
+      "pos": "preposition"
+    },
+    {
+      "char": "丑",
+      "pos": "adjective"
+    },
+    {
+      "char": "东",
+      "pos": "direction"
+    },
+    {
+      "char": "丝",
+      "pos": "noun"
+    },
+    {
+      "char": "丢",
+      "pos": "verb"
+    },
+    {
+      "char": "个",
+      "pos": "classifier"
+    },
+    {
+      "char": "中",
+      "pos": "direction"
+    },
+    {
+      "char": "为",
+      "pos": "preposition"
+    },
+    {
+      "char": "么",
+      "pos": "particle"
+    },
+    {
+      "char": "之",
+      "pos": "particle"
+    },
+    {
+      "char": "乐",
+      "pos": "adjective"
+    },
+    {
+      "char": "也",
+      "pos": "adverb"
+    },
+    {
+      "char": "乱",
+      "pos": "adverb"
+    },
+    {
+      "char": "了",
+      "pos": "particle"
+    },
+    {
+      "char": "事",
+      "pos": "noun"
+    },
+    {
+      "char": "二",
+      "pos": "numeral"
+    },
+    {
+      "char": "云",
+      "pos": "noun"
+    },
+    {
+      "char": "人",
+      "pos": "noun"
+    },
+    {
+      "char": "什",
+      "pos": "pronoun"
+    },
+    {
+      "char": "从",
+      "pos": "preposition"
+    },
+    {
+      "char": "他",
+      "pos": "pronoun"
+    },
+    {
+      "char": "以",
+      "pos": "preposition"
+    },
+    {
+      "char": "们",
+      "pos": "morpheme"
+    },
+    {
+      "char": "会",
+      "pos": "auxiliary"
+    },
+    {
+      "char": "但",
+      "pos": "conjunction"
+    },
+    {
+      "char": "住",
+      "pos": "verb"
+    },
+    {
+      "char": "作",
+      "pos": "verb"
+    },
+    {
+      "char": "你",
+      "pos": "pronoun"
+    },
+    {
+      "char": "俄",
+      "pos": "morpheme"
+    },
+    {
+      "char": "俺",
+      "pos": "pronoun"
+    },
+    {
+      "char": "做",
+      "pos": "verb"
+    },
+    {
+      "char": "傻",
+      "pos": "adjective"
+    },
+    {
+      "char": "像",
+      "pos": "verb"
+    },
+    {
+      "char": "儿",
+      "pos": "noun"
+    },
+    {
+      "char": "光",
+      "pos": "noun"
+    },
+    {
+      "char": "八",
+      "pos": "numeral"
+    },
+    {
+      "char": "关",
+      "pos": "verb"
+    },
+    {
+      "char": "养",
+      "pos": "verb"
+    },
+    {
+      "char": "再",
+      "pos": "adverb"
+    },
+    {
+      "char": "冒",
+      "pos": "verb"
+    },
+    {
+      "char": "冷",
+      "pos": "adjective"
+    },
+    {
+      "char": "几",
+      "pos": "numeral"
+    },
+    {
+      "char": "刀",
+      "pos": "noun"
+    },
+    {
+      "char": "别",
+      "pos": "adverb"
+    },
+    {
+      "char": "到",
+      "pos": "verb"
+    },
+    {
+      "char": "前",
+      "pos": "direction"
+    },
+    {
+      "char": "包",
+      "pos": "verb"
+    },
+    {
+      "char": "卖",
+      "pos": "verb"
+    },
+    {
+      "char": "卧",
+      "pos": "verb"
+    },
+    {
+      "char": "却",
+      "pos": "adverb"
+    },
+    {
+      "char": "厚",
+      "pos": "adjective"
+    },
+    {
+      "char": "去",
+      "pos": "verb"
+    },
+    {
+      "char": "又",
+      "pos": "adverb"
+    },
+    {
+      "char": "发",
+      "pos": "verb"
+    },
+    {
+      "char": "口",
+      "pos": "noun"
+    },
+    {
+      "char": "只",
+      "pos": "adverb"
+    },
+    {
+      "char": "叫",
+      "pos": "verb"
+    },
+    {
+      "char": "可",
+      "pos": "auxiliary"
+    },
+    {
+      "char": "右",
+      "pos": "direction"
+    },
+    {
+      "char": "吃",
+      "pos": "verb"
+    },
+    {
+      "char": "吊",
+      "pos": "verb"
+    },
+    {
+      "char": "后",
+      "pos": "direction"
+    },
+    {
+      "char": "向",
+      "pos": "preposition"
+    },
+    {
+      "char": "吗",
+      "pos": "particle"
+    },
+    {
+      "char": "吝",
+      "pos": "adjective"
+    },
+    {
+      "char": "吧",
+      "pos": "particle"
+    },
+    {
+      "char": "听",
+      "pos": "verb"
+    },
+    {
+      "char": "吹",
+      "pos": "verb"
+    },
+    {
+      "char": "呀",
+      "pos": "particle"
+    },
+    {
+      "char": "呆",
+      "pos": "adjective"
+    },
+    {
+      "char": "呢",
+      "pos": "particle"
+    },
+    {
+      "char": "和",
+      "pos": "conjunction"
+    },
+    {
+      "char": "咱",
+      "pos": "pronoun"
+    },
+    {
+      "char": "哪",
+      "pos": "pronoun"
+    },
+    {
+      "char": "哭",
+      "pos": "verb"
+    },
+    {
+      "char": "啊",
+      "pos": "particle"
+    },
+    {
+      "char": "啥",
+      "pos": "pronoun"
+    },
+    {
+      "char": "喜",
+      "pos": "verb"
+    },
+    {
+      "char": "喝",
+      "pos": "verb"
+    },
+    {
+      "char": "喷",
+      "pos": "verb"
+    },
+    {
+      "char": "嘛",
+      "pos": "particle"
+    },
+    {
+      "char": "嘴",
+      "pos": "noun"
+    },
+    {
+      "char": "囊",
+      "pos": "noun"
+    },
+    {
+      "char": "回",
+      "pos": "verb"
+    },
+    {
+      "char": "因",
+      "pos": "preposition"
+    },
+    {
+      "char": "在",
+      "pos": "preposition"
+    },
+    {
+      "char": "地",
+      "pos": "particle"
+    },
+    {
+      "char": "圾",
+      "pos": "morpheme"
+    },
+    {
+      "char": "坏",
+      "pos": "adjective"
+    },
+    {
+      "char": "坑",
+      "pos": "noun"
+    },
+    {
+      "char": "垃",
+      "pos": "morpheme"
+    },
+    {
+      "char": "城",
+      "pos": "noun"
+    },
+    {
+      "char": "埠",
+      "pos": "noun"
+    },
+    {
+      "char": "夏",
+      "pos": "noun"
+    },
+    {
+      "char": "外",
+      "pos": "direction"
+    },
+    {
+      "char": "多",
+      "pos": "adjective"
+    },
+    {
+      "char": "夜",
+      "pos": "noun"
+    },
+    {
+      "char": "够",
+      "pos": "morpheme"
+    },
+    {
+      "char": "大",
+      "pos": "adjective"
+    },
+    {
+      "char": "天",
+      "pos": "noun"
+    },
+    {
+      "char": "太",
+      "pos": "adverb"
+    },
+    {
+      "char": "失",
+      "pos": "verb"
+    },
+    {
+      "char": "头",
+      "pos": "noun"
+    },
+    {
+      "char": "套",
+      "pos": "classifier"
+    },
+    {
+      "char": "女",
+      "pos": "noun"
+    },
+    {
+      "char": "她",
+      "pos": "pronoun"
+    },
+    {
+      "char": "好",
+      "pos": "adjective"
+    },
+    {
+      "char": "如",
+      "pos": "verb"
+    },
+    {
+      "char": "妈",
+      "pos": "noun"
+    },
+    {
+      "char": "娘",
+      "pos": "noun"
+    },
+    {
+      "char": "嫌",
+      "pos": "verb"
+    },
+    {
+      "char": "子",
+      "pos": "noun"
+    },
+    {
+      "char": "孙",
+      "pos": "noun"
+    },
+    {
+      "char": "它",
+      "pos": "pronoun"
+    },
+    {
+      "char": "完",
+      "pos": "verb"
+    },
+    {
+      "char": "家",
+      "pos": "noun"
+    },
+    {
+      "char": "对",
+      "pos": "preposition"
+    },
+    {
+      "char": "将",
+      "pos": "adverb"
+    },
+    {
+      "char": "小",
+      "pos": "adjective"
+    },
+    {
+      "char": "少",
+      "pos": "adjective"
+    },
+    {
+      "char": "就",
+      "pos": "adverb"
+    },
+    {
+      "char": "尼",
+      "pos": "morpheme"
+    },
+    {
+      "char": "屁",
+      "pos": "noun"
+    },
+    {
+      "char": "屌",
+      "pos": "morpheme"
+    },
+    {
+      "char": "屎",
+      "pos": "noun"
+    },
+    {
+      "char": "山",
+      "pos": "noun"
+    },
+    {
+      "char": "左",
+      "pos": "direction"
+    },
+    {
+      "char": "己",
+      "pos": "pronoun"
+    },
+    {
+      "char": "帽",
+      "pos": "noun"
+    },
+    {
+      "char": "废",
+      "pos": "verb"
+    },
+    {
+      "char": "开",
+      "pos": "verb"
+    },
+    {
+      "char": "弃",
+      "pos": "verb"
+    },
+    {
+      "char": "张",
+      "pos": "classifier"
+    },
+    {
+      "char": "当",
+      "pos": "verb"
+    },
+    {
+      "char": "影",
+      "pos": "noun"
+    },
+    {
+      "char": "很",
+      "pos": "adverb"
+    },
+    {
+      "char": "得",
+      "pos": "particle"
+    },
+    {
+      "char": "德",
+      "pos": "noun"
+    },
+    {
+      "char": "心",
+      "pos": "noun"
+    },
+    {
+      "char": "忍",
+      "pos": "verb"
+    },
+    {
+      "char": "快",
+      "pos": "adjective"
+    },
+    {
+      "char": "怂",
+      "pos": "adjective"
+    },
+    {
+      "char": "怎",
+      "pos": "adverb"
+    },
+    {
+      "char": "总",
+      "pos": "adverb"
+    },
+    {
+      "char": "怼",
+      "pos": "verb"
+    },
+    {
+      "char": "恋",
+      "pos": "verb"
+    },
+    {
+      "char": "恶",
+      "pos": "adjective"
+    },
+    {
+      "char": "您",
+      "pos": "pronoun"
+    },
+    {
+      "char": "惯",
+      "pos": "verb"
+    },
+    {
+      "char": "想",
+      "pos": "verb"
+    },
+    {
+      "char": "意",
+      "pos": "noun"
+    },
+    {
+      "char": "戏",
+      "pos": "noun"
+    },
+    {
+      "char": "我",
+      "pos": "pronoun"
+    },
+    {
+      "char": "或",
+      "pos": "conjunction"
+    },
+    {
+      "char": "所",
+      "pos": "conjunction"
+    },
+    {
+      "char": "手",
+      "pos": "noun"
+    },
+    {
+      "char": "才",
+      "pos": "adverb"
+    },
+    {
+      "char": "打",
+      "pos": "verb"
+    },
+    {
+      "char": "扯",
+      "pos": "verb"
+    },
+    {
+      "char": "批",
+      "pos": "classifier"
+    },
+    {
+      "char": "找",
+      "pos": "verb"
+    },
+    {
+      "char": "把",
+      "pos": "preposition"
+    },
+    {
+      "char": "抽",
+      "pos": "verb"
+    },
+    {
+      "char": "拍",
+      "pos": "verb"
+    },
+    {
+      "char": "损",
+      "pos": "verb"
+    },
+    {
+      "char": "揍",
+      "pos": "verb"
+    },
+    {
+      "char": "搞",
+      "pos": "verb"
+    },
+    {
+      "char": "撑",
+      "pos": "verb"
+    },
+    {
+      "char": "操",
+      "pos": "verb"
+    },
+    {
+      "char": "放",
+      "pos": "verb"
+    },
+    {
+      "char": "故",
+      "pos": "noun"
+    },
+    {
+      "char": "数",
+      "pos": "noun"
+    },
+    {
+      "char": "无",
+      "pos": "verb"
+    },
+    {
+      "char": "日",
+      "pos": "noun"
+    },
+    {
+      "char": "明",
+      "pos": "adjective"
+    },
+    {
+      "char": "星",
+      "pos": "noun"
+    },
+    {
+      "char": "春",
+      "pos": "noun"
+    },
+    {
+      "char": "是",
+      "pos": "verb"
+    },
+    {
+      "char": "最",
+      "pos": "adverb"
+    },
+    {
+      "char": "月",
+      "pos": "noun"
+    },
+    {
+      "char": "有",
+      "pos": "verb"
+    },
+    {
+      "char": "服",
+      "pos": "verb"
+    },
+    {
+      "char": "木",
+      "pos": "noun"
+    },
+    {
+      "char": "本",
+      "pos": "noun"
+    },
+    {
+      "char": "杀",
+      "pos": "verb"
+    },
+    {
+      "char": "杠",
+      "pos": "noun"
+    },
+    {
+      "char": "来",
+      "pos": "verb"
+    },
+    {
+      "char": "极",
+      "pos": "adverb"
+    },
+    {
+      "char": "树",
+      "pos": "noun"
+    },
+    {
+      "char": "样",
+      "pos": "noun"
+    },
+    {
+      "char": "梦",
+      "pos": "noun"
+    },
+    {
+      "char": "槽",
+      "pos": "noun"
+    },
+    {
+      "char": "模",
+      "pos": "noun"
+    },
+    {
+      "char": "欠",
+      "pos": "verb"
+    },
+    {
+      "char": "欢",
+      "pos": "adjective"
+    },
+    {
+      "char": "死",
+      "pos": "verb"
+    },
+    {
+      "char": "比",
+      "pos": "preposition"
+    },
+    {
+      "char": "毛",
+      "pos": "noun"
+    },
+    {
+      "char": "氓",
+      "pos": "morpheme"
+    },
+    {
+      "char": "气",
+      "pos": "noun"
+    },
+    {
+      "char": "水",
+      "pos": "noun"
+    },
+    {
+      "char": "没",
+      "pos": "verb"
+    },
+    {
+      "char": "河",
+      "pos": "noun"
+    },
+    {
+      "char": "活",
+      "pos": "verb"
+    },
+    {
+      "char": "流",
+      "pos": "noun"
+    },
+    {
+      "char": "浑",
+      "pos": "adjective"
+    },
+    {
+      "char": "浪",
+      "pos": "noun"
+    },
+    {
+      "char": "海",
+      "pos": "noun"
+    },
+    {
+      "char": "淡",
+      "pos": "adjective"
+    },
+    {
+      "char": "混",
+      "pos": "verb"
+    },
+    {
+      "char": "渣",
+      "pos": "noun"
+    },
+    {
+      "char": "滓",
+      "pos": "noun"
+    },
+    {
+      "char": "滚",
+      "pos": "verb"
+    },
+    {
+      "char": "满",
+      "pos": "adjective"
+    },
+    {
+      "char": "火",
+      "pos": "noun"
+    },
+    {
+      "char": "点",
+      "pos": "numeral"
+    },
+    {
+      "char": "烂",
+      "pos": "adjective"
+    },
+    {
+      "char": "烟",
+      "pos": "noun"
+    },
+    {
+      "char": "热",
+      "pos": "adjective"
+    },
+    {
+      "char": "爱",
+      "pos": "verb"
+    },
+    {
+      "char": "爷",
+      "pos": "noun"
+    },
+    {
+      "char": "爹",
+      "pos": "noun"
+    },
+    {
+      "char": "牛",
+      "pos": "noun"
+    },
+    {
+      "char": "物",
+      "pos": "noun"
+    },
+    {
+      "char": "牲",
+      "pos": "morpheme"
+    },
+    {
+      "char": "犊",
+      "pos": "morpheme"
+    },
+    {
+      "char": "犯",
+      "pos": "verb"
+    },
+    {
+      "char": "狂",
+      "pos": "adjective"
+    },
+    {
+      "char": "狗",
+      "pos": "noun"
+    },
+    {
+      "char": "狼",
+      "pos": "noun"
+    },
+    {
+      "char": "猥",
+      "pos": "adjective"
+    },
+    {
+      "char": "猪",
+      "pos": "noun"
+    },
+    {
+      "char": "王",
+      "pos": "noun"
+    },
+    {
+      "char": "玛",
+      "pos": "morpheme"
+    },
+    {
+      "char": "玩",
+      "pos": "verb"
+    },
+    {
+      "char": "球",
+      "pos": "noun"
+    },
+    {
+      "char": "琐",
+      "pos": "adjective"
+    },
+    {
+      "char": "瓜",
+      "pos": "noun"
+    },
+    {
+      "char": "生",
+      "pos": "verb"
+    },
+    {
+      "char": "电",
+      "pos": "noun"
+    },
+    {
+      "char": "男",
+      "pos": "noun"
+    },
+    {
+      "char": "畜",
+      "pos": "morpheme"
+    },
+    {
+      "char": "疯",
+      "pos": "adjective"
+    },
+    {
+      "char": "病",
+      "pos": "noun"
+    },
+    {
+      "char": "痛",
+      "pos": "adjective"
+    },
+    {
+      "char": "痞",
+      "pos": "noun"
+    },
+    {
+      "char": "痴",
+      "pos": "adjective"
+    },
+    {
+      "char": "瘪",
+      "pos": "adjective"
+    },
+    {
+      "char": "癫",
+      "pos": "noun"
+    },
+    {
+      "char": "白",
+      "pos": "adjective"
+    },
+    {
+      "char": "的",
+      "pos": "particle"
+    },
+    {
+      "char": "皮",
+      "pos": "noun"
+    },
+    {
+      "char": "看",
+      "pos": "verb"
+    },
+    {
+      "char": "真",
+      "pos": "adverb"
+    },
+    {
+      "char": "眼",
+      "pos": "noun"
+    },
+    {
+      "char": "着",
+      "pos": "particle"
+    },
+    {
+      "char": "睡",
+      "pos": "verb"
+    },
+    {
+      "char": "瞎",
+      "pos": "adverb"
+    },
+    {
+      "char": "知",
+      "pos": "verb"
+    },
+    {
+      "char": "破",
+      "pos": "adjective"
+    },
+    {
+      "char": "硬",
+      "pos": "adjective"
+    },
+    {
+      "char": "神",
+      "pos": "noun"
+    },
+    {
+      "char": "离",
+      "pos": "verb"
+    },
+    {
+      "char": "空",
+      "pos": "noun"
+    },
+    {
+      "char": "窝",
+      "pos": "noun"
+    },
+    {
+      "char": "笑",
+      "pos": "verb"
+    },
+    {
+      "char": "笨",
+      "pos": "adjective"
+    },
+    {
+      "char": "算",
+      "pos": "verb"
+    },
+    {
+      "char": "粪",
+      "pos": "noun"
+    },
+    {
+      "char": "精",
+      "pos": "noun"
+    },
+    {
+      "char": "红",
+      "pos": "adjective"
+    },
+    {
+      "char": "纯",
+      "pos": "adjective"
+    },
+    {
+      "char": "给",
+      "pos": "preposition"
+    },
+    {
+      "char": "缺",
+      "pos": "verb"
+    },
+    {
+      "char": "美",
+      "pos": "adjective"
+    },
+    {
+      "char": "老",
+      "pos": "adjective"
+    },
+    {
+      "char": "而",
+      "pos": "conjunction"
+    },
+    {
+      "char": "耍",
+      "pos": "verb"
+    },
+    {
+      "char": "耻",
+      "pos": "noun"
+    },
+    {
+      "char": "肚",
+      "pos": "noun"
+    },
+    {
+      "char": "胡",
+      "pos": "verb"
+    },
+    {
+      "char": "能",
+      "pos": "auxiliary"
+    },
+    {
+      "char": "脑",
+      "pos": "noun"
+    },
+    {
+      "char": "脸",
+      "pos": "noun"
+    },
+    {
+      "char": "腿",
+      "pos": "noun"
+    },
+    {
+      "char": "自",
+      "pos": "adverb"
+    },
+    {
+      "char": "臭",
+      "pos": "adjective"
+    },
+    {
+      "char": "舔",
+      "pos": "verb"
+    },
+    {
+      "char": "色",
+      "pos": "noun"
+    },
+    {
+      "char": "花",
+      "pos": "noun"
+    },
+    {
+      "char": "草",
+      "pos": "noun"
+    },
+    {
+      "char": "菜",
+      "pos": "noun"
+    },
+    {
+      "char": "蒜",
+      "pos": "noun"
+    },
+    {
+      "char": "蚌",
+      "pos": "noun"
+    },
+    {
+      "char": "蛋",
+      "pos": "noun"
+    },
+    {
+      "char": "蠢",
+      "pos": "adjective"
+    },
+    {
+      "char": "补",
+      "pos": "verb"
+    },
+    {
+      "char": "衰",
+      "pos": "adjective"
+    },
+    {
+      "char": "被",
+      "pos": "preposition"
+    },
+    {
+      "char": "装",
+      "pos": "verb"
+    },
+    {
+      "char": "西",
+      "pos": "direction"
+    },
+    {
+      "char": "要",
+      "pos": "verb"
+    },
+    {
+      "char": "觉",
+      "pos": "noun"
+    },
+    {
+      "char": "认",
+      "pos": "verb"
+    },
+    {
+      "char": "让",
+      "pos": "verb"
+    },
+    {
+      "char": "话",
+      "pos": "noun"
+    },
+    {
+      "char": "语",
+      "pos": "noun"
+    },
+    {
+      "char": "说",
+      "pos": "verb"
+    },
+    {
+      "char": "谁",
+      "pos": "pronoun"
+    },
+    {
+      "char": "谱",
+      "pos": "noun"
+    },
+    {
+      "char": "账",
+      "pos": "noun"
+    },
+    {
+      "char": "货",
+      "pos": "noun"
+    },
+    {
+      "char": "贱",
+      "pos": "adjective"
+    },
+    {
+      "char": "赖",
+      "pos": "verb"
+    },
+    {
+      "char": "跑",
+      "pos": "verb"
+    },
+    {
+      "char": "跟",
+      "pos": "preposition"
+    },
+    {
+      "char": "跪",
+      "pos": "verb"
+    },
+    {
+      "char": "路",
+      "pos": "noun"
+    },
+    {
+      "char": "边",
+      "pos": "adverb"
+    },
+    {
+      "char": "过",
+      "pos": "particle"
+    },
+    {
+      "char": "还",
+      "pos": "adverb"
+    },
+    {
+      "char": "这",
+      "pos": "pronoun"
+    },
+    {
+      "char": "远",
+      "pos": "adjective"
+    },
+    {
+      "char": "迷",
+      "pos": "verb"
+    },
+    {
+      "char": "逼",
+      "pos": "verb"
+    },
+    {
+      "char": "道",
+      "pos": "classifier"
+    },
+    {
+      "char": "那",
+      "pos": "pronoun"
+    },
+    {
+      "char": "都",
+      "pos": "adverb"
+    },
+    {
+      "char": "配",
+      "pos": "verb"
+    },
+    {
+      "char": "酒",
+      "pos": "noun"
+    },
+    {
+      "char": "醒",
+      "pos": "verb"
+    },
+    {
+      "char": "里",
+      "pos": "direction"
+    },
+    {
+      "char": "野",
+      "pos": "noun"
+    },
+    {
+      "char": "钱",
+      "pos": "noun"
+    },
+    {
+      "char": "门",
+      "pos": "noun"
+    },
+    {
+      "char": "闭",
+      "pos": "verb"
+    },
+    {
+      "char": "防",
+      "pos": "verb"
+    },
+    {
+      "char": "雨",
+      "pos": "noun"
+    },
+    {
+      "char": "靠",
+      "pos": "verb"
+    },
+    {
+      "char": "风",
+      "pos": "noun"
+    },
+    {
+      "char": "飞",
+      "pos": "verb"
+    },
+    {
+      "char": "饱",
+      "pos": "adjective"
+    },
+    {
+      "char": "马",
+      "pos": "noun"
+    },
+    {
+      "char": "骂",
+      "pos": "verb"
+    },
+    {
+      "char": "骗",
+      "pos": "verb"
+    },
+    {
+      "char": "骚",
+      "pos": "adjective"
+    },
+    {
+      "char": "骨",
+      "pos": "noun"
+    },
+    {
+      "char": "鬼",
+      "pos": "noun"
+    },
+    {
+      "char": "鸡",
+      "pos": "noun"
+    },
+    {
+      "char": "鸭",
+      "pos": "noun"
+    },
+    {
+      "char": "麻",
+      "pos": "noun"
+    },
+    {
+      "char": "黑",
+      "pos": "adjective"
+    },
+    {
+      "char": "龟",
+      "pos": "noun"
+    }
+  ]
+}
