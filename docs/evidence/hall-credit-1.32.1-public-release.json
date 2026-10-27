@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-27T15:24:22.018698+00:00",
+  "base": "http://118.196.107.182:1240",
+  "version": "1.32.1",
+  "release": "1.32.1-20261027-232120",
+  "ready": true,
+  "files": [
+    {
+      "path": "/",
+      "bytes": 934,
+      "sha256": "503d1ea51203e130f43d244f1eb07219ad01dba4e5b51f2f81e8e3614356be93"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-400-core-1ff5c1cb3a.woff2",
+      "bytes": 133264,
+      "sha256": "1ff5c1cb3ab56a3b7c07a97986056803e9db77376947547a87015f5e2c48715b"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-500-core-98bd296477.woff2",
+      "bytes": 133124,
+      "sha256": "98bd29647780ce5c285eb29361384aab369ccfdadfb2e59502d29d396534eedf"
+    },
+    {
+      "path": "/fonts/pingfang/pingfang-600-core-8c7d6eeaac.woff2",
+      "bytes": 132280,
+      "sha256": "8c7d6eeaac98121a908be440ba1b9fcc0ee717bca52493b67232e2afdd4a8d66"
+    },
+    {
+      "path": "/fonts/wenkai/wenkai-500-core-5da500484d.woff2",
+      "bytes": 195524,
+      "sha256": "5da500484d6426ad4e5e52c287fe104d1693fc61e7c542363920caba458a6098"
+    },
+    {
+      "path": "/assets/index-CrypTsOv.js",
+      "bytes": 1011305,
+      "sha256": "782f80947547a8754f5fed561e639fac949284003bb5ea17cf6d2c81bf53499d"
+    },
+    {
+      "path": "/assets/index-bvU9lnR0.css",
+      "bytes": 334193,
+      "sha256": "1558734e048d47cbf84ca41bd1382058073012aab3a712ebf29e990a1b7b19cd"
+    }
+  ]
+}

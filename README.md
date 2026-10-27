@@ -6,7 +6,7 @@
 
 一款支持 2–6 人在线同桌的中文文字游戏。摸字、吃字、排句，再由同桌评审决定能否胡牌。
 
-[![应用版本](https://img.shields.io/badge/version-1.32.0-2f855a)](package.json)
+[![应用版本](https://img.shields.io/badge/version-1.32.1-2f855a)](package.json)
 [![游戏人数](https://img.shields.io/badge/players-2–6-d69e2e)](docs/01-RULES.md)
 [![Node.js](https://img.shields.io/badge/Node.js-24.19.0–24.x-43853d)](package.json)
 [![Three.js](https://img.shields.io/badge/3D-Three.js-black)](docs/UI-ADOPTION.md)
@@ -38,6 +38,14 @@
 - **小麻将精表情包**：闲聊点选六款原创表情，角色头像同步弹跳亮相，短暂展示后自动收起。
 - **和同桌聊聊**：收起式聊天记录与轻量弹幕；评审留言在弹窗标题区带署名滚动，游戏操作保持可达。
 - **自己的麻将套组**：默认采用“基于文字失明”的固定 144 张套组，2–6 人配比相同；原有随人数增减张数的套组保留为“动态牌组”。管理员可继续复制与编辑。
+
+## 1.32.1 · 大厅出品署名 · 2026-10-27
+
+大厅左下角常驻“大尾巴萌 出品”，使用低调金色小字，独立于牌桌列表滚动；预留24px内部空间并沿用设备安全区，不覆盖入座操作。应用版本1.32.1，规则仍为1.8.0。
+
+生产构建通过；Chromium141真实浏览器320×480、390×844、667×375、1280×800四视口通过，检查署名边界、列表滚动时固定、页面不滚动、第六桌真实点击及弹窗关闭恢复。仅打开创建窗口，未创建房间；无控制台异常。手机为触摸视口模拟，实体Safari未测。证据hall-credit-1.32.1-local.json及两张截图。
+
+已发布原HTTP入口，release `1.32.1-20261027-232120`、冻结源码 `93fa276`、一致性备份 `pre-release-20261027-232121.sqlite`。公网相同四视口检查通过；ready=true，HTML/JS/CSS及四份预加载字体共7项资源SHA256与冻结构建一致。首次资源抓取超时，浏览器完成后以相同超时串行重试通过；未放宽检查。证据hall-credit-1.32.1-public*。源码与项目记录随交付同步GitHub。
 
 ## 1.32.0 · 按词性发主谓宾起手牌 · 2026-10-27
 
@@ -777,7 +785,7 @@ npm run db:restore -- /absolute/path/backup.sqlite
 | [运维手册](docs/OPERATIONS.md) | 发布、备份、恢复与故障处理 |
 | [当前任务](docs/TASKBOARD.md) · [交接记录](docs/HANDOFF.md) | 协作状态与后续现场事项 |
 
-当前应用 **1.32.0**，新房规则 **1.8.0**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
+当前应用 **1.32.1**，新房规则 **1.8.0**，交接包 **V1.1.0**；固定默认牌组配置 **1.0.0** 保留，旧牌局按已记录兼容策略运行。当前发布状态见文首。
 
 圆头像、中央开局菜单、原浏览器找回座位和同桌聊天已通过各自隔离验证，统一并入本批。具体证据见 [头像](docs/increments/SEAT-BADGES-20261024-【codex】.md)、[开局面板](docs/increments/ROOM-SETUP-20261024-【codex】.md)、[原浏览器恢复](docs/increments/BROWSER-RETURN-20261024-【codex】.md) 与 [聊天](docs/increments/ROOM-CHAT-20261024-【codex】.md)。
 

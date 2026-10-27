@@ -40,6 +40,7 @@ export function GameLobby({panel,tableNumber,tables,error,busy,status,onOpen,onT
    {error&&<p className="hall-status hall-error" role="alert">{error}</p>}
    {!panel&&status&&<p className="hall-status" role="status">{status}</p>}
   </main>
+  <footer className="hall-credit">大尾巴萌 出品</footer>
   <dialog ref={dialog} className="hall-dialog" aria-labelledby="hall-dialog-title" onCancel={e=>{e.preventDefault();if(!busy)onClose();}}>
    <div className="hall-dialog-heading"><div><span className="eyebrow">{panel==='create'?`${String(tableNumber).padStart(2,'0')} 号公共桌`:'回到牌桌'}</span><h2 id="hall-dialog-title">{panel==='create'?'创建公共房间':'加入 / 找回房间'}</h2></div><button className="hall-tool" aria-label="关闭房间窗口" disabled={busy} onClick={onClose}><HallIcon kind="close"/></button></div>
    {children}

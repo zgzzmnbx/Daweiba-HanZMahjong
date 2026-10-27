@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-27T15:22:16.049Z",
+  "base": "http://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "passed": true,
+      "text": "大尾巴萌 出品",
+      "credit": {
+        "x": 0,
+        "y": 456,
+        "width": 320,
+        "height": 24,
+        "bottom": 480
+      },
+      "tablesBottom": 448,
+      "pointer": "none",
+      "rootHeight": 480,
+      "bodyHeight": 480,
+      "internalScroll": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true,
+      "text": "大尾巴萌 出品",
+      "credit": {
+        "x": 0,
+        "y": 820,
+        "width": 390,
+        "height": 24,
+        "bottom": 844
+      },
+      "tablesBottom": 812,
+      "pointer": "none",
+      "rootHeight": 844,
+      "bodyHeight": 844,
+      "internalScroll": true
+    },
+    {
+      "viewport": {
+        "width": 667,
+        "height": 375
+      },
+      "passed": true,
+      "text": "大尾巴萌 出品",
+      "credit": {
+        "x": 0,
+        "y": 351,
+        "width": 667,
+        "height": 24,
+        "bottom": 375
+      },
+      "tablesBottom": 343,
+      "pointer": "none",
+      "rootHeight": 375,
+      "bodyHeight": 375,
+      "internalScroll": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "passed": true,
+      "text": "大尾巴萌 出品",
+      "credit": {
+        "x": 0,
+        "y": 776,
+        "width": 1280,
+        "height": 24,
+        "bottom": 800
+      },
+      "tablesBottom": 766,
+      "pointer": "none",
+      "rootHeight": 800,
+      "bodyHeight": 800,
+      "internalScroll": true
+    }
+  ],
+  "errors": []
+}

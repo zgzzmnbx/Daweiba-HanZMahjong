@@ -1,7 +1,8 @@
 import packageInfo from '../../../package.json';
 /** Player-facing highlights; each release must update this list alongside CHANGELOG. */
 export const releaseNotes=[
- {version:packageInfo.version,date:'2026-10-27',title:'主谓宾起手，成句更轻松',features:['按每个字的主要词性抽牌，每人起手至少有两张名词／代词与一张动词，其余手牌随机补齐。','不预设固定词句，不改变牌组数量；旧局保持原发牌，下一局启用新规则。']},
+ {version:packageInfo.version,date:'2026-10-27',title:'大厅出品署名',features:['大厅左下角增加「大尾巴萌 出品」，手机和宽屏常驻显示。']},
+ {version:'1.32.0',date:'2026-10-27',title:'主谓宾起手，成句更轻松',features:['按每个字的主要词性抽牌，每人起手至少有两张名词／代词与一张动词，其余手牌随机补齐。','不预设固定词句，不改变牌组数量；旧局保持原发牌，下一局启用新规则。']},
  {version:'1.31.1',date:'2026-10-26',title:'音乐更响，初始六成',features:['音乐最大音量提高到此前的1.5倍，新浏览器初始音量60%。','保留已保存的个人音量，音效与报字播放时音乐继续自动让位。']},
  {version:'1.31.0',date:'2026-10-26',title:'从容吃字，HTTP 开桌',features:['新开局吃牌响应延长到15秒，倒计时同步；进行中的旧局保持原时限。','测试入口统一使用HTTP，玩家和管理员均可进入，不再依赖游戏证书。']},
  {version:'1.30.11',date:'2026-10-26',title:'十圈点炮，及时提醒',features:['全场借字胡牌解锁时，圈数旁提示「第十圈，开启全场点炮胡牌」。','绿金气泡3秒自动消失，每局一次，刷新不重复，不打断操作。']},

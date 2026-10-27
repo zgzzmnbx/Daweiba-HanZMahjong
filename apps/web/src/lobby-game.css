@@ -1,5 +1,6 @@
 /* Game-room vernacular: wood plaques, felt tables and ivory/gold controls. */
 .game-hall{--hall-gold:#e6ba62;--hall-wood:#261a13;--hall-felt:#23583f;--hall-ivory:#f8e9c5;background:radial-gradient(ellipse at 50% 46%,#61503540,transparent 65%),repeating-linear-gradient(93deg,#00000005 0 2px,transparent 2px 6px),#281e16}
+.game-hall .hall-credit{flex:none;margin:0;padding:2px max(12px,env(safe-area-inset-left,0px)) 6px;color:#bda47b;font:11px/16px var(--ui-font);letter-spacing:1px;pointer-events:none}
 .game-hall .topbar{height:80px;border-bottom:1px solid #bc914f40;background:linear-gradient(#38281b,#241b14);box-shadow:0 3px 16px #0004;padding:0 38px}
 .game-hall .wordmark{display:flex;align-items:center;gap:13px;font-family:var(--display-font);font-size:30px;letter-spacing:3px;color:#f4d697}
 .game-hall .wordmark small{display:block;font:10px/1.2 var(--ui-font);letter-spacing:3px;color:#bda47b;margin-top:3px}
