@@ -11,7 +11,7 @@ import type {SentenceRackController} from './SentenceRackController';
 import './room-setup.css';
 
 /** One pre-game panel; all actions retain the existing authoritative controller checks. */
-export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,onDissolve}:{envelope:ResyncEnvelope;seats:readonly SeatView[];controller:SentenceRackController;practice?:boolean;aiReview:boolean;onDissolve:()=>void}){
+export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,onDissolve,onShowcase}:{envelope:ResyncEnvelope;seats:readonly SeatView[];controller:SentenceRackController;practice?:boolean;aiReview:boolean;onDissolve:()=>void;onShowcase?:()=>void}){
  const phase=envelope.public.phase,finished=phase.kind==='ROUND_FINISHED';
  const self=envelope.public.players.find(p=>p.playerId===envelope.private.playerId),host=envelope.public.hostId===envelope.private.playerId;
  const [copyLabel,setCopyLabel]=useState('复制邀请链接');
@@ -24,6 +24,7 @@ export function RoomSetupPanel({envelope,seats,controller:c,practice,aiReview,on
  return <>{guideOpen&&<NewPlayerGuide preparing readinessNotice={guideNotice} onConfirm={confirmGuide}/>}<section className={'table-overlay room-setup-panel'+(!finished?' lobby-panel':'')} aria-label={finished?'下一局设置':'开局设置'}>
   <header className="room-setup-heading"><span className="eyebrow">{finished?'这一局，留个念想':'好友房'}</span><h2>{finished?(phase.reason==='WIN'?'好句，胡了！':'本局已结束'):'人齐，开一桌。'}</h2><p>{finished?(practice?'练习局 · 不累计胜局':'结果已记录'):`${envelope.public.players.length} / ${seats.length} 席已入座 · 坐满并准备后开局`}</p></header>
   <div className="room-setup-body">
+   {finished&&onShowcase&&<button onClick={onShowcase}>看看大家的牌</button>}
    {finished&&history&&<p className="room-last-sentence">{history.snapshot.sentence.orderedTileIds.map(id=>history.snapshot.tiles.find(t=>t.tileId===id)?.char).join('')}</p>}
    <section className="seat-management" aria-label="座位安排"><div className="rack-label"><strong>同桌座位{envelope.public.deckSetName&&<small className="room-deck-name" title={envelope.public.deckSetName}> · {envelope.public.deckSetName}</small>}</strong><span>{host?'空位可安排 AI':'由房主安排空位'}</span></div>
     <div className="seat-list">{[...seats].sort((a,b)=>a.logicalSeat-b.logicalSeat).map(s=><div className="seat-row" key={s.logicalSeat} data-seat={s.logicalSeat}>{s.player?<span className="seat-person-avatar"><PlayerAvatar avatarId={s.player.avatarId} name={s.player.nickname} seed={s.player.playerId}/><AvatarSticker playerId={s.player.playerId}/></span>:<span className="seat-number">{s.logicalSeat+1}</span>}<div className="seat-person"><span className="seat-person-heading"><strong>{s.player?playerDisplayName(s.player):'等待好友'}</strong>{s.player?.ready&&<ReadyBadge/>}</span><small>{s.player?.isBotSeat?'AI · 自动准备':s.player?s.player.ready?'真人':'真人 · 未准备':'空位'}</small></div>{!s.player&&envelope.legalActions.includes('ASSIGN_BOT')&&<button disabled={!c.allowed('ASSIGN_BOT')} onClick={()=>c.command({kind:'ASSIGN_BOT',seat:s.logicalSeat})} aria-label={`将座位 ${s.logicalSeat+1} 设为 AI`}>设为 AI</button>}{s.player?.isBotSeat&&envelope.legalActions.includes('REMOVE_BOT')&&<button disabled={!c.allowed('REMOVE_BOT')} onClick={()=>c.command({kind:'REMOVE_BOT',seat:s.logicalSeat})} aria-label={`移除座位 ${s.logicalSeat+1} 的 AI，留给朋友`}>移除 AI</button>}</div>)}</div>

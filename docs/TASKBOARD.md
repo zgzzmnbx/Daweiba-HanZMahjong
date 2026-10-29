@@ -1,9 +1,9 @@
 # 当前任务板
 
-## 1.32.1 · 大厅出品署名
+## 1.33.0 · 散局晒牌
 
-- DONE：大厅左下角常驻“大尾巴萌 出品”，版本/README/更新日志/交接记录同步。
-- DONE：生产构建、本地与公网各四视口真实浏览器检查；未创建测试房间。
-- DONE：release232120/备份232121，ready=true，7项资源一致；源码与证据随本轮同步GitHub。
+- DONE：独立晒牌页与批准后冻结、归档、鉴权读取；原有评审/开局保留。
+- DONE：构建及423项测试；真实六人四视口浏览器、聊天/刷新/下局回看/CDP字体。
+- DONE：release233602/备份233603，公网7项入口/API/四视口检查、79资源一致，ready=true；测试私房已关闭，无天书污染，源码与证据随交付同步。
 
-旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。发布窗口已释放；原始字体ZIP与Codex-Temp不提交。本次无新增长期规则，项目AGENTS未改；实体手机Safari未实测。
+旧done已归档README/CHANGELOG/HANDOFF/VERIFICATION；无根TASKS.md。原始Font-字体与Codex-Temp不提交。实体手机Safari未实测。

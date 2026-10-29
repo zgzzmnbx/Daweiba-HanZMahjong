@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-29T15:39:02.582Z",
+  "version": "1.33.0",
+  "origin": "http://118.196.107.182:1240",
+  "browser": "141.0.7390.37",
+  "scope": "public authenticated entry/API/4 viewport smoke only; full winning showcase verified on isolated local server",
+  "checks": [
+    "authenticated showcase API returns no invented old hands",
+    "unauthenticated showcase API rejected",
+    "public menu page fits and closes normally 320x480",
+    "public menu page fits and closes normally 390x844",
+    "public menu page fits and closes normally 667x375",
+    "public menu page fits and closes normally 1280x800",
+    "private test room closed without starting or scoring"
+  ],
+  "errors": []
+}

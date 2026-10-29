@@ -138,8 +138,17 @@ export type PublicHistoryEntry = Readonly<{
   /** Rule 1.6.1: independent, frozen AI reviewer results. */
   aiJudgments?: Readonly<Record<string,AiJudgment>>;
 }>;
+/** Frozen only after an approved win; never populated during play or review. */
+export type RoundShowcase = Readonly<{
+  roundId: RoundId; proposalId: ProposalId; finishedAt: UtcMs;
+  hands: readonly Readonly<{
+    playerId: PlayerId; seat: SeatIndex; nickname: string; avatarId?: string;
+    managed: boolean; winner: boolean; draft: Draft; tiles: readonly Tile[];
+  }>[];
+}>;
 export type PublicRoomSnapshot = Readonly<{
   visibility: 'PUBLIC'; roomId: RoomId; roundId: RoundId | null;
+  roundShowcase?: RoundShowcase;
   stateVersion: StateVersion; rulesVersion: RulesVersion; deckVersion: string;
   /** Bound at room creation. Name and full deck are refreshed only when the next round starts. */
   deckSetId?: string; deckSetName?: string;

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-29T15:33:04.497Z",
+  "version": "1.33.0",
+  "browser": "141.0.7390.37",
+  "scope": "isolated in-memory server, real six-player commands and Chromium touch viewport; no production book writes",
+  "checks": [
+    "real six-player vote reveals frozen hands only after approval",
+    "existing review result actions remain within all four viewports",
+    "six cards, punctuation, controls and scrolling fit 320x480",
+    "six cards, punctuation, controls and scrolling fit 390x844",
+    "six cards, punctuation, controls and scrolling fit 667x375",
+    "six cards, punctuation, controls and scrolling fit 1280x800",
+    "chat remains usable over the showcase page",
+    "refresh reopens identical persistent result from menu",
+    "next deal preserves prior showcase without disclosing current hands",
+    "actual DOM glyph uses WenKai Medium"
+  ],
+  "errors": []
+}

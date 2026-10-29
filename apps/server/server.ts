@@ -144,6 +144,13 @@ export function createGameServer(options:ServerOptions){
  // Observer reads never connect a player, set a Cookie, mutate presence, or reveal private state.
  app.get('/api/rooms/:roomId/spectate',handle((q,r)=>{limit(`spectate:${q.ip}`,3600);const g=ensureGame(validId(q.params.roomId));if(g.public.allowSpectators!==true)throw new RuleError('SPECTATING_DISABLED');r.json({serverNow:now(),public:structuredClone(g.public),...(doodles.history(g.public.roomId).revision?{doodle:doodles.history(g.public.roomId)}:{})});}));
  app.get('/api/admin/rooms/:roomId/spectate',handle((q,r)=>{adminAuth(q.headers.cookie);const g=ensureGame(validId(q.params.roomId));r.json({serverNow:now(),public:structuredClone(g.public),...(doodles.history(g.public.roomId).revision?{doodle:doodles.history(g.public.roomId)}:{})});}));
+ app.get('/api/rooms/:roomId/showcases',handle((q,r)=>{
+  const session=authenticate(q.headers.cookie,validId(q.params.roomId));limit(`showcases:${session.sessionId}`,120);
+  const g=ensureGame(session.roomId);
+  // Only frozen, already-public results; never inspect current private hands here.
+  const unique=new Map([...g.archive,g.public].filter(v=>v.roundShowcase).map(v=>[v.roundShowcase!.roundId,v.roundShowcase!]));
+  r.json({showcases:[...unique.values()].reverse().slice(0,20)});
+ }));
  app.get('/api/rooms/:roomId/deck',handle((q,r)=>{
   const session=authenticate(q.headers.cookie,validId(q.params.roomId));limit(`room-deck:${session.sessionId}`,120);
   const g=ensureGame(session.roomId),frozen=g.public.roundId!==null,deck=frozen?g.roundDeck:store.roomDeck(g),countKey=String(g.public.capacity) as '2'|'3'|'4'|'5'|'6';
